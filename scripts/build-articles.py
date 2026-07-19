@@ -1983,9 +1983,8 @@ def _build_sport_site(articles: list, sport: str):
 # ---------- main build ----------
 
 def build():
-    if not SRC.exists():
-        print(f"❌ {SRC} not found", file=sys.stderr)
-        sys.exit(1)
+    # articles/ 不存在＝零文章（git 不追蹤空目錄；.gitkeep 已補，這裡再防一層）
+    SRC.mkdir(parents=True, exist_ok=True)
 
     articles = []
     for d in sorted(SRC.iterdir()):
