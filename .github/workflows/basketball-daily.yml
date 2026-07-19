@@ -1,0 +1,51 @@
+# basketball.twtools.cc 每日自動更新（Layer 1，機械層）
+#
+# 每日 04:00 UTC（台灣 12:00）：抓 NBA／台灣職籃／HBL 公開資料（全部 fail-soft，
+# 斷源沿用 repo 內快照）→ 重生全站 → wrangler deploy → IndexNow ping 變動頁。
+# 休賽季（各聯盟 6 月底完賽～10 月開季）資料凍結，重建通常零變動、deploy 為 no-op。
+#
+# secrets（repo settings）：CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID
+# （資料源全部免金鑰：ESPN／TPBL／PLG／HBL 皆公開介面）
+#
+# 供應鏈紀律（沿用 baseball-tools）：actions 用 major tag、pip 套件 pin 版本、
+# wrangler 在 update-basketball.py 內 pin `wrangler@4.108.0` —— deploy 步驟帶著
+# CLOUDFLARE_API_TOKEN，不 pin = 上游中毒可直接偷 token。
+# update-basketball.py 已做誠實 exit（任何非 soft 步驟失敗 → 結尾 exit 1 → run 變紅）。
+
+name: basketball-daily
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # 04:00 UTC = 台灣 12:00
+  workflow_dispatch: {}
+
+concurrency:
+  group: basketball-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install Python deps (pinned)
+        run: pip install 'markdown==3.10.2'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Rebuild + deploy + IndexNow
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python scripts/update-basketball.py --deploy

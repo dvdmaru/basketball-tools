@@ -1,0 +1,4 @@
+{
+  "_comment": "Build-side draft gate — slugs listed here are pending review and excluded from ALL output (index/feed/sitemap/landing/page). Add a slug while an article awaits cross-check; remove it after Charlie approves. Empty list = no-op.",
+  "exclude": []
+}

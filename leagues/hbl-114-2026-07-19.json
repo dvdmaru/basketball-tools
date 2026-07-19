@@ -1,0 +1,63 @@
+{
+ "asof_taipei_date": "2026-07-19",
+ "season_label": "114學年度",
+ "final": true,
+ "divisions": {
+  "boys": {
+   "label": "男子甲級",
+   "champion": "松山高中",
+   "final_note": "冠軍戰 87:71 勝南湖高中",
+   "final_four": [
+    {
+     "rank": 1,
+     "school": "松山高中",
+     "note": "冠軍戰 87:71 勝南湖高中"
+    },
+    {
+     "rank": 2,
+     "school": "南湖高中",
+     "note": ""
+    },
+    {
+     "rank": 3,
+     "school": "東泰高中",
+     "note": "季軍戰 68:63 勝能仁家商"
+    },
+    {
+     "rank": 4,
+     "school": "能仁家商",
+     "note": ""
+    }
+   ],
+   "source": "整理自 hbl.com.tw 官網公開賽果（非官方文件化介面）"
+  },
+  "girls": {
+   "label": "女子甲級",
+   "champion": "陽明高中",
+   "final_note": "冠軍戰 61:53 勝北一女中",
+   "final_four": [
+    {
+     "rank": 1,
+     "school": "陽明高中",
+     "note": "冠軍戰 61:53 勝北一女中"
+    },
+    {
+     "rank": 2,
+     "school": "北一女中",
+     "note": ""
+    },
+    {
+     "rank": 3,
+     "school": "永仁高中",
+     "note": "季軍戰 83:82 勝南山高中"
+    },
+    {
+     "rank": 4,
+     "school": "南山高中",
+     "note": ""
+    }
+   ],
+   "source": "整理自 hbl.com.tw 官網公開賽果（非官方文件化介面）"
+  }
+ }
+}

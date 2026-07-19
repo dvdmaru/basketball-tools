@@ -1,0 +1,51 @@
+{
+ "asof_taipei_date": "2026-07-19",
+ "note": "由 hbl.com.tw 官網公開賽果推導（總決賽勝隊）；API 僅回溯至 106 學年度",
+ "seasons": [
+  {
+   "season": 106,
+   "boys_champion": "松山高中",
+   "girls_champion": "普門中學"
+  },
+  {
+   "season": 107,
+   "boys_champion": "能仁家商",
+   "girls_champion": "南山高中"
+  },
+  {
+   "season": 108,
+   "boys_champion": "能仁家商",
+   "girls_champion": "淡水商工"
+  },
+  {
+   "season": 109,
+   "boys_champion": "泰山高中",
+   "girls_champion": "淡水商工"
+  },
+  {
+   "season": 110,
+   "boys_champion": "光復高中",
+   "girls_champion": "淡水商工"
+  },
+  {
+   "season": 111,
+   "boys_champion": "光復高中",
+   "girls_champion": "淡水商工"
+  },
+  {
+   "season": 112,
+   "boys_champion": "南山高中",
+   "girls_champion": "北一女中"
+  },
+  {
+   "season": 113,
+   "boys_champion": "松山高中",
+   "girls_champion": "北一女中"
+  },
+  {
+   "season": 114,
+   "boys_champion": "松山高中",
+   "girls_champion": "陽明高中"
+  }
+ ]
+}

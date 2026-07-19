@@ -1,0 +1,28 @@
+# 籃球數據誌（basketball.twtools.cc）— NBA・台灣職籃・HBL 戰績與數據
+
+> 非官方的繁體中文籃球數據與內容站。提供美國職籃 NBA、台灣職籃兩聯盟（TPBL／P. LEAGUE+）與 HBL 高中籃球甲級聯賽的戰績儀表板（排名、名次、冠軍脈絡），以及數據導向的深度特刊文章。內容以繁體中文撰寫、台北時間標示，面向台灣球迷。
+
+本站為獨立經營的資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（中華民國高級中等學校體育總會）及各球團、學校均無任何官方關係，不使用官方標誌，非商業性質。數據整理自公開來源並逐頁標註（NBA 整理自 ESPN 公開資料；台灣職籃整理自 TPBL／PLG 官網；HBL 整理自 hbl.com.tw），頁面標注資料截至日期；休賽季顯示 2025-26 賽季（HBL 為 114 學年度）終局數據，開季後恢復自動更新。
+
+## 重點頁面
+
+- [籃球數據儀表板（首頁）](https://basketball.twtools.cc/)：NBA 東西區排名、台灣職籃戰績、HBL 四強與各聯盟冠軍，一頁掌握。
+- [NBA 戰績](https://basketball.twtools.cc/standings/)：東西區完整排名（2025-26 賽季）。
+- [台灣職籃戰績](https://basketball.twtools.cc/tw/)：TPBL 與 P. LEAGUE+ 兩聯盟戰績與冠軍。
+- [HBL 高中籃球](https://basketball.twtools.cc/hbl/)：男甲、女甲四強最終名次與冠軍戰。
+- [數據總覽](https://basketball.twtools.cc/data/)：所有數據頁入口。
+- [文章總覽](https://basketball.twtools.cc/articles/)：深度特刊列表——以可查證數據為底的長文分析，每篇附統計表格。
+
+## 最新文章
+
+
+
+## 文章與更新
+
+- [RSS feed](https://basketball.twtools.cc/feed.xml)：最新深度特刊。
+- 深度特刊：數據導向長文，所有數字對照公開來源查證後發布，附截止日期。
+
+## 使用說明
+
+- 引用本站資料時，請註明資料為非官方整理、並以各聯盟官方公告為準。
+- 內容僅供資訊參考；時間以台北時間（UTC+8）標示。

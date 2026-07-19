@@ -1,0 +1,27 @@
+{
+  "_comment": "Per-sport site identity — single source of truth for org/website JSON-LD AND page chrome (header brand/nav, <title> suffix, og/canonical base, default theme). A competition resolves its site via its top-level `sport` field (config/competitions.json). This repo is basketball-only; the engine's soccer fallback stays dormant (no soccer comps/articles exist). `base` has no trailing slash (code appends it). ga_id is added after Charlie creates the GA4 property (empty = engine falls back to the soccer GA id, so DO add it before deploy or strip the snippet).",
+  "basketball": {
+    "base": "https://basketball.twtools.cc",
+    "org_name": "籃球數據誌",
+    "org_same_as": [],
+    "website_name": "籃球數據誌｜NBA・台灣職籃・HBL 戰績與數據",
+    "brand_mark": "@BASKETBALL",
+    "brand_tag": "NBA · TPBL · PLG · HBL 數據",
+    "title_suffix": "籃球數據誌",
+    "feed_title": "籃球數據誌 最新文章",
+    "feed_channel_title": "籃球數據誌 — NBA 與台灣籃球數據與深度特刊",
+    "feed_channel_desc": "NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。",
+    "default_theme": "ember",
+    "nav": [
+      { "label": "首頁", "href": "/", "key": "home" },
+      { "label": "數據", "href": "/data/", "key": "data" },
+      { "label": "文章", "href": "/articles/", "key": "articles" }
+    ],
+    "external_link": null,
+    "footer_cta": null,
+    "footer_links": [
+      { "label": "所有文章", "href": "/articles/" },
+      { "label": "首頁", "href": "/" }
+    ]
+  }
+}

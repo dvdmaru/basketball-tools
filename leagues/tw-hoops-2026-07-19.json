@@ -1,0 +1,112 @@
+{
+ "asof_taipei_date": "2026-07-19",
+ "season": "2025-26",
+ "final": true,
+ "leagues": {
+  "tpbl": {
+   "name_zh": "TPBL 台灣職業籃球大聯盟",
+   "champion_zh": "福爾摩沙夢想家",
+   "finals_note": "總冠軍賽 4:3 勝新北國王",
+   "regular_season_games": 126,
+   "standings": [
+    {
+     "rank": 1,
+     "team_name": "桃園台啤永豐雲豹",
+     "win": 23,
+     "lose": 13,
+     "pct": "0.639",
+     "games_behind": "—"
+    },
+    {
+     "rank": 2,
+     "team_name": "福爾摩沙夢想家",
+     "win": 22,
+     "lose": 14,
+     "pct": "0.611",
+     "games_behind": "1"
+    },
+    {
+     "rank": 3,
+     "team_name": "新竹御嵿攻城獅",
+     "win": 22,
+     "lose": 14,
+     "pct": "0.611",
+     "games_behind": "1"
+    },
+    {
+     "rank": 4,
+     "team_name": "新北中信特攻",
+     "win": 20,
+     "lose": 16,
+     "pct": "0.556",
+     "games_behind": "3"
+    },
+    {
+     "rank": 5,
+     "team_name": "新北國王",
+     "win": 19,
+     "lose": 17,
+     "pct": "0.528",
+     "games_behind": "4"
+    },
+    {
+     "rank": 6,
+     "team_name": "臺北台新戰神",
+     "win": 11,
+     "lose": 25,
+     "pct": "0.306",
+     "games_behind": "12"
+    },
+    {
+     "rank": 7,
+     "team_name": "高雄全家海神",
+     "win": 9,
+     "lose": 27,
+     "pct": "0.250",
+     "games_behind": "14"
+    }
+   ],
+   "source": "整理自 TPBL 官網公開資料（api.tpbl.basketball，非官方文件化介面）"
+  },
+  "plg": {
+   "name_zh": "P. LEAGUE+",
+   "champion_zh": "桃園璞園領航猿",
+   "finals_note": "總冠軍賽 4:3 勝臺北富邦勇士（二連霸）",
+   "standings": [
+    {
+     "rank": 1,
+     "team_name": "桃園璞園領航猿",
+     "win": 21,
+     "lose": 3,
+     "pct": "0.875",
+     "games_behind": "—"
+    },
+    {
+     "rank": 2,
+     "team_name": "臺北富邦勇士",
+     "win": 12,
+     "lose": 12,
+     "pct": "0.500",
+     "games_behind": "9"
+    },
+    {
+     "rank": 3,
+     "team_name": "台鋼獵鷹",
+     "win": 11,
+     "lose": 13,
+     "pct": "0.458",
+     "games_behind": "10"
+    },
+    {
+     "rank": 4,
+     "team_name": "洋基工程",
+     "win": 4,
+     "lose": 20,
+     "pct": "0.167",
+     "games_behind": "17"
+    }
+   ],
+   "source": "整理自 P. LEAGUE+ 官網戰績頁；總冠軍出處見 config/season-facts.json"
+  }
+ }
+}

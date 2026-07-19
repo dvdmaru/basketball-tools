@@ -1,0 +1,14 @@
+# build-articles.py is multi-sport and always writes an (empty) soccer public/ even in
+# this basketball-only repo — the Worker only serves public-basketball/, so ignore the stray soccer output.
+/public/
+
+# claude code session worktrees / scratch — never commit
+/.claude/
+
+# python / os / tooling
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+.wrangler/
+facts/

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>籃球數據誌 — NBA 與台灣籃球數據與深度特刊</title>
+    <link>https://basketball.twtools.cc/articles/</link>
+    <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
+    <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
+    <language>zh-Hant</language>
+  </channel>
+</rss>

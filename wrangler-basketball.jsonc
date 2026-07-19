@@ -1,0 +1,23 @@
+{
+  // basketball.twtools.cc — Cloudflare Workers static-assets deploy for the basketball site.
+  // Mirrors the baseball config (dvdmaru/baseball-tools wrangler-baseball.jsonc) but serves
+  // public-basketball/. Deploy:  wrangler deploy -c wrangler-basketball.jsonc
+  // Account id is NOT pinned here — pass CLOUDFLARE_ACCOUNT_ID via env (CI secrets / local).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "basketball-tools",
+  "compatibility_date": "2026-07-19",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "public-basketball"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  // Custom domain — Cloudflare auto-creates the DNS record + cert for basketball.twtools.cc
+  // (twtools.cc must be a zone on this account).
+  "routes": [
+    { "pattern": "basketball.twtools.cc", "custom_domain": true }
+  ]
+}
