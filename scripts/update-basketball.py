@@ -60,7 +60,10 @@ def _indexnow_changed_urls():
     """本次 build 實際「新增/變動」的頁面 URL（IndexNow 協定要求只推變動，別每次全站掃）。
     偵測靠 git：public-basketball/ 產物有 commit、CI checkout 乾淨 → build 後的髒檔＝本次變動。
     回 (all_urls, new_urls)——new_urls 是 untracked 新頁，部署前 404，是「真 live」的 poll 訊號。"""
-    out = subprocess.run(["git", "status", "--porcelain", "--", "public-basketball"],
+    # --untracked-files=all：預設會把未追蹤「目錄」折疊成 `?? dir/` 一行，
+    # 新文章的 index.html 就不會出現、IndexNow 整批漏送（2026-07-19 外部審查實證）
+    out = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all",
+                          "--", "public-basketball"],
                          cwd=str(ROOT), capture_output=True, text=True).stdout
     urls, new = set(), []
     for line in out.splitlines():
