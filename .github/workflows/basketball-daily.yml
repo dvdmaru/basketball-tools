@@ -40,6 +40,9 @@ jobs:
       - name: Install Python deps (pinned)
         run: pip install 'markdown==3.10.2'
 
+      - name: Unit tests (fixture-based，deploy 前擋線)
+        run: python -m unittest discover -s tests -v
+
       - uses: actions/setup-node@v5
         with:
           node-version: "22"

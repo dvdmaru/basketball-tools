@@ -126,8 +126,8 @@ def build_history(today: str):
     for name, sn in seasons:
         row = {"season": name, "boys_champion": None, "girls_champion": None}
         try:
+            sns = finals_stage_sns(sn)  # 每學年查一次，男女組共用（別在迴圈內重打 API）
             for key, field in (("boys", "boys_champion"), ("girls", "girls_champion")):
-                sns = finals_stage_sns(sn)
                 if key in sns:
                     row[field] = rank_division(sns[key], key)["champion"]
         except Exception as e:

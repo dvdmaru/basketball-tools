@@ -43,9 +43,11 @@ python3 scripts/update-basketball.py            # 抓資料 + 重生
 python3 scripts/update-basketball.py --skip-fetch   # 只重生（用既有快照）
 
 # 手動部署（本機；token 從檔案讀，勿貼明文）
+# ⚠️ 一律走 update-basketball.py（先重建再部署）——repo 內 committed 的
+# public-basketball/ 不含文章詳情頁，裸 wrangler deploy 會把線上文章頁蓋成 404。
 CLOUDFLARE_API_TOKEN=$(cat ~/.config/cloudflare/foootball-tools-2019.token) \
 CLOUDFLARE_ACCOUNT_ID=2f123fdee05d453c8a077b6ba541c45d \
-npx wrangler deploy -c wrangler-basketball.jsonc </dev/null
+python3 scripts/update-basketball.py --skip-fetch --deploy </dev/null
 
 # 雲端隨選重建+部署（不需本機 token）
 gh workflow run basketball-daily.yml --ref main

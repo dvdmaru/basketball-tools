@@ -6,5 +6,38 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
+    <lastBuildDate>Sun, 19 Jul 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍</title>
+      <link>https://basketball.twtools.cc/articles/hbl-league-guide/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-league-guide/</guid>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>HBL（高中籃球甲級聯賽）由高中體總主辦，是台灣高中籃球最高層級賽事，1988 年開辦，以學年度稱呼賽季，近年男女子組決賽都在台北小巨蛋舉行。</description>
+    </item>
+    <item>
+      <title>2025-26 NBA 賽季總回顧：紐約尼克隊史第 3 冠，相隔 53 年重返總冠軍</title>
+      <link>https://basketball.twtools.cc/articles/nba-2025-26-season-review/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-2025-26-season-review/</guid>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>2025-26 NBA 總冠軍為紐約尼克，總冠軍賽以 4:1 擊敗聖安東尼奧馬刺；尼克上兩次封王分別是 1970 年與 1973 年，本季是隊史第 3 冠、相隔 53 年後再度奪冠。</description>
+    </item>
+    <item>
+      <title>NBA 完全指南：30 隊架構、賽季節奏與冠軍格局一次讀懂</title>
+      <link>https://basketball.twtools.cc/articles/nba-league-guide/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-league-guide/</guid>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 由東西區各 15 隊、共 30 隊組成，例行賽每隊 82 場，例行賽後段先打附加賽決出最後兩張季後賽門票，再進入七戰四勝制的季後賽與總冠軍賽。</description>
+    </item>
+    <item>
+      <title>為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析</title>
+      <link>https://basketball.twtools.cc/articles/taiwan-hoops-two-leagues/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/taiwan-hoops-two-leagues/</guid>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>截至 2026 年 7 月，台灣職籃由 TPBL（7 隊）與 PLG（4 隊）兩聯盟並立；2025 年 7 月一度討論合併，7 月 31 日 TPBL 宣布終止談判，兩聯盟各自運作至今。</description>
+    </item>
   </channel>
 </rss>

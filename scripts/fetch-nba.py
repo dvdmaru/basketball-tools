@@ -134,9 +134,17 @@ def fetch_finals(season: int, zh: dict):
     }
 
 
+def default_season() -> int:
+    """ESPN 以「結束年」計賽季；NBA 賽季 10 月開打、隔年 6 月結束。
+    10 月起視為新賽季（結束年＝隔年），7-9 月休賽季仍指向剛結束的那季。"""
+    today = datetime.date.today()
+    return today.year + 1 if today.month >= 10 else today.year
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--season", type=int, default=2026, help="賽季結束年（2026 = 2025-26）")
+    ap.add_argument("--season", type=int, default=default_season(),
+                    help="賽季結束年（2026 = 2025-26；預設由今天日期推導）")
     args = ap.parse_args()
     zh = load_zh()
     label = season_label(args.season)
