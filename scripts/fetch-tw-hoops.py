@@ -28,6 +28,8 @@ import time
 import zoneinfo
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import snapshot_guard  # noqa: E402  （同目錄模組；ROOT 定義後才 import）
 OUT_DIR = ROOT / "leagues"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) basketball-tools/1.0"
 
@@ -185,7 +187,15 @@ def main():
     }
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     path = OUT_DIR / f"tw-hoops-{today}.json"
-    path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 日期序列快照：新檔沒有前一份可比 → baseline 指向目前生效那份（生成端取 sorted()[-1]），
+    # 否則寫進一份空的就會因檔名排序在後而 shadow 掉昨天的好資料。
+    if not snapshot_guard.guarded_write(
+            path, out,
+            lambda d: sum(len(lg.get("standings", []))
+                          for lg in (d or {}).get("leagues", {}).values()),
+            label=f"tw-hoops-{today}", indent=1,
+            baseline=snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))):
+        sys.exit(2)
     print(f"✅ TW hoops {season_label}: TPBL {len(tpbl['standings'])} 隊"
           f"（冠軍 {tpbl['champion_zh']}）+ PLG {len(plg['standings'])} 隊"
           f"（冠軍 {plg['champion_zh']}）→ {path}")

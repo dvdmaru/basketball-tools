@@ -25,6 +25,8 @@ import sys
 import time
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import snapshot_guard  # noqa: E402  （同目錄模組；ROOT 定義後才 import）
 OUT_DIR = ROOT / "leagues"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) basketball-tools/1.0"
 
@@ -164,7 +166,10 @@ def main():
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     path = OUT_DIR / f"nba-standings-{label}.json"
-    path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 30 隊戰績不可能全空；空＝上游異常 → 拒寫、保留 last-known-good（編排器 fail-soft 沿用舊快照）
+    if not snapshot_guard.guarded_write(path, out, lambda d: len((d or {}).get("standings", [])),
+                                        label=f"nba-standings-{label}", indent=1):
+        sys.exit(2)
     ch = out.get("champion_zh", "（賽季進行中）")
     print(f"✅ NBA {label}: 30 隊 standings + 冠軍 {ch} → {path}")
 

@@ -145,7 +145,15 @@ def main():
     run(script("gen-hbl-page.py"), "gen HBL page")
     run(script("gen-basketball-data-hub.py"), "gen data hub")
 
-    # 4.（可選）部署；成功後把本次變動頁 ping 給 IndexNow（Bing 系收錄）
+    # 4. 部署前 hard gate：建置/生成類有任何失敗 → 禁止部署，線上維持上一版。
+    #    （build 步驟照樣跑完收集診斷；擋的只有「把壞產物推上線」這一步。
+    #      fetch 類是 fail-soft、不進 FAILED，所以斷源不會把整站凍在這裡。）
+    if FAILED:
+        print(f"\n⛔ {len(FAILED)} 個建置步驟失敗（{'、'.join(FAILED)}）→ 禁止部署，線上維持上一版",
+              flush=True)
+        sys.exit(1)
+
+    # 5.（可選）部署；成功後把本次變動頁 ping 給 IndexNow（Bing 系收錄）
     if args.deploy or os.environ.get("CLOUDFLARE_API_TOKEN"):
         # pin wrangler 版本：CI 每次跑此步都帶著 CLOUDFLARE_API_TOKEN，
         # 不釘版本 = 供應鏈若中毒可直接偷 token 改寫線上 Worker。
