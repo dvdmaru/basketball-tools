@@ -26,6 +26,18 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("nba-league-guide", "NBA · 完全指南",
+     "美國職籃<br>完全指南",
+     "30 隊 · 東西區　·　附加賽到總冠軍賽一次看懂"),
+    ("taiwan-hoops-two-leagues", "台灣職籃 · 並立格局",
+     "為什麼有<br>兩個聯盟",
+     "TPBL 7 隊 × PLG 4 隊　·　合併破局始末"),
+    ("hbl-league-guide", "HBL · 完全指南",
+     "高中籃球<br>完全指南",
+     "男甲 37 隊 · 女甲 16 隊　·　小巨蛋的三月"),
+    ("nba-2025-26-season-review", "2025-26 · 賽季回顧",
+     "尼克<br>53 年再奪冠",
+     "總冠軍賽 4:1 勝馬刺　·　東西區終局全紀錄"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
@@ -43,7 +55,7 @@ body{{
   border-radius:50%;right:-820px;top:-340px}}
 .seam2{{position:absolute;width:1500px;height:1500px;border:3px solid rgba(239,125,58,.10);
   border-radius:50%;right:-760px;top:-280px}}
-.pad{{position:absolute;inset:0;padding:74px 78px;display:flex;flex-direction:column;height:100%}}
+.pad{{position:absolute;inset:0;padding:74px 78px 128px;display:flex;flex-direction:column;height:100%}}
 .top{{display:flex;align-items:center;gap:18px}}
 .mark{{font-family:"Arial Black","PingFang TC",sans-serif;font-weight:900;letter-spacing:1px;
   font-size:30px;color:#ef7d3a}}

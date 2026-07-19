@@ -73,7 +73,7 @@ def fetch_standings(season: int, zh: dict) -> list:
             name = team.get("displayName", "")
             rows.append({
                 "conference": cname,
-                "rank": int(sval("playoffSeed", "0") or 0),
+                "seed": int(sval("playoffSeed", "0") or 0),
                 "name": name,
                 "name_zh": zh.get(name, name),
                 "abbr": team.get("abbreviation", ""),
@@ -85,6 +85,15 @@ def fetch_standings(season: int, zh: dict) -> list:
             })
     if len(rows) != 30:
         raise RuntimeError(f"expected 30 teams, got {len(rows)} — ESPN shape changed?")
+    # ⚠️ ESPN 的 playoffSeed 是「附加賽後的季後賽種子」不是例行賽名次（2026 實例：太陽
+    # 例行賽第 7 但附加賽輸給拓荒者 → seed 8）。頁面/文章要的是例行賽終局排名 →
+    # 依勝率重排；同勝率之先後以 seed 為次鍵（經 2026 對照附加賽對位「7th vs 8th
+    # Place」標籤，可重現官方名次）。seed 欄保留供對照。
+    for conf in ("Eastern", "Western"):
+        grp = [r for r in rows if r["conference"] == conf]
+        grp.sort(key=lambda r: (-(r["wins"] / max(r["wins"] + r["losses"], 1)), r["seed"]))
+        for i, r in enumerate(grp):
+            r["rank"] = i + 1
     return rows
 
 
