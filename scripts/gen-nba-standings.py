@@ -125,7 +125,8 @@ def _page_faq(season, asof, final):
     return [
         (f"NBA {season} 賽季的排名是最終結果嗎？",
          f"{'是。' if final else '不是，賽季仍在進行。'}本頁排名截至 {asof}，"
-         f"為 {season} 例行賽{'終局' if final else '目前'}戰績；排序採各區種子序（playoff seed）。{upd}"),
+         f"為 {season} 例行賽{'終局' if final else '目前'}名次（同勝率球隊之先後依聯盟正式比序）；"
+         "附加賽結果可能使季後賽種子與例行賽名次不同，本頁呈現的是例行賽名次。{}".format(upd)),
         ("排名的「勝差」怎麼算？",
          "勝差（GB）＝（區龍頭勝場 − 該隊勝場 ＋ 該隊敗場 − 區龍頭敗場）÷ 2，是追上該區第一名所需的場次差；「—」表示該隊即為區龍頭。"),
         ("這個頁面的資料來源是什麼？",
@@ -170,7 +171,8 @@ def build_page(snap):
     status_txt = "例行賽終局" if final else "例行賽進行中"
     asof_note = (
         f'<p class="st-asof">資料整理自 ESPN 公開之 NBA 數據（site.api.espn.com），截至 {asof}；'
-        f'{season} 賽季{status_txt}。排序採各區種子序。'
+        f'{season} 賽季{status_txt}。排序為例行賽名次（同勝率之先後依聯盟正式比序）；'
+        '附加賽後的季後賽種子可能與例行賽名次不同。'
         '本站為非官方資料整理站，與 NBA 及各球團無任何關聯或授權；'
         '球隊名稱與相關權利屬 NBA 及各權利人所有，引用請以官方公告為準。</p>'
     )
