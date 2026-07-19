@@ -28,6 +28,8 @@ import time
 import zoneinfo
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import snapshot_guard  # noqa: E402  （同目錄模組；ROOT 定義後才 import）
 OUT_DIR = ROOT / "leagues"
 BASE = "https://hbl.com.tw"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) basketball-tools/1.0"
@@ -164,7 +166,12 @@ def main():
     }
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     path = OUT_DIR / f"hbl-{season_name}-{today}.json"
-    path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 同 tw-hoops 的日期序列語意；抓到的學年度不可能一組都沒有
+    if not snapshot_guard.guarded_write(
+            path, out, lambda d: len((d or {}).get("divisions", {})),
+            label=f"hbl-{season_name}-{today}", indent=1,
+            baseline=snapshot_guard.newest(str(OUT_DIR / f"hbl-{season_name}-*.json"))):
+        sys.exit(2)
     champs = "、".join(f"{d['label']} {d['champion']}" for d in divisions.values())
     print(f"✅ HBL {season_name}學年度: {champs} → {path}")
 

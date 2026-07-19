@@ -1,0 +1,22 @@
+# 最小 quality gate：PR 與 main push 跑回歸測試（2026-07-19 站群共病修正後建，比照 racing/baseball）。
+# 測試鎖的行為都屬於「壞了不會在畫面上立刻看見、只會在某天排程默默出錯」那一類：
+# 部署 hard gate 的 soft/hard 分野、草稿真下架、日期序列快照的 last-known-good 保護。
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s tests -v

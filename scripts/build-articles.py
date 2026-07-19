@@ -2490,6 +2490,19 @@ def build():
         articles.append({"slug": slug, "meta": meta, "excerpt": excerpt,
                          "faq": faq, "body_html": body_html, "out_dir": out_dir})
 
+    # ----- 真下架：草稿 gate 只是 `continue` 跳過，既有輸出目錄仍留在 public-*/articles/，
+    # 從首頁/列表/RSS/sitemap 消失但網址照樣打得開（＝沒有真的撤下）。這裡清掉本次未產出的目錄。
+    # ⚠️ 只清理「本次確實有產出文章」的站根：多站共用本腳本，若某站這次一篇都沒產出，
+    # 代表它不在本次建置範圍內，絕不能把它整個 articles/ 清空。 -----
+    produced = {}  # pub_root/articles -> {slug}
+    for a in articles:
+        produced.setdefault(a["out_dir"].parent, set()).add(a["slug"])
+    for art_root, keep_slugs in produced.items():
+        for child in sorted(art_root.iterdir()):
+            if child.is_dir() and child.name not in keep_slugs:
+                shutil.rmtree(child)
+                print(f"   🧹 removed stale article output: {child.name}（草稿或已下架）")
+
     # ----- prev/next neighbors computed PER SITE (sport) so each site's daily/feature rails
     # are independent. Soccer's group == all WC/soccer articles, so its neighbors (and thus
     # output) stay byte-identical; baseball features never enter soccer's rail. -----
