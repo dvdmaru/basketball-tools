@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""gen-tw-standings.py — 台灣職籃戰績頁（public-basketball/tw/）。
+"""gen-tw-standings.py — 台灣職籃戰績頁（public-basketball/tw/）v2。
 
-TPBL 與 P. LEAGUE+ 兩聯盟戰績（server-rendered，CSS-only tabs）。台灣職籃現況＝
-兩聯盟並立（2025-07 合併談判破局），本頁把兩張戰績表放同一頁、tab 切換。
+Claude Design 元件落地：page-hero＋TPBL/PLG CSS-only tabs（v2 .std 表：斑馬紋＋
+seed 晶片＋手機釘欄；晉級門檻未經查核，不畫分帶）＋每聯盟 champ-band＋details FAQ。
 吃 leagues/tw-hoops-<date>.json（fetch-tw-hoops.py 產物）。
 
 用法：python3 scripts/gen-tw-standings.py
@@ -30,38 +30,6 @@ ba = _load("build_articles", "build-articles.py")
 SITE = ba.SITES.get("basketball")
 BASE = SITE["base"]
 
-PAGE_CSS = """
-.st-h1 { font-family: var(--font-display); font-size: clamp(30px,5vw,46px); line-height:1.1; margin: 4px 0 6px; }
-.st-sub { color: var(--fg-soft); font-size: 15px; margin: 10px 0 22px; }
-.champ-band { display:flex; align-items:center; gap:14px; border:1px solid var(--accent-line);
-  background:var(--accent-soft); border-radius:12px; padding:14px 18px; margin: 0 0 18px; }
-.champ-band .ic { font-size: 26px; }
-.champ-band .t { font-weight:900; font-size:16px; color:var(--fg); }
-.champ-band .d { color:var(--dim); font-size:13px; margin-top:2px; }
-.tabs > input[name="twtab"] { position:absolute; opacity:0; width:0; height:0; }
-.tablabels { display:flex; flex-wrap:wrap; gap:8px; margin: 8px 0 22px; border-bottom:1px solid var(--line); }
-.tablabels label { cursor:pointer; padding:9px 16px; font-size:14.5px; font-weight:700; color:var(--dim);
-  border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .15s, border-color .15s; }
-.tablabels label:hover { color: var(--fg); }
-.panel { display:none; }
-#twtab-t:checked ~ .tablabels label[for="twtab-t"],
-#twtab-p:checked ~ .tablabels label[for="twtab-p"] { color: var(--accent); border-bottom-color: var(--accent); }
-#twtab-t:checked ~ .panel-t, #twtab-p:checked ~ .panel-p { display:block; }
-.std-table { width:100%; border-collapse:collapse; margin: 8px 0 14px; font-size: 14px; }
-.std-table th, .std-table td { padding: 8px 6px; text-align:center; border-bottom:1px solid var(--line); white-space:nowrap; }
-.std-table th { color: var(--dim); font-weight:600; font-size:12px; }
-.std-table td.l, .std-table th.l { text-align:left; white-space:normal; }
-.std-table td.rk { color:var(--dim); font-family:var(--font-mono); font-size:12.5px; }
-.std-table tr.lead td.tm { font-weight:800; }
-.std-pts { color: var(--accent); font-weight:800; }
-.st-asof { color:var(--dim); font-size:12.5px; line-height:1.6; margin: 24px 0 8px; border-top:1px solid var(--line); padding-top:14px; }
-.st-faq { margin-top: 20px; display: grid; gap: 10px; }
-.st-faq .qa { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; }
-.st-faq h3 { font-size: 15px; font-weight: 800; color: var(--fg); margin: 0 0 6px; line-height: 1.45; }
-.st-faq p { font-size: 13.5px; color: var(--fg-soft); line-height: 1.7; margin: 0; }
-.st-faq-sec { font-family: 'Anton', 'Noto Sans TC', sans-serif; font-size: 20px; letter-spacing: .5px; margin: 28px 0 4px; }
-"""
-
 
 def _shell(title, desc, canonical, jsonld, body):
     return f"""<!DOCTYPE html>
@@ -85,42 +53,24 @@ def _shell(title, desc, canonical, jsonld, body):
 {ba.ga_snippet(SITE)}
 <style>
 {ba.SHARED_TOKENS_CSS}{ba.extra_theme_css(SITE)}
-{ba.THEME_SWITCH_CSS}
 {ba.SITE_HEADER_CSS}
-{PAGE_CSS}
+{ba.BB_HOME_CSS}
+{ba.BB_PAGE_EXTRA_CSS}
+#t-tpbl:checked~.tablist label[for=t-tpbl],
+#t-plg:checked~.tablist label[for=t-plg]{{color:var(--fg);border-bottom-color:var(--accent)}}
+#t-tpbl:checked~#p-tpbl,#t-plg:checked~#p-plg{{display:block}}
 </style>
 </head>
 <body>
 {ba.site_header_html('data', SITE)}
-<div class="container">
+<main class="wrap">
 {body}
-</div>
+</main>
 {ba.site_footer_html(SITE)}
 <script>{ba.theme_switch_js(SITE)}</script>
 </body>
 </html>
 """
-
-
-def league_panel(lg, season, asof):
-    band = ""
-    if lg.get("champion_zh"):
-        band = (f'<div class="champ-band"><span class="ic">🏆</span><span>'
-                f'<div class="t">{season} 總冠軍：{html_lib.escape(lg["champion_zh"])}</div>'
-                f'<div class="d">{html_lib.escape(lg.get("finals_note", ""))}</div></span></div>')
-    trs = ""
-    for r in lg.get("standings", []):
-        lead = ' class="lead"' if r.get("rank") == 1 else ""
-        pct = str(r.get("pct", "")).lstrip("0") or "0"
-        trs += (f'<tr{lead}><td class="rk">{r.get("rank")}</td>'
-                f'<td class="l tm">{html_lib.escape(r.get("team_name", ""))}</td>'
-                f'<td class="std-pts">{r.get("win")}</td><td>{r.get("lose")}</td>'
-                f'<td>{pct}</td><td>{html_lib.escape(str(r.get("games_behind", "—")))}</td></tr>')
-    table = ('<table class="std-table"><thead><tr><th class="rk">#</th><th class="l">球隊</th>'
-             '<th>勝</th><th>敗</th><th>勝率</th><th>勝差</th></tr></thead>'
-             f'<tbody>{trs}</tbody></table>')
-    src = f'<div class="st-sub">例行賽戰績（截至 {asof}）· {html_lib.escape(lg.get("source", ""))}</div>'
-    return band + table + src
 
 
 def _page_faq(season, asof):
@@ -142,11 +92,18 @@ def _page_faq(season, asof):
     ]
 
 
-def _faq_html(pairs):
-    qa = "".join(
-        f'<div class="qa"><h3>{html_lib.escape(q)}</h3><p>{html_lib.escape(a)}</p></div>'
-        for q, a in pairs)
-    return f'<h2 class="st-faq-sec">常見問題</h2><section class="st-faq">{qa}</section>'
+def league_panel(lg, season, asof, source_note):
+    band = ""
+    if lg.get("champion_zh"):
+        band = ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
+                f'<div class="lbl">{season} 總冠軍</div>'
+                f'<div class="nm">{html_lib.escape(lg["champion_zh"])}</div>'
+                f'<div class="sr">{html_lib.escape(lg.get("finals_note", ""))}</div>'
+                '</div></div>')
+    km = ("rank", "team_name", "win", "lose", "pct", "games_behind")
+    hint = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
+    cap = f'<div class="tbl-cap">{season} 例行賽終局 · 快照 {asof} · {html_lib.escape(source_note)}</div>'
+    return band + hint + ba._std_table_v2(lg.get("standings", []), km) + cap
 
 
 def build_page(snap):
@@ -156,25 +113,23 @@ def build_page(snap):
     tpbl = snap["leagues"]["tpbl"]
     plg = snap["leagues"]["plg"]
     tabs = (
-        '<div class="tabs">'
-        '<input type="radio" name="twtab" id="twtab-t" checked>'
-        '<input type="radio" name="twtab" id="twtab-p">'
-        '<div class="tablabels"><label for="twtab-t">TPBL（7 隊）</label>'
-        '<label for="twtab-p">P. LEAGUE+（4 隊）</label></div>'
-        f'<div class="panel panel-t">{league_panel(tpbl, season, asof)}</div>'
-        f'<div class="panel panel-p">{league_panel(plg, season, asof)}</div>'
-        '</div>'
-    )
-    asof_note = (
-        f'<p class="st-asof">資料快照日期 {asof}；{season} 賽季已結束，表列為例行賽終局戰績與總冠軍結果。'
-        'TPBL 整理自官網公開資料（api.tpbl.basketball，非官方文件化介面）、PLG 整理自官網戰績頁；'
-        '兩聯盟均未提供官方文件化 API，資料屬非官方整理。'
-        '本站與 TPBL、P. LEAGUE+ 及各球團無任何關聯或授權；引用請以官方公告為準。</p>'
-    )
+        '<div class="tabwrap tabs">'
+        '<input type="radio" name="lg" id="t-tpbl" checked>'
+        '<input type="radio" name="lg" id="t-plg">'
+        '<div class="tablist"><label for="t-tpbl">TPBL（7 隊）</label><label for="t-plg">P. LEAGUE+（4 隊）</label></div>'
+        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）")}</div>'
+        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁")}</div>'
+        '</div>')
+    note = ('<div class="tbl-cap">兩聯盟均未提供官方文件化 API，資料屬非官方整理；'
+            '本站與 TPBL、P. LEAGUE+ 及各球團無任何關聯或授權，引用請以官方公告為準。</div>')
     faq = _page_faq(season, asof)
-    body = (f'<h1 class="st-h1">台灣職籃戰績 — TPBL × P. LEAGUE+</h1>'
-            f'<div class="st-sub">台灣兩個職業籃球聯盟的 {season} 賽季戰績與總冠軍，同頁對照（截至 {asof}）。</div>'
-            f'{tabs}{_faq_html(faq)}{asof_note}')
+    body = (
+        '<section class="page-hero">'
+        '<h1>台灣職籃戰績 — <span class="en">TPBL</span> × <span class="en">PLG</span></h1>'
+        f'<p class="sub">台灣兩個職業籃球聯盟的 {season} 賽季戰績與總冠軍，同頁對照（截至 {asof}）。'
+        '兩聯盟自 2025 年 7 月合併談判破局後並立營運。</p>'
+        '</section>'
+        + tabs + note + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
             "name": f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）", "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}

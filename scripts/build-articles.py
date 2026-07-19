@@ -2054,10 +2054,11 @@ def _cjk_count(html_text: str) -> int:
     return len([c for c in text if "一" <= c <= "鿿"])
 
 
-def _std_table_v2(rows, key_map, po_max=0, pi_max=0, min_width=True):
+def _std_table_v2(rows, key_map, po_max=0, pi_max=0, abbr_key=None):
     """v2 戰績表（mock .std）：斑馬紋＋（可選）季後賽/附加賽分帶＋seed 晶片＋手機釘欄。
     rows 依 key_map 取值：key_map=(rank, team, win, lose, pct, gb) 的欄位名 tuple。
-    po_max/pi_max=0 表示不畫分帶（TPBL/PLG 晉級門檻未驗證，不標）。"""
+    po_max/pi_max=0 表示不畫分帶（TPBL/PLG 晉級門檻未驗證，不標）；
+    abbr_key 給了就多一欄縮寫（/standings/ 桌機版用）。"""
     rk, tk, wk, lk, pk, gk = key_map
     trs = ""
     n = len(rows)
@@ -2074,14 +2075,52 @@ def _std_table_v2(rows, key_map, po_max=0, pi_max=0, min_width=True):
         team = r.get(tk) or r.get("name") or ""
         pct = str(r.get(pk, "")).lstrip("0") or "0"
         gb = html_lib.escape(str(r.get(gk, "—")))
+        abbr_td = (f'<td class="c-abbr"><span class="abbr">{html_lib.escape(str(r.get(abbr_key, "")))}</span></td>'
+                   if abbr_key else "")
         trs += (f'<tr{cls_attr}><td class="c-rank"><span class="seed">{rank}</span></td>'
-                f'<td class="c-team">{html_lib.escape(team)}</td>'
+                f'<td class="c-team">{html_lib.escape(team)}</td>{abbr_td}'
                 f'<td class="win">{r.get(wk)}</td><td>{r.get(lk)}</td>'
                 f'<td class="pct">{pct}</td><td class="gb">{gb}</td></tr>')
+    abbr_th = '<th class="c-abbr">縮寫</th>' if abbr_key else ""
     return ('<div class="tbl-scroll"><table class="std">'
-            '<thead><tr><th class="c-rank">#</th><th class="c-team">球隊</th>'
+            f'<thead><tr><th class="c-rank">#</th><th class="c-team">球隊</th>{abbr_th}'
             '<th>勝</th><th>敗</th><th>勝率</th><th>勝差</th></tr></thead>'
             f'<tbody>{trs}</tbody></table></div>')
+
+
+# ---------- v2 內頁共用（/standings/ /tw/ /hbl/：page-hero＋champ-band＋FAQ details） ----------
+BB_PAGE_EXTRA_CSS = """
+.page-hero{padding:52px 0 30px}
+.page-hero h1{font-family:var(--f-text);font-weight:900;font-size:clamp(30px,4.5vw,50px);line-height:1.08;letter-spacing:-.5px}
+.page-hero h1 .en{font-family:var(--f-display);font-weight:400;color:var(--accent);letter-spacing:1px}
+.page-hero .sub{margin-top:14px;color:var(--fg-soft);font-size:clamp(14px,1.4vw,16px);max-width:640px;text-wrap:pretty}
+.champ-band{display:flex;align-items:center;gap:20px;background:linear-gradient(120deg,var(--surface-2),var(--surface));border:1px solid color-mix(in srgb,var(--gold) 32%,transparent);border-radius:var(--r-lg);padding:22px 26px;position:relative;overflow:hidden;margin-bottom:30px}
+.champ-band::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.champ-band .bseal{flex:none;width:56px;height:56px;border-radius:50%;border:2px solid color-mix(in srgb,var(--gold) 55%,transparent);display:grid;place-items:center;font-weight:900;font-size:24px;color:var(--gold)}
+.champ-band .bt .lbl{font-family:var(--f-ui);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.champ-band .bt .nm{font-weight:900;font-size:clamp(22px,3vw,30px);line-height:1.1;margin:4px 0 5px;color:var(--fg)}
+.champ-band .bt .sr{font-size:13.5px;color:var(--fg-mute);font-variant-numeric:tabular-nums}
+table.std .c-abbr{text-align:center}
+.abbr{font-family:ui-monospace,"SF Mono",monospace;font-size:11.5px;color:var(--fg-dim);letter-spacing:.5px}
+@media(max-width:640px){table.std .c-abbr{display:none}}
+"""
+
+
+def bb_slabel(k_html: str, r_text: str) -> str:
+    """v2 節標（editorial rule）。k_html 可含 <em>。"""
+    return (f'<div class="slabel"><span class="k">{k_html}</span><span class="rule"></span>'
+            f'<span class="r">{html_lib.escape(r_text)}</span></div>')
+
+
+def bb_faq_details_html(pairs) -> str:
+    """v2 FAQ（details 折疊；內容全在 DOM，faq_node schema 照舊鏡射同一組 pairs）。"""
+    items = "".join(
+        f'<details{" open" if i == 0 else ""}><summary>{html_lib.escape(q)}<span class="chev">＋</span></summary>'
+        f'<div class="ans">{html_lib.escape(a)}</div></details>'
+        for i, (q, a) in enumerate(pairs))
+    return ('<section class="blk"><div class="sp"></div>'
+            + bb_slabel('常見 <em>問題</em>', 'FAQ')
+            + f'<div class="faq">{items}</div></section>')
 
 
 _SCROLL_HINT = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
