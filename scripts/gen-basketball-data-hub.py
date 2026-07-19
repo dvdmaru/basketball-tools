@@ -76,12 +76,14 @@ def _shell(title, desc, canonical, jsonld, body):
 </style>
 </head>
 <body>
-<div class="bb-shell">{ba.site_header_html('data', SITE)}
+{ba.site_header_html('data', SITE)}
+<div class="bb-shell">
 <main>
 {body}
 </main>
-{ba._bb_footer(SITE)}
 </div>
+{ba._bb_footer(SITE)}
+<script>{ba.theme_switch_js(SITE)}</script>
 </body>
 </html>
 """
