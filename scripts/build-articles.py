@@ -326,6 +326,42 @@ SITE_HEADER_CSS = """
 }
 .site-disclaimer { font-size: 11px; color: var(--faint); line-height: 1.7; text-align: center; max-width: 600px; margin: 18px auto 0; }
 .site-disclaimer span { opacity: 0.75; }
+
+/* ---------- v2 header（Claude Design mock；basketball 全站） ---------- */
+.container{max-width:1180px;margin:0 auto}
+.site-head{position:sticky;top:0;z-index:40;background:var(--bb-header-bg);
+  backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--line);margin:0 -16px}
+.head-in{display:flex;align-items:center;gap:20px;padding:14px 28px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:2px;margin-right:auto;text-decoration:none}
+.brand .mark{font-family:var(--f-display);font-size:26px;letter-spacing:.5px;color:var(--accent);line-height:1}
+.brand .mark b{color:var(--fg);font-weight:400}
+.brand .tag{font-family:var(--f-ui);font-size:10.5px;letter-spacing:2.5px;color:var(--fg-mute);text-transform:uppercase}
+.nav2{display:flex;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
+.nav2 a{padding:7px 14px;border-radius:999px;color:var(--fg-soft)}
+.nav2 a:hover{background:var(--surface-2);color:var(--fg)}
+.nav2 a.on{background:var(--accent);color:var(--accent-ink)}
+.theme{display:flex;align-items:center;gap:9px;padding-left:16px;border-left:1px solid var(--line)}
+.theme .lbl{font-family:var(--f-ui);font-size:10px;letter-spacing:1.5px;color:var(--fg-dim);text-transform:uppercase}
+.dots{display:flex;gap:7px}
+.dot{width:18px;height:18px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;transition:transform .12s}
+.dot:hover{transform:scale(1.15)}
+.dot[aria-pressed="true"]{border-color:var(--fg)}
+@media(max-width:640px){
+  .head-in{padding:12px 18px;gap:12px}
+  .nav2{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .nav2::-webkit-scrollbar{display:none}
+  .theme{padding-left:12px}
+  .theme .lbl{display:none}
+}
+/* ---------- v2 footer ---------- */
+.foot{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-deep);margin-left:-16px;margin-right:-16px}
+.foot-in{max-width:1180px;margin:0 auto;padding:36px 28px 60px}
+.foot .disc{font-size:12px;color:var(--fg-dim);line-height:1.7;text-align:center;max-width:760px;margin:0 auto 20px}
+.foot .flinks{display:flex;justify-content:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px;margin-bottom:18px}
+.sisters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-family:var(--f-ui);font-size:12.5px;color:var(--fg-mute)}
+.sisters a{color:var(--fg-soft)}
+.sisters b{color:var(--fg-dim);font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:11px}
 """
 
 # 非官方聲明（全 surface footer）— 降低 false-affiliation 商標風險（nominative fair use 硬化）
@@ -367,10 +403,45 @@ def sister_sites_html(site: dict) -> str:
 
 
 def site_header_html(active: str, site: dict = None) -> str:
-    """active: nav key to mark current ('home'|'standings'|'articles'|...).
-    site: per-sport identity (brand_mark/brand_tag/nav/external_link). None -> soccer
-    (reproduces the legacy @FOOOTBALL header byte-for-byte)."""
+    """active: nav key to mark current ('home'|'data'|'articles'|...).
+    Basketball -> v2 sticky 毛玻璃 header（brand + pill nav + 主題 dots，mock 落地）；
+    soccer fallback 保留 legacy 版。放在 container 外（頁殼負責）。"""
     site = site or SOCCER_SITE
+    if site.get("default_theme", "grass") in BB_THEME_KEYS:
+        parts = []
+        for n in site.get("nav", []):
+            cls = ' class="on"' if n.get("key") == active else ""
+            parts.append(f'<a href="{n["href"]}"{cls}>{n["label"]}</a>')
+        ext = site.get("external_link")
+        if ext:
+            parts.append(f'<a href="{ext["href"]}" target="_blank" rel="noopener">{ext["label"]}</a>')
+        links = "\n      ".join(parts)
+        mark = html_lib.escape(site["brand_mark"])
+        if mark.startswith("@"):
+            mark = f'@<b>{mark[1:]}</b>'
+        dots = "\n        ".join(
+            f'<button class="dot" style="background:{acc}" data-set-theme="{k}" '
+            f'aria-pressed="{"true" if k == site.get("default_theme") else "false"}" title="{zh}"></button>'
+            for k, zh, acc in BB_THEME_DOTS)
+        return f"""
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="/">
+      <span class="mark">{mark}</span>
+      <span class="tag">{html_lib.escape(site["brand_tag"])}</span>
+    </a>
+    <nav class="nav2">
+      {links}
+    </nav>
+    <div class="theme">
+      <span class="lbl">配色</span>
+      <div class="dots">
+        {dots}
+      </div>
+    </div>
+  </div>
+</header>
+"""
     parts = []
     for n in site.get("nav", []):
         cls = ' class="active"' if n.get("key") == active else ""
@@ -392,20 +463,60 @@ def site_header_html(active: str, site: dict = None) -> str:
 """
 
 
-# ---- 籃球數據誌 dark-brand palette: ember (default) + accent variants ----
-# Every theme is a DARK background + warm text + a single accent, so the dark text-only covers
-# and the tuned sticky header hold across all of them. Deliberately distinct from baseball's
-# navy/gold family: default = charcoal + basketball orange. The color switcher
-# (theme_switch_html/js below) lets readers pick one; choice persists in localStorage('bk-theme').
-# Row: key, 中文, accent, bg, bg_glow, surface, surface2, surface3, accent_bright, accent_ink, header_bg
-BB_THEMES = [
-    ("ember",  "炭橘",   "#ef7d3a", "#14100e", "#1c1512", "#1c1714", "#241d19", "#2c231e", "#ff9250", "#14100e", "rgba(18,14,12,0.88)"),
-    ("court",  "木地板", "#d9a04c", "#171006", "#201709", "#201808", "#281e0e", "#322614", "#e8b45f", "#171006", "rgba(20,14,5,0.88)"),
-    ("slate",  "石墨",   "#9db4d4", "#16181d", "#1c1f25", "#202329", "#282c34", "#31353f", "#b3c6e0", "#16181d", "rgba(18,20,24,0.88)"),
-    ("jade",   "墨玉",   "#4fbe80", "#08201a", "#0c281f", "#0e2c23", "#13372b", "#184234", "#63d093", "#08201a", "rgba(7,26,20,0.86)"),
-    ("violet", "暗紫",   "#a07be0", "#141020", "#1a1530", "#1c1730", "#241e3c", "#2c2549", "#b492ec", "#141020", "rgba(17,13,28,0.88)"),
-]
-BB_THEME_KEYS = [t[0] for t in BB_THEMES]
+# ---- 籃球數據誌 dark-brand palette v2（Claude Design mock 2026-07-19 落地）----
+# ember 預設值採 design-notes token 表（「保留現況值」條目沿用建站日色票）；
+# court/slate/jade/violet 變體取自 mock stylesheet（只換 accent 與底色階）。
+# 舊代元件（文章頁 ARTICLE_CSS/INDEX_CSS、gen-* 頁 PAGE_CSS）依賴的 legacy 變數
+# （--dim/--faint/--accent-soft/--accent-line/--radius/--font-*…）以 alias 併出，
+# 一套 token 同時餵新舊兩代版型。分帶/斑馬色刻意用不透明值（手機 sticky 釘欄要實色）。
+BB_THEME_KEYS = ["ember", "court", "slate", "jade", "violet"]
+BB_THEME_DOTS = [("ember", "ember 炭黑橘", "#ef7d3a"), ("court", "court 木地板金", "#d9a04c"),
+                 ("slate", "slate 石墨", "#6f9bd0"), ("jade", "jade 墨玉", "#43b189"),
+                 ("violet", "violet 暗紫", "#9b7bd8")]
+_BB_ACCENT = {k: acc for k, _z, acc in BB_THEME_DOTS}
+
+_BB_TOKEN_BLOCKS = """
+:root[data-theme="ember"]{
+  --bg:#14100e; --bg-deep:#0e0b09; --surface:#1c1714; --surface-2:#241d19; --surface-3:#2a221d;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#ef7d3a; --accent-bright:#ff9250; --gold:#d9a04c; --accent-ink:#1a0f07;
+  --zebra:#191411; --band-po:#241811; --band-pi:#211a11;
+  --accent-weak:rgba(239,125,58,.10); --gold-weak:rgba(217,160,76,.10);
+}
+:root[data-theme="court"]{
+  --bg:#17120c; --bg-deep:#0f0b06; --surface:#211a11; --surface-2:#2a2116; --surface-3:#31271a;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#d9a04c; --accent-bright:#eab863; --gold:#e9c987; --accent-ink:#1a0f07;
+  --zebra:#1d160e; --band-po:#271d0f; --band-pi:#241d10;
+  --accent-weak:rgba(217,160,76,.10); --gold-weak:rgba(233,201,135,.10);
+}
+:root[data-theme="slate"]{
+  --bg:#111418; --bg-deep:#0b0d10; --surface:#1a1e24; --surface-2:#222831; --surface-3:#293039;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#8b97a8; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#6f9bd0; --accent-bright:#8bb3e0; --gold:#c9a86a; --accent-ink:#1a0f07;
+  --zebra:#161a20; --band-po:#182430; --band-pi:#22201a;
+  --accent-weak:rgba(111,155,208,.10); --gold-weak:rgba(201,168,106,.10);
+}
+:root[data-theme="jade"]{
+  --bg:#0f1512; --bg-deep:#0a0f0c; --surface:#16201b; --surface-2:#1d2a23; --surface-3:#24332a;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#43b189; --accent-bright:#5fcfa4; --gold:#cfb069; --accent-ink:#1a0f07;
+  --zebra:#131c17; --band-po:#12251c; --band-pi:#20241a;
+  --accent-weak:rgba(67,177,137,.10); --gold-weak:rgba(207,176,105,.10);
+}
+:root[data-theme="violet"]{
+  --bg:#15111c; --bg-deep:#0e0b13; --surface:#1e1826; --surface-2:#271f31; --surface-3:#2f263c;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#9b7bd8; --accent-bright:#b79bef; --gold:#cba25f; --accent-ink:#1a0f07;
+  --zebra:#191424; --band-po:#241a33; --band-pi:#231d1c;
+  --accent-weak:rgba(155,123,216,.10); --gold-weak:rgba(203,162,95,.10);
+}
+"""
 
 
 def _hexrgba(h: str, a) -> str:
@@ -414,63 +525,65 @@ def _hexrgba(h: str, a) -> str:
 
 
 def _bb_theme_tokens_css() -> str:
-    """One :root[data-theme=key] token block per dark theme (shared cream/line values + per-theme
-    bg tints + accent), then header/nav/brand overrides applied to ALL baseball themes at once via
-    a shared selector list + var(--bb-header-bg) — so switching theme keeps the dark header polish."""
-    blocks = []
-    for key, _zh, acc, bg, glow, s1, s2, s3, accb, acci, hdr in BB_THEMES:
-        blocks.append(f""":root[data-theme="{key}"] {{
-  --surface:{s1}; --surface-2:{s2}; --surface-3:{s3};
-  --fg:#f3efe4; --fg-soft:#c7cfdb; --dim:#94a0b4; --faint:#6c7a92;
-  --line:rgba(243,239,228,0.12); --line-2:rgba(243,239,228,0.20);
-  --sheet-shadow:rgba(0,0,0,0.5); --scrim:rgba(0,0,0,0.5);
-  --bg:{bg}; --bg-glow:{glow}; --bb-header-bg:{hdr};
-  --accent:{acc}; --accent-bright:{accb}; --accent-ink:{acci};
-  --accent-soft:{_hexrgba(acc,0.12)}; --accent-line:{_hexrgba(acc,0.36)}; --accent-glow:{_hexrgba(acc,0.30)};
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
-}}""")
-
+    """v2 token 系統：mock 的 :root[data-theme] 五組 token（_BB_TOKEN_BLOCKS 字面值）
+    ＋逐主題 alias 區塊（legacy 變數/字族/圓角/身體背景），讓文章頁與 gen-* 頁零改動續用。"""
     def sel(suffix):
         return ",\n".join(f':root[data-theme="{k}"] {suffix}' for k in BB_THEME_KEYS)
 
-    overrides = f"""{sel('body::before')} {{ mix-blend-mode:screen; opacity:0.18; }}
-{sel('.site-header')} {{ position:sticky; top:0; z-index:30; margin-bottom:34px;
-  padding:14px 0; background:var(--bb-header-bg); backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line); }}
-{sel('.site-nav a')} {{ text-transform:none; letter-spacing:1px; font-size:13px;
-  padding:6px 13px; border-radius:999px; border-bottom:none; }}
-{sel('.site-nav a:hover')} {{ color:var(--accent); background:var(--accent-soft); border-bottom:none; }}
-{sel('.site-nav a.active')} {{ color:var(--accent-ink); background:var(--accent); border-bottom:none; }}
-{sel('.brand-tag')} {{ color:var(--dim); }}"""
-    return "\n" + "\n".join(blocks) + "\n" + overrides + "\n"
+    alias_blocks = []
+    for k in BB_THEME_KEYS:
+        acc = _BB_ACCENT[k]
+        alias_blocks.append(f""":root[data-theme="{k}"] {{
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:{_hexrgba(acc,0.36)}; --accent-glow:{_hexrgba(acc,0.30)};
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}}""")
+
+    overrides = f"""{sel('body')} {{ font-family:var(--f-text);
+  background-image:
+    radial-gradient(1200px 720px at 86% -6%,rgba(239,125,58,.16),transparent 58%),
+    radial-gradient(900px 620px at 6% 2%,rgba(217,160,76,.08),transparent 60%),
+    radial-gradient(1500px 1000px at 50% 118%,rgba(239,125,58,.06),transparent 62%);
+  background-attachment:fixed; }}
+{sel('body::before')} {{ display:none; }}
+{sel('a')} {{ color:var(--accent); }}
+{sel('a:hover')} {{ color:var(--accent-bright); }}"""
+    return "\n" + _BB_TOKEN_BLOCKS + "\n" + "\n".join(alias_blocks) + "\n" + overrides + "\n"
 
 
-# Baseball switcher widget (reuses THEME_SWITCH_CSS: .theme-switch/.ts-dot) + persistence JS.
-BB_THEME_SWITCH_HTML = (
-    '\n<div class="theme-switch">\n  <span class="ts-label">配色</span>\n  <div class="ts-dots">\n'
-    + "".join(
-        f'    <button class="ts-dot" data-theme="{k}" onclick="setTheme(\'{k}\')" style="--sw:{acc}" aria-label="{zh}"></button>\n'
-        for k, zh, acc, *_ in BB_THEMES)
-    + '  </div>\n</div>\n')
-BB_THEME_SWITCH_JS = f"""
-const THEMES = {BB_THEME_KEYS};
-function setTheme(t) {{
-  if (!THEMES.includes(t)) t = 'ember';
-  document.documentElement.dataset.theme = t;
-  try {{ localStorage.setItem('bk-theme', t); }} catch (e) {{}}
-  document.querySelectorAll('.ts-dot').forEach(d => d.classList.toggle('active', d.dataset.theme === t));
-}}
-(function initTheme() {{
-  let t = 'ember';
-  try {{ t = localStorage.getItem('bk-theme') || 'ember'; }} catch (e) {{}}
-  setTheme(t);
-}})();
+# v2：切換器住進 header（site_header_html 的 .theme dots），獨立浮動 widget 廢止。
+BB_THEME_SWITCH_HTML = ""
+BB_THEME_SWITCH_JS = """
+/* minimal theme switcher — persists to localStorage('bk-theme') */
+(function(){
+  var KEY="bk-theme", root=document.documentElement;
+  var saved=localStorage.getItem(KEY);
+  if(saved){ root.setAttribute("data-theme",saved); }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-set-theme]"); if(!b) return;
+    var t=b.getAttribute("data-set-theme");
+    root.setAttribute("data-theme",t);
+    localStorage.setItem(KEY,t);
+    document.querySelectorAll("[data-set-theme]").forEach(function(x){
+      x.setAttribute("aria-pressed", x===b ? "true":"false");
+    });
+  });
+  if(saved){ document.querySelectorAll("[data-set-theme]").forEach(function(x){
+    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===saved ? "true":"false"); }); }
+})();
 """
 
 
 def theme_switch_html(site: dict = None) -> str:
-    """Color switcher. Legacy soccer fallback -> light 7-dot palette. Basketball -> the
-    dark-brand palette (ember default + court/slate/jade/violet variants)."""
+    """Color switcher. Legacy soccer fallback -> light 7-dot palette. Basketball -> 空字串
+    （v2 切換器已內建於 site_header_html 的 dots）。"""
     site = site or SOCCER_SITE
     if site.get("default_theme", "grass") not in BB_THEME_KEYS:
         return THEME_SWITCH_HTML
@@ -496,10 +609,39 @@ def extra_theme_css(site: dict = None) -> str:
     return _bb_theme_tokens_css()
 
 
+def bb_footer_v2(site: dict, active: str = "") -> str:
+    """v2 全站 footer（mock 落地）：免責＋快速連結＋姊妹站。放在 container 外。"""
+    link_parts = []
+    for n in site.get("nav", []):
+        link_parts.append(f'<a href="{n["href"]}">{n["label"]}</a>')
+    ext = site.get("external_link")
+    if ext:
+        link_parts.append(f'<a href="{ext["href"]}" target="_blank" rel="noopener">{ext["label"]}</a>')
+    links = "".join(link_parts)
+    base = site["base"].rstrip("/") + "/"
+    sisters = "\n      ".join(
+        f'<a href="{u}">{html_lib.escape(n)}</a>'
+        for n, u in SISTER_SITES if u != base)
+    return f"""
+<footer class="foot">
+  <div class="foot-in">
+    <div class="flinks">{links}</div>
+    <p class="disc">本站為非官方籃球資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（高中體總）等聯盟、球團與學校無任何關聯或授權；數據與比分整理自公開來源並標註。<br>
+    Unofficial fan-made site · Not affiliated with, endorsed by, or sponsored by the NBA, TPBL, P. LEAGUE+ or HBL.</p>
+    <div class="sisters">
+      <b>姊妹站</b>
+      {sisters}
+    </div>
+  </div>
+</footer>"""
+
+
 def site_footer_html(site: dict = None) -> str:
     """Article-page footer. Soccer -> legacy footer byte-for-byte (CTA + Medium + disclaimer).
-    Baseball -> no sales CTA (editorial no-CTA rule), baseball links + baseball disclaimer."""
+    Basketball -> v2 全站 footer（bb_footer_v2）。"""
     site = site or SOCCER_SITE
+    if site.get("default_theme", "grass") in BB_THEME_KEYS:
+        return bb_footer_v2(site)
     cta = site.get("footer_cta")
     cta_line = f'\n    <a href="{cta["href"]}" class="cta-btn">{cta["label"]}</a>' if cta else ""
     link_parts = []
@@ -509,16 +651,12 @@ def site_footer_html(site: dict = None) -> str:
         else:
             link_parts.append(f'<a href="{l["href"]}">{l["label"]}</a>')
     links = "\n      ".join(link_parts)
-    disclaimer = (BASKETBALL_DISCLAIMER_HTML
-                  if site.get("default_theme") in BB_THEME_KEYS else DISCLAIMER_HTML)
-    # 姊妹站互連只掛 basketball（legacy soccer fallback 不掛）
-    sisters = (f"\n    {sister_sites_html(site)}"
-               if site.get("default_theme") in BB_THEME_KEYS else "")
+    disclaimer = DISCLAIMER_HTML
     return f"""  <div class="article-footer">{cta_line}
     <div class="foot-links">
       {links}
     </div>
-    {disclaimer}{sisters}
+    {disclaimer}
   </div>"""
 
 
@@ -1142,8 +1280,8 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
 </style>
 </head>
 <body>
-{theme_switch_html(site)}
-<div class="container">{site_header_html("articles", site)}
+{theme_switch_html(site)}{site_header_html("articles", site) if site.get("default_theme", "grass") in BB_THEME_KEYS else ""}
+<div class="container">{site_header_html("articles", site) if site.get("default_theme", "grass") not in BB_THEME_KEYS else ""}
   <article>
     <header class="article-header">
       <div class="article-kicker">{kicker}</div>
@@ -1157,8 +1295,8 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
     </div>
   </article>
   {series_nav}
-{site_footer_html(site)}
 </div>
+{site_footer_html(site)}
 <script>{theme_switch_js(site)}</script>
 </body>
 </html>
@@ -1525,6 +1663,159 @@ def _bb_idx_card(a: dict) -> str:
       </a>"""
 
 
+# ---------- v2 首頁 CSS（Claude Design mock 落地；header/footer/token 另在共用區） ----------
+BB_HOME_CSS = """
+.tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.wrap{max-width:1180px;margin:0 auto;padding:0 12px}
+/* section label (editorial rule) */
+.slabel{display:flex;align-items:center;gap:16px;margin:0 0 20px;font-family:var(--f-ui)}
+.slabel .k{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--fg);white-space:nowrap}
+.slabel .k em{color:var(--accent);font-style:normal}
+.slabel .rule{flex:1;height:1px;background:var(--line-2)}
+.slabel .r{font-size:11px;letter-spacing:2px;color:var(--fg-dim);text-transform:uppercase;white-space:nowrap}
+/* hero */
+.hero{padding:64px 0 30px}
+.hero h1{font-family:var(--f-text);font-weight:900;font-size:clamp(38px,6vw,72px);line-height:1.04;letter-spacing:-.5px;text-wrap:balance}
+.hero h1 .en{font-family:var(--f-display);font-weight:400;color:var(--accent);letter-spacing:1px}
+.hero .lead{max-width:640px;margin-top:20px;font-size:clamp(15px,1.5vw,18px);color:var(--fg-soft);text-wrap:pretty}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:28px;font-family:var(--f-ui);font-size:13px}
+.status .seg{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;background:var(--surface);border:1px solid var(--line);border-radius:999px;color:var(--fg-soft)}
+.status .seg b{color:var(--fg);font-variant-numeric:tabular-nums}
+.status .seg.live{border-color:color-mix(in srgb,var(--accent) 45%,transparent);color:var(--fg)}
+.pdot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.pdot.pulse{box-shadow:0 0 0 0 var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+/* dashboard blocks */
+.dash{display:flex;flex-direction:column;gap:56px;margin-top:26px}
+.block{scroll-margin-top:90px}
+.live-badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-ui);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:4px 10px;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:999px}
+/* champion cards */
+.champ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cc{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 20px 20px;overflow:hidden;transition:.18s;display:flex;flex-direction:column;min-height:150px}
+.cc::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.cc:hover{transform:translateY(-3px);border-color:var(--line-2);background:var(--surface-2)}
+.cc .eyebrow{display:flex;align-items:center;gap:8px;font-family:var(--f-ui);font-weight:700;font-size:12px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}
+.cc .eyebrow .sub{color:var(--fg-dim);font-weight:600;letter-spacing:1px}
+.cc .team{font-weight:900;font-size:26px;line-height:1.1;margin-top:14px;color:var(--fg);letter-spacing:-.3px}
+.cc .series{margin-top:auto;padding-top:12px;font-size:13px;color:var(--fg-mute);font-variant-numeric:tabular-nums}
+.cc .seal{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--gold) 60%,transparent);display:grid;place-items:center;font-family:var(--f-text);font-weight:900;font-size:15px;color:var(--gold)}
+.cc.lead{grid-column:span 2;background:linear-gradient(150deg,var(--surface-2),var(--surface));padding:28px}
+.cc.lead .team{font-size:clamp(34px,4vw,48px)}
+.cc.lead .ghost{position:absolute;right:-14px;bottom:-30px;font-family:var(--f-display);font-size:150px;line-height:1;color:var(--fg);opacity:.035;pointer-events:none}
+.cc.lead .runnerup{font-size:13px;color:var(--fg-mute);margin-top:6px}
+/* tabs (CSS-only radio) */
+.tabwrap{margin-top:2px}
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tablist{display:flex;gap:4px;border-bottom:1px solid var(--line-2);overflow-x:auto;scrollbar-width:none}
+.tablist::-webkit-scrollbar{display:none}
+.tablist label{font-family:var(--f-ui);font-weight:600;font-size:14.5px;color:var(--fg-mute);padding:12px 18px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s}
+.tablist label:hover{color:var(--fg-soft)}
+.panel{display:none;padding-top:26px}
+#t-nba:checked~.tablist label[for=t-nba],
+#t-tpbl:checked~.tablist label[for=t-tpbl],
+#t-plg:checked~.tablist label[for=t-plg],
+#t-hbl:checked~.tablist label[for=t-hbl]{color:var(--fg);border-bottom-color:var(--accent)}
+#t-nba:checked~#p-nba,#t-tpbl:checked~#p-tpbl,#t-plg:checked~#p-plg,#t-hbl:checked~#p-hbl{display:block}
+/* standings table */
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.conf h3{font-family:var(--f-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--fg-mute);margin-bottom:10px;font-weight:700}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+table.std{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+table.std th,table.std td{padding:11px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--surface)}
+table.std thead th{font-family:var(--f-ui);font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--fg-mute);background:var(--surface-3);border-bottom:1px solid var(--line-2)}
+table.std tbody tr:last-child td{border-bottom:none}
+table.std .c-rank{text-align:center;width:var(--rank-w)}
+table.std .c-team{text-align:left}
+table.std td.c-team{font-weight:500;color:var(--fg)}
+table.std tbody tr:nth-child(even) td{background:var(--zebra)}
+table.std tbody tr.po td{background:var(--band-po)}
+table.std tbody tr.pi td{background:var(--band-pi)}
+table.std tbody tr.po td.c-rank{box-shadow:inset 3px 0 0 var(--accent)}
+table.std tbody tr.pi td.c-rank{box-shadow:inset 3px 0 0 var(--gold)}
+.seed{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:7px;font-family:var(--f-ui);font-weight:700;font-size:12.5px;color:var(--fg-mute);font-variant-numeric:tabular-nums}
+tr.po .seed{background:color-mix(in srgb,var(--accent) 20%,transparent);color:var(--accent-bright)}
+tr.pi .seed{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.win{color:var(--accent-bright);font-weight:700;font-variant-numeric:tabular-nums}
+.pct{font-variant-numeric:tabular-nums;color:var(--fg-soft)}
+.gb{color:var(--fg-mute);font-variant-numeric:tabular-nums}
+.divider-row td{border-bottom:2px solid var(--line-2) !important}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-family:var(--f-ui);font-size:12px;color:var(--fg-mute)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.legend i.po{background:var(--accent)}.legend i.pi{background:var(--gold)}
+.tbl-cap{font-size:12px;color:var(--fg-dim);margin-top:14px;letter-spacing:.3px}
+.scroll-hint{display:none}
+/* mini four-teams (HBL) */
+.four-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.four{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.four h4{font-family:var(--f-ui);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-mute);padding:14px 16px 10px;font-weight:700}
+.four .row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:14px}
+.four .row .pl{font-family:var(--f-ui);font-weight:700;font-size:12px;letter-spacing:1px;color:var(--fg-mute);min-width:34px}
+.four .row.champ .pl{color:var(--accent)}
+.four .row .nm{font-weight:500;color:var(--fg)}
+.four .row.champ .nm{font-weight:700}
+.four .row .note{margin-left:auto;font-size:12px;color:var(--fg-dim);font-variant-numeric:tabular-nums}
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tile{display:flex;align-items:center;gap:18px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);transition:.18s;position:relative;overflow:hidden}
+.tile:hover{background:var(--surface-2);border-color:color-mix(in srgb,var(--accent) 35%,transparent);transform:translateY(-2px)}
+.tile .idx{font-family:var(--f-display);font-size:34px;color:var(--accent);opacity:.85;line-height:1;min-width:44px}
+.tile .body h4{font-size:17px;font-weight:700;color:var(--fg)}
+.tile .body p{font-size:13px;color:var(--fg-mute);margin-top:3px}
+.tile .arw{margin-left:auto;font-family:var(--f-ui);font-size:20px;color:var(--fg-dim);transition:.18s}
+.tile:hover .arw{color:var(--accent);transform:translateX(4px)}
+/* articles */
+.art-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.art{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:.18s;display:flex;flex-direction:column}
+.art:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.art .cover{aspect-ratio:16/9;background:linear-gradient(135deg,var(--surface-3),var(--surface-2));position:relative;overflow:hidden}
+.art.lead .cover{aspect-ratio:16/10}
+.art .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.art .txt{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.art .kick{font-family:var(--f-ui);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+.art h4{font-size:16px;font-weight:700;line-height:1.35;color:var(--fg)}
+.art.lead h4{font-size:22px}
+.art p{font-size:13px;color:var(--fg-mute);text-wrap:pretty}
+.art .meta{margin-top:auto;font-size:11.5px;color:var(--fg-dim);font-variant-numeric:tabular-nums;letter-spacing:.3px}
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.faq details[open]{border-color:var(--line-2)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;color:var(--fg);display:flex;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{margin-left:auto;color:var(--fg-mute);transition:transform .2s;font-family:var(--f-ui);flex:none}
+.faq details[open] summary .chev{transform:rotate(45deg);color:var(--accent)}
+.faq .ans{padding:0 20px 18px;color:var(--fg-soft);font-size:14px;line-height:1.7;text-wrap:pretty}
+section.blk{padding-top:8px}
+.sp{height:56px}
+/* responsive */
+@media(max-width:900px){
+  .champ-grid{grid-template-columns:repeat(2,1fr)}
+  .cc.lead{grid-column:span 2}
+  .conf-grid{grid-template-columns:1fr;gap:32px}
+  .art-grid{grid-template-columns:1fr 1fr}
+  .art.lead{grid-column:span 2}
+}
+@media(max-width:640px){
+  .wrap{padding:0 2px}
+  .hero{padding:40px 0 22px}
+  .champ-grid{grid-template-columns:1fr;gap:12px}
+  .cc.lead{grid-column:span 1}
+  .cc.lead .ghost{display:none}
+  .tiles{grid-template-columns:1fr}
+  .art-grid{grid-template-columns:1fr}
+  .art.lead{grid-column:span 1}
+  .four-grid{grid-template-columns:1fr}
+  .dash{gap:44px}
+  table.std{min-width:520px}
+  table.std th,table.std td{padding:10px 10px;font-size:13px}
+  table.std .c-rank{position:sticky;left:0;z-index:3}
+  table.std .c-team{position:sticky;left:var(--rank-w);z-index:3;box-shadow:8px 0 8px -8px rgba(0,0,0,.5)}
+  .scroll-hint{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-family:var(--f-ui);font-size:11px;color:var(--fg-dim);margin-bottom:8px;letter-spacing:.5px}
+}
+"""
+
+
 def _bb_head(site: dict, title: str, desc: str, url: str, jsonld: str, extra_css: str = "") -> str:
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant" data-theme="{site['default_theme']}">
@@ -1569,13 +1860,8 @@ def _bb_head(site: dict, title: str, desc: str, url: str, jsonld: str, extra_css
 
 
 def _bb_footer(site: dict) -> str:
-    ext = site.get("external_link")
-    social = (f'　·　<a href="{ext["href"]}" target="_blank" rel="noopener" '
-              f'style="color:var(--accent)">{ext["label"]}</a>') if ext else ""
-    return (f'  <footer class="bb-foot">{html_lib.escape(site["org_name"])} · '
-            f'{site["base"].replace("https://","")}{social}<br>'
-            '本站為獨立內容站，與 NBA、TPBL、P. LEAGUE+、HBL（高中體總）等聯盟、球團與學校無官方關聯；'
-            f'數據引自公開來源並標註。{sister_sites_html(site)}</footer>')
+    """v2：dashboard／gen-* 頁共用 footer，委派 bb_footer_v2（放 container 外）。"""
+    return bb_footer_v2(site)
 
 
 # 首頁可見 FAQ（＝站台事實，非杜撰；同時餵 FAQPage schema 與可見問句式標題，
@@ -1762,11 +2048,64 @@ def _dash_build_date(*objs):
     return max(cands) if cands else ""
 
 
+def _cjk_count(html_text: str) -> int:
+    """body_html 純 CJK 字數（文章卡 meta 用）。"""
+    text = re.sub(r"<[^>]+>", "", html_text or "")
+    return len([c for c in text if "一" <= c <= "鿿"])
+
+
+def _std_table_v2(rows, key_map, po_max=0, pi_max=0, min_width=True):
+    """v2 戰績表（mock .std）：斑馬紋＋（可選）季後賽/附加賽分帶＋seed 晶片＋手機釘欄。
+    rows 依 key_map 取值：key_map=(rank, team, win, lose, pct, gb) 的欄位名 tuple。
+    po_max/pi_max=0 表示不畫分帶（TPBL/PLG 晉級門檻未驗證，不標）。"""
+    rk, tk, wk, lk, pk, gk = key_map
+    trs = ""
+    n = len(rows)
+    for r in rows:
+        rank = int(r.get(rk) or 0)
+        cls = []
+        if po_max and rank <= po_max:
+            cls.append("po")
+        elif pi_max and rank <= pi_max:
+            cls.append("pi")
+        if (po_max and rank == po_max and n > po_max) or (pi_max and rank == pi_max and n > pi_max):
+            cls.append("divider-row")
+        cls_attr = f' class="{" ".join(cls)}"' if cls else ""
+        team = r.get(tk) or r.get("name") or ""
+        pct = str(r.get(pk, "")).lstrip("0") or "0"
+        gb = html_lib.escape(str(r.get(gk, "—")))
+        trs += (f'<tr{cls_attr}><td class="c-rank"><span class="seed">{rank}</span></td>'
+                f'<td class="c-team">{html_lib.escape(team)}</td>'
+                f'<td class="win">{r.get(wk)}</td><td>{r.get(lk)}</td>'
+                f'<td class="pct">{pct}</td><td class="gb">{gb}</td></tr>')
+    return ('<div class="tbl-scroll"><table class="std">'
+            '<thead><tr><th class="c-rank">#</th><th class="c-team">球隊</th>'
+            '<th>勝</th><th>敗</th><th>勝率</th><th>勝差</th></tr></thead>'
+            f'<tbody>{trs}</tbody></table></div>')
+
+
+_SCROLL_HINT = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
+
+
+def _hbl_four_html(div):
+    """HBL 四強卡（mock .four）。div = fetch-hbl divisions[boys|girls]。"""
+    rank_zh = {1: "冠軍", 2: "亞軍", 3: "季軍", 4: "殿軍"}
+    rows = ""
+    for r in div.get("final_four", []):
+        champ = ' champ' if r.get("rank") == 1 else ""
+        note = r.get("note", "")
+        note_html = f'<span class="note">{html_lib.escape(note)}</span>' if note else ""
+        rows += (f'<div class="row{champ}"><span class="pl">{rank_zh.get(r.get("rank"), r.get("rank"))}</span>'
+                 f'<span class="nm">{html_lib.escape(r.get("school", ""))}</span>{note_html}</div>')
+    return (f'<div class="four"><h4>{html_lib.escape(div.get("label", ""))} · 四強</h4>{rows}</div>')
+
+
 def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
-    """Ember/charcoal DASHBOARD landing for basketball.twtools.cc — NBA × 台灣職籃 × HBL
-    戰績速覽 over CSS-only tabs, 冠軍榜, drill-down tiles into /data/, then latest deep
-    articles + FAQ. All data server-rendered from leagues/*.json snapshots (GEO/AEO-safe, no JS
-    fetch). Degrades gracefully when a league's data file is absent."""
+    """v2 首頁 dashboard（Claude Design mock 2026-07-19 落地，保留 controller 套皮）：
+    hero＋status segs → 冠軍卡列（休賽季門面／開季後收合）→ 戰績速覽 CSS-only tabs
+    （NBA 分帶＋seed 晶片＋手機釘欄）→ 編號 tiles → 文章 art-grid（真封面）→ details FAQ。
+    全部 server-rendered 自 leagues/*.json；mock 的「phase toggle」改為 build-time
+    offseason 旗標決定版序；mock 占位數據一律不用（資料層走真快照）。"""
     base = site["base"]
     # ----- data -----
     nba = _dash_latest("nba-standings-*.json")
@@ -1776,73 +2115,152 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
     tpbl, plg = tw_lg.get("tpbl"), tw_lg.get("plg")
     build_date = _dash_build_date(nba, tw, hbl)
     offseason = bool((nba or {}).get("final"))
+    season_tag = (nba or {}).get("season") or (tw or {}).get("season") or ""
 
-    # ----- 冠軍榜（賽季終局才有；休賽季的門面）-----
-    champ_cards = []
+    # ----- 冠軍卡列 -----
+    cards = []
     if nba and nba.get("champion_zh"):
-        champ_cards.append(("NBA", nba["champion_zh"], nba.get("finals_note", "")))
+        if offseason:
+            cards.append(
+                '<article class="cc lead"><span class="ghost">01</span>'
+                '<div class="eyebrow">NBA <span class="sub">TOTAL CHAMPION</span></div>'
+                f'<div class="team">{html_lib.escape(nba["champion_zh"])}</div>'
+                f'<div class="runnerup">{html_lib.escape(nba.get("finals_note", ""))}</div>'
+                f'<div class="series">{html_lib.escape(nba.get("champion_en", ""))} · {season_tag} champion</div>'
+                '<div class="seal">冠</div></article>')
+        else:
+            cards.append(
+                '<article class="cc"><div class="eyebrow">NBA</div>'
+                f'<div class="team">{html_lib.escape(nba["champion_zh"])}</div>'
+                f'<div class="series">{html_lib.escape(nba.get("finals_note", ""))}</div>'
+                '<div class="seal">冠</div></article>')
     if tpbl and tpbl.get("champion_zh"):
-        champ_cards.append(("TPBL", tpbl["champion_zh"], tpbl.get("finals_note", "")))
+        cards.append('<article class="cc"><div class="eyebrow">TPBL</div>'
+                     f'<div class="team">{html_lib.escape(tpbl["champion_zh"])}</div>'
+                     f'<div class="series">{html_lib.escape(tpbl.get("finals_note", ""))}</div>'
+                     '<div class="seal">冠</div></article>')
     if plg and plg.get("champion_zh"):
-        champ_cards.append(("PLG", plg["champion_zh"], plg.get("finals_note", "")))
-    for k, lbl in (("boys", "HBL 男甲"), ("girls", "HBL 女甲")):
+        cards.append('<article class="cc"><div class="eyebrow">PLG</div>'
+                     f'<div class="team">{html_lib.escape(plg["champion_zh"])}</div>'
+                     f'<div class="series">{html_lib.escape(plg.get("finals_note", ""))}</div>'
+                     '<div class="seal">冠</div></article>')
+    for k, lbl in (("boys", "男甲"), ("girls", "女甲")):
         d = ((hbl or {}).get("divisions", {}) or {}).get(k) or {}
         if d.get("champion"):
-            champ_cards.append((lbl, d["champion"], d.get("final_note", "")))
+            cards.append(f'<article class="cc"><div class="eyebrow">HBL <span class="sub">{lbl}</span></div>'
+                         f'<div class="team">{html_lib.escape(d["champion"])}</div>'
+                         f'<div class="series">{html_lib.escape(d.get("final_note", ""))}</div>'
+                         '<div class="seal">冠</div></article>')
+    champ_label = (f'{season_tag} <em>冠軍</em>' if offseason else '上季 <em>冠軍</em> 回顧')
     champ_sec = ""
-    if champ_cards:
-        season_tag = (nba or {}).get("season") or (tw or {}).get("season") or ""
-        champ_sec = (f'<div class="bb-sec"><h2>{season_tag} 冠軍</h2><span class="ln"></span>'
-                     '<span class="tg">賽季終局</span></div>' + _dash_champions(champ_cards))
+    if cards:
+        champ_sec = (f'<section class="block" id="champ"><div class="slabel">'
+                     f'<span class="k">{champ_label}</span><span class="rule"></span>'
+                     '<span class="r">賽季終局</span></div>'
+                     f'<div class="champ-grid">{"".join(cards)}</div></section>')
 
-    # ----- 戰績速覽 -----
-    stabs = []
+    # ----- 戰績速覽 tabs -----
+    tabs = []  # (id, label, panel_html)
     if nba and nba.get("standings"):
-        stabs.append(("nba", "NBA 東西區", _dash_nba_conferences(nba["standings"]),
-                      f'2025-26 例行賽終局 · 截至 {nba.get("asof","")} · 整理自 ESPN 公開資料'))
+        east = sorted([r for r in nba["standings"] if r["conference"] == "Eastern"], key=lambda r: r["rank"])
+        west = sorted([r for r in nba["standings"] if r["conference"] == "Western"], key=lambda r: r["rank"])
+        km = ("rank", "name_zh", "wins", "losses", "pct", "games_back")
+        nba_panel = (
+            '<div class="conf-grid">'
+            f'<div class="conf"><h3>東區 Eastern</h3>{_SCROLL_HINT}{_std_table_v2(east, km, po_max=6, pi_max=10)}</div>'
+            f'<div class="conf"><h3>西區 Western</h3>{_SCROLL_HINT}{_std_table_v2(west, km, po_max=6, pi_max=10)}</div>'
+            '</div>'
+            '<div class="legend"><span><i class="po"></i>直接晉級季後賽（第 1–6 名）</span>'
+            '<span><i class="pi"></i>附加賽區（第 7–10 名）</span></div>'
+            f'<div class="tbl-cap">{season_tag} 例行賽終局名次 · 截至 {nba.get("asof", "")} · '
+            f'整理自 ESPN 公開資料。<a href="/standings/">看完整東西區排名 →</a></div>')
+        tabs.append(("nba", "NBA 東西區", nba_panel))
+    km_tw = ("rank", "team_name", "win", "lose", "pct", "games_behind")
     if tpbl and tpbl.get("standings"):
-        stabs.append(("tpbl", "TPBL", _dash_simple_standings(tpbl["standings"]),
-                      f'{tw.get("season","")} 例行賽終局 · 快照 {tw.get("asof_taipei_date","")} · 整理自 TPBL 官網'))
+        tabs.append(("tpbl", "TPBL",
+                     f'{_SCROLL_HINT}{_std_table_v2(tpbl["standings"], km_tw)}'
+                     f'<div class="tbl-cap">{tw.get("season", "")} 例行賽終局 · 快照 {tw.get("asof_taipei_date", "")} · '
+                     f'整理自 TPBL 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
     if plg and plg.get("standings"):
-        stabs.append(("plg", "PLG", _dash_simple_standings(plg["standings"]),
-                      f'{tw.get("season","")} 例行賽終局 · 快照 {tw.get("asof_taipei_date","")} · 整理自 PLG 官網'))
+        tabs.append(("plg", "PLG",
+                     f'{_SCROLL_HINT}{_std_table_v2(plg["standings"], km_tw)}'
+                     f'<div class="tbl-cap">{tw.get("season", "")} 例行賽終局 · 快照 {tw.get("asof_taipei_date", "")} · '
+                     f'整理自 PLG 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
     if hbl and hbl.get("divisions"):
         dvs = hbl["divisions"]
-        body = ('<div class="dv-grid">'
-                + "".join(_dash_hbl_division(dvs[k]) for k in ("boys", "girls") if dvs.get(k))
-                + '</div>')
-        stabs.append(("hbl", "HBL 甲級", body,
-                      f'{hbl.get("season_label","")} 四強最終名次 · 整理自 hbl.com.tw'))
+        four = "".join(_hbl_four_html(dvs[k]) for k in ("boys", "girls") if dvs.get(k))
+        tabs.append(("hbl", "HBL 甲級",
+                     f'<div class="four-grid">{four}</div>'
+                     f'<div class="tbl-cap">{hbl.get("season_label", "")}總決賽最終名次 · '
+                     f'整理自 HBL 官網公開賽果。<a href="/hbl/">看歷屆冠軍 →</a></div>'))
     stand_sec = ""
-    if stabs:
-        stand_sec = ('<div class="bb-sec"><h2>戰績速覽</h2><span class="ln"></span>'
-                     '<span class="tg">排名 / 名次</span></div>' + _dash_tabgroup("st", stabs))
+    if tabs:
+        inputs = "".join(f'<input type="radio" name="lg" id="t-{tid}"{" checked" if i == 0 else ""}>'
+                         for i, (tid, _l, _p) in enumerate(tabs))
+        labels = "".join(f'<label for="t-{tid}">{lbl}</label>' for tid, lbl, _p in tabs)
+        panels = "".join(f'<div class="panel" id="p-{tid}">{p}</div>' for tid, _l, p in tabs)
+        live_badge = ('' if offseason else
+                      '<span class="live-badge"><span class="pdot pulse"></span>進行中</span>')
+        stand_sec = ('<section class="block" id="standings"><div class="slabel">'
+                     f'<span class="k">戰績 <em>速覽</em></span>{live_badge}<span class="rule"></span>'
+                     '<span class="r">排名 / 名次</span></div>'
+                     f'<div class="tabwrap tabs">{inputs}<div class="tablist">{labels}</div>{panels}</div>'
+                     '</section>')
 
-    # ----- 數據總覽 tiles -----
-    tiles = ('<div class="bb-sec"><h2>數據總覽 · 深入查詢</h2><span class="ln"></span></div>'
+    dash_blocks = (champ_sec + stand_sec) if offseason else (stand_sec + champ_sec)
+
+    # ----- tiles -----
+    tiles = ('<section class="blk"><div class="sp"></div>'
+             '<div class="slabel"><span class="k">數據 <em>總覽</em></span><span class="rule"></span>'
+             '<span class="r">深入查詢</span></div>'
              '<div class="tiles">'
-             '<a class="tile" href="/standings/"><span class="ic">🏆</span>'
-             '<span><span class="tt">NBA 戰績</span><span class="ds">東西區排名 · 2025-26 賽季</span></span><span class="go">→</span></a>'
-             '<a class="tile" href="/tw/"><span class="ic">🇹🇼</span>'
-             '<span><span class="tt">台灣職籃</span><span class="ds">TPBL · PLG 戰績</span></span><span class="go">→</span></a>'
-             '<a class="tile" href="/hbl/"><span class="ic">🏀</span>'
-             '<span><span class="tt">HBL 高中籃球</span><span class="ds">男甲 · 女甲 四強與冠軍</span></span><span class="go">→</span></a>'
-             '<a class="tile" href="/data/"><span class="ic">📊</span>'
-             '<span><span class="tt">數據總覽</span><span class="ds">所有數據頁入口</span></span><span class="go">→</span></a>'
-             '</div>')
+             '<a class="tile" href="/standings/"><span class="idx">01</span><div class="body">'
+             f'<h4>NBA 戰績</h4><p>東西區完整排名 · {season_tag} 賽季</p></div><span class="arw">→</span></a>'
+             '<a class="tile" href="/tw/"><span class="idx">02</span><div class="body">'
+             '<h4>台灣職籃</h4><p>TPBL · PLG 兩聯盟戰績對照</p></div><span class="arw">→</span></a>'
+             '<a class="tile" href="/hbl/"><span class="idx">03</span><div class="body">'
+             '<h4>HBL 高中籃球</h4><p>男甲 · 女甲 四強與歷屆冠軍</p></div><span class="arw">→</span></a>'
+             '<a class="tile" href="/data/"><span class="idx">04</span><div class="body">'
+             '<h4>數據總覽</h4><p>所有數據頁入口</p></div><span class="arw">→</span></a>'
+             '</div></section>')
 
-    # ----- 最新文章（與 /articles/ 同款 idx-* 封面卡）-----
+    # ----- 最新文章（真封面 art-grid）-----
     art_sec = ""
     if articles:
-        cards = "".join(_bb_idx_card(a) for a in articles)
-        art_sec = ('<div class="bb-sec"><h2>最新深度文章</h2><span class="ln"></span>'
-                   '<a class="tg" href="/articles/" style="text-decoration:none">全部文章 →</a></div>\n'
-                   f'  <div class="idx-grid">{cards}\n  </div>')
+        def art_card(a, lead=False):
+            title = html_lib.escape(a["meta"].get("title", a["slug"]))
+            excerpt = html_lib.escape((a.get("excerpt") or a["meta"].get("subtitle", ""))[:80])
+            wc = _cjk_count(a.get("body_html", ""))
+            meta = _date_disp(str(a["meta"].get("date", "")))
+            if wc:
+                meta += f" · {wc:,} 字"
+            cls = "art lead" if lead else "art"
+            desc = f'<p>{excerpt}</p>' if lead and excerpt else ""
+            return (f'<a class="{cls}" href="/articles/{a["slug"]}/">'
+                    f'<div class="cover"><img src="/articles/{a["slug"]}/cover.png" alt="{title}｜封面" loading="lazy"></div>'
+                    f'<div class="txt"><span class="kick">{_kicker_label(a["meta"])}</span>'
+                    f'<h4>{title}</h4>{desc}<div class="meta">{meta}</div></div></a>')
+        cards_html = art_card(articles[0], lead=True) + "".join(art_card(a) for a in articles[1:5])
+        art_sec = ('<section class="blk"><div class="sp"></div>'
+                   '<div class="slabel"><span class="k">最新 <em>文章</em></span><span class="rule"></span>'
+                   '<a class="r" href="/articles/" style="text-decoration:none">全部文章 →</a></div>'
+                   f'<div class="art-grid">{cards_html}</div></section>')
 
-    asof_note = ("休賽季模式 · 顯示 2025-26 終局數據 · 開季後恢復自動更新"
-                 if offseason else "每日自動更新（NBA）· 台灣職籃／HBL 每週更新")
-    asof_chip = (f'<div class="dash-asof">⏱ 資料截至 <b>{build_date}</b>　·　{asof_note}</div>'
-                 if build_date else "")
+    # ----- FAQ（details 折疊；內容全在 DOM，schema 照舊鏡射）-----
+    faq_items = "".join(
+        f'<details{" open" if i == 0 else ""}><summary>{html_lib.escape(q)}<span class="chev">＋</span></summary>'
+        f'<div class="ans">{html_lib.escape(a)}</div></details>'
+        for i, (q, a) in enumerate(BB_HOME_FAQ))
+    faq_sec = ('<section class="blk"><div class="sp"></div>'
+               '<div class="slabel"><span class="k">常見 <em>問題</em></span><span class="rule"></span>'
+               '<span class="r">FAQ</span></div>'
+               f'<div class="faq">{faq_items}</div></section>')
+
+    # ----- hero status -----
+    mode_seg = ('<span class="seg">休賽季模式 · 顯示 ' + season_tag + ' 終局數據</span>' if offseason else
+                '<span class="seg live"><span class="pdot pulse"></span>開季中 · 每日自動更新</span>')
+    asof_seg = (f'<span class="seg"><span class="pdot"></span>資料截至 <b>{build_date}</b></span>'
+                if build_date else "")
 
     # ----- JSON-LD -----
     item_list = {"@type": "ItemList", "itemListElement": [
@@ -1855,23 +2273,27 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                        breadcrumb_node([("首頁", f"{base}/")]),
                        faq_node(BB_HOME_FAQ, f"{base}/")])
     desc = "NBA × 台灣職籃（TPBL／PLG）× HBL 高中籃球的戰績與數據儀表板：東西區排名、台灣職籃戰績、HBL 四強與冠軍，以及數據導向的深度特刊。繁體中文 / 台北時間。"
-    return f"""{_bb_head(site, site['website_name'], desc, f"{base}/", jsonld, extra_css=INDEX_CSS)}
-<body>{theme_switch_html(site)}
-<div class="bb-shell">{site_header_html("home", site)}
-  <main>
-  <section class="bb-hero">
-    <h1>NBA × 台灣籃球，<br>用數據看門道。</h1>
-    <p>美國職籃 NBA × 台灣職籃 TPBL／PLG × HBL 高中籃球 —— 戰績、名次與冠軍脈絡，一頁掌握。深度特刊在「文章」。</p>
-    {asof_chip}
+    return f"""{_bb_head(site, site['website_name'], desc, f"{base}/", jsonld, extra_css=BB_HOME_CSS)}
+<body>
+{site_header_html("home", site)}
+<main class="wrap">
+  <section class="hero">
+    <h1><span class="en">NBA</span> × 台灣籃球，<br>用數據看門道。</h1>
+    <p class="lead">美國職籃 NBA × 台灣職籃 TPBL／PLG × HBL 高中籃球 —— 戰績、名次與冠軍脈絡，一頁掌握。深度特刊在「文章」。</p>
+    <div class="status">
+      {asof_seg}
+      {mode_seg}
+      <span class="seg">整理自公開來源</span>
+    </div>
   </section>
-  {champ_sec}
-  {stand_sec}
+  <div class="dash">
+  {dash_blocks}
+  </div>
   {tiles}
   {art_sec}
-  {_bb_faq_html()}
-  </main>
-{_bb_footer(site)}
-</div>
+  {faq_sec}
+</main>
+{bb_footer_v2(site)}
 <script>{theme_switch_js(site)}</script>
 </body>
 </html>
@@ -1897,15 +2319,16 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
     jsonld = graph_ld([org_node(site), website_node(site), coll,
                        breadcrumb_node([("首頁", f"{base}/"), ("文章", f"{base}/articles/")])])
     return f"""{_bb_head(site, f"深度文章 ｜ {site['org_name']}", f"NBA 與台灣籃球（TPBL／PLG／HBL）的數據深度分析、聯盟指南與專題特刊，共 {len(articles)} 篇。", f"{base}/articles/", jsonld, extra_css=INDEX_CSS)}
-<body>{theme_switch_html(site)}
-<div class="bb-shell">{site_header_html("articles", site)}
+<body>
+{site_header_html("articles", site)}
+<div class="bb-shell">
   <main>
   <h1 class="idx-h1">深度文章 — NBA 與台灣籃球</h1>
   <div class="idx-intro">數據深度分析 · 聯盟指南 · 專題特刊 — 每篇附數據表格、每個數字標註來源與截止日期 · 共 {len(articles)} 篇、最新在前</div>
 {feature}{grid_block}
   </main>
-{_bb_footer(site)}
 </div>
+{_bb_footer(site)}
 <script>{theme_switch_js(site)}</script>
 </body>
 </html>

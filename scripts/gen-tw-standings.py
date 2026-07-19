@@ -91,11 +91,11 @@ def _shell(title, desc, canonical, jsonld, body):
 </style>
 </head>
 <body>
-{ba.theme_switch_html(SITE)}
-<div class="container">{ba.site_header_html('data', SITE)}
+{ba.site_header_html('data', SITE)}
+<div class="container">
 {body}
-{ba.site_footer_html(SITE)}
 </div>
+{ba.site_footer_html(SITE)}
 <script>{ba.theme_switch_js(SITE)}</script>
 </body>
 </html>
