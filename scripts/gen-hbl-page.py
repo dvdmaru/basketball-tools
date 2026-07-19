@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""gen-hbl-page.py — HBL 高中籃球頁（public-basketball/hbl/）。
+"""gen-hbl-page.py — HBL 高中籃球頁（public-basketball/hbl/）v2。
 
-男甲／女甲 四強最終名次 + 冠軍戰結果（server-rendered，CSS-only tabs），另附
-歷屆冠軍榜（leagues/hbl-history.json，若存在；fetch-hbl.py --history 產生，
-官網 API 僅回溯至 106 學年度）。
+Claude Design 元件落地：page-hero＋男甲/女甲 champ-band＋四強 .four 卡（mock 版式）
+＋歷屆冠軍 v2 .std 風格表（zebra）＋details FAQ。
+歷屆冠軍榜吃 leagues/hbl-history.json（fetch-hbl.py --history；API 僅回溯至 106 學年度）。
 
 紅線：HBL 球員為未成年學生——本頁只呈現隊伍層賽果與名次，不列個別球員數據；
 影音為 Hami Video 獨家授權，不嵌入、不連結串流。
@@ -34,36 +34,13 @@ SITE = ba.SITES.get("basketball")
 BASE = SITE["base"]
 
 PAGE_CSS = """
-.st-h1 { font-family: var(--font-display); font-size: clamp(30px,5vw,46px); line-height:1.1; margin: 4px 0 6px; }
-.st-sub { color: var(--fg-soft); font-size: 15px; margin: 10px 0 22px; }
-.champ-band { display:flex; align-items:center; gap:14px; border:1px solid var(--accent-line);
-  background:var(--accent-soft); border-radius:12px; padding:14px 18px; margin: 0 0 18px; }
-.champ-band .ic { font-size: 26px; }
-.champ-band .t { font-weight:900; font-size:16px; color:var(--fg); }
-.champ-band .d { color:var(--dim); font-size:13px; margin-top:2px; }
-.tabs > input[name="hbtab"] { position:absolute; opacity:0; width:0; height:0; }
-.tablabels { display:flex; flex-wrap:wrap; gap:8px; margin: 8px 0 22px; border-bottom:1px solid var(--line); }
-.tablabels label { cursor:pointer; padding:9px 16px; font-size:14.5px; font-weight:700; color:var(--dim);
-  border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .15s, border-color .15s; }
-.tablabels label:hover { color: var(--fg); }
-.panel { display:none; }
-#hbtab-b:checked ~ .tablabels label[for="hbtab-b"],
-#hbtab-g:checked ~ .tablabels label[for="hbtab-g"] { color: var(--accent); border-bottom-color: var(--accent); }
-#hbtab-b:checked ~ .panel-b, #hbtab-g:checked ~ .panel-g { display:block; }
-.std-table { width:100%; border-collapse:collapse; margin: 8px 0 14px; font-size: 14px; }
-.std-table th, .std-table td { padding: 8px 6px; text-align:center; border-bottom:1px solid var(--line); white-space:nowrap; }
-.std-table th { color: var(--dim); font-weight:600; font-size:12px; }
-.std-table td.l, .std-table th.l { text-align:left; white-space:normal; }
-.std-table td.rk { color:var(--dim); font-family:var(--font-mono); font-size:12.5px; }
-.std-table tr.lead td.tm { font-weight:800; }
-.std-pts { color: var(--accent); font-weight:800; }
-.hist-sec { font-family: 'Anton', 'Noto Sans TC', sans-serif; font-size: 20px; letter-spacing: .5px; margin: 30px 0 4px; }
-.st-asof { color:var(--dim); font-size:12.5px; line-height:1.6; margin: 24px 0 8px; border-top:1px solid var(--line); padding-top:14px; }
-.st-faq { margin-top: 20px; display: grid; gap: 10px; }
-.st-faq .qa { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; }
-.st-faq h3 { font-size: 15px; font-weight: 800; color: var(--fg); margin: 0 0 6px; line-height: 1.45; }
-.st-faq p { font-size: 13.5px; color: var(--fg-soft); line-height: 1.7; margin: 0; }
-.st-faq-sec { font-family: 'Anton', 'Noto Sans TC', sans-serif; font-size: 20px; letter-spacing: .5px; margin: 28px 0 4px; }
+table.hist{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--surface)}
+table.hist th,table.hist td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);background:var(--surface)}
+table.hist thead th{font-family:var(--f-ui);font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--fg-mute);background:var(--surface-3);border-bottom:1px solid var(--line-2)}
+table.hist tbody tr:last-child td{border-bottom:none}
+table.hist tbody tr:nth-child(even) td{background:var(--zebra)}
+table.hist td.yr{font-family:var(--f-ui);font-weight:700;color:var(--accent);white-space:nowrap}
+.four-grid{grid-template-columns:minmax(0,680px)}
 """
 
 
@@ -89,16 +66,17 @@ def _shell(title, desc, canonical, jsonld, body):
 {ba.ga_snippet(SITE)}
 <style>
 {ba.SHARED_TOKENS_CSS}{ba.extra_theme_css(SITE)}
-{ba.THEME_SWITCH_CSS}
 {ba.SITE_HEADER_CSS}
+{ba.BB_HOME_CSS}
+{ba.BB_PAGE_EXTRA_CSS}
 {PAGE_CSS}
 </style>
 </head>
 <body>
 {ba.site_header_html('data', SITE)}
-<div class="container">
+<main class="wrap">
 {body}
-</div>
+</main>
 {ba.site_footer_html(SITE)}
 <script>{ba.theme_switch_js(SITE)}</script>
 </body>
@@ -106,36 +84,37 @@ def _shell(title, desc, canonical, jsonld, body):
 """
 
 
-def division_panel(div, season_label):
-    band = (f'<div class="champ-band"><span class="ic">🏆</span><span>'
-            f'<div class="t">{season_label}{html_lib.escape(div["label"])}冠軍：'
-            f'{html_lib.escape(div["champion"])}</div>'
-            f'<div class="d">{html_lib.escape(div.get("final_note", ""))}</div></span></div>')
-    trs = ""
+def division_block(div, season_label):
+    band = ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
+            f'<div class="lbl">{html_lib.escape(season_label)}{html_lib.escape(div["label"])}冠軍</div>'
+            f'<div class="nm">{html_lib.escape(div["champion"])}</div>'
+            f'<div class="sr">{html_lib.escape(div.get("final_note", ""))}</div>'
+            '</div></div>')
     rank_zh = {1: "冠軍", 2: "亞軍", 3: "季軍", 4: "殿軍"}
+    rows = ""
     for r in div.get("final_four", []):
-        lead = ' class="lead"' if r.get("rank") == 1 else ""
-        trs += (f'<tr{lead}><td class="rk">{rank_zh.get(r.get("rank"), r.get("rank"))}</td>'
-                f'<td class="l tm">{html_lib.escape(r.get("school", ""))}</td>'
-                f'<td class="l">{html_lib.escape(r.get("note", ""))}</td></tr>')
-    table = ('<table class="std-table"><thead><tr><th class="rk">名次</th><th class="l">學校</th>'
-             '<th class="l">附註</th></tr></thead>'
-             f'<tbody>{trs}</tbody></table>')
-    return band + table
+        champ = ' champ' if r.get("rank") == 1 else ""
+        note = r.get("note", "")
+        note_html = f'<span class="note">{html_lib.escape(note)}</span>' if note else ""
+        rows += (f'<div class="row{champ}"><span class="pl">{rank_zh.get(r.get("rank"), r.get("rank"))}</span>'
+                 f'<span class="nm">{html_lib.escape(r.get("school", ""))}</span>{note_html}</div>')
+    four = f'<div class="four"><h4>{html_lib.escape(div.get("label", ""))} · 四強</h4>{rows}</div>'
+    return band, four
 
 
 def history_table(hist):
     rows = sorted(hist.get("seasons", []), key=lambda r: -int(r["season"]))
     trs = ""
     for r in rows:
-        trs += (f'<tr><td class="rk">{r["season"]}學年度</td>'
-                f'<td class="l">{html_lib.escape(r.get("boys_champion") or "—")}</td>'
-                f'<td class="l">{html_lib.escape(r.get("girls_champion") or "—")}</td></tr>')
-    return ('<h2 class="hist-sec">歷屆冠軍（106 學年度起）</h2>'
-            '<div class="st-sub">官網公開賽果可回溯至 106 學年度（2017-18）；更早屆次不在此列。</div>'
-            '<table class="std-table"><thead><tr><th class="rk">學年度</th>'
-            '<th class="l">男子甲級冠軍</th><th class="l">女子甲級冠軍</th></tr></thead>'
-            f'<tbody>{trs}</tbody></table>')
+        trs += (f'<tr><td class="yr">{r["season"]}學年度</td>'
+                f'<td>{html_lib.escape(r.get("boys_champion") or "—")}</td>'
+                f'<td>{html_lib.escape(r.get("girls_champion") or "—")}</td></tr>')
+    return ('<section class="blk"><div class="sp"></div>'
+            + ba.bb_slabel('歷屆 <em>冠軍</em>', '106 學年度起')
+            + '<div class="tbl-cap" style="margin:0 0 14px">官網公開賽果可回溯至 106 學年度（2017-18）；更早屆次不在此列。</div>'
+            '<table class="hist"><thead><tr><th>學年度</th>'
+            '<th>男子甲級冠軍</th><th>女子甲級冠軍</th></tr></thead>'
+            f'<tbody>{trs}</tbody></table></section>')
 
 
 def _page_faq(season_label, divisions):
@@ -145,7 +124,7 @@ def _page_faq(season_label, divisions):
         ("HBL 是什麼？",
          "HBL（高級中等學校籃球聯賽）是由中華民國高級中等學校體育總會主辦的全國高中籃球賽事，"
          "本頁聚焦最高層級的甲級聯賽（男子組與女子組）。賽季約從 10 月打到隔年 3 月，"
-         "四強決賽近年固定在臺北小巨蛋舉行。"),
+         "四強決賽自 103 學年度重返臺北小巨蛋後，近年都在此舉行。"),
         (f"{season_label} HBL 男甲、女甲冠軍是誰？",
          f"男子甲級冠軍為{b.get('champion', '')}（{b.get('final_note', '')}）；"
          f"女子甲級冠軍為{g.get('champion', '')}（{g.get('final_note', '')}）。"),
@@ -158,39 +137,31 @@ def _page_faq(season_label, divisions):
     ]
 
 
-def _faq_html(pairs):
-    qa = "".join(
-        f'<div class="qa"><h3>{html_lib.escape(q)}</h3><p>{html_lib.escape(a)}</p></div>'
-        for q, a in pairs)
-    return f'<h2 class="st-faq-sec">常見問題</h2><section class="st-faq">{qa}</section>'
-
-
 def build_page(snap, hist):
     season_label = snap.get("season_label", "")
     asof = snap.get("asof_taipei_date", "")
     canonical = f"{BASE}/hbl/"
     dvs = snap.get("divisions", {})
-    tabs = (
-        '<div class="tabs">'
-        '<input type="radio" name="hbtab" id="hbtab-b" checked>'
-        '<input type="radio" name="hbtab" id="hbtab-g">'
-        '<div class="tablabels"><label for="hbtab-b">男子甲級</label>'
-        '<label for="hbtab-g">女子甲級</label></div>'
-        f'<div class="panel panel-b">{division_panel(dvs["boys"], season_label) if dvs.get("boys") else ""}</div>'
-        f'<div class="panel panel-g">{division_panel(dvs["girls"], season_label) if dvs.get("girls") else ""}</div>'
-        '</div>'
-    )
+    blocks = ""
+    for k in ("boys", "girls"):
+        if not dvs.get(k):
+            continue
+        band, four = division_block(dvs[k], season_label)
+        blocks += (f'<section class="blk"><div class="sp"></div>'
+                   + ba.bb_slabel(f'{"男子" if k == "boys" else "女子"} <em>甲級</em>', season_label)
+                   + band + f'<div class="four-grid">{four}</div></section>')
+    cap = (f'<div class="tbl-cap">{season_label}賽事已完賽，表列為總決賽最終名次（快照 {asof}）；'
+           '本頁僅整理隊伍層賽果，不列個別球員數據。'
+           '本站與中華民國高級中等學校體育總會及各校無任何關聯或授權，引用請以官方公告為準。</div>')
     hist_sec = history_table(hist) if hist else ""
-    asof_note = (
-        f'<p class="st-asof">資料整理自 HBL 官方網站（hbl.com.tw）公開賽果，快照日期 {asof}；'
-        f'{season_label}賽事已完賽，表列為總決賽最終名次。本頁僅整理隊伍層賽果，不列個別球員數據。'
-        '本站為非官方資料整理站，與中華民國高級中等學校體育總會及各校無任何關聯或授權；'
-        '賽事名稱與相關權利屬各權利人所有，引用請以官方公告為準。</p>'
-    )
     faq = _page_faq(season_label, dvs)
-    body = (f'<h1 class="st-h1">HBL 高中籃球 — 甲級四強與冠軍</h1>'
-            f'<div class="st-sub">{season_label} HBL 高中籃球甲級聯賽男子組、女子組總決賽結果（截至 {asof}）。</div>'
-            f'{tabs}{hist_sec}{_faq_html(faq)}{asof_note}')
+    body = (
+        '<section class="page-hero">'
+        '<h1><span class="en">HBL</span> 高中籃球 — 甲級四強與冠軍</h1>'
+        f'<p class="sub">{season_label} HBL 高中籃球甲級聯賽男子組、女子組總決賽結果，'
+        '與可回溯的歷屆冠軍榜。</p>'
+        '</section>'
+        + blocks + cap + hist_sec + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
             "name": f"HBL 高中籃球甲級四強與冠軍（{season_label}）", "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}

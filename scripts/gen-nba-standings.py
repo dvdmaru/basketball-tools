@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""gen-nba-standings.py — NBA 戰績頁（public-basketball/standings/）。
+"""gen-nba-standings.py — NBA 戰績頁（public-basketball/standings/）v2。
 
-東／西區完整排名（server-rendered，CSS-only tabs，無 JS data fetch → crawler 看得到全表）。
-吃 leagues/nba-standings-<season>.json（fetch-nba.py 產物，主源 ESPN 公開資料）。
-休賽季顯示終局數據 + 冠軍註記，as-of 誠實標示。
+Claude Design standings.html mock 落地：page-hero＋champ-band＋東/西區 CSS-only tabs
+（v2 .std 表：斑馬紋＋1-6/7-10 分帶＋seed 晶片＋縮寫欄＋手機釘欄橫捲）＋details FAQ。
+口徑沿用查核桌修正版：**例行賽名次**（非附加賽後種子；mock 文案的「排序採種子序」為
+查核前舊口徑，不移植）。吃 leagues/nba-standings-<season>.json（fetch-nba.py）。
 
 用法：python3 scripts/gen-nba-standings.py
 ⚠️ 跑序：build-articles.py 會整個覆寫 sitemap → 必須先 build-articles，再跑本腳本（re-merge 自己的 path）。
@@ -30,40 +31,6 @@ ba = _load("build_articles", "build-articles.py")
 SITE = ba.SITES.get("basketball")
 BASE = SITE["base"]
 
-PAGE_CSS = """
-.st-h1 { font-family: var(--font-display); font-size: clamp(30px,5vw,46px); line-height:1.1; margin: 4px 0 6px; }
-.st-sub { color: var(--fg-soft); font-size: 15px; margin: 10px 0 22px; }
-.st-sub b { color: var(--accent); }
-.champ-band { display:flex; align-items:center; gap:14px; border:1px solid var(--accent-line);
-  background:var(--accent-soft); border-radius:12px; padding:14px 18px; margin: 0 0 22px; }
-.champ-band .ic { font-size: 26px; }
-.champ-band .t { font-weight:900; font-size:17px; color:var(--fg); }
-.champ-band .d { color:var(--dim); font-size:13px; margin-top:2px; }
-.tabs > input[name="cftab"] { position:absolute; opacity:0; width:0; height:0; }
-.tablabels { display:flex; flex-wrap:wrap; gap:8px; margin: 8px 0 22px; border-bottom:1px solid var(--line); }
-.tablabels label { cursor:pointer; padding:9px 16px; font-size:14.5px; font-weight:700; color:var(--dim);
-  border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .15s, border-color .15s; }
-.tablabels label:hover { color: var(--fg); }
-.panel { display:none; }
-#cftab-e:checked ~ .tablabels label[for="cftab-e"],
-#cftab-w:checked ~ .tablabels label[for="cftab-w"] { color: var(--accent); border-bottom-color: var(--accent); }
-#cftab-e:checked ~ .panel-e, #cftab-w:checked ~ .panel-w { display:block; }
-.std-table { width:100%; border-collapse:collapse; margin: 8px 0 14px; font-size: 14px; }
-.std-table th, .std-table td { padding: 8px 6px; text-align:center; border-bottom:1px solid var(--line); white-space:nowrap; }
-.std-table th { color: var(--dim); font-weight:600; font-size:12px; }
-.std-table td.l, .std-table th.l { text-align:left; white-space:normal; }
-.std-table td.rk { color:var(--dim); font-family:var(--font-mono); font-size:12.5px; }
-.std-table tr.lead td.tm { font-weight:800; }
-.std-table td.ab { color:var(--faint); font-family:var(--font-mono); font-size:12px; }
-.std-pts { color: var(--accent); font-weight:800; }
-.st-asof { color:var(--dim); font-size:12.5px; line-height:1.6; margin: 24px 0 8px; border-top:1px solid var(--line); padding-top:14px; }
-.st-faq { margin-top: 20px; display: grid; gap: 10px; }
-.st-faq .qa { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; }
-.st-faq h3 { font-size: 15px; font-weight: 800; color: var(--fg); margin: 0 0 6px; line-height: 1.45; }
-.st-faq p { font-size: 13.5px; color: var(--fg-soft); line-height: 1.7; margin: 0; }
-.st-faq-sec { font-family: 'Anton', 'Noto Sans TC', sans-serif; font-size: 20px; letter-spacing: .5px; margin: 28px 0 4px; }
-"""
-
 
 def _shell(title, desc, canonical, jsonld, body):
     return f"""<!DOCTYPE html>
@@ -87,36 +54,25 @@ def _shell(title, desc, canonical, jsonld, body):
 {ba.ga_snippet(SITE)}
 <style>
 {ba.SHARED_TOKENS_CSS}{ba.extra_theme_css(SITE)}
-{ba.THEME_SWITCH_CSS}
 {ba.SITE_HEADER_CSS}
-{PAGE_CSS}
+{ba.BB_HOME_CSS}
+{ba.BB_PAGE_EXTRA_CSS}
+/* 東西區雙 tab（本頁專屬 id 對映） */
+#t-e:checked~.tablist label[for=t-e],
+#t-w:checked~.tablist label[for=t-w]{{color:var(--fg);border-bottom-color:var(--accent)}}
+#t-e:checked~#p-e,#t-w:checked~#p-w{{display:block}}
 </style>
 </head>
 <body>
 {ba.site_header_html('data', SITE)}
-<div class="container">
+<main class="wrap">
 {body}
-</div>
+</main>
 {ba.site_footer_html(SITE)}
 <script>{ba.theme_switch_js(SITE)}</script>
 </body>
 </html>
 """
-
-
-def conf_table(rows):
-    trs = ""
-    for r in sorted(rows, key=lambda x: int(x["rank"])):
-        lead = ' class="lead"' if str(r["rank"]) == "1" else ""
-        pct = str(r.get("pct", "")).lstrip("0") or "0"
-        trs += (f'<tr{lead}><td class="rk">{r["rank"]}</td>'
-                f'<td class="l tm">{html_lib.escape(r.get("name_zh") or r.get("name", ""))}</td>'
-                f'<td class="ab">{html_lib.escape(r.get("abbr", ""))}</td>'
-                f'<td class="std-pts">{r["wins"]}</td><td>{r["losses"]}</td>'
-                f'<td>{pct}</td><td>{html_lib.escape(str(r.get("games_back", "—")))}</td></tr>')
-    return ('<table class="std-table"><thead><tr><th class="rk">#</th><th class="l">球隊</th>'
-            '<th>縮寫</th><th>勝</th><th>敗</th><th>勝率</th><th>勝差</th></tr></thead>'
-            f'<tbody>{trs}</tbody></table>')
 
 
 def _page_faq(season, asof, final):
@@ -126,7 +82,11 @@ def _page_faq(season, asof, final):
         (f"NBA {season} 賽季的排名是最終結果嗎？",
          f"{'是。' if final else '不是，賽季仍在進行。'}本頁排名截至 {asof}，"
          f"為 {season} 例行賽{'終局' if final else '目前'}名次（同勝率球隊之先後依聯盟正式比序）；"
-         "附加賽結果可能使季後賽種子與例行賽名次不同，本頁呈現的是例行賽名次。{}".format(upd)),
+         f"附加賽結果可能使季後賽種子與例行賽名次不同，本頁呈現的是例行賽名次。{upd}"),
+        ("季後賽與附加賽的分帶怎麼看？",
+         "每區例行賽第 1–6 名直接晉級季後賽（本頁以橘色帶標示）；第 7–10 名進入附加賽"
+         "（play-in，金色帶）爭奪最後兩張季後賽門票；第 11–15 名該季止步例行賽。"
+         "分帶僅為閱讀輔助，實際晉級與種子以官方賽制為準。"),
         ("排名的「勝差」怎麼算？",
          "勝差（GB）＝（區龍頭勝場 − 該隊勝場 ＋ 該隊敗場 − 區龍頭敗場）÷ 2，是追上該區第一名所需的場次差；「—」表示該隊即為區龍頭。"),
         ("這個頁面的資料來源是什麼？",
@@ -136,57 +96,55 @@ def _page_faq(season, asof, final):
     ]
 
 
-def _faq_html(pairs):
-    qa = "".join(
-        f'<div class="qa"><h3>{html_lib.escape(q)}</h3><p>{html_lib.escape(a)}</p></div>'
-        for q, a in pairs)
-    return f'<h2 class="st-faq-sec">常見問題</h2><section class="st-faq">{qa}</section>'
-
-
 def build_page(snap):
     season = snap.get("season", "")
     asof = snap.get("asof", "")
     final = bool(snap.get("final"))
     canonical = f"{BASE}/standings/"
-    east = [r for r in snap["standings"] if r["conference"] == "Eastern"]
-    west = [r for r in snap["standings"] if r["conference"] == "Western"]
+    km = ("rank", "name_zh", "wins", "losses", "pct", "games_back")
+    east = sorted([r for r in snap["standings"] if r["conference"] == "Eastern"], key=lambda r: r["rank"])
+    west = sorted([r for r in snap["standings"] if r["conference"] == "Western"], key=lambda r: r["rank"])
 
     champ_band = ""
     if snap.get("champion_zh"):
-        champ_band = (f'<div class="champ-band"><span class="ic">🏆</span><span>'
-                      f'<div class="t">{season} 總冠軍：{html_lib.escape(snap["champion_zh"])}'
-                      f'（{html_lib.escape(snap.get("champion_en", ""))}）</div>'
-                      f'<div class="d">{html_lib.escape(snap.get("finals_note", ""))}</div>'
-                      '</span></div>')
+        champ_band = (
+            '<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
+            f'<div class="lbl">{season} 總冠軍</div>'
+            f'<div class="nm">{html_lib.escape(snap["champion_zh"])} {html_lib.escape(snap.get("champion_en", ""))}</div>'
+            f'<div class="sr">{html_lib.escape(snap.get("finals_note", ""))}</div>'
+            '</div></div>')
 
+    legend = ('<div class="legend"><span><i class="po"></i>直接晉級季後賽（第 1–6 名）</span>'
+              '<span><i class="pi"></i>附加賽區（第 7–10 名）</span></div>')
+    hint = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
     tabs = (
-        '<div class="tabs">'
-        '<input type="radio" name="cftab" id="cftab-e" checked>'
-        '<input type="radio" name="cftab" id="cftab-w">'
-        '<div class="tablabels"><label for="cftab-e">東區</label><label for="cftab-w">西區</label></div>'
-        f'<div class="panel panel-e">{conf_table(east)}</div>'
-        f'<div class="panel panel-w">{conf_table(west)}</div>'
-        '</div>'
-    )
+        '<div class="tabwrap tabs">'
+        '<input type="radio" name="conf" id="t-e" checked>'
+        '<input type="radio" name="conf" id="t-w">'
+        '<div class="tablist"><label for="t-e">東區 Eastern</label><label for="t-w">西區 Western</label></div>'
+        f'<div class="panel" id="p-e">{hint}{ba._std_table_v2(east, km, po_max=6, pi_max=10, abbr_key="abbr")}{legend}</div>'
+        f'<div class="panel" id="p-w">{hint}{ba._std_table_v2(west, km, po_max=6, pi_max=10, abbr_key="abbr")}{legend}</div>'
+        '</div>')
     status_txt = "例行賽終局" if final else "例行賽進行中"
-    asof_note = (
-        f'<p class="st-asof">資料整理自 ESPN 公開之 NBA 數據（site.api.espn.com），截至 {asof}；'
-        f'{season} 賽季{status_txt}。排序為例行賽名次（同勝率之先後依聯盟正式比序）；'
-        '附加賽後的季後賽種子可能與例行賽名次不同。'
-        '本站為非官方資料整理站，與 NBA 及各球團無任何關聯或授權；'
-        '球隊名稱與相關權利屬 NBA 及各權利人所有，引用請以官方公告為準。</p>'
-    )
+    cap = (f'<div class="tbl-cap">{season} {status_txt}名次 · 截至 {asof} · '
+           '排序為例行賽名次（同勝率之先後依聯盟正式比序）；附加賽後的季後賽種子可能與例行賽名次不同。'
+           '整理自 ESPN 公開資料（site.api.espn.com），非官方發布管道。</div>')
+
     faq = _page_faq(season, asof, final)
-    body = (f'<h1 class="st-h1">NBA 戰績 — 東西區排名</h1>'
-            f'<div class="st-sub">NBA {season} 賽季 30 隊完整排名（截至 {asof}）。</div>'
-            f'{champ_band}{tabs}{_faq_html(faq)}{asof_note}')
+    body = (
+        '<section class="page-hero">'
+        '<h1><span class="en">NBA</span> 戰績 — 東西區排名</h1>'
+        f'<p class="sub">NBA {season} 賽季 30 隊完整例行賽名次（截至 {asof}），'
+        '標示季後賽（1–6 名）與附加賽（7–10 名）分帶。</p>'
+        '</section>'
+        + champ_band + tabs + cap + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
             "name": f"NBA 戰績與東西區排名（{season}）", "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}
     jsonld = ba.graph_ld([ba.org_node(SITE), ba.website_node(SITE), coll,
                           ba.breadcrumb_node([("首頁", f"{BASE}/"), ("NBA 戰績", canonical)]),
                           ba.faq_node(faq, canonical)])
-    desc = (f"NBA {season} 賽季東西區完整排名（截至 {asof}）：30 隊勝敗、勝率、勝差"
+    desc = (f"NBA {season} 賽季東西區完整例行賽名次（截至 {asof}）：30 隊勝敗、勝率、勝差與季後賽/附加賽分帶"
             + (f"；總冠軍 {snap.get('champion_zh')}（{snap.get('finals_note', '')}）" if snap.get("champion_zh") else "")
             + "。整理自 ESPN 公開資料的非官方數據頁。")
     return _shell(f"NBA 戰績與東西區排名（{season}）", desc, canonical, jsonld, body)
