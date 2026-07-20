@@ -40,7 +40,7 @@ COVERS = [
      "總冠軍賽 4:1 勝馬刺　·　東西區終局全紀錄"),
     ("nba-2026-offseason-moves", "2026 · 休賽季異動",
      "字母哥<br>轉戰熱火",
-     "已完成 5 筆 · 待確認 1 筆　·　休賽季異動總表"),
+     "頭條交易 4 筆 · 待確認 1 筆　·　休賽季異動總表"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
