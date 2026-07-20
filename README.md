@@ -63,3 +63,18 @@ gh workflow run basketball-daily.yml --ref main
 與 baseball（navy／金）、foootball（森林綠）區隔。變體：court／slate／jade／violet
 （`build-articles.py` 的 `BB_THEMES`，localStorage key `bk-theme`）。
 封面與品牌資產：`gen-basketball-cover.py`／`gen-basketball-brand-assets.py`（HTML→Chrome headless PNG）。
+
+## 驗證部署（不要自己挑哨兵字串）
+
+```bash
+# 先 build（本站排程是雲端重建後直接 wrangler 部署，產物不 commit 回 main，
+# repo 裡那份是舊的），再比對
+python3 scripts/verify-deploy.py public-basketball/index.html public-basketball/standings/index.html
+```
+
+拿本機剛 build 好的檔案跟線上**整檔 byte 比對**，不符會印出第一個差異點的前後文。
+
+⚠️ 不要用「grep 一個自己想的關鍵字」驗部署：本站群為此踩過 5 次以上，
+每次都是挑到的字串在舊版本裡也存在（CSS class 名、佔位符隊名、404 fallback 頁的品牌字、
+上個 commit 已上線的卡片摘要、被 HTML 標籤截斷的字串）→ 假陽性，以為驗過了。
+HTTP 200 同樣不能當訊號：deterministic static build 幾乎永遠回 200。
