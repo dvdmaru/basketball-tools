@@ -1,0 +1,58 @@
+{
+  "_comment": "NBA 球員英文名 → 台灣慣用中文譯名。站規：需兩家以上台灣主流媒體有共識才收中譯；無共識一律保留英文原名，不自創音譯。每筆須註明查證來源與日期。撰稿時以本檔為準，不要臨時自己音譯。",
+  "_rule": "confirmed = 兩家以上台灣主流媒體一致；keep_english = 查過但媒體用字分歧或無共識；pending = 尚未查證，撰稿前請先查再補進 confirmed 或 keep_english",
+  "_verified_at": "2026-07-20",
+  "_sources_used": [
+    "udn.com（聯合新聞網／udn NBA）",
+    "sports.ltn.com.tw（自由體育）",
+    "sports.ettoday.net（ETtoday 運動雲）",
+    "cna.com.tw（中央社）"
+  ],
+  "confirmed": {
+    "Giannis Antetokounmpo": "安戴托昆波",
+    "Bobby Portis": "波提斯",
+    "Kel'el Ware": "韋爾",
+    "Victor Wembanyama": "溫班亞瑪",
+    "Jaime Jaquez Jr.": "哈克斯"
+  },
+  "keep_english": {
+    "Tyler Herro": "聯合作「赫洛」，ETtoday 同一篇內「希羅」「希洛」並用；無兩家共識，保留英文",
+    "Kasparas Jakucionis": "聯合作「亞庫喬尼斯」，其餘媒體未見；單一來源不足",
+    "Nate Ament": "2026 年新秀，台灣媒體尚未見穩定譯名",
+    "Matteo Spagnolo": "台灣媒體未見",
+    "Mo Gueye": "台灣媒體未見",
+    "Isaiah Evans": "台灣媒體未見",
+    "Joshua Jefferson": "台灣媒體未見"
+  },
+  "pending": {
+    "_note": "以下為文中已使用但尚未完成兩家查證的譯名。沿用現況，下次改稿時優先查證。",
+    "Khris Middleton": "米德頓",
+    "Gary Trent Jr.": "小特倫特",
+    "Kristaps Porzingis": "波辛基斯",
+    "Naz Reid": "瑞德",
+    "Donte DiVincenzo": "迪文琴佐",
+    "Jerami Grant": "格蘭特",
+    "Kris Murray": "莫瑞",
+    "Caris LeVert": "勒維特",
+    "Jaylen Brown": "傑倫布朗",
+    "Paul George": "保羅喬治",
+    "Ja Morant": "莫蘭特",
+    "LaMelo Ball": "鮑爾",
+    "Kawhi Leonard": "雷納德",
+    "LeBron James": "詹姆斯",
+    "Rui Hachimura": "八村壘",
+    "Trae Young": "楊恩",
+    "Donovan Mitchell": "米契爾",
+    "Norman Powell": "鮑威爾",
+    "Walker Kessler": "凱斯勒",
+    "Deandre Ayton": "艾頓",
+    "Miles Bridges": "布里吉斯",
+    "Andrew Wiggins": "威金斯",
+    "Isaiah Hartenstein": "哈騰斯坦",
+    "Tari Eason": "伊森",
+    "Jordan Clarkson": "克拉克森",
+    "Julius Randle": "藍道",
+    "Nic Claxton": "克拉克斯頓",
+    "Lu Dort": "多特"
+  }
+}
