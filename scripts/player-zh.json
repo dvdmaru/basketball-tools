@@ -1,7 +1,7 @@
 {
   "_comment": "NBA 球員英文名 → 台灣慣用中文譯名。站規：需兩家以上台灣主流媒體有共識才收中譯；無共識一律保留英文原名，不自創音譯。每筆須註明查證來源與日期。撰稿時以本檔為準，不要臨時自己音譯。",
   "_rule": "confirmed = 兩家以上台灣主流媒體一致；keep_english = 查過但媒體用字分歧或無共識；pending = 尚未查證，撰稿前請先查再補進 confirmed 或 keep_english",
-  "_verified_at": "2026-07-20",
+  "_verified_at": "2026-07-25",
   "_sources_used": [
     "udn.com（聯合新聞網／udn NBA）",
     "sports.ltn.com.tw（自由體育）",
@@ -13,7 +13,13 @@
     "Bobby Portis": "波提斯",
     "Kel'el Ware": "韋爾",
     "Victor Wembanyama": "溫班亞瑪",
-    "Jaime Jaquez Jr.": "哈克斯"
+    "Jaime Jaquez Jr.": "哈克斯",
+    "LeBron James": "詹姆斯",
+    "Joel Embiid": "恩比德",
+    "Tyrese Maxey": "馬克西",
+    "Jaylen Brown": "布朗",
+    "Kareem Abdul-Jabbar": "賈霸",
+    "Vince Carter": "卡特"
   },
   "keep_english": {
     "Tyler Herro": "聯合作「赫洛」，ETtoday 同一篇內「希羅」「希洛」並用；無兩家共識，保留英文",
@@ -22,7 +28,26 @@
     "Matteo Spagnolo": "台灣媒體未見",
     "Mo Gueye": "台灣媒體未見",
     "Isaiah Evans": "台灣媒體未見",
-    "Joshua Jefferson": "台灣媒體未見"
+    "Joshua Jefferson": "台灣媒體未見",
+    "Karl Malone": "以「馬龍 爵士」查 udn／自由體育皆未見穩定對應內文，2026-07-25 查證未過門檻",
+    "VJ Edgecombe": "2026-07-25 四家 76 人相關報導全文皆未出現中譯，保留英文",
+    "Dirk Nowitzki": "本次未查證，保留英文",
+    "Robert Parish": "本次未查證，保留英文",
+    "Kevin Willis": "本次未查證，保留英文",
+    "Udonis Haslem": "本次未查證，保留英文",
+    "Kevin Garnett": "本次未查證，保留英文",
+    "Jamal Crawford": "本次未查證，保留英文",
+    "Anfernee Simons": "本次未查證，保留英文",
+    "Mike Gansey": "球團管理層，台灣媒體未見譯名",
+    "Paul George": "2026-07-25 實查：桌內五份台媒（udn 9649766／9649887、ETtoday 3207305／3207308、中央社通稿）對「保羅喬治」全文零命中；自由體育作「七六人喬治」。未達兩家共識 → 保留英文。⚠️ 已發布的 7/20 休賽季總表沿用舊寫法不回改"
+  },
+  "_notes_20260725": {
+    "來源": "獨立編輯來源三家：udn 9649766（聯合自製）、ETtoday 3207305／3207308（自製）、中央社通稿（經 udn 9649887 與自由 5516987 轉載）。自由體育 5516964 亦為中央社稿，不另計。原始頁全數存於查核桌 evidence/",
+    "詹姆斯": "udn（自製，30 次）、ETtoday（自製，13 次）、中央社（通稿，25 次）三個獨立編輯來源全用「詹姆斯」；「詹皇」為並用暱稱不作正式譯名",
+    "恩比德": "ETtoday 與中央社一致作「恩比德」；⚠️ udn 自製稿作「安比德」。採兩家一致者，形狀同 2026-07-20 的溫班亞瑪案（中央社異議未擋）",
+    "布朗": "⚠️ 修正——三個獨立編輯來源全作「布朗（Jaylen Brown）」，「傑倫布朗」零命中；自由體育標題〈綠衫軍二當家布朗、七六人喬治互換東家〉可再佐證。原詞表的「傑倫布朗」是 2026-07-20 撰稿時自行加長，非媒體用法；已發布的休賽季總表沿用舊寫法不回改，新稿一律用「布朗」",
+    "通稿去重": "udn 9649887 與自由 5516987 標題一字不差＝同一則中央社通稿；兩份原始頁均已存入查核桌 evidence/ 供複驗",
+    "⚠️來源獨立性修正": "Sol 查核桌抓到：自由體育 5516964 與 5516987 內文皆標〔中央社〕，兩篇都是通稿轉載。原記「四家獨立來源」有誤，實為三家（udn／ETtoday／中央社）。刊載平台 ≠ 獨立編輯來源，計共識前要先看內文有沒有通稿標記"
   },
   "pending": {
     "_note": "以下為文中已使用但尚未完成兩家查證的譯名。沿用現況，下次改稿時優先查證。",
@@ -34,12 +59,9 @@
     "Jerami Grant": "格蘭特",
     "Kris Murray": "莫瑞",
     "Caris LeVert": "勒維特",
-    "Jaylen Brown": "傑倫布朗",
-    "Paul George": "保羅喬治",
     "Ja Morant": "莫蘭特",
     "LaMelo Ball": "鮑爾",
     "Kawhi Leonard": "雷納德",
-    "LeBron James": "詹姆斯",
     "Rui Hachimura": "八村壘",
     "Trae Young": "楊恩",
     "Donovan Mitchell": "米契爾",

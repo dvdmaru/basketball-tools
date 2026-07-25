@@ -1,5 +1,6 @@
 {
   "_comment": "NBA 30 隊英文名 → 台灣慣用中文譯名（fetch-nba.py 讀取；key 為 ESPN displayName）",
+  "_note_76ers": "2026-07-25 Charlie 裁定：76 人全站統一寫「費城 76 人」，不用「費城七六人」。台灣媒體兩種都在用（ETtoday 作七六人，udn／自由／中央社作 76 人），本站取後者。已回改既有兩篇文章與 leagues/nba-standings-2025-26.json 的 name_zh 快照值。⚠️ 本檔改動會經 fetch-nba.py 寫進 leagues/*.json 快照，改隊名時要一併回改既有快照，否則舊快照會 shadow 掉新寫法。",
   "Atlanta Hawks": "亞特蘭大老鷹",
   "Boston Celtics": "波士頓塞爾提克",
   "Brooklyn Nets": "布魯克林籃網",
@@ -22,7 +23,7 @@
   "New York Knicks": "紐約尼克",
   "Oklahoma City Thunder": "奧克拉荷馬雷霆",
   "Orlando Magic": "奧蘭多魔術",
-  "Philadelphia 76ers": "費城七六人",
+  "Philadelphia 76ers": "費城 76 人",
   "Phoenix Suns": "鳳凰城太陽",
   "Portland Trail Blazers": "波特蘭拓荒者",
   "Sacramento Kings": "沙加緬度國王",

@@ -41,6 +41,9 @@ COVERS = [
     ("nba-2026-offseason-moves", "2026 · 休賽季異動",
      "字母哥<br>轉戰熱火",
      "頭條交易 4 筆 · 待確認 1 筆　·　休賽季異動總表"),
+    ("lebron-james-76ers-24th-season", "2026 · 生涯數據總表",
+     "詹姆斯<br>加盟 76 人",
+     "第 24 個賽季 · 第 4 支球隊　·　23 季官方數據拆解"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
