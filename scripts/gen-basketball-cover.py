@@ -47,6 +47,9 @@ COVERS = [
     ("tpbl-plg-rules-compared", "台灣職籃 · 規則逐條對照",
      "身分分 2 種<br>還是 4 種",
      "TPBL 對 PLG　·　註冊 · 上場 · 薪資 · 選秀 · 交易"),
+    ("nba-2026-draft-results", "2026 · 選秀完整名單",
+     "60 個順位<br>27 個換了隊",
+     "兩輪逐一列出　·　上台選人的隊 · 選後去向"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
