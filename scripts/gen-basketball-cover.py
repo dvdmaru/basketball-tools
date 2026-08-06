@@ -44,6 +44,9 @@ COVERS = [
     ("lebron-james-76ers-24th-season", "2026 · 生涯數據總表",
      "詹姆斯<br>加盟 76 人",
      "第 24 個賽季 · 第 4 支球隊　·　23 季官方數據拆解"),
+    ("tpbl-plg-rules-compared", "台灣職籃 · 規則逐條對照",
+     "身分分 2 種<br>還是 4 種",
+     "TPBL 對 PLG　·　註冊 · 上場 · 薪資 · 選秀 · 交易"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
