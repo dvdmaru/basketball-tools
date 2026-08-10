@@ -3,38 +3,41 @@ slug: don-nelson-nellie-ball
 competition: nba
 type: "feature"
 date: "2026-08-10"
-title: "尼爾森（Don Nelson）的 Nellie Ball：名人堂稱首創，他說只是權宜"
-subtitle: "名人堂把小球與 point forward 的創新歸給他，NBA 官方保留發明權爭議，他本人則把功勞交給 Red Auerbach"
-lede: "尼爾森於 2026 年 8 月 9 日辭世，享年 86 歲。他以 1,335 勝排名 NBA 史上例行賽勝場第 2，名人堂官網稱他首創小球進攻，NBA 官方說 point forward 的發明權有爭議，他本人卻說 Nellie Ball 只是缺少好長人時的權宜之計。"
+title: "尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜"
+subtitle: "名人堂把小球的創新與 point forward 的引進記在他名下，NBA.com 的悼念專文保留發明權爭議，他本人則把功勞交給 Red Auerbach"
+lede: "尼爾森於 2026 年 8 月 9 日辭世，享年 86 歲。他以 1,335 勝排名 NBA 史上例行賽勝場第 2。名人堂官網稱他是小球進攻的創新者，也說 point forward 的概念由他帶進籃球；NBA.com 的悼念專文則寫這個詞的發明權有爭議；他本人說 Nellie Ball 只是缺少好長人時的權宜之計。"
 ---
 
-# 尼爾森（Don Nelson）的 Nellie Ball：名人堂稱首創，他說只是權宜
+# 尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜
 
 **Nellie Ball · 小球｜point forward · 例行賽 1,335 勝**
 
-同一套打法，留下了兩個幾乎相反的版本。
+同一套打法，留下了兩種很不一樣的說法。
 
-Naismith 籃球名人堂官網把尼爾森稱為小球進攻的首創者與最大推行者。尼爾森本人卻說，Nellie Ball 不是一套哲學，只是陣中沒有好長人時的權宜做法。他還把功勞交給了 Red Auerbach。
+Naismith 籃球名人堂官網把尼爾森稱為小球進攻的創新者與最大推行者，也說 point forward 的概念由他帶進籃球。尼爾森本人卻說，Nellie Ball 不是一套哲學，只是陣中沒有好長人時的權宜做法。他還把功勞交給了 Red Auerbach。
 
-NBA 官方又在兩個版本之間加了第三種說法。Point forward 這個詞由誰提出，Del Harris、Robert Reid 與 Marques Johnson 都有相關主張。NBA 官方能確認的是，尼爾森至少推廣了這個概念，也在比賽中反覆使用。
+NBA.com 的悼念專文又在兩種說法之間加了第三種。Point forward 這個詞由誰提出，Del Harris、Robert Reid 與 Marques Johnson 都有相關主張。這篇專文能確認的是，尼爾森至少推廣了這個概念，也在比賽中反覆使用。
 
-這不是一道一定要選邊站的題目。官方認證、聯盟記錄與當事人自述，談的是同一個人，卻沒有給出同一個答案。Nellie Ball 最值得留下來的部分，正是這段落差。
+名人堂的認證、NBA.com 的記述與當事人自述，談的是同一個人，重點卻不在同一處。Nellie Ball 最值得留下來的部分，正是這段落差。
 
-## 名人堂稱尼爾森首創，尼爾森把功勞交給 Red Auerbach
+## 名人堂稱尼爾森為創新者，尼爾森把功勞交給 Red Auerbach
 
 三個高等級來源各自留下了一種定位。
 
 | 誰在說 | 對 Nellie Ball 與 point forward 的說法 | 說法出處 |
 |---|---|---|
-| Naismith 籃球名人堂官網 | 稱尼爾森是小球進攻的首創者與最大推行者，也稱 point forward 概念由他帶進籃球 | 名人堂官網名人資料頁 |
-| NBA.com 悼念專文 | Point forward 一詞的發明權有爭議；Del Harris、Robert Reid、Marques Johnson 都牽涉其中。尼爾森至少推廣並大量使用這個概念 | NBA 官方網站 |
-| 尼爾森本人 | Nellie Ball 是沒有好長人時的權宜做法；相關功勞應歸給 Red Auerbach | ESPN TrueHoop 2012、The Players' Tribune 2016 |
+| Naismith 籃球名人堂官網 | 稱尼爾森是小球進攻的創新者與最大推行者，也稱 point forward 概念由他帶進籃球 | 名人堂官網名人資料頁 |
+| NBA.com 悼念專文 | Point forward 一詞的發明權有爭議；Del Harris、Robert Reid、Marques Johnson 都牽涉其中。尼爾森至少推廣並大量使用這個概念 | NBA.com 專文，作者 Steve Aschburner |
+| 尼爾森本人 | Nellie Ball 是沒有好長人時的權宜做法 | ESPN／Marc Stein 2012 專訪 |
+| 尼爾森本人 | 相關功勞應歸給 Red Auerbach | The Players' Tribune 2016 自述 |
 
-名人堂官網使用的定位最強。官網不只把小球進攻的創新歸給尼爾森，也把 point forward 概念的引入記在他名下。名人堂另外列出他的 1,335 場例行賽勝利、3 座年度最佳教練、2012 年入堂，以及 1996 年入選 NBA 史上十大教練。
+名人堂官網使用的定位最強。官網把小球進攻的創新歸給尼爾森，也把 point forward 概念的引入記在他名下。名人堂另外列出他的 1,335 場例行賽勝利、3 座年度最佳教練、2012 年入堂，以及 1996 年入選 NBA 史上十大教練。
 
-NBA.com 的寫法收斂了一步。聯盟官方沒有把 point forward 這個詞的發明權交給單一人物，而是明列 Del Harris、Robert Reid、Marques Johnson 的競爭主張。尼爾森的位置仍然清楚：他把 point forward 帶進 NBA 的常用語彙，也把這種用人方式放進大量比賽。
+NBA.com 那篇專文的寫法收斂了一步。作者沒有把 point forward 這個詞的發明權交給單一人物，而是明列 Del Harris、Robert Reid、Marques Johnson 的競爭主張。尼爾森的位置仍然清楚：他把 point forward 帶進 NBA 的常用語彙，也把這種用人方式放進大量比賽。
 
-尼爾森自己的說法最不像一篇名人堂介紹。他把 Nellie Ball 定義為小球、快速而有觀賞性的進攻、point forward，以及讓球員出任非傳統位置。但他緊接著補上一個條件：只有球隊不夠好，或好長人不夠多時，才需要這樣打。
+值得一提的是，NBA.com 站內的寫法本身也不一致。同日刊出的美聯社訃聞直接寫尼爾森引進了現在所稱的 point forward，官方勝場榜的條目更寫他以創造這個位置聞名。同一個網站的三篇文章，對發明權給了三種強度。
+
+尼爾森自己的說法最不像一篇名人堂介紹。被問到 Nellie Ball 是什麼，他說這個詞大概是指小球、快速而有觀賞性的進攻、point forward，以及讓球員出任非傳統位置——然後補了一句，他不覺得這個標籤準確。他接著給出條件：只有球隊不夠好，或好長人不夠多時，才需要這樣打。
 
 尼爾森甚至用 Bob Lanier 當反例。如果手上有那種好中鋒，他會等中鋒跑過半場，不會堅持全隊一直加速。Nellie Ball 在他的描述裡不是信條，而是一組看菜下飯的選擇。
 
@@ -48,9 +51,9 @@ Paul Pressey 身高 6 呎 5 吋。進入公鹿後，他的場均助攻從 3.1 �
 
 6 呎 7 吋的 Marques Johnson 也在公鹿承擔組織工作。NBA.com 的記錄把順序寫得很明白，先是 Marques Johnson，之後是 Paul Pressey，兩人都曾發動公鹿進攻。勇士時期，Rod Higgins、Chris Mullin、Stephen Jackson 也出現在尼爾森使用組織前鋒的名單裡。
 
-這些案例能確認尼爾森反覆使用 point forward，不能替詞彙的發明權做最後裁決。Marques Johnson 對 1984 年季後賽的回憶，與 Del Harris、Robert Reid 的相關主張，讓名稱起點維持爭議。NBA 官方因此採取較窄的結論：尼爾森至少是重要的推廣者。
+這些案例能確認尼爾森反覆使用 point forward，不能替詞彙的發明權做最後裁決。Marques Johnson 對 1984 年季後賽的回憶，與 Del Harris、Robert Reid 的相關主張，讓名稱起點維持爭議。那篇 NBA.com 專文因此採取較窄的結論：尼爾森至少是重要的推廣者。
 
-把球交給 Paul Pressey，也不等於把高大球員與控球畫上等號。尼爾森手上打組織的前鋒，最高就是 6 呎 7 吋的 Marques Johnson。他真正改動的是任務分配：誰帶球過半場、誰發動進攻，不必完全由傳統控球後衛包辦。
+把球交給 Paul Pressey，也不等於把高大球員與控球畫上等號。尼爾森在公鹿打組織的前鋒，最高是 6 呎 7 吋的 Marques Johnson。他真正改動的是任務分配：誰帶球過半場、誰發動進攻，不必完全由傳統控球後衛包辦。
 
 ## 7 呎 6 的 Manute Bol 在 1988-89 球季出手 91 記三分
 
@@ -66,19 +69,19 @@ Manute Bol 那一季出手 91 記三分球，比 Mitch Richmond 多 1 次，命�
 
 ## Run TMC 的主要輪替球員都不到 6 呎 8
 
-尼爾森 1988-89 球季接手勇士後，球隊勝場從 20 場上升到 43 場以上。接下來 6 年，勇士 4 度打進季後賽。
+尼爾森 1988-89 球季接手勇士後，球隊戰績從 20 勝 62 敗變成 43 勝 39 敗。他在勇士的第一段 7 個球季，球隊 4 度打進季後賽。
 
-最具辨識度的陣容是 Run TMC。Tim Hardaway、Mitch Richmond、Chris Mullin 組成名稱裡的 3 個字母。主要輪替還包括 Šarūnas Marčiulionis 與 Rod Higgins，這批球員身高都在 6 呎 7 以下。6 呎 8 的 Tom Tolbert 則負責拉開空間。
+最具辨識度的陣容是 Run TMC。Tim Hardaway、Mitch Richmond、Chris Mullin 組成名稱裡的 3 個字母。主要輪替還包括 Šarūnas Marčiulionis 與 Rod Higgins，這批球員身高都不超過 6 呎 7 吋。6 呎 8 的 Tom Tolbert 則負責拉開空間。
 
 這支勇士把速度、持球與非典型位置放在同一個陣容裡，但故事沒有停在一張漂亮合照。尼爾森後來交易 Mitch Richmond，Run TMC 因此拆散。他事後把這筆交易稱為自己最大的遺憾。
 
-另一場與位置有關的衝突發生在 Chris Webber 身上。Chris Webber 拿下新人王後，尼爾森希望他承擔 point forward 的工作。兩人對打法定位發生衝突，Chris Webber 在 1994 年 11 月被交易，尼爾森則在 3 個月後離開勇士。
+另一場與位置有關的衝突發生在 Chris Webber 身上。Chris Webber 拿下新人王後，尼爾森希望他出任中鋒。兩人對位置與執教方式發生衝突，Chris Webber 在 1994 年 11 月被交易，尼爾森則在 3 個月後離開勇士。
 
 兩段人事結果讓 Nellie Ball 的另一面變得清楚。讓球員打非傳統位置，可以打開新的進攻組合，也需要球員接受新的職責。尼爾森能把陣容推向非常規方向，卻不保證每一次人員選擇都能維持下去。
 
 ## 尼爾森執教 4 支球隊，勇士任期分成兩段
 
-尼爾森的總教練生涯橫跨 31 個球季。公鹿是起點，勇士有兩段任期，中間還有尼克與獨行俠。他接手公鹿是在 1976-77 球季開打不久之後，前任 Larry Costello 的離任方式與交接的確切場次，各家記載並不一致。
+尼爾森的總教練生涯橫跨 31 個球季。公鹿是起點，勇士有兩段任期，中間還有尼克與獨行俠。NBA.com 與美聯社把交接記為 1976-77 球季第 18 場後、Larry Costello 請辭；CBS Sports 寫的是遭到解僱，尼爾森本人 2016 年的自述則把時間放在下一個球季中段。離任方式與確切場次，各家記載並不一致。
 
 | 球隊 | 執教期間 | 季數 | 關鍵事件 |
 |---|---|---:|---|
@@ -112,9 +115,9 @@ Manute Bol 那一季出手 91 記三分球，比 Mitch Richmond 多 1 次，命�
 | 4 | Jerry Sloan | 1,221 | 公牛、爵士 | 已故 |
 | 5 | Pat Riley | 1,210 | 湖人、尼克、熱火 | 已退休 |
 
-Doc Rivers 仍在執教。截至同一份官方榜單，他有 1,194 勝，距 Pat Riley 16 勝、距 Jerry Sloan 27 勝。2026-27 球季開始後，前 5 名次仍會變動。
+Doc Rivers 以 1,194 勝排在第 6，距 Pat Riley 16 勝、距 Jerry Sloan 27 勝；他已於 2026 年 4 月卸任公鹿總教練。同一份榜單顯示，現役教練中排名最高的是 Rick Carlisle 的 1,012 勝。
 
-Gregg Popovich 的數字採 NBA 官方調整後的 1,390 勝，不採部分資料庫的舊數字。尼爾森的「第 2」也只適用例行賽榜。若自行把季後賽勝場相加，Lenny Wilkens 是 1,412 勝，尼爾森是 1,410 勝，尼爾森會排第 3。那是兩種資料相加的推算，不是 NBA 發布的官方合併排行榜。
+本文的勝場一律採 NBA.com 官方榜。部分媒體與資料庫對 Gregg Popovich 另有較高數字，差別在 2024-25 球季的勝場是否計入他名下。尼爾森的「第 2」也只適用例行賽榜。若自行把季後賽勝場相加（尼爾森季後賽 75 勝、Lenny Wilkens 80 勝），Lenny Wilkens 是 1,412 勝，尼爾森是 1,410 勝，尼爾森會落到他之後。那是兩種資料相加的推算，不是 NBA 發布的官方合併排行榜。
 
 最新球季在整條 NBA 時間線上的位置，可參考〈[2025-26 NBA 賽季回顧](/articles/nba-2025-26-season-review/)〉。球員與球隊後續變動則整理在〈[2026 NBA 休賽季異動總表](/articles/nba-2026-offseason-moves/)〉。
 
@@ -124,9 +127,9 @@ Gregg Popovich 的數字採 NBA 官方調整後的 1,390 勝，不採部分資�
 
 這組結果和球員時期形成鮮明對照。尼爾森在 NBA 打了 14 季，其中 11 季效力塞爾提克，隨隊拿下 5 座總冠軍。塞爾提克在 1978 年退休他的 19 號球衣。到了 2012 年，他以教練身分進入 Naismith 籃球名人堂，不是以球員身分入堂。
 
-1996 年，尼爾森獲選 NBA 史上十大教練。據 CBS Sports 報導，當時那 10 人之中，只有他沒有總教練冠軍戒指。這個位置沒有抹掉他的執教成就，也沒有替季後賽缺口補上一座不存在的冠軍。
+1996 年，尼爾森獲選 NBA 史上十大教練。那份名單的 10 個人裡，只有他沒有以總教練身分奪冠；CBS Sports 的寫法是「唯一沒有冠軍戒指的人」，不過尼爾森球員時期有 5 枚。
 
-防守同樣是生涯評價不能避開的一面。勇士記者 Monte Poole 認為，尼爾森把大量注意力放在製造進攻，沒有同等投入防守。2006-07 勇士的例行賽進攻排名第 9，防守排名第 21。這些數字不需要嘲諷，進攻與防守之間的落差已經留在紀錄裡。
+防守同樣是生涯評價不能避開的一面。勇士記者 Monte Poole 認為，尼爾森的陣容與戰術專為製造進攻而設，卻沒有在防守上投入同等心力。18 次季後賽、75 勝 91 敗、沒有一次進入總冠軍賽，這組數字與他的例行賽勝場並排時，落差就在紀錄裡。
 
 ## 2007 年勇士用 6 場淘汰 67 勝獨行俠
 
@@ -166,7 +169,7 @@ Pat Riley 曾稱尼爾森是比賽史上最偉大的創新者。Adam Silver 認�
 
 ### 尼爾森真的發明小球了嗎？
 
-沒有單一答案。Naismith 籃球名人堂官網稱尼爾森是小球進攻的首創者與最大推行者；尼爾森本人則說 Nellie Ball 只是權宜做法，並把功勞歸給 Red Auerbach。NBA 官方另外指出，point forward 一詞的發明權也有爭議。
+沒有單一答案。Naismith 籃球名人堂官網稱尼爾森是小球進攻的創新者與最大推行者，也說 point forward 概念由他帶進籃球；尼爾森本人則說 Nellie Ball 只是權宜做法，並把功勞歸給 Red Auerbach。NBA.com 的悼念專文另外指出，point forward 一詞的發明權有爭議。
 
 ### 尼爾森是 NBA 史上勝場第幾多的教練？
 
