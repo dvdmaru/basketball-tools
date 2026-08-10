@@ -50,6 +50,9 @@ COVERS = [
     ("nba-2026-draft-results", "2026 · 選秀完整名單",
      "60 個順位<br>27 個換了隊",
      "兩輪逐一列出　·　上台選人的隊 · 選後去向"),
+    ("taiwan-hoops-2026-offseason-moves", "台灣職籃 · 2026 休賽季",
+     "衛冕軍首輪籤<br>選到了空氣",
+     "跨聯盟轉隊 · 林庭謙返台　·　選秀 · 洋將 · 退役"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
