@@ -56,6 +56,9 @@ COVERS = [
     ("taiwan-hoops-2026-offseason-moves", "台灣職籃 · 2026 休賽季",
      "衛冕軍首輪籤<br>選到了空氣",
      "跨聯盟轉隊 · 林庭謙返台　·　選秀 · 洋將 · 退役"),
+    ("don-nelson-nellie-ball", "NBA · Nellie Ball",
+     "名人堂說首創<br>他說是權宜",
+     "例行賽 1,335 勝 · 史上第 2　·　小球 · point forward"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
