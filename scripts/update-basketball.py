@@ -145,6 +145,10 @@ def main():
     run(script("gen-hbl-page.py"), "gen HBL page")
     run(script("gen-basketball-data-hub.py"), "gen data hub")
 
+    # 3.5 封面主張錨定：封面文案說了文章沒說過的話就擋（2026-08-11 事故：
+    #     查核桌否決的「首創」留在 cover.png 上線，因為既有檢查全部只讀 index.md）。
+    run(script("check-cover-claims.py"), "check cover claims")
+
     # 4. 部署前 hard gate：建置/生成類有任何失敗 → 禁止部署，線上維持上一版。
     #    （build 步驟照樣跑完收集診斷；擋的只有「把壞產物推上線」這一步。
     #      fetch 類是 fail-soft、不進 FAILED，所以斷源不會把整站凍在這裡。）
