@@ -66,11 +66,9 @@ RHETORIC = {
     "taiwan-hoops-two-leagues": {
         "始末": "摘要名詞。文章講的是同一件事（「破局」出現 9 次、「合併破局」4 次），封面用總括說法。",
     },
-    "hbl-league-guide": {
-        "男甲": "通行簡稱＝男子甲級組。⚠️文章一貫用「男子組」＋「甲級」，從未出現「男甲」；"
-                "數字 37 隊有錨到文章，屬用語不一致非事實問題，是否統一由 Charlie 裁。",
-        "女甲": "同上，＝女子甲級組；文章用「女子組」。",
-    },
+    # hbl-league-guide 原本登記「男甲／女甲」＝通行簡稱。2026-08-11 Charlie 裁「統一」，
+    # 封面改用文章自己的用語（男子組／女子組），登記隨之撤除——**能改就別登記**，
+    # 登記是給改不掉的修辭用的，不是給「懶得改」用的（否則登記簿會單向膨脹成掩蓋器）。
     "nba-2026-draft-results": {
         "換了隊": "口語化改寫。文章用「交易」（70 次）與「易主」（5 次）講同一件事，"
                   "承重數字「27 個」已錨到文章。",
@@ -244,12 +242,13 @@ def self_test():
     print(f"  {'✓ 抓到' if hit else '✗ 沒抓到'}（命中 {len(v2)} 項）")
     ok &= hit
 
-    print("\n【陽性 3】登記制不是萬用赦免：已登記「男甲」的那篇改寫別的未錨定主張")
-    probe = [(s, k, t, "男甲 37 隊 · 女甲 16 隊　·　史上最爛賽制" if s == "hbl-league-guide" else sub)
+    print("\n【陽性 3】登記制不是萬用赦免：已登記「換了隊」的那篇改寫別的未錨定主張")
+    probe = [(s, k, "60 個順位<br>27 個換了隊" if s == "nba-2026-draft-results" else t,
+              "史上最爛梯隊　·　兩輪逐一列出" if s == "nba-2026-draft-results" else sub)
              for s, k, t, sub in covers]
     v3, a3 = check(probe, verbose=False)
-    hit = any(x[0] == "hbl-league-guide" for x in v3)
-    still_reg = any(x[2] == "男甲" for x in a3)
+    hit = any(x[0] == "nba-2026-draft-results" for x in v3)
+    still_reg = any(x[2] == "換了隊" for x in a3)
     print(f"  {'✓ 抓到新主張' if hit else '✗ 沒抓到'}；"
           f"{'同篇既有登記仍生效' if still_reg else '⚠️ 登記被連坐失效'}（命中 {len(v3)} 項）")
     ok &= hit and still_reg
@@ -268,7 +267,7 @@ def self_test():
     print(f"  {'✓ 未亮紅' if not nelson else '✗ 假陽性 ' + str(nelson)}")
     ok &= not nelson
 
-    print("\n【陰性 2】已登記修辭（男甲／始末等）走登記路徑、不算違規")
+    print("\n【陰性 2】已登記修辭（始末／換了隊等）走登記路徑、不算違規")
     v5, a5 = check(covers, verbose=False)
     reg = {x[2] for x in a5}
     print(f"  {'✓ 登記生效：' + '、'.join(sorted(reg)) if reg and not v5 else '✗ ' + str(v5 or '登記未生效')}")
