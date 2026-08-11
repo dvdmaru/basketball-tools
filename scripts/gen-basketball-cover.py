@@ -57,7 +57,7 @@ COVERS = [
      "衛冕軍首輪籤<br>選到了空氣",
      "跨聯盟轉隊 · 林庭謙返台　·　選秀 · 洋將 · 退役"),
     ("don-nelson-nellie-ball", "NBA · Nellie Ball",
-     "名人堂說首創<br>他說是權宜",
+     "名人堂說創新者<br>他說只是權宜",
      "例行賽 1,335 勝 · 史上第 2　·　小球 · point forward"),
 ]
 
