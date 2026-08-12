@@ -59,6 +59,9 @@ COVERS = [
     ("don-nelson-nellie-ball", "NBA · Nellie Ball",
      "名人堂說創新者<br>他說只是權宜",
      "例行賽 1,335 勝 · 史上第 2　·　小球 · point forward"),
+    ("nba-2026-27-opening-night-christmas-schedule", "NBA · 開幕週與聖誕大戰",
+     "詹姆斯開幕戰<br>作客尼克",
+     "台北 10/21 早上 7 點　·　聖誕大戰 12/26 星期六"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
