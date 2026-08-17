@@ -30,14 +30,24 @@ SITE = ba.SITES.get("basketball")
 BASE = SITE["base"]
 
 # 數據頁清單：(href, icon, 標題, 說明)
-DESTS = [
-    ("/standings/", "🏆", "NBA 戰績與東西區排名",
-     "美國職籃 30 隊完整排名（勝負・勝率・勝差・種子序）與總冠軍結果。整理自 ESPN 公開資料；休賽季顯示 2025-26 終局數據。"),
-    ("/tw/", "🇹🇼", "台灣職籃：TPBL × P. LEAGUE+",
-     "台灣兩個職業籃球聯盟同頁對照：TPBL 7 隊與 PLG 4 隊的例行賽戰績與總冠軍。整理自兩聯盟官網公開資料。"),
-    ("/hbl/", "🏀", "HBL 高中籃球甲級",
-     "HBL 男子甲級、女子甲級總決賽四強最終名次與冠軍戰結果，附歷屆冠軍榜（可回溯至 106 學年度）。整理自 hbl.com.tw 公開賽果。"),
-]
+# ⚠️ NBA 卡片的賽季／狀態定語由快照衍生（season 欄＋final 旗標），不寫死賽季字面值，
+#    否則開季後 /data/ 會繼續宣稱「休賽季顯示 20XX-XX 終局數據」。
+def dests():
+    nba = ba._dash_latest("nba-standings-*.json")
+    st = ba.bb_season_state(nba)
+    if st["offseason"]:
+        nba_state = f"休賽季顯示 {st['season_seg']}終局數據。"
+    else:
+        nba_state = f"{st['season_seg']}進行中，每日自動更新。"
+    return [
+        ("/standings/", "🏆", "NBA 戰績與東西區排名",
+         "美國職籃 30 隊完整排名（勝負・勝率・勝差・種子序）與總冠軍結果。"
+         f"整理自 ESPN 公開資料；{nba_state}"),
+        ("/tw/", "🇹🇼", "台灣職籃：TPBL × P. LEAGUE+",
+         "台灣兩個職業籃球聯盟同頁對照：TPBL 7 隊與 PLG 4 隊的例行賽戰績與總冠軍。整理自兩聯盟官網公開資料。"),
+        ("/hbl/", "🏀", "HBL 高中籃球甲級",
+         "HBL 男子甲級、女子甲級總決賽四強最終名次與冠軍戰結果，附歷屆冠軍榜（可回溯至 106 學年度）。整理自 hbl.com.tw 公開賽果。"),
+    ]
 
 
 def _shell(title, desc, canonical, jsonld, body):
@@ -91,7 +101,7 @@ def _shell(title, desc, canonical, jsonld, body):
 
 def build_page():
     cards = ""
-    for href, ic, tt, dd in DESTS:
+    for href, ic, tt, dd in dests():
         cards += (f'<a class="hub-card" href="{href}"><span class="ic">{ic}</span>'
                   f'<span><span class="tt">{html_lib.escape(tt)}</span>'
                   f'<span class="dd">{html_lib.escape(dd)}</span></span>'

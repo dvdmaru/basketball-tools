@@ -19,4 +19,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
+      # ⚠️ 這一步不可省略，且版本要與 basketball-daily.yml 保持一致。
+      # 2026-08-18 踩過：本 workflow 原本沒裝 markdown，而 scripts/build-articles.py 頂層就
+      # `import markdown`。在此之前沒有任何測試 import 過 build-articles.py，所以這個缺口
+      # 一直沒被看見——直到 test_season_rollover.py 第一次 import 它，CI 才當場 ModuleNotFoundError。
+      # 本機因為裝了 markdown 所以 40 條全綠，是典型的「本機綠、CI 紅」。
+      - run: pip install markdown==3.10.2
       - run: python -m unittest discover -s tests -v
