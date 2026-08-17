@@ -1865,27 +1865,57 @@ def _bb_footer(site: dict) -> str:
     return bb_footer_v2(site)
 
 
+# ---------- season-state（賽季狀態）共用衍生工具 ----------
+# 全站規則：賽季標籤一律取自快照的 season／season_label 欄位，賽季狀態一律取自快照的
+# final 旗標；⛔ 任何文案都不得寫死賽季字面值（20XX-XX 這種、或 1XX 學年度）或狀態字樣
+# （如「休賽季」「終局」）。範本＝gen-nba-standings.py::_page_faq / status_txt。
+
+def season_status_txt(final: bool, base_label: str = "例行賽") -> str:
+    """統一的賽季狀態字樣：final → 「…終局」，否則 → 「…進行中」。"""
+    return f"{base_label}終局" if final else f"{base_label}進行中"
+
+
+def bb_season_state(nba=None, tw=None, hbl=None) -> dict:
+    """由三份快照衍生首頁／llms.txt 共用的賽季狀態，供文案條件化使用。"""
+    offseason = bool((nba or {}).get("final"))
+    season_tag = (nba or {}).get("season") or (tw or {}).get("season") or ""
+    hbl_label = (hbl or {}).get("season_label") or ""
+    return {"offseason": offseason, "season_tag": season_tag, "hbl_label": hbl_label,
+            "tw_final": bool((tw or {}).get("final")),
+            "season_seg": f"{season_tag} 賽季" if season_tag else "本賽季",
+            "hbl_seg": f"（HBL 為 {hbl_label}）" if hbl_label else ""}
+
+
 # 首頁可見 FAQ（＝站台事實，非杜撰；同時餵 FAQPage schema 與可見問句式標題，
 # 對應測評 AEO 的「FAQ 結構 / 問句式標題 / PAA 友善」三項）。問句一律以「？」收尾。
-BB_HOME_FAQ = [
-    ("籃球數據誌涵蓋哪些聯盟？",
-     "美國職籃 NBA（30 隊）、台灣職籃兩聯盟——TPBL（台灣職業籃球大聯盟，7 隊）與 P. LEAGUE+（4 隊），以及 HBL 高中籃球甲級聯賽（男甲、女甲）。首頁提供各聯盟戰績速覽，數據頁可深入查詢。"),
-    ("籃球數據誌的數據多久更新一次？",
-     "目前為休賽季模式：頁面顯示 2025-26 賽季（HBL 為 114 學年度）的終局數據，並標註資料截至日期。2026 年 10 月各聯盟新賽季開打後，NBA 戰績改為每日自動更新、台灣職籃與 HBL 為每週更新；每篇文章的數字也都標註來源與截止日期。"),
-    ("這個網站和 NBA、TPBL、P. LEAGUE+ 或 HBL 官方有關係嗎？",
-     "沒有。籃球數據誌是獨立的繁體中文數據內容站，與 NBA、TPBL、P. LEAGUE+、HBL（中華民國高級中等學校體育總會）及各球團、學校均無任何官方關聯；所有數據整理自公開來源並於頁面標註。"),
-    ("文章的數據可信嗎？要怎麼查證？",
-     "每篇深度文以結構化事實（facts pack）為基礎撰寫，數字逐筆對照公開來源，並經獨立第二來源交叉核對後才發佈。文中關鍵數據附截止日期與來源說明，方便讀者自行查證。"),
-    ("為什麼看籃球數據誌，而不是直接查比分？",
-     "即時比分各家都有；籃球數據誌專注「看門道」——用戰績結構、賽制脈絡與長期數據把數字背後的故事說清楚，並把 NBA、台灣職籃與 HBL 放在同一個座標系裡看，為深度理解而非即時速報而寫。"),
-]
+# ⚠️ 第二則答案依快照的 final 旗標條件化，開季後不會再宣稱「休賽季模式」。
+def bb_home_faq(nba=None, tw=None, hbl=None):
+    st = bb_season_state(nba, tw, hbl)
+    if st["offseason"]:
+        cadence = (f"目前為休賽季模式：頁面顯示 {st['season_seg']}{st['hbl_seg']}的終局數據，"
+                   "並標註資料截至日期。各聯盟新賽季開打後，NBA 戰績改為每日自動更新、"
+                   "台灣職籃與 HBL 為每週更新；每篇文章的數字也都標註來源與截止日期。")
+    else:
+        cadence = (f"目前 {st['season_seg']}正在進行中：NBA 戰績每日自動更新、台灣職籃與 HBL 為每週更新，"
+                   "頁面均標註資料截至日期；每篇文章的數字也都標註來源與截止日期。")
+    return [
+        ("籃球數據誌涵蓋哪些聯盟？",
+         "美國職籃 NBA（30 隊）、台灣職籃兩聯盟——TPBL（台灣職業籃球大聯盟，7 隊）與 P. LEAGUE+（4 隊），以及 HBL 高中籃球甲級聯賽（男甲、女甲）。首頁提供各聯盟戰績速覽，數據頁可深入查詢。"),
+        ("籃球數據誌的數據多久更新一次？", cadence),
+        ("這個網站和 NBA、TPBL、P. LEAGUE+ 或 HBL 官方有關係嗎？",
+         "沒有。籃球數據誌是獨立的繁體中文數據內容站，與 NBA、TPBL、P. LEAGUE+、HBL（中華民國高級中等學校體育總會）及各球團、學校均無任何官方關聯；所有數據整理自公開來源並於頁面標註。"),
+        ("文章的數據可信嗎？要怎麼查證？",
+         "每篇深度文以結構化事實（facts pack）為基礎撰寫，數字逐筆對照公開來源，並經獨立第二來源交叉核對後才發佈。文中關鍵數據附截止日期與來源說明，方便讀者自行查證。"),
+        ("為什麼看籃球數據誌，而不是直接查比分？",
+         "即時比分各家都有；籃球數據誌專注「看門道」——用戰績結構、賽制脈絡與長期數據把數字背後的故事說清楚，並把 NBA、台灣職籃與 HBL 放在同一個座標系裡看，為深度理解而非即時速報而寫。"),
+    ]
 
 
-def _bb_faq_html() -> str:
+def _bb_faq_html(faq) -> str:
     qa = "\n".join(
         f'    <div class="qa"><h3 class="faq-q">{html_lib.escape(q)}</h3>'
         f'<p class="faq-a">{html_lib.escape(a)}</p></div>'
-        for q, a in BB_HOME_FAQ)
+        for q, a in faq)
     return ('<div class="bb-sec"><h2>常見問題</h2><span class="ln"></span></div>\n'
             f'  <section class="bb-faq">\n{qa}\n  </section>')
 
@@ -2154,8 +2184,12 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
     tw_lg = (tw or {}).get("leagues", {})
     tpbl, plg = tw_lg.get("tpbl"), tw_lg.get("plg")
     build_date = _dash_build_date(nba, tw, hbl)
-    offseason = bool((nba or {}).get("final"))
-    season_tag = (nba or {}).get("season") or (tw or {}).get("season") or ""
+    st = bb_season_state(nba, tw, hbl)
+    offseason = st["offseason"]
+    season_tag = st["season_tag"]
+    nba_status = season_status_txt(offseason)          # 例行賽終局／例行賽進行中
+    tw_status = season_status_txt(st["tw_final"])
+    faq = bb_home_faq(nba, tw, hbl)
 
     # ----- 冠軍卡列 -----
     cards = []
@@ -2196,7 +2230,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
     if cards:
         champ_sec = (f'<section class="block" id="champ"><div class="slabel">'
                      f'<span class="k">{champ_label}</span><span class="rule"></span>'
-                     '<span class="r">賽季終局</span></div>'
+                     f'<span class="r">{season_status_txt(offseason, "賽季")}</span></div>'
                      f'<div class="champ-grid">{"".join(cards)}</div></section>')
 
     # ----- 戰績速覽 tabs -----
@@ -2212,19 +2246,19 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
             '</div>'
             '<div class="legend"><span><i class="po"></i>直接晉級季後賽（第 1–6 名）</span>'
             '<span><i class="pi"></i>附加賽區（第 7–10 名）</span></div>'
-            f'<div class="tbl-cap">{season_tag} 例行賽終局名次 · 截至 {nba.get("asof", "")} · '
+            f'<div class="tbl-cap">{season_tag} {nba_status}名次 · 截至 {nba.get("asof", "")} · '
             f'整理自 ESPN 公開資料。<a href="/standings/">看完整東西區排名 →</a></div>')
         tabs.append(("nba", "NBA 東西區", nba_panel))
     km_tw = ("rank", "team_name", "win", "lose", "pct", "games_behind")
     if tpbl and tpbl.get("standings"):
         tabs.append(("tpbl", "TPBL",
                      f'{_SCROLL_HINT}{_std_table_v2(tpbl["standings"], km_tw)}'
-                     f'<div class="tbl-cap">{tw.get("season", "")} 例行賽終局 · 快照 {tw.get("asof_taipei_date", "")} · '
+                     f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 TPBL 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
     if plg and plg.get("standings"):
         tabs.append(("plg", "PLG",
                      f'{_SCROLL_HINT}{_std_table_v2(plg["standings"], km_tw)}'
-                     f'<div class="tbl-cap">{tw.get("season", "")} 例行賽終局 · 快照 {tw.get("asof_taipei_date", "")} · '
+                     f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 PLG 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
     if hbl and hbl.get("divisions"):
         dvs = hbl["divisions"]
@@ -2290,7 +2324,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
     faq_items = "".join(
         f'<details{" open" if i == 0 else ""}><summary>{html_lib.escape(q)}<span class="chev">＋</span></summary>'
         f'<div class="ans">{html_lib.escape(a)}</div></details>'
-        for i, (q, a) in enumerate(BB_HOME_FAQ))
+        for i, (q, a) in enumerate(faq))
     faq_sec = ('<section class="blk"><div class="sp"></div>'
                '<div class="slabel"><span class="k">常見 <em>問題</em></span><span class="rule"></span>'
                '<span class="r">FAQ</span></div>'
@@ -2311,7 +2345,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                   "isPartOf": {"@id": f"{base}/#website"}, "mainEntity": item_list}
     jsonld = graph_ld([org_node(site), website_node(site), collection,
                        breadcrumb_node([("首頁", f"{base}/")]),
-                       faq_node(BB_HOME_FAQ, f"{base}/")])
+                       faq_node(faq, f"{base}/")])
     desc = "NBA × 台灣職籃（TPBL／PLG）× HBL 高中籃球的戰績與數據儀表板：東西區排名、台灣職籃戰績、HBL 四強與冠軍，以及數據導向的深度特刊。繁體中文 / 台北時間。"
     return f"""{_bb_head(site, site['website_name'], desc, f"{base}/", jsonld, extra_css=BB_HOME_CSS)}
 <body>
@@ -2393,16 +2427,27 @@ def render_bb_llms_txt(articles: list, site: dict) -> str:
         f"- [{a['meta'].get('title', a['slug'])}]({base}/articles/{a['slug']}/)"
         + (f"（{a['meta']['date']}）" if a["meta"].get("date") else "")
         for a in articles[:10])
+    # 站台事實段與 /standings/ 說明一律由快照衍生（賽季標籤取 season 欄、狀態取 final 旗標），
+    # 不寫死賽季字面值——llms.txt 正是 AI 答案引擎會直接引用的檔案。
+    st = bb_season_state(_dash_latest("nba-standings-*.json"),
+                         _dash_latest("tw-hoops-*.json"),
+                         _dash_latest("hbl-[0-9]*.json"))
+    if st["offseason"]:
+        season_state_line = (f"；休賽季顯示 {st['season_seg']}{st['hbl_seg']}終局數據，開季後恢復自動更新。")
+    else:
+        season_state_line = (f"；{st['season_seg']}進行中，NBA 戰績每日自動更新、"
+                             "台灣職籃與 HBL 每週更新。")
+    standings_season_seg = f"（{st['season_tag']} 賽季）" if st["season_tag"] else ""
     return f"""# 籃球數據誌（basketball.twtools.cc）— NBA・台灣職籃・HBL 戰績與數據
 
 > 非官方的繁體中文籃球數據與內容站。提供美國職籃 NBA、台灣職籃兩聯盟（TPBL／P. LEAGUE+）與 HBL 高中籃球甲級聯賽的戰績儀表板（排名、名次、冠軍脈絡），以及數據導向的深度特刊文章。內容以繁體中文撰寫、台北時間標示，面向台灣球迷。
 
-本站為獨立經營的資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（中華民國高級中等學校體育總會）及各球團、學校均無任何官方關係，不使用官方標誌，非商業性質。數據整理自公開來源並逐頁標註（NBA 整理自 ESPN 公開資料；台灣職籃整理自 TPBL／PLG 官網；HBL 整理自 hbl.com.tw），頁面標注資料截至日期；休賽季顯示 2025-26 賽季（HBL 為 114 學年度）終局數據，開季後恢復自動更新。
+本站為獨立經營的資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（中華民國高級中等學校體育總會）及各球團、學校均無任何官方關係，不使用官方標誌，非商業性質。數據整理自公開來源並逐頁標註（NBA 整理自 ESPN 公開資料；台灣職籃整理自 TPBL／PLG 官網；HBL 整理自 hbl.com.tw），頁面標注資料截至日期{season_state_line}
 
 ## 重點頁面
 
 - [籃球數據儀表板（首頁）]({base}/)：NBA 東西區排名、台灣職籃戰績、HBL 四強與各聯盟冠軍，一頁掌握。
-- [NBA 戰績]({base}/standings/)：東西區完整排名（2025-26 賽季）。
+- [NBA 戰績]({base}/standings/)：東西區完整排名{standings_season_seg}。
 - [台灣職籃戰績]({base}/tw/)：TPBL 與 P. LEAGUE+ 兩聯盟戰績與冠軍。
 - [HBL 高中籃球]({base}/hbl/)：男甲、女甲四強最終名次與冠軍戰。
 - [數據總覽]({base}/data/)：所有數據頁入口。

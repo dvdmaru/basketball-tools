@@ -73,17 +73,33 @@ def _shell(title, desc, canonical, jsonld, body):
 """
 
 
-def _page_faq(season, asof):
+def _champ_clause(label, lg):
+    """由快照衍生單一聯盟的冠軍敘述；未產生冠軍時誠實說「尚未產生」，不沿用舊賽季。"""
+    champ = (lg or {}).get("champion_zh")
+    if not champ:
+        return f"{label} 本季尚未產生總冠軍（或賽果尚未可自公開資料判定）"
+    note = (lg or {}).get("finals_note", "")
+    # finals_note 本身可能已帶括號（例如「…（二連霸）」），故用逗號銜接避免括號套括號。
+    return f"{label} 總冠軍為{champ}" + (f"，{note}" if note else "")
+
+
+def _page_faq(season, asof, final, tpbl=None, plg=None):
+    """⚠️ 簽名比照 gen-nba-standings.py::_page_faq(season, asof, final)：
+    更新頻率與冠軍敘述一律依快照的 final 旗標／champion 欄位條件化，不寫死賽季狀態。"""
+    if final:
+        cadence = ("目前為休賽季、數字為該季終局。新賽季開打後（開季日以各聯盟官方公告為準）改為每週更新。")
+        champ_a = "；".join([_champ_clause("TPBL", tpbl), _champ_clause("P. LEAGUE+", plg)]) + "。"
+    else:
+        cadence = "賽季進行中，本頁每週更新一次。"
+        champ_a = (f"賽季仍在進行中，{season} 賽季的兩聯盟總冠軍尚未產生；"
+                   "兩聯盟總冠軍賽結束後，本頁會更新冠軍與系列賽結果。")
     return [
         ("台灣現在有幾個職業籃球聯盟？",
          "兩個：TPBL（台灣職業籃球大聯盟，7 隊）與 P. LEAGUE+（4 隊）。2025 年 7 月兩聯盟的合作與合併討論破局後，"
          "各自營運、各辦選秀；本頁把兩個聯盟的戰績放在同一頁對照。"),
-        (f"{season} 賽季兩聯盟的冠軍是誰？",
-         "TPBL 總冠軍為福爾摩沙夢想家（總冠軍賽 4:3 勝新北國王，隊史首冠）；"
-         "P. LEAGUE+ 總冠軍為桃園璞園領航猿（總冠軍賽 4:3 勝臺北富邦勇士，達成二連霸）。"),
+        (f"{season} 賽季兩聯盟的冠軍是誰？", champ_a),
         ("這個頁面的資料來源是什麼？多久更新？",
-         f"TPBL 整理自其官網公開賽果資料、PLG 整理自其官網戰績頁，快照日期 {asof}；"
-         "目前為休賽季、數字為該季終局。新賽季（依往例約 10 月開打，以官方公告為準）開始後改為每週更新。"),
+         f"TPBL 整理自其官網公開賽果資料、PLG 整理自其官網戰績頁，快照日期 {asof}；{cadence}"),
         ("球隊名稱為什麼跟我印象中的不一樣？",
          "台灣職籃球隊名稱常含冠名贊助（例如台啤永豐、御嵿），冠名可能逐季變動；"
          "本頁採官方目前使用的隊名。查歷史資料時建議以「城市＋隊名」為骨幹對照。"),
@@ -92,7 +108,7 @@ def _page_faq(season, asof):
     ]
 
 
-def league_panel(lg, season, asof, source_note):
+def league_panel(lg, season, asof, source_note, final=False):
     band = ""
     if lg.get("champion_zh"):
         band = ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
@@ -102,13 +118,15 @@ def league_panel(lg, season, asof, source_note):
                 '</div></div>')
     km = ("rank", "team_name", "win", "lose", "pct", "games_behind")
     hint = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
-    cap = f'<div class="tbl-cap">{season} 例行賽終局 · 快照 {asof} · {html_lib.escape(source_note)}</div>'
+    cap = (f'<div class="tbl-cap">{season} {ba.season_status_txt(final)} · 快照 {asof} · '
+           f'{html_lib.escape(source_note)}</div>')
     return band + hint + ba._std_table_v2(lg.get("standings", []), km) + cap
 
 
 def build_page(snap):
     season = snap.get("season", "")
     asof = snap.get("asof_taipei_date", "")
+    final = bool(snap.get("final"))
     canonical = f"{BASE}/tw/"
     tpbl = snap["leagues"]["tpbl"]
     plg = snap["leagues"]["plg"]
@@ -117,12 +135,12 @@ def build_page(snap):
         '<input type="radio" name="lg" id="t-tpbl" checked>'
         '<input type="radio" name="lg" id="t-plg">'
         '<div class="tablist"><label for="t-tpbl">TPBL（7 隊）</label><label for="t-plg">P. LEAGUE+（4 隊）</label></div>'
-        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）")}</div>'
-        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁")}</div>'
+        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）", final)}</div>'
+        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁", final)}</div>'
         '</div>')
     note = ('<div class="tbl-cap">兩聯盟均未提供官方文件化 API，資料屬非官方整理；'
             '本站與 TPBL、P. LEAGUE+ 及各球團無任何關聯或授權，引用請以官方公告為準。</div>')
-    faq = _page_faq(season, asof)
+    faq = _page_faq(season, asof, final, tpbl, plg)
     body = (
         '<section class="page-hero">'
         '<h1>台灣職籃戰績 — <span class="en">TPBL</span> × <span class="en">PLG</span></h1>'
@@ -136,8 +154,11 @@ def build_page(snap):
     jsonld = ba.graph_ld([ba.org_node(SITE), ba.website_node(SITE), coll,
                           ba.breadcrumb_node([("首頁", f"{BASE}/"), ("台灣職籃", canonical)]),
                           ba.faq_node(faq, canonical)])
-    desc = (f"台灣職籃 {season} 賽季戰績（截至 {asof}）：TPBL 7 隊與 P. LEAGUE+ 4 隊例行賽排名、"
-            f"總冠軍（TPBL 福爾摩沙夢想家、PLG 桃園璞園領航猿）。兩聯盟並立現況的非官方數據頁。")
+    champs = "、".join(f"{lbl} {lg['champion_zh']}" for lbl, lg in (("TPBL", tpbl), ("PLG", plg))
+                      if lg.get("champion_zh"))
+    desc = (f"台灣職籃 {season} 賽季戰績（截至 {asof}）：TPBL 7 隊與 P. LEAGUE+ 4 隊例行賽排名"
+            + (f"、總冠軍（{champs}）" if champs else "")
+            + "。兩聯盟並立現況的非官方數據頁。")
     return _shell(f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）", desc, canonical, jsonld, body)
 
 
