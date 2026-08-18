@@ -8,6 +8,10 @@
 - 部署：Cloudflare Workers static assets，worker `basketball-tools`，帳號 charlie.chien2019
   （account id `2f123fdee05d453c8a077b6ba541c45d`，非機密；token 走環境變數，永不入 repo）
 
+> 📄 **接手的 agent 先讀 [`MODEL.md`](MODEL.md)**：快照有哪些欄位、**沒有**哪些欄位、
+> 哪些事實是人工維護的、哪些會到期失效、派工給寫手時的驗收判準。
+> 本檔講「指令怎麼跑」，MODEL.md 講「程式擋不住的那半」。
+
 ## 三層架構
 
 1. **數據自動更新**：`scripts/fetch-*.py` 抓公開資料 → `leagues/*.json` 快照
