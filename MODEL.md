@@ -39,6 +39,28 @@
 沒有任何比對會叫，因為**沒有東西可以拿來比對**。已砍。
 ⇒ 這就是 §3-2 那條交接條款的由來。
 
+### ☠️ 兩個靜默預設：欄位沒寫不會報錯，只會被歸錯地方（2026-08-21 稽核）
+
+`build-articles.py` 有兩個 fallback，**沒寫就套預設、不警告、build 全綠**：
+
+| 位置 | 欄位 | 沒寫的話 | 後果 |
+|---|---|---|---|
+| 文章 frontmatter | `competition` | 落回 `"nba"` | 非 NBA 的文章會被當成 NBA 那一組 |
+| `config/competitions.json` 的一筆 comp | `sport`（或 `schema.sport`） | `site_for()` 落回 `"soccer"` | 該賽事整組拿到**足球站**的站台識別 |
+
+**截至 2026-08-21 兩個預設都沒有被踩到**：`competitions.json` 的 4 筆（nba／tpbl／plg／hbl）
+都自己寫了 `sport: basketball`，`articles/` 的 13 篇也都寫了 `competition`。
+⇒ 所以這不是待修的 bug，是**新增賽事或新增文章時要當成必填的兩個欄位**。
+
+⚠️ **姊妹站判例（同一種缺陷真的會炸）**：foootball-tools 的 `article_section()` 預設是
+`worldcup-2026`。2026-08-21 一篇英超文章沒有宣告 `section`，就被靜默收進世界盃專區——
+專區篇數 +1、該文排到專區清單第 1 位、專區 description 與 ItemList schema 一起被改寫，
+**build 全綠、零警告**，是人去讀 diff 才發現的（該站 PR #128）。
+⚠️ 依姊妹站禁自動同步的原則，**這裡只記事實，不搬對方的程式**。
+
+⭐ 這條與上面「沒有 `division`」同一族：**沒有東西可以拿來比對的錯，不會有任何 gate 叫**。
+差別是 `division` 那次是模型知識填空，這次是**程式自己填的預設值**。
+
 ### 人工維護的欄位（不是抓來的；改要附 source）
 
 - `config/season-facts.json` → **只有 PLG 總冠軍**。
