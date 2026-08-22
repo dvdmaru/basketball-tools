@@ -6,7 +6,15 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Tue, 18 Aug 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>灰狼與山貓談成控股權轉讓，買家 Marc Stad 原本就是自家股東</title>
+      <link>https://basketball.twtools.cc/articles/wolves-lynx-sale-stad/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/wolves-lynx-sale-stad/</guid>
+      <pubDate>Sat, 22 Aug 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>這筆交易的買家不是外面來的：Marc Stad 原本就是明尼蘇達灰狼與山貓所有權團隊裡的少數股東，這次協議換的是股東桌上的位置，不是新老闆進場。45 億美元是灰狼與山貓兩隊的合併估值，不是成交價；依目前公開資料，也拆不出任一隊的單獨身價；交易仍待 NBA 董事會核准，會議訂在 9 月 15、16 日。</description>
+    </item>
     <item>
       <title>湖人易主案的 125 億美元是估值口徑，交易尚待 NBA 批准</title>
       <link>https://basketball.twtools.cc/articles/lakers-sale-iger-kushner/</link>
