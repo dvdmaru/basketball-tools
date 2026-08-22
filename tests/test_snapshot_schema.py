@@ -199,5 +199,60 @@ class TestSnapshotSchema(unittest.TestCase):
             self.assertIn(anchor, text, f"MODEL.md 已不再提到「{anchor}」——契約與本檔脫節")
 
 
+class TestFaqSchemaEmitted(unittest.TestCase):
+    """FAQ 的 H2 寫錯時，`FAQPage` 會靜默消失——頁面照常 render、build 全綠。
+
+    這是 MODEL.md §1「第三種靜默失效」那一節的機械關卡：
+    文件寫了規則但沒有東西會叫，等於沒寫（本 repo 記錄有案的失敗模式）。
+    """
+
+    def _articles(self):
+        pattern = str(ROOT / "public-basketball" / "articles" / "*" / "index.html")
+        return sorted(glob.glob(pattern))
+
+    @staticmethod
+    def _graph(path):
+        import re
+        text = pathlib.Path(path).read_text(encoding="utf-8")
+        m = re.search(r'<script type="application/ld\+json">(.*?)</script>',
+                      text, re.S)
+        if not m:
+            return None
+        return json.loads(m.group(1)).get("@graph", [])
+
+    def test_every_built_article_emits_faqpage(self):
+        files = self._articles()
+        self.assertTrue(files, "檢查器本身沒在測東西：找不到任何已建置的文章頁")
+        missing = []
+        for f in files:
+            graph = self._graph(f)
+            slug = pathlib.Path(f).parent.name
+            if graph is None:
+                missing.append(f"{slug}（整段 JSON-LD 都不見了）")
+            elif not any(n.get("@type") == "FAQPage" for n in graph):
+                missing.append(slug)
+        self.assertFalse(missing, (
+            "下列文章沒有吐出 FAQPage：" + "、".join(missing) +
+            "——最常見原因是 FAQ 的 H2 沒有逐字寫成"
+            "「常見問題」／「常見問答」／「FAQ」三選一，"
+            "或層級誤寫成 H3。頁面看起來完全正常，只有結構化資料消失。"
+            f"規則見 {MODEL_DOC} 那一節。"))
+
+    def test_gate_itself_catches_a_stripped_faqpage(self):
+        """陽性對照：把 FAQPage 從 @graph 拿掉之後，判定式必須認得出來。
+
+        ⛔ 只在記憶體裡動，不碰磁碟。
+        """
+        files = self._articles()
+        self.assertTrue(files, "檢查器本身沒在測東西")
+        graph = self._graph(files[0])
+        self.assertIsNotNone(graph, "取樣的那一篇本來就沒有 JSON-LD，對照做不成")
+        self.assertTrue(any(n.get("@type") == "FAQPage" for n in graph),
+                        "取樣的那一篇本來就沒有 FAQPage，對照做不成")
+        stripped = [n for n in graph if n.get("@type") != "FAQPage"]
+        self.assertFalse(any(n.get("@type") == "FAQPage" for n in stripped),
+                         "陽性對照失敗：拿掉 FAQPage 之後判定式還說它在")
+
+
 if __name__ == "__main__":
     unittest.main()

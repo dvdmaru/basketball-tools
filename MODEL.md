@@ -61,6 +61,30 @@
 ⭐ 這條與上面「沒有 `division`」同一族：**沒有東西可以拿來比對的錯，不會有任何 gate 叫**。
 差別是 `division` 那次是模型知識填空，這次是**程式自己填的預設值**。
 
+### ☠️ 第三種靜默失效：FAQ 的 H2 寫錯，`FAQPage` 整段不吐（2026-08-22 補）
+
+`build-articles.py` 的 `FAQ_HEADING_RE` **只認三個字串**——H2 必須逐字是
+`常見問題`／`常見問答`／`FAQ`，三選一。
+
+多一個字、少一個字、或層級寫成 H3，`parse_faq()` 就找不到區段、回傳空 list，
+`faq_node()` 收到空 list 回 `None` ⇒ **`FAQPage` 的 JSON-LD 整段不會輸出**。
+
+☠️ **但頁面照常 render、問答內容照常顯示、build 全綠、零警告。**
+肉眼看網頁完全正常，只有結構化資料悄悄消失。
+
+⇒ 新文章寫完**一定要對建置產物驗一次**，不要只看網頁：
+
+```
+python3 -c "import re,json;t=open('public-basketball/articles/<slug>/index.html',encoding='utf-8').read();\
+d=json.loads(re.search(r'<script type=\"application/ld\+json\">(.*?)</script>',t,re.S).group(1));\
+print([n['@type'] for n in d['@graph']])"
+```
+
+`@graph` 裡看不到 `FAQPage` 就是中了。⭐ 與上面兩個同族：**輸出少了東西，沒有任何 gate 會叫**。
+
+**截至 2026-08-22，14 篇文章全部都有吐出 `FAQPage`**（逐檔掃過）。
+⇒ 同樣不是待修的 bug，是**寫新文章時 H2 要當成逐字比對的欄位**。
+
 ### 人工維護的欄位（不是抓來的；改要附 source）
 
 - `config/season-facts.json` → **只有 PLG 總冠軍**。
@@ -73,8 +97,13 @@
 | 事實 | 到期點 | 動作 |
 |---|---|---|
 | `articles/lakers-sale-iger-kushner/` 的「尚待 NBA 批准」與 8 條 FAQ | 2026 年 9 月 NBA 董事會表決 | 依 `articles/lebron-james-76ers-24th-season/` 的 pattern：正文開頭補一段 `> **YYYY 年 M 月 D 日更新**：…` 引文區塊，**保留原查證狀態與判準不改寫** |
+| `articles/wolves-lynx-sale-stad/` 的「尚待 NBA 董事會核准」與 8 條 FAQ | **同一場**董事會（ESPN 報導排定 2026-09-15、16 開會） | 同上 pattern。⚠️ 本篇對該狀態的敘述**刻意寫成可一次改掉的形狀**，不要散落改 |
 | `season-facts.json` 的 PLG 冠軍 | 2026-27 PLG 總冠軍賽結束 | 人工 cross-check 後更新 |
 | 各聯盟 2026-27 開季日 | 官方公告時 | 見 §2-2——**公告前不准填** |
+
+☠️ **上面前兩列是同一顆到期點：湖人篇與灰狼篇卡在同一場董事會。**
+表決結果出來時**兩篇要一起改**——只改其中一篇，站上會同時存在「已核准」與「尚待核准」兩種說法，
+而且兩篇互相內鏈，讀者一點就看到矛盾。
 
 ---
 
