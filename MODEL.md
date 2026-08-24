@@ -98,6 +98,8 @@ print([n['@type'] for n in d['@graph']])"
 |---|---|---|
 | `articles/lakers-sale-iger-kushner/` 的「尚待 NBA 批准」與 8 條 FAQ | 2026 年 9 月 NBA 董事會表決 | 依 `articles/lebron-james-76ers-24th-season/` 的 pattern：正文開頭補一段 `> **YYYY 年 M 月 D 日更新**：…` 引文區塊，**保留原查證狀態與判準不改寫** |
 | `articles/wolves-lynx-sale-stad/` 的「尚待 NBA 董事會核准」與 8 條 FAQ | **同一場**董事會（ESPN 報導排定 2026-09-15、16 開會） | 同上 pattern。⚠️ 本篇對該狀態的敘述**刻意寫成可一次改掉的形狀**，不要散落改 |
+| `articles/kevin-garnett-wolves-21-jersey-retirement/` 全篇未來式（「將是第二件」「將於…退休」）與 FAQ 的「儀式尚未舉行」 | 儀式日：美國時間 2027-02-28（台灣 2027-03-01），灰狼主場對塞爾提克賽後 | 同上 pattern（開頭補「更新」引文區塊）。⚠️ 標題、subtitle、lede、H1、正文、FAQ 的未來式**散在多處**，改時逐一掃「將」「會是」「尚未」；封面副標（`gen-basketball-cover.py`）也要一併改並重產 PNG |
+| 同篇「六項隊史第一」表與「現有 30 隊唯一」 | 每個 NBA 賽季結束（現役球員仍在累積，任何一格可能被改寫；快照基準 2026-08-23） | 重跑該文查核用的 30 隊比對後決定要不要加更新註記；**基準日句（截至 2026-08-23）不可默默改日期不改數據** |
 | `season-facts.json` 的 PLG 冠軍 | 2026-27 PLG 總冠軍賽結束 | 人工 cross-check 後更新 |
 | 各聯盟 2026-27 開季日 | 官方公告時 | 見 §2-2——**公告前不准填** |
 
