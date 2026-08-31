@@ -26,6 +26,9 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("stephen-curry-over-38-rule-extension", "NBA · 38 歲條款",
+     "38 歲條款<br>不是禁令",
+     "柯瑞 2024 年只延長 1 年　·　條文寫的是把錢往前攤"),
     ("nba-league-guide", "NBA · 完全指南",
      "美國職籃<br>完全指南",
      "30 隊 · 東西區　·　附加賽到總冠軍賽一次看懂"),
