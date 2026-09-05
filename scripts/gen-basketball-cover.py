@@ -26,6 +26,9 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("clippers-kawhi-leonard-circumvention-penalties", "NBA · 規避薪資上限",
+     "6 天內<br>3 封介紹信",
+     "每一封都寫著是對方先開口　·　球隊罰款 3,000 萬美元"),
     ("stephen-curry-over-38-rule-extension", "NBA · 38 歲條款",
      "38 歲條款<br>不是禁令",
      "柯瑞 2024 年只延長 1 年　·　條文寫的是把錢往前攤"),
