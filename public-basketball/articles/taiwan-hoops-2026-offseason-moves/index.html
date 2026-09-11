@@ -3,6 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14100e">
+<script>
+(function(){
+  var KEY="bk-theme", VALID=["ember","court","violet","apricot","maple"], BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var root=document.documentElement, saved=null;
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved && VALID.indexOf(saved)===-1){
+    saved=null;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  if(saved){
+    root.setAttribute("data-theme",saved);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[saved]) m.setAttribute("content",BG[saved]);
+  }
+})();
+</script>
 <title>領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表 | 籃球數據誌</title>
 <meta name="description" content="截至 2026 年 8 月 10 日，台灣職籃最反常的一筆異動，是吳志鍇先後被 PLG 領航猿與 TPBL 戰神選中，最後只與戰神簽約。林庭謙結束 6 個 CBA 賽季返台，陳力生從 PLG 轉投 TPBL 攻城獅，林秉聖則從 TPBL 戰神轉向 PLG 洋基工程。兩個聯盟的球員流向，在同一個夏天交">
 <meta property="og:title" content="領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表">
@@ -81,6 +98,7 @@ body::before {
 
 
 :root[data-theme="ember"]{
+  color-scheme: dark;
   --bg:#14100e; --bg-deep:#0e0b09; --surface:#1c1714; --surface-2:#241d19; --surface-3:#2a221d;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
@@ -89,6 +107,7 @@ body::before {
   --accent-weak:rgba(239,125,58,.10); --gold-weak:rgba(217,160,76,.10);
 }
 :root[data-theme="court"]{
+  color-scheme: dark;
   --bg:#17120c; --bg-deep:#0f0b06; --surface:#211a11; --surface-2:#2a2116; --surface-3:#31271a;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
@@ -96,23 +115,8 @@ body::before {
   --zebra:#1d160e; --band-po:#271d0f; --band-pi:#241d10;
   --accent-weak:rgba(217,160,76,.10); --gold-weak:rgba(233,201,135,.10);
 }
-:root[data-theme="slate"]{
-  --bg:#111418; --bg-deep:#0b0d10; --surface:#1a1e24; --surface-2:#222831; --surface-3:#293039;
-  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#8b97a8; --fg-dim:#6d655b;
-  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
-  --accent:#6f9bd0; --accent-bright:#8bb3e0; --gold:#c9a86a; --accent-ink:#1a0f07;
-  --zebra:#161a20; --band-po:#182430; --band-pi:#22201a;
-  --accent-weak:rgba(111,155,208,.10); --gold-weak:rgba(201,168,106,.10);
-}
-:root[data-theme="jade"]{
-  --bg:#0f1512; --bg-deep:#0a0f0c; --surface:#16201b; --surface-2:#1d2a23; --surface-3:#24332a;
-  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
-  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
-  --accent:#43b189; --accent-bright:#5fcfa4; --gold:#cfb069; --accent-ink:#1a0f07;
-  --zebra:#131c17; --band-po:#12251c; --band-pi:#20241a;
-  --accent-weak:rgba(67,177,137,.10); --gold-weak:rgba(207,176,105,.10);
-}
 :root[data-theme="violet"]{
+  color-scheme: dark;
   --bg:#15111c; --bg-deep:#0e0b13; --surface:#1e1826; --surface-2:#271f31; --surface-3:#2f263c;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
@@ -120,11 +124,29 @@ body::before {
   --zebra:#191424; --band-po:#241a33; --band-pi:#231d1c;
   --accent-weak:rgba(155,123,216,.10); --gold-weak:rgba(203,162,95,.10);
 }
+:root[data-theme="apricot"]{
+  color-scheme: light;
+  --bg:#fbf3ec; --bg-deep:#f6e8da; --surface:#f7ebe0; --surface-2:#f1e0cf; --surface-3:#ead2bc;
+  --fg:#2b2016; --fg-soft:#4a3a2a; --fg-mute:#6b5847; --fg-dim:#786855;
+  --line:rgba(43,32,22,.10); --line-2:rgba(43,32,22,.18);
+  --accent:#b74e21; --accent-bright:#9c4119; --gold:#755507; --accent-ink:#fff8f2;
+  --zebra:#f4e6d8; --band-po:#f0ddc4; --band-pi:#ecdcc9;
+  --accent-weak:rgba(183,78,33,.10); --gold-weak:rgba(117,85,7,.10);
+}
+:root[data-theme="maple"]{
+  color-scheme: light;
+  --bg:#faf1e0; --bg-deep:#f5e5c8; --surface:#f7ecd6; --surface-2:#f0dfbc; --surface-3:#e8d0a0;
+  --fg:#2a1d0c; --fg-soft:#4a3820; --fg-mute:#6b5638; --fg-dim:#7c684a;
+  --line:rgba(42,29,12,.10); --line-2:rgba(42,29,12,.18);
+  --accent:#a45908; --accent-bright:#8c4a06; --gold:#735406; --accent-ink:#fffaf0;
+  --zebra:#f3e4c6; --band-po:#efdcb0; --band-pi:#ecd9ad;
+  --accent-weak:rgba(164,89,8,.10); --gold-weak:rgba(115,84,6,.10);
+}
 
 :root[data-theme="ember"] {
   --dim:var(--fg-mute); --faint:var(--fg-dim);
   --accent-soft:var(--accent-weak); --accent-line:rgba(239,125,58,0.36); --accent-glow:rgba(239,125,58,0.3);
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
   --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
   --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
   --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
@@ -136,31 +158,7 @@ body::before {
 :root[data-theme="court"] {
   --dim:var(--fg-mute); --faint:var(--fg-dim);
   --accent-soft:var(--accent-weak); --accent-line:rgba(217,160,76,0.36); --accent-glow:rgba(217,160,76,0.3);
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
-  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
-  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
-  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
-  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
-  --font-display:var(--f-display); --font-ui:var(--f-ui);
-  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
-  --radius:var(--r-lg); --radius-sm:var(--r-md);
-}
-:root[data-theme="slate"] {
-  --dim:var(--fg-mute); --faint:var(--fg-dim);
-  --accent-soft:var(--accent-weak); --accent-line:rgba(111,155,208,0.36); --accent-glow:rgba(111,155,208,0.3);
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
-  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
-  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
-  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
-  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
-  --font-display:var(--f-display); --font-ui:var(--f-ui);
-  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
-  --radius:var(--r-lg); --radius-sm:var(--r-md);
-}
-:root[data-theme="jade"] {
-  --dim:var(--fg-mute); --faint:var(--fg-dim);
-  --accent-soft:var(--accent-weak); --accent-line:rgba(67,177,137,0.36); --accent-glow:rgba(67,177,137,0.3);
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
   --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
   --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
   --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
@@ -172,7 +170,31 @@ body::before {
 :root[data-theme="violet"] {
   --dim:var(--fg-mute); --faint:var(--fg-dim);
   --accent-soft:var(--accent-weak); --accent-line:rgba(155,123,216,0.36); --accent-glow:rgba(155,123,216,0.3);
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="apricot"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(183,78,33,0.36); --accent-glow:rgba(183,78,33,0.3);
+  --accent-neg:#a53422; --accent-neg-deep:#8d2c1d; --accent-pos:#2e683e;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="maple"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(164,89,8,0.36); --accent-glow:rgba(164,89,8,0.3);
+  --accent-neg:#a33321; --accent-neg-deep:#8c2b1c; --accent-pos:#2c643c;
   --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
   --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
   --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
@@ -183,29 +205,32 @@ body::before {
 }
 :root[data-theme="ember"] body,
 :root[data-theme="court"] body,
-:root[data-theme="slate"] body,
-:root[data-theme="jade"] body,
-:root[data-theme="violet"] body { font-family:var(--f-text);
+:root[data-theme="violet"] body,
+:root[data-theme="apricot"] body,
+:root[data-theme="maple"] body { font-family:var(--f-text); background-attachment:fixed; }
+:root[data-theme="ember"] body,
+:root[data-theme="court"] body,
+:root[data-theme="violet"] body {
   background-image:
     radial-gradient(1200px 720px at 86% -6%,rgba(239,125,58,.16),transparent 58%),
     radial-gradient(900px 620px at 6% 2%,rgba(217,160,76,.08),transparent 60%),
     radial-gradient(1500px 1000px at 50% 118%,rgba(239,125,58,.06),transparent 62%);
-  background-attachment:fixed; }
+}
 :root[data-theme="ember"] body::before,
 :root[data-theme="court"] body::before,
-:root[data-theme="slate"] body::before,
-:root[data-theme="jade"] body::before,
-:root[data-theme="violet"] body::before { display:none; }
+:root[data-theme="violet"] body::before,
+:root[data-theme="apricot"] body::before,
+:root[data-theme="maple"] body::before { display:none; }
 :root[data-theme="ember"] a,
 :root[data-theme="court"] a,
-:root[data-theme="slate"] a,
-:root[data-theme="jade"] a,
-:root[data-theme="violet"] a { color:var(--accent); }
+:root[data-theme="violet"] a,
+:root[data-theme="apricot"] a,
+:root[data-theme="maple"] a { color:var(--accent); }
 :root[data-theme="ember"] a:hover,
 :root[data-theme="court"] a:hover,
-:root[data-theme="slate"] a:hover,
-:root[data-theme="jade"] a:hover,
-:root[data-theme="violet"] a:hover { color:var(--accent-bright); }
+:root[data-theme="violet"] a:hover,
+:root[data-theme="apricot"] a:hover,
+:root[data-theme="maple"] a:hover { color:var(--accent-bright); }
 
 
 .theme-switch {
@@ -452,11 +477,11 @@ body::before {
     <div class="theme">
       <span class="lbl">配色</span>
       <div class="dots">
-        <button class="dot" style="background:#ef7d3a" data-set-theme="ember" aria-pressed="true" title="ember 炭黑橘"></button>
-        <button class="dot" style="background:#d9a04c" data-set-theme="court" aria-pressed="false" title="court 木地板金"></button>
-        <button class="dot" style="background:#6f9bd0" data-set-theme="slate" aria-pressed="false" title="slate 石墨"></button>
-        <button class="dot" style="background:#43b189" data-set-theme="jade" aria-pressed="false" title="jade 墨玉"></button>
-        <button class="dot" style="background:#9b7bd8" data-set-theme="violet" aria-pressed="false" title="violet 暗紫"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#14100e 50%,#ef7d3a 50%)" data-set-theme="ember" aria-pressed="true" title="ember 炭黑橘"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#17120c 50%,#d9a04c 50%)" data-set-theme="court" aria-pressed="false" title="court 木地板金"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#15111c 50%,#9b7bd8 50%)" data-set-theme="violet" aria-pressed="false" title="violet 暗紫"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#fbf3ec 50%,#b74e21 50%)" data-set-theme="apricot" aria-pressed="false" title="apricot 杏桃"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#faf1e0 50%,#a45908 50%)" data-set-theme="maple" aria-pressed="false" title="maple 楓糖"></button>
       </div>
     </div>
   </div>
@@ -693,22 +718,25 @@ body::before {
   </div>
 </footer>
 <script>
-/* minimal theme switcher — persists to localStorage('bk-theme') */
+/* click handler only — persists to localStorage('bk-theme').
+   preload script（頁首）已在第一次 paint 前套好 data-theme，這裡只管點擊與 aria-pressed 同步。 */
 (function(){
-  var KEY="bk-theme", root=document.documentElement;
-  var saved=localStorage.getItem(KEY);
-  if(saved){ root.setAttribute("data-theme",saved); }
+  var KEY="bk-theme", root=document.documentElement, BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var current=root.getAttribute("data-theme");
+  document.querySelectorAll("[data-set-theme]").forEach(function(x){
+    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===current ? "true":"false");
+  });
   document.addEventListener("click",function(e){
     var b=e.target.closest("[data-set-theme]"); if(!b) return;
     var t=b.getAttribute("data-set-theme");
     root.setAttribute("data-theme",t);
-    localStorage.setItem(KEY,t);
+    try{ localStorage.setItem(KEY,t); }catch(e){}
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[t]) m.setAttribute("content",BG[t]);
     document.querySelectorAll("[data-set-theme]").forEach(function(x){
       x.setAttribute("aria-pressed", x===b ? "true":"false");
     });
   });
-  if(saved){ document.querySelectorAll("[data-set-theme]").forEach(function(x){
-    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===saved ? "true":"false"); }); }
 })();
 </script>
 </body>

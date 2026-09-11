@@ -422,8 +422,10 @@ def site_header_html(active: str, site: dict = None) -> str:
         mark = html_lib.escape(site["brand_mark"])
         if mark.startswith("@"):
             mark = f'@<b>{mark[1:]}</b>'
+        # 色點斜切兩色（底色／強調色），讀者選下去背景會變成什麼一眼看得出，也順便標出深淺。
         dots = "\n        ".join(
-            f'<button class="dot" style="background:{acc}" data-set-theme="{k}" '
+            f'<button class="dot" style="background:linear-gradient(135deg,{_BB_BG[k]} 50%,{acc} 50%)" '
+            f'data-set-theme="{k}" '
             f'aria-pressed="{"true" if k == site.get("default_theme") else "false"}" title="{zh}"></button>'
             for k, zh, acc in BB_THEME_DOTS)
         return f"""
@@ -472,14 +474,28 @@ def site_header_html(active: str, site: dict = None) -> str:
 # 舊代元件（文章頁 ARTICLE_CSS/INDEX_CSS、gen-* 頁 PAGE_CSS）依賴的 legacy 變數
 # （--dim/--faint/--accent-soft/--accent-line/--radius/--font-*…）以 alias 併出，
 # 一套 token 同時餵新舊兩代版型。分帶/斑馬色刻意用不透明值（手機 sticky 釘欄要實色）。
-BB_THEME_KEYS = ["ember", "court", "slate", "jade", "violet"]
+# 2026-09-11：3 深＋2 淺（Charlie 口令「一樣是」比照棒球 PR #99 的 3 深 2 淺）。
+# 砍 slate／jade，留 ember（現在的主色）＋court（暖色系裡底色最淺）＋violet（紫色系）；
+# 加 apricot／maple 兩組淺色，色票見 CoWork/Charlie/2026-09-11/basketball-light-theme-candidates.png
+# （已跑 WCAG 對比門檻腳本驗過，門檻抄棒球 PR #99 記載的那份）。
+BB_THEME_KEYS = ["ember", "court", "violet", "apricot", "maple"]
 BB_THEME_DOTS = [("ember", "ember 炭黑橘", "#ef7d3a"), ("court", "court 木地板金", "#d9a04c"),
-                 ("slate", "slate 石墨", "#6f9bd0"), ("jade", "jade 墨玉", "#43b189"),
-                 ("violet", "violet 暗紫", "#9b7bd8")]
+                 ("violet", "violet 暗紫", "#9b7bd8"),
+                 ("apricot", "apricot 杏桃", "#b74e21"), ("maple", "maple 楓糖", "#a45908")]
 _BB_ACCENT = {k: acc for k, _z, acc in BB_THEME_DOTS}
+_BB_BG = {"ember": "#14100e", "court": "#17120c", "violet": "#15111c",
+          "apricot": "#fbf3ec", "maple": "#faf1e0"}
+_BB_LIGHT = {"apricot", "maple"}
+_BB_NEG = {"ember": "#d85742", "court": "#d85742", "violet": "#d85742",
+           "apricot": "#a53422", "maple": "#a33321"}
+_BB_NEG_DEEP = {"ember": "#c8472f", "court": "#c8472f", "violet": "#c8472f",
+                "apricot": "#8d2c1d", "maple": "#8c2b1c"}
+_BB_POS = {"ember": "#5fb878", "court": "#5fb878", "violet": "#5fb878",
+           "apricot": "#2e683e", "maple": "#2c643c"}
 
 _BB_TOKEN_BLOCKS = """
 :root[data-theme="ember"]{
+  color-scheme: dark;
   --bg:#14100e; --bg-deep:#0e0b09; --surface:#1c1714; --surface-2:#241d19; --surface-3:#2a221d;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
@@ -488,6 +504,7 @@ _BB_TOKEN_BLOCKS = """
   --accent-weak:rgba(239,125,58,.10); --gold-weak:rgba(217,160,76,.10);
 }
 :root[data-theme="court"]{
+  color-scheme: dark;
   --bg:#17120c; --bg-deep:#0f0b06; --surface:#211a11; --surface-2:#2a2116; --surface-3:#31271a;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
@@ -495,29 +512,32 @@ _BB_TOKEN_BLOCKS = """
   --zebra:#1d160e; --band-po:#271d0f; --band-pi:#241d10;
   --accent-weak:rgba(217,160,76,.10); --gold-weak:rgba(233,201,135,.10);
 }
-:root[data-theme="slate"]{
-  --bg:#111418; --bg-deep:#0b0d10; --surface:#1a1e24; --surface-2:#222831; --surface-3:#293039;
-  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#8b97a8; --fg-dim:#6d655b;
-  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
-  --accent:#6f9bd0; --accent-bright:#8bb3e0; --gold:#c9a86a; --accent-ink:#1a0f07;
-  --zebra:#161a20; --band-po:#182430; --band-pi:#22201a;
-  --accent-weak:rgba(111,155,208,.10); --gold-weak:rgba(201,168,106,.10);
-}
-:root[data-theme="jade"]{
-  --bg:#0f1512; --bg-deep:#0a0f0c; --surface:#16201b; --surface-2:#1d2a23; --surface-3:#24332a;
-  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
-  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
-  --accent:#43b189; --accent-bright:#5fcfa4; --gold:#cfb069; --accent-ink:#1a0f07;
-  --zebra:#131c17; --band-po:#12251c; --band-pi:#20241a;
-  --accent-weak:rgba(67,177,137,.10); --gold-weak:rgba(207,176,105,.10);
-}
 :root[data-theme="violet"]{
+  color-scheme: dark;
   --bg:#15111c; --bg-deep:#0e0b13; --surface:#1e1826; --surface-2:#271f31; --surface-3:#2f263c;
   --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
   --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
   --accent:#9b7bd8; --accent-bright:#b79bef; --gold:#cba25f; --accent-ink:#1a0f07;
   --zebra:#191424; --band-po:#241a33; --band-pi:#231d1c;
   --accent-weak:rgba(155,123,216,.10); --gold-weak:rgba(203,162,95,.10);
+}
+:root[data-theme="apricot"]{
+  color-scheme: light;
+  --bg:#fbf3ec; --bg-deep:#f6e8da; --surface:#f7ebe0; --surface-2:#f1e0cf; --surface-3:#ead2bc;
+  --fg:#2b2016; --fg-soft:#4a3a2a; --fg-mute:#6b5847; --fg-dim:#786855;
+  --line:rgba(43,32,22,.10); --line-2:rgba(43,32,22,.18);
+  --accent:#b74e21; --accent-bright:#9c4119; --gold:#755507; --accent-ink:#fff8f2;
+  --zebra:#f4e6d8; --band-po:#f0ddc4; --band-pi:#ecdcc9;
+  --accent-weak:rgba(183,78,33,.10); --gold-weak:rgba(117,85,7,.10);
+}
+:root[data-theme="maple"]{
+  color-scheme: light;
+  --bg:#faf1e0; --bg-deep:#f5e5c8; --surface:#f7ecd6; --surface-2:#f0dfbc; --surface-3:#e8d0a0;
+  --fg:#2a1d0c; --fg-soft:#4a3820; --fg-mute:#6b5638; --fg-dim:#7c684a;
+  --line:rgba(42,29,12,.10); --line-2:rgba(42,29,12,.18);
+  --accent:#a45908; --accent-bright:#8c4a06; --gold:#735406; --accent-ink:#fffaf0;
+  --zebra:#f3e4c6; --band-po:#efdcb0; --band-pi:#ecd9ad;
+  --accent-weak:rgba(164,89,8,.10); --gold-weak:rgba(115,84,6,.10);
 }
 """
 
@@ -530,8 +550,10 @@ def _hexrgba(h: str, a) -> str:
 def _bb_theme_tokens_css() -> str:
     """v2 token 系統：mock 的 :root[data-theme] 五組 token（_BB_TOKEN_BLOCKS 字面值）
     ＋逐主題 alias 區塊（legacy 變數/字族/圓角/身體背景），讓文章頁與 gen-* 頁零改動續用。"""
-    def sel(suffix):
-        return ",\n".join(f':root[data-theme="{k}"] {suffix}' for k in BB_THEME_KEYS)
+    def sel(suffix, keys=None):
+        return ",\n".join(f':root[data-theme="{k}"] {suffix}' for k in (keys or BB_THEME_KEYS))
+
+    dark_keys = [k for k in BB_THEME_KEYS if k not in _BB_LIGHT]
 
     alias_blocks = []
     for k in BB_THEME_KEYS:
@@ -539,7 +561,7 @@ def _bb_theme_tokens_css() -> str:
         alias_blocks.append(f""":root[data-theme="{k}"] {{
   --dim:var(--fg-mute); --faint:var(--fg-dim);
   --accent-soft:var(--accent-weak); --accent-line:{_hexrgba(acc,0.36)}; --accent-glow:{_hexrgba(acc,0.30)};
-  --accent-neg:#d85742; --accent-neg-deep:#c8472f;
+  --accent-neg:{_BB_NEG[k]}; --accent-neg-deep:{_BB_NEG_DEEP[k]}; --accent-pos:{_BB_POS[k]};
   --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
   --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
   --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
@@ -549,12 +571,16 @@ def _bb_theme_tokens_css() -> str:
   --radius:var(--r-lg); --radius-sm:var(--r-md);
 }}""")
 
-    overrides = f"""{sel('body')} {{ font-family:var(--f-text);
+    # 這裡加的暖色調強光暈只為深色主題設計（在淺底上會把卡片背景悶濁），限定 dark_keys；
+    # 淺色主題不疊這層，但仍吃 SHARED_TOKENS_CSS 裡通用的 --bg-glow 淡徑向漸層（強度低很多），
+    # 不是完全平面純色——「不疊強光暈」才是準確講法，不是「body 走純底色」。
+    overrides = f"""{sel('body')} {{ font-family:var(--f-text); background-attachment:fixed; }}
+{sel('body', dark_keys)} {{
   background-image:
     radial-gradient(1200px 720px at 86% -6%,rgba(239,125,58,.16),transparent 58%),
     radial-gradient(900px 620px at 6% 2%,rgba(217,160,76,.08),transparent 60%),
     radial-gradient(1500px 1000px at 50% 118%,rgba(239,125,58,.06),transparent 62%);
-  background-attachment:fixed; }}
+}}
 {sel('body::before')} {{ display:none; }}
 {sel('a')} {{ color:var(--accent); }}
 {sel('a:hover')} {{ color:var(--accent-bright); }}"""
@@ -563,24 +589,51 @@ def _bb_theme_tokens_css() -> str:
 
 # v2：切換器住進 header（site_header_html 的 .theme dots），獨立浮動 widget 廢止。
 BB_THEME_SWITCH_HTML = ""
-BB_THEME_SWITCH_JS = """
-/* minimal theme switcher — persists to localStorage('bk-theme') */
-(function(){
-  var KEY="bk-theme", root=document.documentElement;
-  var saved=localStorage.getItem(KEY);
-  if(saved){ root.setAttribute("data-theme",saved); }
-  document.addEventListener("click",function(e){
+
+_BB_THEME_KEYS_JS = "[" + ",".join(f'"{k}"' for k in BB_THEME_KEYS) + "]"
+_BB_BG_JS = "{" + ",".join(f'"{k}":"{v}"' for k, v in _BB_BG.items()) + "}"
+
+# 2026-09-11：換頁閃爍修法——preload 要在 <head> 內、第一次 paint 前跑（讀 localStorage 並
+# 立刻套 data-theme），click handler 留在 body 尾只管互動。VALID 白名單同時吃掉「讀者存的是
+# 已砍掉的舊主題名（slate/jade）」——不在白名單就當沒存過，清掉舊值退回預設，不會整頁掉回無主題樣式。
+BB_THEME_PRELOAD_JS = f"""
+(function(){{
+  var KEY="bk-theme", VALID={_BB_THEME_KEYS_JS}, BG={_BB_BG_JS};
+  var root=document.documentElement, saved=null;
+  try{{ saved=localStorage.getItem(KEY); }}catch(e){{}}
+  if(saved && VALID.indexOf(saved)===-1){{
+    saved=null;
+    try{{ localStorage.removeItem(KEY); }}catch(e){{}}
+  }}
+  if(saved){{
+    root.setAttribute("data-theme",saved);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[saved]) m.setAttribute("content",BG[saved]);
+  }}
+}})();
+"""
+
+BB_THEME_SWITCH_JS = f"""
+/* click handler only — persists to localStorage('bk-theme').
+   preload script（頁首）已在第一次 paint 前套好 data-theme，這裡只管點擊與 aria-pressed 同步。 */
+(function(){{
+  var KEY="bk-theme", root=document.documentElement, BG={_BB_BG_JS};
+  var current=root.getAttribute("data-theme");
+  document.querySelectorAll("[data-set-theme]").forEach(function(x){{
+    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===current ? "true":"false");
+  }});
+  document.addEventListener("click",function(e){{
     var b=e.target.closest("[data-set-theme]"); if(!b) return;
     var t=b.getAttribute("data-set-theme");
     root.setAttribute("data-theme",t);
-    localStorage.setItem(KEY,t);
-    document.querySelectorAll("[data-set-theme]").forEach(function(x){
+    try{{ localStorage.setItem(KEY,t); }}catch(e){{}}
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[t]) m.setAttribute("content",BG[t]);
+    document.querySelectorAll("[data-set-theme]").forEach(function(x){{
       x.setAttribute("aria-pressed", x===b ? "true":"false");
-    });
-  });
-  if(saved){ document.querySelectorAll("[data-set-theme]").forEach(function(x){
-    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===saved ? "true":"false"); }); }
-})();
+    }});
+  }});
+}})();
 """
 
 
@@ -595,11 +648,21 @@ def theme_switch_html(site: dict = None) -> str:
 
 def theme_switch_js(site: dict = None) -> str:
     """Theme init/persist JS. Legacy soccer fallback -> light palette (key wc-theme).
-    Basketball -> dark palette (default ember, key bk-theme)."""
+    Basketball -> dark/light 家族（key bk-theme，click handler，preload 已處理初始套用）。"""
     site = site or SOCCER_SITE
     if site.get("default_theme", "grass") not in BB_THEME_KEYS:
         return THEME_SWITCH_JS
     return BB_THEME_SWITCH_JS
+
+
+def theme_preload_js(site: dict = None) -> str:
+    """放 <head> 最前面的預載 script：在任何 CSS/內容 paint 前套用讀者存的主題，
+    避免換頁時先閃一下預設色才跳到存檔主題。Legacy soccer fallback 沒有這個問題
+    （該站的 THEME_SWITCH_JS 本來就沒有 flash，維持不動）-> 回傳空字串。"""
+    site = site or SOCCER_SITE
+    if site.get("default_theme", "grass") not in BB_THEME_KEYS:
+        return ""
+    return BB_THEME_PRELOAD_JS
 
 
 def extra_theme_css(site: dict = None) -> str:
@@ -1252,6 +1315,8 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="{_BB_BG.get(site.get('default_theme'), '#14100e')}">
+<script>{theme_preload_js(site)}</script>
 <title>{seo_title_safe} | {site['title_suffix']}</title>
 <meta name="description" content="{desc_safe}">
 <meta property="og:title" content="{title_safe}">
@@ -1593,7 +1658,7 @@ BB_DASH_CSS = """
 .std-table td.rk{color:var(--dim);font-family:var(--font-mono)}
 .std-table tr.lead td.tm{font-weight:800;color:var(--fg)}
 .std-pts{color:var(--accent);font-weight:800;font-family:var(--font-mono)}
-.rd-pos,.stk-pos{color:#5fb878}.rd-neg,.stk-neg{color:#d98a8a}
+.rd-pos,.stk-pos{color:var(--accent-pos)}.rd-neg,.stk-neg{color:var(--accent-neg)}
 .lb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:10px 22px}
 .lb-card{border:1px solid var(--line);border-radius:12px;padding:12px 14px 8px;background:var(--surface)}
 .lb-card h3{font-size:14px;color:var(--accent);margin-bottom:6px;font-weight:800;letter-spacing:1px}
@@ -1612,8 +1677,8 @@ BB_DASH_CSS = """
 .tile .ds{color:var(--dim);font-size:12px;margin-top:2px;display:block}
 .tile .go{margin-left:auto;color:var(--accent);font-weight:800}
 .dash-note{color:var(--faint);font-size:12px;margin-top:10px;line-height:1.6}
-.stale-badge{display:inline-block;font-family:var(--font-mono);font-size:11px;color:#d98a8a;
-  border:1px solid #d98a8a;border-radius:6px;padding:1px 8px;margin-left:8px}
+.stale-badge{display:inline-block;font-family:var(--font-mono);font-size:11px;color:var(--accent-neg);
+  border:1px solid var(--accent-neg);border-radius:6px;padding:1px 8px;margin-left:8px}
 @media(max-width:680px){.dv-grid{grid-template-columns:1fr}.tiles{grid-template-columns:1fr}}
 """
 
@@ -1825,6 +1890,8 @@ def _bb_head(site: dict, title: str, desc: str, url: str, jsonld: str, extra_css
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="{_BB_BG.get(site.get('default_theme'), '#14100e')}">
+<script>{theme_preload_js(site)}</script>
 <title>{html_lib.escape(title)}</title>
 <meta name="description" content="{html_lib.escape(desc)}">
 <meta property="og:title" content="{html_lib.escape(title)}">
@@ -1840,7 +1907,6 @@ def _bb_head(site: dict, title: str, desc: str, url: str, jsonld: str, extra_css
 <meta name="twitter:title" content="{html_lib.escape(title)}">
 <meta name="twitter:description" content="{html_lib.escape(desc)}">
 <meta name="twitter:image" content="{site['base']}/og-home.png">
-<meta name="theme-color" content="#14100e">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
