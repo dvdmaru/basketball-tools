@@ -38,6 +38,8 @@ def _shell(title, desc, canonical, jsonld, body):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="{ba._BB_BG.get(SITE.get('default_theme'), '#14100e')}">
+<script>{ba.theme_preload_js(SITE)}</script>
 <title>{html_lib.escape(title)} | {SITE['title_suffix']}</title>
 <meta name="description" content="{html_lib.escape(desc)}">
 <meta property="og:title" content="{html_lib.escape(title)}">
