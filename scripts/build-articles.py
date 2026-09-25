@@ -860,6 +860,20 @@ ARTICLE_CSS = """
 .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-line); transition: border-color 0.15s ease; }
 .prose a:hover { border-bottom-color: var(--accent); }
 .prose img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius-sm); margin: 30px 0; box-shadow: 0 6px 22px var(--sheet-shadow); }
+.prose figure.diagram { margin: 30px 0; }
+.prose figure.diagram svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; background: var(--surface-2); border-radius: var(--radius-sm); }
+.prose figure.diagram figcaption { max-width: 420px; margin: 10px auto 0; font-size: 14px; line-height: 1.6; color: var(--fg-mute); }
+.dg-t { fill: var(--fg); font-size: 14px; font-family: inherit; }
+.dg-ink { fill: var(--accent-ink); font-size: 13px; font-weight: 700; font-family: inherit; }
+.dg-mute { fill: var(--fg-mute); }
+.dg-o { fill: var(--accent); stroke: none; }
+.dg-x { fill: none; stroke: var(--fg-soft); stroke-width: 2; }
+.dg-path { fill: none; stroke: var(--accent); stroke-width: 3; }
+.dg-dash { fill: none; stroke: var(--fg-mute); stroke-width: 2; stroke-dasharray: 6 5; }
+.dg-bar { fill: none; stroke: var(--fg-mute); stroke-width: 3; }
+.dg-line { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.dg-rim { fill: none; stroke: var(--gold); stroke-width: 3; }
+.dg-head { fill: var(--accent); }
 .prose blockquote { border-left: 3px solid var(--accent); background: var(--surface-2); padding: 14px 20px; margin: 24px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--fg); font-style: normal; }
 .prose blockquote p { margin: 0 0 8px; }
 .prose blockquote p:last-child { margin: 0; }
