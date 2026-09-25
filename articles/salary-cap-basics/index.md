@@ -74,7 +74,7 @@ lede: "NBA 球隊的薪資可以超過薪資帽（Salary Cap）：依 2023 NBA C
 兩組稅率的第一級，差距很大。依 2023 NBA CBA，自 2025-26 賽季起：
 
 - Standard 稅率的第一級，是超出的每 $1 課 $1.00。
-- 前四個 Salary Cap Year 之中，有三年以上 Tax Team Salary 超過稅線的球隊，改用 Repeater 稅率，第一級是超出的每 $1 課 $3.00。
+- 緊接該年度之前的四個 Salary Cap Year 之中，有三年以上 Tax Team Salary 超過稅線的球隊，改用 Repeater 稅率，第一級是超出的每 $1 課 $3.00。
 
 再用假設數字練一次。假設某隊在 2025-26 只超出稅線 $2 million，並且落在第一級之內。Standard 稅率的稅是 $2 million，Repeater 稅率的稅是 $6 million。同樣的超線金額，稅可以差到三倍。
 
@@ -92,7 +92,7 @@ lede: "NBA 球隊的薪資可以超過薪資帽（Salary Cap）：依 2023 NBA C
 
 ## 超過 apron 不等於不能簽約，限制綁在表列的特定操作上
 
-apron 這個字在 CBA 裡叫 Apron Level，第一、第二各一條。中文沒有規則書層級的統一譯名，所以這篇一律寫英文原詞。
+apron 這個字在 CBA 裡叫 Apron Level，第一、第二各一條。這篇一律寫英文原詞。
 
 apron 不是一條「超過就什麼都不能做」的線。2023 NBA CBA Art. VII 第 2(e) 條有一張 Transaction Restrictions Table，列出受限制的操作，每一列對應第一或第二 apron。限制的寫法有兩層：
 
@@ -164,7 +164,7 @@ Taxpayer Mid-Level 是個有意思的例子。它只有在球隊使用後，Apro
 
 ### 超過稅線要繳多少稅？
 
-依 2023 NBA CBA，只有 Tax Team Salary 超過稅線的球隊要繳稅，對超出的部分分級計算。自 2025-26 起，Standard 稅率第一級是每 $1 課 $1.00；前四個 Salary Cap Year 有三年以上超過稅線的球隊，改用 Repeater 稅率，第一級是每 $1 課 $3.00。CBA 的假設算例是超出 $15 million、稅 $24 million，不是實際球隊的帳單。Tax Team Salary 以該年度例行賽末場開賽時的 Team Salary 為基準，另有加減項。
+依 2023 NBA CBA，只有 Tax Team Salary 超過稅線的球隊要繳稅，對超出的部分分級計算。自 2025-26 起，Standard 稅率第一級是每 $1 課 $1.00；緊接該年度之前的四個 Salary Cap Year 有三年以上超過稅線的球隊，改用 Repeater 稅率，第一級是每 $1 課 $3.00。CBA 的假設算例是超出 $15 million、稅 $24 million，不是實際球隊的帳單。Tax Team Salary 以該年度例行賽末場開賽時的 Team Salary 為基準，另有加減項。
 
 ### 超過第一或第二 apron，就不能簽約、不能交易嗎？
 
