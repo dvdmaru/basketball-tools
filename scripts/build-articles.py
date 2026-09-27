@@ -337,10 +337,25 @@ SITE_HEADER_CSS = """
 .brand .mark{font-family:var(--f-display);font-size:26px;letter-spacing:.5px;color:var(--accent);line-height:1}
 .brand .mark b{color:var(--fg);font-weight:400}
 .brand .tag{font-family:var(--f-ui);font-size:10.5px;letter-spacing:2.5px;color:var(--fg-mute);text-transform:uppercase}
-.nav2{display:flex;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
-.nav2 a{padding:7px 14px;border-radius:999px;color:var(--fg-soft)}
-.nav2 a:hover{background:var(--surface-2);color:var(--fg)}
-.nav2 a.on{background:var(--accent);color:var(--accent-ink)}
+.nav2{display:flex;align-items:center;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
+.nav2>a,.nav-group>summary{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;color:var(--fg-soft);white-space:nowrap;cursor:pointer;list-style:none;text-decoration:none}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.nav-group[open]>summary::after{transform:translateY(1px) rotate(-135deg)}
+.nav2>a:hover,.nav-group>summary:hover{background:var(--surface-2);color:var(--fg)}
+.nav2>a.on,.nav-group>summary.on{background:var(--accent);color:var(--accent-ink)}
+.nav-group{position:relative}
+.nav-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:250px;display:grid;gap:2px;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 14px 40px var(--sheet-shadow);z-index:50}
+.nav-menu a{display:block;padding:9px 12px;border-radius:var(--r-sm);color:var(--fg);font-weight:600;line-height:1.3;text-decoration:none}
+.nav-menu a small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--fg-mute);letter-spacing:0}
+.nav-menu a:hover{background:var(--surface-2)}
+.nav-menu a.on{background:var(--accent);color:var(--accent-ink)}
+.nav-menu a.on small{color:var(--accent-ink)} /* 不疊 opacity：淺色主題（apricot／maple）疊 .85 會跌破 WCAG AA */
+.nav-toggle{display:none;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg-soft);font:600 13px var(--f-ui);cursor:pointer}
+.nav-toggle .ico{position:relative;display:inline-block;width:15px;height:11px}
+.nav-toggle .ico::before,.nav-toggle .ico::after,.nav-toggle .ico i{content:"";position:absolute;left:0;right:0;height:1.5px;border-radius:1px;background:currentColor}
+.nav-toggle .ico::before{top:0}.nav-toggle .ico i{top:5px}.nav-toggle .ico::after{bottom:0}
+.nav-toggle[aria-expanded="true"]{background:var(--surface-2);color:var(--fg)}
 .theme{display:flex;align-items:center;gap:9px;padding-left:16px;border-left:1px solid var(--line)}
 .theme .lbl{font-family:var(--f-ui);font-size:10px;letter-spacing:1.5px;color:var(--fg-dim);text-transform:uppercase}
 .dots{display:flex;gap:7px}
@@ -349,10 +364,33 @@ SITE_HEADER_CSS = """
 .dot[aria-pressed="true"]{border-color:var(--fg)}
 @media(max-width:640px){
   .head-in{padding:12px 18px;gap:12px}
-  .nav2{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-  .nav2::-webkit-scrollbar{display:none}
-  .theme{padding-left:12px}
+  /* 第一行要同時塞品牌字＋選單鈕＋色點（360 寬也要進）：品牌字縮、鈕只留圖示、色點收緊 */
+  .brand .mark{font-size:22px}
+  .brand .tag{font-size:10px;letter-spacing:1.4px}
+  /* 選單鈕只在有 JS 時出現：無 JS 時 nav 本來就平鋪，鈕會變成按了沒反應的死按鈕 */
+  html.has-js .nav-toggle{display:inline-flex;order:2;padding:7px 9px}
+  .nav-toggle .txt{display:none}
+  .theme{order:3;padding-left:10px;gap:0}
   .theme .lbl{display:none}
+  .dots{gap:5px}
+  .dot{width:14px;height:14px}
+  .nav2{order:4;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid var(--line)}
+  /* 只有 JS 在（html.has-js，preload 就加）才藏 nav；無 JS 退回平鋪，不會被藏死 */
+  html.has-js .site-head:not(.nav-open) .nav2{display:none}
+  .nav2>a,.nav-group>summary{display:flex;border-radius:var(--r-sm);padding:10px 12px;white-space:normal}
+  .nav-group>summary{justify-content:space-between}
+  .nav-group>summary::after{margin-left:auto}
+  .nav-group{position:static}
+  .nav-menu{position:static;min-width:0;padding:0 0 4px 10px;background:transparent;border:0;box-shadow:none}
+  /* 面板裡群組標題有作用中子項時只加粗不上底色，強調色留給子項（兩層都上色太重） */
+  .nav-group>summary.on{background:transparent;color:var(--fg);font-weight:800}
+}
+@media(max-width:379px){
+  /* 360 寬的第一行差幾 px 就掉行：間距與副標字距再收一點 */
+  .head-in{gap:10px}
+  .brand .tag{letter-spacing:1.1px}
+  .theme{padding-left:8px}
+  .dots{gap:4px}
 }
 /* ---------- v2 footer ---------- */
 .foot{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-deep);margin-left:-16px;margin-right:-16px}
@@ -406,15 +444,48 @@ def sister_sites_html(site: dict) -> str:
 
 
 def site_header_html(active: str, site: dict = None) -> str:
-    """active: nav key to mark current ('home'|'data'|'articles'|...).
+    """active: nav key to mark current ('home'|'data'|'standings'|'tw'|'hbl'|'articles'|...).
     Basketball -> v2 sticky 毛玻璃 header（brand + pill nav + 主題 dots，mock 落地）；
-    soccer fallback 保留 legacy 版。放在 container 外（頁殼負責）。"""
+    soccer fallback 保留 legacy 版。放在 container 外（頁殼負責）。
+
+    2026-09-27 導覽收合（比照 racing PR #94）：sites.json 的 nav 維持平鋪，項目可帶
+    `group`（對到 `nav_groups[group].label`）與 `desc`（下拉短說明）。同 group 的項目收成一顆
+    `<details class="nav-group">`——沒有 JS 也能點開、鍵盤可達；掃整份 nav 收集成員、不假設連續。
+    作用中連結加 aria-current="page"；群組有作用中子項時 summary 高亮。首頁 pill 不再列
+    （品牌字本來就連回首頁）。手機（≤640px）整條 nav 收進「選單」鈕，JS 只做增強（見 BB_NAV_JS）。"""
     site = site or SOCCER_SITE
     if site.get("default_theme", "grass") in BB_THEME_KEYS:
+        nav_items = site.get("nav", [])
+        groups = site.get("nav_groups") or {}
+
+        def _link(n, in_menu=False):
+            on = n.get("key") == active
+            cls = ' class="on" aria-current="page"' if on else ""
+            label = html_lib.escape(n["label"])
+            if in_menu:
+                desc = n.get("desc")
+                small = f'<small>{html_lib.escape(desc)}</small>' if desc else ""
+                return f'<a href="{n["href"]}"{cls}>{label}{small}</a>'
+            return f'<a href="{n["href"]}"{cls}>{label}</a>'
+
         parts = []
-        for n in site.get("nav", []):
-            cls = ' class="on"' if n.get("key") == active else ""
-            parts.append(f'<a href="{n["href"]}"{cls}>{n["label"]}</a>')
+        seen_groups = set()
+        for n in nav_items:
+            g = n.get("group")
+            if g and g in groups:
+                if g in seen_groups:
+                    continue
+                seen_groups.add(g)
+                members = [m for m in nav_items if m.get("group") == g]
+                sum_cls = ' class="on"' if any(m.get("key") == active for m in members) else ""
+                menu = "\n          ".join(_link(m, in_menu=True) for m in members)
+                parts.append(
+                    f'<details class="nav-group">\n'
+                    f'        <summary{sum_cls}>{html_lib.escape(groups[g]["label"])}</summary>\n'
+                    f'        <div class="nav-menu">\n          {menu}\n        </div>\n'
+                    f'      </details>')
+            else:
+                parts.append(_link(n))
         ext = site.get("external_link")
         if ext:
             parts.append(f'<a href="{ext["href"]}" target="_blank" rel="noopener">{ext["label"]}</a>')
@@ -435,7 +506,8 @@ def site_header_html(active: str, site: dict = None) -> str:
       <span class="mark">{mark}</span>
       <span class="tag">{html_lib.escape(site["brand_tag"])}</span>
     </a>
-    <nav class="nav2">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開關選單"><span class="ico"><i></i></span><span class="txt">選單</span></button>
+    <nav class="nav2" id="site-nav" aria-label="站內導覽">
       {links}
     </nav>
     <div class="theme">
@@ -600,6 +672,7 @@ BB_THEME_PRELOAD_JS = f"""
 (function(){{
   var KEY="bk-theme", VALID={_BB_THEME_KEYS_JS}, BG={_BB_BG_JS};
   var root=document.documentElement, saved=null;
+  root.classList.add("has-js"); /* 手機 nav 只在有 JS 時收進選單鈕（CSS 靠這個 class 判斷） */
   try{{ saved=localStorage.getItem(KEY); }}catch(e){{}}
   if(saved && VALID.indexOf(saved)===-1){{
     saved=null;
@@ -637,6 +710,54 @@ BB_THEME_SWITCH_JS = f"""
 """
 
 
+# 2026-09-27 導覽收合的增強 JS（約 40 行，比照 racing PR #94）。沒有它 <details> 照樣能點開、
+# 手機退回平鋪；有它才有：桌機開一組關其他、點外面／Esc／焦點離開關、Esc 後焦點還給 summary
+# 或選單鈕、手機選單鈕開關面板並把各組展開、跨斷點時全部收起。
+BB_NAV_JS = """
+(function(){
+  var head=document.querySelector(".site-head"); if(!head) return;
+  var btn=head.querySelector(".nav-toggle");
+  var groups=Array.prototype.slice.call(head.querySelectorAll("details.nav-group"));
+  var mq=window.matchMedia("(max-width:640px)");
+  function closeAll(except){ groups.forEach(function(g){ if(g!==except) g.removeAttribute("open"); }); }
+  function setMenu(open){
+    head.classList.toggle("nav-open",open);
+    if(btn) btn.setAttribute("aria-expanded",open?"true":"false");
+    if(open) groups.forEach(function(g){ g.setAttribute("open",""); });
+  }
+  groups.forEach(function(g){
+    g.addEventListener("toggle",function(){ if(g.open && !mq.matches) closeAll(g); });
+  });
+  if(btn) btn.addEventListener("click",function(){ setMenu(!head.classList.contains("nav-open")); });
+  document.addEventListener("click",function(e){
+    if(head.contains(e.target)) return;
+    if(mq.matches) setMenu(false); else closeAll();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key!=="Escape") return;
+    if(mq.matches){
+      if(head.classList.contains("nav-open")){ setMenu(false); if(btn) btn.focus(); }
+      return;
+    }
+    var opened=groups.filter(function(g){ return g.open; });
+    if(opened.length){ closeAll(); var s=opened[0].querySelector("summary"); if(s) s.focus(); }
+  });
+  head.addEventListener("focusout",function(e){
+    if(mq.matches) return;
+    if(e.relatedTarget && head.contains(e.relatedTarget)) return;
+    /* 延後一拍再查 activeElement：舊 WebKit 滑鼠點擊時 relatedTarget 會是 null，
+       立刻收合會在 click 之前把 <details> 關掉、吃掉下拉裡連結的點擊 */
+    setTimeout(function(){
+      if(document.activeElement && head.contains(document.activeElement)) return;
+      closeAll();
+    },0);
+  });
+  var onChange=function(){ setMenu(false); closeAll(); };
+  if(mq.addEventListener) mq.addEventListener("change",onChange); else if(mq.addListener) mq.addListener(onChange);
+})();
+"""
+
+
 def theme_switch_html(site: dict = None) -> str:
     """Color switcher. Legacy soccer fallback -> light 7-dot palette. Basketball -> 空字串
     （v2 切換器已內建於 site_header_html 的 dots）。"""
@@ -648,11 +769,12 @@ def theme_switch_html(site: dict = None) -> str:
 
 def theme_switch_js(site: dict = None) -> str:
     """Theme init/persist JS. Legacy soccer fallback -> light palette (key wc-theme).
-    Basketball -> dark/light 家族（key bk-theme，click handler，preload 已處理初始套用）。"""
+    Basketball -> dark/light 家族（key bk-theme，click handler，preload 已處理初始套用）
+    ＋導覽收合的增強 JS（BB_NAV_JS）——併在同一個 <script> 回傳，六個頁殼不用各自多接一條。"""
     site = site or SOCCER_SITE
     if site.get("default_theme", "grass") not in BB_THEME_KEYS:
         return THEME_SWITCH_JS
-    return BB_THEME_SWITCH_JS
+    return BB_THEME_SWITCH_JS + BB_NAV_JS
 
 
 def theme_preload_js(site: dict = None) -> str:

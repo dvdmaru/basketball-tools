@@ -14,14 +14,32 @@
     "default_theme": "ember",
     "nav": [
       {
-        "label": "首頁",
-        "href": "/",
-        "key": "home"
+        "label": "數據總覽",
+        "href": "/data/",
+        "key": "data",
+        "group": "data",
+        "desc": "三個聯盟數據頁的入口"
       },
       {
-        "label": "數據",
-        "href": "/data/",
-        "key": "data"
+        "label": "NBA 戰績",
+        "href": "/standings/",
+        "key": "standings",
+        "group": "data",
+        "desc": "東西區完整排名與季後賽分帶"
+      },
+      {
+        "label": "台灣職籃",
+        "href": "/tw/",
+        "key": "tw",
+        "group": "data",
+        "desc": "TPBL 與 P. LEAGUE+ 戰績對照"
+      },
+      {
+        "label": "HBL",
+        "href": "/hbl/",
+        "key": "hbl",
+        "group": "data",
+        "desc": "高中甲級四強與歷屆冠軍"
       },
       {
         "label": "文章",
@@ -29,6 +47,11 @@
         "key": "articles"
       }
     ],
+    "nav_groups": {
+      "data": {
+        "label": "數據"
+      }
+    },
     "external_link": null,
     "footer_cta": null,
     "footer_links": [
