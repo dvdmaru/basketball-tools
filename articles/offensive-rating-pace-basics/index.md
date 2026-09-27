@@ -6,6 +6,7 @@ date: "2026-09-27"
 title: "假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？"
 subtitle: "場均得分分不出打得快與打得有效率。用兩組假設數字，自己算一次 Offensive Rating、Defensive Rating、Net Rating 與 Pace。"
 lede: "場均得分分不出球隊是打得快，還是打得有效率。NBA 官方統計詞彙表另有兩組定義：Offensive Rating 以每 100 個回合為單位，Pace 記錄每 48 分鐘的回合數，搭配著讀才分得開。"
+topic_ref: "manual"
 ---
 
 # 假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？
