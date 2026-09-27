@@ -6,7 +6,55 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Fri, 25 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</title>
+      <link>https://basketball.twtools.cc/articles/coachs-challenge-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/coachs-challenge-basics/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>教練挑戰（Coach&#x27;s Challenge）是 NBA 教練用食指在空中畫圈、請裁判重看一次判決的做法，但 NBA 2025-26 規則書只允許挑三種判決，發動前還得先叫一次暫停。挑錯，那次暫停就用掉了；只有第一次挑戰成功，球隊才保留暫停，並多得一次挑戰。</description>
+    </item>
+    <item>
+      <title>假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？</title>
+      <link>https://basketball.twtools.cc/articles/offensive-rating-pace-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/offensive-rating-pace-basics/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>場均得分分不出球隊是打得快，還是打得有效率。NBA 官方統計詞彙表另有兩組定義：Offensive Rating 以每 100 個回合為單位，Pace 記錄每 48 分鐘的回合數，搭配著讀才分得開。</description>
+    </item>
+    <item>
+      <title>NBA 戰績表：兩隊同勝率先比對戰成績，三隊同勝率卻先看分組冠軍</title>
+      <link>https://basketball.twtools.cc/articles/read-standings-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/read-standings-basics/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 官方戰績頁的名次先比勝率，勝率相同才進比序。兩隊並列時，比序清單第 1 條是彼此對戰勝率；三隊以上並列時，第 1 條是分組冠軍，兩份清單的順序不同，GB 欄也不在其中。</description>
+    </item>
+    <item>
+      <title>限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員</title>
+      <link>https://basketball.twtools.cc/articles/restricted-free-agency-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/restricted-free-agency-basics/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>在 2023 NBA CBA 的一般路徑下，符合資格的球員要成為限制性自由球員（Restricted Free Agent），原球隊得先在期限內發出資格報價（Qualifying Offer）；沒發，他就是無限制自由球員。資格報價買到的是優先購買權（Right of First Refusal），不是留人的保證。</description>
+    </item>
+    <item>
+      <title>NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽</title>
+      <link>https://basketball.twtools.cc/articles/two-way-contract-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/two-way-contract-basics/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>雙向合約（Two-Way Contract）是讓球員同時為 NBA 球隊與 G League 球隊工作的專用合約。依 2023 CBA 條文，它受四項附條件的限制：每隊 3 個名額、每季 50 場 Active List、季後賽不能出賽、薪水不占薪資帽，轉為標準合約的選擇權則在球隊手上。</description>
+    </item>
+    <item>
+      <title>NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型</title>
+      <link>https://basketball.twtools.cc/articles/zone-vs-man-defense/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/zone-vs-man-defense/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>區域聯防（zone defense）與人盯人（man-to-man）是球迷與教練的通稱，NBA 2025-26 規則書沒有這兩個詞。規則書明寫任何防守者可以防任何進攻者，也可以包夾；還在管防守站位的是防守三秒，管的是禁區裡沒有盯人的防守者，不是陣型。</description>
+    </item>
     <item>
       <title>NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制</title>
       <link>https://basketball.twtools.cc/articles/draft-lottery-basics/</link>
@@ -198,14 +246,6 @@
       <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>NBA 由東西區各 15 隊、共 30 隊組成，例行賽每隊 82 場，例行賽後段先打附加賽決出最後兩張季後賽門票，再進入七戰四勝制的季後賽與總冠軍賽。</description>
-    </item>
-    <item>
-      <title>為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析</title>
-      <link>https://basketball.twtools.cc/articles/taiwan-hoops-two-leagues/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/taiwan-hoops-two-leagues/</guid>
-      <pubDate>Sun, 19 Jul 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>截至 2026 年 7 月，台灣職籃由 TPBL（7 隊）與 PLG（4 隊）兩聯盟並立；2025 年 7 月一度討論合併，7 月 31 日 TPBL 宣布終止談判，兩聯盟各自運作至今。</description>
     </item>
   </channel>
 </rss>
