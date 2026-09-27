@@ -8,6 +8,7 @@
 (function(){
   var KEY="bk-theme", VALID=["ember","court","violet","apricot","maple"], BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
   var root=document.documentElement, saved=null;
+  root.classList.add("has-js"); /* 手機 nav 只在有 JS 時收進選單鈕（CSS 靠這個 class 判斷） */
   try{ saved=localStorage.getItem(KEY); }catch(e){}
   if(saved && VALID.indexOf(saved)===-1){
     saved=null;
@@ -305,10 +306,25 @@ body::before {
 .brand .mark{font-family:var(--f-display);font-size:26px;letter-spacing:.5px;color:var(--accent);line-height:1}
 .brand .mark b{color:var(--fg);font-weight:400}
 .brand .tag{font-family:var(--f-ui);font-size:10.5px;letter-spacing:2.5px;color:var(--fg-mute);text-transform:uppercase}
-.nav2{display:flex;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
-.nav2 a{padding:7px 14px;border-radius:999px;color:var(--fg-soft)}
-.nav2 a:hover{background:var(--surface-2);color:var(--fg)}
-.nav2 a.on{background:var(--accent);color:var(--accent-ink)}
+.nav2{display:flex;align-items:center;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
+.nav2>a,.nav-group>summary{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;color:var(--fg-soft);white-space:nowrap;cursor:pointer;list-style:none;text-decoration:none}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.nav-group[open]>summary::after{transform:translateY(1px) rotate(-135deg)}
+.nav2>a:hover,.nav-group>summary:hover{background:var(--surface-2);color:var(--fg)}
+.nav2>a.on,.nav-group>summary.on{background:var(--accent);color:var(--accent-ink)}
+.nav-group{position:relative}
+.nav-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:250px;display:grid;gap:2px;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 14px 40px var(--sheet-shadow);z-index:50}
+.nav-menu a{display:block;padding:9px 12px;border-radius:var(--r-sm);color:var(--fg);font-weight:600;line-height:1.3;text-decoration:none}
+.nav-menu a small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--fg-mute);letter-spacing:0}
+.nav-menu a:hover{background:var(--surface-2)}
+.nav-menu a.on{background:var(--accent);color:var(--accent-ink)}
+.nav-menu a.on small{color:var(--accent-ink)} /* 不疊 opacity：淺色主題（apricot／maple）疊 .85 會跌破 WCAG AA */
+.nav-toggle{display:none;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg-soft);font:600 13px var(--f-ui);cursor:pointer}
+.nav-toggle .ico{position:relative;display:inline-block;width:15px;height:11px}
+.nav-toggle .ico::before,.nav-toggle .ico::after,.nav-toggle .ico i{content:"";position:absolute;left:0;right:0;height:1.5px;border-radius:1px;background:currentColor}
+.nav-toggle .ico::before{top:0}.nav-toggle .ico i{top:5px}.nav-toggle .ico::after{bottom:0}
+.nav-toggle[aria-expanded="true"]{background:var(--surface-2);color:var(--fg)}
 .theme{display:flex;align-items:center;gap:9px;padding-left:16px;border-left:1px solid var(--line)}
 .theme .lbl{font-family:var(--f-ui);font-size:10px;letter-spacing:1.5px;color:var(--fg-dim);text-transform:uppercase}
 .dots{display:flex;gap:7px}
@@ -317,10 +333,33 @@ body::before {
 .dot[aria-pressed="true"]{border-color:var(--fg)}
 @media(max-width:640px){
   .head-in{padding:12px 18px;gap:12px}
-  .nav2{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-  .nav2::-webkit-scrollbar{display:none}
-  .theme{padding-left:12px}
+  /* 第一行要同時塞品牌字＋選單鈕＋色點（360 寬也要進）：品牌字縮、鈕只留圖示、色點收緊 */
+  .brand .mark{font-size:22px}
+  .brand .tag{font-size:10px;letter-spacing:1.4px}
+  /* 選單鈕只在有 JS 時出現：無 JS 時 nav 本來就平鋪，鈕會變成按了沒反應的死按鈕 */
+  html.has-js .nav-toggle{display:inline-flex;order:2;padding:7px 9px}
+  .nav-toggle .txt{display:none}
+  .theme{order:3;padding-left:10px;gap:0}
   .theme .lbl{display:none}
+  .dots{gap:5px}
+  .dot{width:14px;height:14px}
+  .nav2{order:4;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid var(--line)}
+  /* 只有 JS 在（html.has-js，preload 就加）才藏 nav；無 JS 退回平鋪，不會被藏死 */
+  html.has-js .site-head:not(.nav-open) .nav2{display:none}
+  .nav2>a,.nav-group>summary{display:flex;border-radius:var(--r-sm);padding:10px 12px;white-space:normal}
+  .nav-group>summary{justify-content:space-between}
+  .nav-group>summary::after{margin-left:auto}
+  .nav-group{position:static}
+  .nav-menu{position:static;min-width:0;padding:0 0 4px 10px;background:transparent;border:0;box-shadow:none}
+  /* 面板裡群組標題有作用中子項時只加粗不上底色，強調色留給子項（兩層都上色太重） */
+  .nav-group>summary.on{background:transparent;color:var(--fg);font-weight:800}
+}
+@media(max-width:379px){
+  /* 360 寬的第一行差幾 px 就掉行：間距與副標字距再收一點 */
+  .head-in{gap:10px}
+  .brand .tag{letter-spacing:1.1px}
+  .theme{padding-left:8px}
+  .dots{gap:4px}
 }
 /* ---------- v2 footer ---------- */
 .foot{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-deep);margin-left:-16px;margin-right:-16px}
@@ -483,10 +522,18 @@ body::before {
       <span class="mark">@<b>BASKETBALL</b></span>
       <span class="tag">NBA · TPBL · PLG · HBL 數據</span>
     </a>
-    <nav class="nav2">
-      <a href="/">首頁</a>
-      <a href="/data/">數據</a>
-      <a href="/articles/" class="on">文章</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開關選單"><span class="ico"><i></i></span><span class="txt">選單</span></button>
+    <nav class="nav2" id="site-nav" aria-label="站內導覽">
+      <details class="nav-group">
+        <summary>數據</summary>
+        <div class="nav-menu">
+          <a href="/data/">數據總覽<small>三個聯盟數據頁的入口</small></a>
+          <a href="/standings/">NBA 戰績<small>東西區完整排名與季後賽分帶</small></a>
+          <a href="/tw/">台灣職籃<small>TPBL 與 P. LEAGUE+ 戰績對照</small></a>
+          <a href="/hbl/">HBL<small>高中甲級四強與歷屆冠軍</small></a>
+        </div>
+      </details>
+      <a href="/articles/" class="on" aria-current="page">文章</a>
     </nav>
     <div class="theme">
       <span class="lbl">配色</span>
@@ -1032,7 +1079,7 @@ body::before {
 
 <footer class="foot">
   <div class="foot-in">
-    <div class="flinks"><a href="/">首頁</a><a href="/data/">數據</a><a href="/articles/">文章</a></div>
+    <div class="flinks"><a href="/data/">數據總覽</a><a href="/standings/">NBA 戰績</a><a href="/tw/">台灣職籃</a><a href="/hbl/">HBL</a><a href="/articles/">文章</a></div>
     <p class="disc">本站為非官方籃球資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（高中體總）等聯盟、球團與學校無任何關聯或授權；數據與比分整理自公開來源並標註。<br>
     Unofficial fan-made site · Not affiliated with, endorsed by, or sponsored by the NBA, TPBL, P. LEAGUE+ or HBL.</p>
     <div class="sisters">
@@ -1070,6 +1117,48 @@ body::before {
       x.setAttribute("aria-pressed", x===b ? "true":"false");
     });
   });
+})();
+
+(function(){
+  var head=document.querySelector(".site-head"); if(!head) return;
+  var btn=head.querySelector(".nav-toggle");
+  var groups=Array.prototype.slice.call(head.querySelectorAll("details.nav-group"));
+  var mq=window.matchMedia("(max-width:640px)");
+  function closeAll(except){ groups.forEach(function(g){ if(g!==except) g.removeAttribute("open"); }); }
+  function setMenu(open){
+    head.classList.toggle("nav-open",open);
+    if(btn) btn.setAttribute("aria-expanded",open?"true":"false");
+    if(open) groups.forEach(function(g){ g.setAttribute("open",""); });
+  }
+  groups.forEach(function(g){
+    g.addEventListener("toggle",function(){ if(g.open && !mq.matches) closeAll(g); });
+  });
+  if(btn) btn.addEventListener("click",function(){ setMenu(!head.classList.contains("nav-open")); });
+  document.addEventListener("click",function(e){
+    if(head.contains(e.target)) return;
+    if(mq.matches) setMenu(false); else closeAll();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key!=="Escape") return;
+    if(mq.matches){
+      if(head.classList.contains("nav-open")){ setMenu(false); if(btn) btn.focus(); }
+      return;
+    }
+    var opened=groups.filter(function(g){ return g.open; });
+    if(opened.length){ closeAll(); var s=opened[0].querySelector("summary"); if(s) s.focus(); }
+  });
+  head.addEventListener("focusout",function(e){
+    if(mq.matches) return;
+    if(e.relatedTarget && head.contains(e.relatedTarget)) return;
+    /* 延後一拍再查 activeElement：舊 WebKit 滑鼠點擊時 relatedTarget 會是 null，
+       立刻收合會在 click 之前把 <details> 關掉、吃掉下拉裡連結的點擊 */
+    setTimeout(function(){
+      if(document.activeElement && head.contains(document.activeElement)) return;
+      closeAll();
+    },0);
+  });
+  var onChange=function(){ setMenu(false); closeAll(); };
+  if(mq.addEventListener) mq.addEventListener("change",onChange); else if(mq.addListener) mq.addListener(onChange);
 })();
 </script>
 </body>
