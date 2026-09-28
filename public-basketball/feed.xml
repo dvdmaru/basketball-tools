@@ -6,7 +6,55 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Sun, 27 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</title>
+      <link>https://basketball.twtools.cc/articles/fast-break-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/fast-break-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>快攻（fast break）常被想成「誰跑得快」，但依 FIBA 教練認證詞彙表與 NBA 2025-26 官方規則書，判斷快攻還有另一條線索：攻守轉換的瞬間，防守方有沒有來得及回位、站好。這篇文章從快攻怎麼發動、規模怎麼分，拆到 NBA 規則書裡「優勢」兩個字包含哪些情況，也整理「數字優勢」這個常聽到的說法，在官方文件裡目前是什麼地位。</description>
+    </item>
+    <item>
+      <title>那球到底吹哪一種？NBA 規則書把「妨礙中籃」和「干擾球」寫進同一份清單裡</title>
+      <link>https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>一次觸球，可能被吹掉，也可能直接算進——差別藏在球是不是還在下降飛行、有沒有機會進框，以及違規發生在哪一邊籃框。NBA 2025-26 官方規則書把這兩種情況寫進同一份九款列舉，沒有像 FIBA 規則書那樣把兩者拆成兩段各自編號；這篇文章照規則書原文拆開這九款，也用 FIBA 2024 年版規則做對照。</description>
+    </item>
+    <item>
+      <title>技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解</title>
+      <link>https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>技術犯規與惡意犯規常被當成「輕重程度」的差別來理解，但 NBA 2025-26 官方比賽規則書把兩者寫在不同章節、用不同判準：技術犯規問的是行為對不對，惡意犯規問的是接觸過不過。分清楚這個分界，比背「幾罰球」更有用。</description>
+    </item>
+    <item>
+      <title>官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看</title>
+      <link>https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>截至 2026 年 9 月 28 日抓取的頁面版本，TPBL 官方球員數據頁的排序選單裡看得到「EFF」「+/-」兩個欄位名稱，PLG 官方主站的表格卻沒有這兩欄；PLG 頁面上「進階數據」按鈕真正打開的，是另一個網站的入口，那個網站的 Glossary 頁雖然收了 EFF 詞條，Definition 與 Formula 兩欄卻都是空白。</description>
+    </item>
+    <item>
+      <title>選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭</title>
+      <link>https://basketball.twtools.cc/articles/trade-rules-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/trade-rules-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 交易常常一次牽動三、四名球員，不是球隊把事情弄複雜，而是 2023 NBA CBA 白紙黑字規定：用交易例外換進新球員時，新球員薪資合計不能超過送出球員稅前薪資的特定倍率，再加一筆固定金額。選秀權沒有薪資，填補不了這個數字。</description>
+    </item>
+    <item>
+      <title>CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事</title>
+      <link>https://basketball.twtools.cc/articles/waiver-buyout-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/waiver-buyout-basics/</guid>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。</description>
+    </item>
     <item>
       <title>教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</title>
       <link>https://basketball.twtools.cc/articles/coachs-challenge-basics/</link>
@@ -198,54 +246,6 @@
       <pubDate>Sat, 22 Aug 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>這筆交易的買家不是外面來的：Marc Stad 原本就是明尼蘇達灰狼與山貓所有權團隊裡的少數股東，這次協議換的是股東桌上的位置，不是新老闆進場。45 億美元是灰狼與山貓兩隊的合併估值，不是成交價；依目前公開資料，也拆不出任一隊的單獨身價；交易仍待 NBA 董事會核准，會議訂在 9 月 15、16 日。</description>
-    </item>
-    <item>
-      <title>湖人易主案的 125 億美元是估值口徑，交易尚待 NBA 批准</title>
-      <link>https://basketball.twtools.cc/articles/lakers-sale-iger-kushner/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/lakers-sale-iger-kushner/</guid>
-      <pubDate>Tue, 18 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>多家媒體報導的 125 億美元是球隊估值口徑的數字，不是誰已經付出的價格。湖人隊易主案的條款一項都沒有公開，NBA 董事會也還沒有表決，目前能確定的只有雙方達成協議。</description>
-    </item>
-    <item>
-      <title>詹姆斯開幕戰作客尼克，台北時間 10 月 21 日早上 7 點</title>
-      <link>https://basketball.twtools.cc/articles/nba-2026-27-opening-night-christmas-schedule/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-2026-27-opening-night-christmas-schedule/</guid>
-      <pubDate>Wed, 12 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>NBA 在 2026 年 8 月 11 日公布 2026-27 球季的開幕週與聖誕大戰，共 14 場。詹姆斯（LeBron James）隨費城 76 人在開幕夜作客紐約尼克，台北時間是 10 月 21 日星期三早上 7 點；聖誕大戰 5 場在台灣則全部落在 12 月 26 日星期六。這 14 場不能用同一個時差換算：10 月的場次美東仍是 EDT，12 月已經回到 EST，兩批比賽正好差一小時。</description>
-    </item>
-    <item>
-      <title>尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜</title>
-      <link>https://basketball.twtools.cc/articles/don-nelson-nellie-ball/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/don-nelson-nellie-ball/</guid>
-      <pubDate>Mon, 10 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>尼爾森於 2026 年 8 月 9 日辭世，享年 86 歲。他以 1,335 勝排名 NBA 史上例行賽勝場第 2。名人堂官網稱他是小球進攻的創新者，也說 point forward 的概念由他帶進籃球；NBA.com 的悼念專文則寫這個詞的發明權有爭議；他本人說 Nellie Ball 只是缺少好長人時的權宜之計。</description>
-    </item>
-    <item>
-      <title>台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻</title>
-      <link>https://basketball.twtools.cc/articles/taiwan-asian-games-2026-basketball/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/taiwan-asian-games-2026-basketball/</guid>
-      <pubDate>Mon, 10 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>截至 2026 年 8 月 10 日，台灣男籃已確定在名古屋亞運 B 組迎戰約旦、伊朗與卡達。首戰是 9 月 10 日台灣時間中午 12 時，比開幕式早 9 天。運動部公布的 12 人名單由陳盈駿、林庭謙、劉錚與高柏鎧等人組成。</description>
-    </item>
-    <item>
-      <title>領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表</title>
-      <link>https://basketball.twtools.cc/articles/taiwan-hoops-2026-offseason-moves/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/taiwan-hoops-2026-offseason-moves/</guid>
-      <pubDate>Mon, 10 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>截至 2026 年 8 月 10 日，台灣職籃最反常的一筆異動，是吳志鍇先後被 PLG 領航猿與 TPBL 戰神選中，最後只與戰神簽約。林庭謙結束 6 個 CBA 賽季返台，陳力生從 PLG 轉投 TPBL 攻城獅，林秉聖則從 TPBL 戰神轉向 PLG 洋基工程。兩個聯盟的球員流向，在同一個夏天交錯。</description>
-    </item>
-    <item>
-      <title>2026 NBA 選秀完整名單：60 個順位裡，27 個球員不會待在選他的那支球隊</title>
-      <link>https://basketball.twtools.cc/articles/nba-2026-draft-results/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-2026-draft-results/</guid>
-      <pubDate>Thu, 06 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>2026 年 NBA 選秀共兩輪、60 個順位，全部完成選人，但實際上台選人的只有 28 支球隊。依 ESPN 的官方資料，60 個順位裡有 27 個在選秀後被交易，也就是說每 10 個被選中的球員就有將近 5 個不會替紀錄上選他的球隊打球。本文把兩輪名單逐順位列出，並標明每張籤的來源與選後去向，資料取源時間為 2026 年 8 月 6 日。</description>
     </item>
   </channel>
 </rss>
