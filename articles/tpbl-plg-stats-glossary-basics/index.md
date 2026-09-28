@@ -6,6 +6,7 @@ date: "2026-09-28"
 title: "官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看"
 subtitle: "TPBL 排序選單把 EFF、+/- 列為正式欄位，PLG 官方表格目前沒有這兩欄；點進官方導去的外部平台，Glossary 頁雖然收了 EFF 詞條，Definition 與 Formula 卻都是空白。"
 lede: "截至 2026 年 9 月 28 日抓取的頁面版本，TPBL 官方球員數據頁的排序選單裡看得到「EFF」「+/-」兩個欄位名稱，PLG 官方主站的表格卻沒有這兩欄；PLG 頁面上「進階數據」按鈕真正打開的，是另一個網站的入口，那個網站的 Glossary 頁雖然收了 EFF 詞條，Definition 與 Formula 兩欄卻都是空白。"
+topic_ref: "manual"
 ---
 
 # 官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看
