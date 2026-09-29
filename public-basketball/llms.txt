@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸](https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/)（2026-09-29）
+- [帶球撞人還是阻擋犯規？先看防守者有沒有先在路徑上站定](https://basketball.twtools.cc/articles/charge-vs-block-basics/)（2026-09-29）
+- [頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出](https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/)（2026-09-29）
+- [NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款](https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/)（2026-09-29）
+- [進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件](https://basketball.twtools.cc/articles/shot-clock-reset-basics/)（2026-09-29）
+- [使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼](https://basketball.twtools.cc/articles/usage-rate-pie-basics/)（2026-09-29）
 - [快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭](https://basketball.twtools.cc/articles/fast-break-basics/)（2026-09-28）
 - [那球到底吹哪一種？NBA 規則書把「妨礙中籃」和「干擾球」寫進同一份清單裡](https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/)（2026-09-28）
 - [技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解](https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/)（2026-09-28）
 - [官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看](https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/)（2026-09-28）
-- [選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭](https://basketball.twtools.cc/articles/trade-rules-basics/)（2026-09-28）
-- [CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事](https://basketball.twtools.cc/articles/waiver-buyout-basics/)（2026-09-28）
-- [教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決](https://basketball.twtools.cc/articles/coachs-challenge-basics/)（2026-09-27）
-- [得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項](https://basketball.twtools.cc/articles/hbl-awards-basics/)（2026-09-27）
-- [男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制](https://basketball.twtools.cc/articles/hbl-format-basics/)（2026-09-27）
-- [轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事](https://basketball.twtools.cc/articles/hbl-player-eligibility-basics/)（2026-09-27）
 
 ## 文章與更新
 
