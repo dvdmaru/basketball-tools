@@ -21,27 +21,26 @@
   }
 })();
 </script>
-<title>CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事 | 籃球數據誌</title>
-<meta name="description" content="依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。">
-<meta property="og:title" content="CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事">
-<meta property="og:description" content="依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。">
-<meta property="og:image" content="https://basketball.twtools.cc/articles/waiver-buyout-basics/cover.png">
+<title>使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼 | 籃球數據誌</title>
+<meta name="description" content="依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。">
+<meta property="og:title" content="使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼">
+<meta property="og:description" content="依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。">
+<meta property="og:image" content="https://basketball.twtools.cc/articles/usage-rate-pie-basics/cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://basketball.twtools.cc/articles/waiver-buyout-basics/">
+<meta property="og:url" content="https://basketball.twtools.cc/articles/usage-rate-pie-basics/">
 <meta property="og:site_name" content="籃球數據誌">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2026-09-28">
+<meta property="article:published_time" content="2026-09-29">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事">
-<meta name="twitter:description" content="依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。">
-<meta name="twitter:image" content="https://basketball.twtools.cc/articles/waiver-buyout-basics/cover.png">
-<link rel="canonical" href="https://basketball.twtools.cc/articles/waiver-buyout-basics/">
-<link rel="prev" href="https://basketball.twtools.cc/articles/trade-rules-basics/">
-<link rel="next" href="https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/">
+<meta name="twitter:title" content="使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼">
+<meta name="twitter:description" content="依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。">
+<meta name="twitter:image" content="https://basketball.twtools.cc/articles/usage-rate-pie-basics/cover.png">
+<link rel="canonical" href="https://basketball.twtools.cc/articles/usage-rate-pie-basics/">
+<link rel="prev" href="https://basketball.twtools.cc/articles/shot-clock-reset-basics/">
 <link rel="alternate" type="application/rss+xml" title="籃球數據誌 最新文章" href="https://basketball.twtools.cc/feed.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://basketball.twtools.cc/#org","name":"籃球數據誌","url":"https://basketball.twtools.cc/","sameAs":[]},{"@type":"WebSite","@id":"https://basketball.twtools.cc/#website","name":"籃球數據誌｜NBA・台灣職籃・HBL 戰績與數據","url":"https://basketball.twtools.cc/","inLanguage":"zh-Hant","publisher":{"@id":"https://basketball.twtools.cc/#org"}},{"@type":"SportsLeague","@id":"https://basketball.twtools.cc/#league-nba","name":"美國職籃 NBA","sport":"Basketball","url":"https://basketball.twtools.cc/standings/","organizer":{"@type":"Organization","name":"National Basketball Association"}},{"@type":"Article","headline":"CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事","description":"依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。","image":"https://basketball.twtools.cc/articles/waiver-buyout-basics/cover.png","inLanguage":"zh-Hant","url":"https://basketball.twtools.cc/articles/waiver-buyout-basics/","mainEntityOfPage":"https://basketball.twtools.cc/articles/waiver-buyout-basics/","author":{"@id":"https://basketball.twtools.cc/#org"},"publisher":{"@id":"https://basketball.twtools.cc/#org"},"isPartOf":{"@id":"https://basketball.twtools.cc/#league-nba"},"datePublished":"2026-09-28","dateModified":"2026-09-28"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://basketball.twtools.cc/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://basketball.twtools.cc/articles/"},{"@type":"ListItem","position":3,"name":"CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事","item":"https://basketball.twtools.cc/articles/waiver-buyout-basics/"}]},{"@type":"FAQPage","@id":"https://basketball.twtools.cc/articles/waiver-buyout-basics/#faq","inLanguage":"zh-Hant","mainEntity":[{"@type":"Question","name":"「buyout」買斷是 CBA 裡的正式名詞嗎？","acceptedAnswer":{"@type":"Answer","text":"不是。依 2023 NBA CBA 全文查證，找不到「buyout」這個字；對應到的正式條文是 Article II §3(p)，球隊與球員合意修改合約，約定球隊去申請 waivers，球員清空 waivers、合約終止後，保障金額減少或取消。「買斷」是媒體與球迷對這套複合操作的稱呼，不是 CBA 本身使用的詞。"}},{"@type":"Question","name":"Waiver 的公示期是多久？其他球隊要怎麼搶到被棄的球員？","acceptedAnswer":{"@type":"Answer","text":"依 2023 CBA 附件摘錄的 NBA By-Laws，公示期是 48 小時，其他球隊要在這段時間內用電話加書面向聯盟提出認領聲明，且不能撤回。如果同時有一支以上的球隊提出認領，由這些球隊裡在提出 waiver 當下戰績墊底的一隊優先取得，不是先送出聲明的球隊先拿人。"}},{"@type":"Question","name":"買斷球員清空 waivers 之後，是限制性還是無限制自由球員？","acceptedAnswer":{"@type":"Answer","text":"依 2023 NBA CBA 對 Free Agent 各類型定義逐段推導，清空 waivers、合約終止的球員不算完成合約的 Veteran Free Agent，也就進不了 Restricted Free Agent（限制性自由球員）的資格條件，比較貼近 Unrestricted Free Agent（無限制自由球員）這個類別。這是把好幾段條文定義組合起來的推導結果，CBA 沒有一句話直接這樣寫。"}},{"@type":"Question","name":"買斷球員要在幾月幾日前跟新球隊簽約，才能打季後賽？","acceptedAnswer":{"@type":"Answer","text":"依 2023 CBA Article XXIX §4，決定季後賽資格的時間點，是原球隊提出 waiver 請求的那一刻，不是跟新球隊簽約的日期。任何球員（含雙向球員），若原球隊在當季 3 月 1 日美東時間晚上 11:59 之後才提出 waiver 請求，該球員這一季就不能打季後賽，除非被一支因傷病、Active List 降到 8 人的球隊取得；簽約日期本身不是判斷依據。"}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://basketball.twtools.cc/#org","name":"籃球數據誌","url":"https://basketball.twtools.cc/","sameAs":[]},{"@type":"WebSite","@id":"https://basketball.twtools.cc/#website","name":"籃球數據誌｜NBA・台灣職籃・HBL 戰績與數據","url":"https://basketball.twtools.cc/","inLanguage":"zh-Hant","publisher":{"@id":"https://basketball.twtools.cc/#org"}},{"@type":"SportsLeague","@id":"https://basketball.twtools.cc/#league-nba","name":"美國職籃 NBA","sport":"Basketball","url":"https://basketball.twtools.cc/standings/","organizer":{"@type":"Organization","name":"National Basketball Association"}},{"@type":"Article","headline":"使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼","description":"依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。","image":"https://basketball.twtools.cc/articles/usage-rate-pie-basics/cover.png","inLanguage":"zh-Hant","url":"https://basketball.twtools.cc/articles/usage-rate-pie-basics/","mainEntityOfPage":"https://basketball.twtools.cc/articles/usage-rate-pie-basics/","author":{"@id":"https://basketball.twtools.cc/#org"},"publisher":{"@id":"https://basketball.twtools.cc/#org"},"isPartOf":{"@id":"https://basketball.twtools.cc/#league-nba"},"datePublished":"2026-09-29","dateModified":"2026-09-29"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://basketball.twtools.cc/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://basketball.twtools.cc/articles/"},{"@type":"ListItem","position":3,"name":"使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼","item":"https://basketball.twtools.cc/articles/usage-rate-pie-basics/"}]},{"@type":"FAQPage","@id":"https://basketball.twtools.cc/articles/usage-rate-pie-basics/#faq","inLanguage":"zh-Hant","mainEntity":[{"@type":"Question","name":"USG% 在 NBA 官方詞彙表是次數還是百分比？","acceptedAnswer":{"@type":"Answer","text":"百分比。依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG%（Usage Percentage）的定義是 The percentage of team plays used by a player when they are on the floor，即球員在場上時佔用的球隊回合百分比。公式為 (FGA + Possession Ending FTA + TO) / POSS。詞彙表是活頁面，日後可能改動；乘 100 寫成百分比是本文的換算，詞彙表沒有寫這個步驟。"}},{"@type":"Question","name":"USG% 公式裡有沒有命中數或助攻？","acceptedAnswer":{"@type":"Answer","text":"依 NBA 官方統計網站詞彙表 2026-09-29 抓取版的公式 (FGA + Possession Ending FTA + TO) / POSS，逐項清點後，項目裡看不到命中數、助攻與防守項。這是本文對公式逐項檢視的結果，詞彙表沒有用一句話寫出「不含這些」。"}},{"@type":"Question","name":"PIE 只是把得分加總嗎？","acceptedAnswer":{"@type":"Answer","text":"依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），PIE 的公式分子包含加項（PTS、FGM、FTM、DREB、0.5 × OREB、AST、STL、0.5 × BLK）與減項（FGA、FTA、PF、TO），分母是同一組項目加上 Gm 前綴。詞彙表沒有為 Gm 單獨定義；本文讀為「比賽全部球員的合計」，這是推論。"}},{"@type":"Question","name":"USG% 或 PIE 數字高，代表球員很重要或表現好嗎？","acceptedAnswer":{"@type":"Answer","text":"依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 與 PIE 的條目都只有名稱、定義、公式與類型，沒有寫高低門檻、聯盟平均或好壞解讀，也沒有把 USG% 與效率或角色連結、把 PIE 與贏球連結。因此本文不對「高代表什麼」下判斷；要下判斷，需要公式以外的依據。"}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -552,64 +551,268 @@ body::before {
   <article>
     <header class="article-header">
       <div class="article-kicker">FEATURE</div>
-      <h1 class="article-title">CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事</h1>
-      <div class="article-subtitle">waive 是 2023 CBA 明文規範、有公示期與認領順序的合約終止程序；買斷只是球隊與球員先合意調整保障條款，再照 waive 程序走一次的業界說法。</div>
-      <div class="article-meta">2026/09/28 · 週一</div>
+      <h1 class="article-title">使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</h1>
+      <div class="article-subtitle">從 NBA 官方統計詞彙表的定義句與公式出發，逐項拆開 USG% 與 PIE，再用兩組明標「假設」的數字自己代入算一次。</div>
+      <div class="article-meta">2026/09/29 · 週二</div>
     </header>
-    <div class="article-lede"><span class="lede-label">重點速答</span><p>依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。</p></div>
-    <img class="article-cover" src="cover.png" alt="CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事｜封面">
+    <div class="article-lede"><span class="lede-label">重點速答</span><p>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。</p></div>
+    <img class="article-cover" src="cover.png" alt="使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼｜封面">
     <div class="prose">
-<p><strong>新手村｜制度入門・棄約與買斷</strong></p>
-<p>球迷聊自由市場，「棄約」和「買斷」常被當成同一件事講。兩者確實常常前後腳出現：一支球隊先跟球員談好條件，再把他放上 waivers。但在條文裡，這是兩個不對等的東西——waive 是 2023 NBA CBA 明文規範的合約終止程序，有公示期，也有認領順序；買斷不是 CBA 用來稱呼任何條款的正式名詞，它是「先合意調整保障條款、再照 waive 程序走一次」這套複合操作的業界說法。</p>
-<p>這篇文章把兩者拆開講：waive 怎麼運作、球隊之間怎麼認領、清空之後球員的身分怎麼判、還有一個特別容易被誤解的時間點問題。讀完之後，你應該能自己判一段假設的棄約流程，分清楚哪一步是 waive、哪一步只是球隊與球員的合意。</p>
-<h2>CBA 全文查不到「buyout」這個字，球迷講的買斷到底是什麼？</h2>
-<p>翻開 2023 NBA CBA 全文，找不到「buyout」這個字。球迷天天掛在嘴邊的「買斷」，在條文裡沒有一個正式名詞對應。CBA 裡對應到這個概念的條文，是 Article II §3(p)：球隊與球員可以合意修改一份已經存在的合約，約定球隊會依 Paragraph 16 去申請 waivers；球員清空 waivers、合約終止之後，合約原本保障（guaranteed）的金額，會被減少或取消。</p>
-<p>這條規定描述的，其實是「先合意、再走 waive 程序」的一套操作：球隊想放走一名球員，但不想（或不能）一次付清合約剩下全部的保障金額，於是先跟球員談好一個折衷的金額，換取球員同意配合球隊申請 waivers。等球員清空 waivers、合約終止，球員少拿一部分保障薪水，球隊也少背一部分帳面數字。這套操作被媒體與球迷稱為「買斷」，但它在 CBA 裡沒有獨立的名字，法律上走的仍然是 waive 那一套程序。</p>
-<p>也因為這樣，買斷在 CBA 裡沒有一個和 waive 平行、獨立存在的合約終止類型。要理解買斷，得先理解 waive 本身是怎麼運作的。</p>
-<h2>Waive 是什麼：球隊不能自己宣布合約終止，要先走一套程序</h2>
-<p>依 2023 CBA 的 Uniform Player Contract Paragraph 16(f)，球隊如果要終止一份合約，必須先照一套 waiver 程序走，不是球隊片面決定「即日起終止」就立刻生效。合約要等 waiver 公示期滿、沒有其他球隊提出認領，才真正終止；期滿後如果真的沒人認領，球隊還要另外發一份書面通知給球員，合約才算正式終止。</p>
-<p>換句話說，waive（棄約）指的是這整套「球隊提出、公示、等待認領、期滿終止」的程序，不是球隊講一句「不要這名球員了」的動作本身。買斷所依附的，正是這套程序，不是另一條路。</p>
-<h2>48 小時公示期，認領聲明不能反悔，順序也不是先搶先贏</h2>
-<p>依 2023 CBA 附件摘錄的 NBA By-Laws，一名球員被提出 waiver 之後，公示期是 48 小時：其他球隊如果想認領，要在這 48 小時內用電話加書面，向聯盟提出認領聲明。這份聲明一旦提出，就不能撤回。</p>
-<p>如果同一時間有一支以上的球隊提出認領，判定的方式不是先送出聲明的球隊先拿人，而是比較這些球隊在提出 waiver 當下的戰績，由戰績墊底的那一隊優先取得——這是認領順序的核心規則。在這 48 小時的公示期內，球員財務上仍然由原球隊負責，不是掛在空氣裡沒人管。</p>
-<p>這裡要澄清一個容易混淆的地方：CBA 條文裡確實出現過「Full Waiver Claim」「Partial Waiver Claim」這組更細的分類詞，但它們專屬於 Fitness-to-Play Panel 醫療爭議下的 Partial Waiver Procedure，不是一般棄約流程通用的認領機制名稱——一般 waiver 流程，條文用的就是「claim」這個字，沒有再往下分類。</p>
-<p>順帶一提，waiver 本身在條文裡還規定了一個名目上的認領價格：每名球員 $1,000。球隊透過一般 waiver 程序取得一名球員的合約之後，30 天內也不能再把這名球員的合約權利出售或交易出去——這兩件事都是條文寫明的細節，但不是這篇文章要講的重點。</p>
-<h2>清空 waivers 之後，球員會變成哪一種自由球員？</h2>
-<p>依 2023 CBA 對 Free Agent（自由球員）的定義，Free Agent 有好幾種類型，其中一種就包含「依 NBA waiver 程序終止合約的老將」。但要留意，CBA 另外把「Veteran Free Agent」定義成專指「完成合約」（履行完合約規定的球員義務）的老將——被棄約、合約提前終止的球員，不算是完成合約，所以不落在 Veteran Free Agent 這個定義裡。</p>
-<p>這點很關鍵，因為 CBA 把「Restricted Free Agent」（限制性自由球員）的資格前提，設定成「先是 Veteran Free Agent，再受球隊 Right of First Refusal（優先議約權）限制」。清空 waivers 的球員既然不算 Veteran Free Agent，也就進不了 Restricted Free Agent 的資格條件。</p>
-<p>把這幾段定義串起來看：「Unrestricted Free Agent」（無限制自由球員）在 CBA 裡的定義，是「不受球隊 Right of First Refusal 限制的 Free Agent」。依 CBA 對 Free Agent 各類型的定義逐段推導，清空 waivers、合約終止的球員比較貼近 Unrestricted Free Agent 這個類別，可以自行決定要不要跟任何球隊簽約——但要說明的是，CBA 沒有一句條文直接寫「被棄約清空 waivers 的球員等於 Unrestricted Free Agent」，這是把好幾段定義組合起來推導出的結論，不是條文原句直接明講。</p>
-<h2>「3 月 1 日晚上 11:59」卡的是誰的時間？不是跟新球隊簽約的日期</h2>
-<p>依 2023 CBA Article XXIX §4，任何球員（含雙向球員），如果原球隊提出 waiver 請求的時間點，晚於當季 3 月 1 日美東時間晚上 11:59，這名球員這一季就不能參加季後賽（含附加賽與正賽）——除非他被一支因傷病、Active List 降到只剩 8 人的球隊取得。</p>
-<p>這條規定管的是「原球隊提出 waiver 請求」的時間點，不是「球員和新球隊完成簽約」的時間點。坊間流傳的說法，常會簡化成「買斷球員要在幾月幾日前跟新球隊簽約才能打季後賽」，但把季後賽資格和特定時間點放在一起的規定，目前查到的只有這一條——管的是原球隊那一端「提出 waiver 請求」的動作，不是新球隊那一端「簽約」的動作。</p>
-<p>拆開來看兩種情況：一名球員如果在 3 月 1 日美東時間晚上 11:59 之前，就被原球隊提出 waiver 請求，清空 waivers 之後成為自由球員，即使他晚一點才跟新球隊簽約，也不會因為簽約日期本身而失去季後賽資格。反過來，如果原球隊把 waiver 請求拖到 3 月 1 日美東時間晚上 11:59 之後才提出，就算新球隊隔天馬上簽下他，這名球員這一季也不能打季後賽——卡關的是原球隊提出請求的那一刻，不是簽約那一刻。</p>
-<h2>自己判一次：一段假設的買斷流程，哪一步是 waive、哪一步是合意</h2>
-<p>下面用一段假設情境練習分辨。以下球員與球隊都是假設，不是真實案例。</p>
-<p>球員 A 的合約還剩兩個賽季保障，A 所屬的球隊（下稱 A 隊）今年戰績不佳，想在 2 月中把他放走，好挪出名額補強年輕球員。A 隊找球員談，兩人談好一個折衷方案：球隊會依 Article II §3(p) 的模式，去申請 waivers，球員也同意配合；只要 A 清空 waivers、合約終止，原本保障的金額打折。</p>
-<p>依前面幾節的規則，把這段假設情境拆成四步：</p>
+<p><strong>新手村｜數據入門・使用率 USG% 與 PIE</strong></p>
+<p>NBA 官方統計網站的詞彙表把 USG% 與 PIE 都收成進階（Advanced）類欄位。兩個縮寫看起來像是在講球員的分量，但欄位到底在算什麼，得先回到官方詞彙表看定義與公式。</p>
+<p>這篇文章只做一件事：把 NBA 官方統計網站詞彙表（nba.com/stats/help/glossary，本文引用的是 2026-09-29 抓取的版本）裡 USG% 與 PIE 的定義句與公式，逐項拆開來讀。詞彙表是會更新的活頁面，本文的每一句「詞彙表寫了什麼」都只對這個版本負責，不代表 NBA 永遠這樣算。讀完之後，你應該能在數據頁上找到這兩個欄位、自己把一行假設數字代進公式，也能分辨哪些話是公式直接看得出來的，哪些話需要公式以外的依據。</p>
+<p>技術統計表上 FGA、FTA、TOV 這些基本欄位怎麼讀，可以先看本站的<a href="/articles/read-box-score/">技術統計表入門</a>；本文假設你已經知道它們是什麼。</p>
+<h2>USG% 在 NBA 官方詞彙表裡，寫的是百分比還是次數？</h2>
+<p>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的英文名稱是 Usage Percentage，欄位類型標為 Advanced（進階）。定義句只有一句：</p>
+<blockquote>
+<p>The percentage of team plays used by a player when they are on the floor</p>
+</blockquote>
+<p>中文可以讀成「球員在場上時，佔用了球隊回合的百分比」。這裡的關鍵字是 percentage：詞彙表寫的是比例，分母是球隊的回合，分子是這名球員佔用的部分。讀的時候要留意這個字：條目寫的是比例，不是「他用了多少次進攻」這種總量；總量要看公式分子的原始項目，那是另一件事。</p>
+<p>中文的「使用率」是慣稱，對應詞彙表的 Usage Percentage；「回合」也是慣稱，對應 possession 這個詞。詞彙表對 possession 有英文定義，中譯則沒有官方版本。本文其餘地方說「回合」，指的就是這個概念。</p>
+<p>順帶一提，詞彙表對 USG% 的條目只放了名稱、一句定義、公式與類型。這個條目裡，沒有出現「效率」「好壞」「核心」之類的詮釋字句。</p>
+<h2>USG% 的公式只有四個項目：FGA、Possession Ending FTA、TO、POSS</h2>
+<p>同一個條目裡，公式原文是：</p>
+<pre><code>(FGA + Possession Ending FTA + TO) / POSS
+</code></pre>
+<p>分子有三項，分母一項。逐項來看：</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>詞彙表怎麼說（意譯）</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FGA</td>
+<td>球員或球隊出手投籃的次數，包含兩分球與三分球</td>
+<td>FGA 有獨立條目</td>
+</tr>
+<tr>
+<td>Possession Ending FTA</td>
+<td>公式裡出現的詞，詞彙表沒有單獨定義</td>
+<td>哪些罰球算「結束回合」、有沒有係數，條目沒寫，行文保留英文原文</td>
+</tr>
+<tr>
+<td>TO</td>
+<td>公式寫 TO；詞彙表的條目名稱是 TOV（Turnovers），定義為進攻方把球輸給防守方</td>
+<td>本文的讀法是 TO 與 TOV 指同一項，這是對照名稱後的推論，詞彙表沒有寫這句</td>
+</tr>
+<tr>
+<td>POSS</td>
+<td>球員或球隊打過的回合數</td>
+<td>本文的讀法是公式的 POSS 對應詞彙表的 Poss 條目，USG% 條目沒有寫明它指向哪個條目</td>
+</tr>
+</tbody>
+</table>
+<p>Poss 條目另外有一句提醒：進攻籃板不會另外產生一個回合，只是讓原本那個回合延長。這句話寫在 Poss 條目裡，不在 USG% 條目裡；把它拿來理解分母，是本文的讀法。</p>
+<p>有兩件事值得停一下。第一，Possession Ending FTA 是詞彙表沒有解釋的詞。詞彙表這個條目沒有寫任何乘上罰球的係數，所以本文不補。第二，想知道回合與 Pace（每 48 分鐘的回合數）的關係，可以看本站的<a href="/articles/offensive-rating-pace-basics/">進攻效率值與節奏入門</a>，本文不重複展開。</p>
+<h2>假設一行數字：FGA 18、Possession Ending FTA 4、TO 3、POSS 80，USG% 是多少？</h2>
+<p>下面是一組<strong>假設</strong>的數字，不是任何一名真實球員。假設某人在一場比賽裡的 FGA 是 18、Possession Ending FTA 是 4、TO 是 3，而他在場時的 POSS 是 80。代入公式：</p>
+<ul>
+<li>分子：18 ＋ 4 ＋ 3 ＝ 25</li>
+<li>分母：80</li>
+<li>25 ÷ 80 ＝ 0.3125</li>
+</ul>
+<p>詞彙表的定義句寫的是 percentage，沒有寫「乘以 100」這個步驟。把 0.3125 寫成 31.25% 是本文的換算，不是詞彙表的原文。</p>
+<p>這個算例只示範「怎麼代入」。假設的 18、4、3、80 這幾個數字並沒有對應任何真實比賽，所以 31.25% 這個結果本身沒有任何意義，也不能拿來和真實球員的欄位比較。</p>
+<p>自己動手的方法：對照一位球員的原始統計，找出 FGA 與 TOV，再確認在場的 POSS。詞彙表沒有教 Possession Ending FTA 怎麼從罰球出手數判斷，所以這一項光靠詞彙表無法自己重算，這也是本文的算例要把它當成「假設給定」的原因。</p>
+<h2>PIE 的分子與分母用同一組項目，差別只在分母每一項前面多了 Gm</h2>
+<p>PIE 的英文全名在詞彙表裡是 Player Impact Estimate，類型同樣標為 Advanced。本文保留英文全稱，不另外自創中文譯名；「影響力」是中文慣稱，並不是詞彙表用語。</p>
+<p>詞彙表對 PIE 的第一句定義是：</p>
+<blockquote>
+<p>PIE measures a player's overall statistical contribution against the total statistics in games they play in.</p>
+</blockquote>
+<p>中文可以讀成「PIE 衡量一名球員的整體統計貢獻，相對於他所在比賽全部統計的比例」。第二句提到 PER，說 PIE 用簡單的公式產生可以和其他進階統計（例如 PER）比較的結果。詞彙表本身沒有 PER 的獨立條目，所以本文不寫 PER 的定義。</p>
+<p>公式分成分子與分母。分子原文：</p>
+<pre><code>(PTS + FGM + FTM - FGA - FTA + DREB + (.5 * OREB) + AST + STL + (.5 * BLK) - PF - TO)
+</code></pre>
+<p>分母原文：</p>
+<pre><code>(GmPTS + GmFGM + GmFTM - GmFGA - GmFTA + GmDREB + (.5 * GmOREB) + GmAST + GmSTL + (.5 * GmBLK) - GmPF - GmTO)
+</code></pre>
+<p>兩條式子的項目一一對應，分母每一項前面多了 Gm。詞彙表沒有為 Gm 前綴單獨寫定義。本文的讀法是：Gm 代表「這場比賽裡所有球員的合計」，這個讀法來自第一句定義的 total statistics in games they play in，再對照分母的寫法，屬於推論，不是詞彙表逐字的說法。</p>
+<p>分子裡的每一項，詞彙表都有對應的獨立條目：</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>詞彙表怎麼說（意譯）</th>
+<th>在分子裡的寫法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PTS</td>
+<td>得分數</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>FGM</td>
+<td>進球數，含兩分球與三分球</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>FTM</td>
+<td>罰球進球數</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>FGA</td>
+<td>出手數，含兩分球與三分球</td>
+<td>－</td>
+</tr>
+<tr>
+<td>FTA</td>
+<td>罰球出手數</td>
+<td>－</td>
+</tr>
+<tr>
+<td>DREB</td>
+<td>防守籃板數</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>OREB</td>
+<td>進攻籃板數</td>
+<td>＋，乘 0.5</td>
+</tr>
+<tr>
+<td>AST</td>
+<td>助攻數，即直接導致進球的傳球</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>STL</td>
+<td>防守方從進攻方手上奪球並造成失誤的次數</td>
+<td>＋</td>
+</tr>
+<tr>
+<td>BLK</td>
+<td>進攻球員出手、防守球員把球撥掉的次數</td>
+<td>＋，乘 0.5</td>
+</tr>
+<tr>
+<td>PF</td>
+<td>個人犯規數</td>
+<td>－</td>
+</tr>
+<tr>
+<td>TO</td>
+<td>公式寫 TO；本文讀為與 TOV 同一項，進攻方把球輸給防守方</td>
+<td>－</td>
+</tr>
+</tbody>
+</table>
+<p>看這張表可以直接讀出：PIE 的分子不是只加不減。出手、罰球出手、犯規與失誤在公式裡是減項，得分、進球、籃板、助攻、抄截與阻攻是加項，進攻籃板與阻攻各乘 0.5。</p>
+<h2>假設一行數字，PIE 分子與分母各是多少？</h2>
+<p>再做一次<strong>假設</strong>算例，同樣不是任何一名真實球員，也不是任何一場真實比賽。假設某人這場的數字是：PTS 20、FGM 8、FTM 4、FGA 16、FTA 5、DREB 5、OREB 2、AST 4、STL 1、BLK 1、PF 3、TO 2。</p>
+<p>分子逐項相加減：</p>
+<ul>
+<li>20 ＋ 8 ＋ 4 ＝ 32</li>
+<li>32 － 16 － 5 ＝ 11</li>
+<li>11 ＋ 5 ＝ 16</li>
+<li>16 ＋（0.5 × 2）＝ 17</li>
+<li>17 ＋ 4 ＋ 1 ＝ 22</li>
+<li>22 ＋（0.5 × 1）＝ 22.5</li>
+<li>22.5 － 3 － 2 ＝ 17.5</li>
+</ul>
+<p>分母需要「這場比賽所有球員」的同一組合計，這裡直接<strong>假設</strong>分母算出來是 200。那麼 17.5 ÷ 200 ＝ 0.0875，寫成百分比是 8.75%。同樣地，乘 100 是本文換算；分母的 200 是為了示範假設出來的，沒有對應真實比賽。</p>
+<p>這組算例只證明一件事：公式的加減與係數，照著填就能算，不必猜。它不能證明 8.75% 算高還是算低，詞彙表沒有為 PIE 寫過任何高低門檻或聯盟平均。</p>
+<h2>把兩條公式擺在一起：USG% 看得到哪些項目，PIE 看得到哪些？</h2>
+<p>把 USG% 與 PIE 的公式項目逐項清點，可以做成下面的對照。這張表是對兩條公式做項目清點的結果，是本文的推論，不是詞彙表一句話說出來的結論：</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>USG% 公式</th>
+<th>PIE 公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FGA（出手）</td>
+<td>有，在分子，加</td>
+<td>有，在分子，減</td>
+</tr>
+<tr>
+<td>罰球出手</td>
+<td>只有 Possession Ending FTA，加</td>
+<td>用 FTA，減</td>
+</tr>
+<tr>
+<td>TO（失誤）</td>
+<td>有，在分子，加</td>
+<td>有，在分子，減</td>
+</tr>
+<tr>
+<td>得分、FGM、FTM（命中）</td>
+<td>看不到</td>
+<td>有，加</td>
+</tr>
+<tr>
+<td>籃板</td>
+<td>看不到</td>
+<td>DREB 加，OREB 乘 0.5 加</td>
+</tr>
+<tr>
+<td>AST、STL、BLK</td>
+<td>看不到</td>
+<td>有，加（BLK 乘 0.5）</td>
+</tr>
+<tr>
+<td>PF（犯規）</td>
+<td>看不到</td>
+<td>有，減</td>
+</tr>
+<tr>
+<td>除以什麼</td>
+<td>POSS（球員在場的回合）</td>
+<td>分母是同組項目的 Gm 版本（比賽全部球員合計）</td>
+</tr>
+</tbody>
+</table>
+<p>從對照表可以讀到幾件事：</p>
 <ol>
-<li>A 隊與球員談定金額折扣，屬於合意修改合約保障條款的部分，還不是 waive 本身。</li>
-<li>A 隊依 Paragraph 16(f) 提出 waiver 請求之後，48 小時公示期開始跑；如果這個時間點是在 2 月中，早於 3 月 1 日美東時間晚上 11:59，就不會卡到季後賽資格那條規定。</li>
-<li>48 小時內，如果沒有球隊提出認領聲明，A 的合約才正式終止；這時依 CBA 對 Free Agent 各類型定義的推導，A 落入比較貼近 Unrestricted Free Agent 的類別，可以自己決定要不要跟任何球隊簽約。</li>
-<li>如果 2 月中同時有一支以上的球隊提出認領，判定方式是比較這些球隊在提出 waiver 當下的戰績，由戰績墊底的那一隊優先取得——這種情況下 A 不會變成自由球員，合約會被那支球隊接手。</li>
+<li>依本文逐項清點的結果，USG% 的公式項目裡看不到命中數、助攻與防守項；公式沒有放這些項目。</li>
+<li>同一個 FGA，在 USG% 是加項，在 PIE 是減項。兩個欄位對同一個出手數的正負號不同。詞彙表沒有寫兩者為何這樣設計，本文不推測原因。</li>
+<li>分母也不同。USG% 除以球員在場時的回合，PIE 除以所在比賽的合計（依本文對 Gm 的讀法）。所以「多少算高」這種問題，得先問是拿什麼當分母。</li>
 </ol>
-<p>可以再換一個時間點練習：如果 A 隊把 waiver 請求拖到 3 月 5 日才提出，會發生什麼事？依前面「3 月 1 日晚上 11:59」那一節的規則，這個時間點晚於當季 3 月 1 日美東時間晚上 11:59，A 這一季就不能打季後賽，即使他後來很快清空 waivers 或被新球隊簽下，簽約本身的日期也改變不了這個結果。</p>
-<p>這篇只處理棄約與買斷的合約終止機制本身。雙向合約簽約後 30 天禁止交易的細節，見本站<a href="/articles/two-way-contract-basics/">雙向合約入門</a>；限制性自由球員的資格報價制度，見<a href="/articles/restricted-free-agency-basics/">限制性自由球員入門</a>；waiver claim 牽涉到的薪資空間與交易操作，見<a href="/articles/trade-rules-basics/">交易規則入門</a>與<a href="/articles/salary-cap-basics/">薪資帽入門</a>。</p>
+<h2>詞彙表沒有寫的事：高低門檻、好壞解讀與公式沿革</h2>
+<p>這一節列出詞彙表這兩個條目沒有寫、本文因此也不寫的事：</p>
+<ul>
+<li><strong>沒有高低門檻或聯盟平均。</strong> USG% 與 PIE 的條目都沒有寫「多少算高、多少算低」。</li>
+<li><strong>沒有好壞或角色的解讀。</strong> 條目沒有把 USG% 與「核心」「效率」掛鉤，也沒有把 PIE 與贏球連結。要下這類判斷，需要公式以外的依據，本文不處理。</li>
+<li><strong>沒有寫計算範圍。</strong> 條目沒有說明數字是單場、單季還是其他範圍。</li>
+<li><strong>沒有公式沿革。</strong> 詞彙表沒有標版本或修訂日期，所以本文只寫 2026-09-29 抓取的這個版本，不拿更早或更晚的說法頂替。</li>
+<li><strong>沒有 Possession Ending FTA 與 Gm 的單獨定義。</strong> 前面已提過，行文保留英文原文。</li>
+</ul>
+<p>另外，本文只寫官方詞彙表有定義的欄位。PER 在 PIE 的定義句裡被提到，卻沒有獨立條目；BPM、VORP 等詞在詞彙表裡也找不到條目，所以本文不寫它們的定義。</p>
+<p>台灣職籃（TPBL、PLG）數據頁的欄位詞彙，可以看本站的<a href="/articles/tpbl-plg-stats-glossary-basics/">台灣職籃統計詞彙入門</a>。本文寫的是 NBA 官方統計網站詞彙表，不適用於那些頁面。</p>
+<h2>下次在數據頁上看到 USG% 或 PIE，可以自己做哪三件事？</h2>
+<p>以下是編輯的讀法，不是官方規定：</p>
+<ol>
+<li><strong>第一步，找欄位名稱。</strong> 在 NBA 官方統計網站上看到 USG% 或 PIE 縮寫時，回詞彙表確認它對應的是 Usage Percentage 或 Player Impact Estimate，類型標為 Advanced。</li>
+<li><strong>第二步，看公式有哪些項目。</strong> 對照本文的兩張表，問問自己：這個欄位的公式裡有沒有放想看的東西（例如命中、助攻、防守）？公式沒放的項目，這個欄位就不能直接回答關於它的問題。</li>
+<li><strong>第三步，問分母是什麼。</strong> USG% 的分母是球員在場的回合；PIE 的分母依本文讀法是所在比賽的合計。分母不同，數字就不能直接拿來互相比較。</li>
+</ol>
+<p>至於「這個數字高代表什麼」，詞彙表沒有寫。想寫進自己的判斷之前，應另外找有明確說明的依據，並註明依據與版本。</p>
 <h2>常見問題</h2>
-<h3>「buyout」買斷是 CBA 裡的正式名詞嗎？</h3>
-<p>不是。依 2023 NBA CBA 全文查證，找不到「buyout」這個字；對應到的正式條文是 Article II §3(p)，球隊與球員合意修改合約，約定球隊去申請 waivers，球員清空 waivers、合約終止後，保障金額減少或取消。「買斷」是媒體與球迷對這套複合操作的稱呼，不是 CBA 本身使用的詞。</p>
-<h3>Waiver 的公示期是多久？其他球隊要怎麼搶到被棄的球員？</h3>
-<p>依 2023 CBA 附件摘錄的 NBA By-Laws，公示期是 48 小時，其他球隊要在這段時間內用電話加書面向聯盟提出認領聲明，且不能撤回。如果同時有一支以上的球隊提出認領，由這些球隊裡在提出 waiver 當下戰績墊底的一隊優先取得，不是先送出聲明的球隊先拿人。</p>
-<h3>買斷球員清空 waivers 之後，是限制性還是無限制自由球員？</h3>
-<p>依 2023 NBA CBA 對 Free Agent 各類型定義逐段推導，清空 waivers、合約終止的球員不算完成合約的 Veteran Free Agent，也就進不了 Restricted Free Agent（限制性自由球員）的資格條件，比較貼近 Unrestricted Free Agent（無限制自由球員）這個類別。這是把好幾段條文定義組合起來的推導結果，CBA 沒有一句話直接這樣寫。</p>
-<h3>買斷球員要在幾月幾日前跟新球隊簽約，才能打季後賽？</h3>
-<p>依 2023 CBA Article XXIX §4，決定季後賽資格的時間點，是原球隊提出 waiver 請求的那一刻，不是跟新球隊簽約的日期。任何球員（含雙向球員），若原球隊在當季 3 月 1 日美東時間晚上 11:59 之後才提出 waiver 請求，該球員這一季就不能打季後賽，除非被一支因傷病、Active List 降到 8 人的球隊取得；簽約日期本身不是判斷依據。</p>
+<h3>USG% 在 NBA 官方詞彙表是次數還是百分比？</h3>
+<p>百分比。依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG%（Usage Percentage）的定義是 The percentage of team plays used by a player when they are on the floor，即球員在場上時佔用的球隊回合百分比。公式為 (FGA + Possession Ending FTA + TO) / POSS。詞彙表是活頁面，日後可能改動；乘 100 寫成百分比是本文的換算，詞彙表沒有寫這個步驟。</p>
+<h3>USG% 公式裡有沒有命中數或助攻？</h3>
+<p>依 NBA 官方統計網站詞彙表 2026-09-29 抓取版的公式 (FGA + Possession Ending FTA + TO) / POSS，逐項清點後，項目裡看不到命中數、助攻與防守項。這是本文對公式逐項檢視的結果，詞彙表沒有用一句話寫出「不含這些」。</p>
+<h3>PIE 只是把得分加總嗎？</h3>
+<p>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），PIE 的公式分子包含加項（PTS、FGM、FTM、DREB、0.5 × OREB、AST、STL、0.5 × BLK）與減項（FGA、FTA、PF、TO），分母是同一組項目加上 Gm 前綴。詞彙表沒有為 Gm 單獨定義；本文讀為「比賽全部球員的合計」，這是推論。</p>
+<h3>USG% 或 PIE 數字高，代表球員很重要或表現好嗎？</h3>
+<p>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 與 PIE 的條目都只有名稱、定義、公式與類型，沒有寫高低門檻、聯盟平均或好壞解讀，也沒有把 USG% 與效率或角色連結、把 PIE 與贏球連結。因此本文不對「高代表什麼」下判斷；要下判斷，需要公式以外的依據。</p>
 <h2>資料來源</h2>
 <ul>
-<li>2023 NBA Collective Bargaining Agreement（2023 年 7 月版，本機快照，2026-09-28 23:14 取得）：Exhibit A（Uniform Player Contract）Paragraph 16(f)；Exhibit A「EXCERPT FROM NBA BY-LAWS」§5.02–§5.06；Article I §1(bb)(eee)(ffff)(hhhh)；Article II §3(p)；Article XXII §11(i)(iv)；Article XXIX §4。</li>
+<li>NBA 官方統計網站詞彙表（NBA Stats Glossary，活頁面，2026-09-29 抓取版，頁面無版本標記；USG%、PIE 條目及 FGA、FTA、FGM、FTM、DREB、OREB、AST、STL、BLK、PF、PTS、TOV、Poss、Pace 各條目）：<a href="https://www.nba.com/stats/help/glossary">nba.com/stats/help/glossary</a></li>
 </ul>
     </div>
   </article>
-  <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/trade-rules-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭</span><span class="pn-date">2026/09/28 · 週一</span></a><a class="post-nav-link next" href="/articles/away-from-the-play-foul-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸</span><span class="pn-date">2026/09/29 · 週二</span></a></div></nav>
+  <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/shot-clock-reset-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件</span><span class="pn-date">2026/09/29 · 週二</span></a><a class="post-nav-link next fallback" href="/articles/"><span class="pn-dir">所有文章 →</span><span class="pn-title">瀏覽全部戰報與文章</span></a></div></nav>
 </div>
 
 <footer class="foot">

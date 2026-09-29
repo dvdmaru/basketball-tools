@@ -6,7 +6,55 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸</title>
+      <link>https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 2025-26 官方規則書，away-from-the-play foul（本站譯為離球犯規）有兩個分立的定義入口：每一節與每個延長賽最後兩分鐘內、刻意離開進攻動作直接區域的防守非法接觸，以及發球出手前、全場任一時點的防守非法接觸。罰則是一次罰球加保留球權。</description>
+    </item>
+    <item>
+      <title>帶球撞人還是阻擋犯規？先看防守者有沒有先在路徑上站定</title>
+      <link>https://basketball.twtools.cc/articles/charge-vs-block-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/charge-vs-block-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>帶球撞人（charging）與阻擋犯規（blocking）的分派，依 NBA 2025-26 官方規則書，先看防守者有沒有先在進攻者的路徑上建立合法防守位置。禁區半圓（restricted area）是附帶條件的例外，FIBA 2024 的 no-charge 半圓則是另一套規定。</description>
+    </item>
+    <item>
+      <title>頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出</title>
+      <link>https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>「頂薪」是中文慣稱，2023 NBA CBA 條文寫的是 Maximum Annual Salary，也就是單一球員合約的首年薪資上限。條文給的是依年資分三級的帽值百分比，加上與前一份合約末季薪資 105% 取高的算法，再疊一組獎項門檻（Higher Max Criteria）；指定老將（Designated Veteran Player）的資格就建在這組門檻之上。</description>
+    </item>
+    <item>
+      <title>NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款</title>
+      <link>https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2023 NBA CBA，具備選秀資格要同時滿足 Article X §1(b)(i) 的全部要求（選秀當年滿 19 歲，非國際球員另須自高中畢業起已過一個 NBA 賽季，未高中畢業者條文另有起算方式），再加上 §1(b)(ii) 七款路徑的其中一款；早期報名是七款裡的第 (G) 款，要在選秀前至少 60 天以書面送達 NBA。</description>
+    </item>
+    <item>
+      <title>進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件</title>
+      <link>https://basketball.twtools.cc/articles/shot-clock-reset-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/shot-clock-reset-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 2025-26 官方規則書 Rule 7，進攻時間計時器（shot clock）重設成 24 秒、重設成 14 秒、不重設，是三張各自列出事件的清單。判斷時先看事件屬於哪一類，再看球權是否換人、發球在前場還是後場；單看球有沒有碰到籃框，並不足以決定。</description>
+    </item>
+    <item>
+      <title>使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</title>
+      <link>https://basketball.twtools.cc/articles/usage-rate-pie-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/usage-rate-pie-basics/</guid>
+      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。</description>
+    </item>
     <item>
       <title>快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</title>
       <link>https://basketball.twtools.cc/articles/fast-break-basics/</link>
@@ -198,54 +246,6 @@
       <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>兩名球員的投籃命中率（FG%）相同，得分效率仍可能差很多，因為 FG% 不區分兩分與三分的分值，也不納入罰球。有效命中率（eFG%）調整三分的價值，真實命中率（TS%）再把罰球放進公式，兩者都可用來比較得分效率。</description>
-    </item>
-    <item>
-      <title>NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪</title>
-      <link>https://basketball.twtools.cc/articles/violation-vs-foul/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/violation-vs-foul/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>違例（violation）與犯規（foul）都是裁判的哨聲，但被破壞的東西不同：違例破壞動作或時間規則，預設處理是換球權；犯規多半是非法接觸或不當行為，其中個人犯規會登記在犯規者身上，並可能送對手罰球。NBA 2025-26 規則書把防守三秒放在違例章，罰則卻是技術犯規，所以判斷要看具體條文，不能憑哨聲聽起來重不重。</description>
-    </item>
-    <item>
-      <title>快艇在 6 天內寄出 3 封介紹信，每一封都寫著「是對方先開口」</title>
-      <link>https://basketball.twtools.cc/articles/clippers-kawhi-leonard-circumvention-penalties/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/clippers-kawhi-leonard-circumvention-penalties/</guid>
-      <pubDate>Sat, 05 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>2020 年 6 月的 6 天裡，快艇業務營運總裁祖克寄出 3 封介紹信，把雷納德的舅舅兼經紀人羅伯森介紹給正在跟快艇談生意的公司；每一封信都寫著同一個理由，是對方先開口。6 年後，NBA 罰款快艇 3,000 萬美元，沒收 5 個首輪選秀權，老闆鮑默停權 1 年。</description>
-    </item>
-    <item>
-      <title>38 歲條款不禁止長約，它把錢往前攤：柯瑞 2024 年只延長得了 1 年</title>
-      <link>https://basketball.twtools.cc/articles/stephen-curry-over-38-rule-extension/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/stephen-curry-over-38-rule-extension/</guid>
-      <pubDate>Mon, 31 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>美國時間 2026 年 8 月 29 日，柯瑞（Stephen Curry）重新取得跟金州勇士（Golden State Warriors）簽延長約的資格；截至台灣時間 8 月 31 日，ESPN 與 CBS Sports 的 2 份交易紀錄都還沒有他的條目，2 份紀錄的最新一筆交易都停在 8 月 29 日。這已經是他第 2 次碰到同一條規則——2024 年 8 月 29 日那次，他只延長得了 1 年、6,260 萬美元，原因寫在 NBA 勞資協議（CBA）的「38 歲條款（Over-38 Rule）」裡，而條文原文寫的東西，跟大家轉述的不太一樣。</description>
-    </item>
-    <item>
-      <title>衛斯布魯克退休：209 次大三元排在史上第一，第二名還在打</title>
-      <link>https://basketball.twtools.cc/articles/russell-westbrook-retirement-career-stats/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/russell-westbrook-retirement-career-stats/</guid>
-      <pubDate>Sat, 29 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>衛斯布魯克（Russell Westbrook）於美國時間 2026 年 8 月 12 日（台灣時間 13 日凌晨）宣布退休，18 個賽季留下 1,301 場出賽、27,176 分、10,351 助攻與 209 次大三元；截至退休時，大三元次數是 NBA 史上最多。</description>
-    </item>
-    <item>
-      <title>灰狼成軍至今只退休過一件球衣，賈奈特的 21 號將是第二件</title>
-      <link>https://basketball.twtools.cc/articles/kevin-garnett-wolves-21-jersey-retirement/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/kevin-garnett-wolves-21-jersey-retirement/</guid>
-      <pubDate>Mon, 24 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>明尼蘇達灰狼將於美國時間 2027 年 2 月 28 日（台灣時間 3 月 1 日）主場對塞爾提克賽後退休賈奈特（Kevin Garnett）的 21 號球衣。</description>
-    </item>
-    <item>
-      <title>灰狼與山貓談成控股權轉讓，買家 Marc Stad 原本就是自家股東</title>
-      <link>https://basketball.twtools.cc/articles/wolves-lynx-sale-stad/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/wolves-lynx-sale-stad/</guid>
-      <pubDate>Sat, 22 Aug 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>這筆交易的買家不是外面來的：Marc Stad 原本就是明尼蘇達灰狼與山貓所有權團隊裡的少數股東，這次協議換的是股東桌上的位置，不是新老闆進場。45 億美元是灰狼與山貓兩隊的合併估值，不是成交價；依目前公開資料，也拆不出任一隊的單獨身價；交易仍待 NBA 董事會核准，會議訂在 9 月 15、16 日。</description>
     </item>
   </channel>
 </rss>
