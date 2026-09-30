@@ -175,6 +175,21 @@ COVERS = [
     ("usage-rate-pie-basics", "NBA · 使用率與 PIE",
      "先看公式<br>再說數字",
      "USG% 是百分比　·　公式沒放的項目不能直接回答"),
+    ("hbl-standings-tiebreak-basics", "HBL · 循環賽名次",
+     "同分先看<br>對戰勝負",
+     "敗一場也拿 1 分　·　互有勝負才比得失分差"),
+    ("hbl-roster-size-basics", "HBL · 報名人數與名單",
+     "報名人數<br>不等於每場名單",
+     "甲級 15 人、乙級 18 人　·　第 12 條二寫 12 人名單"),
+    ("hbl-tier-b-road-to-finals-basics", "HBL · 乙級晉級路線",
+     "縣市預賽晉級後<br>還有兩關",
+     "分區複賽先循環後淘汰　·　排名賽怎麼打規程沒寫"),
+    ("hbl-staff-qualification-basics", "HBL · 隊職員資格",
+     "四種職務<br>四種資格判準",
+     "領隊看身分、教練看證照　·　兼任限制寫同一級別兩校"),
+    ("hbl-eligibility-check-basics", "HBL · 資格查驗時點",
+     "第一場審查<br>其餘場次備查",
+     "各階段第一場交大會審查　·　其餘場次仍要攜帶文件"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>

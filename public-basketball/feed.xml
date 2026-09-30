@@ -6,7 +6,47 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Tue, 29 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次</title>
+      <link>https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>114 學年度高級中等學校籃球聯賽競賽規程（修正版）把球員資格的文件關卡排在多個時點：報名時、各階段第一場出賽前、各階段其餘場次。把這些時點串起來，本文稱為「持續查驗」，這是本文的整理用語，規程沒有使用這個說法。</description>
+    </item>
+    <item>
+      <title>HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人</title>
+      <link>https://basketball.twtools.cc/articles/hbl-roster-size-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-roster-size-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>114 學年度規程的第 9 條二規定報名人數（甲級球員含隊長 15 人、乙級 18 人），第 12 條二則載明每場由報名球員中提出 12 人名單；兩個數字由不同條文各自規定，本文引用的規程文字沒有寫兩者的換算關係，第 12 條二是否適用乙級，本文引用的規程文字也未明說。</description>
+    </item>
+    <item>
+      <title>HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看</title>
+      <link>https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 114 學年度高級中等學校籃球聯賽競賽規程（修正版），第 7 條三～六分別寫了領隊、教練、隨隊教師、防護員的資格：領隊寫身分，教練寫證照，隨隊教師寫是否為該校正式聘任教師，防護員寫證書。兼任限制則只寫在教練與隨隊教師兩款，範圍是同一級別兩校（這是本文把各款並列後的整理，規程沒有這樣總結）。</description>
+    </item>
+    <item>
+      <title>HBL 分組循環賽積分相等，名次先看對戰勝負</title>
+      <link>https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>114 學年度規程規定，HBL 循環賽的名次依名次積分計算，敗一場也拿 1 分。分組循環賽中 2 隊或以上積分相等時，先以對戰勝負關係判定；積分相等且互有勝負，才進入得失分差與總得分的四步順序，分組賽結束後仍無法判定名次才抽籤。單循環不分組的階段是否套用這套同分判定，規程沒有寫。</description>
+    </item>
+    <item>
+      <title>114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關</title>
+      <link>https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>114 學年度規程（修正版）對乙級寫了三段賽制：縣市預賽（報名隊數超過 1 隊時）採循環，分區複賽第一輪分組單循環、第二輪單淘汰，全國決賽第一輪分組循環、第二輪單淘汰排名制。分區怎麼分、排名賽怎麼打，規程沒有寫，所以能確定的是每一段用什麼制度，不是每一場誰對誰。</description>
+    </item>
     <item>
       <title>離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸</title>
       <link>https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</link>
@@ -206,46 +246,6 @@
       <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>在 NBA 2019–2026 年選秀的樂透制度下，戰績最差的三隊各有 14% 的機會抽中第 1 順位，戰績最差的隊至多掉到第 5 順位。聯盟在 2026 年 5 月 28 日通過 3-2-1 制，2027 年選秀起把戰績最差的三隊「降級」，順位怎麼來又換了一套算法。</description>
-    </item>
-    <item>
-      <title>擋拆是什麼？從一次擋人看懂籃球常見的雙人戰術</title>
-      <link>https://basketball.twtools.cc/articles/pick-and-roll-explained/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/pick-and-roll-explained/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>擋拆（Pick and Roll）是一名球員替持球隊友擋住防守者，隨後切向籃下的雙人配合；改往外圍拉開則常稱外彈（Pick and Pop）。防守方得在兩名進攻者之間選擇，是看懂戰術的一個起點。</description>
-    </item>
-    <item>
-      <title>NBA 規則書沒有定義五個傳統位置，NBA.com 球員頁只標後衛、前鋒、中鋒</title>
-      <link>https://basketball.twtools.cc/articles/positions-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/positions-basics/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>控球後衛、得分後衛、小前鋒、大前鋒、中鋒這五個位置，NBA 2025-26 規則書沒有定義，NBA.com 的球員資料頁也只標後衛、前鋒、中鋒及其組合（2026 年 9 月 25 日的網站標籤）。所謂「位置模糊」，先分清談的是資料標籤、教學分類，還是場上分工，就不容易被說法帶著走。</description>
-    </item>
-    <item>
-      <title>投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀</title>
-      <link>https://basketball.twtools.cc/articles/read-box-score/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/read-box-score/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>技術統計表（box score）的每一欄記錄不同的事件，欄位定義決定它能回答什麼問題。以 NBA 2025-26 賽季一場打到第二個延長賽的比賽為例，L. Dort 投籃出手 12 次只得 6 分，把欄位成對讀就能算出來。</description>
-    </item>
-    <item>
-      <title>球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事</title>
-      <link>https://basketball.twtools.cc/articles/salary-cap-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/salary-cap-basics/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>NBA 球隊的薪資可以超過薪資帽（Salary Cap）：依 2023 NBA CBA，帽線本身受規則與例外條款約束。稅線（Tax Level）決定誰要繳稅，第一、第二 apron 則把特定的簽約與交易操作綁上薪資條件，三條線管的事各不相同。</description>
-    </item>
-    <item>
-      <title>同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%</title>
-      <link>https://basketball.twtools.cc/articles/true-shooting-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/true-shooting-basics/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>兩名球員的投籃命中率（FG%）相同，得分效率仍可能差很多，因為 FG% 不區分兩分與三分的分值，也不納入罰球。有效命中率（eFG%）調整三分的價值，真實命中率（TS%）再把罰球放進公式，兩者都可用來比較得分效率。</description>
     </item>
   </channel>
 </rss>
