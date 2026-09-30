@@ -16,15 +16,15 @@
 ## 最新文章
 
 - [AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同](https://basketball.twtools.cc/articles/assist-metrics-basics/)（2026-09-30）
+- [回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件](https://basketball.twtools.cc/articles/ball-returned-to-backcourt-basics/)（2026-09-30）
+- [傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者](https://basketball.twtools.cc/articles/disabled-player-exception-basics/)（2026-09-30）
 - [8 秒被中斷時，NBA 與 FIBA 的條文各用一種寫法：給新的 8 秒，或讓剩餘時間延續](https://basketball.twtools.cc/articles/eight-second-backcourt-basics/)（2026-09-30）
+- [5 秒的時限出現在不同情形：NBA 2025-26 規則書寫發球與背對籃框運球，FIBA 2024 寫發球、closely guarded 與罰球](https://basketball.twtools.cc/articles/five-second-rules-basics/)（2026-09-30）
 - [HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次](https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/)（2026-09-30）
 - [HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人](https://basketball.twtools.cc/articles/hbl-roster-size-basics/)（2026-09-30）
 - [HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看](https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/)（2026-09-30）
 - [HBL 分組循環賽積分相等，名次先看對戰勝負](https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/)（2026-09-30）
 - [114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關](https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/)（2026-09-30）
-- [NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%](https://basketball.twtools.cc/articles/minimum-team-salary-basics/)（2026-09-30）
-- [10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者](https://basketball.twtools.cc/articles/ten-day-contract-basics/)（2026-09-30）
-- [還剩幾個暫停：NBA 2025-26 與 FIBA 2024 算的是不同的帳](https://basketball.twtools.cc/articles/timeouts-basics/)（2026-09-30）
 
 ## 文章與更新
 
