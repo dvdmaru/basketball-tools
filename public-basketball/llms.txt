@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次](https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/)（2026-09-30）
+- [HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人](https://basketball.twtools.cc/articles/hbl-roster-size-basics/)（2026-09-30）
+- [HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看](https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/)（2026-09-30）
+- [HBL 分組循環賽積分相等，名次先看對戰勝負](https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/)（2026-09-30）
+- [114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關](https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/)（2026-09-30）
 - [離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸](https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/)（2026-09-29）
 - [帶球撞人還是阻擋犯規？先看防守者有沒有先在路徑上站定](https://basketball.twtools.cc/articles/charge-vs-block-basics/)（2026-09-29）
 - [頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出](https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/)（2026-09-29）
 - [NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款](https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/)（2026-09-29）
 - [進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件](https://basketball.twtools.cc/articles/shot-clock-reset-basics/)（2026-09-29）
-- [使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼](https://basketball.twtools.cc/articles/usage-rate-pie-basics/)（2026-09-29）
-- [快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭](https://basketball.twtools.cc/articles/fast-break-basics/)（2026-09-28）
-- [那球到底吹哪一種？NBA 規則書把「妨礙中籃」和「干擾球」寫進同一份清單裡](https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/)（2026-09-28）
-- [技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解](https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/)（2026-09-28）
-- [官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看](https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/)（2026-09-28）
 
 ## 文章與更新
 
