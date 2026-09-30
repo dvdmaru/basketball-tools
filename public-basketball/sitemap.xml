@@ -2,11 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://basketball.twtools.cc/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/assist-metrics-basics/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/eight-second-backcourt-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/hbl-roster-size-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/minimum-team-salary-basics/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/ten-day-contract-basics/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/timeouts-basics/</loc></url>
+  <url><loc>https://basketball.twtools.cc/articles/traveling-gather-steps-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/charge-vs-block-basics/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/</loc></url>
@@ -56,4 +62,8 @@
   <url><loc>https://basketball.twtools.cc/articles/nba-2025-26-season-review/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/nba-league-guide/</loc></url>
   <url><loc>https://basketball.twtools.cc/articles/taiwan-hoops-two-leagues/</loc></url>
+  <url><loc>https://basketball.twtools.cc/standings/</loc></url>
+  <url><loc>https://basketball.twtools.cc/tw/</loc></url>
+  <url><loc>https://basketball.twtools.cc/hbl/</loc></url>
+  <url><loc>https://basketball.twtools.cc/data/</loc></url>
 </urlset>

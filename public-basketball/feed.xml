@@ -8,6 +8,22 @@
     <language>zh-Hant</language>
     <lastBuildDate>Wed, 30 Sep 2026 08:00:00 +0800</lastBuildDate>
     <item>
+      <title>AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同</title>
+      <link>https://basketball.twtools.cc/articles/assist-metrics-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/assist-metrics-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，AST%、Assist Ratio、AST/TO 三個進階條目都與助攻有關：前兩個各有一條公式，分母不同，AST/TO 則只有一句定義、沒有公式。名稱相近，欄位在算的東西並不相同，讀數字之前先看條目怎麼寫。</description>
+    </item>
+    <item>
+      <title>8 秒被中斷時，NBA 與 FIBA 的條文各用一種寫法：給新的 8 秒，或讓剩餘時間延續</title>
+      <link>https://basketball.twtools.cc/articles/eight-second-backcourt-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/eight-second-backcourt-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>進攻方要在 8 秒內把球帶過半場，NBA 2025-26 規則書與 FIBA 2024 的秒數都是 8 秒。8 秒被中斷時，本文引到的 NBA 條文列出「給新的 8 秒」的情形，FIBA Article 28.1.3 列出「以剩餘時間延續」的情形，兩邊在條文上是分開寫的機制。</description>
+    </item>
+    <item>
       <title>HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次</title>
       <link>https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</link>
       <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</guid>
@@ -46,6 +62,38 @@
       <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>114 學年度規程（修正版）對乙級寫了三段賽制：縣市預賽（報名隊數超過 1 隊時）採循環，分區複賽第一輪分組單循環、第二輪單淘汰，全國決賽第一輪分組循環、第二輪單淘汰排名制。分區怎麼分、排名賽怎麼打，規程沒有寫，所以能確定的是每一段用什麼制度，不是每一場誰對誰。</description>
+    </item>
+    <item>
+      <title>NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%</title>
+      <link>https://basketball.twtools.cc/articles/minimum-team-salary-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/minimum-team-salary-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2023 NBA CBA Article VII §2(a)(4)(i)，一般球隊的 Minimum Team Salary 等於該 Salary Cap Year 的 Salary Cap 的 90%（擴張球隊前兩個 Salary Cap Year 另有基準）。某隊的 MTS Payment Team Salary 低於它時，§2(c)(2) 寫了付款給 NBA 與不得分得部分稅款兩件事。</description>
+    </item>
+    <item>
+      <title>10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者</title>
+      <link>https://basketball.twtools.cc/articles/ten-day-contract-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/ten-day-contract-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2023 CBA Article II §9(a)，自任一 NBA Season 的 1 月 5 日起，球隊可與球員簽非 Two-Way 的 10-Day Contract，期限是「十天」與「涵蓋該隊三場比賽的期間」兩者中較長者。同一球隊對同一球員在一個 Season 內不得簽超過兩次，球隊同一時間能持有幾份，則另有一張依名冊人數對照的表。</description>
+    </item>
+    <item>
+      <title>還剩幾個暫停：NBA 2025-26 與 FIBA 2024 算的是不同的帳</title>
+      <link>https://basketball.twtools.cc/articles/timeouts-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/timeouts-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 2025-26 規則書，每隊在例行比賽有 7 次 charged timeouts，第四節與後段另有上限，加時每隊 2 次；依 FIBA 2024 版規則，配額按上半場 2 次、下半場 3 次、每次加時 1 次分開算，未用完的不得帶到下一個半場或加時。兩套規則問的是不同的帳，請求資格與批准時機的條文也各自寫法不同。</description>
+    </item>
+    <item>
+      <title>走步先看情境：原地接球、行進中與運球中，NBA 規則書各有一句條文</title>
+      <link>https://basketball.twtools.cc/articles/traveling-gather-steps-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/traveling-gather-steps-basics/</guid>
+      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 2025-26 規則書 Rule 10 §XIII，原地接球的球員由 §XIII(a) 的樞軸規則處理；行進中或運球中 gather 的球員，第一步從 gather 之後有腳觸地起算，能走幾步要看 gather 時的情境。只記「兩步」，會漏掉行進中且尚未運球的一步款，以及原地接球的樞軸款。</description>
     </item>
     <item>
       <title>離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸</title>
@@ -198,54 +246,6 @@
       <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>球迷口中的「保送」，法規裡沒有這兩個字。中等以上學校運動成績優良學生升學輔導辦法（H0120004）只定義「甄審」「甄試」「單獨招生考試」「大學轉學考試」四種方式，門檻高低差很大；HBL 甲級球員可能對到的是門檻較低的「甄試」（文字高度對應下的推論，非逐字明定），之後能不能參加 TPBL 選秀，靠的又是另一套獨立的參賽經驗規定。</description>
-    </item>
-    <item>
-      <title>假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？</title>
-      <link>https://basketball.twtools.cc/articles/offensive-rating-pace-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/offensive-rating-pace-basics/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>場均得分分不出球隊是打得快，還是打得有效率。NBA 官方統計詞彙表另有兩組定義：Offensive Rating 以每 100 個回合為單位，Pace 記錄每 48 分鐘的回合數，搭配著讀才分得開。</description>
-    </item>
-    <item>
-      <title>NBA 戰績表：兩隊同勝率先比對戰成績，三隊同勝率卻先看分組冠軍</title>
-      <link>https://basketball.twtools.cc/articles/read-standings-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/read-standings-basics/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>NBA 官方戰績頁的名次先比勝率，勝率相同才進比序。兩隊並列時，比序清單第 1 條是彼此對戰勝率；三隊以上並列時，第 1 條是分組冠軍，兩份清單的順序不同，GB 欄也不在其中。</description>
-    </item>
-    <item>
-      <title>限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員</title>
-      <link>https://basketball.twtools.cc/articles/restricted-free-agency-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/restricted-free-agency-basics/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>在 2023 NBA CBA 的一般路徑下，符合資格的球員要成為限制性自由球員（Restricted Free Agent），原球隊得先在期限內發出資格報價（Qualifying Offer）；沒發，他就是無限制自由球員。資格報價買到的是優先購買權（Right of First Refusal），不是留人的保證。</description>
-    </item>
-    <item>
-      <title>NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽</title>
-      <link>https://basketball.twtools.cc/articles/two-way-contract-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/two-way-contract-basics/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>雙向合約（Two-Way Contract）是讓球員同時為 NBA 球隊與 G League 球隊工作的專用合約。依 2023 CBA 條文，它受四項附條件的限制：每隊 3 個名額、每季 50 場 Active List、季後賽不能出賽、薪水不占薪資帽，轉為標準合約的選擇權則在球隊手上。</description>
-    </item>
-    <item>
-      <title>NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型</title>
-      <link>https://basketball.twtools.cc/articles/zone-vs-man-defense/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/zone-vs-man-defense/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>區域聯防（zone defense）與人盯人（man-to-man）是球迷與教練的通稱，NBA 2025-26 規則書沒有這兩個詞。規則書明寫任何防守者可以防任何進攻者，也可以包夾；還在管防守站位的是防守三秒，管的是禁區裡沒有盯人的防守者，不是陣型。</description>
-    </item>
-    <item>
-      <title>NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制</title>
-      <link>https://basketball.twtools.cc/articles/draft-lottery-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/draft-lottery-basics/</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>在 NBA 2019–2026 年選秀的樂透制度下，戰績最差的三隊各有 14% 的機會抽中第 1 順位，戰績最差的隊至多掉到第 5 順位。聯盟在 2026 年 5 月 28 日通過 3-2-1 制，2027 年選秀起把戰績最差的三隊「降級」，順位怎麼來又換了一套算法。</description>
     </item>
   </channel>
 </rss>
