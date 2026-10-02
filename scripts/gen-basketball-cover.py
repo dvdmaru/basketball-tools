@@ -226,6 +226,9 @@ COVERS = [
     ("disabled-player-exception-basics", "NBA · 傷病球員例外",
      "傷病球員例外<br>簽約額度取較小者",
      "傷者薪水的 50%　·　申請被拒後要滿 90 天"),
+    ("tpbl-2026-27-schedule-guide", "台灣職籃 · 2026-27 賽程",
+     "夢想家<br>連續 7 場客場",
+     "例行賽 126 場　·　10 月 17 日開幕"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>

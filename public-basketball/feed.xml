@@ -6,7 +6,15 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Wed, 30 Sep 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場</title>
+      <link>https://basketball.twtools.cc/articles/tpbl-2026-27-schedule-guide/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/tpbl-2026-27-schedule-guide/</guid>
+      <pubDate>Fri, 02 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2026 年 10 月 2 日抓取的 TPBL 官網賽程資料，2026-27 例行賽共 126 場，10 月 17 日開幕、2027 年 5 月 16 日收官。每隊 18 主 18 客，賽季形狀卻不同。</description>
+    </item>
     <item>
       <title>AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同</title>
       <link>https://basketball.twtools.cc/articles/assist-metrics-basics/</link>
@@ -238,14 +246,6 @@
       <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>依 2023 NBA CBA，waive（棄約）是條文明文規範的合約終止程序，有 48 小時公示期與認領優先順序；買斷（buyout）本身不是 CBA 的正式名詞，而是球隊與球員先合意調整合約保障條款、再照 waive 程序走一次的複合操作，媒體與球迷習慣這樣稱呼它。</description>
-    </item>
-    <item>
-      <title>教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</title>
-      <link>https://basketball.twtools.cc/articles/coachs-challenge-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/coachs-challenge-basics/</guid>
-      <pubDate>Sun, 27 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>教練挑戰（Coach&#x27;s Challenge）是 NBA 教練用食指在空中畫圈、請裁判重看一次判決的做法，但 NBA 2025-26 規則書只允許挑三種判決，發動前還得先叫一次暫停。挑錯，那次暫停就用掉了；只有第一次挑戰成功，球隊才保留暫停，並多得一次挑戰。</description>
     </item>
   </channel>
 </rss>
