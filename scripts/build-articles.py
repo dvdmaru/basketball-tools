@@ -1019,6 +1019,12 @@ ARTICLE_CSS = """
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -1033,7 +1039,10 @@ ARTICLE_CSS = """
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -1550,7 +1559,7 @@ def render_index(articles: list) -> str:
             date_disp = _date_disp(str(a["meta"].get("date", "")))
             cards += f"""
       <a class="idx-card" href="/articles/{a['slug']}/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/{a['slug']}/cover.png" alt="{title}｜封面"></div>
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="{_card_src(a)}" alt="{title}｜封面"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">{kicker}</span>
           <div class="idx-card-title">{title}</div>
@@ -1819,11 +1828,36 @@ BB_DASH_CSS = """
 """
 
 
+def wrap_tables(html: str) -> str:
+    """markdown 轉出的 <table> 外層加可橫向捲動的容器（見 CSS .prose-tbl-scroll）。"""
+    return html.replace("<table>", '<div class="prose-tbl-scroll"><table>').replace("</table>", "</table></div>")
+
+
+def make_card_thumb(src: pathlib.Path, dst: pathlib.Path, width: int = 900) -> None:
+    """列表／首頁卡片用的縮圖。封面原檔 2400×1260 PNG 約 1.1MB，列表頁 67 張一次載入約 75MB，
+    手機上載不完或被系統回收記憶體而顯示空白；縮圖約 50KB。原檔留給文章頁與 og:image。"""
+    if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+        return
+    try:
+        from PIL import Image
+        im = Image.open(src).convert("RGB")
+        im.resize((width, round(im.height * width / im.width)), Image.LANCZOS).save(dst, "WEBP", quality=78, method=6)
+    except Exception as e:  # 沒有 PIL／WebP 時退回原圖（_card_src 會看檔案在不在）
+        print(f"   ⚠️ cover thumb skipped for {src.parent.name}: {e}")
+
+
+def _card_src(a: dict) -> str:
+    """列表／首頁卡片的圖片網址：有縮圖用縮圖，否則用原封面。"""
+    if (a["out_dir"] / "cover-card.webp").exists():
+        return f"/articles/{a['slug']}/cover-card.webp"
+    return f"/articles/{a['slug']}/cover.png"
+
+
 def _bb_lead_card(a: dict) -> str:
     title = html_lib.escape(a["meta"].get("title", a["slug"]))
     desc = html_lib.escape(a.get("excerpt") or a["meta"].get("subtitle", ""))[:150]
     return f"""<a class="card-lead" href="/articles/{a['slug']}/">
-    <div class="cov"><img src="/articles/{a['slug']}/cover.png" alt="{title}｜封面" loading="lazy"></div>
+    <div class="cov"><img src="{_card_src(a)}" alt="{title}｜封面" loading="lazy"></div>
     <div class="body"><span class="kk">{_kicker_label(a['meta'])} · {_date_disp(str(a['meta'].get('date','')))}</span>
       <div class="tt">{title}</div><div class="dd">{desc}</div></div></a>"""
 
@@ -1831,7 +1865,7 @@ def _bb_lead_card(a: dict) -> str:
 def _bb_grid_card(a: dict) -> str:
     title = html_lib.escape(a["meta"].get("title", a["slug"]))
     return f"""<a class="card" href="/articles/{a['slug']}/">
-      <div class="cov"><img src="/articles/{a['slug']}/cover.png" alt="{title}｜封面" loading="lazy"></div>
+      <div class="cov"><img src="{_card_src(a)}" alt="{title}｜封面" loading="lazy"></div>
       <div class="body"><span class="kk">{_kicker_label(a['meta'])}</span>
         <div class="tt">{title}</div><div class="mm">{_date_disp(str(a['meta'].get('date','')))}</div></div></a>"""
 
@@ -1844,7 +1878,7 @@ def _bb_feature_card(a: dict) -> str:
     excerpt = html_lib.escape(a.get("excerpt") or a["meta"].get("subtitle", ""))
     return f"""
   <a class="idx-feature" href="/articles/{a['slug']}/">
-    <div class="idx-feature-img-wrap"><img class="idx-feature-img" src="/articles/{a['slug']}/cover.png" alt="{title}｜封面"></div>
+    <div class="idx-feature-img-wrap"><img class="idx-feature-img" src="{_card_src(a)}" alt="{title}｜封面"></div>
     <div class="idx-feature-body">
       <span class="idx-feature-kicker">{_kicker_label(a['meta'])}</span>
       <h2 class="idx-feature-title">{title}</h2>
@@ -1858,7 +1892,7 @@ def _bb_idx_card(a: dict) -> str:
     title = html_lib.escape(a["meta"].get("title", a["slug"]))
     return f"""
       <a class="idx-card" href="/articles/{a['slug']}/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/{a['slug']}/cover.png" alt="{title}｜封面" loading="lazy"></div>
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="{_card_src(a)}" alt="{title}｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">{_kicker_label(a['meta'])}</span>
           <div class="idx-card-title">{title}</div>
@@ -1921,7 +1955,7 @@ BB_HOME_CSS = """
 #t-hbl:checked~.tablist label[for=t-hbl]{color:var(--fg);border-bottom-color:var(--accent)}
 #t-nba:checked~#p-nba,#t-tpbl:checked~#p-tpbl,#t-plg:checked~#p-plg,#t-hbl:checked~#p-hbl{display:block}
 /* standings table */
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.conf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
 .conf h3{font-family:var(--f-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--fg-mute);margin-bottom:10px;font-weight:700}
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
 table.std{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
@@ -1996,7 +2030,7 @@ section.blk{padding-top:8px}
 @media(max-width:900px){
   .champ-grid{grid-template-columns:repeat(2,1fr)}
   .cc.lead{grid-column:span 2}
-  .conf-grid{grid-template-columns:1fr;gap:32px}
+  .conf-grid{grid-template-columns:minmax(0,1fr);gap:32px}
   .art-grid{grid-template-columns:1fr 1fr}
   .art.lead{grid-column:span 2}
 }
@@ -2726,7 +2760,7 @@ def build():
 
         excerpt = extract_excerpt(body)
         faq = parse_faq(body)  # mirror author-written FAQ section into FAQPage schema
-        body_html = md_lib.markdown(body, extensions=["extra", "sane_lists"])
+        body_html = wrap_tables(md_lib.markdown(body, extensions=["extra", "sane_lists"]))
 
         # route to the comp's sport site: soccer -> public/articles (unchanged),
         # baseball -> public-baseball/articles. Soccer path == OUT/slug (byte-identical).
@@ -2736,6 +2770,8 @@ def build():
         for asset in d.iterdir():
             if asset.is_file() and asset.suffix != ".md":
                 shutil.copy2(asset, out_dir / asset.name)
+        if (d / "cover.png").exists():
+            make_card_thumb(d / "cover.png", out_dir / "cover-card.webp")
 
         articles.append({"slug": slug, "meta": meta, "excerpt": excerpt,
                          "faq": faq, "body_html": body_html, "out_dir": out_dir})

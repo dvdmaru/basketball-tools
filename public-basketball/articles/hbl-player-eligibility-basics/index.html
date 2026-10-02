@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -570,7 +579,7 @@ body::before {
 <p>這一句要拆開讀才不會誤會。第一，它卡的對象是「曾經報名過 HBL、又轉學或重考」的球員，不是所有轉學生——如果一名學生從沒報名過 HBL，轉學之後第一次報名，這條門檻不適用他。第二，它是報名資格的門檻描述，規程用的動詞是「必須具有」，不是「禁止」或「停止參賽」；換句話說，這是一道「夠不夠格報名」的關卡，不是違規之後才會遇到的處分。這個區別在文章結尾還會再談一次，因為這正是球迷容易搞混的地方。</p>
 <h2>讓 1 年學籍失效的 7 條路</h2>
 <p>1 年學籍不是鐵板一塊。114 學年度規程在同一條文裡，明文列出 6 款讓這道門檻失效的情形，只要符合其中一款、並檢附相關證明文件，就不受 1 年學籍限制：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>例外款次</th>
@@ -603,7 +612,7 @@ body::before {
 <td>具正當理由轉學之學生，欲報名「運動成績優良學生升學輔導辦法」規範之組別（含同級別及跨級別），由參賽學校檢具相關證明文件函報高中體總，經參賽資格審議委員會審核通過者</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這 6 款裡，前 5 款只要備妥證明文件即可適用；只有第 6 款額外要求經參賽資格審議委員會審核通過，才算完成手續，其餘 5 款不需要另外送審。</p>
 <p>除了這 6 款，規程另外單獨給了第 7 條路：曾報名參加過 HBL 乙級的轉學生或重考生，若報名的是同級別（乙級對乙級）賽事，學籍完全不受限制。這一款寫在學籍門檻那一句的同一小段裡，跟前面 6 款不在同一層級，規程分開兩段書寫，適用範圍也只限乙級同級別報名，跨級別（乙級轉甲級）不適用這條。</p>
 <p>一款要特別提醒：學校運動代表隊經核准解散之後，自次一學年度起 3 年內不得重新組隊報名參賽。這一句附在第 4 款後面，講的是代表隊解散後的重組限制，不是球員個人的資格條件，讀規程時容易跟球員資格混在一起看，但它管的對象是「隊」，不是「人」。</p>

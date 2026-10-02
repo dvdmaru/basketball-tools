@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -597,7 +606,7 @@ body::before {
 <p>第 17 條（懲處）另有球隊資格不實或冒名參賽者出賽時的處分規定，依申訴規定提出且經查證屬實者，有相應處分。這條制度存在，本文只點名，不舉例，內容見<a href="/articles/hbl-player-eligibility-basics/">HBL 球員資格入門</a>。</p>
 <h2>規程沒有寫「持續查驗」，時點表的排法有什麼依據？</h2>
 <p>把上面幾節依條文的時點排起來，是下面這張表。先講清楚：規程本身沒有把這些條文排成單一流程，也沒有使用「持續查驗」這個詞；表裡的先後順序是本文依各條文字面時點所做的整理，屬於推論。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>時點</th>
@@ -637,7 +646,7 @@ body::before {
 <td>第 18 條一</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>「持續查驗」這個說法的依據，是表裡第 4、5 列：各階段第一場交大會審查，其餘場次條文寫的是「仍應攜帶」學生證正本或其它經大會認可之學籍文件「以備查驗」。</p>
 <h2>拿一個假設情境，自己列出各時點的文件清單</h2>
 <p>接著用一個明確標示的假設情境練習，不是任何一個學年度或一支真實球隊的事。假設甲隊是 114 學年度規程下參賽的甲級球隊，隊上有一位報名球員在報名之後遺失了學生證。請自己列出各時點要備的文件。</p>

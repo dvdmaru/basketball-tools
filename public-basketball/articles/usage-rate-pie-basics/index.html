@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -576,7 +585,7 @@ body::before {
 <pre><code>(FGA + Possession Ending FTA + TO) / POSS
 </code></pre>
 <p>分子有三項，分母一項。逐項來看：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -606,7 +615,7 @@ body::before {
 <td>本文的讀法是公式的 POSS 對應詞彙表的 Poss 條目，USG% 條目沒有寫明它指向哪個條目</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Poss 條目另外有一句提醒：進攻籃板不會另外產生一個回合，只是讓原本那個回合延長。這句話寫在 Poss 條目裡，不在 USG% 條目裡；把它拿來理解分母，是本文的讀法。</p>
 <p>有兩件事值得停一下。第一，Possession Ending FTA 是詞彙表沒有解釋的詞。詞彙表這個條目沒有寫任何乘上罰球的係數，所以本文不補。第二，想知道回合與 Pace（每 48 分鐘的回合數）的關係，可以看本站的<a href="/articles/offensive-rating-pace-basics/">進攻效率值與節奏入門</a>，本文不重複展開。</p>
 <h2>假設一行數字：FGA 18、Possession Ending FTA 4、TO 3、POSS 80，USG% 是多少？</h2>
@@ -634,7 +643,7 @@ body::before {
 </code></pre>
 <p>兩條式子的項目一一對應，分母每一項前面多了 Gm。詞彙表沒有為 Gm 前綴單獨寫定義。本文的讀法是：Gm 代表「這場比賽裡所有球員的合計」，這個讀法來自第一句定義的 total statistics in games they play in，再對照分母的寫法，屬於推論，不是詞彙表逐字的說法。</p>
 <p>分子裡的每一項，詞彙表都有對應的獨立條目：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -704,7 +713,7 @@ body::before {
 <td>－</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>看這張表可以直接讀出：PIE 的分子不是只加不減。出手、罰球出手、犯規與失誤在公式裡是減項，得分、進球、籃板、助攻、抄截與阻攻是加項，進攻籃板與阻攻各乘 0.5。</p>
 <h2>假設一行數字，PIE 分子與分母各是多少？</h2>
 <p>再做一次<strong>假設</strong>算例，同樣不是任何一名真實球員，也不是任何一場真實比賽。假設某人這場的數字是：PTS 20、FGM 8、FTM 4、FGA 16、FTA 5、DREB 5、OREB 2、AST 4、STL 1、BLK 1、PF 3、TO 2。</p>
@@ -722,7 +731,7 @@ body::before {
 <p>這組算例只證明一件事：公式的加減與係數，照著填就能算，不必猜。它不能證明 8.75% 算高還是算低，詞彙表沒有為 PIE 寫過任何高低門檻或聯盟平均。</p>
 <h2>把兩條公式擺在一起：USG% 看得到哪些項目，PIE 看得到哪些？</h2>
 <p>把 USG% 與 PIE 的公式項目逐項清點，可以做成下面的對照。這張表是對兩條公式做項目清點的結果，是本文的推論，不是詞彙表一句話說出來的結論：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -772,7 +781,7 @@ body::before {
 <td>分母是同組項目的 Gm 版本（比賽全部球員合計）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>從對照表可以讀到幾件事：</p>
 <ol>
 <li>依本文逐項清點的結果，USG% 的公式項目裡看不到命中數、助攻與防守項；公式沒有放這些項目。</li>

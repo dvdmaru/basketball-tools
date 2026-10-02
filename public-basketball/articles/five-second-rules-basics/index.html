@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -573,7 +582,7 @@ body::before {
 <p>這是 NBA 快照裡第二處寫了 5 秒的地方，位在 Rule 10 Section XVI。原文寫的是：進攻球員在他的前場、罰球線延伸線以下，背對或側對籃框（with his back or side to the basket）運球，不得超過 5 秒。</p>
 <p>條文的位置條件有兩個，兩個都要對上：球員在前場，而且在罰球線延伸線以下。「背身單打」「背框」是中文慣稱，規則書的英文寫法是 "back or side to the basket"。</p>
 <p>計時何時結束？同一節寫了三種情形：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>終止情形</th>
@@ -594,7 +603,7 @@ body::before {
 <td>a defensive player deflects the ball away</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>罰則也寫在同一節：失去球權，球判給對方隊，在近側邊線的罰球線延伸線處界外發球。另外，Rule 6 Section I(e) 列舉「球判給對方隊、在近側邊線的罰球線延伸線處界外發球」的違例清單，其中第 13 項列有 "Five second back-to-the-basket violation" 這個名稱。這一項只是清單裡的名稱條目，條文的內容仍在 Rule 10 Section XVI。</p>
 <h2>FIBA 2024 版的發球 5 秒寫在哪一條？</h2>
 <p>FIBA 2024 版 Article 17（Throw-in）在發球者（thrower-in）不得做的事項底下，Article 17.3.1 寫了一項：不得花超過 5 秒釋放球（"Take more than 5 seconds to release the ball."）。</p>
@@ -611,7 +620,7 @@ body::before {
 <p>反方向也做了同樣的搜尋：FIBA 2024 快照裡，搜尋 "back to the basket"、"back-to-the-basket"、"back or side to the basket" 三種寫法，都沒有結果。這是本機快照的搜尋結果；照這個結果，本文引用的 FIBA 2024 快照裡未見與 NBA Rule 10 Section XVI 同句的背對、側對籃框運球 5 秒條文。</p>
 <h2>罰球的時限，NBA 寫 10 秒、FIBA 2024 寫 5 秒</h2>
 <p>罰球在兩份規則書寫的秒數不同，單獨放一節，用一張表並列兩邊的條文。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>情形</th>
@@ -626,12 +635,12 @@ body::before {
 <td>5 秒：Article 43.2.3 寫罰球者須在裁判把球交給他處置後 5 秒內釋放球</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>NBA 這一欄的原文是 "This attempt must be made within 10 seconds."（Rule 4 Section V）與 "He shall attempt the free throw within 10 seconds of controlling the ball in such a way that the ball enters the basket or touches the ring."（Rule 9 Section I(a)）。FIBA 這一欄的原文是 "Release the ball within 5 seconds after it is placed at the disposal by the referee."（Article 43.2.3）。</p>
 <p>兩邊的起算動作寫法也各自不同：NBA 是「控制球後」，FIBA 是「裁判把球交給他處置後」。此外，FIBA 2024 快照搜尋 "10 seconds"、"ten seconds"，沒有結果，這是本機快照的搜尋結果。</p>
 <h2>把四種情形放進同一張表，各格只放該聯盟條文寫的內容</h2>
 <p>下表每一格只放該聯盟條文寫的內容；某一邊本文引用的快照未見同句時，格內寫「本文引用的快照未見同句」。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>情形</th>
@@ -661,7 +670,7 @@ body::before {
 <td>5 秒，Article 43.2.3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表裡各列的 5 秒，起算點與終止條件各寫在各自的條文裡。</p>
 <ul>
 <li>發球：起算點分別在 NBA Rule 8 §III(a) 的「接到並控制球」與 FIBA Article 17.1.2 的「球交到發球者手中」。</li>

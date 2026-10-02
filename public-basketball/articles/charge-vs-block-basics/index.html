@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -574,7 +583,7 @@ body::before {
 </ul>
 <p>NBA 2025-26 規則書的文字裡，沒有找到像 FIBA 2024 第 33.3 條那樣列出條件的「合法防守位置」定義句。所以這篇談 NBA 的部分，只能引用規則書怎麼用這個詞，沒辦法替它補一份 NBA 版的條件清單。</p>
 <p>這條線可以用一個簡單的表對照：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>問題</th>
@@ -595,7 +604,7 @@ body::before {
 <td>隨時控制身體；發生非法接觸時責任在運球者</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>運球者的頭與肩已經領先防守者時，責任落在防守者身上</h2>
 <p>上一節的原則有例外，而且例外寫在同一本規則書裡。NBA 2025-26 規則書 Rule 12B 第 II(d) 款寫道：運球者如果有足夠的空間，讓頭與肩已經領先防守者，非法接觸的責任就在防守者。</p>
 <p>這和前一節的句子並不矛盾。前一節講的是防守者已經建立合法位置的情形；這一款講的是運球者已經在前面的情形。兩條各自成立，判的時候要看接觸發生的當下，哪一邊的條件成立。</p>
@@ -637,7 +646,7 @@ body::before {
 <p>本文引用的這一款寫的是「不確定防守者在弧內還是弧外」的情形，時段限於這兩個。不能據此推論 block/charge 的哨聲都可以看回放。</p>
 <h2>三個都跟「禁區」有關的東西：FIBA 限制區、FIBA no-charge 半圓、NBA restricted area</h2>
 <p>FIBA 2024 和 NBA 2025-26 各自有跟籃下有關的線與區域，名稱容易混。下面把三個並排：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>名稱</th>
@@ -666,7 +675,7 @@ body::before {
 <td>二線防守者條款的區域</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>單位換算：4 呎等於 1.2192 公尺（4 × 0.3048），數字上比 FIBA no-charge 半圓的 1.30 公尺小。這只是算術，不代表兩個區域可以互相替代：兩者的適用條件本來就寫得不一樣。</p>
 <p>FIBA 2024 第 33.10 條的內容是：在切入 no-charge 半圓的進攻中，空中的進攻者造成的、與站在半圓內防守者之間的接觸，不應判為球隊控球犯規（team control foul），除非進攻者非法使用手、臂、腿或身體。除了「切入半圓」與「由空中進攻者造成接觸」這兩個前提，這條還要求同時滿足三個並列條件：</p>
 <ol>

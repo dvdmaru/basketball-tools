@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -568,7 +577,7 @@ body::before {
 <p>「頂薪」「25% 頂薪」「35% 頂薪」都是媒體與球迷的慣稱，不是規則書的用語。另外還有「Rose Rule」「supermax」這類說法，在本站取得的 2023 NBA CBA 全文文字檔中搜尋這兩個詞，結果都是 0 筆；CBA 對指定老將用的是 Designated Veteran Player Contract 與 Designated Veteran Player Extension。這只說明這兩個詞不在條文裡，並沒有否定球迷使用它們的習慣。</p>
 <h2>首年上限依年資分三級：帽值的 25%、30%、35%</h2>
 <p>依 2023 NBA CBA Art. II §7(a)，首年上限依年資（Years of Service）分成三級，百分比的分母是「合約簽訂當時生效」的薪資帽（Salary Cap）：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>年資（Years of Service）</th>
@@ -593,7 +602,7 @@ body::before {
 <td>Art. II §7(a)(iii)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Art. I(mmm) 對 Salary Cap 的定義，是每支球隊在一個 Salary Cap Year 內允許的球隊薪資總額上限，受協議內其他規則與例外約束。帽值是依 Salary Cap Year 訂的，而百分比的分母取的是簽約當時生效的那一個，所以百分比換算成金額，會跟著簽約當時的帽值走。本文的讀法是：CBA 條文給的是一組算法，本文引用的條文裡沒有出現一個寫死的金額。</p>
 <p>年資怎麼算？依 Art. I 的定義，球員在某一年例行賽期間，只要有一天以上出現在 NBA 現役名單（Active List）或傷病名單（Inactive List）上，就記為一年 NBA 年資。</p>
 <p>延長合約（Extension）與重新談約（Renegotiation）也出現同一組級距：Art. II §7(b)(ii) 對年資滿 7 年但未滿 10 年的重新談約給 30%，Art. II §7(c)(iii) 對年資滿 10 年以上的延長合約給 35%，只是延長合約的分母改成延長期首年 7 月 1 日所在 Salary Cap Year 的帽值。</p>
@@ -636,7 +645,7 @@ body::before {
 </ol>
 <p>再加上至少達成一項獎項門檻，球員就有資格簽指定老將延長合約，百分比由球隊與球員協議，不得低於 30%，也不得高於 35%（以延長期第一個球季所在 Salary Cap Year 的 7 月 1 日帽值計）。Art. II §7(e) 再申明一次：這個百分比「無論如何」不得低於 30% 或高於 35%，而且這種延長合約不得包含 Incentive Compensation。</p>
 <p>兩條路線放在一起看：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -666,11 +675,11 @@ body::before {
 <td>至少一項</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>年資 8 年同時落在兩欄的範圍內；實際能走哪一條，還要看合約還剩幾季等其他條件，本文不往下推。兩條路線的年資條件不同：合約看 8 或 9 年，延長約看 7 或 8 年。</p>
 <h2>一般合約與指定老將合約：年限、年度加薪、交易與談約時點各有各的條文</h2>
 <p>前面談的都是「首年」。合約簽下之後的規則，依 2023 NBA CBA 整理如下：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -700,7 +709,7 @@ body::before {
 <td>延長合約不早於原合約簽訂滿三週年，且只能在休賽季談簽（Art. VII §7(a)(1)）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>用假設算例把加薪幅度換算成帽值的百分比。這裡是算術推得的結果，不是條文原句。<strong>假設薪資帽是 100 單位（示範用，不是真實帽值）</strong>：</p>
 <ul>
 <li>假設某份延長合約的首年是帽值的 30%，也就是 30 單位。之後每年增減上限是首年薪資的 8%，也就是 30 乘 0.08，等於 2.4 單位，相當於帽值的 2.4%。</li>

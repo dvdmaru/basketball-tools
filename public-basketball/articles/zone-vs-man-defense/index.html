@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -591,7 +600,7 @@ body::before {
 <li>「If the defender is guarding the player with the ball, he may be located in the 16-foot lane.」防守持球者的人可以站在禁區裡，規則書接著寫這個防守者不必處在一臂距離的盯防位置（同一節 e.）。</li>
 </ul>
 <p>規則書在 d. 還列了其他計時暫停的情形，e. 也有後續的句子，這裡只用上面三項。下面四個站位都是<strong>假設</strong>，前提相同：進攻方在前場控球，沒有其他暫停計時的情形發生。你可以先遮住右欄，自己判一次。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設站位</th>
@@ -621,11 +630,11 @@ body::before {
 <td>不違例</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>四個判斷都不需要知道這支球隊在打人盯人還是區域：條文問的是防守者站在哪裡、站了幾秒、有沒有盯人。</p>
 <h2>FIBA 2024 的三秒規定針對進攻方，規則書也沒有防守型態的條文</h2>
 <p>這篇文章的規則句以 NBA 2025-26 為準。FIBA 是另一份規則書，不能把它當成 NBA 的規定。FIBA 2024 版規則書第 26 條（3 秒）寫的是：球隊在前場控球、比賽計時鐘走動時，球員不得在對方的限制區（restricted area）連續停留超過 3 秒。這是對進攻方球員的規定；防守三秒是 NBA 這一節條文的內容。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -650,7 +659,7 @@ body::before {
 <td>前場控球時，在對方限制區連續停留超過 3 秒的球員</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>兩份規則書都沒有限制防守型態的條文，也都沒有列出人盯人或區域的定義。差別是三秒規定管的對象不同。FIBA 規則書沒有寫「允許區域」這樣的正向句子，這裡能說的只有「找不到限制」。</p>
 <h2>下次主播說換成區域，可以自己確認兩件事</h2>
 <ol>

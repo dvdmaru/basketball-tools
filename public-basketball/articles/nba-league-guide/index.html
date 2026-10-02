@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -573,7 +582,7 @@ body::before {
 <p>第四階段是季後賽與總冠軍賽。東西區各取 8 隊晉級季後賽，每一輪都採七戰四勝制，一路打到東西區冠軍賽，最後由兩區冠軍在 6 月進行總冠軍賽，同樣是七戰四勝制。七戰四勝制意味著單場爆冷不會直接決定一個系列賽的走向，球隊必須在數週之內連續證明自己的實力，這也是為什麼季後賽常被視為比例行賽更能反映球隊真實深度與臨場調度能力的舞台。整個賽季從 10 月下旬的例行賽開打，一路走到 6 月的總冠軍賽落幕，跨度將近九個月，這也是為什麼 NBA 球季常被形容為一場橫跨半年以上的馬拉松賽事。</p>
 <h2>近三季總冠軍表</h2>
 <p>下表整理近三個賽季的總冠軍賽結果：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>賽季</th>
@@ -602,7 +611,7 @@ body::before {
 <td>4:1</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這三個賽季的總冠軍賽，呈現出三種不同的系列賽節奏。2023-24 賽季，波士頓塞爾提克以 4 勝 1 敗擊敗達拉斯獨行俠奪冠，系列賽相對一面倒。2024-25 賽季則完全相反，奧克拉荷馬雷霆與印第安納溜馬一路纏鬥到第七戰，最終雷霆以 4 勝 3 敗驚險封王，是三個賽季裡唯一打滿七戰的總冠軍賽。2025-26 賽季，紐約尼克以 4 勝 1 敗擊敗聖安東尼奧馬刺，拿下隊史自 1973 年之後、相隔 53 年的總冠軍；尼克隊史此前的兩座冠軍分別是 1970 年與 1973 年，這意味著在 1973 年到 2026 年之間，尼克隊有超過半個世紀的時間沒有站上總冠軍的頒獎台。對長期關注 NBA 的球迷來說，一支歷史悠久的球隊時隔逾半世紀重新奪冠，本身就是這三個賽季裡最具份量的一段紀錄。</p>
 <p>把這三個賽季的冠軍組合放在一起看，還可以發現一個現象：三個賽季的總冠軍球隊各不相同，亞軍球隊也全數不同，沒有任何一支球隊連續兩個賽季打進總冠軍賽。這種冠軍歸屬年年變動的狀態，某種程度反映出近幾季 NBA 西區與東區的競爭都相當激烈，沒有單一球隊能夠連續壟斷冠軍賽門票。此外三場總冠軍賽的系列賽比數分別是 4:1、4:3、4:1，場次長短交替出現，也提醒球迷不能單純用「系列賽比數」去回推球隊實力差距，像 2024-25 賽季那樣打滿七戰的系列賽，往往代表兩隊實力伯仲之間，勝負常在最後一兩場比賽的關鍵回合才真正分曉。</p>
 <h2>歷史冠軍格局：塞爾提克與湖人的兩強對峙</h2>
@@ -612,7 +621,7 @@ body::before {
 <h2>2025-26 賽季終局速覽</h2>
 <p>以下整理 2025-26 賽季結束時（截至 2026 年 6 月 14 日）東西區戰績排名前三的球隊。</p>
 <p>東區戰績前三：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>排名</th>
@@ -645,9 +654,9 @@ body::before {
 <td>7</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>西區戰績前三：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>排名</th>
@@ -680,7 +689,7 @@ body::before {
 <td>10</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>從這兩張表可以看出一個有意思的對照：東區戰績最好的底特律活塞，例行賽勝率為 .732；而西區戰績最好的奧克拉荷馬雷霆，例行賽勝率高達 .780，兩者相差將近 5 個百分點。同時，2025-26 賽季的總冠軍紐約尼克，例行賽戰績其實只排在東區第 3 名（53 勝 29 敗），落後東區龍頭底特律活塞達 7 個勝場；而總冠軍賽的對手聖安東尼奧馬刺，例行賽戰績反而是西區第 2 名（62 勝 20 敗），只落後西區龍頭奧克拉荷馬雷霆 2 個勝場。這也說明了 NBA 季後賽七戰四勝制的特性：例行賽戰績排名靠前不代表在季後賽系列賽裡穩居優勢，東區第 3 名照樣有機會過關斬將拿下總冠軍。想查看最新、即時更新的完整戰績排名，可以到本站的 <a href="/standings/">/standings/</a> 頁面查詢。</p>
 <h2>選秀與自由市場的年曆</h2>
 <p>除了賽季本身的節奏，NBA 每年還有兩個對球隊陣容影響深遠的時間點，分別是新人選秀與自由市場。</p>

@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -577,7 +586,7 @@ body::before {
 <p>第三段要處理的是隊數。第 11 條二（二）3 寫錄取名次：各分區錄取男、女生組優勝球隊各 4 隊，計 8 隊晉級全國決賽。全國決賽那一邊，第 11 條二（三）1 寫參加球隊是各分區複賽優勝球隊，計 8 隊。</p>
 <p>兩處都出現「8 隊」，但每個數字怎麼來，本文的讀法是原文本身沒有定案。因為分區只寫「視晉級情況分南、北區」，第 10 條也只寫競賽分區依實際報名情況訂定之，分區的數量與名單都沒有列出；「各 4 隊」到底是每個分區、每個性別組，還是每個分區不分性別，原文沒有交代；全國決賽那一句只寫「計 8 隊」，同樣沒有分性別組。</p>
 <p>照這幾句的結構，至少可以讀出三種：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>讀法</th>
@@ -602,7 +611,7 @@ body::before {
 <td>男女不分開計</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表是本文的推論整理，不是規程的表。三種讀法各要加一個規程沒寫的假設，所以本文不選定其中一種當事實。讀者能拿走的是一個提醒：看到「8 隊」，先問這個數字算的是哪個分區、哪個性別組，規程沒有說時就標「規程沒寫」。</p>
 <h2>全國決賽第一輪分組循環、第二輪單淘汰排名制，名次是 1 至 8 名</h2>
 <p>第四段是全國決賽。114 學年度規程第 11 條二（三）寫乙級全國決賽：第一輪採分組循環制，第二輪採單淘汰排名制，1 至 8 名依競賽成績判定名次。</p>
@@ -611,7 +620,7 @@ body::before {
 <p>另外，乙級比賽規則（例如 8 分鐘制）由第 12 條三另行規定，第 12 條三寫明的適用範圍是乙級縣市預賽、分區複賽，沒有列全國決賽，這一點在<a href="/articles/hbl-rules-vs-fiba/">HBL 規則與 FIBA 的差異</a>已經寫過，本文不重講。</p>
 <h2>三段賽制放在同一張表，「規程有寫」與「規程沒寫」一目了然</h2>
 <p>把前面幾節放在一起。把三段串成流程是本文的整理，規程沒有另外附一張流程圖；三段的賽制名稱則都是規程原文。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>階段（114 學年度乙級）</th>
@@ -636,7 +645,7 @@ body::before {
 <td>排名賽怎麼打、各組分幾隊</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表有一個誤讀要避開：三段不是都用循環制。縣市預賽（報名隊數超過 1 隊時）是循環，分區複賽與全國決賽的第二輪都是淘汰。</p>
 <h2>晉級名額、獎狀名額、獎盃是三件事，不要放進同一張表</h2>
 <p>乙級縣市預賽在規程裡有兩張不同的表。第 11 條二（一）是晉級名額表，決定哪些球隊往分區複賽走；第 16 條四是獎狀名額，依報名參賽隊數決定取幾名頒獎狀。兩張表的用途不同，本文只提兩張不同，不重製獎狀表。</p>

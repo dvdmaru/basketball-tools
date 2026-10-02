@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <p>讀完之後，你可以拿一個標明「假設」的情境，自己對照條文，判斷 8 秒是重新給、是延續，還是狀態不變。</p>
 <h2>NBA 2025-26 規則書怎麼寫 8 秒限時？</h2>
 <p>NBA 2025-26 規則書有兩處各自寫出 8 秒限時，措辭不同。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>位置</th>
@@ -583,7 +592,7 @@ body::before {
 <td>球隊持續控球且球在其後場，不得超過 8 個連續秒（A team shall not be in continuous possession of a ball which is in its backcourt for more than 8 consecutive seconds）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Rule 10 §VIII 的條文寫的是「持續控球、球在後場、超過 8 個連續秒」。本文對這條只陳述它寫了什麼：條文用 continuous possession 與 in its backcourt 來描述，這兩段文字之外，本文讀到的 NBA 條文沒有另外寫出「8 秒從哪一個時點開始」的獨立款項，所以本文不替 NBA 補一個起算時點。</p>
 <h2>球在前場還是後場？NBA 用球與球員的位置來判斷</h2>
 <p>8 秒限時看的是球在後場多久，所以要先知道什麼叫後場。NBA 2025-26 規則書 Rule 4 Section VI 有一組定義：</p>
@@ -599,7 +608,7 @@ body::before {
 <p>NBA 2025-26 規則書把「給新的 8 秒」寫在兩個地方，兩處各自成一張清單。</p>
 <p><strong>清單一：Rule 4 §VI(f) 的 EXCEPTION。</strong> 緊接著 8 秒限時的那一句之後，條文列了五項：(1) 踢球、(2) 拳擊球、(3) 防守方被判個人犯規或技術犯規、(4) 防守方被給 delay-of-game 警告、(5) infection control（感染控制）。</p>
 <p><strong>清單二：Rule 10 §VIII 的兩款 EXCEPTION。</strong></p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -619,7 +628,7 @@ body::before {
 <td>給新的 8 秒</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>兩張清單並列時可以看到：跳球取得控制權，以及最後兩分鐘由前場擲球入場到後場，這兩項寫在 Rule 10 §VIII EXCEPTION (2)，Rule 4 §VI(f) 引到的那句 EXCEPTION 裡沒有出現。本文的做法是各自標明來源，兩份清單各讀各的。</p>
 <h2>NBA 另外還有三處：delay of game 罰則段、最後兩分鐘暫停、感染控制</h2>
 <p>除了上面兩張清單，NBA 2025-26 規則書還有三處提到 8 秒的處理。</p>
@@ -650,7 +659,7 @@ body::before {
 <p>球已經到前場之後又回到後場的情形，另有專門的條文（NBA 2025-26 Rule 10 §IX 的 Ball in Backcourt，FIBA 2024 Article 30 的 Ball returned to the backcourt），本文不展開。</p>
 <h2>FIBA 2024 Article 28.1.3：哪些情形讓 8 秒以剩餘時間延續？</h2>
 <p>FIBA 2024 的中斷處理寫在 Article 28.1.3。條文的句型是：先前控球的同一隊在後場獲判擲球入場，且原因屬於下面六項之一時，8 秒期間以剩餘時間延續（The 8-second period shall continue with any time remaining）。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>六項情形（FIBA 2024 Article 28.1.3）</th>
@@ -683,14 +692,14 @@ body::before {
 <td>雙方相同罰則抵銷</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>適用前提要一起讀：是「先前控球的同一隊」，而且是「在後場獲判擲球入場」。前提不成立時，這一款不適用。</p>
 <p>本文讀到的 FIBA 2024 Article 28 只有 28.1.1、28.1.2、28.1.3 三款，沒有 28.2 之類專門寫罰則的款次。</p>
 <h2>FIBA 2024 的罰則要引 Article 22.2 一般罰則</h2>
 <p>因為 Article 28 內沒有專屬的罰則款，本文的做法是引用同一規則章節（Rule Five 違例）的一般罰則 Article 22.2：球判給對方，在最接近違例處擲球入場，但不在籃板正後方，除非規則另有規定（The ball shall be awarded to the opponents for a throw-in from the place nearest to the infraction, except from directly behind the backboard, unless otherwise stated in these rules）。</p>
 <p>要注意的是，Article 22.2 是一般違例罰則，不是 8 秒專屬的罰則條文；這一條是「讀完 Article 28 全款」之後的引用，是本文的讀法。NBA 條文寫「在中線發球」，FIBA 2024 一般罰則寫「最接近違例處」，兩邊各引各的條文，位置寫法不同。</p>
 <h2>兩份條文並排看：NBA 寫新的 8 秒，FIBA 寫剩餘時間</h2>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -720,7 +729,7 @@ body::before {
 <td>中線屬於後場（Article 2.5.2）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表裡的 NBA 欄與 FIBA 欄各自獨立，不逐列配對：NBA 欄寫的是「給新的 8 秒」的情形，FIBA 欄寫的是「以剩餘時間延續」的情形。兩邊處理中斷的機制在條文上是分開寫的，套用時要看自己讀的是哪一份規則書。</p>
 <p>另外要區分的是，本站的快攻文章（<a href="/articles/fast-break-basics/">快攻入門</a>）裡有一節提到 FIBA《統計員手冊 2024》的「8 秒」，那是快攻得分的統計門檻（球權轉換之後，在對方尚未站好半場防守陣型之前，於 8 秒之內得到的分數），跟本文的規則書 8 秒限時是兩個不同的概念。</p>
 <h2>拿一個假設的情境，自己判斷 8 秒怎麼處理</h2>

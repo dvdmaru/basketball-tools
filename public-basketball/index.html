@@ -514,7 +514,7 @@ body::before {
 #t-hbl:checked~.tablist label[for=t-hbl]{color:var(--fg);border-bottom-color:var(--accent)}
 #t-nba:checked~#p-nba,#t-tpbl:checked~#p-tpbl,#t-plg:checked~#p-plg,#t-hbl:checked~#p-hbl{display:block}
 /* standings table */
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.conf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
 .conf h3{font-family:var(--f-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--fg-mute);margin-bottom:10px;font-weight:700}
 .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
 table.std{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
@@ -589,7 +589,7 @@ section.blk{padding-top:8px}
 @media(max-width:900px){
   .champ-grid{grid-template-columns:repeat(2,1fr)}
   .cc.lead{grid-column:span 2}
-  .conf-grid{grid-template-columns:1fr;gap:32px}
+  .conf-grid{grid-template-columns:minmax(0,1fr);gap:32px}
   .art-grid{grid-template-columns:1fr 1fr}
   .art.lead{grid-column:span 2}
 }

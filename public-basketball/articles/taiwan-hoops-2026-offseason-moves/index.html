@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <p>兩個聯盟各自舉辦選秀，球員異動卻會跨過聯盟邊界。台灣職籃為什麼同時有 TPBL 與 PLG，可先讀〈<a href="/articles/taiwan-hoops-two-leagues/">台灣職籃為什麼有兩個聯盟？</a>〉。這個夏天的名單，正好把並立的影響攤在桌上。</p>
 <h2>異動名單同時跨過 TPBL、PLG、SBL 與 CBA</h2>
 <p>以下整理截至 2026 年 8 月 10 日已宣布或已有明確狀態的異動。新東家欄標出聯盟。林秉聖的買斷協議已宣布，但洋基工程仍要另行公告正式加盟資訊。雲豹第 4 名洋將與富邦 3 名洋將都已確定到位，姓名尚未公布，因此不列入具名名單。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球員</th>
@@ -691,7 +700,7 @@ body::before {
 <td>—</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表有兩種方向。林庭謙從 CBA 回台，宋昕澔則往 CBA 走。陳力生從 PLG 轉往 TPBL，林秉聖的方向完全相反。吳志鍇更特別。他沒有先成為領航猿球員再轉隊，而是在兩邊都被選中後，只與戰神簽約。</p>
 <h2>衛冕軍用首輪籤選了一個不會報到的人</h2>
 <p>PLG 在 2026 年 6 月 30 日舉行選秀。4 支球隊各選 1 人。洋基工程用狀元籤選進健行科大後衛王鼎鈞。王鼎鈞上季場均 14.8 分，三分球命中率 37.2%。台鋼獵鷹選進輔大前鋒李盛新。臺北富邦勇士選進輔大外籍生長人莫森。剛完成二連霸的桃園璞園領航猿，則用第 4 順位選進政大前鋒吳志鍇。</p>

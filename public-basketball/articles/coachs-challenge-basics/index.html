@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -590,7 +599,7 @@ body::before {
 <p>這一串動作為什麼重要？因為規則書連一個失誤都寫好了後果：在判決之後、叫暫停並同時比手勢之前，如果球隊被判延誤比賽（delay of game），就失去挑戰那次判決的機會。叫暫停與比手勢得一起完成，中間耽擱到被判延誤比賽，挑戰的機會就沒了，不論那次判決本身對不對。</p>
 <h2>挑錯，那次暫停就用掉了；第一次挑對，才保留暫停並多得一次挑戰</h2>
 <p>暫停的去向看結果。下表是 NBA 2025-26 規則書對各種結果的處理：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>結果（NBA 2025-26 規則書）</th>
@@ -619,7 +628,7 @@ body::before {
 <td>被記一次暫停，但保留挑戰次數</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>差別在第二列與第三列。第一次挑戰成功，暫停還在，還多一次挑戰；第二次挑戰即使成功，那次暫停也不會還。第一次成功還有一個例外：發動挑戰的那次暫停，如果同時觸發了強制暫停，暫停也不保留。</p>
 <p>表中下面兩列說明「先叫暫停」不是形式。球隊沒有暫停可用，這一步就走不下去，硬挑會吃到技術犯規。</p>
 <p>把這張表讀成一句話：挑戰失敗，暫停就沒了；第二次挑戰，成敗都不還暫停。</p>
@@ -646,7 +655,7 @@ body::before {
 <p>有一點值得停下來看：Flagrant Foul 在教練挑戰那邊，是不能挑的事件；在 Rule 13 這邊，裁判不確定它是否成立時，卻會重播。兩章的重播由不同的條件啟動，所以教練不能挑，不代表判決不會被重看。</p>
 <h2>FIBA 2024 也有教練挑戰，但每隊每場一次不論成敗，只用在有重播系統的比賽</h2>
 <p>前面全部是 NBA 2025-26 規則書。FIBA 2024 規則（Official Basketball Rules 2024，Appendix F.4）有自己的一套，叫 head coach's challenge（HCC），而且只用在使用 Instant Replay System（IRS）的比賽：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -676,11 +685,11 @@ body::before {
 <td>雙手比畫長方形，並大聲用英語說 challenge</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>兩套規則名字相近，內容各自獨立。看 FIBA 比賽時，NBA 那套的次數、可挑範圍與暫停處理不能直接搬過去。</p>
 <h2>四個假設情境：能不能挑？暫停還在不在？</h2>
 <p>先蓋住右欄，自己判一次。下面的情境都是假設，答案依 NBA 2025-26 規則書，可以從前面的規則直接推出來：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設情境</th>
@@ -715,7 +724,7 @@ body::before {
 <td>不在：第二次挑戰即使成功，也不保留那次暫停</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>情境 C 換個時間點，答案就不同：假設是第四節還有 5 分鐘，同樣的 goaltending 判決就在教練挑戰的清單裡，前提是教練走完先叫暫停的步驟。</p>
 <p>以上依據 NBA 2025-26 規則書。TPBL、PLG、HBL 的比賽各有各的規則書，這裡沒有逐條比對，看那些比賽時請以各聯盟公布的規則為準。</p>
 <p>下次看到教練食指畫圈，可以問三件事：被挑戰的判決在不在那三種裡面；比賽是不是已經進入第四節或延長賽的倒數兩分鐘；挑戰是第一次還是第二次。三個答案，決定他能不能挑，也決定暫停還在不在。</p>

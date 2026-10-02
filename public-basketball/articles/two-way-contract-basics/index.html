@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -563,7 +572,7 @@ body::before {
 <p>新聞寫「某某簽下雙向合約」，讀者會接著問四件事：他能上場嗎、一支球隊可以簽幾個、薪水算不算薪資帽、什麼時候會變成正式合約。</p>
 <p>這四個問題，2023 年的 NBA 集體談判協議（下稱 2023 CBA）都有條文回答。這篇的判斷是：雙向合約是一張在 NBA 與 G League 之間分配球員的專用合約，2023 CBA 用四項附帶條件的限制框住它，而且轉正的選擇權在球隊手上。</p>
 <p>先把四項限制放在一張表裡。每一列的右欄，都是那項限制的條件。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>限制</th>
@@ -593,7 +602,7 @@ body::before {
 <td>簽下、收購、轉換雙向球員，都不需要 Room 或 Exception</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>讀完之後，你可以用一個假設的簽約日，自己算出雙向球員當季的 Active List 場數上限，再判斷他能不能打季後賽。</p>
 <h2>雙向合約不是 G League 合約，也不是縮小版的標準合約</h2>
 <p>「他簽了雙向合約」很容易被讀成兩種意思：他是 G League 球員，或者他是 NBA 球員的預備版。2023 CBA 條文的定義兩種都不是。</p>
@@ -635,7 +644,7 @@ body::before {
 <p>薪資帽的部分，條文寫得很清楚：雙向球員的薪水不計入 Team Salary，球隊簽下、收購或轉換一名雙向球員，不需要 Room，也不需要 Exception。「Room」與「Exception」是什麼，可以先看本站的<a href="/articles/salary-cap-basics/">薪資帽入門</a>。</p>
 <h2>雙向合約有年限、簽約截止日、球員年資與同隊年數四項規定</h2>
 <p>2023 CBA 條文對誰能簽、能簽多久，也有規定，逐項列出：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -660,7 +669,7 @@ body::before {
 <td>不得使球員在同一支 NBA 球隊的雙向合約下，橫跨超過 3 個 Salary Cap Year</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>另有一項限制管交易：2023 CBA 條文規定，簽雙向合約的球員，在簽約之後 30 天內不得被交易。</p>
 <h2>常見問題</h2>
 <h3>雙向合約的球員可以打季後賽嗎？</h3>

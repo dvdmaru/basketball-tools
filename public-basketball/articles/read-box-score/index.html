@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>這篇文章拿一張真實的 NBA 表當例子，再用假設數字讓你自己算一次。讀完之後，你應該能把一名球員的 PTS 拆回投籃與罰球、看出 +/- 不是個人得分，也知道 FIBA 手冊裡的助攻細則不能直接當成 NBA 的規定。</p>
 <h2>投籃出手 12 次只得 6 分，要怎麼算出來？</h2>
 <p>2025 年 10 月 21 日，NBA 2025-26 例行賽 OKC 對 HOU 一路打到第二個延長賽（2OT）。nba.com 這場比賽的 box score 頁面上，OKC 的 L. Dort 這一行是這樣：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>欄位</th>
@@ -594,7 +603,7 @@ body::before {
 <td>得分</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>出手 12 次，只得 6 分，看起來不太對勁。拆開來算就清楚了。</p>
 <p>NBA 2025-26 規則書（Rule No. 5 Section I，計分）規定：界內的兩分球算 2 分，三分線外的投籃算 3 分，罰球算 1 分。這場 Dort 的 3PM 是 0，所以 2 個進球都是兩分球，得 4 分。2 次罰球全進，再加 2 分。4 加 2 等於 6，和 PTS 欄一致。</p>
 <p>把它寫成算式，就是 PTS ＝ 2 × FGM ＋ 3PM ＋ FTM。為什麼 3PM 只加一次？因為 NBA 詞彙表（NBA Stats Glossary）的 FGM 定義包含兩分球與三分球，每一顆三分球已經在 2 × FGM 裡算了 2 分，還差 1 分，所以再補一次 3PM。這條算式是由規則書的計分值與詞彙表的欄位定義推出來的，不是官方公式的原文；此場 Dort 的數字驗算得起來。</p>
@@ -619,7 +628,7 @@ body::before {
 <p>這兩個數字沒有互相取代的關係。PTS 回答「他自己得了幾分」，+/- 回答「他在場時，球隊和對手的分差是多少」。要注意的是，+/- 混進了場上其他四位隊友與五位對手的表現，單看它，分不出那個分差有多少是他造成的，這是欄位定義本身的限制。</p>
 <h2>AST、REB、STL、BLK、TOV 各記一種事件，詞彙表只給一句定義</h2>
 <p>除了得分與投籃，其他欄位各記一種事件。NBA 詞彙表對每一欄都只有一句話的定義：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>欄位</th>
@@ -656,7 +665,7 @@ body::before {
 <td>球員或球隊犯的個人犯規數</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>有一個關係可以自己驗證。REB 是 OREB 與 DREB 的總和：這場 Dort 的 OREB 是 2、DREB 是 4，REB 是 6，2 加 4 等於 6，nba.com 這場 box score 頁面上三個數字對得上。</p>
 <p>各欄記的是不同事件，數字之間不需要互相對應。STL 記的是防守方的動作，TOV 記的是進攻方的失誤。NBA 詞彙表把抄截寫成「奪球並造成失誤」，卻沒有寫每一次失誤都來自抄截，所以一隊的 TOV 不等於對手的 STL。</p>
 <p>PF 記的是犯規次數。犯規與違例在比賽中怎麼區分，可以看本站的<a href="/articles/violation-vs-foul/">違例與犯規有什麼不同</a>。</p>

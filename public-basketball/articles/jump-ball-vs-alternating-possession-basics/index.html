@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -573,7 +582,7 @@ body::before {
 <p>Rule 6 §I(d) 還有一句總述：任何死球之後，比賽以跳球、擲球入場或罰球恢復。這句只列出三種恢復方式，沒有指定哪種情形用哪一種；哪些情形用跳球，要看後面幾條各自列出的清單。</p>
 <h2>Rule 6 §V 十款在中圈由任兩位對手跳球</h2>
 <p>NBA 2025-26 規則書 Rule 6 §V(a) 的引言是：球在中圈由任兩位對手跳球而進入比賽，情形共十款。其中第 (4)、(8)、(9) 款使用 loose ball 一詞，本文保留英文原詞。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -622,12 +631,12 @@ body::before {
 <td>裁判不確定球出界前最後是哪隊碰到，且球員無法辨認</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>兩個細節要讀仔細。第一，(8) 有括號例外：Rule 4 §XIV 寫，哨響當下若某一隊「clearly and conclusively」（明確且決定性地）即將取得球，該隊獲判球權。括號內的情形，依該例外處理。第二，(10) 有兩個條件並列，寫的是裁判不確定，而且球員無法辨認。</p>
 <p>Rule 6 §V(b) 再補兩句：以上各款，跳球在比賽中的任兩位對手之間；若因受傷、驅逐或取消資格需要換人，替補球員不得參加跳球。</p>
 <h2>Rule 6 §VI 三款在最近的圈，由涉事的兩位球員跳球</h2>
 <p>NBA 2025-26 規則書 Rule 6 §VI(a) 是另一張清單：球在離發生地點最近的圈以跳球開始，情形有三款。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -648,13 +657,13 @@ body::before {
 <td>裁判不確定最後是誰碰球</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Rule 6 §VI(b) 第一句寫：這類跳球在涉事的兩位球員之間，除非受傷或驅逐使其中一人無法參加。</p>
 <p>和 §V 並列來看，兩張清單各自寫了自己的地點與跳球的人：§V 是中圈、任兩位對手；§VI 是離發生地點最近的圈、涉事兩人。</p>
 <p>held ball 在 Rule 4 §VII 有定義：兩位對手一手或雙手牢牢按住球，或是防守球員碰球，使進攻球員落地後構成走步（traveling）的情形。同一條的第二段補了時機：兩位球員的手要牢牢按在球上，到任何一方都無法在沒有過度粗暴（undue roughness）的情況下取得單獨控球，才應該判 held ball。</p>
 <h2>其他條文也把情形導向跳球，地點與跳球的人各寫各的</h2>
 <p>除了 Rule 6，本文另外整理了 NBA 2025-26 規則書裡五處寫到以跳球恢復比賽的條文。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>條文</th>
@@ -689,7 +698,7 @@ body::before {
 <td>中圈，任兩位對手；括號例外同 Rule 6 §V(a)(8)（即將取得球權的一隊依 Rule 4 §XIV 獲判球權）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>同一類事件在不同條文都出現時，本文只逐字讀各處寫了什麼。例如雙方罰球違例：Rule 6 §V(a)(3) 把它列為中圈跳球的情形；Rule 9 §I(a) 的 PENALTY 段對「該次罰球後球仍在比賽中」的雙方違例也寫了跳球，地點寫的是 midcourt。兩處各讀各的，不互相改寫。</p>
 <p>跳球之後的計時，站內已有兩篇可以接著讀。<a href="/articles/shot-clock-reset-basics/">進攻時間重設一文</a>，寫到：Rule 7 §IV(c)(4) 把不是防守方造成持球的跳球列在重設成 24 秒的清單，§IV(b)(6) 把防守方造成持球的跳球列在不重設的清單。<a href="/articles/eight-second-backcourt-basics/">八秒違例一文</a>，則把「球隊在後場取得跳球控制權」歸在 Rule 10 §VIII EXCEPTION (2)，給新的 8 秒。出界的判決要怎麼用挑戰推翻，<a href="/articles/coachs-challenge-basics/">教練挑戰一文</a>，寫到：成功結果之一是兩隊同時末次觸球的跳球，而且要有明確且決定性的影像證據。</p>
 <h2>NBA 2025-26 規則書全文文字檔搜尋 alternating possession 與 possession arrow，都沒有結果</h2>
@@ -702,7 +711,7 @@ body::before {
 <p>兩個名詞的定義都在 Article 12。12.1.1 寫：跳球是裁判在任意兩位對手之間拋球。12.5 寫：交替擁有是讓球變成活球的一種方法，用擲球入場，而不是跳球（"Alternating possession is a method of causing the ball to become live with a throw-in rather than a jump ball."）。FIBA 的 held ball 定義在 12.1.2：對立球隊的一位或多位球員，一手或雙手牢牢按住球，使任何一位球員都無法在沒有過度粗暴的情況下取得控制。</p>
 <h2>FIBA 2024 版 Article 12.4 列出七款「跳球情況」</h2>
 <p>Article 12.4 的引言是「A jump ball situation occurs when:」，接著列出七款。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -739,7 +748,7 @@ body::before {
 <td>第一節以外的各節，以及所有加時，要開始的時候</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>幾個限定詞不能省。第三款只寫「最後一次罰球未進」，第四款有兩個例外，第六款要三個條件同時成立。第七款則呼應前一節的 Article 46.5：第一節以外的各節與加時開始，屬於跳球情況，依 Article 12.6 處理。</p>
 <p>跳球程序本身如果有違例，Article 12.3 寫：球判給對手，在離違例最近處擲球入場，籃板正後方除外。這條處罰針對的是 Article 12.2 所列的跳球程序違例（12.2.1、12.2.4、12.2.5、12.2.6、12.2.8）。</p>
 <h2>FIBA 2024 版 Article 12.6.1 寫明所有跳球情況由兩隊輪流取得球權</h2>
@@ -755,7 +764,7 @@ body::before {
 <p>違例與犯規在這裡的結果不同：違例失去這次，犯規（在上面兩個時點）不失去。</p>
 <h2>兩份規則書並排：格內只放各自條文寫的內容</h2>
 <p>下表兩欄各自摘要各自的條文，同一列的兩格只是並排，不代表兩條互相對應。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>NBA 2025-26 規則書</th>
@@ -784,7 +793,7 @@ body::before {
 <td>Article 12.6.4 至 12.6.6：箭頭、違例失去這次、犯規在特定時點不失去</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>自己判判看：六個假設情境</h2>
 <p>下面六個情境都是<strong>假設</strong>，不是規則書的範例，也不指任何一場比賽。每一題先想想答案，再看後面的條文。</p>
 <p><strong>假設一（NBA 2025-26）：</strong> 比賽進行中，球沒有任何一隊控制，甲隊與乙隊球員同時犯規（假設這屬於 loose ball 期間）。</p>

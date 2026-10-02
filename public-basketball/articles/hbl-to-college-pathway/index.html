@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -578,7 +587,7 @@ body::before {
 <h2>大學轉學考試加分，走的是 UBA 之後的路，不是 HBL 球員的直接路徑</h2>
 <p>H0120004 第 20 條另外規定了大學轉學考試的加分辦法，最高不逾總分 10%。其中一項適用條件是「代表學校參加大專校院運動聯賽，獲得最優級組前六名」——這裡的「大專校院運動聯賽」指的是大專籃球聯賽（UBA），不是 HBL。這一條銜接的是已經升上大學、以大專球員身分報考轉學考的加分依據，跟還在念高中的 HBL 球員沒有直接關係。</p>
 <p>換句話說，這條路徑是「先升大學、打 UBA，之後再用轉學考加分」的路，不是 HBL 球員高三畢業當下能直接使用的條款。把四條路徑放在一起看，才看得出升學制度其實是分階段的：甄審、甄試對應的是高中階段的升學，轉學考加分對應的是已在大學就讀之後的另一段路。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>方式</th>
@@ -613,7 +622,7 @@ body::before {
 <td>適用對象是已升大學打 UBA 的球員，不是 HBL 在學球員的直接路徑</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>進 TPBL 選秀，看的是「打過甲級預賽」，不是名次或獎項</h2>
 <p>升學資格談完，另一個常被混在一起問的問題是：打過 HBL 甲級，是不是就代表能參加職籃選秀？答案要拆開看，因為這是完全獨立的一套規則。</p>
 <p>以 2026 屆 TPBL 新人選秀會公告為準，資格條件之一是「曾參加 HBL 高中甲級籃球聯賽預賽者」。這一句話的門檻是「打過預賽」這個參賽經驗，沒有要求名次、沒有要求獎項，跟前面談的甲級最優級組前八名是兩回事——一個人不必打進甲級前八名，只要參加過甲級預賽，就符合這項選秀資格條件。年齡門檻另外規定：一般球員應於 2026 年 12 月 31 日前年滿 19 歲；若是 UBA 在學學生，則應於 2026 年 8 月 31 日前年滿 21 歲，或完成大學三年級以上學業。這是 2026 屆的公告內容，逐年選秀公告可能調整條件與年齡門檻，查證當屆最新公告以官方公告為準。</p>

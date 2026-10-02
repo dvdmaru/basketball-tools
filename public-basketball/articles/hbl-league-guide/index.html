@@ -446,6 +446,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -460,7 +466,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -568,7 +577,7 @@ body::before {
 <p>114 學年度男子組共有 37 支隊伍參賽，女子組則有 16 隊，參賽規模的落差反映出男子組報名學校的基數遠大於女子組。</p>
 <p>男子組賽制為資格賽、預賽（16 強）、複賽（12 強）、準決賽（8 強）、總決賽，比女子組多了一輪關卡；女子組賽制則是資格賽、預賽、複賽、總決賽。換句話說，同樣要打進四強，男子組球隊得多過一關準決賽，女子組球隊則是複賽打完就直接進入總決賽週。這樣的差異跟前面提到的參賽規模有關，男子組 37 隊的基數遠大於女子組 16 隊，賽制多設一輪關卡，也等於是讓男子組有更長的淘汰過程來篩選出最後站上小巨蛋的隊伍。</p>
 <p>賽程走的是全台巡迴模式，不同階段的比賽落在不同城市的場館，而不是固定在單一地點打完整季。114 學年度的時間軸大致如下。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>階段</th>
@@ -603,13 +612,13 @@ body::before {
 <td>台北小巨蛋</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>從這張時間軸可以看出，HBL 一個學年度的賽程橫跨秋、冬、春三季，從 10 月中一路打到隔年 3 月下旬，全台巡迴的安排也讓不同地區的球迷都有機會在主場看到甲級強權出賽，最後才收斂到台北小巨蛋的決賽週。整個賽季前後歷時超過五個月，比賽場館從桃園、高雄、屏東一路換到新莊，直到最後兩天才固定在台北小巨蛋，這種階段性換場地的安排，也讓 HBL 跟大部分固定主客場制的職業聯賽有明顯不同的樣貌。對球迷來說，這也代表想跟上完整賽季，得留意賽事在不同城市之間移動的節奏，而不是像職業聯賽那樣天天守著同一座主場館。</p>
 <h2>114 學年度戰報：松山二連霸、陽明終結北一女三連霸</h2>
 <p>男子組方面，松山高中在冠軍戰以 87 比 71 擊敗南湖高中，完成二連霸，也是隊史第 8 座冠軍，追平隊史最多冠軍紀錄。冠軍戰 MVP 由松山高中的劉廷寬拿下，該役他攻下 26 分。季軍戰則由東泰高中以 68 比 63 擊敗能仁家商，取得四強第 3 名。松山高中這座冠軍的意義不只是二連霸本身，隊史累積冠軍數來到第 8 座，追平隊史最多冠軍的紀錄，等於在近兩個學年度把自己重新推回男子組最有分量的傳統強權之列。</p>
 <p>女子組方面，陽明高中在冠軍戰以 61 比 53 擊敗北一女中，終結了北一女中原本的三連霸，同時也是陽明高中的校史首冠；執教近 30 年的教練李台英，也在這一役首度率隊拿下冠軍。女子組 MVP 由陽明高中的蘇衡拿下，該役她繳出 20 分、10 籃板的成績。季軍戰由永仁高中以 83 比 82 險勝南山高中，拿下四強第 3 名。對陽明高中來說，這座冠軍同時具備兩層意義：一是終結對手的三連霸，二是寫下自己隊史從未有過的首座冠軍，而執教近 30 年才等到這一冠的李台英教練，這場勝利對球隊教練團而言也是長年累積後的第一次突破。</p>
 <p>以下是 114 學年度男女子組四強完整名次，詳細賽況可見 <a href="/hbl/">/hbl/</a>。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>名次</th>
@@ -649,11 +658,11 @@ body::before {
 <td>－</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>把這份四強名次放進歷史脈絡來看，松山高中的二連霸讓球隊追平隊史最多冠軍紀錄，是男子組近兩個學年度的絕對主角；女子組的變化則更明顯，長期稱霸的北一女中三連霸被終結，陽明高中拿下的是校史第一座冠軍，執教多年的教練生涯也在這個學年度迎來第一座獎盃。</p>
 <h2>歷屆冠軍榜：106 學年度起</h2>
 <p>HBL 官方公開賽果資料庫目前可回溯的區間，僅到 106 學年度為止，在此之前的冠軍紀錄不在本文討論範圍內。以下是 106 學年度至 114 學年度、男女子組冠軍的完整紀錄。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>學年度</th>
@@ -708,7 +717,7 @@ body::before {
 <td>陽明高中</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>把這張表格從頭看到尾，幾條脈絡相當清楚。女子組方面，淡水商工在 108 學年度到 111 學年度連續四個學年度封王，是這張表格裡最長的連霸紀錄；北一女中接棒在 112、113 兩個學年度稱霸，直到 114 學年度才被陽明高中終結。男子組方面，能仁家商在 107、108 學年度二連霸，光復高中在 110、111 學年度二連霸，松山高中則是在 113、114 學年度完成本文開頭提到的二連霸，並追平隊史最多冠軍紀錄。整體來看，這九個學年度裡，男子組冠軍出現過松山高中、能仁家商、泰山高中、光復高中、南山高中共五支不同球隊，女子組冠軍則出現過普門中學、南山高中、淡水商工、北一女中、陽明高中共五支不同球隊，兩組都不是單一球隊長期壟斷，而是幾支強權輪流稱霸、偶爾出現連霸期的格局。需要提醒的是，這張表格反映的是官方資料庫可回溯的九個學年度，並不代表 HBL 自 1988 年開辦以來的完整冠軍史，讀者若要查詢更早期的紀錄，需要透過其他管道確認。</p>
 <h2>小巨蛋決賽文化</h2>
 <p>自 103 學年度重返台北小巨蛋以來，近年 HBL 男女子組的決賽週都在這裡舉行；114 學年度的四強與冠軍戰，就是在 3 月 21 日至 22 日於小巨蛋登場。門票方面，114 學年度採兩種方式：3 月 21 日的四強賽透過 ibon 索票、3 月 22 日的男女冠軍戰採售票（票價 100 至 500 元）；依高中體總公告，售票場次不開放現場候補，其餘場次維持開放現場候補入場。至於實際到場觀眾人數，官方並未公布具體數字，本文也不做推估。</p>

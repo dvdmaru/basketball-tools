@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -578,7 +587,7 @@ body::before {
 <h2>兩隊同勝率先比彼此對戰成績，三隊以上同勝率先看分組冠軍</h2>
 <p>官方比序原文是英文。分組冠軍在頁面上寫 Division winner；得失分差寫 point differential，意思是對所有對手的總得分減去總失分。下表的「同區」，指同一個 Conference（東區或西區）。</p>
 <p>NBA 官方戰績頁（2025-26 賽季頁面）所載的兩份清單，依順位並排：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>順位</th>
@@ -623,7 +632,7 @@ body::before {
 <td>（沒有這一條）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表中的「季後賽資格隊」，頁面寫明包含例行賽結束時並列前 10 名的球隊。分組冠軍這一條，頁面寫明不論並列的隊是否在同一個分組都適用。</p>
 <p>兩份清單的差別有兩處。第一，前兩條互換：兩隊並列先比對戰勝率，再看分組冠軍；三隊以上並列，先看分組冠軍，再比並列各隊彼此之間的勝率。第二，兩隊清單有 7 條，三隊以上清單只有 6 條，少了「對另一區季後賽資格隊的勝率」。</p>
 <p>2017 年的 NBA 官方比序 PDF 也分成兩份清單，順序與上表一致：兩隊清單的第 1、2 條，是彼此對戰勝率與分組領先者（Division leader）；三隊以上清單的第 1 條，是分組領先者。</p>

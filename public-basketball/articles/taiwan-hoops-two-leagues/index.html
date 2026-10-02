@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <h2>合併談判時間軸：從「7＋3」合作案到破局</h2>
 <p>兩聯盟並立最受矚目的一段歷史，發生在 2025 年 7 月。當時外界普遍期待兩聯盟能整併為單一體系，據《關鍵評論網》報導，雙方一度宣布了名為「7＋3」的合作構想，也就是先以現有 7 隊加 3 隊的架構展開合作，再朝合併方向推進。然而這個構想維持不到十天就生變，據《ETtoday》報導，TPBL 隨後取消了合作案，改口表示只談合併、不談合作；再過幾天，據中央社報導，TPBL 於 7 月 31 日正式宣布停止合併討論，改為專心籌備自家的 2025-26 賽季。這一連串反覆，讓原本外界期待的「兩聯盟合一」設想在短短兩週內徹底告吹，兩聯盟自此各走各的路。</p>
 <p>以下用時間軸整理這段過程，以及後續延伸出的關鍵事件：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -611,13 +620,13 @@ body::before {
 <td>TPBL 舉行選秀，狀元賀丹加盟高雄全家海神</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張時間軸把合併破局前後的幾件大事放在一起看：球隊解散與新軍加盟（高雄鋼鐵人解散、洋基工程遞補）、EASL 參賽名單、籃球協會理事長改選，以及兩聯盟各自的選秀。這些事件在時間上接連發生；彼此之間有沒有因果關係，本文不做推斷，僅按時間順序陳列。特別是從 7 月 16 日宣布合作、到 7 月 31 日確定破局，前後只花了 15 天；也因為破局發生在 2025-26 賽季開打之前，兩聯盟才得以各自完整走完一整個賽季，沒有出現賽程中途生變的狀況。截至 2026 年 7 月，雙方都沒有再公開釋出重啟合併談判的訊息，兩聯盟並立已經是維持超過一年的現況，而非短期過渡。</p>
 <h2>TPBL 是什麼：7 支球隊、福爾摩沙夢想家隊史首冠</h2>
 <p>TPBL（台灣職籃）目前由 7 支球隊組成，分別是新北國王、福爾摩沙夢想家、高雄全家海神、臺北台新戰神、桃園台啤永豐雲豹、新北中信特攻、新竹御嵿攻城獅。要提醒讀者的是，這些隊名當中有不少包含冠名贊助商（例如台新、台啤永豐、中信、全家、御嵿），而冠名贊助逐季都可能因合約到期而變動，因此認識球隊時，建議以「城市＋核心隊名」作為記憶骨幹，冠名部分則留意每季公告即可。</p>
 <p>TPBL 的 2025-26 賽季例行賽採 126 場制，賽季結束後由福爾摩沙夢想家在總冠軍賽以 4 比 3 擊敗新北國王，拿下隊史第一座冠軍；這次冠軍賽於 2026 年 5 月 24 日開打、6 月 6 日結束。福爾摩沙夢想家在例行賽戰績其實只排名第二，最終仍靠季後賽拿下隊史首冠。</p>
 <p>TPBL 2025-26 賽季例行賽最終排名如下：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>排名</th>
@@ -686,13 +695,13 @@ body::before {
 <td>14</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>例行賽戰績第一的桃園台啤永豐雲豹最終並未拿下總冠軍，反而是排名第二的福爾摩沙夢想家在季後賽逆勢奪冠，這也說明 TPBL 的季後賽門檻與淘汰制度，本身就足以左右最終誰能捧起獎盃，例行賽排名高低不必然等於總冠軍賽的最終結果。TPBL 完整戰績可對照 <a href="/tw/">/tw/</a> 查詢。</p>
 <h2>PLG 是什麼：4 支球隊、桃園璞園領航猿二連霸</h2>
 <p>P. LEAGUE+（PLG）目前由 4 支球隊組成：桃園璞園領航猿、臺北富邦勇士、台鋼獵鷹（主場設於台南成功大學中正堂）、洋基工程。其中洋基工程是 2025 年 8 月才加盟的新軍，用來補上高雄鋼鐵人解散後留下的名額，讓 PLG 維持 4 隊規模運作。</p>
 <p>同樣提醒讀者，PLG 隊名中的璞園、富邦、台鋼、洋基工程等，也都涉及母企業或冠名贊助，未來若贊助關係異動，隊名同樣可能調整，閱讀戰績資料時仍建議以城市與核心隊名為主要辨識依據。</p>
 <p>PLG 2025-26 賽季例行賽最終排名如下：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>排名</th>
@@ -737,7 +746,7 @@ body::before {
 <td>17</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>桃園璞園領航猿以 21 勝 3 敗的懸殊戰績稱霸例行賽，總冠軍賽再以 4 比 3 擊敗臺北富邦勇士，完成隊史二連霸；這次冠軍賽於 2026 年 6 月 5 日開打、6 月 18 日結束。相較於 TPBL 例行賽第一未能拿下總冠軍，PLG 的桃園璞園領航猿則是從例行賽到季後賽全程保持優勢地位。PLG 完整戰績同樣可對照 <a href="/tw/">/tw/</a> 查詢。</p>
 <h2>兩聯盟並立的實際影響：EASL 參賽權、選秀各辦、籃協改選</h2>
 <p>兩聯盟並立不只是「兩套賽程各自跑」這麼單純，實際上已經延伸出幾個具體的爭議與後續效應，以下只陳述已發生的事實與各方公開說法，不對誰是誰非做評斷。</p>

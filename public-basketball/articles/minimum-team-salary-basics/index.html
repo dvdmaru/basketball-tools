@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -571,7 +580,7 @@ body::before {
 <p>所以下限跟著帽走：帽線是多少，下限就是那個數字的 90%。用一個假設數字看：假設某個 Salary Cap Year 的 Salary Cap 是 100 個單位，一般球隊的 Minimum Team Salary 就是 100 乘 0.9，等於 90 個單位。</p>
 <p>這裡的 Team Salary 是 CBA 自己定義的詞。Article I 寫的是：某個 Salary Cap Year 內，歸屬於一支球隊現役與前球員的 Salaries，加上依 Article VII 計算的其他金額，減去依 Article VII 計算的抵減金額。本文照這個定義引用，不把它換成「總薪水」這類說法。</p>
 <p>順帶一提查條文時會遇到的一個位置差：Article I 的定義款指向的是 Article VII 的 Section 2(b)，而 90% 的條文位在 §2(a)(4)(i)。兩處位置不同是文本事實；本文的數字取自 §2(a)(4)(i) 這一款本身，不對指向另作解讀。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>詞</th>
@@ -596,7 +605,7 @@ body::before {
 <td>現役與前球員的 Salaries 加其他金額，減抵減金額，均依 Article VII 計算</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>擴張球隊前兩個 Salary Cap Year，90% 乘的是縮小後的帽</h2>
 <p>Article VII §2(g) 先寫明：擴張球隊（Expansion Team）與其他球隊有相同的 Salary Cap 與 Minimum Team Salary，除了下面兩種情形。</p>
 <p>第一種，§2(g)(1)：擴張球隊開打的第一個 Salary Cap Year，Salary Cap 是依 §2(a) 算出的帽的 66-2/3%，協議稱為 First Year Expansion Team Salary Cap；它的 Minimum Team Salary 是這個縮小後的帽的 90%。</p>
@@ -628,7 +637,7 @@ body::before {
 <p>§2(c)(3) 從常規賽第一天開始起，一路到涵蓋該常規賽的 Salary Cap Year 結束，規定球隊的 Team Salary 要計入一筆金額（若有），金額由 Minimum Team Salary 與兩個 MTS Cap Hold Team Salary 的數字決定。Article VII §4(a)(8) 列 Team Salary 的計入項目時，也有一項指向 §2(c)(3)：依 Minimum Team Salary 規則計入的金額（若有）。</p>
 <p>§2(c)(4) 針對常規賽期間某日 MTS Cap Hold Team Salary 降到低於 MTS Threshold 的情形，訂了補回的期限。</p>
 <p>這兩款各有算式與觸發條件，本文不展開，也不把它們寫成 §2(c)(2) 付款的一部分。下表把 §2(c) 各款放在一起，方便對照。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次（2023 NBA CBA Article VII）</th>
@@ -678,14 +687,14 @@ body::before {
 <td>前提見下一節</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>協議不排除 Team Salary 高於 Minimum Team Salary，前提是不超過帽線加例外額度</h2>
 <p>§2(c)(8) 的原文是 "Nothing contained herein shall preclude a Team from having a Team Salary in excess of the Minimum Team Salary"，後面接著一個前提：該隊的 Team Salary 不超過 Salary Cap，加上 Article VII 所列各 Exceptions 授權的額外金額。</p>
 <p>白話說：下限是往低的一端劃線，這一款講的是高於下限的球隊沒有因此被協議排除，只要沒有超過帽線加例外額度。例外條款怎麼讓球隊薪資高過帽線，可以回頭看<a href="/articles/salary-cap-basics/">球隊薪資能超過薪資帽</a>，其中談例外條款的那一段。</p>
 <h2>練習：假設帽是 100 個單位，四支假設球隊各碰到什麼？</h2>
 <p>下面全是假設。假設 Salary Cap Year 是 2023-24 之後的某一年，依 §2(a) 算出的 Salary Cap 是 100 個單位；下表的四支球隊是虛構的，數字也是假設，條文依 2023 NBA CBA。</p>
 <p>先做兩個共同的動作：一般球隊的 Minimum Team Salary 是 100 乘 0.9，等於 90 個單位；擴張球隊第一個 Salary Cap Year 的是 100 乘 2/3 乘 0.9，等於 60 個單位。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球隊</th>
@@ -720,7 +729,7 @@ body::before {
 <td>90</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>逐隊判斷：</p>
 <ul>
 <li>甲隊：82 低於 90，§2(c)(2) 的條件成立。§2(c)(2)(i)：付給 NBA 的款項是 90 減 82，等於 8 個單位。§2(c)(2)(ii)：這假設年度在 2023-24 之後，§2(c)(7) 的 50% 例外不適用，甲隊被禁止分得 NBA 選擇分配給非繳稅球隊的稅款。</li>
