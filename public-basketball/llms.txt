@@ -15,6 +15,7 @@
 
 ## 最新文章
 
+- [TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場](https://basketball.twtools.cc/articles/tpbl-2026-27-schedule-guide/)（2026-10-02）
 - [AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同](https://basketball.twtools.cc/articles/assist-metrics-basics/)（2026-09-30）
 - [回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件](https://basketball.twtools.cc/articles/ball-returned-to-backcourt-basics/)（2026-09-30）
 - [傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者](https://basketball.twtools.cc/articles/disabled-player-exception-basics/)（2026-09-30）
@@ -24,7 +25,6 @@
 - [HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人](https://basketball.twtools.cc/articles/hbl-roster-size-basics/)（2026-09-30）
 - [HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看](https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/)（2026-09-30）
 - [HBL 分組循環賽積分相等，名次先看對戰勝負](https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/)（2026-09-30）
-- [114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關](https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/)（2026-09-30）
 
 ## 文章與更新
 
