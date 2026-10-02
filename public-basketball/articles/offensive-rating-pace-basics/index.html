@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <p>Offensive Rating 與 Defensive Rating 在中文裡常被叫做進攻效率與防守效率。那是慣用的說法，不是詞彙表的用語，這篇文章一律用官方的英文名稱與縮寫。</p>
 <h2>假設兩隊場均都是 115 分，每 100 個回合得分卻是 115.0 與 125.0</h2>
 <p>下面兩隊都是假設，不對應任何真實球隊。甲隊一場得 115 分，用了 100 個回合。乙隊同樣得 115 分，只用了 92 個回合。假設兩隊都打滿 48 分鐘，沒有延長賽。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球隊</th>
@@ -589,7 +598,7 @@ body::before {
 <td>125.0</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>算法依 NBA 詞彙表的 Offensive Rating 公式：100 乘以（得分除以回合數）。甲隊是 115 除以 100，再乘以 100，得 115.0。乙隊是 115 除以 92 等於 1.25，乘以 100，得 125.0。</p>
 <p>換成每個回合來看：甲隊每個回合拿 1.15 分，乙隊拿 1.25 分。每個回合差 0.10 分，一場 100 個回合下來，就是每 100 個回合差 10 分。</p>
 <p>節奏是另一件事。NBA 詞彙表把 Pace 定義成球隊或球員每 48 分鐘的回合數。兩隊在這個假設裡都打滿 48 分鐘，所以回合數就是 Pace：甲隊 100，乙隊 92。</p>
@@ -620,7 +629,7 @@ body::before {
 <p>想看個人投籃與罰球的得分效率，本站的<a href="/articles/true-shooting-basics/">真實命中率入門</a>處理的是那一個問題。</p>
 <h2>丙隊場均 108 分、丁隊場均 104 分，誰的 Offensive Rating 比較高？</h2>
 <p>自己算一次。下面兩隊都是假設，各自打滿 48 分鐘，沒有延長賽。假設兩隊的對手回合數，都與該隊自己的回合數相同。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球隊</th>
@@ -646,7 +655,7 @@ body::before {
 <td>80</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>題目是：兩隊的 OFFRTG、DEFRTG、NETRTG 各是多少？誰的 Pace 較高？誰的 OFFRTG 較高？</p>
 <p>步驟依 NBA 詞彙表的公式：</p>
 <ol>
@@ -656,7 +665,7 @@ body::before {
 <li>兩隊都打滿 48 分鐘，回合數就是 Pace。</li>
 </ol>
 <p>答案如下。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球隊</th>
@@ -682,7 +691,7 @@ body::before {
 <td>80</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>丙隊：108 除以 90 乘以 100 得 120.0；99 除以 90 乘以 100 得 110.0；相減得 10.0。丁隊：104 除以 80 乘以 100 得 130.0；96 除以 80 乘以 100 得 120.0；相減也是 10.0。</p>
 <p>丙隊的 Pace 較高，每 48 分鐘多 10 個回合，場均得分也多 4 分。丁隊的 OFFRTG 較高，每 100 個回合多拿 10 分，得分較少是因為回合較少。</p>
 <p>還有一個地方值得看：丙隊每場淨勝 9 分（108 減 99），丁隊每場淨勝 8 分（104 減 96），場均分差不同，NETRTG 卻同為 10.0。差別來自回合數不同：同樣是每 100 個回合多拿 10 分，回合較多的一隊，一場下來累積的分差就比較大。</p>

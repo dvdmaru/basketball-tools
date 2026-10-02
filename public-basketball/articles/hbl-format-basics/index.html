@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -576,7 +585,7 @@ body::before {
 <h2>複賽打完，女生組已經站上總決賽名單，男生組還要再打一關準決賽</h2>
 <p>複賽是男女生組賽制真正分岔的地方。男生組複賽的參賽球隊是預賽優勝球隊，計 12 隊，比賽制度採分組單循環制，後擇優外卡制，錄取名次是錄取 8 隊晉級準決賽——複賽打完，男生組還要再打一關準決賽才能決定誰進總決賽。</p>
 <p>女生組複賽的參賽球隊是預賽優勝球隊，計 8 隊，比賽制度採單循環制（賽程由本會排定之），錄取名次直接寫著 1 至 4 名晉級總決賽、5 至 8 名依本階段競賽成績判定名次。女生組的規程從複賽這一段開始，不再出現「準決賽」這三個字——複賽打完，前 4 名已經確定是晉級總決賽的隊伍，中間不再插入準決賽這一關。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>關卡</th>
@@ -606,7 +615,7 @@ body::before {
 <td>只剩總決賽一關</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>同樣要打進總決賽的四強，男生組隊伍得先在複賽錄取的 8 隊裡，再打贏準決賽這一關；女生組隊伍複賽打完，前 4 名已經是總決賽的參賽隊伍，不用再多打一輪。這也是為什麼看 HBL 賽程表時，男生組跟女生組的階段名稱雖然大部分相同，賽程長度卻不一樣。</p>
 <h2>準決賽只設在男生組，規程沒寫為什麼</h2>
 <p>準決賽這一關，規程原文只有男生組的段落，沒有女生組的對應內容：參加球隊是「男生組複賽優勝球隊，計 8 隊」，比賽制度採單循環制（賽程由本會排定之），錄取名次是 1 至 4 名晉級總決賽、5 至 8 名依本階段競賽成績判定名次。這一段從標題到內容都只提男生組，女生組的賽制規則跳過這一關，直接從複賽銜接到總決賽。</p>

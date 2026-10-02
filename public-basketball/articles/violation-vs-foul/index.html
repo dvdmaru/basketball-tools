@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -567,7 +576,7 @@ body::before {
 <p>走步（Traveling）的定義也寫在規則書裡。NBA 2025-26 規則書把它定義為持球時朝任何方向移動，超過規定的範圍。FIBA 2024 規則的說法相近：持著活球在場上時，一腳或雙腳的非法移動超過該條規定的範圍。</p>
 <p>24 秒也是違例，但它不在 Rule 10。NBA 2025-26 規則書把它放在 Rule 7，規定持球隊必須在 24 秒內出手。時間內沒有出手，就會被判 shot clock violation，球權給對方，在就近的邊線發球，位置同樣不得比罰球線延伸更靠近底線。這是一般規定，同一節另有各種例外，例如死球時鐘為 0 的情形。FIBA 2024 規則同樣要求球隊在 24 秒內出手。</p>
 <p>踢球要看是不是故意。NBA 2025-26 規則書規定，用腳或腿的任何部位踢球或擊球，只有在故意的時候才是違例。進攻方踢球的罰則，也是球權給對方。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>違例</th>
@@ -602,7 +611,7 @@ body::before {
 <td>對手在離違例地點就近處擲球入界，除非規則另有規定</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>FIBA 2024 規則對違例的定義只有一句：違例是對規則的違反（an infraction of the rules）。它的一般罰則是把球權給對手擲球入界，但原文接著寫了「除非規則另有規定」。這句限定，後面會用到。</p>
 <h2>犯規記在人身上：個人犯規登記給犯規者，防守方造成的另記進全隊</h2>
 <p>犯規處理的是另一類事：對手之間的接觸與行為。NBA 2025-26 規則書 Rule 12B 規定，球員不得抓住、推、撞，也不得伸出手、手臂、腿或膝蓋，或把身體彎成不正常的姿勢，來妨礙對手的前進。</p>
@@ -612,7 +621,7 @@ body::before {
 <p>假設防守球員 A 在球成為活球之後，用手臂推開運球的進攻球員 B。依 NBA 2025-26 規則書，這是 A 的個人犯規，A 的名下多一次，A 的球隊另記一次全隊犯規。比賽結束後，個人犯規會出現在 box score 的 PF 欄，讀法見<a href="/articles/read-box-score/">怎麼讀 box score</a>。擋人者站定之後又朝對手移動、造成非法接觸，也可能被判擋人犯規，條件見<a href="/articles/pick-and-roll-explained/">擋拆是什麼</a>那一篇。</p>
 <h2>犯規不等於罰球：要看投籃動作與全隊犯規累計</h2>
 <p>犯規不會自動變成罰球。兩份規則書都把罰球寫成有條件的。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>情況</th>
@@ -657,7 +666,7 @@ body::before {
 <td>FIBA 2024</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>NBA 2025-26 規則書的邏輯，可以用一個假設數字讀一次。假設某隊本節已經累計四次全隊犯規，第五次一般犯規發生時，被犯規的進攻球員不在投籃動作中。這時該隊已經超過四次，NBA 2025-26 規則書的處理是一次罰球，外加一次懲罰罰球。如果該隊本節只累計到三次，這次犯規讓它達到四次，仍在四次以內，處理是邊線發球。</p>
 <p>FIBA 2024 規則對全隊犯規的定義更寬：球員的個人、技術、違反運動精神或取消資格犯規，都算全隊犯規。一節內累計四次之後，該隊就進入全隊犯規罰球狀態。</p>
 <h2>兩種哨聲，裁判要報的內容不同；同時發生時，NBA 判犯規優先</h2>
@@ -673,7 +682,7 @@ body::before {
 <p>往支持的方向看，這是兩處互相對得上的條文：Rule 10 說防守三秒的罰則是技術犯規，Rule 12A 又把它列進技術犯規。往限制的方向看，這一節的例子只有防守三秒與延誤比賽兩處。其他違例的罰則，要各條各看。</p>
 <h2>個人犯規離場：NBA 是第六次，FIBA 是第五次</h2>
 <p>兩個聯盟的數字不同，混在一起會讀錯。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -698,7 +707,7 @@ body::before {
 <td>對手獲得一次罰球</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>FIBA 2024 規則裡，球員的技術犯規記為球員犯規，所以也計入球員的離場次數與全隊犯規。這個計入方式，不能直接套在 NBA 上。NBA 技術犯規如何計入全隊犯規，不在這篇的範圍內。</p>
 <h2>聽到哨聲時，怎麼判違例或犯規？</h2>
 <p>把上面整理成三個問題，依序問：</p>

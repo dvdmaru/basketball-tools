@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>看比賽時會聽到「教練還剩幾個暫停」。這個問法在中文裡很自然，但它是中文慣稱，不是規則書用語：NBA 規則書寫的是 charged timeouts，FIBA 規則書寫的是 time-outs。更要緊的是，兩套規則算這筆帳的方式不同。這篇文章先把兩邊的配額各自列出來，再看誰能請求、什麼時候批准、一次多長，接著用標明「假設」的情境讓你自己判一次。</p>
 <h2>NBA 2025-26 規則書：例行比賽 7 次，第四節另有兩道上限，加時每隊 2 次</h2>
 <p>NBA 2025-26 規則書 Rule 5 Section VI 把配額拆成幾款，每一款各自寫在條文裡。下面的表把它們分開列，每一列都是規則書原句的意思：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款項</th>
@@ -594,12 +603,12 @@ body::before {
 <td>加時每隊 2 次 team timeouts</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這四列各是一款。照這條文的結構看，「7 次」是整個例行比賽的總數，第四節的 4 次與後段的 2 次是疊在總數上的另外兩道上限，加時則另起一個數字。本文查閱的 NBA 規則書 Section VI (a)、(b) 兩款，只有例行比賽總數、第四節上限、後段上限與加時次數，沒有出現上半場、下半場各自配額的字樣。</p>
 <p>第四節的兩道上限彼此不同：第一道是整節不超過 4 次，第二道是從較晚的那個時點起不超過 2 次。兩道上限各自寫在 Section VI (a)，規則書沒有把它們合併成一個數字。</p>
 <h2>FIBA 2024 版：上半場 2 次、下半場 3 次、每次加時 1 次，未用完不能帶走</h2>
 <p>FIBA 2024 版 Article 18.2.5 把配額按比賽的段落分開寫，逐項列出每隊可以獲批的次數：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>段落</th>
@@ -620,7 +629,7 @@ body::before {
 <td>每隊 1 次</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>下半場那一列的限定條件不能丟：3 次是下半場整段的配額，「2 次」是其中在第四節剩 2:00 或以內能用的上限，兩個數字說的是不同的事。</p>
 <p>Article 18.2.6 接著寫了一條規定：「Unused time-outs may not be carried over to the next half or overtime.」意思是未用完的暫停，不得帶到下一個半場或加時。按 FIBA 2024 版的寫法，上半場只用了 1 次，剩下的 1 次不會加到下半場的 3 次裡。</p>
 <p>FIBA 2024 版 Article 18 逐款列出的配額，只有上半場、下半場與每次加時這三種；本文查閱的 Article 18.2.5 沒有讀到全場合計次數的款項。</p>

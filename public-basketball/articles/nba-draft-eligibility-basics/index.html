@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -571,7 +580,7 @@ body::before {
 <p>§1(b)(i) 的第一項是年齡。依 2023 NBA CBA §1(b)(i)(A)，球員要在選秀舉行的那個曆年之內年滿 19 歲（原文是 is or will be at least nineteen years of age during the calendar year in which the Draft is held）。條文用的是「曆年」，寫成 is or will be，代表看的是選秀當年內有沒有滿 19，不是選秀那一天的年紀。</p>
 <p>第二項是高中畢業後過一個賽季。依 2023 NBA CBA §1(b)(i)(B)，對於不是「international player」的球員，自高中畢業起，至少要已過一個 NBA 賽季（at least one NBA Season has elapsed since the player's graduation from high school）。同一句的括號另有一個分支：球員如果沒有從高中畢業，改自「他首次就讀高中時、或最後就讀高中時所屬年級本來會畢業的那一班」的畢業時點起算，取兩者中較晚者。「international player」的定義在後面另有一節說明。</p>
 <p>所以基本門檻可以整理成一張小表：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -591,11 +600,11 @@ body::before {
 <td>非 international player 的球員，自高中畢業起至少已過一個 NBA 賽季（未高中畢業者另有起算方式）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>第二項的條文寫明對象是「not an international player」的球員；第一項的引句裡沒有這樣的限定語。本文的讀法是：從條文字面看，年齡要求沒有標明排除國際球員，排除國際球員的是高中畢業後一個賽季這一項。這是對條文字面的讀法，CBA 沒有另外寫一句「國際球員仍須滿足年齡要求」。</p>
 <h2>門檻之上還要再滿足七款路徑的其中一款</h2>
 <p>過了 §1(b)(i) 之後，還要在 §1(b)(ii) 的 (A) 到 (G) 七款裡至少滿足一款。依 2023 NBA CBA，七款如下，括號裡是條文款次，逐款列出，不合併：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -632,7 +641,7 @@ body::before {
 <td>以書面表達參加選秀的意願，且該書面於選秀前至少 60 天由 NBA 收到（Early Entry）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表有兩個地方值得放慢讀。第一，(C) 與 (D) 都是用「曆年」算四年，起算點是高中畢業，而 (D) 的起算點是「原本應畢業的班級」畢業的時間點。第二，(E) 與 (F) 的年齡是 22 歲，同樣看選秀當年的曆年；(E) 還多了一道時點：合約服務要在該屆選秀前的 1 月 1 日之前就已經開始。</p>
 <p>七款各自是一種資格路徑，只要滿足其中一款，加上前面的基本門檻就成立（依 2023 NBA CBA §1(b)）。</p>
 <h2>「國際球員」與「非 NBA 職業合約」在 CBA 裡各有定義</h2>

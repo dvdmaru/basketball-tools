@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -573,7 +582,7 @@ body::before {
 <p>換句話說，同一個總決賽舞台，男生組要多打一輪準決賽才能上場，女生組打完複賽就直接晉級。這是 114 學年度甲級賽制裡，男女生組安排不完全相同的地方，也是讀甲級賽程表時容易忽略的細節。</p>
 <h2>乙級怎麼打：先比縣市，再晉級全國分區複賽</h2>
 <p>乙級聯賽的路線跟甲級不一樣，第一關不是全國性的資格賽，而是各縣市自己辦的縣市預賽。114 學年度規程第 11 條第二款訂出縣市預賽的晉級名額，依報名隊數分級核給：6 隊以下核給 1 個名額，7 到 12 隊 2 個名額，13 到 18 隊 3 個名額，19 到 24 隊 4 個名額，25 隊以上 5 個名額。晉級名額給多少，看的是同一個縣市裡報名隊伍的數量，不是固定名額。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>縣市報名隊數</th>
@@ -602,7 +611,7 @@ body::before {
 <td>5 隊</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>拿這張表可以自己算一次：假設某個縣市這學年度報了 20 隊乙級球隊，落在「19～24 隊」這一格，晉級名額就是 4 隊；如果只報了 9 隊，落在「7～12 隊」，晉級名額是 2 隊。</p>
 <p>除了按隊數分級的名額，規程還有一條名額保護機制：上學年度乙級全國決賽前 8 名的學校，如果在本學年度縣市預賽拿到第 1 名（或者兩校都是上學年度前 8 名時的前兩名），不佔一般晉級名額，改由該縣市依縣市預賽成績擇優遞補，以遞補 2 隊為限。這個保護機制運作的邏輯，跟甲級「上學年度前 8 名球隊直接晉級預賽」的安排看起來有點像，但兩者分屬不同層級的條文——一個保護的是乙級縣市預賽裡的名額，一個保護的是甲級隊伍晉級預賽的資格——不是同一條規則，也不代表乙級前段班球隊因此有了通往甲級的路。規程原文沒有特別區分男女生組是否分別適用這套名額分級與保護機制。</p>
 <p>通過縣市預賽之後，乙級隊伍再晉級到全國性的分區複賽；上面提到的名額保護規則裡也直接寫到「乙級全國決賽」這個詞，顯示分區複賽之後還有一個全國層級的決賽階段，不過 114 學年度規程裡分區複賽如何對到全國決賽的完整賽程，這篇沒有整理出對照表，想確認細節可以直接查閱規程原文。</p>

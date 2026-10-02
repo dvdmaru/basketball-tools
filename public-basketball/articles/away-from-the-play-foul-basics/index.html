@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -587,7 +596,7 @@ body::before {
 <p>兩件事在條文裡各自成立：一般原則寫由被犯規球員罰，離球犯規在例外清單中，回指自己的罰則條文。本文只把兩處並列，執行者要以離球犯規自己的那一條為準。</p>
 <h2>球權跟著犯規發生的時點走：球在場內與發球出手前不同</h2>
 <p>罰球之外，還有球權。Rule 12B Section X(a) 分成兩種狀況：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>犯規發生的時點</th>
@@ -607,7 +616,7 @@ body::before {
 <td>X(a)(3)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表可以配合前面兩個入口來讀：第二個入口的犯規發生在發球出手前，看起來對應的是原發球點那一列；第一個入口的犯規若發生在球在場內時，看起來對應的是邊線那一列。這樣的對應是本文依條文結構整理的讀法，Rule 12B Section X(a)(2)(3) 是依「球在場內」和「發球出手前」這兩個時點分列，並沒有直接寫「第一入口對應第二列」。</p>
 <p>另外，一般防守犯規、沒有進入罰球狀態、球員又不在投籃動作時，Rule 12B Section I(2) 也寫了「球在中斷處邊線、不得比罰球線延伸處更靠近底線」。兩處各自有相似的文字，本文只並列，不推論兩者的關係。</p>
 <h2>離球犯規的罰球，和一般犯規的罰球規則各自獨立</h2>

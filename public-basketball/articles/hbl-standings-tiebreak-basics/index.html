@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -569,7 +578,7 @@ body::before {
 <p>沒收在制度上還有一個後果，出現在第 17 條一項下：114 學年度規程規定，參賽球隊被沒收比賽兩次，取消其未賽之賽程，而且在循環賽中已賽的結果不予計算，相關球隊的得失分也一併不予計算。這裡只點出這條制度存在，本文不展開。</p>
 <h2>甲級與乙級的哪些階段有循環賽？</h2>
 <p>名次積分適用於包含循環賽的制度，所以先看 114 學年度規程第 11 條，哪些階段寫了循環賽。整理如下（賽制寫法都是規程原文的用語；「擇優」怎麼比，規程沒有寫）：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>級別與階段（114 學年度規程）</th>
@@ -614,7 +623,7 @@ body::before {
 <td>第一輪採分組循環制，第二輪採單淘汰排名制</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表裡有兩種寫法：「分組」單循環或循環，與不分組的「單循環制」。這個差別在後面很重要，因為第 13 條三談同分判定時，寫的是「分組循環賽」。甲級五道關卡怎麼銜接，可以看<a href="/articles/hbl-format-basics/">HBL 甲級賽制五道關卡</a>；甲乙級的整體差異，可以看<a href="/articles/hbl-tier-a-vs-b/">甲級與乙級的差別</a>；乙級一路打到全國決賽的流程，可以看<a href="/articles/hbl-tier-b-road-to-finals-basics/">乙級晉級路線</a>。</p>
 <h2>分組循環賽積分相等，名次的第一步看什麼？</h2>
 <p>114 學年度規程第 13 條三的第一句是：分組循環賽中 2 隊或 2 隊以上積分相等時，以對戰勝負關係判定名次。</p>
@@ -622,7 +631,7 @@ body::before {
 <p>條文接著寫了一個進入下一層的條件：若 2 隊或 2 隊以上積分相等，且互有勝負，應進一步依照下列順序判定名次。換句話說，(一) 到 (四) 這四步，在 114 學年度規程的分組循環賽裡，是為「積分相等且互有勝負」準備的。「互有勝負」同樣是規程有用但沒有定義的詞。</p>
 <h2>積分相等又互有勝負，才會進入四步順序</h2>
 <p>進入四步順序之後，第 13 條三依序列出四個比較項目，數字大的、較高者排前面：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>順序</th>
@@ -652,7 +661,7 @@ body::before {
 <td>整個分組所有比賽的總得分</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表的「白話」欄是本文的讀法，不是規程的定義。「同組相關球隊」與「整組」，規程都沒有給定義；照 (一)(二) 的字面，本文把「同組相關球隊」讀成同分的那幾隊，「整組」讀成整個分組，若日後官方另有說明，以官方為準。「得失分差」規程也沒有定義，一般的算法是得分減失分，這是通用算法，不是規程用語。</p>
 <p>前兩步只看同分球隊彼此之間的比賽，後兩步才把範圍放大到整個分組。這是從 (一) 到 (四) 字面上看得出的結構，規程沒有說明這樣安排的理由，本文也不推測。</p>
 <h2>抽籤在四步都無法判定名次時才出現</h2>
@@ -677,7 +686,7 @@ body::before {
 <p>第一步，依第 13 條一算名次積分。甲、乙、丙各勝 2 場、敗 1 場，都是 2 × 2 加 1，等於 5 分；丁隊敗 3 場，是 3 分。丁隊積分較低，名次排在甲、乙、丙之後，不用比。甲、乙、丙 3 隊積分相等。</p>
 <p>第二步，依第 13 條三，先看對戰勝負關係。甲勝乙、乙勝丙、丙勝甲，三隊各勝一場、各敗一場。本文把這種情形當作「互有勝負」，而且要留意：三隊以上同分時對戰勝負關係怎麼判，規程沒有寫，這是本文的假設。既然互有勝負，進入四步順序。</p>
 <p>第三步，看 (一) 同組相關球隊的得失分差。依前面的讀法，只計算甲、乙、丙三隊之間的 3 場比賽：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>隊伍</th>
@@ -702,7 +711,7 @@ body::before {
 <td>8 減 3，等於 +5</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>照本文的讀法，得失分差較高者排前面，這組假設成績的名次會是丙、乙、甲、丁。三隊的得失分差都不一樣，(一) 就判完了，不需要進入 (二) 到 (四)，更不會走到抽籤。這個結果建立在本文對「互有勝負」與「同組相關球隊」的讀法上，規程沒有這兩個詞的定義，三隊以上的判法也沒有範例，實際以官方判定為準。</p>
 <p>換一組數字，就可能在 (一) 平手而進入 (二)；四步都平手，才輪到抽籤。這也是讀完本文後可以自己做的事：拿到一組同分的成績，先算名次積分，再問有沒有互有勝負，接著依序走四步。想對照 NBA 的戰績並列怎麼排，可以再看<a href="/articles/read-standings-basics/">NBA 戰績表怎麼讀</a>。</p>
 <h2>常見問題</h2>

@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>第一次認真看球賽，可能會以為這五個位置是規則書排好的座位。這篇文章要拆的就是這個印象。讀完之後，你可以自己做一件事：聽到有人說「位置模糊」，判斷他談的是資料標籤、教學分類，還是場上分工。</p>
 <h2>NBA.com 球員總表上，只有 7 種位置標籤，沒有 PG、SG、SF、PF</h2>
 <p>2026 年 9 月 25 日取得的 NBA.com 球員總表頁面（nba.com/players），內嵌資料的 POSITION 欄共有 574 筆記錄，只出現 7 種值。下表是各值的筆數，數字是那個時點的統計，不是永久設定。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>標籤</th>
@@ -609,7 +618,7 @@ body::before {
 <td>11</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>自己算一次：三個單字母標籤加起來是 486 筆，四個連字組合加起來是 88 筆，合計 574 筆。</p>
 <p>這是 NBA.com 自己的標註，不是聯盟規則。球員資料頁上的位置會隨資料更新而變，所以上表只代表 2026 年 9 月 25 日那個時點。</p>
 <h2>NBA 2025-26 規則書規定每隊五人，先發名單只交姓名與背號</h2>
@@ -621,7 +630,7 @@ body::before {
 <p>五個位置的名稱與職責，在 NBA 官方的青少年頁面 Jr. NBA 找得到。頁面標註 2015 年 9 月 23 日發表，頁尾是 © 2026。頁上的原句是："Players in a basketball game have assigned basketball positions: center, power forward, small forward, point guard, and shooting guard."</p>
 <p>這句話與上一節放在一起，有出入：NBA 2025-26 規則書沒有指派這五個位置，Jr. NBA 的頁面卻用了 assigned。這篇把它讀成 Jr. NBA 的教學說法，不當作規則。</p>
 <p>下表是 Jr. NBA 的教學說法。中文是轉述，英文是原句：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>位置</th>
@@ -656,14 +665,14 @@ body::before {
 <td>"The center is the tallest player on each team, playing near the basket."</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>讀這張表要留意三個限定。第一，兩個 usually 表示傾向，不是定義。第二，"the tallest player on each team" 是 Jr. NBA 的簡化說法，不是測量標準，這篇不把它延伸成一般事實。第三，這些職責描述都是 Jr. NBA 的說法；這篇引用的規則書沒有描述任何位置的職責。</p>
 <p>中文譯名沿用本站既有的用法：控球後衛（也簡稱控衛）、得分後衛、中鋒，大前鋒與小前鋒則寫成中文加英文原文。這些譯名只是本站的用字，不是規則書或官方資料頁的用語。看到別處把同一個位置寫成不同名稱時，回到英文原文對照，比猜中文對應可靠。</p>
 <h2>2022 年 All-NBA 還分 2 後衛、2 前鋒、1 中鋒，2025-26 賽季已經不分位置</h2>
 <p>NBA 總裁 Adam Silver 用過 positionless basketball 這個說法。2022 年 6 月 3 日 NBA.com 的報導（作者 Steve Aschburner）引述他在 Chase Center 開賽前約一小時說："We’re a league that has moved increasingly to positionless basketball."</p>
 <p>同一篇報導接著寫，當年的 All-NBA 仍照傳統選人：三個榮譽隊各有兩名後衛、兩名前鋒、一名中鋒（"two guards, two forwards and one center"）。明星賽先發的投票，也分成兩個 "backcourt" 名額與三個 "frontcourt" 名額。也就是說，總裁說出這個詞的同一篇報導裡，選人作業仍照位置分。</p>
 <p>後來的官方作業不一樣了：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -683,11 +692,11 @@ body::before {
 <td>2026 明星賽："This year, the All-Stars will be selected without regard to position."（NBA.com，2025 年 12 月 17 日開始投票的 2026 明星賽投票頁）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>中間是哪一年改的，查不到官方公告，所以只並列兩個時點。這幾段引文只顯示聯盟用過這個詞、也改了選人作業，引文本身沒有替 positionless basketball 下定義。它是描述，不是規則：NBA 2025-26 規則書與 FIBA 2026 年版規則書都找不到這個詞。</p>
 <h2>「位置模糊」談的是哪一層：資料標籤、教學分類，還是場上分工？</h2>
 <p>把前面四節攤開，同一個「位置」在不同地方是不同的東西：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>層</th>
@@ -722,7 +731,7 @@ body::before {
 <td>這篇引用的官方資料沒有描述這一層，要看比賽本身</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>「位置模糊」這句話，可能同時指這幾層。它可能是說資料標籤只有三類；可能是說某位球員的作為跟教學頁的描述不同；也可能是說場上分工在變。三件事需要不同的證據。</p>
 <p>自己判一次。以下四句都是假設的例子，不是引述：</p>
 <ol>

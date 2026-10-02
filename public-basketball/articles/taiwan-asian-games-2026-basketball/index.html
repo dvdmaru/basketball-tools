@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -574,7 +583,7 @@ body::before {
 <p>本文時間全部採台灣時間。日本時間比台灣快 1 小時。也就是說，台灣中午 12 時開打的比賽，在日本當地是下午 1 時。</p>
 <h2>台灣在 B 組的 3 場比賽集中於 4 天內完成</h2>
 <p>台灣與約旦、伊朗、卡達同在 B 組。3 場小組賽集中在 9 月 10 日到 9 月 13 日之間，中間只有 9 月 11 日沒有比賽。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>場次</th>
@@ -603,7 +612,7 @@ body::before {
 <td>12：00</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>男籃共 12 隊分 3 組。A 組是日本、南韓、沙烏地阿拉伯、印尼；C 組是中國、菲律賓、巴林、哈薩克。小組賽後的晉級規則還沒有見到官方明文，台灣打完 3 場之後會遇到誰，現在還排不出來。</p>
 <p>賽程本身已經足夠具體。台灣先打上屆亞運銀牌約旦。休兵 1 天後，早上 9 時迎戰伊朗。再隔不到 1 天，對卡達完成小組賽。</p>
 <p>3 個對手的 2026 亞運名單，截至 8 月 10 日都未見報導。哪一隊會帶最強陣容，現在沒有答案。已經發生的是：約旦的上屆銀牌、伊朗對台灣的 3 分勝差、卡達的亞洲盃名次。</p>
@@ -615,7 +624,7 @@ body::before {
 <p>3 場對手因此各有一個已知座標。約旦代表上屆亞運的淘汰經驗。伊朗代表最近一屆亞洲盃的逆轉。卡達則有同一屆亞洲盃的名次可供對照。這些座標足以說明小組賽不缺壓力，卻不足以替 4 天內的 3 場比賽預寫結局。</p>
 <h2>運動部公布的 12 人名單從 18 人培訓陣容縮減而來</h2>
 <p>運動部在 7 月 14 日公布男籃 12 人名單。總教練是義大利籍的圖齊（Gianluca Tucci），教練團成員還有盧譽誠（教練）、黃冠為（體能教練）與柯煥為（隊職員）。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>名單</th>
@@ -672,8 +681,8 @@ body::before {
 <td>曾祥鈞</td>
 </tr>
 </tbody>
-</table>
-<table>
+</table></div>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>教練團職務</th>
@@ -698,7 +707,7 @@ body::before {
 <td>柯煥為</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>6 月中旬公布的培訓名單原有 18 人。高錦瑋、陳冠全、周桂羽、譚傑龍、宋昕澔與歸化球員阿提諾沒有進入最後 12 人。兩名歸化球員候選，最後留下高柏鎧。</p>
 <p>高柏鎧是 213 公分中鋒，效力 TPBL 福爾摩沙夢想家。他在 2024 年下半年完成歸化，11 月獲 FIBA 認可代表台灣參加國際賽，並在同月對香港的亞洲盃資格賽完成國家隊首秀。媒體報導稱他為台灣隊史第 4 位歸化球員。</p>
 <p>高柏鎧的中文名在 2024 年 7 月啟動歸化時公布，「鎧」字寄託的是成為中華隊鎧甲的期待。</p>

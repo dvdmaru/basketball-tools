@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -569,7 +578,7 @@ body::before {
 <p>Replacement Player 是 CBA Art. I §1(ccc) 定義的詞。依該定義，它涵蓋兩種球員：依 Traded Player Exception 接手的球員，以及依 Disabled Player Exception 簽或接手的球員。本文只談後一種來源。</p>
 <h2>簽約版的薪資上限：傷者該季 Salary 的 50% 與 Non-Taxpayer MLE 金額，取較小者</h2>
 <p>依 2023 NBA CBA Art. VII §6(c)(1)(ii)，球隊以簽約方式使用這款例外時，Replacement Player 該 Salary Cap Year 的 Salary 與 Unlikely Bonuses 合計，上限是下面兩個金額中較小的那一個（原文是 the lesser of）：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>代號</th>
@@ -589,7 +598,7 @@ body::before {
 <td>§6(c)(1)(ii)(B)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Unlikely Bonuses 是條文使用的詞，本文不展開，只照條文把它與 Salary 並列成合計。同一款另外寫明，這份 Replacement Player 的合約可以是一個 Season（may be for one Season），並提供簽約那個 Salary Cap Year 的 Salary 與 Unlikely Bonuses。</p>
 <p>(B) 所指的 Non-Taxpayer Mid-Level Salary Exception，定義在同一節的 §6(e)。§6(e)(1) 用該 Salary Cap Year 的 Salary Cap 的百分比寫首年金額，本文不重抄百分比與金額。想看 NBA 官方新聞稿公布的 2026-27 賽季 Mid-Level 金額，可以看本站<a href="/articles/salary-cap-basics/">薪資帽入門</a>，其中 Mid-Level Exception 那一節有表。</p>
 <p>照兩個金額取較小者的結構來讀，傷者薪水較低時，50% 那個數字可能比較小；傷者薪水較高時，Non-Taxpayer MLE 金額可能比較小。這是本文對條文結構的讀法，條文本身只寫 the lesser of，文末的練習會用假設數字各算一次。</p>
@@ -598,7 +607,7 @@ body::before {
 <p>第一，被換進的 Replacement Player 必須只剩一個 Season 的合約（must have only one Season remaining on his Player Contract）。</p>
 <p>第二，Replacement Player 在被換進的那個 Salary Cap Year 的 post-assignment Salary，上限是 §6(c)(1)(ii)(A) 與 §6(c)(1)(ii)(B) 所述兩個金額中較小的那一個，兩種情形都再加 $100,000（plus, in either case, $100,000）。</p>
 <p>簽約版與交易換進版是同一款裡的兩個分項，各自有一段條文，兩者的寫法對照如下：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -618,7 +627,7 @@ body::before {
 <td>被換進者必須只剩一個 Season 的合約</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>申請期間從 7 月 1 日到 1 月 15 日，傷病由 NBA 指定的醫師認定</h2>
 <p>依 2023 NBA CBA Art. VII §6(c)(1)(i)，針對某個 Salary Cap Year 的申請，無論 Disabling Injury or Illness 何時發生，都可以在該 Salary Cap Year 的 7 月 1 日至 1 月 15 日之間任何時間提出。</p>
 <p>申請之後，傷病是否構成 Disabling Injury or Illness，依 §6(c)(4)，由 NBA 指定的醫師（a physician designated by the NBA）認定。這位醫師會審閱相關醫療資料，並在醫師認為適當時檢查球員。</p>
@@ -648,7 +657,7 @@ body::before {
 </ul>
 <h2>用假設數字算一次簽約版與交易換進版的上限，再判五個情境</h2>
 <p><strong>練習一：算額度。</strong> 下面的數字全是假設，不是任何真實球隊、球員或賽季的金額。假設某個 Salary Cap Year 的 Non-Taxpayer MLE 金額是 $14,000,000。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設情境</th>
@@ -681,10 +690,10 @@ body::before {
 <td>$4,100,000</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>逐項重算：$20,000,000 的 50% 是 $10,000,000，比 $14,000,000 小，取 $10,000,000，加 $100,000 是 $10,100,000。$40,000,000 的 50% 是 $20,000,000，比 $14,000,000 大，取 $14,000,000，加 $100,000 是 $14,100,000。$8,000,000 的 50% 是 $4,000,000，比 $14,000,000 小，取 $4,000,000，加 $100,000 是 $4,100,000。</p>
 <p><strong>練習二：判情境。</strong> 下面的球隊全是假設的甲隊、乙隊、丙隊，日期也是假設。請先自己判斷，再對照中間欄。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設情境</th>
@@ -719,7 +728,7 @@ body::before {
 <td>§6(c)(7)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>常見問題</h2>
 <h3>以簽約方式使用傷病球員例外時，Replacement Player 的薪資上限怎麼算？</h3>
 <p>依 2023 NBA CBA Art. VII §6(c)(1)(ii)，簽約版的 Replacement Player 該 Salary Cap Year 的 Salary 與 Unlikely Bonuses 合計，上限是兩個金額中較小的那一個：傷者該 Salary Cap Year 的 Salary 的 50%，或等於 Non-Taxpayer Mid-Level Salary Exception 該 Salary Cap Year 金額的數字。交易換進版另見 §6(c)(1)(iii)，是同樣兩個金額的較小者再加 $100,000，且被換進者必須只剩一個 Season 的合約。以上是 2023 CBA 的條文，CBA 修訂後以官方最新版為準。</p>

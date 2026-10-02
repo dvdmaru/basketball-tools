@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -578,7 +587,7 @@ body::before {
 <h2>FIBA 把妨礙中籃與干擾球分開編號，還多一條 NBA 沒有的技術犯規</h2>
 <p>FIBA Official Basketball Rules 2024 的 Article 31，標題就是「Goaltending and Interference」，結構上把兩者拆成獨立編號的小節：31.2.1 到 31.2.3 定義 Goaltending，31.2.4 定義 Interference。這與 NBA Rule 11 Section I 用同一份九款合併列舉的寫法不同。</p>
 <p>罰則部分，FIBA 的版本也比 NBA 更細。依 Article 31.3.3：防守方違規若發生在「最後一罰」，除了判給進攻方一分，還要額外對防守球員記一次技術犯規。NBA 2025-26 官方規則書 Rule 11 文本中，沒有找到對應的「最後一罰額外技術犯規」條款。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>比較項目</th>
@@ -608,7 +617,7 @@ body::before {
 <td>防守方違規，額外記一次技術犯規（31.3.3）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>灌籃時手碰到籃框、灌完之後抓著籃框：規則書管的是兩件事</h2>
 <p>「灌籃時手會碰到籃框，算不算違規？」這是常見的疑問。NBA 2025-26 官方規則書沒有一句話直接寫「灌籃合法」，只能從 Section I(a) 與 Section I(h) 反向推論：手碰到籃框本身，只要球不是「坐著或滾動在籃框上、把籃框當支撐」，也沒有讓籃框產生不自然震動或偏離中心位置，文本上就不落入 (a) 到 (i) 任何一款。這是反推出來的結論，規則書沒有一句話直接回答，只能從其他款反推，行文到這裡保留這層不確定。</p>
 <p>灌籃之後故意抓著籃框，是另外一件事。依 NBA 2025-26 官方規則書 Rule 12A（技術犯規）Section IV(a)：進攻球員故意掛在自己的籃框、籃網、籃板或支架上，判一次「非不運動精神」（non-unsportsmanlike）技術犯規。這是 Rule 12A 的條款，不是 Rule 11 的妨礙中籃或干擾球，兩者判準和罰則都不一樣——碰籃框當下是不是違反 Rule 11，要看球當時的狀態；灌籃完之後要不要因為抓著籃框吃技術犯規，是另一條規則管的事。</p>

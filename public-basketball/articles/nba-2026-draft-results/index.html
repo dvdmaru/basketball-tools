@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -574,7 +583,7 @@ body::before {
 <p>所以看這份名單時，同一列裡的兩個球隊名稱指的是兩件事。左邊那個負責選人，右邊那個才是球員報到的地方。有些報導習慣直接用「最後拿到球員的球隊」當敘事主詞，寫成「公鹿在第 13 順位選了 Nate Ament」，指涉的球員一樣，只是敘述慣例不同。下面的名單把兩件事拆成兩欄。</p>
 <h2>2026 NBA 選秀第一輪完整名單</h2>
 <p>第 1 到第 30 順位。「籤來自」與「籤原屬」的括號說明，是 ESPN 資料裡對該順位選秀權來源的註記。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>順位</th>
@@ -796,12 +805,12 @@ body::before {
 <td>交易至鳳凰城太陽（經紐約尼克）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>第一輪 30 個順位裡，10 個順位的球員在選秀後被交易走，另有 8 個順位的選秀權本身在選秀前就已經易主。</p>
 <p>「留在選他的球隊」的意思是 ESPN 的資料沒有替這個順位標記選後交易，不是保證球員之後不會被交易。</p>
 <h2>2026 NBA 選秀第二輪完整名單</h2>
 <p>第 31 到第 60 順位，也就是第二輪的第 1 到第 30 順位。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>順位</th>
@@ -1023,10 +1032,10 @@ body::before {
 <td>交易至密爾瓦基公鹿（經奧蘭多魔術）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>選後易主的 27 個順位裡，第二輪佔了 17 個</h2>
 <p>把兩輪放在一起數，選後交易的分佈並不平均。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>輪次</th>
@@ -1055,13 +1064,13 @@ body::before {
 <td>45%</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>第二輪的 30 個順位有 17 個在選秀後易主，超過一半。第一輪是 10 個，三分之一。</p>
 <p>至於為什麼第二輪的交易密度比第一輪高，本文找不到聯盟或球團的公開說明可以引用，所以不推測動機，只把數字列在這裡。</p>
 <p>還有 7 個順位的球員在交易途中經過第三支球隊，官方紀錄會寫成「交易至某隊（經某隊）」的形式，分別是第 17、25、30、53、55、56、60 順位。</p>
 <h2>交易之後，馬刺、快艇、獨行俠各握有 4 個新秀</h2>
 <p>下表是 30 支球隊在這次選秀的進出。「上台選人」是官方紀錄上實際做出選擇的次數；「交易後歸屬」是把選後交易註記算進去之後，各隊手上有幾個 2026 年的被選中球員。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球隊</th>
@@ -1290,7 +1299,7 @@ body::before {
 <td><strong>60</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>幾個從表裡直接讀得出來的形狀。</p>
 <p>芝加哥公牛上台選人的次數最多，4 次，和聖安東尼奧馬刺並列。但公牛把其中 2 個交易出去、一個都沒換回來，交易後手上剩 2 個；馬刺送出 1 個又換回 1 個，維持 4 個。同樣是選 4 次，結果不同。</p>
 <p>紐約尼克是進出最頻繁的一隊。上台選了 3 次，3 個全部交易出去，另外從別隊換進 2 個。等於官方紀錄上經手 3 次、最後留下的是另外兩張臉孔。</p>
@@ -1300,7 +1309,7 @@ body::before {
 <p>選秀權在 NBA 是可以交易的資產，痕跡在 2026 年這份資料上留得很清楚。</p>
 <p>60 個順位裡，有 47 個帶著 ESPN 標注的註記，只有 13 個順位是乾淨的：沒有來源註記，也沒有選後交易。13 個之中有 12 個在第一輪，第二輪只有第 50 順位。</p>
 <p>47 個註記可以分成兩類：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>註記類型</th>
@@ -1325,11 +1334,11 @@ body::before {
 <td>13</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>第二類註記說的是選秀權自己的移動歷史，跟誰選了誰無關。舉例來說，第 5 順位是洛杉磯快艇上台選的，但那張籤原本屬於印第安納溜馬；第 12 順位由奧克拉荷馬雷霆使用，籤來自洛杉磯快艇。這兩張籤在選秀開始之前就已經換手完成。</p>
 <p>有幾個順位的註記列出三支以上球隊組成的轉手鏈。這些長鏈條在 NBA 官方選秀結果頁與官方休賽季交易追蹤頁上都找不到對應紀錄，官方那份選秀結果的體例只記選秀日當天發生的交易，選秀前跨年度累積的轉手不會出現。基於這個緣故，上面兩張名單表只保留註記裡的原屬球隊，中間過程寫成「中途多次轉手」，不逐段展開。</p>
 <h2>位置分佈：前鋒 29 人、後衛 27 人、中鋒 4 人</h2>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>位置</th>
@@ -1364,7 +1373,7 @@ body::before {
 <td>30</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這份位置標註來自 ESPN 的資料欄位，只分前鋒、後衛、中鋒三類，沒有再細分控球後衛、得分後衛、大前鋒、小前鋒。同一名球員在不同資料來源可能被標成不同位置，這一欄適合當作粗略的結構參考，不適合拿來做細部的陣容分析。</p>
 <p>比較明確的一點是中鋒只有 4 人，兩輪各 2 人：第 12 順位的 Aday Mara、第 26 順位的 Tarris Reed Jr.、第 52 順位的 Henri Veesaar、第 53 順位的 Ugonna Onyenso。</p>
 <h2>選秀資料裡查不到的四件事</h2>

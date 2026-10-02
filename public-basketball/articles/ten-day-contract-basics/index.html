@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>本文依據的是 2023 年 NBA 集體談判協議（下稱 2023 CBA）Article II 第 9 節與第 10 節，內容取自本機保存的全文文字檔，取得日 2026 年 9 月 30 日。CBA 會隨協議修訂而改變，之後以官方最新版為準。NBA 2025-26 規則書、FIBA 2024 版（2026 版規則書於 2026 年 10 月 1 日生效）與統計詞彙表（2026 年 9 月 25 日快照）裡，本題的詞條都查無 10-Day，因此本文不引用它們。</p>
 <p>「10 天約」是中文慣稱，CBA 的用語是 10-Day Contract。本文的判斷是：在 §9(a) 之下，這張約的期限不是固定十天，而是「十天」與「涵蓋該隊三場比賽的期間」兩者中較長者；同一球隊對同一球員一季的次數上限，與球隊一次能持有幾份的名額上限，是兩道各自成立的限制。特定球隊與球員的實際簽約，本文不涵蓋。</p>
 <p>先把整篇的結構放在一張表裡：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>問題</th>
@@ -604,7 +613,7 @@ body::before {
 <td>§9(f)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>讀完之後，你可以拿一個標明「假設」的名冊人數與日期，自己判斷球隊能不能再簽一份 10 天約。</p>
 <h2>2023 CBA §9(a)：球隊自 1 月 5 日起可簽 10 天約，Two-Way Contract 除外</h2>
 <p>§9(a) 的第一個條件是時間。條文寫的是「自任一 NBA Season 的 1 月 5 日起」（Beginning on January 5 of any NBA Season），球隊可與球員簽 Player Contract，期限依同款後面的算法決定，這種合約稱為 10-Day Contract。</p>
@@ -626,7 +635,7 @@ body::before {
 <h2>球隊同一時間能持有幾份，看的是名冊人數對照表</h2>
 <p>§9(c) 的第二句是另一道限制，管的是名額：任何球隊在任何一個時間點，所屬的 10-Day Contract 份數不得超過下表（No Team may be a party at any one time to more 10-Day Contracts than the following）。</p>
 <p>條文的表頭是 Active List 與 Inactive List 的總人數（Aggregate Number of Players on Team's Active List and Inactive List），中文可以稱為名冊人數。這個總人數把簽 10-Day 的球員算進去，Two-Way 球員不算。表格的數值如下：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>名冊人數（Active List 加 Inactive List）</th>
@@ -651,7 +660,7 @@ body::before {
 <td>3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>同一款有一個範例可以直接對照：球隊 Active List 上有 13 名球員（不含 Two-Way），Inactive List 上沒有人，這隊可以有一名球員持 10-Day Contract。這一列對到上表 13 對 1。</p>
 <p>前一節的次數與這一節的名額，是同一款裡的兩句，各自成立。次數看的是「同一球員」在一個 Season 內的累計，名額看的是「球隊」在某個時間點手上有幾份。兩件事並列時，不要把它們當成同一道門檻的兩個說法。</p>
 <h2>算出的合約長度延伸到最後一場例行賽日，球隊就不得簽</h2>

@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>讀完之後，你應該能做一件事：看到任何一篇 HBL 獎項相關的報導，先問自己兩個問題——它講的是官方歷年獎項表格上的六個欄位之一，還是另一種數據排行？它講的是哪個學年度？這篇文章會把這兩個問題拆給你看。</p>
 <h2>官方歷年獎項表格只有六個欄位</h2>
 <p>hbl.com.tw/reward-history 是官方公布歷年得獎名單的頁面。114 學年度存取時，男生組的表格欄位固定是：MVP、新人王、籃板王、助攻王、阻攻王、抄截王，一共六項，欄位裡沒有得分王。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>官方欄位（男生組）</th>
@@ -597,7 +606,7 @@ body::before {
 <td>抄截后</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>女生組的六個稱呼，官方頁面本身另有頁籤，但這篇文章沒有直接擷取女生組頁籤的原始畫面，上面的對應稱呼是依 114 學年度兩篇媒體報導轉述，不是官方頁面逐字截圖等級的一手引用。</p>
 <p>要注意的是，官方頁面只列出六個欄位的得獎名單，沒有附上每個欄位是怎麼選出來的。這件事後面會再展開。</p>
 <h2>114 學年度當屆頒獎典禮，兩家媒體報導的獎項類別跟官方表格一致</h2>
@@ -608,7 +617,7 @@ body::before {
 <p>「得分王」這個說法沒有查到官方的一手定義。114 學年度官方歷年獎項頁面公布的六個欄位裡沒有它，114 學年度當屆的兩篇媒體報導也沒有把它列進獎項清單——單看 114 學年度這一屆，得分王不在官方頒獎典禮的六個項目之中；至於 114 學年度的媒體是否仍用這個說法整理球季數據排行，這篇沒有查到當屆的用例，不確定。</p>
 <p>但如果把時間往回拉，這句話就沒辦法講得那麼絕對。105 學年度（2017 年）自由體育的一篇賽後報導，逐字寫著：「而大會最後進行頒獎典禮，男子組得分王由高國豪拿下，籃板王則是泰山高中的譚傑龍，助攻王則是能仁高中的谷毛維嘉。」這句話把得分王跟籃板王、助攻王寫成同一場頒獎典禮裡並列的項目，不是另外分開報的數據排行。</p>
 <p>同一篇報導底下，還附了一張「個人獎項一覽表」，列出五個項目跟對應數字：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>獎項</th>
@@ -643,7 +652,7 @@ body::before {
 <td>2.2</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表沒有單獨列 MVP，MVP 在同一篇報導裡是另外用文字敘述的。但光看這張表，得分王跟籃板王、助攻王、抄截王、阻攻王是放在同一個層級呈現的，看起來就是當屆頒獎典禮的一部分，不是報導另外加碼統計的數據排行。</p>
 <p>這代表「得分王從來不是 HBL 官方獎項」這句話，對 105 學年度是不成立的，至少從報導的寫法看不出得分王跟其他四個獎項有什麼不同待遇。這篇文章查到的資料只能支持「114 學年度官方歷年獎項與當屆報導都是六項、不含得分王」，沒辦法往回推論成「HBL 史上從來沒有得分王這個獎項」。下次聽到有人說「HBL 沒有得分王」，可以先問一句：講的是哪個學年度？</p>
 <h2>官方規程全文，沒有寫獎項怎麼選</h2>
@@ -652,7 +661,7 @@ body::before {
 <p>「新人王」的資格定義也是同樣情況。114 學年度的新人王、新人后得主剛好都是高一生，但這只是那一屆得獎者的背景描述，官方沒有公開「新人王限定高一生」這種明文規則。看到某一屆的新人王是高一生，不能反推成「新人王只能是高一生」，這是個案，不是規則。</p>
 <h2>官方歷年名單看得出來：獎項固定，得主不是每年都有</h2>
 <p>hbl.com.tw/reward-history 收錄的歷年獎項表格往回可以查到至少 106 學年度到 113 學年度的紀錄。拿 108 學年度到 113 學年度男生組的幾列來看：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>學年度</th>
@@ -681,7 +690,7 @@ body::before {
 <td>泰山高中 張東庭</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這幾列說明的重點不是誰得過獎，而是「MVP、籃板王、助攻王」這幾個類別本身，年年都在官方表格裡固定出現，是制度性的欄位，不是某一屆才有的臨時安排。</p>
 <p>但固定的欄位不代表每年都有人拿。106 學年度男生組的表格裡，新人王那一格寫的是「（缺）」，其他五項都有得主。這是一手的表格紀錄，可以直接說明：六個獎項欄位是固定的，但欄位有得主填進去，跟欄位本身存在，是兩件不同的事——某一屆某個獎項沒有人拿，官方表格上就會留白，不代表那個獎項從此消失。</p>
 <p>下次翻開官方歷年獎項頁面，可以自己核對一次：眼前這一屆，六個欄位是不是都填滿了，有沒有哪一格是空的。想知道 114 學年度這一屆賽季怎麼打、冠軍隊伍是誰，可以看本站的 <a href="/articles/hbl-league-guide/">HBL 完整指南</a>，這篇文章處理的是制度本身，不涉及任何一屆的比賽結果。</p>

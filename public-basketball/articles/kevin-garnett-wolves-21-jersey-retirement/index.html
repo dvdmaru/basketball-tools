@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -579,7 +588,7 @@ body::before {
 <h2>六項隊史第一都是賈奈特，出賽數的第二名少了 213 場</h2>
 <p>灰狼官方新聞稿列了一長串賈奈特的隊史第一：勝場（wins）、出賽、上場時間、得分、投進球數、罰球數、籃板、阻攻、助攻、抄截、雙十次數、大三元次數。其中得分、籃板、助攻、抄截、阻攻、出賽六項，逐項拿去和 stats.nba.com 的球隊歷史球員數據對，數字對得上。</p>
 <p>把這六項連同隊史第二名一起排出來，是下面這張表：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -626,7 +635,7 @@ body::before {
 <td style="text-align: right;">213</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>差距最小的一項是出賽數，213 場。差距最大的是得分，第二名的 Karl-Anthony Towns 還差 6,080 分——相當於賈奈特那 19,201 分的三成多。970 場裡，賈奈特場均 19.8 分、11.0 籃板、4.3 助攻，這是中時新聞網整理的數字。</p>
 <p>有一個容易混掉的地方：<strong>官方自己列的那組六項不含助攻</strong>。2026 年 4 月 3 日那篇美聯社稿寫的是「得分、籃板、抄截、阻攻、出賽、上場時間」，本文這組是「得分、籃板、助攻、抄截、阻攻、出賽」。兩組差一項，不能混用，也不能加起來講成七項——上場時間的部分，本文只查了灰狼一隊。</p>
 <p>抄截這一項另有 NBA.com 自產文章（2026 年 8 月 20 日更新）獨立佐證：賈奈特 1,315 次抄截排在灰狼隊史第一。</p>
@@ -650,7 +659,7 @@ body::before {
 <p>把出賽數拿掉、只算中時那五項核心數據，答案沒有變：在同一組限定之內，30 支球隊裡仍然只有灰狼一支。中時那句無限定的「史上」，和本文的限定口徑不是同一回事——外部來源用了強一點的說法，不代表 ABA 與已終止且沒有現存球隊承繼的球隊那兩塊補上了。</p>
 <p>至於含出賽數的六項版本：本次存檔的兩篇 NBA 官方與美聯社稿件只寫「all-time leader」，未使用 only。</p>
 <p>離「六項同一人」最近的是五支球隊、五個人，各缺一項：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球隊</th>
@@ -691,7 +700,7 @@ body::before {
 <td>Walt Frazier 4,791</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>五隊裡缺阻攻的有兩隊（騎士、公牛），缺助攻的有兩隊（火箭、尼克），缺抄截的一隊（公鹿）。其餘 24 支球隊，同一個人最多只包辦到四項。</p>
 <p>還有一項到期提醒：這批資料的時點是 2026 年 8 月 23 日，含 2025-26 賽季。現役球員還在累積，上面每一格都可能被改寫。</p>
 <h2>賈奈特替灰狼打了 14 季，NBA.com 兩篇稿子一篇寫 14、一篇寫 12</h2>

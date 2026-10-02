@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -582,7 +591,7 @@ body::before {
 <h2>四筆控制權變動協議，金額由誰揭露也不一樣</h2>
 <p>金額由誰揭露，逐案逐文件不同：本文所查的這兩份聯盟核准稿——湖人 100 億那筆與塞爾提克那筆——全文都沒有金額；但賣方自己的正式公告可能給，塞爾提克賣方 Boston Basketball Partners LLC 於 2025 年 3 月 20 日發出的公告，標題與內文都寫明「initial valuation of $6.1 billion」。聯盟、買方、賣方、球隊是四個不同的發布主體，各自決定要不要放金額。</p>
 <p>下表整理的是「公開報導的 NBA 控制權變動協議所隱含的整體球團／組織估值」，不是「同聯盟、同口徑」的排行——灰狼這筆是灰狼＋山貓的雙聯盟資產包，其餘三列是單隊，本來就不是同一種東西。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>交易</th>
@@ -637,7 +646,7 @@ body::before {
 <td>NBA 官方核准稿、湖人官網完成公告；ESPN、Forbes</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3>看似反例，但為什麼不放進這張表</h3>
 <p>上一節提到的幾筆數字，看起來也很大，但它們不是同一種東西：金州勇士母公司 5% 少數股權交易隱含逾 110 億美元估值、BSE Global 少數股權交易隱含 60 億美元多資產估值、邁阿密海豚母公司 2026 年 3 月的 125 億美元（1% 股權、1.25 億美元對價外推，且屬 NFL）、Sportico 估的達拉斯牛仔 155 億美元（年度編輯估值，沒有交易，且屬 NFL）。前三筆是拿一小部分股權的成交價乘回去的估值，不是誰買下整隊控制權的協議；最後一筆連交易都沒有發生。放進同一張表會製造出「這些都可以比大小」的錯覺，所以另立在表外說明。</p>
 <h2>目前公開資料拆不出山貓的單獨估值</h2>

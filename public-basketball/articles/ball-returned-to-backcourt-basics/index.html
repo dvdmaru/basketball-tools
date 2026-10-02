@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -662,7 +671,7 @@ body::before {
 <p>FIBA 2024 規則書的裁判手勢圖列有「BALL RETURNED TO BACKCOURT」這個違例名稱。本文只用它說明這個名稱在手勢圖上出現，手勢本身的動作不在本文範圍。</p>
 <h2>NBA 與 FIBA 的條文並列：各讀各的原句</h2>
 <p>把前面的原句整理成一張表。左欄是 NBA 2025-26，右欄是 FIBA 2024；每一列的內容各自陳述，同一列不代表兩邊條文一一對應。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>NBA 2025-26 規則書</th>
@@ -695,7 +704,7 @@ body::before {
 <td>Article 30.3：球判給對方隊發界外球，從最靠近違規處發出，但不得在籃板正後方</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>照這兩份條文的結構看，本文有一個對照觀察，屬於本文的讀法，不是規則書的聲明：NBA Rule 10 §IX(a) 引到的那一句，沒有寫「身體接觸後場」這種觸球條件；FIBA 2024 Article 30.1.2 則把「身體有部分接觸後場」與「球已觸及該隊後場之後」寫成兩項並列的觸球條件。兩邊的例外也不相同：NBA 的例外寫在 Rule 10 §IX(b) 與 Rule 8 §III(e)，FIBA 的例外寫在 Article 30.1.2 的末段。</p>
 <h2>拿假設的情境，自己判斷一次：五個練習</h2>
 <p>下面五個情境都是假設，球隊用甲隊與乙隊代稱，每個結論後面標了條文。做法是先在紙上寫下自己的答案，再對照。</p>

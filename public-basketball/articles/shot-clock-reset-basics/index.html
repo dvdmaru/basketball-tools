@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <p>讀完之後，你應該能拿一個假設的情境，自己判斷計時器落在哪張清單、會是 24 秒、14 秒還是不重設。</p>
 <h2>計時器預設從 24 秒起算，哪些事件讓它重設成 24 秒？</h2>
 <p>依 NBA 2025-26 規則書 Rule 7 第 I 節，計時器預設從 24 秒起算，Rule 7 另有規定的情形除外。Rule 7 §IV(c) 的標題句是「以下情形發生時，計時器重設為 24 秒」，其中列有下面這些事件：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>事件</th>
@@ -595,7 +604,7 @@ body::before {
 <td>Rule 7 §IV(c)(5)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這張表可以分成兩種讀法。第一種是看球權：球權換人，依 §IV(c)(1) 是 24 秒。第二種是看事件本身：後場發球時的犯規或違例、不是防守方造成的跳球、flagrant 與 punching 犯規，依 §IV(c)(2) 到 (5) 直接列在這張清單裡，條文的措辭裡沒有另外寫球權歸誰。</p>
 <p>flagrant 犯規怎麼分級、什麼情形會被判，可以看本站的<a href="/articles/technical-flagrant-fouls-basics/">技術犯規與惡意犯規入門</a>。這裡要記的只有一件事：依 NBA 2025-26 規則書 Rule 7 §IV(c)(5)，所有 flagrant 與 punching 犯規之後，計時器重設成 24 秒。</p>
 <p>跳球這一項值得多看一眼。依 Rule 7 §IV(c)(4)，不是防守方造成持球的跳球，重設成 24 秒。而 Rule 7 §IV(b)(6) 把「防守方造成持球的跳球」列在另一張清單，也就是不重設清單。同樣叫跳球，依起因分在兩張清單，讀跳球情形時要先確認持球是誰造成的。</p>
@@ -613,7 +622,7 @@ body::before {
 <p>依 NBA 2025-26 規則書 Rule 7 §IV(b)，標題句是「計時器在以下情形不重設」，其中一項就是投籃嘗試沒有碰到籃框（§IV(b)(5)）。</p>
 <p>這條和規則書對合法投籃的定義互相呼應。依 Rule 7 §II(d)(2)，合法的投籃嘗試須符合的條件之一，是球離手後碰到籃框（另有須在計時器到期前離手的條件）。至於「球卡在籃框與籃板之間」對計時器怎麼處理，本文引用的 Rule 7 條文沒有寫，這裡不做任何推測。</p>
 <p>同一張不重設清單裡，還有另外幾項：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>事件</th>
@@ -638,13 +647,13 @@ body::before {
 <td>Rule 7 §IV(b)(6)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表中略過了 (3) 與 (4)，本文沒有引用它們，並不表示清單只有這幾項。</p>
 <p>另外有兩條和碰框相關的條文，也值得記下。依 Rule 7 §II(g)，防守球員碰到球但沒有取得球權，計時器繼續跑。依 Rule 7 §II(f)(1)，球隊的球權在球碰到進攻方籃框時結束（另一種結束的情形是對手取得球權）。這兩條說的是球權與計時器繼續與否，並不是重設成 24 秒或 14 秒的清單，讀的時候要分開。</p>
 <p>「碰到籃框」在三處出現，各自扮演不同角色：它是合法投籃的條件之一（§II(d)(2)），是 14 秒清單裡的情境描述（§IV(d)），沒碰到則被列進不重設清單（§IV(b)(5)）。三處各有各的條文，要分開讀。</p>
 <h2>「維持讀數或 14 秒，取較大者」是什麼意思？</h2>
 <p>這是第三種結果，既不是 24 秒，也不是固定 14 秒。依 NBA 2025-26 規則書 Rule 7 §IV(e)，標題句是：計時器維持中斷時的讀數，或重設為 14 秒，兩者取較大者。這一節列有下面這些事件：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>事件</th>
@@ -665,7 +674,7 @@ body::before {
 <td>Rule 7 §IV(e)(3)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>「取較大者」用一組假設數字來看就清楚。以下是假設，不是真實比賽：</p>
 <ul>
 <li>假設 §IV(e) 列的事件發生時，計時器停在 18 秒。18 比 14 大，依條文，讀數維持 18 秒。</li>
@@ -694,7 +703,7 @@ body::before {
 <p>FIBA 2024 對照的是 2024 版的條文。本文沒有取得 FIBA 官方網站版本，只用本機規則書快照，讀者若要引用，請以官方發布的現行版本為準。</p>
 <h2>拿一個假設的情境，自己判斷計時器落在哪一張清單</h2>
 <p>下面的情境全部是假設，用來練習判斷，不是任何真實比賽。依 NBA 2025-26 規則書 Rule 7，判斷順序是：先問事件屬於哪類，再問球權有沒有換人、發球在前場還是後場。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設情境</th>
@@ -744,7 +753,7 @@ body::before {
 <td>§IV(e)(2)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>做完這張表，可以再多做一步：如果情境剛好落在某節剩 24 秒或更少的時間，先看 §II(i)。換球權之後計時器不運作，只有 §IV(d) 的情形會讓它重新啟用並重設為 14 秒。</p>
 <p>以下是編輯的讀法，不是官方規定：拿到一個情境，先在規則書 Rule 7 §IV(b)、(c)、(d)、(e) 四張清單裡找事件；找到之後，才決定球權與發球位置這兩個條件是否要繼續往下問。下次看比賽，可以挑一次投籃碰框未進的回合，自己判斷這次會落在哪一格。</p>
 <h2>常見問題</h2>

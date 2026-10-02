@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -592,7 +601,7 @@ body::before {
 <p>此外，114 學年度規程第 7 條一另有一款，適用於報名的隊職員：隊職員如涉及違反性別平等或兒少等相關法令規定（包括經依法裁罰、公布姓名、尚在紀律委員會或相關委員會審議中、相關調查程序中），無論是否具有相應職務之證照或資格，均不得聘用及報名本賽事。</p>
 <h2>四種職務並排看：身分、證照、聘任關係、證書</h2>
 <p>把前面幾節並列，可以做成一張對照表。下表的欄位分類是本文的整理，規程沒有這樣總結；每一格的內容都是 114 學年度規程第 7 條三～六與第 9 條二、三的條文。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>職務</th>
@@ -627,7 +636,7 @@ body::before {
 <td>證書，線上報名時上傳（(七)）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>從這張表可以讀出兩件事，都是本文並列各款之後的觀察，不是規程的總結。第一，四種職務用的判準不是同一種：領隊看身分，教練看證照，隨隊教師看聘任關係，防護員看證書。第二，條文裡明寫的兼任限制，出現在教練與隨隊教師兩款，兩款的範圍都是「同一級別兩校」；領隊與防護員的條文沒有兼任限制。</p>
 <p>要小心的是，「規程沒有寫」和「規程允許」是兩件事。例如教練能不能同時兼任隨隊教師，或跨級別兼任怎麼處理，條文本身都沒有交代。遇到這類情況，以 HBL 官網最新規程與主辦單位說明為準，本文不替規程補這個答案。</p>
 <h2>拿一份假設的報名名單，逐款檢查一次</h2>

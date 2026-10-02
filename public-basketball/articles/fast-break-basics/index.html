@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -572,7 +581,7 @@ body::before {
 <h2>快攻的規模：primary break 與 secondary break 只定義參與人數</h2>
 <p>同一份 FIBA 詞彙表把快攻依參與球員人數分成兩個詞：primary break（只有少數球員參與的快攻）與 secondary break（多數球員都投入的快攻）。這兩個詞的定義只講參與人數，沒有寫兩者的先後順序，也沒有寫「primary break 沒能直接得分之後才會變成 secondary break」這種因果關係——這是常見的口語理解方式，但不是詞彙表逐字定義的內容，讀這兩個詞時只能當成「規模」的分類，不必自己腦補觸發條件。</p>
 <p>跟在快攻第一波之後的球員，詞彙表給了一個專門的稱呼：trailer（跟隨者），定義裡特別寫明通常是中鋒或大前鋒，跟在快攻第一波球員之後補上場。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>詞彙</th>
@@ -593,7 +602,7 @@ body::before {
 <td>通常是中鋒或大前鋒，跟在第一波球員之後補上場的球員</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>NBA 規則書怎麼定義「優勢」：速度與站位都算，不是只看人數</h2>
 <p>依 NBA 2025-26 官方規則書 Rule No. 4（Definitions）Section IV——Fouls，「轉換得分機會」（transition scoring opportunity）成立的條件是：在球權轉換之後，進攻方持續推進，並且享有「基於比賽的速度、防守方的站位，或兩者」的優勢。這句定義沒有把優勢限定在人數上——速度上的領先、防守方還沒排好站位，都可以單獨構成優勢，不必等到人數比防守方多。</p>
 <p>同一份規則書另外有一條獨立的罰則，用的是更窄的詞：「至少一人優勢」（one-man advantage on a fast break）。依 Rule No. 12B（Fouls and Penalties – Personal Foul）Section I(e) 的罰則條文，防守球員如果對一名沒持球的進攻球員犯規，而進攻方當下至少有一人優勢、防守方用犯規中斷比賽，罰則是兩罰。這一條才是明確指向人數面向的優勢。</p>

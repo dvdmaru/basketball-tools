@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -564,7 +573,7 @@ body::before {
 <p>第一次翻 HBL 規程的人，容易在「球員 15 人」「球員 18 人」「正選 12 人名單」這幾個數字之間打結：到底一支球隊有幾個人？這個問題其實在問三件不同的事。一是學校報名時，每隊可以報幾位球員；二是每一場比賽，學校要提出一份多少人的名單；三是報名截止之後，名單還能不能換。三件事在 114 學年度規程裡由不同條文各管一段。</p>
 <p>本文把這三件事分成三道關卡來讀。「三道關卡」是本文的編排說法，規程沒有用這個詞。讀完之後，你應該能做到兩件事：看到一個名單相關的問題，先判斷它屬於哪一道關卡、該翻哪一條；遇到本文引用的規程文字沒有寫的地方，也知道該停在哪裡，不硬湊答案。</p>
 <p>先看全貌。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>關卡</th>
@@ -593,7 +602,7 @@ body::before {
 <td>乙級、甲級各為一款；甲級另分男生組與女生組、預賽與複賽</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>報名時，甲級每隊球員 15 人、乙級 18 人</h2>
 <p>第一道關卡是報名。114 學年度規程第 9 條二(一)規定，甲級每隊的編制是：領隊、主教練、第一助理教練、助理教練、隨隊教師各 1 人，運動防護員或物理治療師擇 1 人，球員（含隊長）15 人。第 9 條二(二)是乙級，隊職員的編制與甲級相同，球員（含隊長）為 18 人。</p>
 <p>這一節有三個細節值得停一下。</p>
@@ -633,7 +642,7 @@ body::before {
 <p>要注意的是，這一款是本文在本文引用的規程文字中找到的乙級名單更換規定，共一款。乙級有沒有其他因傷更換的機制，本文引用的規程文字沒有寫，本文沒查到；但本文引用的規程文字是逐頁節錄，也不能因此斷言規程全文沒有。所以這一節的結論停在條文寫的範圍：乙級在聯賽報名截止後不得更換球員名單，球衣號碼例外；除此之外，本文不多說。</p>
 <h2>甲級球員因身體狀況無法參賽時，更換有階段、時點、文件與前 8 名鎖定等限定</h2>
 <p>甲級的更換規定在第 9 條四(一)，條件比乙級細得多。114 學年度規程的條文意思是：甲級參賽學校的球員若因身體狀況致無法參賽，在限定的階段與時點，可以辦理更換。把條文拆開，每個限定都不能漏。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>限定</th>
@@ -666,7 +675,7 @@ body::before {
 <td>球員因身體狀況致無法參賽</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>第 9 條四(二)接著補了一款：被更換的球員如果傷勢復原，得再次辦理更換，但一樣要在第 9 條四(一)所述階段的比賽 1 週前（以該階段賽程開始日算起），由學校具函向本會辦理。</p>
 <p>「前 8 名之資格」規程有用、本文引用的規程文字沒有定義是哪個階段的結果取得，本文不替它補。更換球員要符合的第 7 條資格，內容可以看<a href="/articles/hbl-player-eligibility-basics/">HBL 球員資格入門</a>，本文不重複。</p>
 <p>甲級這款有不少地方可以拿來練習，下面又是<strong>假設情境</strong>，用「丙隊」「丁隊」代稱，都不是真實球隊。</p>

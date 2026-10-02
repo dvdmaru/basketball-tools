@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -584,7 +593,7 @@ body::before {
 <p>站外常把 EFF 叫做「效率值」、把 +/- 叫做「正負值」，這兩個中文說法在 TPBL、PLG 官方頁面本身都沒有出現過，是站外慣用的中文翻譯，不是規則書或官方頁面上的用語，讀到這兩個詞的時候，可以記得它們是慣稱而不是官方定義詞。</p>
 <h2>遇到「有欄位名、沒公式」的頁面，可以怎麼查</h2>
 <p>把三個聯盟目前的狀態放在一起看，會更清楚「欄位名稱存在」跟「公式公開」是兩回事：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>聯盟</th>
@@ -613,7 +622,7 @@ body::before {
 <td>+/- 空白</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>以下是這篇文章的讀法，不是任何聯盟官方規定：下次打開一個陌生的數據頁，看到一個看起來很進階的欄位名稱，可以照這個順序確認三件事——第一，這個名字是不是頁面自己承認的正式欄位（排序選單、表頭都算）；第二，目前的表格裡有沒有對應的數字欄位，還是只是選單裡的一個名字；第三，如果頁面有連到 Glossary 或說明頁，Definition 跟 Formula 兩欄是不是真的填了字，還是卡片存在但欄位空白。三個問題分開問，比較不容易把「有這個名字」誤會成「官方已經講清楚怎麼算」。</p>
 <p>技術統計表裡 PTS、FGM、+/- 這些基本欄位怎麼成對讀，本站另一篇文章<a href="/articles/read-box-score/">投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀</a>有處理過，這裡不重複。真實命中率、進攻效率與節奏這類需要額外公式的進階數據，本站也各有一篇<a href="/articles/true-shooting-basics/">同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%</a>與<a href="/articles/offensive-rating-pace-basics/">假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？</a>處理過對應的 NBA 官方公式，這裡同樣不重複。</p>
 <h2>常見問題</h2>

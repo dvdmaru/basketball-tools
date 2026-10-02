@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -567,7 +576,7 @@ body::before {
 <p>NBA 2025-26 規則書 Rule 4 §III 給 gather 下了定義，而且分成兩種對象。</p>
 <p>第一種，對「經傳球接球，或取得球權未定的球」的球員（Rule 4 §III(a)）：gather 是球員取得足夠控制，可以握住球、換手、傳球、投籃，或是把球抱貼在身體上的那個時點。</p>
 <p>第二種，對「運球中控球」的球員（Rule 4 §III(b)）：gather 是下列任一情形發生的時點。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>款次</th>
@@ -588,7 +597,7 @@ body::before {
 <td>其他情形下取得足夠控制，可以握住、換手、傳球、投籃，或把球抱貼身體（用語與 §III(a) 相同）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>規則書在別處也用到同一個詞：Rule 4 §II(a)(8) 把「Otherwise gathers the ball」列為運球結束的情形之一，並註明參見 §III(b)；Rule 4 §XI 談投籃動作時，寫到切入或其他移動中的投籃，投籃動作從球員 gathers the ball 時開始。</p>
 <p>gather 這個英文詞，本文保留原文，不另創中文譯名。</p>
 <h2>第一步從 gather 之後有腳觸地起算，第二步是另一腳或雙腳同時觸地</h2>
@@ -601,7 +610,7 @@ body::before {
 <p>走步本身的定義在 Rule 4 §IX：持球時朝任何方向移動，超過「規定的限制」。這一條引用了 Rule 4 §VII 與 Rule 10 §XIII 兩處；在本文引用的規則書快照裡，Rule 4 §VII（Held Ball）未見步數限制款，步數的款次寫在 Rule 10 §XIII。</p>
 <h2>原地接球、行進中 gather、運球中 gather：三種情境，三句條文</h2>
 <p>下表把 Rule 10 §XIII 的三句條文並排。每一格都只放該款條文寫的內容。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>情境（NBA 2025-26）</th>
@@ -626,7 +635,7 @@ body::before {
 <td>Rule 10 §XIII(b)</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>從表可以看到，「兩步」這個數字在行進中 gather 與運球中 gather 兩款出現，而且都帶著用途：停步、傳球或投籃。行進中 gather 的那一款還多一個分岔：如果球員尚未運球，條文另外寫了「出手前一步」。原地接球那一款寫的是樞軸。</p>
 <p>條文裡的「尚未運球」是這一分岔的條件。照這一款的結構讀，本文的讀法是：行進中 gather、且還沒開始運球的球員，條文給了兩種走法；已經在運球中 gather 的球員，條文只寫了兩步這一種。</p>
 <h2>第一步之後，樞軸腳怎麼決定？看第一步怎麼落地</h2>
@@ -643,7 +652,7 @@ body::before {
 <p>Rule 10 §XIII(e) 還有一句跟倒地有關：持球倒地，或在停步時倒地的球員，不得藉由滑行取得優勢（原文 may not gain an advantage by sliding）。</p>
 <h2>NBA 與 FIBA 2024 逐項對照：各自的條文各寫各的</h2>
 <p>FIBA 2024 版的走步條文在 Article 25。下表逐項並排，每格各自標來源，表內只放各自條文有寫的內容；兩份規則書的條文是否等價，本文不下結論。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -708,7 +717,7 @@ body::before {
 <td>結束運球或取得控球後，不得連續以同一腳或雙腳觸場（Article 25.2.1 第二項）</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表裡有兩點值得留意，都只是條文措辭的差異，本文不據此下結論。第一，第一步的起點，NBA 條文寫 gather，FIBA 條文寫取得控球；在 FIBA 2024 版全文裡，gather 一詞只出現在附錄一段程序清單（「After gathering all information from the other referees…」）的一般用法，沒有像 NBA Rule 4 §III 那樣的定義條。第二，連續觸地的那一句，NBA 條文括號寫 hop、限定同一腳，FIBA 條文寫同一腳或雙腳。</p>
 <p>滑行與倒地各自另陳述。NBA 2025-26 Rule 10 §XIII(e)：持球倒地或停步時倒地，不得藉由滑行取得優勢。FIBA 2024 Article 25.2.2，適用跌倒、躺或坐在場上的球員：持球跌倒並滑行是合法的；如果球員隨後翻滾或試圖站起而仍持球，即為違例。兩條各說各的，各標來源。</p>
 <h2>「歐洲步」與「零步」是球迷的慣稱，兩份規則書快照的全文都查不到</h2>

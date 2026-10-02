@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -563,7 +572,7 @@ body::before {
 <p>看籃球數據時，命中率是數據表上排得很前面的欄位之一。兩個人都是 40%，很容易以為他們投得一樣好。這篇文章要拆開這個直覺：命中率相同，得分效率仍可能差很多。讀完之後，你可以拿一位球員的出手數、命中數、三分命中數和罰球出手數，自己算出 FG%、eFG% 與 TS% 三個數字，並且說得出它們各自多算了什麼。</p>
 <h2>假設兩人都是 20 投 8 中，命中率同為 40%，得分卻差了 4 分</h2>
 <p>先看一個假設的例子。甲和乙都出手 20 次、進 8 球，兩人不是真實球員，數字是為了說明而編的。差別在於進球的種類：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球員</th>
@@ -592,7 +601,7 @@ body::before {
 <td>40%</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>甲的 8 球全是兩分球，8 × 2 = 16 分。乙的 8 球裡有 4 顆三分球、4 顆兩分球，4 × 3 + 4 × 2 = 20 分。兩人的分值依 NBA 2025-26 規則書（Rule No. 5, Section I）：三分線外的進球算 3 分，線上或線內的進球算 2 分。</p>
 <p>兩人的命中率一樣，得分差了 4 分。差距從哪裡來？乙有 4 球值 3 分，而命中率只數「進了幾球」，不管那一球值幾分。</p>
 <h2>FG% 已經把三分球算進去了，只是每一球都當成同一種進球</h2>
@@ -619,7 +628,7 @@ body::before {
 <p>PTS ÷ (2 × FGA) = (2 × FGM + 3PM) ÷ (2 × FGA) = (FGM + 0.5 × 3PM) ÷ FGA</p>
 <p>右邊就是 eFG%。乙沒有罰球，TS% 是 20 ÷ (2 × 20) = 50%，與 eFG% 相同。</p>
 <p>罰球一加進來，兩個數字就分開了。再假設一位球員丙：投籃跟乙一模一樣（20 投 8 中，其中 4 顆三分），另外罰球 10 次進 8 次。他的得分是 20 + 8 = 28 分：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球員</th>
@@ -660,7 +669,7 @@ body::before {
 <td>約 57.4%</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>丙的 TS% 算法是 28 ÷ [2 × (20 + 0.44 × 10)] = 28 ÷ 48.8，約 57.4%。三個人的 FG% 都是 40%，但 eFG% 分成 40% 與 50%，TS% 分成 40%、50%、57.4%。乙與丙的 eFG% 相同，是因為 eFG% 不看罰球；TS% 才把丙多拿的 8 分算進去。</p>
 <h2>自己算一次：假設丁 25 投 10 中，其中 5 顆三分，另外罰球 6 次進 5 次</h2>
 <p>拿一組新的假設數字，把三個公式都走一遍。丁：投籃 25 次、進 10 球，其中 5 顆是三分球；另外罰球 6 次、進 5 次。得分依 NBA 2025-26 規則書的分值計算。</p>

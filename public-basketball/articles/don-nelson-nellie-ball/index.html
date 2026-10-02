@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -566,7 +575,7 @@ body::before {
 <p>名人堂的認證、NBA.com 的記述與當事人自述，談的是同一個人，重點卻不在同一處。Nellie Ball 最值得留下來的部分，正是這段落差。</p>
 <h2>名人堂稱尼爾森為創新者，尼爾森把功勞交給 Red Auerbach</h2>
 <p>三個高等級來源各自留下了一種定位。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>誰在說</th>
@@ -596,7 +605,7 @@ body::before {
 <td>The Players' Tribune 2016 自述</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>名人堂官網使用的定位最強。官網把小球進攻的創新歸給尼爾森，也把 point forward 概念的引入記在他名下。名人堂另外列出他的 1,335 場例行賽勝利、3 座年度最佳教練、2012 年入堂，以及 1996 年入選 NBA 史上十大教練。</p>
 <p>NBA.com 那篇專文的寫法收斂了一步。作者沒有把 point forward 這個詞的發明權交給單一人物，而是明列 Del Harris、Robert Reid、Marques Johnson 的競爭主張。尼爾森的位置仍然清楚：他把 point forward 帶進 NBA 的常用語彙，也把這種用人方式放進大量比賽。</p>
 <p>值得一提的是，NBA.com 站內的寫法本身也不一致。同日刊出的美聯社訃聞直接寫尼爾森引進了現在所稱的 point forward，官方勝場榜的條目更寫他以創造這個位置聞名。同一個網站的三篇文章，對發明權給了三種強度。</p>
@@ -623,7 +632,7 @@ body::before {
 <p>兩段人事結果讓 Nellie Ball 的另一面變得清楚。讓球員打非傳統位置，可以打開新的進攻組合，也需要球員接受新的職責。尼爾森能把陣容推向非常規方向，卻不保證每一次人員選擇都能維持下去。</p>
 <h2>尼爾森執教 4 支球隊，勇士任期分成兩段</h2>
 <p>尼爾森的總教練生涯橫跨 31 個球季。公鹿是起點，勇士有兩段任期，中間還有尼克與獨行俠。NBA.com 與美聯社把交接記為 1976-77 球季第 18 場後、Larry Costello 請辭；CBS Sports 寫的是遭到解僱，尼爾森本人 2016 年的自述則把時間放在下一個球季中段。離任方式與確切場次，各家記載並不一致。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球隊</th>
@@ -664,7 +673,7 @@ body::before {
 <td>2007 年 We Believe；2009-10 帶菜鳥柯瑞 1 季；2010 年登上當時例行賽勝場榜首</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>5 段任期合計 31 季。勇士第一段 7 季、第二段 4 季，兩段合計 11 季。把「勇士 7 季」與「勇士 11 季」分開看，兩個數字都成立，差別只在是否把第二段算進去。</p>
 <p>尼爾森在公鹿 11 季只缺席 2 次季後賽，並拿下中央組冠軍 7 連霸。他 3 次獲選年度最佳教練，其中 1983、1985 年在公鹿，1992 年在勇士。1994 年，他另帶領美國隊拿下 FIBA 世界錦標賽金牌。</p>
 <p>獨行俠時期，尼爾森在 1998 年引進 Dirk Nowitzki 與 Steve Nash。Dirk Nowitzki 新秀球季就得到三分線外的出手空間，當季三分命中率約 20%。尼爾森也曾把 Dirk Nowitzki 放在中鋒位置，搭配 Steve Nash 與 Michael Finley。2002-03 球季，獨行俠打進西區決賽，6 場敗給馬刺。</p>
@@ -673,7 +682,7 @@ body::before {
 <h2>1,335 勝讓尼爾森排在史上例行賽勝場第 2</h2>
 <p>尼爾森的教練生涯例行賽戰績是 1,335 勝、1,063 敗。他在 2010 年以第 1,333 勝超越 Lenny Wilkens，退休時是 NBA 史上例行賽勝場最多的教練。Gregg Popovich 在 2022 年 3 月取得第 1,336 勝後超越尼爾森。</p>
 <p>以下為 NBA.com 官方例行賽勝場榜前 5，資料截至 2025-26 球季結束，NBA.com 於 2026 年 5 月 24 日更新。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th style="text-align: right;">排名</th>
@@ -720,7 +729,7 @@ body::before {
 <td>已退休</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Doc Rivers 以 1,194 勝排在第 6，距 Pat Riley 16 勝、距 Jerry Sloan 27 勝；他已於 2026 年 4 月卸任公鹿總教練。同一份榜單顯示，現役教練中排名最高的是 Rick Carlisle 的 1,012 勝。</p>
 <p>本文的勝場一律採 NBA.com 官方榜。部分媒體與資料庫對 Gregg Popovich 另有較高數字，差別在 2024-25 球季的勝場是否計入他名下。尼爾森的「第 2」也只適用例行賽榜。若自行把季後賽勝場相加（尼爾森季後賽 75 勝、Lenny Wilkens 80 勝），Lenny Wilkens 是 1,412 勝，尼爾森是 1,410 勝，尼爾森會落到他之後。那是兩種資料相加的推算，不是 NBA 發布的官方合併排行榜。</p>
 <p>最新球季在整條 NBA 時間線上的位置，可參考〈<a href="/articles/nba-2025-26-season-review/">2025-26 NBA 賽季回顧</a>〉。球員與球隊後續變動則整理在〈<a href="/articles/nba-2026-offseason-moves/">2026 NBA 休賽季異動總表</a>〉。</p>
@@ -736,7 +745,7 @@ body::before {
 <p>2007 年的結果仍是尼爾森生涯最醒目的季後賽勝利之一。它同時沒有改寫另一個事實：勇士下一輪遭淘汰，尼爾森的球隊生涯也始終沒有進入總冠軍賽。</p>
 <h2>2004-05 太陽靠節奏，2017-18 火箭靠三分期望值</h2>
 <p>把不同年代並排，能看見相似的陣容外觀，也能看見不同的驅動邏輯。以下時間軸只做並列，不把 3 組做法接成單一路徑。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>時間</th>
@@ -765,7 +774,7 @@ body::before {
 <td>三分期望值與分析決策</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Sports Illustrated 記者 Chris Ballard 在 2019 年談尼爾森時，明確否定單一路徑的因果解釋。他指出，George Karl、Mike D'Antoni 也在相近時期嘗試可互換球員；全球化、分析學與個別球員同樣參與了比賽演化。尼爾森的許多做法，後來也被其他人用不同方式執行，並取得更好的結果。</p>
 <p>Steve Kerr 在尼爾森辭世後則給出較高的評價。他說，尼爾森不斷挑戰傳統思維、實驗不同陣容與打法，今天 NBA 的許多常態可以追溯到尼爾森看待比賽的方式。</p>
 <p>Pat Riley 曾稱尼爾森是比賽史上最偉大的創新者。Adam Silver 認為，尼爾森憑藉無畏、創意與信念，對 NBA 籃球帶來了重大變化。Tim Hardaway 說尼爾森走在時代前面。這些評價與名人堂的官方定位站在同一側。</p>

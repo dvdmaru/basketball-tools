@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -570,7 +579,7 @@ body::before {
 <p>要注意的是，這段特別規定的文字只寫到「乙級縣市預賽、分區複賽」，沒有提到「乙級全國決賽」，甲級賽事也沒有另外的條文。也就是說，「HBL 用的是 ISF 調整版規則」這句話，只對乙級的縣市預賽跟分區複賽成立，不能套用到甲級，也不能直接套用到乙級全國決賽——這兩塊規程沒有逐條寫清楚，後面會再細談。</p>
 <h2>數字對照：節數、犯規門檻、進攻時限，HBL 乙級跟 FIBA、NBA 差在哪</h2>
 <p>三份規則書擺在一起，先看具體數字。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -605,7 +614,7 @@ body::before {
 <td>24 秒</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>HBL 乙級的節數比 FIBA、NBA 都短，比 FIBA 少 2 分鐘、比 NBA 少 4 分鐘；球隊犯規罰則門檻也早一犯——乙級第 4 次犯規就進入罰則，FIBA 與 NBA 都要等到第 5 次。這幾項數字的來源是規程第 12 條三，射程只限乙級縣市預賽、分區複賽。</p>
 <h2>自己判一次：乙級分區複賽某隊第 4 次犯規，接下來怎麼判？</h2>
 <p>拿一個具體情境練習。假設一場乙級分區複賽，某隊在單節內已經累計 3 次侵人與技術犯規，這時第 4 次犯規發生。依規程第 12 條三（二），這次犯規之後，這支球隊就進入球隊犯規罰則，對手開始獲得罰球機會。</p>

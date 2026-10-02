@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -569,7 +578,7 @@ body::before {
 <p>協議接著用整整一節列出例外。那一節開頭寫明，以下是「球隊的 Team Salary 不得超過 Salary Cap」這條規則的例外。</p>
 <p>第一個例外很直白：球隊可以在既有合約承諾的範圍內超過帽線。前提是那些合約簽訂時符合 CBA，或簽於協議生效前並符合當時的規則。</p>
 <p>簽約類的例外也在同一節。Mid-Level Exception 是其中一類，依球隊的薪資水位分成三種。NBA 官方 2026 年 6 月 30 日的新聞稿列出 2026-27 賽季的數字：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>Mid-Level Exception（2026-27）</th>
@@ -590,13 +599,13 @@ body::before {
 <td>$9.366 million</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>球迷習慣把這種帽線稱為「軟帽」（soft cap），把稅線之上的稅稱為「奢侈稅」（luxury tax）。這兩個都是慣用說法，不是規則書用語。2023 NBA CBA 全文沒有「soft cap」這個詞，用的是 Salary Cap、Tax、Tax Level 與 Apron Level。讀官方文件時，認這幾個英文字比認慣稱可靠。</p>
 <p>所以帽線管的是一般情況下的簽約規則，例外條款開出的路，可以讓球隊薪資高過帽線。接下來的兩條線，處理的是薪資高過帽線之後的事。</p>
 <p><em>（規則出處：2023 NBA CBA Art. I 定義、Art. VII 第 6 節；金額出處：NBA 官方 2026 年 6 月 30 日新聞稿。）</em></p>
 <h2>稅線在帽線上方，超過的球隊要繳稅</h2>
 <p>依 2023 NBA CBA，稅線是薪資帽的 121.5%。下表是兩份官方新聞稿公告的數字，單位是 million 美元。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>線</th>
@@ -626,7 +635,7 @@ body::before {
 <td>$221.686 million</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>先自己算一次：2026-27 的帽線 $164.961 million 乘以 1.215，約是 $200.43 million，和公告的稅線 $200.428 million 一致。</p>
 <p>三條線的金額每年會變。依 2023 NBA CBA，稅線是當年帽線的 121.5%，第一 apron 也用當年帽線與 2023-24 帽線的比例逐年推算，所以帽線調整時，這幾條線一起動。上表只收兩個賽季的官方數字。</p>
 <p>稅的規則寫在這幾句裡。只有 Tax Team Salary 超過稅線的球隊，才要向 NBA 繳稅。稅額看的是超出的部分，不是全部薪資。Tax Team Salary 以該年度例行賽末場開賽時的 Team Salary 為基準，另有加減項。所以稅線看的是一個時點。</p>
@@ -656,7 +665,7 @@ body::before {
 <li>做過表列操作的球隊，那個 Salary Cap Year 剩下的時間，Apron Team Salary 也不得高於那條線。</li>
 </ol>
 <p>限制只點名表裡的操作，不是所有簽約、所有交易。下表收錄表中的七列，不是完整的表：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>表列</th>
@@ -701,7 +710,7 @@ body::before {
 <td>第二 apron</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表裡的 E 至 J 列還有一層賽後規則：賽季結束之後、該 Salary Cap Year 結束之前，這幾列的操作要改用「下一個 Salary Cap Year」的 Apron Team Salary 對照 apron 線。上表的 E、H、I 落在這個範圍。這條延伸只限 E 至 J 列，不適用於全部操作。</p>
 <p>Taxpayer Mid-Level 是個有意思的例子。它只有在球隊使用後，Apron Team Salary 超過第一 apron 時才可以用。用了之後，表列 K 又要求球隊不得超過第二 apron。兩句合起來讀，使用它的球隊，簽完後的薪資落在第一與第二 apron 之間。</p>
 <p>另外兩條相關規定：</p>
@@ -721,7 +730,7 @@ body::before {
 <h2>用 2026-27 的線，自己判三支假設球隊</h2>
 <p>下面三支球隊都是假設的。每一列的數字，是假設球隊簽約後的 Apron Team Salary。先自己判，再看答案。線的數字用 NBA 官方 2026 年 6 月 30 日新聞稿：稅線 $200.428 million、第一 apron $209.015 million、第二 apron $221.686 million。</p>
 <p>判斷只用前面講過的兩條 apron 規則：Non-Taxpayer Mid-Level 對應第一 apron，Taxpayer Mid-Level 要在第一 apron 之上、第二 apron 之下。例外本身還有其他條件，這裡不討論。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>假設球隊</th>
@@ -750,7 +759,7 @@ body::before {
 <td>不行：超過第二 apron $221.686 million</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>三隊還有一條稅的問題。假設三隊的 Tax Team Salary 也是同一個數字，並且就是例行賽末場開賽時的水位，那麼三隊都高於稅線 $200.428 million，超出的金額分別是 $4.572 million、$11.572 million、$24.572 million。稅要不要繳、繳多少，和 apron 那兩欄各自獨立算。</p>
 <p>同一支球隊，可以在稅線上要繳稅，在第一 apron 下沒被擋。三條線就是這樣各管各的。</p>
 <p>台灣兩個職業聯盟的薪資規定不在本文範圍，想看 TPBL 與 P. LEAGUE+ 的規章比較，可以先看本站的<a href="/articles/tpbl-plg-rules-compared/">兩聯盟規則比較</a>，裡面有薪資相關的條文。要認識 NBA 聯盟與球隊，可以搭配本站的 <a href="/articles/nba-league-guide/">NBA 聯盟指南</a>。</p>

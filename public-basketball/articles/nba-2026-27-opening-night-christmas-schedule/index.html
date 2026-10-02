@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -577,7 +586,7 @@ body::before {
 <p>落在星期六的只有 10 月 24 日那兩場，其餘 7 場都在上班上課日。這 7 場裡最早的一場在凌晨 03:00，其他 6 場集中在早上 07:00 到 10:00 之間，正好卡在通勤和上班的時段。</p>
 <p>日期與星期幾也不能照美東賽程直接讀：美國的星期二開幕日，在台北已經是星期三。</p>
 <h3>表 A：開幕週，共 9 場（美東 10/20–10/23）</h3>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>台北時間</th>
@@ -652,7 +661,7 @@ body::before {
 <td>Prime Video</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>表中還有兩個容易看錯的場地資訊。</p>
 <p>10 月 22 日美東時間，克里夫蘭騎士作客費城 76 人，場館名稱是 Xfinity Mobile Arena。這個名稱自 2025 年 9 月 1 日生效，原名是 Wells Fargo Center，冠名延續至 2030-31 球季。它不是 2026 年才改名。</p>
 <p>10 月 23 日美東時間，休士頓火箭作客聖安東尼奧馬刺，比賽卻不在聖安東尼奧，而是在德州奧斯汀的 Moody Center。賽程資料上馬刺仍然掛主隊，等於把一場主場比賽搬到了另一座城市。</p>
@@ -663,7 +672,7 @@ body::before {
 <p>第三場由費城 76 人作客洛杉磯湖人，台北時間 06:00 開賽。詹姆斯會以 76 人球員身分作客湖人，而湖人正是他的上一支球隊。</p>
 <p>後兩場依序是奧克拉荷馬雷霆作客明尼蘇達灰狼，以及丹佛金塊作客金州勇士。</p>
 <h3>表 B：聖誕大戰，共 5 場（美東 12/25，全部 ABC＋ESPN）</h3>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>台北時間</th>
@@ -710,7 +719,7 @@ body::before {
 <td>ABC／ESPN</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>美國日光節約時間在 11 月 1 日結束</h2>
 <p>兩套時差的分界，來自美國日光節約時間。</p>
 <p>依照美國國家標準暨技術研究院（National Institute of Standards and Technology，NIST）的規則，2026 年日光節約時間自 3 月 8 日凌晨 2 時開始，到 11 月 1 日凌晨 2 時結束。</p>

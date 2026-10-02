@@ -447,6 +447,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -461,7 +467,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -568,7 +577,7 @@ body::before {
 <p>全文資料以 NBA 官方網站的公告、官方休賽季異動清單與官方統計專欄為主要來源，取源時間為台北時間 2026 年 7 月 25 日上午 9 時 07 分。台灣媒體的中文譯名以聯合新聞網、ETtoday 運動雲與中央社這三個獨立編輯來源的實際用字為準（自由體育本次刊出的兩篇皆為中央社通稿，計算共識時併入中央社，不另計一家）；沒有兩家以上台灣主流媒體共識的球員，本文保留英文原名，不自行音譯。</p>
 <h2>一、目前確定與尚未確定的事</h2>
 <p>把這件事拆開來看，已經有官方依據的部分和還停在報導層的部分，其實不在同一格：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -603,13 +612,13 @@ body::before {
 <td><strong>官方清單尚未標為正式宣布</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>這個分野不是咬文嚼字。NBA 官方那份彙整 30 支球隊休賽季動向的清單，對每一筆異動都會標記狀態，用的是兩種不同的括號註記：一種是「officially announced」（正式宣布），另一種是「multiple reports」（多方報導）。在 76 人那一格，Anfernee Simons 的 2 年約、布朗（Jaylen Brown）的交易、Ariel Hukporti 的 1 年約、Dean Wade 的 4 年約，四筆全都標著「正式宣布」；只有詹姆斯這一筆，標的是「多方報導」。</p>
 <p>換句話說，在聯盟自己的紀錄上，這件事目前的位階跟同一頁上其他已經生效的簽約並不相同。合約的 800 萬美元這個數字也是同樣的性質：NBA 官方報導的原文寫的是「Per reports, James is set to sign a two-year, $8 million deal」，主詞是「根據報導」；《波士頓環球報》則把來源明確指向 ESPN。台灣這邊，聯合新聞網、ETtoday 運動雲與中央社的報導同樣寫 2 年 800 萬美元，但都是轉述同一組美方報導，不構成獨立的第二個來源。</p>
 <p>作為對照，詹姆斯上個賽季的薪資是接近 5,300 萬美元，這個數字出自 NBA 官方報導。若 2 年 800 萬美元的報導最後成立，這會是一次幅度相當大的減薪。他自己在社群貼文裡寫的是：「我不是為了錢，也不是為了家庭。我現在到底還在為什麼而打球？我還想犧牲，還想努力，還想拚，還想競爭、想贏，想再有一次贏得總冠軍的感覺。」</p>
 <h2>二、生涯球隊時間軸：第四支球隊</h2>
 <p>詹姆斯 2003 年在克里夫蘭騎士（Cleveland Cavaliers）出道，76 人是他生涯的第四支球隊。以下時間軸依 NBA 官方報導與《波士頓環球報》對各段年資的敘述整理：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>期間</th>
@@ -650,14 +659,14 @@ body::before {
 <td>—</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>四段年資相加剛好是 23 個賽季，與官方所說的「史上第一位打滿 23 個賽季的球員」對得起來。這 23 季裡他拿下 4 座總冠軍，其中 2016 年那次是替克里夫蘭終結了這座城市長達 56 年的冠軍荒。他在告別文裡對三個地方分別道別：「謝謝洛杉磯。邁阿密我永遠愛你們，而東北俄亥俄永遠是家。」</p>
 <p>另外要記一筆的是，他在湖人期間與兒子 Bronny James 成為隊友，依 NBA 官方報導，這是聯盟史上第一次有球員與自己的兒子同隊。</p>
 <h2>三、第 24 個賽季的意義：最多賽季，但不是最年長</h2>
 <p>NBA 官方的說法是，詹姆斯是聯盟史上第一位累積 23 個賽季的球員，而 2026-27 賽季會讓這個數字再加一。</p>
 <p>這裡有一個很容易被混用的區別：<strong>賽季數的紀錄，和年齡的紀錄，是兩件事。</strong></p>
 <p>先看賽季數。以下列出幾位以生涯長度著稱的球員作為對照。<strong>這是抽樣對照，不是完整排行榜</strong>。賽季數在 19 到 21 之間的球員數量不少，本表沒有窮舉：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球員</th>
@@ -722,10 +731,10 @@ body::before {
 <td>1985-86 ～ 2003-04</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>上表除詹姆斯與賈霸之外的賽季數，是逐一調閱 ESPN 各球員的分季出賽紀錄後計數所得。賈霸的部分要說明一下：ESPN 的分季資料只回溯到 1975-76 賽季，他 1969-70 到 1974-75 的六個賽季不在該資料集內，因此他的 20 季改以 NBA 官方的傳奇球員檔案為準——該頁明確記載他 1989 年離開球場，且當時「沒有任何球員累積過更多賽季」。</p>
 <p>再看年齡。詹姆斯現年 41 歲，會在 2026 年 12 月 30 日滿 42 歲，是目前聯盟現役年紀最大的球員。但把時間拉長到整個聯盟史，42 歲離年齡紀錄還有一段距離。以下是 NBA 官方整理的例行賽最年長出賽紀錄：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>球員</th>
@@ -760,7 +769,7 @@ body::before {
 <td>2023 年 4 月 9 日</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Nat Hickey 那一筆是 1948 年的特例，官方註明他生涯只出賽兩場。扣掉他之後的四位，剛好全部都出現在前面那張賽季數對照表裡：他們都打了 20 個以上的賽季，而且最後一場例行賽的年齡都比詹姆斯在 2026-27 賽季會達到的年齡更大。</p>
 <p>賈霸這邊要分兩件事講。官方傳奇球員檔案記載他 1989 年、42 歲離開球場，這點成立；而他的最後一戰是當年的總冠軍賽，在官方的季後賽最年長榜上列為 42 歲 58 天。所以「42 歲退休」是對的，但那不是聯盟的年齡天花板。</p>
 <p>所以詹姆斯即將展開的這個賽季會改寫的是賽季數，不是年齡。以「打了幾個賽季」這個維度來看，第 24 季在聯盟史上沒有先例。</p>
@@ -783,7 +792,7 @@ body::before {
 </ul>
 <h2>五、第 23 個賽季發生了什麼：角色明顯縮小</h2>
 <p>如果只看總量級數據，很容易把上個賽季的詹姆斯想成跟五年前一樣。官方統計專欄裡有一整組數字指向相反的方向：2025-26 賽季是他生涯角色縮減幅度最明顯的一年。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>項目</th>
@@ -828,7 +837,7 @@ body::before {
 <td>生涯第 4 差，近 10 季最差</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>他上季的場均數據是 20.9 分、6.1 籃板、7.2 助攻。對照生涯場均的 26.8 分、7.5 籃板、7.4 助攻，得分那一欄掉了將近 6 分，助攻則幾乎沒有變。這組數字合起來描述的是一種身分轉換：從發動整場進攻的持球核心，往接球出手與組織串聯的角色移動。</p>
 <p>有兩個方向是往上走的。他上季場均快攻得分 5.7 分，在出賽至少 41 場的球員中排全聯盟第一，這已經是他生涯第 8 次拿下這項聯盟第一；他在湖人的 8 個賽季，這項數據季季都在聯盟前五。另外，他上季場均 1.6 次灌籃是近 9 個賽季最多，灌籃占出手比例 11.2%，是生涯第二高。</p>
 <p>防守端則出現一個過去沒有出現過的訊號。官方統計專欄指出，上季對手在他防守下的命中率是 48.8%，而這些出手的預期命中率是 47.2%——這是有防守追蹤資料的 13 個賽季以來，第一次出現「對手在他面前投得比預期還好」。</p>
@@ -840,7 +849,7 @@ body::before {
 <h2>七、新賽季的陣容與 76 人的休賽季全帳</h2>
 <p>依 NBA 官方統計專欄的描述，詹姆斯預計會進入一套已經包含馬克西（Tyrese Maxey）、二年級鋒衛 VJ Edgecombe、布朗（Jaylen Brown）與恩比德（Joel Embiid）的先發陣容。</p>
 <p>這裡要接回本站 7 月 20 日那篇休賽季總表：布朗與 Paul George 的互換，正是 76 人這個休賽季最大的一筆操作，兩人在 7 月 6 日完成交易。以下是 76 人整個休賽季的官方異動清單：</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>方向</th>
@@ -905,7 +914,7 @@ body::before {
 <td>正式宣布</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>76 人這個休賽季沒有任何一筆續約。整體看下來，他們用 Paul George 換回布朗，再補進 Simons、Wade、Hukporti 三份合約，同時放走三名輪替球員。如果詹姆斯這筆最後正式生效，這支球隊的先發五人會有兩個位置是這個夏天才換上來的。</p>
 <p>主導這一連串操作的是 76 人新任籃球事務總裁（President of Basketball Operations）Mike Gansey。NBA 官方報導提到，他與詹姆斯同為俄亥俄州出身、高中時期就是當地的知名籃球員。另外，賓州州長 Josh Shapiro 在詹姆斯宣布當天，把該日定為全州的「LeBron James Day」。</p>
 <h2>八、接下來要看什麼</h2>

@@ -446,6 +446,12 @@ body::before {
 .prose tbody tr:last-child td { border-bottom: none; }
 .prose tbody tr:hover td { background: var(--surface-2); }
 .prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
 /* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
    只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
    會把後面的欄位擠成一字一行。 */
@@ -460,7 +466,10 @@ body::before {
 }
 .prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
 .prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
-.prose pre code { background: transparent; padding: 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
 
 .article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .cta-btn {
@@ -577,7 +586,7 @@ body::before {
 <p>平日晚上的場次落在週三與週五。七隊裡，國王與雲豹各有 6 場排在週三或週五，其餘五隊各 4 場。</p>
 <p>12 月 25 日（五）聖誕節排了一場例行賽：19:00 雲豹在桃園巨蛋主場對特攻。</p>
 <p>下表回答一個問題：平日晚上的 16 場，分別是哪兩隊、在哪裡打。開賽時間都是 19:00；日期在 1 月以後的屬於 2027 年。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -684,7 +693,7 @@ body::before {
 <td>新莊體育館</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>七隊的第一場比賽與主場開幕，有四隊不是同一天</h2>
 <p>球季開打那天，不等於自家主場開幕那天。依 2026 年 10 月 2 日抓取的例行賽賽程資料，七隊的主場開幕日從 10 月 17 日排到 11 月 14 日，前後相隔 4 週。</p>
 <p>國王在 10 月 17 日就出賽，但那一場是到臺中作客。國王的主場開幕是 10 月 31 日（六）14:30，在新莊體育館對雲豹。</p>
@@ -692,7 +701,7 @@ body::before {
 <p>海神的第一場比賽在 10 月 18 日（日），也是客場。海神的主場開幕是 10 月 31 日（六）17:00，在高雄巨蛋對戰神。戰神的第一場比賽在 10 月 24 日（六）17:00，到新莊體育館作客特攻；戰神的主場開幕是 11 月 7 日（六）14:30，在和平籃球館對夢想家。</p>
 <p>另外三隊的第一場比賽就是主場開幕。夢想家是 10 月 17 日。攻城獅是 10 月 24 日 14:30，在新竹縣體育館對夢想家。特攻同一天 17:00，在新莊體育館對戰神。NOWnews 9 月 11 日的報導，逐隊寫出的主場開幕日與官方資料相同。</p>
 <p>下表回答：七隊各自哪一天第一次出賽、哪一天第一次在主場出賽。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>隊</th>
@@ -753,9 +762,9 @@ body::before {
 <td>14:30</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>主場開幕在哪裡打，看各隊的例行賽主場館。下表列出 18 場主場裡，官方資料填了哪個場館。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>隊</th>
@@ -808,7 +817,7 @@ body::before {
 <td>0 場</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>每隊都是 18 主 18 客，夢想家卻有一段連續 7 場客場</h2>
 <p>本文說的「連續主場」「連續客場」，是照一隊自己的出賽順序，數連續幾場都在主場或都在客場，與中間隔幾天無關。</p>
 <p>依 2026 年 10 月 2 日抓取的例行賽賽程，夢想家從 2027 年 1 月 24 日到 3 月 6 日，連續 7 場都在客場。在七隊例行賽 126 場裡，夢想家是唯一有連續 7 場客場的球隊。其他六隊的連續客場，都在 4 到 5 場。</p>
@@ -818,7 +827,7 @@ body::before {
 <p>2 月 14 日之後，雲豹的下一場是 2 月 17 日（三）19:00 到高雄巨蛋作客海神。從這場開始，雲豹接著有一段連續 5 場客場，到 3 月 21 日結束。</p>
 <p>依月份分開看，七隊各月的主客場裡，沒有主場的月份共有五個：夢想家 2 月（上面提過的 4 場客場）、雲豹 10 月 0 場主場、1 場客場，戰神 10 月 0 場主場、2 場客場，攻城獅 11 月 0 場主場、3 場客場，海神 5 月 0 場主場、3 場客場。</p>
 <p>下表回答：七隊各自連續幾場在主場、連續幾場在客場。每隊取場數多的那一段。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>隊</th>
@@ -879,7 +888,7 @@ body::before {
 <td>2/17–3/21</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>本文查閱的官方賽程資料與 NOWnews 報導，都沒有說明賽程這樣排的原因。</p>
 <h2>戰神與海神各有一段相隔 20 天的休兵</h2>
 <p>本文說的「相隔 N 天」，是一隊相鄰兩場比賽的日期相減。戰神 2027 年 1 月 31 日打完一場，下一場在 2 月 20 日，相隔 20 天，中間有 19 天沒有比賽。海神 1 月 24 日打完一場，下一場在 2 月 13 日，同樣相隔 20 天。</p>
@@ -888,7 +897,7 @@ body::before {
 <p>整個聯盟也有一段空檔。1 月 31 日之後，下一個比賽日是 2 月 13 日，相隔 13 天；2 月 1 日至 2 月 12 日沒有例行賽。另外，據《自由時報》報導的 2027 年行事曆，農曆春節假期是 2 月 4 日至 2 月 10 日，共 7 天。戰神與海神的 20 天，日期都涵蓋了 2 月 1 日至 2 月 12 日這段聯盟空檔。</p>
 <p>休兵的反面是連續兩天出賽。週六、週日各打一場，就算一組連續兩天出賽。國王有 7 組，其餘六隊各 8 組。</p>
 <p>下表回答：七隊各自相隔天數多的那一段休兵、連續兩天出賽幾組、例行賽打到哪一天。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>隊</th>
@@ -949,7 +958,7 @@ body::before {
 <td>5/16</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>雲豹的 16 天，起點就是 12 月 25 日聖誕節那一場；下一場在 2027 年 1 月 10 日。海神的例行賽在 5 月 9 日打完，比其他六隊早。</p>
 <h2>國王與特攻有 10 場主場，官方賽程資料的場館欄空白</h2>
 <p>逐場賽程以 TPBL 官網賽程頁 <a href="https://tpbl.basketball/schedule">tpbl.basketball/schedule</a> 為準。以國王為例，依 2026 年 10 月 2 日抓取的例行賽資料，國王的賽季可以照下面的順序排出來：</p>
@@ -963,7 +972,7 @@ body::before {
 </ol>
 <p>第 5 步的 4 場主場，是 3 月 6 日、3 月 7 日、3 月 13 日、3 月 14 日。官方資料這 4 場的場館欄空白。國王其他 14 場主場，填的都是新莊體育館。</p>
 <p>特攻也有 6 場主場的場館欄空白，日期在 3 月至 4 月。兩隊加起來 10 場，其餘 116 場都有場館名。官方資料沒有說明空白的原因，這 10 場在哪裡打，以官網賽程頁為準。下表列出這 10 場。</p>
-<table>
+<div class="prose-tbl-scroll"><table>
 <thead>
 <tr>
 <th>日期</th>
@@ -1034,7 +1043,7 @@ body::before {
 <td>海神</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>換成支持的球隊，照同樣六步就能排出自己的賽季。本文的數字取自 2026 年 10 月 2 日抓取的資料，聯盟之後可能調整賽程；逐場的日期、時間與場館，以官網賽程頁為準。</p>
 <p>賽季開打以後要查球員數據，官方數據頁上的 EFF、+/- 欄位從哪裡來、公式在哪裡找，拆解在〈<a href="/articles/tpbl-plg-stats-glossary-basics/">TPBL、PLG 數據頁怎麼看</a>〉。</p>
 <h2>常見問題</h2>
