@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分](https://basketball.twtools.cc/articles/free-throw-violations-basics/)（2026-10-05）
+- [NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義](https://basketball.twtools.cc/articles/rebound-percentage-metrics-basics/)（2026-10-05）
+- [NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目](https://basketball.twtools.cc/articles/rookie-scale-contract-basics/)（2026-10-05）
+- [FIBA 2026 給可換人的期間定了起訖，NBA 2025-26 規則書按情境分款寫何時可換](https://basketball.twtools.cc/articles/substitution-rules-basics/)（2026-10-05）
+- [三分線上的區域算幾分？NBA 2025-26 寫兩分，FIBA 2026 寫線不屬於三分區](https://basketball.twtools.cc/articles/three-point-line-basics/)（2026-10-05）
+- [NBA 球在比賽中六人以上可作廢重來，at the start of play 四人以下只判技術犯規再續賽](https://basketball.twtools.cc/articles/too-many-players-basics/)（2026-10-05）
 - [2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票](https://basketball.twtools.cc/articles/easl-2026-27-guide/)（2026-10-04）
 - [TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場](https://basketball.twtools.cc/articles/tpbl-2026-27-schedule-guide/)（2026-10-02）
 - [AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同](https://basketball.twtools.cc/articles/assist-metrics-basics/)（2026-09-30）
 - [回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件](https://basketball.twtools.cc/articles/ball-returned-to-backcourt-basics/)（2026-09-30）
-- [傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者](https://basketball.twtools.cc/articles/disabled-player-exception-basics/)（2026-09-30）
-- [8 秒被中斷時，NBA 與 FIBA 的條文各用一種寫法：給新的 8 秒，或讓剩餘時間延續](https://basketball.twtools.cc/articles/eight-second-backcourt-basics/)（2026-09-30）
-- [5 秒的時限出現在不同情形：NBA 2025-26 規則書寫發球與背對籃框運球，FIBA 2024 寫發球、closely guarded 與罰球](https://basketball.twtools.cc/articles/five-second-rules-basics/)（2026-09-30）
-- [HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次](https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/)（2026-09-30）
-- [HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人](https://basketball.twtools.cc/articles/hbl-roster-size-basics/)（2026-09-30）
-- [HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看](https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/)（2026-09-30）
 
 ## 文章與更新
 

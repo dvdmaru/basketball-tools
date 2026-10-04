@@ -6,7 +6,55 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Sun, 04 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分</title>
+      <link>https://basketball.twtools.cc/articles/free-throw-violations-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/free-throw-violations-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 2025-26 規則書 Rule 9 §I 各款各寫罰則，找不到一句替罰球者的對手違例共用的罰則：d 款在球仍在比賽中的罰球、f 款在 disconcertion 時，寫罰球沒進就給 substitute free throw；g、h 款的碰球類違例寫記 1 分。讀完可以自己判一個標明假設的罰球違例情境。</description>
+    </item>
+    <item>
+      <title>NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義</title>
+      <link>https://basketball.twtools.cc/articles/rebound-percentage-metrics-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/rebound-percentage-metrics-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 官方統計詞彙表（2026 年 9 月 25 日快照）的 REB%、OREB%、DREB% 三個條目，定義句寫 percentage of available rebounds，條目沒有 Formula 欄，全檔也沒有條目定義 available。REB／OREB／DREB Chance% 的 Formula 分母是有條目的 Chances，Adjusted 三條再從分母減去有條目的 Deferred Chances。</description>
+    </item>
+    <item>
+      <title>NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目</title>
+      <link>https://basketball.twtools.cc/articles/rookie-scale-contract-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/rookie-scale-contract-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>2023 NBA CBA Article VIII Section 1(c)(i) 替第一輪選中球員的 Rookie Scale Contract 寫了兩句界線：下限句要求涵蓋的兩季與第一個 Option Year，Current Base Compensation 至少為量表金額 80% 與球員適用 Minimum Player Salary 兩者中較大者；上限句規定任何 Salary Cap Year 的 Salary plus Unlikely Bonuses 不得超過量表金額 120%。</description>
+    </item>
+    <item>
+      <title>FIBA 2026 給可換人的期間定了起訖，NBA 2025-26 規則書按情境分款寫何時可換</title>
+      <link>https://basketball.twtools.cc/articles/substitution-rules-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/substitution-rules-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>FIBA 2026 版規則書（2026 年 10 月 1 日生效）Article 19.2 用 substitution opportunity 這個名詞，寫球隊可以換人的期間，並寫明何時開始、何時結束。NBA 2025-26 規則書的全文檔搜尋不到這個詞，換人何時可行、何時不可行，分寫在 Rule 3 §V 的各款，以及 Rule 4、Rule 5 的條文裡。</description>
+    </item>
+    <item>
+      <title>三分線上的區域算幾分？NBA 2025-26 寫兩分，FIBA 2026 寫線不屬於三分區</title>
+      <link>https://basketball.twtools.cc/articles/three-point-line-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/three-point-line-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 2025-26 規則書 Rule 5 §I b 款寫，從三分線上或線內的區域投進的投籃算兩分；FIBA 2026 版規則書（2026 年 10 月 1 日生效）Art. 2.5.4 末句寫，3-point line 不屬於 3-point goal area。兩句之中，直接寫出分值的是 NBA 那句，FIBA 的分值寫在 Art. 16.2.1。</description>
+    </item>
+    <item>
+      <title>NBA 球在比賽中六人以上可作廢重來，at the start of play 四人以下只判技術犯規再續賽</title>
+      <link>https://basketball.twtools.cc/articles/too-many-players-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/too-many-players-basics/</guid>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 2025-26 規則書 Rule 12A §III 處理場上人數不對：球放入比賽且仍在比賽中、一隊場上有六人以上時，由人數正確的一隊指示 Crew Chief 兩項處理，其中一項是取消期間的比賽並重設時鐘；at the start of play 的四人以下人數錯誤，(b) 款只寫非 unsportsmanlike 技術犯規與從 point-of-interruption 續賽。</description>
+    </item>
     <item>
       <title>2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票</title>
       <link>https://basketball.twtools.cc/articles/easl-2026-27-guide/</link>
@@ -198,54 +246,6 @@
       <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>依 NBA 2025-26 官方規則書 Rule 7，進攻時間計時器（shot clock）重設成 24 秒、重設成 14 秒、不重設，是三張各自列出事件的清單。判斷時先看事件屬於哪一類，再看球權是否換人、發球在前場還是後場；單看球有沒有碰到籃框，並不足以決定。</description>
-    </item>
-    <item>
-      <title>使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</title>
-      <link>https://basketball.twtools.cc/articles/usage-rate-pie-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/usage-rate-pie-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。</description>
-    </item>
-    <item>
-      <title>快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</title>
-      <link>https://basketball.twtools.cc/articles/fast-break-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/fast-break-basics/</guid>
-      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>快攻（fast break）常被想成「誰跑得快」，但依 FIBA 教練認證詞彙表與 NBA 2025-26 官方規則書，判斷快攻還有另一條線索：攻守轉換的瞬間，防守方有沒有來得及回位、站好。這篇文章從快攻怎麼發動、規模怎麼分，拆到 NBA 規則書裡「優勢」兩個字包含哪些情況，也整理「數字優勢」這個常聽到的說法，在官方文件裡目前是什麼地位。</description>
-    </item>
-    <item>
-      <title>那球到底吹哪一種？NBA 規則書把「妨礙中籃」和「干擾球」寫進同一份清單裡</title>
-      <link>https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/goaltending-basket-interference-basics/</guid>
-      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>一次觸球，可能被吹掉，也可能直接算進——差別藏在球是不是還在下降飛行、有沒有機會進框，以及違規發生在哪一邊籃框。NBA 2025-26 官方規則書把這兩種情況寫進同一份九款列舉，沒有像 FIBA 規則書那樣把兩者拆成兩段各自編號；這篇文章照規則書原文拆開這九款，也用 FIBA 2024 年版規則做對照。</description>
-    </item>
-    <item>
-      <title>技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解</title>
-      <link>https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/technical-flagrant-fouls-basics/</guid>
-      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>技術犯規與惡意犯規常被當成「輕重程度」的差別來理解，但 NBA 2025-26 官方比賽規則書把兩者寫在不同章節、用不同判準：技術犯規問的是行為對不對，惡意犯規問的是接觸過不過。分清楚這個分界，比背「幾罰球」更有用。</description>
-    </item>
-    <item>
-      <title>官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看</title>
-      <link>https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/tpbl-plg-stats-glossary-basics/</guid>
-      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>截至 2026 年 9 月 28 日抓取的頁面版本，TPBL 官方球員數據頁的排序選單裡看得到「EFF」「+/-」兩個欄位名稱，PLG 官方主站的表格卻沒有這兩欄；PLG 頁面上「進階數據」按鈕真正打開的，是另一個網站的入口，那個網站的 Glossary 頁雖然收了 EFF 詞條，Definition 與 Formula 兩欄卻都是空白。</description>
-    </item>
-    <item>
-      <title>選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭</title>
-      <link>https://basketball.twtools.cc/articles/trade-rules-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/trade-rules-basics/</guid>
-      <pubDate>Mon, 28 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>NBA 交易常常一次牽動三、四名球員，不是球隊把事情弄複雜，而是 2023 NBA CBA 白紙黑字規定：用交易例外換進新球員時，新球員薪資合計不能超過送出球員稅前薪資的特定倍率，再加一筆固定金額。選秀權沒有薪資，填補不了這個數字。</description>
     </item>
   </channel>
 </rss>
