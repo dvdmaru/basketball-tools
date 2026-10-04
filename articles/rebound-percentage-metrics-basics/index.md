@@ -119,7 +119,7 @@ Adjusted 系列也是三個條目，Type 同樣是 Rebounding。
 
 Contested 有百分比條目：Contested REB%（Contested Rebound Percentage）、Contested OREB%、Contested DREB% 三條。Formula 欄依序是 `(Contested REB)/(REB)`、`(Contested OREB)/(OREB)`、`(Contested DREB)/(DREB)`，分母寫的是 REB、OREB、DREB。Uncontested 沒有百分比條目：全文搜尋 `Uncontested.*%` 得 0 筆。Contested 與 Chances 組合的條目也查不到，搜尋 `Contested.*Chance` 得 0 筆。
 
-用兩個**假設**情境，練習判一次。情境一：某次籃板，搶到球的球員身旁有一名對手，距離他 2 呎。這符合 Contested 的定義句（an opponent is within 3.5 feet）。情境二：另一次籃板，場上所有對手與搶到球的球員都相距 6 呎以上。以搶到球的球員為量測點（本文假設）時，這符合 Uncontested 的定義句（no opponent is within 3.5 feet）。兩個距離都離 3.5 呎夠遠，用來示範兩句各自怎麼讀；剛好 3.5 呎的情形，兩句都沒有寫。
+用兩個**假設**情境，練習判一次。情境一：某次籃板，搶到球的球員身旁有一名對手，距離他 2 呎。這符合 Contested 的定義句（an opponent is within 3.5 feet）。情境二：另一次籃板，場上所有對手與搶到球的球員都相距 6 呎以上。以搶到球的球員為量測點（本文假設）時，這符合 Uncontested 的定義句（no opponent is within 3.5 feet）。兩個距離都離 3.5 呎夠遠，用來示範兩句各自怎麼讀；剛好 3.5 呎時，條目只用 within／no opponent is within，沒有另以數學符號說明邊界讀法，本文不再延伸判定。
 
 ## %OREB、%DREB 與 Boxouts 名稱相近，詞彙表各有獨立條目
 
