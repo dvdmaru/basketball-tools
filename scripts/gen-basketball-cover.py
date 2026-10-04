@@ -229,6 +229,9 @@ COVERS = [
     ("tpbl-2026-27-schedule-guide", "台灣職籃 · 2026-27 賽程",
      "夢想家<br>連續 7 場客場",
      "例行賽 126 場　·　10 月 17 日開幕"),
+    ("easl-2026-27-guide", "台灣職籃 · EASL 2026-27",
+     "台灣三隊互不交手<br>卻同在 7 隊池爭 1 席",
+     "小組賽 36 場　·　BCL Asia 第三席"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
@@ -282,7 +285,7 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.dirname(here)
     league_tag = {"nba": "NBA", "tpbl": "TPBL", "plg": "PLG", "hbl": "HBL",
-                  "taiwan": "台灣籃球"}
+                  "taiwan": "台灣籃球", "easl": "EASL"}
     only = set(sys.argv[1:])
     unknown = only - {slug for slug, *_ in COVERS}
     if unknown:
