@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [投籃動作的起點怎麼分組？NBA 2025-26 與 FIBA 2026 的歸法不同](https://basketball.twtools.cc/articles/act-of-shooting-basics/)（2026-10-10）
+- [2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款](https://basketball.twtools.cc/articles/award-eligibility-65-games-basics/)（2026-10-10）
+- [球出界算誰的？NBA 2025-26 與 FIBA 2026 版首句都看最後碰球的人，句尾寫法不同](https://basketball.twtools.cc/articles/ball-out-of-bounds-last-touch-basics/)（2026-10-10）
 - [隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止](https://basketball.twtools.cc/articles/captain-role-basics/)（2026-10-10）
 - [Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同](https://basketball.twtools.cc/articles/contract-option-clauses-basics/)（2026-10-10）
+- [禁止第二次運球的那一句：NBA 2025-26 寫「自願結束」，FIBA 2026 版寫「已經結束」](https://basketball.twtools.cc/articles/dribble-ends-double-dribble-basics/)（2026-10-10）
+- [投籃的球在空中、時間到之後被碰到：NBA 2025-26 按碰球者分兩種結果，FIBA 2026 寫任一隊球員](https://basketball.twtools.cc/articles/end-of-period-ball-in-flight-basics/)（2026-10-10）
 - [賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知](https://basketball.twtools.cc/articles/game-protest-basics/)（2026-10-10）
 - [Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎](https://basketball.twtools.cc/articles/likely-unlikely-bonus-basics/)（2026-10-10）
 - [Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事](https://basketball.twtools.cc/articles/moratorium-period-basics/)（2026-10-10）
-- [0.3 秒規則：剩 0.2 秒時，NBA 與 FIBA 2026 列出可得分的動作不一樣](https://basketball.twtools.cc/articles/point-three-seconds-rule-basics/)（2026-10-10）
-- [NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分](https://basketball.twtools.cc/articles/free-throw-violations-basics/)（2026-10-05）
-- [NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義](https://basketball.twtools.cc/articles/rebound-percentage-metrics-basics/)（2026-10-05）
-- [NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目](https://basketball.twtools.cc/articles/rookie-scale-contract-basics/)（2026-10-05）
-- [FIBA 2026 給可換人的期間定了起訖，NBA 2025-26 規則書按情境分款寫何時可換](https://basketball.twtools.cc/articles/substitution-rules-basics/)（2026-10-05）
 
 ## 文章與更新
 
