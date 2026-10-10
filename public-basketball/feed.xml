@@ -6,7 +6,55 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止</title>
+      <link>https://basketball.twtools.cc/articles/captain-role-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/captain-role-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 NBA 2025-26 規則書 Rule 3 §III b，在登記給自己隊的暫停期間，指定隊長是唯一可以向裁判詢問規則詮釋的球員，而且他不得討論 judgment decision。依 FIBA 2026 版 Art. 6.1，隊長由 head coach 指定，限球死且比賽時鐘停止時，可以禮貌方式向裁判取得資訊；Art. 7.5 對 head coach 寫了同一組條件。兩份規則書寫下的情境與事項，字面各不相同。</description>
+    </item>
+    <item>
+      <title>Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同</title>
+      <link>https://basketball.twtools.cc/articles/contract-option-clauses-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/contract-option-clauses-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>2023 NBA CBA Article XII 的 Section 1 與 Section 2(a)，分別用 (i)–(v) 五款列出 Team Option 與 Player Option 的條件。兩段的 (i)–(iv) 款逐字相同，其中 (iv) 款要求 Option Year 的 Salary（excluding Incentive Compensation）、Likely Bonuses、Unlikely Bonuses 各不低於 stated term 最後一年對應項目的 100%；在 Article XII 之內，(v) 款的 Second Round Pick Exception 例外字樣只出現在 Section 1。Section 4 把 Any Option 的行使期限寫成 Option 所涵蓋 Season 之前那個 June 29 的 5:00 p.m. eastern time，不行使就會成為 Restricted Free Agent 的球員，則是 June 25 之前。</description>
+    </item>
+    <item>
+      <title>賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知</title>
+      <link>https://basketball.twtools.cc/articles/game-protest-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/game-protest-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 2025-26 規則書的 F. PROTEST 寫明比賽進行中不允許抗議，賽後以書面通知 Commissioner 並附上 $25,000 的 Protest Fee；FIBA 2026 版規則書 Appendix C 則寫隊長在比賽結束後 15 分鐘內告知並簽名、球隊 1 小時內書面提交理由。讀完可以自己判斷一場假設的比賽，兩邊的時限來不來得及。</description>
+    </item>
+    <item>
+      <title>Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎</title>
+      <link>https://basketball.twtools.cc/articles/likely-unlikely-bonus-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/likely-unlikely-bonus-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>2023 NBA CBA Article VII Section 3(d)(1) 判定一筆 Performance Bonus 計不計入球員 Salary 時，問的是：假設 Team 或 player 的表現與緊接前一個 Salary Cap Year 相同，這筆獎金會被賺到嗎？會，才計入；計入的叫 Likely Bonus，被排除的叫 Unlikely Bonus。Section 3(d)(2)-(4) 另有規定的情形除外。</description>
+    </item>
+    <item>
+      <title>Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事</title>
+      <link>https://basketball.twtools.cc/articles/moratorium-period-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/moratorium-period-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依 2023 NBA CBA Article I(mm)，Moratorium Period 自某個 Salary Cap Year 的 7 月 1 日東部時間 12:01 a.m. 起，到次一個 7 月 6 日東部時間 12:00 p.m. 止。Article II Section 15 的主句禁止球員與球隊在期間內就聘僱條款訂立口頭或書面協議，除非 Section 15 其餘部分允許；(a) 款列四件期間內可做的事，(b) 款另列五件自第一天東部時間 12:01 p.m. 起可做的事。</description>
+    </item>
+    <item>
+      <title>0.3 秒規則：剩 0.2 秒時，NBA 與 FIBA 2026 列出可得分的動作不一樣</title>
+      <link>https://basketball.twtools.cc/articles/point-three-seconds-rule-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/point-three-seconds-rule-basics/</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA 2025-26 規則書 Comments on the Rules II.L 寫，game clock and shot clock 顯示 :00.3 或以上，球員才能在 rebound 或 throw-in 取得球權後嘗試 field goal；FIBA 2026 版規則書（2026 年 10 月 1 日生效）Art. 16.2.5 寫，game clock or the shot clock 顯示 0.3 或以上，球員才能在 throw-in 或最後一罰之後的 rebound 取得控制球後嘗試投籃。剩 0.2 或 0.1 時，NBA 條文列 tip-in 與 high lob，FIBA 條文列 tapping 與 directly dunking。</description>
+    </item>
     <item>
       <title>NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分</title>
       <link>https://basketball.twtools.cc/articles/free-throw-violations-basics/</link>
@@ -198,54 +246,6 @@
       <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>依 NBA 2025-26 規則書 Rule 10 §XIII，原地接球的球員由 §XIII(a) 的樞軸規則處理；行進中或運球中 gather 的球員，第一步從 gather 之後有腳觸地起算，能走幾步要看 gather 時的情境。只記「兩步」，會漏掉行進中且尚未運球的一步款，以及原地接球的樞軸款。</description>
-    </item>
-    <item>
-      <title>TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄</title>
-      <link>https://basketball.twtools.cc/articles/turnover-rate-metrics-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/turnover-rate-metrics-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目都與失誤有關。它們的定義句分母字樣有三種：plays、possessions used、their own possessions；四個條目裡，只有 TO Ratio 附 Formula 欄，公式是 (TO * 100) / (POSS)。</description>
-    </item>
-    <item>
-      <title>離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸</title>
-      <link>https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/away-from-the-play-foul-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依 NBA 2025-26 官方規則書，away-from-the-play foul（本站譯為離球犯規）有兩個分立的定義入口：每一節與每個延長賽最後兩分鐘內、刻意離開進攻動作直接區域的防守非法接觸，以及發球出手前、全場任一時點的防守非法接觸。罰則是一次罰球加保留球權。</description>
-    </item>
-    <item>
-      <title>帶球撞人還是阻擋犯規？先看防守者有沒有先在路徑上站定</title>
-      <link>https://basketball.twtools.cc/articles/charge-vs-block-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/charge-vs-block-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>帶球撞人（charging）與阻擋犯規（blocking）的分派，依 NBA 2025-26 官方規則書，先看防守者有沒有先在進攻者的路徑上建立合法防守位置。禁區半圓（restricted area）是附帶條件的例外，FIBA 2024 的 no-charge 半圓則是另一套規定。</description>
-    </item>
-    <item>
-      <title>頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出</title>
-      <link>https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/max-contract-designated-veteran-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>「頂薪」是中文慣稱，2023 NBA CBA 條文寫的是 Maximum Annual Salary，也就是單一球員合約的首年薪資上限。條文給的是依年資分三級的帽值百分比，加上與前一份合約末季薪資 105% 取高的算法，再疊一組獎項門檻（Higher Max Criteria）；指定老將（Designated Veteran Player）的資格就建在這組門檻之上。</description>
-    </item>
-    <item>
-      <title>NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款</title>
-      <link>https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/nba-draft-eligibility-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依 2023 NBA CBA，具備選秀資格要同時滿足 Article X §1(b)(i) 的全部要求（選秀當年滿 19 歲，非國際球員另須自高中畢業起已過一個 NBA 賽季，未高中畢業者條文另有起算方式），再加上 §1(b)(ii) 七款路徑的其中一款；早期報名是七款裡的第 (G) 款，要在選秀前至少 60 天以書面送達 NBA。</description>
-    </item>
-    <item>
-      <title>進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件</title>
-      <link>https://basketball.twtools.cc/articles/shot-clock-reset-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/shot-clock-reset-basics/</guid>
-      <pubDate>Tue, 29 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依 NBA 2025-26 官方規則書 Rule 7，進攻時間計時器（shot clock）重設成 24 秒、重設成 14 秒、不重設，是三張各自列出事件的清單。判斷時先看事件屬於哪一類，再看球權是否換人、發球在前場還是後場；單看球有沒有碰到籃框，並不足以決定。</description>
     </item>
   </channel>
 </rss>

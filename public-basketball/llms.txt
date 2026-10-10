@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止](https://basketball.twtools.cc/articles/captain-role-basics/)（2026-10-10）
+- [Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同](https://basketball.twtools.cc/articles/contract-option-clauses-basics/)（2026-10-10）
+- [賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知](https://basketball.twtools.cc/articles/game-protest-basics/)（2026-10-10）
+- [Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎](https://basketball.twtools.cc/articles/likely-unlikely-bonus-basics/)（2026-10-10）
+- [Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事](https://basketball.twtools.cc/articles/moratorium-period-basics/)（2026-10-10）
+- [0.3 秒規則：剩 0.2 秒時，NBA 與 FIBA 2026 列出可得分的動作不一樣](https://basketball.twtools.cc/articles/point-three-seconds-rule-basics/)（2026-10-10）
 - [NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分](https://basketball.twtools.cc/articles/free-throw-violations-basics/)（2026-10-05）
 - [NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義](https://basketball.twtools.cc/articles/rebound-percentage-metrics-basics/)（2026-10-05）
 - [NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目](https://basketball.twtools.cc/articles/rookie-scale-contract-basics/)（2026-10-05）
 - [FIBA 2026 給可換人的期間定了起訖，NBA 2025-26 規則書按情境分款寫何時可換](https://basketball.twtools.cc/articles/substitution-rules-basics/)（2026-10-05）
-- [三分線上的區域算幾分？NBA 2025-26 寫兩分，FIBA 2026 寫線不屬於三分區](https://basketball.twtools.cc/articles/three-point-line-basics/)（2026-10-05）
-- [NBA 球在比賽中六人以上可作廢重來，at the start of play 四人以下只判技術犯規再續賽](https://basketball.twtools.cc/articles/too-many-players-basics/)（2026-10-05）
-- [2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票](https://basketball.twtools.cc/articles/easl-2026-27-guide/)（2026-10-04）
-- [TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場](https://basketball.twtools.cc/articles/tpbl-2026-27-schedule-guide/)（2026-10-02）
-- [AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同](https://basketball.twtools.cc/articles/assist-metrics-basics/)（2026-09-30）
-- [回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件](https://basketball.twtools.cc/articles/ball-returned-to-backcourt-basics/)（2026-09-30）
 
 ## 文章與更新
 
