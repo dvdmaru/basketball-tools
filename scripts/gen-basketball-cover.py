@@ -8,8 +8,12 @@ HTML template → Chrome headless → 2400×1260 PNG（純文字、IP 安全：�
 
 用法：python3 gen-basketball-cover.py            # 生成 COVERS 內全部
       python3 gen-basketball-cover.py <slug>...  # 只生成指定 slug（避免重生成全部造成無關 diff）
+      python3 gen-basketball-cover.py --check [slug...]  # 只量版面、不寫 PNG（主標 ≤2 行、副標單行、副標不壓網址）
+      python3 gen-basketball-cover.py --self-test        # 量測器的陽性＋陰性對照
+生成時每張都會先量版面，違規會列出並以 exit 1 結束（PNG 仍照寫）。
+⚠️ 這只擋「折行與重疊」；文字有沒有錨定文章見 check-cover-claims.py，**兩者都綠仍要逐張看 PNG**。
 """
-import os, subprocess, sys, tempfile
+import json, os, re, subprocess, sys, tempfile
 
 CHROME_CANDIDATES = [
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -332,7 +336,78 @@ h1{{font-size:104px;line-height:1.08;font-weight:900;margin:26px 0 0;
   <div class="sub">{sub}</div>
 </div>
 <div class="foot">basketball.twtools.cc</div>
+<script>
+(function(){{
+  // 版面量測（不影響畫面）：結果寫進 #layout-metrics，由 gen-basketball-cover.py 的 measure() 讀。
+  function oneLine(el){{var p=document.createElement(el.tagName);p.className=el.className;
+    p.style.cssText="position:absolute;visibility:hidden;white-space:nowrap";p.textContent="字";
+    document.body.appendChild(p);var h=p.getBoundingClientRect().height;p.remove();return h;}}
+  var h1=document.querySelector("h1"), sub=document.querySelector(".sub"),
+      foot=document.querySelector(".foot"), frame=document.querySelector(".frame");
+  var m={{h1Lines:Math.round(h1.getBoundingClientRect().height/oneLine(h1)),
+         subLines:Math.round(sub.getBoundingClientRect().height/oneLine(sub)),
+         subBottom:Math.round(sub.getBoundingClientRect().bottom),
+         footTop:Math.round(foot.getBoundingClientRect().top),
+         frameBottom:Math.round(frame.getBoundingClientRect().bottom)}};
+  var o=document.createElement("script");o.type="application/json";o.id="layout-metrics";
+  o.textContent=JSON.stringify(m);document.body.appendChild(o);
+}})();
+</script>
 </body></html>"""
+
+# 版面規格（2026-10-10 兩批共 12 張封面、首版 7 張溢版後量到的）：主標固定兩行、副標單行、副標不壓到網址。
+# 中文主標約 9 字／行不折、10 字折；副標含兩段英文會折。check-cover-claims.py 只驗文字錨定、不驗版面，所以由這裡把關。
+MAX_H1_LINES = 2
+MAX_SUB_LINES = 1
+
+
+def measure(html):
+    """用 headless Chrome 渲染 html 並回傳版面量測（dict）。"""
+    with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as f:
+        f.write(html); tmp = f.name
+    try:
+        r = subprocess.run(
+            [chrome(), "--headless", "--disable-gpu", "--hide-scrollbars", "--window-size=1200,630",
+             "--virtual-time-budget=2000", "--dump-dom", f"file://{tmp}"],
+            check=True, capture_output=True, text=True)
+    finally:
+        os.unlink(tmp)
+    # 要匹配「生成出來的」標籤（type 在前、id 在後、內容是 JSON 物件），不能只認 id 字串：
+    # 量測腳本的原始碼自己就含 id="layout-metrics" 這串字。
+    m = re.search(r'<script type="application/json" id="layout-metrics">(\{.*?\})</script>', r.stdout, re.S)
+    if not m:
+        raise SystemExit("量測失敗：DOM 裡找不到 #layout-metrics（Chrome 沒執行量測腳本？）")
+    return json.loads(m.group(1))
+
+
+def violations(m):
+    out = []
+    if m["h1Lines"] > MAX_H1_LINES:
+        out.append(f"主標 {m['h1Lines']} 行（上限 {MAX_H1_LINES}；中文約 9 字／行）")
+    if m["subLines"] > MAX_SUB_LINES:
+        out.append(f"副標 {m['subLines']} 行（上限 {MAX_SUB_LINES}；含兩段英文易折，縮短或拿掉年份與條號）")
+    if m["subBottom"] > m["footTop"] - 6:
+        out.append(f"副標底 {m['subBottom']}px 壓到網址列（網址頂 {m['footTop']}px）")
+    if m["subBottom"] > m["frameBottom"]:
+        out.append(f"副標底 {m['subBottom']}px 超出外框（{m['frameBottom']}px）")
+    return out
+
+
+def self_test():
+    """陽性＋陰性對照：一張刻意溢版的、一張正常的，都要被量測正確分類，否則檢查本身不可信。"""
+    ok = HTML.format(kicker="NBA · 測試", title="禁止第二次運球<br>自願結束或已經結束",
+                     sub="NBA voluntarily ended　·　FIBA first dribble has ended", mktag="NBA 特刊 · 數據深度")
+    bad_title = HTML.format(kicker="NBA · 測試", title="球出界算誰的<br>首句都看最後碰球的人",
+                            sub="句尾 NBA 接 provided　·　FIBA 接 even if", mktag="NBA 特刊 · 數據深度")
+    bad_sub = HTML.format(kicker="NBA · 測試", title="禁止第二次運球<br>自願結束或已經結束",
+                          sub="NBA 2025-26 voluntarily ended　·　FIBA 2026 first dribble has ended", mktag="NBA 特刊 · 數據深度")
+    results = {name: violations(measure(h)) for name, h in (("正常", ok), ("主標 10 字", bad_title), ("副標過長", bad_sub))}
+    for name, v in results.items():
+        print(f"  {name}: {'通過' if not v else '違規 → ' + '；'.join(v)}")
+    # 注意：「正常」那張在不同字型環境下副標寬度可能不同；失敗時先看量測值再判斷是檢查壞了還是環境不同。
+    if results["正常"] or not results["主標 10 字"] or not results["副標過長"]:
+        raise SystemExit("self-test 失敗：檢查器對陽性／陰性對照的判定不符預期")
+    print("self-test 通過（正常張通過、兩張溢版張都被抓到）")
 
 
 def main():
@@ -340,16 +415,29 @@ def main():
     root = os.path.dirname(here)
     league_tag = {"nba": "NBA", "tpbl": "TPBL", "plg": "PLG", "hbl": "HBL",
                   "taiwan": "台灣籃球", "easl": "EASL"}
-    only = set(sys.argv[1:])
+    args = sys.argv[1:]
+    if "--self-test" in args:
+        return self_test()
+    check_only = "--check" in args
+    only = {a for a in args if not a.startswith("--")}
     unknown = only - {slug for slug, *_ in COVERS}
     if unknown:
         raise SystemExit(f"未知 slug（不在 COVERS 內）：{', '.join(sorted(unknown))}")
+    failed = []
     for slug, kicker, title, sub in COVERS:
         if only and slug not in only:
             continue
         lg = slug.split("-", 1)[0]
         mktag = f"{league_tag.get(lg, 'NBA')} 特刊 · 數據深度"
         html = HTML.format(kicker=kicker, title=title, sub=sub, mktag=mktag)
+        v = violations(measure(html))
+        if v:
+            failed.append(slug)
+            print(f"❌ {slug}：" + "；".join(v))
+        elif check_only:
+            print(f"✓ {slug}（版面量測通過）")
+        if check_only:
+            continue
         with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as f:
             f.write(html); tmp = f.name
         art_dir = os.path.join(root, "articles", slug)
@@ -363,6 +451,8 @@ def main():
             check=True, capture_output=True)
         os.unlink(tmp)
         print(f"✓ {out}")
+    if failed:
+        raise SystemExit(f"版面量測未過 {len(failed)} 張：{', '.join(failed)}（PNG 已照寫，修文案後重生；仍要逐張目視）")
 
 
 if __name__ == "__main__":
