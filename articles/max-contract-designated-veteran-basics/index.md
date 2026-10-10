@@ -166,4 +166,4 @@ Art. I(q) 對這種合約的定義補了幾個細節：對象是 Qualifying Vete
 
 ## 資料來源
 
-- 2023 NBA Collective Bargaining Agreement（2023 NBA CBA）：Art. I（Definitions，本文用到 (gg)、(iiii)、(mmm)、(q)、(r)、(yy)）、Art. II §7（Maximum Annual Salary 與 Higher Max Criteria）、Art. VII §5、§7、§8(f)、Art. IX §1、Art. X（Award Eligibility Grievance）。本站取得的是本機保存的全文文字檔，沒有可點擊的公開網址；取得日 2026 年 9 月 29 日。
+- 2023 NBA Collective Bargaining Agreement（2023 NBA CBA）：Art. I（Definitions，本文用到 (gg)、(iiii)、(mmm)、(q)、(r)、(yy)）、Art. II §7（Maximum Annual Salary 與 Higher Max Criteria）、Art. VII §5、§7、§8(f)、Art. IX §1、Art. XXIX §6(b)（Award Eligibility Grievance）。本站取得的是本機保存的全文文字檔，沒有可點擊的公開網址；取得日 2026 年 9 月 29 日。
