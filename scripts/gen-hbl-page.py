@@ -119,10 +119,81 @@ def history_table(hist):
             f'<tbody>{trs}</tbody></table></section>')
 
 
-def _page_faq(season_label, divisions):
+def _stage_rows(stages):
+    rows = ""
+    for group in stages.values():
+        label = group.get("label", "")
+        for stage in group.get("divisions", []):
+            dates = stage.get("first_date", "")
+            if stage.get("last_date") and stage.get("last_date") != dates:
+                dates += f"～{stage['last_date']}"
+            venues = "、".join(stage.get("venues", [])) or "—"
+            rows += (f'<tr><td>{html_lib.escape(label)}</td><td>{html_lib.escape(stage.get("name", ""))}</td>'
+                     f'<td>{html_lib.escape(dates)}</td><td>{html_lib.escape(venues)}</td>'
+                     f'<td>{stage.get("teams", 0)}</td><td>{stage.get("games", 0)}</td></tr>')
+    return rows
+
+
+def stages_table(stages, season_label):
+    rows = _stage_rows(stages)
+    if not rows:
+        return ""
+    return ('<section class="blk"><div class="sp"></div>'
+            f'<h2>{html_lib.escape(season_label)}各階段一覽</h2>'
+            '<div class="tbl-cap">各階段官方賽程摘要（整理自 hbl.com.tw 公開賽果）；日期皆為台北日期。</div>'
+            '<div class="tbl-scroll"><table class="hist"><thead><tr><th>組別</th><th>階段</th>'
+            '<th>日期區間</th><th>場地</th><th>隊數</th><th>場數</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div></section>')
+
+
+def results_table(results):
+    rows = ""
+    labels = (("boys", "男子甲級"), ("girls", "女子甲級"))
+    for key, group_label in labels:
+        group = results.get(key, {})
+        for stage_label, games in (("準決賽", group.get("semifinals", [])),
+                                   ("總決賽", group.get("finals", []))):
+            for game in games:
+                score = (f'{game.get("home_score", "")}：{game.get("away_score", "")}'
+                         if game.get("home_score") is not None and game.get("away_score") is not None else "—")
+                matchup = f'{game.get("home", "")} vs {game.get("away", "")}'
+                round_note = f'（{game["round_label"]}）' if game.get("round_label") else ""
+                rows += (f'<tr><td>{html_lib.escape(game.get("date", ""))}</td>'
+                         f'<td>{html_lib.escape(group_label)}・{stage_label}{html_lib.escape(round_note)}</td>'
+                         f'<td>{html_lib.escape(matchup)}</td><td>{html_lib.escape(score)}</td></tr>')
+    if not rows:
+        return ""
+    return ('<section class="blk"><div class="sp"></div><h2>準決賽與總決賽賽果</h2>'
+            '<div class="tbl-cap">整理自官方公開賽果；場地與逐場資料以官方公告為準。</div>'
+            '<div class="tbl-scroll"><table class="hist"><thead><tr><th>日期</th><th>組別／階段</th>'
+            '<th>對戰</th><th>比分</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div></section>')
+
+
+def next_season_table(next_season):
+    if not next_season:
+        return ""
+    rows = "".join(
+        f'<tr><td>{html_lib.escape(event.get("name", ""))}</td><td>{event.get("squad_count", 0)}</td></tr>'
+        for event in next_season.get("events", []))
+    squads = []
+    for event in next_season.get("events", []):
+        if event.get("squads"):
+            squads.append(f'{event.get("name", "")}：' + "、".join(event["squads"]))
+    squad_text = "<br>".join(html_lib.escape(line) for line in squads)
+    return ('<section class="blk"><div class="sp"></div>'
+            f'<h2>{html_lib.escape(next_season.get("label", ""))}報名隊數</h2>'
+            '<div class="tbl-scroll"><table class="hist"><thead><tr><th>賽事</th><th>報名隊數</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>'
+            '<div class="tbl-cap" style="margin-top:14px">資格賽／賽程以高中體總公告為準。</div>'
+            + (f'<p class="tbl-cap">甲級報名學校：{squad_text}</p>' if squad_text else "")
+            + '</section>')
+
+
+def _page_faq(season_label, divisions, stages, next_season):
     b = divisions.get("boys", {})
     g = divisions.get("girls", {})
-    return [
+    faq = [
         ("HBL 是什麼？",
          "HBL（高級中等學校籃球聯賽）是由中華民國高級中等學校體育總會主辦的全國高中籃球賽事，"
          "本頁聚焦最高層級的甲級聯賽（男子組與女子組）。賽季約從 10 月打到隔年 3 月，"
@@ -137,6 +208,23 @@ def _page_faq(season_label, divisions):
          "HBL 新媒體轉播由中華電信 Hami Video（HBLTV）取得授權，部分場次另有電視台轉播；"
          "本站不提供任何賽事影音，請至獲授權平台觀看。"),
     ]
+    if next_season:
+        counts = "；".join(
+            f'{event.get("name", "")} {event.get("squad_count", 0)} 隊'
+            for event in next_season.get("events", []))
+        label = next_season.get("label", "")
+        faq.append((f"{label}有幾隊報名？",
+                    f"依本頁快照（{next_season.get("asof", "")}），{counts}。"
+                    "資格賽／賽程以高中體總公告為準。"))
+    places = []
+    for group in stages.values():
+        for stage in group.get("divisions", []):
+            venues = "、".join(stage.get("venues", []))
+            if venues:
+                places.append(f'{group.get("label", "")} {stage.get("name", "")}在{venues}')
+    if places:
+        faq.append((f"{season_label}各階段在哪裡打？", "；".join(places) + "。"))
+    return faq
 
 
 def build_page(snap, hist):
@@ -144,6 +232,9 @@ def build_page(snap, hist):
     asof = snap.get("asof_taipei_date", "")
     canonical = f"{BASE}/hbl/"
     dvs = snap.get("divisions", {})
+    stages = snap.get("stages", {})
+    results = snap.get("results", {})
+    next_season = snap.get("next_season")
     blocks = ""
     for k in ("boys", "girls"):
         if not dvs.get(k):
@@ -155,15 +246,16 @@ def build_page(snap, hist):
     cap = (f'<div class="tbl-cap">{season_label}賽事已完賽，表列為總決賽最終名次（快照 {asof}）；'
            '本頁僅整理隊伍層賽果，不列個別球員數據。'
            '本站與中華民國高級中等學校體育總會及各校無任何關聯或授權，引用請以官方公告為準。</div>')
+    data_sections = next_season_table(next_season) + stages_table(stages, season_label) + results_table(results)
     hist_sec = history_table(hist) if hist else ""
-    faq = _page_faq(season_label, dvs)
+    faq = _page_faq(season_label, dvs, stages, next_season)
     body = (
         '<section class="page-hero">'
         '<h1><span class="en">HBL</span> 高中籃球 — 甲級四強與冠軍</h1>'
-        f'<p class="sub">{season_label} HBL 高中籃球甲級聯賽男子組、女子組總決賽結果，'
-        '與可回溯的歷屆冠軍榜。</p>'
+        f'<p class="sub">{season_label} HBL 高中籃球甲級聯賽男子組、女子組總決賽結果、'
+        '各階段賽程與賽果，並收錄下一學年度報名資訊及歷屆冠軍榜。</p>'
         '</section>'
-        + blocks + cap + hist_sec + ba.bb_faq_details_html(faq))
+        + blocks + cap + data_sections + hist_sec + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
             "name": f"HBL 高中籃球甲級四強與冠軍（{season_label}）", "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}
@@ -173,7 +265,8 @@ def build_page(snap, hist):
     b, g = dvs.get("boys", {}), dvs.get("girls", {})
     desc = (f"{season_label} HBL 高中籃球甲級聯賽：男甲冠軍{b.get('champion', '')}"
             f"（{b.get('final_note', '')}）、女甲冠軍{g.get('champion', '')}"
-            f"（{g.get('final_note', '')}），四強最終名次與歷屆冠軍榜。整理自官方公開賽果的非官方頁面。")
+            f"（{g.get('final_note', '')}），四強最終名次、各階段一覽、準決賽與總決賽賽果"
+            "及下一學年度報名資訊。整理自官方公開賽果的非官方頁面。")
     return _shell(f"HBL 高中籃球甲級四強與冠軍（{season_label}）", desc, canonical, jsonld, body)
 
 

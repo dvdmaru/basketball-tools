@@ -1,0 +1,709 @@
+{
+ "asof_taipei_date": "2026-10-13",
+ "season_label": "114學年度",
+ "final": true,
+ "divisions": {
+  "boys": {
+   "label": "男子甲級",
+   "champion": "松山高中",
+   "final_note": "冠軍戰 87:71 勝南湖高中",
+   "final_four": [
+    {
+     "rank": 1,
+     "school": "松山高中",
+     "note": "冠軍戰 87:71 勝南湖高中"
+    },
+    {
+     "rank": 2,
+     "school": "南湖高中",
+     "note": ""
+    },
+    {
+     "rank": 3,
+     "school": "東泰高中",
+     "note": "季軍戰 68:63 勝能仁家商"
+    },
+    {
+     "rank": 4,
+     "school": "能仁家商",
+     "note": ""
+    }
+   ],
+   "source": "整理自 hbl.com.tw 官網公開賽果（非官方文件化介面）"
+  },
+  "girls": {
+   "label": "女子甲級",
+   "champion": "陽明高中",
+   "final_note": "冠軍戰 61:53 勝北一女中",
+   "final_four": [
+    {
+     "rank": 1,
+     "school": "陽明高中",
+     "note": "冠軍戰 61:53 勝北一女中"
+    },
+    {
+     "rank": 2,
+     "school": "北一女中",
+     "note": ""
+    },
+    {
+     "rank": 3,
+     "school": "永仁高中",
+     "note": "季軍戰 83:82 勝南山高中"
+    },
+    {
+     "rank": 4,
+     "school": "南山高中",
+     "note": ""
+    }
+   ],
+   "source": "整理自 hbl.com.tw 官網公開賽果（非官方文件化介面）"
+  }
+ },
+ "stages": {
+  "boys": {
+   "label": "男子甲級",
+   "divisions": [
+    {
+     "name": "資格賽",
+     "status": "COMPLETED",
+     "games": 55,
+     "completed": 55,
+     "first_date": "2025-10-13",
+     "last_date": "2025-10-17",
+     "venues": [
+      "健行科大",
+      "中原大學"
+     ],
+     "teams": 29
+    },
+    {
+     "name": "預賽",
+     "status": "COMPLETED",
+     "games": 24,
+     "completed": 24,
+     "first_date": "2025-11-29",
+     "last_date": "2025-12-02",
+     "venues": [
+      "高雄中學體育館"
+     ],
+     "teams": 16
+    },
+    {
+     "name": "複賽",
+     "status": "COMPLETED",
+     "games": 34,
+     "completed": 34,
+     "first_date": "2025-12-23",
+     "last_date": "2025-12-29",
+     "venues": [
+      "屏東縣立體育館"
+     ],
+     "teams": 12
+    },
+    {
+     "name": "準決賽",
+     "status": "COMPLETED",
+     "games": 28,
+     "completed": 28,
+     "first_date": "2026-02-05",
+     "last_date": "2026-02-12",
+     "venues": [
+      "新北市新莊體育館",
+      "新北市板橋體育館"
+     ],
+     "teams": 8
+    },
+    {
+     "name": "總決賽",
+     "status": "COMPLETED",
+     "games": 4,
+     "completed": 4,
+     "first_date": "2026-03-21",
+     "last_date": "2026-03-22",
+     "venues": [
+      "臺北小巨蛋"
+     ],
+     "teams": 4
+    }
+   ]
+  },
+  "girls": {
+   "label": "女子甲級",
+   "divisions": [
+    {
+     "name": "資格賽",
+     "status": "COMPLETED",
+     "games": 16,
+     "completed": 16,
+     "first_date": "2025-10-13",
+     "last_date": "2025-10-17",
+     "venues": [
+      "健行科大"
+     ],
+     "teams": 8
+    },
+    {
+     "name": "預賽",
+     "status": "COMPLETED",
+     "games": 34,
+     "completed": 34,
+     "first_date": "2025-12-18",
+     "last_date": "2025-12-24",
+     "venues": [
+      "屏東縣立體育館"
+     ],
+     "teams": 12
+    },
+    {
+     "name": "複賽",
+     "status": "COMPLETED",
+     "games": 28,
+     "completed": 28,
+     "first_date": "2026-02-05",
+     "last_date": "2026-02-12",
+     "venues": [
+      "新北市新莊體育館",
+      "新北市板橋體育館"
+     ],
+     "teams": 8
+    },
+    {
+     "name": "總決賽",
+     "status": "COMPLETED",
+     "games": 4,
+     "completed": 4,
+     "first_date": "2026-03-21",
+     "last_date": "2026-03-22",
+     "venues": [
+      "臺北小巨蛋"
+     ],
+     "teams": 4
+    }
+   ]
+  },
+  "boys_b": {
+   "label": "男子乙級",
+   "divisions": [
+    {
+     "name": "全國決賽",
+     "status": "COMPLETED",
+     "games": 20,
+     "completed": 20,
+     "first_date": "2026-04-08",
+     "last_date": "2026-04-12",
+     "venues": [
+      "新北市板橋體育館"
+     ],
+     "teams": 8
+    }
+   ]
+  },
+  "girls_b": {
+   "label": "女子乙級",
+   "divisions": [
+    {
+     "name": "全國決賽",
+     "status": "COMPLETED",
+     "games": 20,
+     "completed": 20,
+     "first_date": "2026-04-08",
+     "last_date": "2026-04-12",
+     "venues": [
+      "新北市板橋體育館"
+     ],
+     "teams": 8
+    }
+   ]
+  }
+ },
+ "results": {
+  "boys": {
+   "semifinals": [
+    {
+     "date": "2026-02-05",
+     "venue": "新北市新莊體育館",
+     "home": "東泰高中",
+     "away": "能仁家商",
+     "home_score": 73,
+     "away_score": 71,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-05",
+     "venue": "新北市新莊體育館",
+     "home": "東山高中",
+     "away": "南湖高中",
+     "home_score": 67,
+     "away_score": 92,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-05",
+     "venue": "新北市新莊體育館",
+     "home": "松山高中",
+     "away": "彰縣成功高中",
+     "home_score": 99,
+     "away_score": 89,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-05",
+     "venue": "新北市新莊體育館",
+     "home": "南山高中",
+     "away": "光復高中",
+     "home_score": 86,
+     "away_score": 85,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-06",
+     "venue": "新北市新莊體育館",
+     "home": "東泰高中",
+     "away": "彰縣成功高中",
+     "home_score": 97,
+     "away_score": 84,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-06",
+     "venue": "新北市新莊體育館",
+     "home": "南湖高中",
+     "away": "光復高中",
+     "home_score": 92,
+     "away_score": 54,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-06",
+     "venue": "新北市新莊體育館",
+     "home": "能仁家商",
+     "away": "松山高中",
+     "home_score": 84,
+     "away_score": 78,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-06",
+     "venue": "新北市板橋體育館",
+     "home": "東山高中",
+     "away": "南山高中",
+     "home_score": 68,
+     "away_score": 71,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-07",
+     "venue": "新北市新莊體育館",
+     "home": "南山高中",
+     "away": "能仁家商",
+     "home_score": 74,
+     "away_score": 89,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-07",
+     "venue": "新北市新莊體育館",
+     "home": "松山高中",
+     "away": "東山高中",
+     "home_score": 94,
+     "away_score": 56,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-07",
+     "venue": "新北市新莊體育館",
+     "home": "光復高中",
+     "away": "東泰高中",
+     "home_score": 47,
+     "away_score": 80,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-07",
+     "venue": "新北市板橋體育館",
+     "home": "彰縣成功高中",
+     "away": "南湖高中",
+     "home_score": 92,
+     "away_score": 86,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-08",
+     "venue": "新北市新莊體育館",
+     "home": "能仁家商",
+     "away": "南湖高中",
+     "home_score": 82,
+     "away_score": 77,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-08",
+     "venue": "新北市板橋體育館",
+     "home": "松山高中",
+     "away": "光復高中",
+     "home_score": 76,
+     "away_score": 74,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-08",
+     "venue": "新北市新莊體育館",
+     "home": "南山高中",
+     "away": "彰縣成功高中",
+     "home_score": 82,
+     "away_score": 69,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-08",
+     "venue": "新北市板橋體育館",
+     "home": "東泰高中",
+     "away": "東山高中",
+     "home_score": 81,
+     "away_score": 56,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-10",
+     "venue": "新北市新莊體育館",
+     "home": "東山高中",
+     "away": "彰縣成功高中",
+     "home_score": 67,
+     "away_score": 83,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-10",
+     "venue": "新北市新莊體育館",
+     "home": "東泰高中",
+     "away": "南山高中",
+     "home_score": 88,
+     "away_score": 68,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-10",
+     "venue": "新北市新莊體育館",
+     "home": "南湖高中",
+     "away": "松山高中",
+     "home_score": 85,
+     "away_score": 79,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-10",
+     "venue": "新北市板橋體育館",
+     "home": "能仁家商",
+     "away": "光復高中",
+     "home_score": 79,
+     "away_score": 77,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-11",
+     "venue": "新北市新莊體育館",
+     "home": "南湖高中",
+     "away": "東泰高中",
+     "home_score": 75,
+     "away_score": 81,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-11",
+     "venue": "新北市板橋體育館",
+     "home": "東山高中",
+     "away": "能仁家商",
+     "home_score": 64,
+     "away_score": 82,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-11",
+     "venue": "新北市新莊體育館",
+     "home": "松山高中",
+     "away": "南山高中",
+     "home_score": 92,
+     "away_score": 65,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-11",
+     "venue": "新北市板橋體育館",
+     "home": "彰縣成功高中",
+     "away": "光復高中",
+     "home_score": 71,
+     "away_score": 63,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-12",
+     "venue": "新北市新莊體育館",
+     "home": "彰縣成功高中",
+     "away": "能仁家商",
+     "home_score": 72,
+     "away_score": 68,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-12",
+     "venue": "新北市新莊體育館",
+     "home": "松山高中",
+     "away": "東泰高中",
+     "home_score": 55,
+     "away_score": 79,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-12",
+     "venue": "新北市新莊體育館",
+     "home": "南山高中",
+     "away": "南湖高中",
+     "home_score": 85,
+     "away_score": 108,
+     "round_label": ""
+    },
+    {
+     "date": "2026-02-12",
+     "venue": "新北市板橋體育館",
+     "home": "光復高中",
+     "away": "東山高中",
+     "home_score": 71,
+     "away_score": 69,
+     "round_label": ""
+    }
+   ],
+   "finals": [
+    {
+     "date": "2026-03-21",
+     "venue": "臺北小巨蛋",
+     "home": "東泰高中",
+     "away": "南湖高中",
+     "home_score": 71,
+     "away_score": 79,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-21",
+     "venue": "臺北小巨蛋",
+     "home": "能仁家商",
+     "away": "松山高中",
+     "home_score": 62,
+     "away_score": 66,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-22",
+     "venue": "臺北小巨蛋",
+     "home": "東泰高中",
+     "away": "能仁家商",
+     "home_score": 68,
+     "away_score": 63,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-22",
+     "venue": "臺北小巨蛋",
+     "home": "南湖高中",
+     "away": "松山高中",
+     "home_score": 71,
+     "away_score": 87,
+     "round_label": ""
+    }
+   ],
+   "advancers": {
+    "資格賽": [
+     "錦和高中",
+     "彰縣成功高中",
+     "南湖高中",
+     "永平工商",
+     "東山高中",
+     "宜蘭高中",
+     "松山高中",
+     "高苑工商",
+     "南山高中",
+     "開南高中",
+     "能仁家商",
+     "北市成功高中",
+     "東泰高中",
+     "三重商工",
+     "光復高中",
+     "花蓮體中"
+    ],
+    "預賽": [
+     "三重商工",
+     "東山高中",
+     "錦和高中",
+     "東泰高中",
+     "開南高中",
+     "松山高中",
+     "高苑工商",
+     "南湖高中",
+     "南山高中",
+     "彰縣成功高中",
+     "光復高中",
+     "能仁家商"
+    ],
+    "複賽": [
+     "東泰高中",
+     "能仁家商",
+     "東山高中",
+     "南湖高中",
+     "松山高中",
+     "彰縣成功高中",
+     "南山高中",
+     "光復高中"
+    ]
+   }
+  },
+  "girls": {
+   "semifinals": [],
+   "finals": [
+    {
+     "date": "2026-03-21",
+     "venue": "臺北小巨蛋",
+     "home": "北一女中",
+     "away": "永仁高中",
+     "home_score": 98,
+     "away_score": 76,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-21",
+     "venue": "臺北小巨蛋",
+     "home": "陽明高中",
+     "away": "南山高中",
+     "home_score": 78,
+     "away_score": 57,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-22",
+     "venue": "臺北小巨蛋",
+     "home": "永仁高中",
+     "away": "南山高中",
+     "home_score": 83,
+     "away_score": 82,
+     "round_label": ""
+    },
+    {
+     "date": "2026-03-22",
+     "venue": "臺北小巨蛋",
+     "home": "北一女中",
+     "away": "陽明高中",
+     "home_score": 53,
+     "away_score": 61,
+     "round_label": ""
+    }
+   ],
+   "advancers": {
+    "資格賽": [
+     "新竹高商",
+     "南山高中",
+     "陽明高中",
+     "苗栗高商",
+     "南湖高中",
+     "永仁高中",
+     "金甌女中",
+     "永平高中",
+     "忠明高中",
+     "北一女中",
+     "淡水商工",
+     "普門中學"
+    ],
+    "預賽": [
+     "永仁高中",
+     "苗栗高商",
+     "淡水商工",
+     "南山高中",
+     "北一女中",
+     "金甌女中",
+     "陽明高中",
+     "永平高中"
+    ],
+    "複賽": [
+     "北一女中",
+     "永仁高中",
+     "陽明高中",
+     "南山高中"
+    ]
+   }
+  }
+ },
+ "next_season": {
+  "label": "115學年度",
+  "events": [
+   {
+    "name": "高中籃球甲級聯賽男生組",
+    "squad_count": 35,
+    "squads": [
+     "花蓮縣立體育高級中等學校",
+     "臺北市私立滬江高級中學",
+     "臺北市立南湖高級中學",
+     "臺中市立后綜高級中學",
+     "臺北市立和平高級中學",
+     "國立宜蘭高級中學",
+     "新北市立錦和高級中學",
+     "國立臺東高級中學",
+     "新北市私立中華商業海事職業學校",
+     "彰化縣立成功高級中學",
+     "高雄市私立高苑高級工商職業學校",
+     "臺北市立松山高級中學",
+     "新北市立泰山高級中學",
+     "臺北市私立新民高級中等學校",
+     "屏東縣私立民生高級家事商業職業學校",
+     "國立臺北科技大學附屬桃園農工高級中等學校",
+     "高雄市立三民高級家事商業職業學校",
+     "治平學校財團法人桃園市治平高級中等學校",
+     "國立基隆高級商工職業學校",
+     "國立屏東高級中學",
+     "南山學校財團法人新北市南山高級中學",
+     "新竹縣私立東泰高級中學",
+     "國立馬祖高級中學",
+     "能仁學校財團法人新北市能仁高級家事商業職業學校",
+     "嘉義市私立東吳高級工業家事職業學校",
+     "臺北市立成功高級中學",
+     "新北市私立莊敬高級工業家事職業學校",
+     "新北市立三重高級商工職業學校",
+     "永平學校財團法人桃園市私立永平工商高級中等學校",
+     "中信國際學校財團法人新北市私立中信高級中等學校",
+     "桃園市立新屋高級中等學校",
+     "花蓮縣私立海星高級中學",
+     "臺中市青年高級中學",
+     "臺中市立東山高級中學",
+     "新竹市私立光復高級中學"
+    ]
+   },
+   {
+    "name": "高中籃球甲級聯賽女生組",
+    "squad_count": 15,
+    "squads": [
+     "國立新竹高級商業職業學校",
+     "國立苗栗高級商業職業學校",
+     "臺中市立忠明高級中學",
+     "中信國際學校財團法人新北市私立中信高級中等學校",
+     "金甌女中",
+     "嘉義市私立輔仁高級中學",
+     "新北市立永平高級中學",
+     "南山學校財團法人新北市南山高級中學",
+     "臺北市立第一女子高級中學",
+     "臺北市立南湖高級中學",
+     "新北市立淡水高級商工職業學校",
+     "佛光山學校財團法人高雄市普門高級中學",
+     "新北市私立莊敬高級工業家事職業學校",
+     "臺南市立永仁高級中學",
+     "臺北市立陽明高級中學"
+    ]
+   },
+   {
+    "name": "高中籃球乙級聯賽男生組",
+    "squad_count": 23
+   },
+   {
+    "name": "高中籃球乙級聯賽女生組",
+    "squad_count": 9
+   }
+  ],
+  "asof": "2026-10-13"
+ }
+}

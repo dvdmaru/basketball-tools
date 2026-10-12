@@ -1,0 +1,1690 @@
+[
+  {
+    "id": 16417,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T02:30:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 72,
+    "awaySquadScore": 74,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311792.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16418,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T04:10:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 86,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 10
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311797.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16409,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T06:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 67,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311669.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16410,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T07:40:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 90,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311563.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16411,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T09:20:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 51,
+    "awaySquadScore": 85,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311572.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16412,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T11:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 5,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 68,
+    "awaySquadScore": 75,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 5,
+        "wonScore": 4
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 5,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311573.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16413,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T02:30:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 75,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312032.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16414,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T04:10:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312033.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16415,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T09:20:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 83,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311564.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16416,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T11:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 100,
+    "awaySquadScore": 78,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 30
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311566.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16419,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T06:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 58,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312034.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16420,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T07:40:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312035.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16456,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T11:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 83,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 30
+      },
+      {
+        "round": 1,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311793.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16457,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T02:30:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 106,
+    "awaySquadScore": 60,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 30
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311570.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16451,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T02:30:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 80,
+    "awaySquadScore": 103,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 33
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311571.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16452,
+    "leagueId": 1,
+    "matchedAt": "2025-11-29T04:10:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 125,
+    "awaySquadScore": 59,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 38
+      },
+      {
+        "round": 2,
+        "wonScore": 31
+      },
+      {
+        "round": 3,
+        "wonScore": 33
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311562.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16453,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T06:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 50,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 7
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311574.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16454,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T07:40:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 87,
+    "awaySquadScore": 89,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 30
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311576.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16455,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T09:20:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 65,
+    "awaySquadScore": 102,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      },
+      {
+        "round": 2,
+        "wonScore": 33
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311796.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16458,
+    "leagueId": 1,
+    "matchedAt": "2025-11-30T04:10:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 75,
+    "awaySquadScore": 66,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 7
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311575.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16459,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T06:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 34,
+    "awaySquadScore": 110,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 6
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 42
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311791.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16460,
+    "leagueId": 1,
+    "matchedAt": "2025-12-01T07:40:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 47,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 6
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 8
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/311794.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16461,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T09:20:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 84,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312047.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16462,
+    "leagueId": 1,
+    "matchedAt": "2025-12-02T11:00:00.000Z",
+    "venue": "高雄中學體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 59,
+    "awaySquadScore": 56,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/312046.do?cs=2"
+      ]
+    }
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "id": 16653,
+    "leagueId": 1,
+    "matchedAt": "2026-03-21T02:00:00.000Z",
+    "venue": "臺北小巨蛋",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "總決賽"
+    },
+    "homeSquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 98,
+    "awaySquadScore": 76,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 27
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/320964.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16654,
+    "leagueId": 1,
+    "matchedAt": "2026-03-21T08:00:00.000Z",
+    "venue": "臺北小巨蛋",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "總決賽"
+    },
+    "homeSquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 57,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 5
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/320955.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16655,
+    "leagueId": 1,
+    "matchedAt": "2026-03-22T02:00:00.000Z",
+    "venue": "臺北小巨蛋",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "總決賽"
+    },
+    "homeSquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 83,
+    "awaySquadScore": 82,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 32
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/321157.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16656,
+    "leagueId": 1,
+    "matchedAt": "2026-03-22T08:00:00.000Z",
+    "venue": "臺北小巨蛋",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "總決賽"
+    },
+    "homeSquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 53,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 10
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/321155.do?cs=2"
+      ]
+    }
+  }
+]

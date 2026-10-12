@@ -1,0 +1,1370 @@
+[
+  {
+    "id": 16668,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T11:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12956,
+      "name": "國立高雄師範大學附屬高級中學",
+      "altName": "高師附中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12031,
+      "name": "臺北市立建國高級中學",
+      "altName": "建國中學",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16669,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T03:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12080,
+      "name": "臺中市立臺中第二高級中等學校",
+      "altName": "臺中二中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13287,
+      "name": "新北市私立中華商業海事職業學校",
+      "altName": "中華商海",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 49,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16657,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T03:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12080,
+      "name": "臺中市立臺中第二高級中等學校",
+      "altName": "臺中二中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13462,
+      "name": "國立嘉義高級中學",
+      "altName": "嘉義高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 81,
+    "awaySquadScore": 77,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16658,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T05:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12437,
+      "name": "宜蘭縣立南澳高級中學",
+      "altName": "南澳高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13061,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 73,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16659,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T09:50:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12031,
+      "name": "臺北市立建國高級中學",
+      "altName": "建國中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13287,
+      "name": "新北市私立中華商業海事職業學校",
+      "altName": "中華商海",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 68,
+    "awaySquadScore": 66,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16660,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T11:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12956,
+      "name": "國立高雄師範大學附屬高級中學",
+      "altName": "高師附中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12158,
+      "name": "臺中市立豐原高級中等學校",
+      "altName": "豐原高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 80,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16661,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T03:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12158,
+      "name": "臺中市立豐原高級中等學校",
+      "altName": "豐原高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12031,
+      "name": "臺北市立建國高級中學",
+      "altName": "建國中學",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 59,
+    "awaySquadScore": 76,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16662,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T05:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13287,
+      "name": "新北市私立中華商業海事職業學校",
+      "altName": "中華商海",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12956,
+      "name": "國立高雄師範大學附屬高級中學",
+      "altName": "高師附中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 37,
+    "awaySquadScore": 98,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 3
+      },
+      {
+        "round": 1,
+        "wonScore": 7
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 30
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16663,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T09:50:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13061,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12080,
+      "name": "臺中市立臺中第二高級中等學校",
+      "altName": "臺中二中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 58,
+    "awaySquadScore": 56,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16664,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T11:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13462,
+      "name": "國立嘉義高級中學",
+      "altName": "嘉義高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12437,
+      "name": "宜蘭縣立南澳高級中學",
+      "altName": "南澳高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16665,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T03:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12158,
+      "name": "臺中市立豐原高級中等學校",
+      "altName": "豐原高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13287,
+      "name": "新北市私立中華商業海事職業學校",
+      "altName": "中華商海",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 57,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16666,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T05:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 5,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13061,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13462,
+      "name": "國立嘉義高級中學",
+      "altName": "嘉義高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 93,
+    "awaySquadScore": 88,
+    "homeSquadRoundScores": [
+      {
+        "round": 5,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 5,
+        "wonScore": 7
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16667,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T09:50:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12437,
+      "name": "宜蘭縣立南澳高級中學",
+      "altName": "南澳高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12080,
+      "name": "臺中市立臺中第二高級中等學校",
+      "altName": "臺中二中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16670,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T05:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12158,
+      "name": "臺中市立豐原高級中等學校",
+      "altName": "豐原高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13462,
+      "name": "國立嘉義高級中學",
+      "altName": "嘉義高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 75,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16671,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T09:50:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12437,
+      "name": "宜蘭縣立南澳高級中學",
+      "altName": "南澳高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12031,
+      "name": "臺北市立建國高級中學",
+      "altName": "建國中學",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 96,
+    "awaySquadScore": 73,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 34
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 31
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16672,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T11:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12956,
+      "name": "國立高雄師範大學附屬高級中學",
+      "altName": "高師附中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13061,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 55,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16673,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T02:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13287,
+      "name": "新北市私立中華商業海事職業學校",
+      "altName": "中華商海",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13462,
+      "name": "國立嘉義高級中學",
+      "altName": "嘉義高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 94,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16674,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T05:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12080,
+      "name": "臺中市立臺中第二高級中等學校",
+      "altName": "臺中二中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12158,
+      "name": "臺中市立豐原高級中等學校",
+      "altName": "豐原高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 72,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16675,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T08:10:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12031,
+      "name": "臺北市立建國高級中學",
+      "altName": "建國中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13061,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 76,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16676,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T11:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級男生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12437,
+      "name": "宜蘭縣立南澳高級中學",
+      "altName": "南澳高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12956,
+      "name": "國立高雄師範大學附屬高級中學",
+      "altName": "高師附中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 52,
+    "awaySquadScore": 74,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  }
+]
