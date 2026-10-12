@@ -1,6 +1,7 @@
 ---
 slug: substitution-rules-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-05"
 title: "FIBA 2026 給可換人的期間定了起訖，NBA 2025-26 規則書按情境分款寫何時可換"

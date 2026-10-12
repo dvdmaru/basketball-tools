@@ -514,6 +514,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -714,6 +723,7 @@ body::before {
 <li>FIBA Official Basketball Rules 2026 v1-1（2026 年 10 月 1 日生效）：Article 16 Goal: When made and its value，16.2.5；Article 15 Player in the act of shooting，15.1.1。本機保存的全文文字檔，取得日 2026 年 10 月 4 日，無可點擊網址。</li>
 </ul>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/game-protest-basics/"><span class="related-reading-title">賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知</span><span class="related-reading-summary">NBA 2025-26 規則書的 F. PROTEST 寫明比賽進行中不允許抗議，賽後以書面通知 Commissioner 並附上 $25,000 的 Protest Fee；FIBA 2026 版規則書 Appendix C 則寫隊長在比賽結束後 15 分鐘內告知並簽名、球隊 1 小時內書面提交理由。讀完可以自己判斷一場假設的比賽，兩邊的時限來不來得及。</span></a><a class="related-reading-item" href="/articles/end-of-period-ball-in-flight-basics/"><span class="related-reading-title">投籃的球在空中、時間到之後被碰到：NBA 2025-26 按碰球者分兩種結果，FIBA 2026 寫任一隊球員</span><span class="related-reading-summary">NBA 2025-26 規則書 Rule 4 §XI 寫，live ball 從場內飛向籃框時，即使 time expires，進了的球 shall count；FIBA 2026 版規則書（2026 年 10 月 1 日生效）Art. 10.4 寫，投籃在飛行中而且 game clock signal 為節末或延長賽結束響起時，the goal counts if made。球在時間到之後被碰到，兩本規則書的寫法不同（NBA Rule 5 §III EXCEPTION (3)、FIBA Art. 10.3）。</span></a><a class="related-reading-item" href="/articles/dribble-ends-double-dribble-basics/"><span class="related-reading-title">禁止第二次運球的那一句：NBA 2025-26 寫「自願結束」，FIBA 2026 版寫「已經結束」</span><span class="related-reading-summary">NBA 2025-26 規則書 Rule 10 §II(c) 寫球員在 voluntarily ended 第一次運球之後不得再運球；FIBA 2026 版規則書（2026 年 10 月 1 日生效）Article 24.2 寫的是 first dribble has ended，句尾再列 3 項可以再運球的情形。NBA 的投籃一項要求球碰到 backboard 或 basket ring，FIBA 的投籃一項沒有寫這個條件。</span></a><a class="related-reading-item" href="/articles/captain-role-basics/"><span class="related-reading-title">隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止</span><span class="related-reading-summary">依 NBA 2025-26 規則書 Rule 3 §III b，在登記給自己隊的暫停期間，指定隊長是唯一可以向裁判詢問規則詮釋的球員，而且他不得討論 judgment decision。依 FIBA 2026 版 Art. 6.1，隊長由 head coach 指定，限球死且比賽時鐘停止時，可以禮貌方式向裁判取得資訊；Art. 7.5 對 head coach 寫了同一組條件。兩份規則書寫下的情境與事項，字面各不相同。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/physical-exam-contract-validity-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫</span><span class="pn-date">2026/10/10 · 週六</span></a><a class="post-nav-link next fallback" href="/articles/"><span class="pn-dir">所有文章 →</span><span class="pn-title">瀏覽全部戰報與文章</span></a></div></nav>
 </div>

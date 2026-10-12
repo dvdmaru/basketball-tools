@@ -1,6 +1,7 @@
 ---
 slug: hbl-rules-vs-fiba
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "乙級打 8 分鐘制，甲級呢？規程沒明寫，只能推論比照 FIBA 標準"

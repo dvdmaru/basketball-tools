@@ -1,6 +1,7 @@
 ---
 slug: hbl-staff-qualification-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-30"
 title: "HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看"

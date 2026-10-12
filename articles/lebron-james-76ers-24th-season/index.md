@@ -1,6 +1,7 @@
 ---
 slug: lebron-james-76ers-24th-season
 competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-07-25"
 title: "詹姆斯加盟 76 人：41 歲、第 24 個賽季，生涯數據與長壽紀錄全解析"

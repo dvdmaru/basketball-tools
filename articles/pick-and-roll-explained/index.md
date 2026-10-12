@@ -1,6 +1,7 @@
 ---
 slug: pick-and-roll-explained
 competition: nba
+topic: nba-tactics
 type: "feature"
 date: "2026-09-25"
 title: "擋拆是什麼？從一次擋人看懂籃球常見的雙人戰術"

@@ -1,6 +1,7 @@
 ---
 slug: fast-break-basics
-competition: "nba"
+competition: nba
+topic: nba-tactics
 type: "feature"
 date: "2026-09-28"
 title: "快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭"

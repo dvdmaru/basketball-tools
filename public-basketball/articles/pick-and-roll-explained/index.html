@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -676,6 +685,7 @@ body::before {
 <h3>擋人什麼時候會被判犯規？</h3>
 <p>依 NBA 規則書，擋人者不得站得離靜止且沒注意到他的對手比一個正常步伐更近、不得對移動中的對手站得太近而讓他來不及避開，也不得站定後向側面或朝被擋者移動。擋人者一邊移動一邊接觸對手，可能被判非法擋人。台灣聯盟與高中聯賽的規則請以各聯盟公布的規則書為準。</p>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/fast-break-basics/"><span class="related-reading-title">快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</span><span class="related-reading-summary">快攻（fast break）常被想成「誰跑得快」，但依 FIBA 教練認證詞彙表與 NBA 2025-26 官方規則書，判斷快攻還有另一條線索：攻守轉換的瞬間，防守方有沒有來得及回位、站好。這篇文章從快攻怎麼發動、規模怎麼分，拆到 NBA 規則書裡「優勢」兩個字包含哪些情況，也整理「數字優勢」這個常聽到的說法，在官方文件裡目前是什麼地位。</span></a><a class="related-reading-item" href="/articles/zone-vs-man-defense/"><span class="related-reading-title">NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型</span><span class="related-reading-summary">區域聯防（zone defense）與人盯人（man-to-man）是球迷與教練的通稱，NBA 2025-26 規則書沒有這兩個詞。規則書明寫任何防守者可以防任何進攻者，也可以包夾；還在管防守站位的是防守三秒，管的是禁區裡沒有盯人的防守者，不是陣型。</span></a><a class="related-reading-item" href="/articles/positions-basics/"><span class="related-reading-title">NBA 規則書沒有定義五個傳統位置，NBA.com 球員頁只標後衛、前鋒、中鋒</span><span class="related-reading-summary">控球後衛、得分後衛、小前鋒、大前鋒、中鋒這五個位置，NBA 2025-26 規則書沒有定義，NBA.com 的球員資料頁也只標後衛、前鋒、中鋒及其組合（2026 年 9 月 25 日的網站標籤）。所謂「位置模糊」，先分清談的是資料標籤、教學分類，還是場上分工，就不容易被說法帶著走。</span></a><a class="related-reading-item" href="/articles/don-nelson-nellie-ball/"><span class="related-reading-title">尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜</span><span class="related-reading-summary">尼爾森於 2026 年 8 月 9 日辭世，享年 86 歲。他以 1,335 勝排名 NBA 史上例行賽勝場第 2。名人堂官網稱他是小球進攻的創新者，也說 point forward 的概念由他帶進籃球；NBA.com 的悼念專文則寫這個詞的發明權有爭議；他本人說 Nellie Ball 只是缺少好長人時的權宜之計。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/draft-lottery-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制</span><span class="pn-date">2026/09/25 · 週五</span></a><a class="post-nav-link next" href="/articles/positions-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">NBA 規則書沒有定義五個傳統位置，NBA.com 球員頁只標後衛、前鋒、中鋒</span><span class="pn-date">2026/09/25 · 週五</span></a></div></nav>
 </div>

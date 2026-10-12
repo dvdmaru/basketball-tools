@@ -1,6 +1,7 @@
 ---
 slug: physical-exam-contract-validity-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-10"
 title: "球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫"

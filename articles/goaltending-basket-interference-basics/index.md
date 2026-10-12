@@ -1,6 +1,7 @@
 ---
 slug: goaltending-basket-interference-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-28"
 title: "那球到底吹哪一種？NBA 規則書把「妨礙中籃」和「干擾球」寫進同一份清單裡"

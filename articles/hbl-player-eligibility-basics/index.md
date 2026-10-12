@@ -1,6 +1,7 @@
 ---
 slug: hbl-player-eligibility-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事"

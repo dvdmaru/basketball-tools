@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -712,6 +721,7 @@ body::before {
 <li>自由體育，〔體育中心／綜合報導〕，2017 年 3 月 5 日 22:33 發布：<a href="https://sports.ltn.com.tw/news/breakingnews/1994376">sports.ltn.com.tw/news/breakingnews/1994376</a></li>
 </ul>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/hbl-tier-b-road-to-finals-basics/"><span class="related-reading-title">114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關</span><span class="related-reading-summary">114 學年度規程（修正版）對乙級寫了三段賽制：縣市預賽（報名隊數超過 1 隊時）採循環，分區複賽第一輪分組單循環、第二輪單淘汰，全國決賽第一輪分組循環、第二輪單淘汰排名制。分區怎麼分、排名賽怎麼打，規程沒有寫，所以能確定的是每一段用什麼制度，不是每一場誰對誰。</span></a><a class="related-reading-item" href="/articles/hbl-standings-tiebreak-basics/"><span class="related-reading-title">HBL 分組循環賽積分相等，名次先看對戰勝負</span><span class="related-reading-summary">114 學年度規程規定，HBL 循環賽的名次依名次積分計算，敗一場也拿 1 分。分組循環賽中 2 隊或以上積分相等時，先以對戰勝負關係判定；積分相等且互有勝負，才進入得失分差與總得分的四步順序，分組賽結束後仍無法判定名次才抽籤。單循環不分組的階段是否套用這套同分判定，規程沒有寫。</span></a><a class="related-reading-item" href="/articles/hbl-staff-qualification-basics/"><span class="related-reading-title">HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看</span><span class="related-reading-summary">依 114 學年度高級中等學校籃球聯賽競賽規程（修正版），第 7 條三～六分別寫了領隊、教練、隨隊教師、防護員的資格：領隊寫身分，教練寫證照，隨隊教師寫是否為該校正式聘任教師，防護員寫證書。兼任限制則只寫在教練與隨隊教師兩款，範圍是同一級別兩校（這是本文把各款並列後的整理，規程沒有這樣總結）。</span></a><a class="related-reading-item" href="/articles/hbl-roster-size-basics/"><span class="related-reading-title">HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人</span><span class="related-reading-summary">114 學年度規程的第 9 條二規定報名人數（甲級球員含隊長 15 人、乙級 18 人），第 12 條二則載明每場由報名球員中提出 12 人名單；兩個數字由不同條文各自規定，本文引用的規程文字沒有寫兩者的換算關係，第 12 條二是否適用乙級，本文引用的規程文字也未明說。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/coachs-challenge-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</span><span class="pn-date">2026/09/27 · 週日</span></a><a class="post-nav-link next" href="/articles/hbl-format-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制</span><span class="pn-date">2026/09/27 · 週日</span></a></div></nav>
 </div>

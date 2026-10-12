@@ -1,6 +1,7 @@
 ---
 slug: true-shooting-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-25"
 title: "同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%"

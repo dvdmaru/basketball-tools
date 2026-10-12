@@ -1,6 +1,7 @@
 ---
 slug: usage-rate-pie-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-29"
 title: "使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼"

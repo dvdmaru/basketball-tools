@@ -546,6 +546,11 @@ body::before {
   overflow: hidden; letter-spacing: 0.2px;
 }
 .idx-card-meta { font-family: var(--font-mono); font-size: 11px; color: var(--dim); margin-top: auto; padding-top: 8px; letter-spacing: 1px; }
+.topic-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 42px; }
+.topic-jump a { border: 1px solid var(--line); border-radius: 999px; color: var(--fg-soft); font-family: var(--font-ui); font-size: 13px; padding: 8px 12px; text-decoration: none; transition: border-color .15s ease, color .15s ease, background .15s ease; }
+.topic-jump a:hover { border-color: var(--accent-line); color: var(--fg); background: var(--surface-2); }
+.topic-section { margin: 0 0 56px; scroll-margin-top: 96px; }
+.topic-section > h2 { border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--font-ui); font-size: clamp(20px, 3vw, 28px); margin: 0 0 22px; padding-bottom: 12px; }
 
 /* ---- responsive ---- */
 @media (max-width: 900px) {
@@ -609,17 +614,7 @@ body::before {
       <div class="idx-feature-excerpt">本文依據 NBA 2025-26 規則書的 Rule 4 Section XI（Field Goal Attempt），以及 FIBA 2026 版規則書 v1-1（2026 年 10 月 1 日生效）的 Article 15（Player…</div>
       <div class="idx-feature-meta">2026/10/10 · 週六</div>
     </div>
-  </a>
-  <div class="idx-section-label">更多文章 <span class="gt-rule"></span></div>
-  <div class="idx-grid">
-      <a class="idx-card" href="/articles/award-eligibility-65-games-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/award-eligibility-65-games-basics/cover-card.webp" alt="2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款</div>
-          <div class="idx-card-meta">2026/10/10 · 週六</div>
-        </div>
-      </a>
+  </a><nav class="topic-jump" aria-label="文章主題"><a href="#nba-rules">NBA 規則（與 FIBA 對照）</a><a href="#nba-cba">NBA 制度與合約（CBA）</a><a href="#nba-stats">數據指標怎麼讀</a><a href="#nba-tactics">戰術與觀念</a><a href="#nba-news">NBA 時事與人物</a><a href="#nba-guide">NBA 入門指南</a><a href="#tw-pro">台灣職籃 TPBL／P. LEAGUE+</a><a href="#hbl">HBL 高中籃球</a><a href="#intl">國際賽與跨聯盟</a></nav><section class="topic-section"><h2 id="nba-rules">NBA 規則（與 FIBA 對照）</h2><div class="idx-grid">
       <a class="idx-card" href="/articles/ball-out-of-bounds-last-touch-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/ball-out-of-bounds-last-touch-basics/cover-card.webp" alt="球出界算誰的？NBA 2025-26 與 FIBA 2026 版首句都看最後碰球的人，句尾寫法不同｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -633,14 +628,6 @@ body::before {
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止</div>
-          <div class="idx-card-meta">2026/10/10 · 週六</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/contract-option-clauses-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/contract-option-clauses-basics/cover-card.webp" alt="Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同</div>
           <div class="idx-card-meta">2026/10/10 · 週六</div>
         </div>
       </a>
@@ -668,30 +655,6 @@ body::before {
           <div class="idx-card-meta">2026/10/10 · 週六</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/likely-unlikely-bonus-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/likely-unlikely-bonus-basics/cover-card.webp" alt="Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎</div>
-          <div class="idx-card-meta">2026/10/10 · 週六</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/moratorium-period-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/moratorium-period-basics/cover-card.webp" alt="Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事</div>
-          <div class="idx-card-meta">2026/10/10 · 週六</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/physical-exam-contract-validity-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/physical-exam-contract-validity-basics/cover-card.webp" alt="球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫</div>
-          <div class="idx-card-meta">2026/10/10 · 週六</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/point-three-seconds-rule-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/point-three-seconds-rule-basics/cover-card.webp" alt="0.3 秒規則：剩 0.2 秒時，NBA 與 FIBA 2026 列出可得分的動作不一樣｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -705,22 +668,6 @@ body::before {
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分</div>
-          <div class="idx-card-meta">2026/10/05 · 週一</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/rebound-percentage-metrics-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/rebound-percentage-metrics-basics/cover-card.webp" alt="NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義</div>
-          <div class="idx-card-meta">2026/10/05 · 週一</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/rookie-scale-contract-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/rookie-scale-contract-basics/cover-card.webp" alt="NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目</div>
           <div class="idx-card-meta">2026/10/05 · 週一</div>
         </div>
       </a>
@@ -748,43 +695,11 @@ body::before {
           <div class="idx-card-meta">2026/10/05 · 週一</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/easl-2026-27-guide/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/easl-2026-27-guide/cover-card.webp" alt="2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票</div>
-          <div class="idx-card-meta">2026/10/04 · 週日</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/tpbl-2026-27-schedule-guide/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-2026-27-schedule-guide/cover-card.webp" alt="TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場</div>
-          <div class="idx-card-meta">2026/10/02 · 週五</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/assist-metrics-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/assist-metrics-basics/cover-card.webp" alt="AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/ball-returned-to-backcourt-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/ball-returned-to-backcourt-basics/cover-card.webp" alt="回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/disabled-player-exception-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/disabled-player-exception-basics/cover-card.webp" alt="傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者</div>
           <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
@@ -804,46 +719,6 @@ body::before {
           <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-eligibility-check-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-eligibility-check-basics/cover-card.webp" alt="HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/hbl-roster-size-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-roster-size-basics/cover-card.webp" alt="HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/hbl-staff-qualification-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-staff-qualification-basics/cover-card.webp" alt="HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/hbl-standings-tiebreak-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-standings-tiebreak-basics/cover-card.webp" alt="HBL 分組循環賽積分相等，名次先看對戰勝負｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">HBL 分組循環賽積分相等，名次先看對戰勝負</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/hbl-tier-b-road-to-finals-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-tier-b-road-to-finals-basics/cover-card.webp" alt="114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/jump-ball-vs-alternating-possession-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/jump-ball-vs-alternating-possession-basics/cover-card.webp" alt="跳球情形怎麼決定球權：NBA 2025-26 規則書與 FIBA 2024 都列出情形，FIBA 另寫明所有跳球情況由兩隊輪流取得擲球入場｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -852,27 +727,11 @@ body::before {
           <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/minimum-team-salary-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/minimum-team-salary-basics/cover-card.webp" alt="NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/offensive-three-seconds-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/offensive-three-seconds-basics/cover-card.webp" alt="進攻三秒什麼時候開始算？NBA 2025-26 規則書寫：球在進攻球隊的前場處於控制中才起算｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">進攻三秒什麼時候開始算？NBA 2025-26 規則書寫：球在進攻球隊的前場處於控制中才起算</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/ten-day-contract-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/ten-day-contract-basics/cover-card.webp" alt="10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者</div>
           <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
@@ -892,14 +751,6 @@ body::before {
           <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/turnover-rate-metrics-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/turnover-rate-metrics-basics/cover-card.webp" alt="TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄</div>
-          <div class="idx-card-meta">2026/09/30 · 週三</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/away-from-the-play-foul-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/away-from-the-play-foul-basics/cover-card.webp" alt="離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -916,44 +767,12 @@ body::before {
           <div class="idx-card-meta">2026/09/29 · 週二</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/max-contract-designated-veteran-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/max-contract-designated-veteran-basics/cover-card.webp" alt="頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出</div>
-          <div class="idx-card-meta">2026/09/29 · 週二</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/nba-draft-eligibility-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/nba-draft-eligibility-basics/cover-card.webp" alt="NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款</div>
-          <div class="idx-card-meta">2026/09/29 · 週二</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/shot-clock-reset-basics/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/shot-clock-reset-basics/cover-card.webp" alt="進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件</div>
           <div class="idx-card-meta">2026/09/29 · 週二</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/usage-rate-pie-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/usage-rate-pie-basics/cover-card.webp" alt="使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</div>
-          <div class="idx-card-meta">2026/09/29 · 週二</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/fast-break-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/fast-break-basics/cover-card.webp" alt="快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</div>
-          <div class="idx-card-meta">2026/09/28 · 週一</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/goaltending-basket-interference-basics/">
@@ -972,12 +791,108 @@ body::before {
           <div class="idx-card-meta">2026/09/28 · 週一</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/tpbl-plg-stats-glossary-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-plg-stats-glossary-basics/cover-card.webp" alt="官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/coachs-challenge-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/coachs-challenge-basics/cover-card.webp" alt="教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看</div>
-          <div class="idx-card-meta">2026/09/28 · 週一</div>
+          <div class="idx-card-title">教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/violation-vs-foul/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/violation-vs-foul/cover-card.webp" alt="NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪</div>
+          <div class="idx-card-meta">2026/09/25 · 週五</div>
+        </div>
+      </a></div></section><section class="topic-section"><h2 id="nba-cba">NBA 制度與合約（CBA）</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/award-eligibility-65-games-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/award-eligibility-65-games-basics/cover-card.webp" alt="2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款</div>
+          <div class="idx-card-meta">2026/10/10 · 週六</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/contract-option-clauses-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/contract-option-clauses-basics/cover-card.webp" alt="Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同</div>
+          <div class="idx-card-meta">2026/10/10 · 週六</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/likely-unlikely-bonus-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/likely-unlikely-bonus-basics/cover-card.webp" alt="Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎</div>
+          <div class="idx-card-meta">2026/10/10 · 週六</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/moratorium-period-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/moratorium-period-basics/cover-card.webp" alt="Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事</div>
+          <div class="idx-card-meta">2026/10/10 · 週六</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/physical-exam-contract-validity-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/physical-exam-contract-validity-basics/cover-card.webp" alt="球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫</div>
+          <div class="idx-card-meta">2026/10/10 · 週六</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/rookie-scale-contract-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/rookie-scale-contract-basics/cover-card.webp" alt="NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目</div>
+          <div class="idx-card-meta">2026/10/05 · 週一</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/disabled-player-exception-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/disabled-player-exception-basics/cover-card.webp" alt="傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/minimum-team-salary-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/minimum-team-salary-basics/cover-card.webp" alt="NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/ten-day-contract-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/ten-day-contract-basics/cover-card.webp" alt="10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/max-contract-designated-veteran-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/max-contract-designated-veteran-basics/cover-card.webp" alt="頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出</div>
+          <div class="idx-card-meta">2026/09/29 · 週二</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/nba-draft-eligibility-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/nba-draft-eligibility-basics/cover-card.webp" alt="NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款</div>
+          <div class="idx-card-meta">2026/09/29 · 週二</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/trade-rules-basics/">
@@ -996,60 +911,68 @@ body::before {
           <div class="idx-card-meta">2026/09/28 · 週一</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/coachs-challenge-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/coachs-challenge-basics/cover-card.webp" alt="教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/restricted-free-agency-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/restricted-free-agency-basics/cover-card.webp" alt="限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決</div>
+          <div class="idx-card-title">限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員</div>
           <div class="idx-card-meta">2026/09/27 · 週日</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-awards-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-awards-basics/cover-card.webp" alt="得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/two-way-contract-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/two-way-contract-basics/cover-card.webp" alt="NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項</div>
+          <div class="idx-card-title">NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽</div>
           <div class="idx-card-meta">2026/09/27 · 週日</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-format-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-format-basics/cover-card.webp" alt="男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/draft-lottery-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/draft-lottery-basics/cover-card.webp" alt="NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制</div>
+          <div class="idx-card-meta">2026/09/25 · 週五</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-player-eligibility-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-player-eligibility-basics/cover-card.webp" alt="轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/salary-cap-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/salary-cap-basics/cover-card.webp" alt="球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事</div>
+          <div class="idx-card-meta">2026/09/25 · 週五</div>
+        </div>
+      </a></div></section><section class="topic-section"><h2 id="nba-stats">數據指標怎麼讀</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/rebound-percentage-metrics-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/rebound-percentage-metrics-basics/cover-card.webp" alt="NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義</div>
+          <div class="idx-card-meta">2026/10/05 · 週一</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-rules-vs-fiba/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-rules-vs-fiba/cover-card.webp" alt="乙級打 8 分鐘制，甲級呢？規程沒明寫，只能推論比照 FIBA 標準｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/assist-metrics-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/assist-metrics-basics/cover-card.webp" alt="AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">乙級打 8 分鐘制，甲級呢？規程沒明寫，只能推論比照 FIBA 標準</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-tier-a-vs-b/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-tier-a-vs-b/cover-card.webp" alt="資格賽輸了，乙級也回不去：HBL 甲級與乙級是報名時的二選一，不是升降級｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/turnover-rate-metrics-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/turnover-rate-metrics-basics/cover-card.webp" alt="TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">資格賽輸了，乙級也回不去：HBL 甲級與乙級是報名時的二選一，不是升降級</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-to-college-pathway/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-to-college-pathway/cover-card.webp" alt="「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/usage-rate-pie-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/usage-rate-pie-basics/cover-card.webp" alt="使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</div>
+          <div class="idx-card-meta">2026/09/29 · 週二</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/offensive-rating-pace-basics/">
@@ -1068,20 +991,28 @@ body::before {
           <div class="idx-card-meta">2026/09/27 · 週日</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/restricted-free-agency-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/restricted-free-agency-basics/cover-card.webp" alt="限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/read-box-score/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/read-box-score/cover-card.webp" alt="投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀</div>
+          <div class="idx-card-meta">2026/09/25 · 週五</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/two-way-contract-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/two-way-contract-basics/cover-card.webp" alt="NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/true-shooting-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/true-shooting-basics/cover-card.webp" alt="同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽</div>
-          <div class="idx-card-meta">2026/09/27 · 週日</div>
+          <div class="idx-card-title">同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%</div>
+          <div class="idx-card-meta">2026/09/25 · 週五</div>
+        </div>
+      </a></div></section><section class="topic-section"><h2 id="nba-tactics">戰術與觀念</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/fast-break-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/fast-break-basics/cover-card.webp" alt="快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</div>
+          <div class="idx-card-meta">2026/09/28 · 週一</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/zone-vs-man-defense/">
@@ -1090,14 +1021,6 @@ body::before {
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型</div>
           <div class="idx-card-meta">2026/09/27 · 週日</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/draft-lottery-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/draft-lottery-basics/cover-card.webp" alt="NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制</div>
-          <div class="idx-card-meta">2026/09/25 · 週五</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/pick-and-roll-explained/">
@@ -1116,38 +1039,14 @@ body::before {
           <div class="idx-card-meta">2026/09/25 · 週五</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/read-box-score/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/read-box-score/cover-card.webp" alt="投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀｜封面" loading="lazy"></div>
+      <a class="idx-card" href="/articles/don-nelson-nellie-ball/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/don-nelson-nellie-ball/cover-card.webp" alt="尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀</div>
-          <div class="idx-card-meta">2026/09/25 · 週五</div>
+          <div class="idx-card-title">尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜</div>
+          <div class="idx-card-meta">2026/08/10 · 週一</div>
         </div>
-      </a>
-      <a class="idx-card" href="/articles/salary-cap-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/salary-cap-basics/cover-card.webp" alt="球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事</div>
-          <div class="idx-card-meta">2026/09/25 · 週五</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/true-shooting-basics/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/true-shooting-basics/cover-card.webp" alt="同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">同樣是 40% 命中率，得分效率為什麼可以差很多？從 FG% 讀到 TS%</div>
-          <div class="idx-card-meta">2026/09/25 · 週五</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/violation-vs-foul/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/violation-vs-foul/cover-card.webp" alt="NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪</div>
-          <div class="idx-card-meta">2026/09/25 · 週五</div>
-        </div>
-      </a>
+      </a></div></section><section class="topic-section"><h2 id="nba-news">NBA 時事與人物</h2><div class="idx-grid">
       <a class="idx-card" href="/articles/clippers-kawhi-leonard-circumvention-penalties/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/clippers-kawhi-leonard-circumvention-penalties/cover-card.webp" alt="快艇在 6 天內寄出 3 封介紹信，每一封都寫著「是對方先開口」｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -1204,43 +1103,11 @@ body::before {
           <div class="idx-card-meta">2026/08/12 · 週三</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/don-nelson-nellie-ball/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/don-nelson-nellie-ball/cover-card.webp" alt="尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜</div>
-          <div class="idx-card-meta">2026/08/10 · 週一</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/taiwan-asian-games-2026-basketball/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/taiwan-asian-games-2026-basketball/cover-card.webp" alt="台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻</div>
-          <div class="idx-card-meta">2026/08/10 · 週一</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/taiwan-hoops-2026-offseason-moves/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/taiwan-hoops-2026-offseason-moves/cover-card.webp" alt="領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表</div>
-          <div class="idx-card-meta">2026/08/10 · 週一</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/nba-2026-draft-results/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/nba-2026-draft-results/cover-card.webp" alt="2026 NBA 選秀完整名單：60 個順位裡，27 個球員不會待在選他的那支球隊｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">2026 NBA 選秀完整名單：60 個順位裡，27 個球員不會待在選他的那支球隊</div>
-          <div class="idx-card-meta">2026/08/06 · 週四</div>
-        </div>
-      </a>
-      <a class="idx-card" href="/articles/tpbl-plg-rules-compared/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-plg-rules-compared/cover-card.webp" alt="TPBL 把球員分成 2 種身分，P. LEAGUE+ 分成 4 種：兩聯盟規則逐條對照｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">TPBL 把球員分成 2 種身分，P. LEAGUE+ 分成 4 種：兩聯盟規則逐條對照</div>
           <div class="idx-card-meta">2026/08/06 · 週四</div>
         </div>
       </a>
@@ -1260,14 +1127,6 @@ body::before {
           <div class="idx-card-meta">2026/07/20 · 週一</div>
         </div>
       </a>
-      <a class="idx-card" href="/articles/hbl-league-guide/">
-        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-league-guide/cover-card.webp" alt="HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍｜封面" loading="lazy"></div>
-        <div class="idx-card-body">
-          <span class="idx-card-kicker">FEATURE</span>
-          <div class="idx-card-title">HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍</div>
-          <div class="idx-card-meta">2026/07/19 · 週日</div>
-        </div>
-      </a>
       <a class="idx-card" href="/articles/nba-2025-26-season-review/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/nba-2025-26-season-review/cover-card.webp" alt="2025-26 NBA 賽季總回顧：紐約尼克隊史第 3 冠，相隔 53 年重返總冠軍｜封面" loading="lazy"></div>
         <div class="idx-card-body">
@@ -1275,13 +1134,45 @@ body::before {
           <div class="idx-card-title">2025-26 NBA 賽季總回顧：紐約尼克隊史第 3 冠，相隔 53 年重返總冠軍</div>
           <div class="idx-card-meta">2026/07/19 · 週日</div>
         </div>
-      </a>
+      </a></div></section><section class="topic-section"><h2 id="nba-guide">NBA 入門指南</h2><div class="idx-grid">
       <a class="idx-card" href="/articles/nba-league-guide/">
         <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/nba-league-guide/cover-card.webp" alt="NBA 完全指南：30 隊架構、賽季節奏與冠軍格局一次讀懂｜封面" loading="lazy"></div>
         <div class="idx-card-body">
           <span class="idx-card-kicker">FEATURE</span>
           <div class="idx-card-title">NBA 完全指南：30 隊架構、賽季節奏與冠軍格局一次讀懂</div>
           <div class="idx-card-meta">2026/07/19 · 週日</div>
+        </div>
+      </a></div></section><section class="topic-section"><h2 id="tw-pro">台灣職籃 TPBL／P. LEAGUE+</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/tpbl-2026-27-schedule-guide/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-2026-27-schedule-guide/cover-card.webp" alt="TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場</div>
+          <div class="idx-card-meta">2026/10/02 · 週五</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/tpbl-plg-stats-glossary-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-plg-stats-glossary-basics/cover-card.webp" alt="官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看</div>
+          <div class="idx-card-meta">2026/09/28 · 週一</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/taiwan-hoops-2026-offseason-moves/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/taiwan-hoops-2026-offseason-moves/cover-card.webp" alt="領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表</div>
+          <div class="idx-card-meta">2026/08/10 · 週一</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/tpbl-plg-rules-compared/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/tpbl-plg-rules-compared/cover-card.webp" alt="TPBL 把球員分成 2 種身分，P. LEAGUE+ 分成 4 種：兩聯盟規則逐條對照｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">TPBL 把球員分成 2 種身分，P. LEAGUE+ 分成 4 種：兩聯盟規則逐條對照</div>
+          <div class="idx-card-meta">2026/08/06 · 週四</div>
         </div>
       </a>
       <a class="idx-card" href="/articles/taiwan-hoops-two-leagues/">
@@ -1291,8 +1182,119 @@ body::before {
           <div class="idx-card-title">為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析</div>
           <div class="idx-card-meta">2026/07/19 · 週日</div>
         </div>
+      </a></div></section><section class="topic-section"><h2 id="hbl">HBL 高中籃球</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/hbl-eligibility-check-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-eligibility-check-basics/cover-card.webp" alt="HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
       </a>
-  </div>
+      <a class="idx-card" href="/articles/hbl-roster-size-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-roster-size-basics/cover-card.webp" alt="HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-staff-qualification-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-staff-qualification-basics/cover-card.webp" alt="HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-standings-tiebreak-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-standings-tiebreak-basics/cover-card.webp" alt="HBL 分組循環賽積分相等，名次先看對戰勝負｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">HBL 分組循環賽積分相等，名次先看對戰勝負</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-tier-b-road-to-finals-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-tier-b-road-to-finals-basics/cover-card.webp" alt="114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關</div>
+          <div class="idx-card-meta">2026/09/30 · 週三</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-awards-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-awards-basics/cover-card.webp" alt="得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-format-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-format-basics/cover-card.webp" alt="男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-player-eligibility-basics/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-player-eligibility-basics/cover-card.webp" alt="轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">轉學生要禁賽 1 年？HBL 規程裡有兩個「1 年」，指的不是同一件事</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-rules-vs-fiba/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-rules-vs-fiba/cover-card.webp" alt="乙級打 8 分鐘制，甲級呢？規程沒明寫，只能推論比照 FIBA 標準｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">乙級打 8 分鐘制，甲級呢？規程沒明寫，只能推論比照 FIBA 標準</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-tier-a-vs-b/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-tier-a-vs-b/cover-card.webp" alt="資格賽輸了，乙級也回不去：HBL 甲級與乙級是報名時的二選一，不是升降級｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">資格賽輸了，乙級也回不去：HBL 甲級與乙級是報名時的二選一，不是升降級</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-to-college-pathway/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-to-college-pathway/cover-card.webp" alt="「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格</div>
+          <div class="idx-card-meta">2026/09/27 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/hbl-league-guide/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/hbl-league-guide/cover-card.webp" alt="HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍</div>
+          <div class="idx-card-meta">2026/07/19 · 週日</div>
+        </div>
+      </a></div></section><section class="topic-section"><h2 id="intl">國際賽與跨聯盟</h2><div class="idx-grid">
+      <a class="idx-card" href="/articles/easl-2026-27-guide/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/easl-2026-27-guide/cover-card.webp" alt="2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票</div>
+          <div class="idx-card-meta">2026/10/04 · 週日</div>
+        </div>
+      </a>
+      <a class="idx-card" href="/articles/taiwan-asian-games-2026-basketball/">
+        <div class="idx-card-img-wrap"><img class="idx-card-img" src="/articles/taiwan-asian-games-2026-basketball/cover-card.webp" alt="台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻｜封面" loading="lazy"></div>
+        <div class="idx-card-body">
+          <span class="idx-card-kicker">FEATURE</span>
+          <div class="idx-card-title">台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻</div>
+          <div class="idx-card-meta">2026/08/10 · 週一</div>
+        </div>
+      </a></div></section>
   </main>
 </div>
 

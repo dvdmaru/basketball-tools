@@ -1,6 +1,7 @@
 ---
 slug: nba-2025-26-season-review
 competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-07-19"
 title: "2025-26 NBA 賽季總回顧：紐約尼克隊史第 3 冠，相隔 53 年重返總冠軍"

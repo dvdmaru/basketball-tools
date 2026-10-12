@@ -1,6 +1,9 @@
 ---
 slug: "clippers-kawhi-leonard-circumvention-penalties"
-competition: "nba"
+competition: nba
+topic: nba-news
+topic_ref: "manual"
+topic2: nba-cba
 type: "feature"
 date: "2026-09-05"
 title: "快艇在 6 天內寄出 3 封介紹信，每一封都寫著「是對方先開口」"

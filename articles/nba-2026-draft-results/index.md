@@ -1,6 +1,7 @@
 ---
 slug: nba-2026-draft-results
 competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-08-06"
 title: "2026 NBA 選秀完整名單：60 個順位裡，27 個球員不會待在選他的那支球隊"

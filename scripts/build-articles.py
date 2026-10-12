@@ -73,6 +73,28 @@ def load_competitions() -> dict:
 COMPETITIONS = load_competitions()
 
 
+def load_article_topics() -> list:
+    """Load the basketball article taxonomy from its editorial config file."""
+    path = ROOT / "config" / "article-topics.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    topics = data.get("topics")
+    if not isinstance(topics, list) or not topics:
+        raise ValueError("config/article-topics.json 必須包含非空的 topics 陣列")
+    required = {"key", "label", "order", "description"}
+    keys = []
+    for topic in topics:
+        if not isinstance(topic, dict) or required - set(topic):
+            raise ValueError("article topic 缺少 key、label、order 或 description")
+        keys.append(str(topic["key"]))
+    if len(keys) != len(set(keys)):
+        raise ValueError("config/article-topics.json 的 topic key 不可重複")
+    return sorted(topics, key=lambda topic: (topic["order"], topic["key"]))
+
+
+ARTICLE_TOPICS = load_article_topics()
+ARTICLE_TOPIC_BY_KEY = {topic["key"]: topic for topic in ARTICLE_TOPICS}
+
+
 # ---------- draft exclusion (build-side pending-review gate) ----------
 # Slugs listed in config/draft-exclude.json are treated as drafts pending review and are
 # skipped entirely at discovery -> they never enter any article index, feed, sitemap, sport
@@ -1087,6 +1109,15 @@ ARTICLE_CSS = """
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -1182,6 +1213,11 @@ INDEX_CSS = """
   overflow: hidden; letter-spacing: 0.2px;
 }
 .idx-card-meta { font-family: var(--font-mono); font-size: 11px; color: var(--dim); margin-top: auto; padding-top: 8px; letter-spacing: 1px; }
+.topic-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 42px; }
+.topic-jump a { border: 1px solid var(--line); border-radius: 999px; color: var(--fg-soft); font-family: var(--font-ui); font-size: 13px; padding: 8px 12px; text-decoration: none; transition: border-color .15s ease, color .15s ease, background .15s ease; }
+.topic-jump a:hover { border-color: var(--accent-line); color: var(--fg); background: var(--surface-2); }
+.topic-section { margin: 0 0 56px; scroll-margin-top: 96px; }
+.topic-section > h2 { border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--font-ui); font-size: clamp(20px, 3vw, 28px); margin: 0 0 22px; padding-bottom: 12px; }
 
 /* ---- responsive ---- */
 @media (max-width: 900px) {
@@ -1328,9 +1364,43 @@ def faq_node(pairs, page_url: str):
 
 # ---------- render ----------
 
+def related_articles_for(meta: dict, slug: str, candidates: list) -> list:
+    """Choose reproducible same-topic reading, then same-competition backfill."""
+    current_topics = {meta.get("topic"), meta.get("topic2")} - {None, ""}
+    ordered = sorted(
+        (a for a in candidates if a["slug"] != slug),
+        key=lambda a: (str(a["meta"].get("date", "")), a["slug"]), reverse=True,
+    )
+    selected = [a for a in ordered if current_topics & {
+        a["meta"].get("topic"), a["meta"].get("topic2")
+    }]
+    if len(selected) < 3:
+        selected_slugs = {a["slug"] for a in selected}
+        selected.extend(a for a in ordered
+                        if a["slug"] not in selected_slugs
+                        and a["meta"].get("competition") == meta.get("competition"))
+    return selected[:4]
+
+
+def render_related_reading(meta: dict, slug: str, candidates: list) -> str:
+    selected = related_articles_for(meta, slug, candidates)
+    if not selected:
+        return ""
+    rows = "".join(
+        f'<a class="related-reading-item" href="/articles/{a["slug"]}/">'
+        f'<span class="related-reading-title">{html_lib.escape(str(a["meta"].get("title", a["slug"])))}</span>'
+        f'<span class="related-reading-summary">{html_lib.escape(str(a["meta"].get("lede") or a["meta"].get("subtitle", "")))}</span>'
+        '</a>'
+        for a in selected
+    )
+    return ('<section class="related-reading" aria-labelledby="related-reading-heading">'
+            '<h2 id="related-reading-heading">延伸閱讀</h2>'
+            f'<div class="related-reading-list">{rows}</div></section>')
+
+
 def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
                    prev_nav=None, next_nav=None, more_dailies=None, nav_kind="daily",
-                   faq=None) -> str:
+                   faq=None, related_candidates=None) -> str:
     typ = meta.get("type", "feature")
     if typ == "daily":
         vol = meta.get("vol", "?")
@@ -1454,6 +1524,7 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
     if lede_raw:
         lede_html = ('\n    <div class="article-lede"><span class="lede-label">重點速答</span>'
                      f'<p>{html_lib.escape(lede_raw)}</p></div>')
+    related_block = render_related_reading(meta, slug, related_candidates or [])
 
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant" data-theme="{site['default_theme']}">
@@ -1506,6 +1577,7 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
     <div class="prose{' prose--daily' if typ == 'daily' else ''}">
 {body_html}
     </div>
+    {related_block}
   </article>
   {series_nav}
 </div>
@@ -2015,6 +2087,12 @@ tr.pi .seed{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(
 .art.lead h4{font-size:22px}
 .art p{font-size:13px;color:var(--fg-mute);text-wrap:pretty}
 .art .meta{margin-top:auto;font-size:11.5px;color:var(--fg-dim);font-variant-numeric:tabular-nums;letter-spacing:.3px}
+/* topic entry */
+.topic-entry{margin:0 0 56px}
+.topic-entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.topic-entry-link{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--fg);padding:14px 16px;text-decoration:none;font-size:14px;font-weight:700;transition:.18s}
+.topic-entry-link:hover{border-color:var(--accent-line);background:var(--surface-2);transform:translateY(-2px)}
+.topic-entry-count{color:var(--fg-dim);font-family:var(--f-ui);font-size:12px;font-weight:500;white-space:nowrap}
 /* FAQ */
 .faq{display:flex;flex-direction:column;gap:10px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
@@ -2033,6 +2111,7 @@ section.blk{padding-top:8px}
   .conf-grid{grid-template-columns:minmax(0,1fr);gap:32px}
   .art-grid{grid-template-columns:1fr 1fr}
   .art.lead{grid-column:span 2}
+  .topic-entry-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
   .wrap{padding:0 2px}
@@ -2043,6 +2122,7 @@ section.blk{padding-top:8px}
   .tiles{grid-template-columns:1fr}
   .art-grid{grid-template-columns:1fr}
   .art.lead{grid-column:span 1}
+  .topic-entry-grid{grid-template-columns:1fr}
   .four-grid{grid-template-columns:1fr}
   .dash{gap:44px}
   table.std{min-width:520px}
@@ -2536,6 +2616,21 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
              '<h4>數據總覽</h4><p>所有數據頁入口</p></div><span class="arw">→</span></a>'
              '</div></section>')
 
+    # ----- 新手村／主題入口：在資料區塊後提供長青文的直達路徑，不擠壓 dashboard -----
+    topic_counts = {topic["key"]: sum(a["meta"].get("topic") == topic["key"] for a in articles)
+                    for topic in ARTICLE_TOPICS}
+    topic_links = "".join(
+        f'<a class="topic-entry-link" href="/articles/#{topic["key"]}" '
+        f'title="{html_lib.escape(topic["description"])}">'
+        f'<span>{html_lib.escape(topic["label"])}</span>'
+        f'<span class="topic-entry-count">{topic_counts[topic["key"]]} 篇</span></a>'
+        for topic in ARTICLE_TOPICS
+    )
+    topic_entry = ('<section class="blk topic-entry"><div class="sp"></div>'
+                   '<div class="slabel"><span class="k">新手村／<em>主題入口</em></span>'
+                   '<span class="rule"></span><a class="r" href="/articles/" style="text-decoration:none">全部文章 →</a></div>'
+                   f'<div class="topic-entry-grid">{topic_links}</div></section>')
+
     # ----- 最新文章（真封面 art-grid）-----
     art_sec = ""
     if articles:
@@ -2602,6 +2697,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
   {dash_blocks}
   </div>
   {tiles}
+  {topic_entry}
   {art_sec}
   {faq_sec}
 </main>
@@ -2617,11 +2713,21 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
     Fixes the earlier hole where /articles/ was a byte-identical clone of the homepage."""
     base = site["base"]
     feature = _bb_feature_card(articles[0]) if articles else ""
-    cards = "".join(_bb_idx_card(a) for a in articles[1:])
-    grid_block = (f"""
-  <div class="idx-section-label">更多文章 <span class="gt-rule"></span></div>
-  <div class="idx-grid">{cards}
-  </div>""" if cards else "")
+    remaining = articles[1:]
+    topic_counts = {topic["key"]: sum(a["meta"].get("topic") == topic["key"] for a in articles)
+                    for topic in ARTICLE_TOPICS}
+    topic_jump = "".join(
+        f'<a href="#{topic["key"]}">{html_lib.escape(topic["label"])}</a>'
+        for topic in ARTICLE_TOPICS if topic_counts[topic["key"]]
+    )
+    sections = []
+    for topic in ARTICLE_TOPICS:
+        cards = "".join(_bb_idx_card(a) for a in remaining
+                        if a["meta"].get("topic") == topic["key"])
+        if cards:
+            sections.append(f'<section class="topic-section"><h2 id="{topic["key"]}">'
+                            f'{html_lib.escape(topic["label"])}</h2><div class="idx-grid">{cards}</div></section>')
+    topic_sections = "".join(sections)
     item_list = {"@type": "ItemList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "url": f"{base}/articles/{a['slug']}/",
          "name": a["meta"].get("title", a["slug"])} for i, a in enumerate(articles)]}
@@ -2637,7 +2743,7 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
   <main>
   <h1 class="idx-h1">深度文章 — NBA 與台灣籃球</h1>
   <div class="idx-intro">數據深度分析 · 聯盟指南 · 專題特刊 — 每篇附數據表格、每個數字標註來源與截止日期 · 共 {len(articles)} 篇、最新在前</div>
-{feature}{grid_block}
+{feature}<nav class="topic-jump" aria-label="文章主題">{topic_jump}</nav>{topic_sections}
   </main>
 </div>
 {_bb_footer(site)}
@@ -2827,9 +2933,11 @@ def build():
     # ----- render every article now that neighbors are known (out_dir already per-site) -----
     for a in articles:
         prev_nav, next_nav, more, kind = nav_for.get(a["slug"], (None, None, [], "daily"))
+        related_candidates = groups.get("basketball", []) if _sport_of(a["meta"]) == "basketball" else []
         html_out = render_article(a["meta"], a["body_html"], a["slug"], a["excerpt"],
                                   prev_nav=prev_nav, next_nav=next_nav,
-                                  more_dailies=more, nav_kind=kind, faq=a["faq"])
+                                  more_dailies=more, nav_kind=kind, faq=a["faq"],
+                                  related_candidates=related_candidates)
         (a["out_dir"] / "index.html").write_text(html_out, encoding="utf-8")
         print(f"✅ {a['slug']}")
 

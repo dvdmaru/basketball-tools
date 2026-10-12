@@ -1,6 +1,7 @@
 ---
 slug: point-three-seconds-rule-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "0.3 秒規則：剩 0.2 秒時，NBA 與 FIBA 2026 列出可得分的動作不一樣"

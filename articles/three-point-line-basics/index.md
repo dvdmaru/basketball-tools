@@ -1,6 +1,7 @@
 ---
 slug: three-point-line-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-05"
 title: "三分線上的區域算幾分？NBA 2025-26 寫兩分，FIBA 2026 寫線不屬於三分區"

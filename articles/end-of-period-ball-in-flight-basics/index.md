@@ -1,6 +1,7 @@
 ---
 slug: end-of-period-ball-in-flight-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "投籃的球在空中、時間到之後被碰到：NBA 2025-26 按碰球者分兩種結果，FIBA 2026 寫任一隊球員"

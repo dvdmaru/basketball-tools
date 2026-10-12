@@ -1,6 +1,7 @@
 ---
 slug: don-nelson-nellie-ball
 competition: nba
+topic: nba-tactics
 type: "feature"
 date: "2026-08-10"
 title: "尼爾森（Don Nelson）的 Nellie Ball：名人堂說他是創新者，他說只是權宜"

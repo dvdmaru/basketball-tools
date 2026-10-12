@@ -1,6 +1,7 @@
 ---
 slug: hbl-to-college-pathway
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格"

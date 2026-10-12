@@ -1,6 +1,7 @@
 ---
 slug: hbl-standings-tiebreak-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-30"
 title: "HBL 分組循環賽積分相等，名次先看對戰勝負"

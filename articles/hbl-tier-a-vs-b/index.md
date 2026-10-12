@@ -1,6 +1,7 @@
 ---
 slug: hbl-tier-a-vs-b
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "資格賽輸了，乙級也回不去：HBL 甲級與乙級是報名時的二選一，不是升降級"

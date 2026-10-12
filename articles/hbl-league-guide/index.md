@@ -1,6 +1,7 @@
 ---
 slug: hbl-league-guide
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-07-19"
 title: "HBL 高中籃球甲級聯賽完全指南：賽制、小巨蛋決賽與歷屆冠軍"

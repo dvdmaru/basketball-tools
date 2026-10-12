@@ -1,6 +1,7 @@
 ---
 slug: rookie-scale-contract-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-05"
 title: "NBA 第一輪新秀合約的 80% 下限與 120% 上限，量的是兩個不同的項目"

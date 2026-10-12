@@ -1,6 +1,7 @@
 ---
 slug: positions-basics
 competition: nba
+topic: nba-tactics
 type: "feature"
 date: "2026-09-25"
 title: "NBA 規則書沒有定義五個傳統位置，NBA.com 球員頁只標後衛、前鋒、中鋒"

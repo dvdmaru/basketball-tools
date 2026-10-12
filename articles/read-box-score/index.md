@@ -1,6 +1,7 @@
 ---
 slug: read-box-score
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-25"
 title: "投籃 12 次只得 6 分：技術統計表的欄位，要成對讀、拆開讀"

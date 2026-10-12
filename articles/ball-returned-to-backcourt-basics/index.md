@@ -1,6 +1,7 @@
 ---
 slug: ball-returned-to-backcourt-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "回場違例：NBA 2025-26 規則書寫己方球員不得第一個觸球，FIBA 2024 條文另寫兩種先觸球的條件"

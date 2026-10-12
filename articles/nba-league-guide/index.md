@@ -1,6 +1,7 @@
 ---
 slug: nba-league-guide
 competition: nba
+topic: nba-guide
 type: "feature"
 date: "2026-07-19"
 title: "NBA 完全指南：30 隊架構、賽季節奏與冠軍格局一次讀懂"

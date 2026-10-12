@@ -1,6 +1,7 @@
 ---
 slug: two-way-contract-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-27"
 title: "NBA 雙向合約怎麼運作：每隊 3 個名額、每季 50 場，季後賽不能出賽"

@@ -1,6 +1,7 @@
 ---
 slug: game-protest-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知"

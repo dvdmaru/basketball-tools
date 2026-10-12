@@ -1,6 +1,7 @@
 ---
 slug: coachs-challenge-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-27"
 title: "教練喊挑戰之前，得先叫一次暫停：NBA 教練挑戰只能挑三種判決"

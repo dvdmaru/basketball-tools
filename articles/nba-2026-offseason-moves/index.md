@@ -1,6 +1,7 @@
 ---
 slug: nba-2026-offseason-moves
 competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-07-20"
 title: "2026 NBA 休賽季異動總表：字母哥轉戰熱火、布朗換來保羅喬治，已完成與待確認一次看"

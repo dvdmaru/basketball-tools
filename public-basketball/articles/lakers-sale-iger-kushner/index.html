@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -680,6 +689,7 @@ body::before {
 <h3>台灣媒體怎麼稱呼這個數字？</h3>
 <p>在窗期 2026 年 8 月 12 日到 8 月 18 日、報導主題為本案、且標題或內文出現 125 億表述、且能取得原始頁面的 10 家獨立編輯來源中，來源層把 125 億寫成付出的金額的有 8 家、寫成估值的有 0 家、口徑不一致而落在「不明」的有 2 家。這是一份定向樣本，不是台灣媒體的母體，也不能推論到樣本以外。由於交易條款未公開，本站不對任何一家媒體的用詞作正誤判斷；英文媒體在同一週同樣分成估值與價格兩派。</p>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/clippers-kawhi-leonard-circumvention-penalties/"><span class="related-reading-title">快艇在 6 天內寄出 3 封介紹信，每一封都寫著「是對方先開口」</span><span class="related-reading-summary">2020 年 6 月的 6 天裡，快艇業務營運總裁祖克寄出 3 封介紹信，把雷納德的舅舅兼經紀人羅伯森介紹給正在跟快艇談生意的公司；每一封信都寫著同一個理由，是對方先開口。6 年後，NBA 罰款快艇 3,000 萬美元，沒收 5 個首輪選秀權，老闆鮑默停權 1 年。</span></a><a class="related-reading-item" href="/articles/stephen-curry-over-38-rule-extension/"><span class="related-reading-title">38 歲條款不禁止長約，它把錢往前攤：柯瑞 2024 年只延長得了 1 年</span><span class="related-reading-summary">美國時間 2026 年 8 月 29 日，柯瑞（Stephen Curry）重新取得跟金州勇士（Golden State Warriors）簽延長約的資格；截至台灣時間 8 月 31 日，ESPN 與 CBS Sports 的 2 份交易紀錄都還沒有他的條目，2 份紀錄的最新一筆交易都停在 8 月 29 日。這已經是他第 2 次碰到同一條規則——2024 年 8 月 29 日那次，他只延長得了 1 年、6,260 萬美元，原因寫在 NBA 勞資協議（CBA）的「38 歲條款（Over-38 Rule）」裡，而條文原文寫的東西，跟大家轉述的不太一樣。</span></a><a class="related-reading-item" href="/articles/russell-westbrook-retirement-career-stats/"><span class="related-reading-title">衛斯布魯克退休：209 次大三元排在史上第一，第二名還在打</span><span class="related-reading-summary">衛斯布魯克（Russell Westbrook）於美國時間 2026 年 8 月 12 日（台灣時間 13 日凌晨）宣布退休，18 個賽季留下 1,301 場出賽、27,176 分、10,351 助攻與 209 次大三元；截至退休時，大三元次數是 NBA 史上最多。</span></a><a class="related-reading-item" href="/articles/kevin-garnett-wolves-21-jersey-retirement/"><span class="related-reading-title">灰狼成軍至今只退休過一件球衣，賈奈特的 21 號將是第二件</span><span class="related-reading-summary">明尼蘇達灰狼將於美國時間 2027 年 2 月 28 日（台灣時間 3 月 1 日）主場對塞爾提克賽後退休賈奈特（Kevin Garnett）的 21 號球衣。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/nba-2026-27-opening-night-christmas-schedule/"><span class="pn-dir">← 前一篇</span><span class="pn-title">詹姆斯開幕戰作客尼克，台北時間 10 月 21 日早上 7 點</span><span class="pn-date">2026/08/12 · 週三</span></a><a class="post-nav-link next" href="/articles/wolves-lynx-sale-stad/"><span class="pn-dir">後一篇 →</span><span class="pn-title">灰狼與山貓談成控股權轉讓，買家 Marc Stad 原本就是自家股東</span><span class="pn-date">2026/08/22 · 週六</span></a></div></nav>
 </div>

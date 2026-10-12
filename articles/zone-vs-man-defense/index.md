@@ -1,6 +1,8 @@
 ---
 slug: zone-vs-man-defense
 competition: nba
+topic: nba-tactics
+topic2: nba-rules
 type: "feature"
 date: "2026-09-27"
 title: "NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型"

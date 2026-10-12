@@ -1,6 +1,7 @@
 ---
 slug: five-second-rules-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "5 秒的時限出現在不同情形：NBA 2025-26 規則書寫發球與背對籃框運球，FIBA 2024 寫發球、closely guarded 與罰球"

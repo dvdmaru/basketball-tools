@@ -1,6 +1,9 @@
 ---
 slug: taiwan-asian-games-2026-basketball
 competition: tpbl
+topic: intl
+topic_ref: "manual"
+topic2: tw-pro
 type: "feature"
 date: "2026-08-10"
 title: "台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻"

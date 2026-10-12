@@ -1,6 +1,7 @@
 ---
 slug: taiwan-hoops-two-leagues
 competition: tpbl
+topic: tw-pro
 type: "feature"
 date: "2026-07-19"
 title: "為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析"

@@ -1,6 +1,7 @@
 ---
 slug: assist-metrics-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-30"
 title: "AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同"

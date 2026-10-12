@@ -1,6 +1,7 @@
 ---
 slug: read-standings-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-27"
 title: "NBA 戰績表：兩隊同勝率先比對戰成績，三隊同勝率卻先看分組冠軍"

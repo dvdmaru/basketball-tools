@@ -1,6 +1,7 @@
 ---
 slug: jump-ball-vs-alternating-possession-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "跳球情形怎麼決定球權：NBA 2025-26 規則書與 FIBA 2024 都列出情形，FIBA 另寫明所有跳球情況由兩隊輪流取得擲球入場"

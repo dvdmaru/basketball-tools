@@ -1,6 +1,7 @@
 ---
 slug: "russell-westbrook-retirement-career-stats"
-competition: "nba"
+competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-08-29"
 title: "衛斯布魯克退休：209 次大三元排在史上第一，第二名還在打"

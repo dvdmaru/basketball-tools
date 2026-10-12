@@ -1,6 +1,9 @@
 ---
 slug: "stephen-curry-over-38-rule-extension"
-competition: "nba"
+competition: nba
+topic: nba-news
+topic_ref: "manual"
+topic2: nba-cba
 type: "feature"
 date: "2026-08-31"
 title: "38 歲條款不禁止長約，它把錢往前攤：柯瑞 2024 年只延長得了 1 年"

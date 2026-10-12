@@ -1,6 +1,7 @@
 ---
 slug: hbl-tier-b-road-to-finals-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-30"
 title: "114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關"
