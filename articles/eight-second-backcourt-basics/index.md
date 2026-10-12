@@ -64,13 +64,13 @@ NBA 2025-26 規則書把「給新的 8 秒」寫在兩個地方，兩處各自�
 
 除了上面兩張清單，NBA 2025-26 規則書還有三處提到 8 秒的處理。
 
-**Rule 10 Section II（Delay-of-Game）罰則段。** 該段在「上列違規判給防守方」的句子之後寫明：進攻方若在後場，會被給新的 8 秒（The offensive team shall be awarded a new 8 seconds to advance the ball if it is in the backcourt）。同段另有一句：上列違規若判給進攻方，timing status 不變（There is no change in timing status if any of these violations are assessed against the offensive team）。這段列的是 (1) 到 (9) 項 delay of game 情形。
+**Rule 12A Section II（Delay-of-Game）罰則段。** 該段在「上列違規判給防守方」的句子之後寫明：進攻方若在後場，會被給新的 8 秒（The offensive team shall be awarded a new 8 seconds to advance the ball if it is in the backcourt）。同段另有一句：上列違規若判給進攻方，timing status 不變（There is no change in timing status if any of these violations are assessed against the offensive team）。這段列的是 (1) 到 (9) 項 delay of game 情形。
 
 **Rule 5 Section VI(g)。** 適用於第四節與每個延長賽最後兩分鐘，進攻方被記暫停、屬於該款所列的後場情形、且暫停獲准時。復賽時這支球隊可以選擇在前場 28 呎標記處，或指定的界外處發球；條文寫明，如果從標記處發球並傳入後場，這支球隊得到新的 8 秒計時（a new 8-second count）。
 
 **Comments on the Rules Section II(N)（Guidelines for Infection Control）。** 感染控制的處置段落之後寫明：進攻方球隊得到完整 8 秒把球推進前場（a full eight seconds）。同段也寫了進攻時間計時器的處理（維持原數，或重設為 14 秒，取較大者），這是另一個計時器，怎麼判斷可以看本站的[進攻時間重設入門](/articles/shot-clock-reset-basics/)，該文講的是 24 秒與 14 秒的重設。
 
-這些處理在 NBA 條文裡分散在 Rule 4、Rule 5、Rule 10 與 Comments on the Rules 幾處，讀的時候要把每一處的適用前提一起帶著看，例如「防守方」的違規、「進攻方」的違規，以及「最後兩分鐘」這類時間條件。
+這些處理在 NBA 條文裡分散在 Rule 4、Rule 5、Rule 10、Rule 12A 與 Comments on the Rules 幾處，讀的時候要把每一處的適用前提一起帶著看，例如「防守方」的違規、「進攻方」的違規，以及「最後兩分鐘」這類時間條件。
 
 ## NBA 的罰則：失去球權，在中線發球
 
@@ -129,7 +129,7 @@ FIBA 2026 v1-1 的中斷處理寫在 Article 28.1.3。條文的句型是：先�
 | 項目 | NBA 2025-26 規則書 | FIBA 2026 v1-1 |
 |---|---|---|
 | 限時 | 8 秒（Rule 4 §VI(f)）；持續控球於後場不得超過 8 個連續秒（Rule 10 §VIII） | 必須在 8 秒內使球進入前場（Article 28.1.1） |
-| 處理中斷的寫法 | 列出「給新的 8 秒」的情形（Rule 4 §VI(f)、Rule 10 §VIII、Rule 5 §VI(g)、Rule 10 §II 罰則段、Comments on the Rules §II(N)） | 列出「以剩餘時間延續」的情形（Article 28.1.3） |
+| 處理中斷的寫法 | 列出「給新的 8 秒」的情形（Rule 4 §VI(f)、Rule 10 §VIII、Rule 5 §VI(g)、Rule 12A §II 罰則段、Comments on the Rules §II(N)） | 列出「以剩餘時間延續」的情形（Article 28.1.3） |
 | 罰則 | 失去球權，在中線發球（Rule 10 §VIII） | 引一般罰則 Article 22.2 |
 | 中線 | 後場包含整條中線（Rule 4 §VI(b)） | 中線屬於後場（Article 2.5.2） |
 
@@ -147,10 +147,10 @@ FIBA 2026 v1-1 的中斷處理寫在 Article 28.1.3。條文的句型是：先�
 - 依 Rule 4 §VI(f) 的例外 (3)，以及 Rule 10 §VIII EXCEPTION (1)，防守方被判個人犯規時，給新的 8 秒。
 - 結論：甲隊得到新的 8 秒。
 
-**情境二（NBA 2025-26）。** 甲隊在後場控球，甲隊自己被判了 Rule 10 §II 所列的 delay of game 違規。
+**情境二（NBA 2025-26）。** 甲隊在後場控球，甲隊自己被判了 Rule 12A §II 所列的 delay of game 違規。
 
 - 違規判給進攻方（甲隊）。
-- 依 Rule 10 §II 罰則段，上列違規若判給進攻方，timing status 不變。
+- 依 Rule 12A §II 罰則段，上列違規若判給進攻方，timing status 不變。
 - 結論：條文寫的是 timing status 不變，沒有寫成新的 8 秒。
 
 **情境三（NBA 2025-26）。** 第四節剩 1 分 30 秒，甲隊要在前場擲球入場，球傳到後場。
@@ -178,7 +178,7 @@ FIBA 2026 v1-1 的中斷處理寫在 Article 28.1.3。條文的句型是：先�
 
 ### NBA 2025-26 規則書裡，8 秒被中斷會發生什麼事？
 
-NBA 2025-26 規則書把幾種情形寫成「給新的 8 秒」：防守方踢球或拳擊球、防守方被判個人或技術犯規、防守方被給 delay of game 警告（Rule 4 §VI(f)、Rule 10 §VIII EXCEPTION (1)）；感染控制暫停、後場取得跳球控制權、第四節與延長賽最後兩分鐘由前場擲球入場到後場（Rule 10 §VIII EXCEPTION (2)）。Rule 10 §II 罰則段、Rule 5 §VI(g)、Comments on the Rules §II(N) 另有各自情境的寫法，其中進攻方自己被判 delay of game 違規時，條文寫的是 timing status 不變。以上引自 2026 年 9 月 30 日取得的 NBA 2025-26 規則書，之後以官方最新版為準。
+NBA 2025-26 規則書把幾種情形寫成「給新的 8 秒」：防守方踢球或拳擊球、防守方被判個人或技術犯規、防守方被給 delay of game 警告（Rule 4 §VI(f)、Rule 10 §VIII EXCEPTION (1)）；感染控制暫停、後場取得跳球控制權、第四節與延長賽最後兩分鐘由前場擲球入場到後場（Rule 10 §VIII EXCEPTION (2)）。Rule 12A §II 罰則段、Rule 5 §VI(g)、Comments on the Rules §II(N) 另有各自情境的寫法，其中進攻方自己被判 delay of game 違規時，條文寫的是 timing status 不變。以上引自 2026 年 9 月 30 日取得的 NBA 2025-26 規則書，之後以官方最新版為準。
 
 ### FIBA 2026 v1-1 的 8 秒被中斷時，會延續還是重算？
 
@@ -194,5 +194,5 @@ NBA 2025-26 規則書 Rule 4 §VI(b) 寫球隊後場包含整條中線；FIBA 20
 
 ## 資料來源
 
-- NBA Official Playing Rules 2025-26 賽季規則書：Rule 4 Section VI(a)–(f)（前場、後場與 8 秒限時）、Rule 5 Section VI(g)、Rule 10 Section II（Delay-of-Game）、Rule 10 Section VIII（Eight-Second Rule）、Comments on the Rules Section II(N)。本機保存的全文文字檔，取得日 2026 年 9 月 30 日，無可點擊網址。
+- NBA Official Playing Rules 2025-26 賽季規則書：Rule 4 Section VI(a)–(f)（前場、後場與 8 秒限時）、Rule 5 Section VI(g)、Rule 12A Section II（Delay-of-Game）、Rule 10 Section VIII（Eight-Second Rule）、Comments on the Rules Section II(N)。本機保存的全文文字檔，取得日 2026 年 9 月 30 日，無可點擊網址。
 - FIBA Official Basketball Rules 2026（v1-1，2026 年 10 月 1 日生效）：Article 2.3、2.4、2.5.2、Article 22.2、Article 28.1.1–28.1.3。本機保存的全文文字檔，取得日 2026 年 10 月 12 日，無可點擊網址。

@@ -74,7 +74,7 @@ held ball 在 Rule 4 §VII 有定義：兩位對手一手或雙手牢牢按住�
 
 | 條文 | 情形 | 條文寫的地點與跳球的人 |
 |---|---|---|
-| Rule 8 §II(d) | 球出界且最後同時被兩位對手碰到（不論兩人在界內或界外），或裁判不確定或意見不一 | 最近的 restraining circle，涉事兩人；同段 EXCEPTION 指向 Rule 6 §V(a)(10) 與 §VI(a)(3) |
+| Rule 8 §II(d) | 球出界且最後同時被兩位對手碰到（兩人同在界內或同在界外），或裁判不確定或意見不一 | 最近的 restraining circle，涉事兩人；同段 EXCEPTION 指向 Rule 6 §V(a)(10) 與 §VI(a)(3) |
 | Rule 9 §I(a) PENALTY | 罰球（該次罰球後球仍在比賽中）雙方都違例 | midcourt，任兩位對手 |
 | Rule 12B §VI(d) | 雙方犯規時雙方皆未控球，或未進的投籃或罰球球在空中 | 中圈，比賽中的任兩位對手；因傷等須換人時，替補不得參加 |
 | Rule 12A §VI(d) | 打架犯規發生時雙方皆未控球 | 中圈，比賽中的任兩位對手 |
@@ -82,7 +82,7 @@ held ball 在 Rule 4 §VII 有定義：兩位對手一手或雙手牢牢按住�
 
 同一類事件在不同條文都出現時，本文只逐字讀各處寫了什麼。例如雙方罰球違例：Rule 6 §V(a)(3) 把它列為中圈跳球的情形；Rule 9 §I(a) 的 PENALTY 段對「該次罰球後球仍在比賽中」的雙方違例也寫了跳球，地點寫的是 midcourt。兩處各讀各的，不互相改寫。
 
-跳球之後的計時，站內已有兩篇可以接著讀。[進攻時間重設一文](/articles/shot-clock-reset-basics/)，寫到：Rule 7 §IV(c)(4) 把不是防守方造成持球的跳球列在重設成 24 秒的清單，§IV(b)(6) 把防守方造成持球的跳球列在不重設的清單。[八秒違例一文](/articles/eight-second-backcourt-basics/)，則把「球隊在後場取得跳球控制權」歸在 Rule 10 §VIII EXCEPTION (2)，給新的 8 秒。出界的判決要怎麼用挑戰推翻，[教練挑戰一文](/articles/coachs-challenge-basics/)，寫到：成功結果之一是兩隊同時末次觸球的跳球，而且要有明確且決定性的影像證據。
+跳球之後的計時，站內已有兩篇可以接著讀。[進攻時間重設一文](/articles/shot-clock-reset-basics/)，寫到：Rule 7 §IV(c)(4) 把不是防守方造成持球的跳球列在重設成 24 秒的清單，§IV(b)(6) 把防守方造成持球的跳球列在不重設的清單。[八秒違例一文](/articles/eight-second-backcourt-basics/)，則把「球隊在後場取得跳球控制權」歸在 Rule 10 §VIII EXCEPTION (2)，給新的 8 秒。出界的判決要怎麼用挑戰推翻，[教練挑戰一文](/articles/coachs-challenge-basics/)，寫到：成功結果之一是兩隊同時末次觸球（兩人同在界內或同在界外）的跳球，而且要有明確且決定性的影像證據。
 
 ## NBA 2025-26 規則書全文文字檔搜尋 alternating possession 與 possession arrow，都沒有結果
 
@@ -156,7 +156,7 @@ Article 12.6.1 是交替擁有的核心：在所有跳球情況，兩隊輪流�
 
 判法：held ball 的時機依 Rule 4 §VII 第二段判斷；判了之後，依 Rule 6 §VI(a)(1)，在離發生地點最近的圈跳球，由涉事的兩位球員跳（§VI(b)），除非受傷或驅逐使其中一人無法參加。
 
-**假設三（NBA 2025-26）：** 球出界，最後同時被甲隊與乙隊的球員碰到。
+**假設三（NBA 2025-26）：** 球出界，最後同時被甲隊與乙隊的球員碰到，兩人都在界內。
 
 判法：Rule 8 §II(d) 寫的是最近的 restraining circle，由涉事兩人跳球。
 
