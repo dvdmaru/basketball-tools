@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -786,6 +795,7 @@ body::before {
 </ul>
 <p>「擺爛」「降級」「新秀合約」為中文慣用說法，官方英文分別是 tanking、draft relegated、Rookie Scale Contract。</p>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/physical-exam-contract-validity-basics/"><span class="related-reading-title">球隊判定體檢通過，是合約有效的前提：2023 NBA CBA 對載有 Exhibit 6 體檢約定的合約怎麼寫</span><span class="related-reading-summary">2023 NBA CBA Article II Section 13(h) 對以 Exhibit 6 約定體檢的 Uniform Player Contract 寫明：球隊判定球員已通過體檢，是合約 validity 的 condition precedent；判定由球隊 in its sole discretion, exercised in good faith, in consultation with one or more of the Team’s physicians 作成。Section 14 另把球員未通過依 Exhibit 6 進行的體檢，列為 Player Contract fails to take effect or becomes void 的三種情形之一。</span></a><a class="related-reading-item" href="/articles/moratorium-period-basics/"><span class="related-reading-title">Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事</span><span class="related-reading-summary">依 2023 NBA CBA Article I(mm)，Moratorium Period 自某個 Salary Cap Year 的 7 月 1 日東部時間 12:01 a.m. 起，到次一個 7 月 6 日東部時間 12:00 p.m. 止。Article II Section 15 的主句禁止球員與球隊在期間內就聘僱條款訂立口頭或書面協議，除非 Section 15 其餘部分允許；(a) 款列四件期間內可做的事，(b) 款另列五件自第一天東部時間 12:01 p.m. 起可做的事。</span></a><a class="related-reading-item" href="/articles/likely-unlikely-bonus-basics/"><span class="related-reading-title">Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎</span><span class="related-reading-summary">2023 NBA CBA Article VII Section 3(d)(1) 判定一筆 Performance Bonus 計不計入球員 Salary 時，問的是：假設 Team 或 player 的表現與緊接前一個 Salary Cap Year 相同，這筆獎金會被賺到嗎？會，才計入；計入的叫 Likely Bonus，被排除的叫 Unlikely Bonus。Section 3(d)(2)-(4) 另有規定的情形除外。</span></a><a class="related-reading-item" href="/articles/contract-option-clauses-basics/"><span class="related-reading-title">Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同</span><span class="related-reading-summary">2023 NBA CBA Article XII 的 Section 1 與 Section 2(a)，分別用 (i)–(v) 五款列出 Team Option 與 Player Option 的條件。兩段的 (i)–(iv) 款逐字相同，其中 (iv) 款要求 Option Year 的 Salary（excluding Incentive Compensation）、Likely Bonuses、Unlikely Bonuses 各不低於 stated term 最後一年對應項目的 100%；在 Article XII 之內，(v) 款的 Second Round Pick Exception 例外字樣只出現在 Section 1。Section 4 把 Any Option 的行使期限寫成 Option 所涵蓋 Season 之前那個 June 29 的 5:00 p.m. eastern time，不行使就會成為 Restricted Free Agent 的球員，則是 June 25 之前。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/clippers-kawhi-leonard-circumvention-penalties/"><span class="pn-dir">← 前一篇</span><span class="pn-title">快艇在 6 天內寄出 3 封介紹信，每一封都寫著「是對方先開口」</span><span class="pn-date">2026/09/05 · 週六</span></a><a class="post-nav-link next" href="/articles/pick-and-roll-explained/"><span class="pn-dir">後一篇 →</span><span class="pn-title">擋拆是什麼？從一次擋人看懂籃球常見的雙人戰術</span><span class="pn-date">2026/09/25 · 週五</span></a></div></nav>
 </div>

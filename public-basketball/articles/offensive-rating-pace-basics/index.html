@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -711,6 +720,7 @@ body::before {
 <li>甲、乙、丙、丁四隊與球員 A 的所有數字，都是說明用的假設，不對應任何真實球隊或球員；Offensive Rating、Defensive Rating 的中文說法「進攻效率」「防守效率」為通用譯法，官方用語是 Offensive Rating 與 Defensive Rating。</li>
 </ul>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/rebound-percentage-metrics-basics/"><span class="related-reading-title">NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義</span><span class="related-reading-summary">NBA 官方統計詞彙表（2026 年 9 月 25 日快照）的 REB%、OREB%、DREB% 三個條目，定義句寫 percentage of available rebounds，條目沒有 Formula 欄，全檔也沒有條目定義 available。REB／OREB／DREB Chance% 的 Formula 分母是有條目的 Chances，Adjusted 三條再從分母減去有條目的 Deferred Chances。</span></a><a class="related-reading-item" href="/articles/turnover-rate-metrics-basics/"><span class="related-reading-title">TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄</span><span class="related-reading-summary">NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目都與失誤有關。它們的定義句分母字樣有三種：plays、possessions used、their own possessions；四個條目裡，只有 TO Ratio 附 Formula 欄，公式是 (TO * 100) / (POSS)。</span></a><a class="related-reading-item" href="/articles/assist-metrics-basics/"><span class="related-reading-title">AST%、Assist Ratio、AST/TO 名稱都帶助攻，官方詞彙表拿來對比的東西各不相同</span><span class="related-reading-summary">NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，AST%、Assist Ratio、AST/TO 三個進階條目都與助攻有關：前兩個各有一條公式，分母不同，AST/TO 則只有一句定義、沒有公式。名稱相近，欄位在算的東西並不相同，讀數字之前先看條目怎麼寫。</span></a><a class="related-reading-item" href="/articles/usage-rate-pie-basics/"><span class="related-reading-title">使用率 USG% 與 PIE：先看官方公式裡放了哪些項目，才知道數字能說什麼</span><span class="related-reading-summary">依 NBA 官方統計網站詞彙表（2026-09-29 抓取版），USG% 的定義是球員在場時佔用的球隊回合百分比，PIE 則把得分、出手、罰球、籃板、助攻、抄截、阻攻、犯規與失誤放進同一條公式。兩個數字能回答什麼問題，要回到公式各項來看。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/hbl-to-college-pathway/"><span class="pn-dir">← 前一篇</span><span class="pn-title">「保送」不是一個詞，是四條不同的路：HBL 球員的甄審、甄試與選秀資格</span><span class="pn-date">2026/09/27 · 週日</span></a><a class="post-nav-link next" href="/articles/read-standings-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">NBA 戰績表：兩隊同勝率先比對戰成績，三隊同勝率卻先看分組冠軍</span><span class="pn-date">2026/09/27 · 週日</span></a></div></nav>
 </div>

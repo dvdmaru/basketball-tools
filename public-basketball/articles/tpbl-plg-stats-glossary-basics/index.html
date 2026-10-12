@@ -515,6 +515,15 @@ body::before {
 .md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
 .md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
   display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
 @media (max-width: 560px) {
   .post-nav-pair { grid-template-columns: 1fr; }
   .post-nav-link.next { text-align: left; align-items: flex-start; }
@@ -643,6 +652,7 @@ body::before {
 <li>NBA Stats Glossary（nba.com，2026 年 9 月 28 日 23:17 取得，頁面無版本標記）：<a href="https://www.nba.com/stats/help/glossary">nba.com/glossary</a></li>
 </ul>
     </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/easl-2026-27-guide/"><span class="related-reading-title">2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票</span><span class="related-reading-summary">依 2026 年 10 月 4 日抓取的 EASL 公告與賽程頁，台灣三隊 2026-27 小組賽交手 0 場，卻同在 BCL Asia 第三席的 7 隊池裡。</span></a><a class="related-reading-item" href="/articles/tpbl-2026-27-schedule-guide/"><span class="related-reading-title">TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場</span><span class="related-reading-summary">依 2026 年 10 月 2 日抓取的 TPBL 官網賽程資料，2026-27 例行賽共 126 場，10 月 17 日開幕、2027 年 5 月 16 日收官。每隊 18 主 18 客，賽季形狀卻不同。</span></a><a class="related-reading-item" href="/articles/taiwan-hoops-2026-offseason-moves/"><span class="related-reading-title">領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表</span><span class="related-reading-summary">截至 2026 年 8 月 10 日，台灣職籃最反常的一筆異動，是吳志鍇先後被 PLG 領航猿與 TPBL 戰神選中，最後只與戰神簽約。林庭謙結束 6 個 CBA 賽季返台，陳力生從 PLG 轉投 TPBL 攻城獅，林秉聖則從 TPBL 戰神轉向 PLG 洋基工程。兩個聯盟的球員流向，在同一個夏天交錯。</span></a><a class="related-reading-item" href="/articles/taiwan-asian-games-2026-basketball/"><span class="related-reading-title">台灣男籃 9 月 10 日開打，比亞運開幕式早 9 天：2026 名古屋亞運前瞻</span><span class="related-reading-summary">截至 2026 年 8 月 10 日，台灣男籃已確定在名古屋亞運 B 組迎戰約旦、伊朗與卡達。首戰是 9 月 10 日台灣時間中午 12 時，比開幕式早 9 天。運動部公布的 12 人名單由陳盈駿、林庭謙、劉錚與高柏鎧等人組成。</span></a></div></section>
   </article>
   <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/technical-flagrant-fouls-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解</span><span class="pn-date">2026/09/28 · 週一</span></a><a class="post-nav-link next" href="/articles/trade-rules-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭</span><span class="pn-date">2026/09/28 · 週一</span></a></div></nav>
 </div>
