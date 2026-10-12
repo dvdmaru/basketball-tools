@@ -34,7 +34,7 @@ NBA 2025-26 規則書 Rule 4 §III 給 gather 下了定義，而且分成兩種�
 | §III(b)(2) | 一隻手托到球下方，並讓球停住 |
 | §III(b)(3) | 其他情形下取得足夠控制，可以握住、換手、傳球、投籃，或把球抱貼身體（用語與 §III(a) 相同） |
 
-規則書在別處也用到同一個詞：Rule 4 §II(a)(8) 把「Otherwise gathers the ball」列為運球結束的情形之一，並註明參見 §III(b)；Rule 4 §XI 談投籃動作時，寫到切入或其他移動中的投籃，投籃動作從球員 gathers the ball 時開始。
+規則書在別處也用到同一個詞：Rule 4 §II(a)(8) 把「Otherwise gathers the ball」列為運球結束的情形之一，並註明參見 §III(b)；Rule 4 §XI 談投籃動作時，寫到切入或其他移動中的投籃，投籃動作從球員 gathers the ball 時開始並持續進行投籃（時鐘未將盡的 take foul 情形例外，改從肩膀開始上抬起算）。
 
 gather 這個英文詞，本文保留原文，不另創中文譯名。
 
