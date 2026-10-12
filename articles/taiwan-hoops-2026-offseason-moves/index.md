@@ -2,6 +2,7 @@
 slug: taiwan-hoops-2026-offseason-moves
 competition: tpbl
 topic: tw-pro
+topic_ref: "manual"
 type: "feature"
 date: "2026-08-10"
 title: "領航猿選了吳志鍇，他卻加盟戰神：2026 台灣職籃休賽季異動總表"

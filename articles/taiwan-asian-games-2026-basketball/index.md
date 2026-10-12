@@ -2,6 +2,7 @@
 slug: taiwan-asian-games-2026-basketball
 competition: tpbl
 topic: intl
+topic_ref: "manual"
 topic2: tw-pro
 type: "feature"
 date: "2026-08-10"

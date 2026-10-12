@@ -2,6 +2,7 @@
 slug: "stephen-curry-over-38-rule-extension"
 competition: nba
 topic: nba-news
+topic_ref: "manual"
 topic2: nba-cba
 type: "feature"
 date: "2026-08-31"

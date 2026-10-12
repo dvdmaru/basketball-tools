@@ -2,6 +2,7 @@
 slug: "kevin-garnett-wolves-21-jersey-retirement"
 competition: nba
 topic: nba-news
+topic_ref: "manual"
 type: "feature"
 date: "2026-08-24"
 title: "灰狼成軍至今只退休過一件球衣，賈奈特的 21 號將是第二件"

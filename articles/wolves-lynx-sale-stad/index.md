@@ -2,6 +2,7 @@
 slug: "wolves-lynx-sale-stad"
 competition: nba
 topic: nba-news
+topic_ref: "manual"
 type: "feature"
 date: "2026-08-22"
 title: "灰狼與山貓談成控股權轉讓，買家 Marc Stad 原本就是自家股東"

@@ -2,6 +2,7 @@
 slug: "clippers-kawhi-leonard-circumvention-penalties"
 competition: nba
 topic: nba-news
+topic_ref: "manual"
 topic2: nba-cba
 type: "feature"
 date: "2026-09-05"
