@@ -122,6 +122,9 @@ def league_panel(lg, season, asof, source_note, final=False):
     hint = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
     cap = (f'<div class="tbl-cap">{season} {ba.season_status_txt(final)} · 快照 {asof} · '
            f'{html_lib.escape(source_note)}</div>')
+    if not lg.get("standings"):
+        return (band + f'<p class="tbl-cap">{season} 本季例行賽尚未開打，暫無可發布的戰績；'
+                f'快照 {asof} · {html_lib.escape(source_note)}。開季日以聯盟官方公告為準。</p>')
     return band + hint + ba._std_table_v2(lg.get("standings", []), km) + cap
 
 

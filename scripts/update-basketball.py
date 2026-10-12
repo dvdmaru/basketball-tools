@@ -21,6 +21,9 @@ repo 內既有 leagues/*.json 快照，頁面 as-of 誠實呈現；開季後恢�
   python3 scripts/update-basketball.py --skip-fetch    # 只重生頁面（用既有快照）
 """
 import argparse
+import datetime
+import glob
+import json
 import os
 import pathlib
 import subprocess
@@ -33,6 +36,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PY = sys.executable  # 子腳本一律用同一個 interpreter
 
 FAILED = []  # 失敗步驟收集：照樣跑完全部（一步壞不全停），但結尾 exit 1 讓 CI 誠實變紅
+SOURCE_STATUS = []
 
 
 def run(args, label, soft=False):
@@ -46,6 +50,10 @@ def run(args, label, soft=False):
         else:
             print(f"  ⚠️  {label} exit={r.returncode}（繼續跑完其餘步驟；結尾會以非零狀態離開）", flush=True)
             FAILED.append(label)
+        if label.startswith("fetch "):
+            SOURCE_STATUS.append((label.removeprefix("fetch "), "失敗", f"exit={r.returncode}；詳細錯誤見上方"))
+    elif label.startswith("fetch "):
+        SOURCE_STATUS.append((label.removeprefix("fetch "), "完成", "詳見該來源輸出的狀態行"))
     return r.returncode
 
 
@@ -54,6 +62,72 @@ def script(name, *extra):
 
 
 BASE_URL = "https://basketball.twtools.cc"
+
+
+def _latest_snapshot(pattern, leagues_dir=None):
+    paths = sorted(glob.glob(str((leagues_dir or ROOT / "leagues") / pattern)))
+    if not paths:
+        return None
+    try:
+        return json.loads(pathlib.Path(paths[-1]).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def _asof_age_days(snapshot, key, today):
+    try:
+        return (today - datetime.date.fromisoformat(str(snapshot.get(key, ""))[:10])).days
+    except (AttributeError, ValueError):
+        return None
+
+
+def freshness_failures(today=None, snapshot_root=None):
+    """無狀態 freshness gate：只讀本次 checkout（fetch 若成功會先更新它）。
+
+    休賽季沿用終局快照不紅；進入下一個賽季的日期窗後，舊快照超過來源節奏即紅。
+    這個 gate 放在部署後，故資料源 fail-soft 仍能重建並發布可用舊頁面。
+    """
+    today = today or datetime.date.today()
+    leagues_dir = pathlib.Path(snapshot_root) if snapshot_root is not None else ROOT / "leagues"
+    nba = _latest_snapshot("nba-standings-*.json", leagues_dir)
+    tw = _latest_snapshot("tw-hoops-*.json", leagues_dir)
+    hbl = _latest_snapshot("hbl-[0-9]*.json", leagues_dir)
+
+    failures = []
+    nba_expected = f"{today.year if today.month < 10 else today.year}-{str(today.year + 1)[2:]}"
+    # 1–6 月沿用當季結束年；10 月起應已轉向新一季。7–9 月沒有新賽季 freshness 要求。
+    if today.month <= 6:
+        nba_expected = f"{today.year - 1}-{str(today.year)[2:]}"
+    # 2026-27 NBA 例行賽於 10/20 開打；10/1–10/19 的熱身賽不能觸發「資料過期」誤報。
+    nba_active = today.month <= 6 or today.month >= 11 or (today.month == 10 and today.day >= 20)
+    if nba_active:
+        age = _asof_age_days(nba, "asof", today) if nba else None
+        if not nba or nba.get("season") != nba_expected or age is None or age > 3:
+            failures.append(f"NBA 最新快照距今 {age if age is not None else '未知'} 天（門檻 3 天）")
+
+    tw_expected = nba_expected
+    # TPBL 2026-27 例行賽 10/17 開打、PLG 開季日未公告；10 月整月不報，避免開季前誤報。
+    if today.month <= 6 or today.month >= 11:
+        age = _asof_age_days(tw, "asof_taipei_date", today) if tw else None
+        if not tw or tw.get("season") != tw_expected or age is None or age > 10:
+            failures.append(f"TPBL／PLG 最新快照距今 {age if age is not None else '未知'} 天（門檻 10 天）")
+
+    # HBL 學年度通常在 11 月起開始有可發布賽果；避免在 10 月尚無公開賽程時誤報。
+    hbl_active = today.month <= 3 or today.month >= 11
+    hbl_year = today.year - 1911 if today.month >= 8 else today.year - 1912
+    if hbl_active:
+        age = _asof_age_days(hbl, "asof_taipei_date", today) if hbl else None
+        if not hbl or hbl.get("season_label") != f"{hbl_year}學年度" or age is None or age > 10:
+            failures.append(f"HBL 最新快照距今 {age if age is not None else '未知'} 天（門檻 10 天）")
+    return failures
+
+
+def print_source_summary():
+    if not SOURCE_STATUS:
+        return
+    print("\n📋 本次資料源摘要", flush=True)
+    for source, result, reason in SOURCE_STATUS:
+        print(f"  - {source}｜{result}｜{reason}", flush=True)
 
 
 def _indexnow_changed_urls():
@@ -155,6 +229,7 @@ def main():
     if FAILED:
         print(f"\n⛔ {len(FAILED)} 個建置步驟失敗（{'、'.join(FAILED)}）→ 禁止部署，線上維持上一版",
               flush=True)
+        print_source_summary()
         sys.exit(1)
 
     # 5.（可選）部署；成功後把本次變動頁 ping 給 IndexNow（Bing 系收錄）
@@ -168,8 +243,13 @@ def main():
         print("\n⏭  未 --deploy 且無 CLOUDFLARE_API_TOKEN → 只重建未部署。"
               "手動部署：npx wrangler deploy -c wrangler-basketball.jsonc")
 
+    print_source_summary()
     if FAILED:
         print(f"\n❌ update-basketball 完成但 {len(FAILED)} 步失敗：{'、'.join(FAILED)}", flush=True)
+        sys.exit(1)
+    stale = freshness_failures()
+    if stale:
+        print("\n❌ 資料新鮮度警報（部署已照常完成）：" + "；".join(stale), flush=True)
         sys.exit(1)
     print("\n✅ update-basketball done")
 
