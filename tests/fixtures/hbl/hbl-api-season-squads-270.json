@@ -1,0 +1,600 @@
+[
+  {
+    "id": 628,
+    "name": "高中籃球甲級聯賽男生組",
+    "squads": [
+      {
+        "id": 15639,
+        "eventId": 628,
+        "name": "花蓮縣立體育高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15640,
+        "eventId": 628,
+        "name": "臺北市私立滬江高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15643,
+        "eventId": 628,
+        "name": "臺北市立南湖高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15644,
+        "eventId": 628,
+        "name": "臺中市立后綜高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15650,
+        "eventId": 628,
+        "name": "臺北市立和平高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15658,
+        "eventId": 628,
+        "name": "國立宜蘭高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15698,
+        "eventId": 628,
+        "name": "新北市立錦和高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15707,
+        "eventId": 628,
+        "name": "國立臺東高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15722,
+        "eventId": 628,
+        "name": "新北市私立中華商業海事職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15725,
+        "eventId": 628,
+        "name": "彰化縣立成功高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15767,
+        "eventId": 628,
+        "name": "高雄市私立高苑高級工商職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15816,
+        "eventId": 628,
+        "name": "臺北市立松山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15843,
+        "eventId": 628,
+        "name": "新北市立泰山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15869,
+        "eventId": 628,
+        "name": "臺北市私立新民高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15870,
+        "eventId": 628,
+        "name": "屏東縣私立民生高級家事商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15880,
+        "eventId": 628,
+        "name": "國立臺北科技大學附屬桃園農工高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15899,
+        "eventId": 628,
+        "name": "高雄市立三民高級家事商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15909,
+        "eventId": 628,
+        "name": "治平學校財團法人桃園市治平高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15984,
+        "eventId": 628,
+        "name": "國立基隆高級商工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16001,
+        "eventId": 628,
+        "name": "國立屏東高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16018,
+        "eventId": 628,
+        "name": "南山學校財團法人新北市南山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16095,
+        "eventId": 628,
+        "name": "新竹縣私立東泰高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16104,
+        "eventId": 628,
+        "name": "國立馬祖高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16106,
+        "eventId": 628,
+        "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16128,
+        "eventId": 628,
+        "name": "嘉義市私立東吳高級工業家事職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16132,
+        "eventId": 628,
+        "name": "臺北市立成功高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16140,
+        "eventId": 628,
+        "name": "新北市私立莊敬高級工業家事職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16173,
+        "eventId": 628,
+        "name": "新北市立三重高級商工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16209,
+        "eventId": 628,
+        "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16235,
+        "eventId": 628,
+        "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16252,
+        "eventId": 628,
+        "name": "桃園市立新屋高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16265,
+        "eventId": 628,
+        "name": "花蓮縣私立海星高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16302,
+        "eventId": 628,
+        "name": "臺中市青年高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16320,
+        "eventId": 628,
+        "name": "臺中市立東山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16339,
+        "eventId": 628,
+        "name": "新竹市私立光復高級中學",
+        "altName": "",
+        "logoUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 629,
+    "name": "高中籃球甲級聯賽女生組",
+    "squads": [
+      {
+        "id": 15679,
+        "eventId": 629,
+        "name": "國立新竹高級商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15692,
+        "eventId": 629,
+        "name": "國立苗栗高級商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15702,
+        "eventId": 629,
+        "name": "臺中市立忠明高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15709,
+        "eventId": 629,
+        "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15738,
+        "eventId": 629,
+        "name": "臺北市私立金甌女子高級中學",
+        "altName": "金甌女中",
+        "logoUrl": ""
+      },
+      {
+        "id": 15822,
+        "eventId": 629,
+        "name": "嘉義市私立輔仁高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15898,
+        "eventId": 629,
+        "name": "新北市立永平高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15903,
+        "eventId": 629,
+        "name": "南山學校財團法人新北市南山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16046,
+        "eventId": 629,
+        "name": "臺北市立第一女子高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16096,
+        "eventId": 629,
+        "name": "臺北市立南湖高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16130,
+        "eventId": 629,
+        "name": "新北市立淡水高級商工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16139,
+        "eventId": 629,
+        "name": "佛光山學校財團法人高雄市普門高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16141,
+        "eventId": 629,
+        "name": "新北市私立莊敬高級工業家事職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16242,
+        "eventId": 629,
+        "name": "臺南市立永仁高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16267,
+        "eventId": 629,
+        "name": "臺北市立陽明高級中學",
+        "altName": "",
+        "logoUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 630,
+    "name": "高中籃球乙級聯賽男生組",
+    "squads": [
+      {
+        "id": 15652,
+        "eventId": 630,
+        "name": "中信金國際學校財團法人台南市私立中信國際高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15655,
+        "eventId": 630,
+        "name": "國立竹東高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15664,
+        "eventId": 630,
+        "name": "至善學校財團法人桃園市至善高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15696,
+        "eventId": 630,
+        "name": "財團法人東海大學附屬高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15737,
+        "eventId": 630,
+        "name": "國立岡山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15742,
+        "eventId": 630,
+        "name": "臺中市私立僑泰高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15778,
+        "eventId": 630,
+        "name": "臺中市立豐原高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15794,
+        "eventId": 630,
+        "name": "新北市立新北高級工業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15846,
+        "eventId": 630,
+        "name": "新北市立新北高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15891,
+        "eventId": 630,
+        "name": "四維學校財團法人花蓮縣四維高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15962,
+        "eventId": 630,
+        "name": "國立仁愛高級農業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15993,
+        "eventId": 630,
+        "name": "高雄市私立樹德高級家事商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16011,
+        "eventId": 630,
+        "name": "國立岡山高級農工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16016,
+        "eventId": 630,
+        "name": "臺北市立士林高級商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16019,
+        "eventId": 630,
+        "name": "高雄市立中山高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16040,
+        "eventId": 630,
+        "name": "國立臺南高級海事水產職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16044,
+        "eventId": 630,
+        "name": "榖保學校財團法人新北市穀保高級家事商業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16118,
+        "eventId": 630,
+        "name": "臺北市立建國高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16181,
+        "eventId": 630,
+        "name": "臺中市私立立人高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16222,
+        "eventId": 630,
+        "name": "高雄市立中正高級工業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16225,
+        "eventId": 630,
+        "name": "新北市立雙溪高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16314,
+        "eventId": 630,
+        "name": "新北市私立復興高級商工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16381,
+        "eventId": 630,
+        "name": "臺北市立松山高級商業家事職業學校",
+        "altName": "",
+        "logoUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 631,
+    "name": "高中籃球乙級聯賽女生組",
+    "squads": [
+      {
+        "id": 15732,
+        "eventId": 631,
+        "name": "臺中市私立僑泰高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15734,
+        "eventId": 631,
+        "name": "臺中市立臺中女子高級中等學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15978,
+        "eventId": 631,
+        "name": "國立仁愛高級農業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 15991,
+        "eventId": 631,
+        "name": "臺北市立萬芳高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16178,
+        "eventId": 631,
+        "name": "新竹市私立光復高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16224,
+        "eventId": 631,
+        "name": "新北市私立復興高級商工職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16326,
+        "eventId": 631,
+        "name": "高雄市立小港高級中學",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16349,
+        "eventId": 631,
+        "name": "高雄市立中正高級工業職業學校",
+        "altName": "",
+        "logoUrl": ""
+      },
+      {
+        "id": 16431,
+        "eventId": 631,
+        "name": "康橋學校財團法人新北市康橋高級中學",
+        "altName": "",
+        "logoUrl": ""
+      }
+    ]
+  }
+]

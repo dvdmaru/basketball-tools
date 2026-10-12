@@ -1,0 +1,2382 @@
+[
+  {
+    "id": 16435,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12122,
+      "name": "新北市立淡水高級商工職業學校",
+      "altName": "淡水商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 92,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 29
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313729.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16436,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12007,
+      "name": "國立苗栗高級商業職業學校",
+      "altName": "苗栗高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 65,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313391.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16421,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313394.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16422,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 118,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 30
+      },
+      {
+        "round": 2,
+        "wonScore": 35
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 29
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313393.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16423,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12122,
+      "name": "新北市立淡水高級商工職業學校",
+      "altName": "淡水商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 34
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313389.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16424,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 81,
+    "awaySquadScore": 78,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313456.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16425,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12122,
+      "name": "新北市立淡水高級商工職業學校",
+      "altName": "淡水商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 83,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313543.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16426,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 95,
+    "awaySquadScore": 76,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313492.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16427,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12122,
+      "name": "新北市立淡水高級商工職業學校",
+      "altName": "淡水商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 81,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313493.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16428,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 48,
+    "awaySquadScore": 91,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 3
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313455.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16429,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 54,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 5
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313550.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16430,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12122,
+      "name": "新北市立淡水高級商工職業學校",
+      "altName": "淡水商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 39,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 4
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 4
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313547.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16431,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12082,
+      "name": "臺北市立第一女子高級中學",
+      "altName": "北一女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313552.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16432,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 86,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313549.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16433,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313726.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16434,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12086,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 49,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313733.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16437,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 58,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313374.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16438,
+    "leagueId": 1,
+    "matchedAt": "2025-12-18T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 57,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313386.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16439,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 50,
+    "awaySquadScore": 58,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313453.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16440,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313457.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16441,
+    "leagueId": 1,
+    "matchedAt": "2025-12-19T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12007,
+      "name": "國立苗栗高級商業職業學校",
+      "altName": "苗栗高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 66,
+    "awaySquadScore": 52,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313502.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16442,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 58,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313544.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16443,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 77,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313542.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16444,
+    "leagueId": 1,
+    "matchedAt": "2025-12-20T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12007,
+      "name": "國立苗栗高級商業職業學校",
+      "altName": "苗栗高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 70,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313551.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16445,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12007,
+      "name": "國立苗栗高級商業職業學校",
+      "altName": "苗栗高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 87,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313548.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16446,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 43,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 6
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313553.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16447,
+    "leagueId": 1,
+    "matchedAt": "2025-12-21T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 67,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313554.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16448,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 47,
+    "awaySquadScore": 51,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313728.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16449,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12007,
+      "name": "國立苗栗高級商業職業學校",
+      "altName": "苗栗高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 80,
+    "awaySquadScore": 74,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313732.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16450,
+    "leagueId": 1,
+    "matchedAt": "2025-12-22T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12196,
+      "name": "臺北市立陽明高級中學",
+      "altName": "陽明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12301,
+      "name": "臺南市立永仁高級中學",
+      "altName": "永仁高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 59,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313727.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16517,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T01:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11962,
+      "name": "國立新竹高級商業職業學校",
+      "altName": "新竹高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 87,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 29
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313972.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16518,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12128,
+      "name": "臺中市立忠明高級中學",
+      "altName": "忠明高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 60,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313971.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16519,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T01:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 11958,
+      "name": "佛光山學校財團法人高雄市普門高級中學",
+      "altName": "普門中學",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12265,
+      "name": "新北市立永平高級中學",
+      "altName": "永平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 80,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314012.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16520,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級女生組",
+    "division": {
+      "name": "預賽"
+    },
+    "homeSquad": {
+      "id": 12073,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12027,
+      "name": "臺北市私立金甌女子高級中學",
+      "altName": "金甌女中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 39,
+    "awaySquadScore": 52,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 10
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 6
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314013.do?cs=2"
+      ]
+    }
+  }
+]

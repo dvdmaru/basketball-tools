@@ -1,0 +1,2390 @@
+[
+  {
+    "id": 16487,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 90,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313969.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16488,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 74,
+    "awaySquadScore": 117,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 29
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 30
+      },
+      {
+        "round": 3,
+        "wonScore": 33
+      },
+      {
+        "round": 4,
+        "wonScore": 34
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313914.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16489,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T12:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 77,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313915.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16490,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314015.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16491,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T08:40:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 113,
+    "awaySquadScore": 88,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 33
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 35
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314022.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16492,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T12:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 96,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314018.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16493,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 82,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314031.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16494,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T07:10:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 109,
+    "awaySquadScore": 54,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 39
+      },
+      {
+        "round": 1,
+        "wonScore": 30
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314035.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16495,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T10:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 87,
+    "awaySquadScore": 72,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314037.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16496,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 6
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 32
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314097.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16497,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T07:10:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 85,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314112.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16498,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T10:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 97,
+    "awaySquadScore": 87,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 34
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314114.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16499,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 90,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314113.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16500,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T07:10:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 87,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314124.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16501,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T10:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 88,
+    "awaySquadScore": 94,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 36
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 1,
+        "wonScore": 26
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314126.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16502,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 97,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 30
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313970.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16503,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 58,
+    "awaySquadScore": 97,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 34
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313960.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16504,
+    "leagueId": 1,
+    "matchedAt": "2025-12-23T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 105,
+    "awaySquadScore": 86,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 30
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/313912.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16505,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314023.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16506,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T07:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 89,
+    "awaySquadScore": 54,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314016.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16507,
+    "leagueId": 1,
+    "matchedAt": "2025-12-24T10:20:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314017.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16508,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 83,
+    "awaySquadScore": 129,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 35
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 47
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314034.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16509,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314036.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16510,
+    "leagueId": 1,
+    "matchedAt": "2025-12-25T08:50:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 97,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314040.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16511,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 92,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 27
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314096.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16512,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 97,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314110.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16513,
+    "leagueId": 1,
+    "matchedAt": "2025-12-26T08:50:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 71,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 32
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314111.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16514,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314227.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16515,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T05:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 50,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314125.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16516,
+    "leagueId": 1,
+    "matchedAt": "2025-12-27T08:50:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 5,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 101,
+    "awaySquadScore": 97,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 5,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 5,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314228.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16521,
+    "leagueId": 1,
+    "matchedAt": "2025-12-28T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 29
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314232.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16522,
+    "leagueId": 1,
+    "matchedAt": "2025-12-28T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12215,
+      "name": "新北市立錦和高級中學",
+      "altName": "錦和高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 80,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314230.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16523,
+    "leagueId": 1,
+    "matchedAt": "2025-12-29T02:30:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 86,
+    "awaySquadScore": 68,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314235.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16524,
+    "leagueId": 1,
+    "matchedAt": "2025-12-29T04:00:00.000Z",
+    "venue": "屏東縣立體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "複賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 45,
+    "awaySquadScore": 52,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 7
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/314236.do?cs=2"
+      ]
+    }
+  }
+]

@@ -257,7 +257,7 @@ class NoHardcodedSeasonInGeneratorsTests(unittest.TestCase):
     """守生成器原始碼本身：本次修過的四支腳本裡不得再出現舊賽季字面值。
     （封面標題／文章 slug 屬「該篇文章的主題」，不在這四支腳本內，故不受影響。）"""
     FILES = ("build-articles.py", "gen-tw-standings.py",
-             "gen-basketball-data-hub.py", "gen-nba-standings.py")
+             "gen-basketball-data-hub.py", "gen-nba-standings.py", "gen-hbl-page.py")
 
     def test_no_stale_season_literal_in_generator_sources(self):
         for fname in self.FILES:

@@ -45,7 +45,7 @@ TW_ROW_REQUIRED = {"rank", "team_name", "win", "lose", "pct", "games_behind"}
 TW_ROW_OPTIONAL = set()
 
 HBL_TOP_REQUIRED = {"asof_taipei_date", "season_label", "final", "divisions"}
-HBL_TOP_OPTIONAL = set()
+HBL_TOP_OPTIONAL = {"stages", "results", "next_season"}
 HBL_DIV_REQUIRED = {"label", "final_four", "source"}
 HBL_DIV_OPTIONAL = {"champion", "final_note"}
 HBL_ROW_REQUIRED = {"rank", "school"}

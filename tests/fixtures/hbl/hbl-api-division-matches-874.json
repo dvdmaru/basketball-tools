@@ -1,0 +1,1362 @@
+[
+  {
+    "id": 16678,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T02:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13013,
+      "name": "桃園市立陽明高級中等學校",
+      "altName": "桃市陽明",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12032,
+      "name": "臺北市立內湖高級中學",
+      "altName": "內湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16679,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T06:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13594,
+      "name": "國立宜蘭高級商業職業學校",
+      "altName": "宜蘭高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12628,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 75,
+    "awaySquadScore": 60,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16680,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T08:10:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13085,
+      "name": "高雄市立小港高級中學",
+      "altName": "小港高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13522,
+      "name": "彰化縣立田中高級中學",
+      "altName": "田中高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 100,
+    "awaySquadScore": 52,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 31
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16681,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T00:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13522,
+      "name": "彰化縣立田中高級中學",
+      "altName": "田中高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13594,
+      "name": "國立宜蘭高級商業職業學校",
+      "altName": "宜蘭高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 56,
+    "awaySquadScore": 96,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16682,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T02:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12628,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13085,
+      "name": "高雄市立小港高級中學",
+      "altName": "小港高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 49,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 8
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16683,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T06:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12032,
+      "name": "臺北市立內湖高級中學",
+      "altName": "內湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12016,
+      "name": "國立屏東高級工業職業學校",
+      "altName": "屏東高工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 54,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 6
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16684,
+    "leagueId": 1,
+    "matchedAt": "2026-04-09T08:10:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13136,
+      "name": "臺中市立龍津高級中等學校",
+      "altName": "龍津高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13013,
+      "name": "桃園市立陽明高級中等學校",
+      "altName": "桃市陽明",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 46,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16685,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T00:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13522,
+      "name": "彰化縣立田中高級中學",
+      "altName": "田中高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12628,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 53,
+    "awaySquadScore": 57,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 6
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16686,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T02:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12032,
+      "name": "臺北市立內湖高級中學",
+      "altName": "內湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13136,
+      "name": "臺中市立龍津高級中等學校",
+      "altName": "龍津高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 77,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16687,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T06:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13013,
+      "name": "桃園市立陽明高級中等學校",
+      "altName": "桃市陽明",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12016,
+      "name": "國立屏東高級工業職業學校",
+      "altName": "屏東高工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 27,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 4
+      },
+      {
+        "round": 4,
+        "wonScore": 5
+      },
+      {
+        "round": 1,
+        "wonScore": 2
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16677,
+    "leagueId": 1,
+    "matchedAt": "2026-04-08T00:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12016,
+      "name": "國立屏東高級工業職業學校",
+      "altName": "屏東高工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13136,
+      "name": "臺中市立龍津高級中等學校",
+      "altName": "龍津高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16688,
+    "leagueId": 1,
+    "matchedAt": "2026-04-10T08:10:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13085,
+      "name": "高雄市立小港高級中學",
+      "altName": "小港高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13594,
+      "name": "國立宜蘭高級商業職業學校",
+      "altName": "宜蘭高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 5
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16689,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T00:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12016,
+      "name": "國立屏東高級工業職業學校",
+      "altName": "屏東高工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13522,
+      "name": "彰化縣立田中高級中學",
+      "altName": "田中高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 60,
+    "awaySquadScore": 51,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 10
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16690,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T02:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12628,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13136,
+      "name": "臺中市立龍津高級中等學校",
+      "altName": "龍津高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 55,
+    "awaySquadScore": 59,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16691,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T06:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12032,
+      "name": "臺北市立內湖高級中學",
+      "altName": "內湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13085,
+      "name": "高雄市立小港高級中學",
+      "altName": "小港高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 67,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16692,
+    "leagueId": 1,
+    "matchedAt": "2026-04-11T08:10:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13594,
+      "name": "國立宜蘭高級商業職業學校",
+      "altName": "宜蘭高商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13013,
+      "name": "桃園市立陽明高級中等學校",
+      "altName": "桃市陽明",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 57,
+    "awaySquadScore": 48,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16693,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T00:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13522,
+      "name": "彰化縣立田中高級中學",
+      "altName": "田中高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12628,
+      "name": "臺北市立永春高級中學",
+      "altName": "永春高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 43,
+    "awaySquadScore": 51,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16694,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T03:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12016,
+      "name": "國立屏東高級工業職業學校",
+      "altName": "屏東高工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13136,
+      "name": "臺中市立龍津高級中等學校",
+      "altName": "龍津高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 70,
+    "awaySquadScore": 80,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16695,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T06:30:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 12032,
+      "name": "臺北市立內湖高級中學",
+      "altName": "內湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13013,
+      "name": "桃園市立陽明高級中等學校",
+      "altName": "桃市陽明",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 41,
+    "awaySquadScore": 59,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 3
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16696,
+    "leagueId": 1,
+    "matchedAt": "2026-04-12T09:50:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽乙級女生組",
+    "division": {
+      "name": "全國決賽"
+    },
+    "homeSquad": {
+      "id": 13085,
+      "name": "高雄市立小港高級中學",
+      "altName": "小港高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 13594,
+      "name": "國立宜蘭高級商業職業學校",
+      "altName": "宜蘭高商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 10
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 8
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  }
+]

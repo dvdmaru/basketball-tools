@@ -27,7 +27,7 @@
 | NBA | ESPN 公開 JSON（site.api.espn.com） | 未文件化私有 API；datacenter IP 可直通。官方 stats.nba.com／cdn.nba.com 已上 TLS 指紋+Referer 判定，僅作輔助 |
 | TPBL | api.tpbl.basketball（官網未文件化 API） | 例行賽戰績與總冠軍由賽果自算 |
 | PLG | pleagueofficial.com/standings（server-rendered HTML） | 戰績表直接 parse；總冠軍為 editorial fact（`config/season-facts.json`，附來源） |
-| HBL | hbl.com.tw `/rest/*`（官網未文件化 API） | 總決賽名次由賽果推導；歷屆冠軍 `fetch-hbl.py --history`（回溯至 106 學年度） |
+| HBL | hbl.com.tw `/api/*`（官網未文件化 API） | 總決賽名次、各階段與報名隊數由公開 API 的隊伍層資料推導；歷屆冠軍 `fetch-hbl.py --history`（回溯至 106 學年度） |
 
 所有未文件化介面：UA＋指數退避＋fail-soft（斷源沿用 repo 內快照，頁面 as-of 誠實標示）。
 **basketball-reference 條款明文禁爬，永不使用。**
