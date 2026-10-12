@@ -1,6 +1,7 @@
 ---
 slug: away-from-the-play-foul-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-29"
 title: "離球犯規有兩個入口：最後兩分鐘的刻意接觸，與發球出手前的防守非法接觸"

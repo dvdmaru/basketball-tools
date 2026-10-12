@@ -1,6 +1,7 @@
 ---
 slug: nba-2026-27-opening-night-christmas-schedule
 competition: nba
+topic: nba-news
 type: "preview"
 date: "2026-08-12"
 title: "詹姆斯開幕戰作客尼克，台北時間 10 月 21 日早上 7 點"

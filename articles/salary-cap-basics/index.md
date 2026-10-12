@@ -1,6 +1,7 @@
 ---
 slug: salary-cap-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-25"
 title: "球隊薪資能超過薪資帽：帽線、稅線、apron 三條線各管不同的事"

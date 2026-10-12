@@ -1,6 +1,8 @@
 ---
 slug: easl-2026-27-guide
 competition: plg
+topic: intl
+topic2: tw-pro
 type: "feature"
 date: "2026-10-04"
 title: "2026-27 EASL 小組賽，台灣三隊互不交手，卻同在一個 7 隊池裡爭 1 席 BCL Asia 門票"

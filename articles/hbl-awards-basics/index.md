@@ -1,6 +1,7 @@
 ---
 slug: hbl-awards-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "得分王不在裡面：114 學年度 HBL 官方個人獎項只有六項"

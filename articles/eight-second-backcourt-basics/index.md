@@ -1,6 +1,7 @@
 ---
 slug: eight-second-backcourt-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "8 秒被中斷時，NBA 與 FIBA 的條文各用一種寫法：給新的 8 秒，或讓剩餘時間延續"

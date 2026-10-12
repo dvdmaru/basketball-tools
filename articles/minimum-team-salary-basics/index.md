@@ -1,6 +1,7 @@
 ---
 slug: minimum-team-salary-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-30"
 title: "NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%"

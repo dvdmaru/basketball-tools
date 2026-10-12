@@ -1,6 +1,7 @@
 ---
 slug: too-many-players-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-05"
 title: "NBA 球在比賽中六人以上可作廢重來，at the start of play 四人以下只判技術犯規再續賽"

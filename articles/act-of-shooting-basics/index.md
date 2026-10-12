@@ -1,6 +1,7 @@
 ---
 slug: act-of-shooting-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "投籃動作的起點怎麼分組？NBA 2025-26 與 FIBA 2026 的歸法不同"

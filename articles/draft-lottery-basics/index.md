@@ -1,6 +1,7 @@
 ---
 slug: draft-lottery-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-25"
 title: "NBA 樂透：最差三隊各 14% 抽第 1 順位，2027 年選秀起改成 3-2-1 制"

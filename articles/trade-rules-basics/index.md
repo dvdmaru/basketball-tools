@@ -1,6 +1,7 @@
 ---
 slug: trade-rules-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-28"
 title: "選秀權不算薪資：NBA 交易為什麼要湊好幾個人頭"

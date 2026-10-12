@@ -1,6 +1,7 @@
 ---
 slug: award-eligibility-65-games-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-10"
 title: "2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款"

@@ -1,6 +1,7 @@
 ---
 slug: max-contract-designated-veteran-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-29"
 title: "頂薪沒有固定數字：NBA 首年薪資上限由年資級距、前一份合約與獎項門檻算出"

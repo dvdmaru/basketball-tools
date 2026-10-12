@@ -1,6 +1,7 @@
 ---
 slug: hbl-roster-size-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-30"
 title: "HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人"

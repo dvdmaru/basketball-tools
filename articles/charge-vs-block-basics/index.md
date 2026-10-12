@@ -1,6 +1,7 @@
 ---
 slug: charge-vs-block-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-29"
 title: "帶球撞人還是阻擋犯規？先看防守者有沒有先在路徑上站定"

@@ -1,6 +1,7 @@
 ---
 slug: tpbl-plg-stats-glossary-basics
 competition: tpbl
+topic: tw-pro
 type: "feature"
 date: "2026-09-28"
 title: "官方頁面看得到 EFF、+/-，公式卻要去另一個網站找：TPBL、PLG 數據頁怎麼看"

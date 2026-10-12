@@ -1,6 +1,7 @@
 ---
 slug: tpbl-2026-27-schedule-guide
 competition: tpbl
+topic: tw-pro
 type: "feature"
 date: "2026-10-02"
 title: "TPBL 2026-27 例行賽每隊 18 主 18 客，夢想家卻有連續 7 場客場"

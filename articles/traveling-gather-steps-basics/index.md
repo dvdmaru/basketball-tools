@@ -1,6 +1,7 @@
 ---
 slug: traveling-gather-steps-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "走步先看情境：原地接球、行進中與運球中，NBA 規則書各有一句條文"

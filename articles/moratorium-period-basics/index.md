@@ -1,6 +1,7 @@
 ---
 slug: moratorium-period-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-10"
 title: "Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事"

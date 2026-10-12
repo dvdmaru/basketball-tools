@@ -1,6 +1,7 @@
 ---
 slug: captain-role-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止"

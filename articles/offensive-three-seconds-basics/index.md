@@ -1,6 +1,7 @@
 ---
 slug: offensive-three-seconds-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "進攻三秒什麼時候開始算？NBA 2025-26 規則書寫：球在進攻球隊的前場處於控制中才起算"

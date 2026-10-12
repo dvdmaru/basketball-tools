@@ -1,6 +1,7 @@
 ---
 slug: offensive-rating-pace-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-27"
 title: "假設兩隊場均都是 115 分，每 100 回合得分為什麼差了 10 分？"

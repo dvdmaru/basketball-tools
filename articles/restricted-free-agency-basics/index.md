@@ -1,6 +1,7 @@
 ---
 slug: restricted-free-agency-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-27"
 title: "限制性自由球員的配對權從哪來：一般路徑下，原球隊沒發資格報價，符合資格的球員就是無限制自由球員"

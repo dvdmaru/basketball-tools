@@ -1,6 +1,7 @@
 ---
 slug: disabled-player-exception-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-30"
 title: "傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者"

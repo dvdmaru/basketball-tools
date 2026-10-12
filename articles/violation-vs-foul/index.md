@@ -1,6 +1,7 @@
 ---
 slug: violation-vs-foul
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-25"
 title: "NBA 防守三秒列在違例章，罰則卻是技術犯規：違例和犯規差在哪"

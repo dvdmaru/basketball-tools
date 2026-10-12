@@ -1,6 +1,7 @@
 ---
 slug: ball-out-of-bounds-last-touch-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "球出界算誰的？NBA 2025-26 與 FIBA 2026 版首句都看最後碰球的人，句尾寫法不同"

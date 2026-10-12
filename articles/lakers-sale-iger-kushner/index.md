@@ -1,6 +1,7 @@
 ---
 slug: lakers-sale-iger-kushner
 competition: nba
+topic: nba-news
 type: "feature"
 date: "2026-08-18"
 title: "湖人易主案的 125 億美元是估值口徑，交易尚待 NBA 批准"

@@ -1,6 +1,7 @@
 ---
 slug: technical-flagrant-fouls-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-28"
 title: "技術犯規看行為，惡意犯規看接觸：別再用「輕重程度」理解"

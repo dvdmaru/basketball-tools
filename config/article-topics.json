@@ -1,0 +1,58 @@
+{
+  "topics": [
+    {
+      "key": "nba-rules",
+      "label": "NBA 規則（與 FIBA 對照）",
+      "order": 1,
+      "description": "從條文與實戰情境理解 NBA 規則，並對照 FIBA 的寫法。"
+    },
+    {
+      "key": "nba-cba",
+      "label": "NBA 制度與合約（CBA）",
+      "order": 2,
+      "description": "拆解薪資帽、合約、交易與球員名單背後的 CBA 制度。"
+    },
+    {
+      "key": "nba-stats",
+      "label": "數據指標怎麼讀",
+      "order": 3,
+      "description": "從公式與定義讀懂常見的籃球統計指標。"
+    },
+    {
+      "key": "nba-tactics",
+      "label": "戰術與觀念",
+      "order": 4,
+      "description": "用場上情境認識進攻、防守與比賽觀念。"
+    },
+    {
+      "key": "nba-news",
+      "label": "NBA 時事與人物",
+      "order": 5,
+      "description": "以可查證資料整理 NBA 的人物、交易與當前事件。"
+    },
+    {
+      "key": "nba-guide",
+      "label": "NBA 入門指南",
+      "order": 6,
+      "description": "從聯盟結構與賽制開始建立看 NBA 的基本框架。"
+    },
+    {
+      "key": "tw-pro",
+      "label": "台灣職籃 TPBL／P. LEAGUE+",
+      "order": 7,
+      "description": "認識台灣職籃兩聯盟的制度、賽程與動態。"
+    },
+    {
+      "key": "hbl",
+      "label": "HBL 高中籃球",
+      "order": 8,
+      "description": "從賽制與隊伍層資訊認識 HBL 高中籃球。"
+    },
+    {
+      "key": "intl",
+      "label": "國際賽與跨聯盟",
+      "order": 9,
+      "description": "整理國際賽與跨聯盟的籃球脈絡。"
+    }
+  ]
+}

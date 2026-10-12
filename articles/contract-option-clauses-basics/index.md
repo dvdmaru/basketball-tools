@@ -1,6 +1,7 @@
 ---
 slug: contract-option-clauses-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-10"
 title: "Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同"

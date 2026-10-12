@@ -1,6 +1,7 @@
 ---
 slug: waiver-buyout-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-28"
 title: "CBA 全文查不到「buyout」這個字：棄約與買斷不是同一件事"

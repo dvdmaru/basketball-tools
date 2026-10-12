@@ -1,6 +1,7 @@
 ---
 slug: timeouts-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-30"
 title: "還剩幾個暫停：NBA 2025-26 與 FIBA 2024 算的是不同的帳"

@@ -1,6 +1,7 @@
 ---
 slug: free-throw-violations-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-05"
 title: "NBA 罰球時對手違例，罰法看款次：d 款在球仍在比賽中的罰球沒進時補一罰，g、h 款記 1 分"

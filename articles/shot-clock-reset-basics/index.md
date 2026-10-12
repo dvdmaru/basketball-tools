@@ -1,6 +1,7 @@
 ---
 slug: shot-clock-reset-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-09-29"
 title: "進攻時間會重設成 24 秒還是 14 秒？先判斷發生的是哪一類事件"

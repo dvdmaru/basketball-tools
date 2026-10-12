@@ -1,6 +1,7 @@
 ---
 slug: dribble-ends-double-dribble-basics
 competition: nba
+topic: nba-rules
 type: "feature"
 date: "2026-10-10"
 title: "禁止第二次運球的那一句：NBA 2025-26 寫「自願結束」，FIBA 2026 版寫「已經結束」"

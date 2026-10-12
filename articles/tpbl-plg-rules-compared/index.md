@@ -1,6 +1,7 @@
 ---
 slug: tpbl-plg-rules-compared
 competition: tpbl
+topic: tw-pro
 type: "feature"
 date: "2026-08-06"
 title: "TPBL 把球員分成 2 種身分，P. LEAGUE+ 分成 4 種：兩聯盟規則逐條對照"

@@ -1,6 +1,7 @@
 ---
 slug: turnover-rate-metrics-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-09-30"
 title: "TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄"

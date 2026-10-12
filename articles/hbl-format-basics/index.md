@@ -1,6 +1,7 @@
 ---
 slug: hbl-format-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-27"
 title: "男生組多一關準決賽，女生組沒有：HBL 甲級聯賽五道關卡不是男女共用一套賽制"

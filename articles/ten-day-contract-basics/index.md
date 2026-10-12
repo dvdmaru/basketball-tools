@@ -1,6 +1,7 @@
 ---
 slug: ten-day-contract-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-30"
 title: "10 天約不是固定十天：2023 CBA §9(a) 取十天與涵蓋三場比賽的期間，兩者中較長者"

@@ -1,6 +1,7 @@
 ---
 slug: nba-draft-eligibility-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-09-29"
 title: "NBA 選秀資格要過兩層：先過基本門檻，再從七款路徑中滿足一款"

@@ -1,6 +1,7 @@
 ---
 slug: rebound-percentage-metrics-basics
 competition: nba
+topic: nba-stats
 type: "feature"
 date: "2026-10-05"
 title: "NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義"

@@ -1,6 +1,7 @@
 ---
 slug: hbl-eligibility-check-basics
 competition: hbl
+topic: hbl
 type: "feature"
 date: "2026-09-30"
 title: "HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次"

@@ -1,6 +1,7 @@
 ---
 slug: likely-unlikely-bonus-basics
 competition: nba
+topic: nba-cba
 type: "feature"
 date: "2026-10-10"
 title: "Likely 與 Unlikely Bonus：假設表現與緊接前一個 Salary Cap Year 相同，獎金會賺到嗎"
