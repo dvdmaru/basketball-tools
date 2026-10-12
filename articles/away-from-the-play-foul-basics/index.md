@@ -104,13 +104,13 @@ flagrant 與 punching 各自怎麼分級、怎麼判，本文不重寫，請看�
 
 這裡有兩個限制。第一，「查無」只表示在這份檔案的全文檢索裡沒有找到，不代表別的官方文件也沒有這些詞。第二，規則書本身沒有說明為什麼設立這個犯規類別，也沒有官方的立法動機說明，本文不猜測。
 
-## FIBA 2024 規則裡找得到同樣的條文嗎？
+## FIBA 2026 規則裡找得到同樣的條文嗎？
 
-本文另外對照了 FIBA 2024 官方規則（本機文字檔）。在這個範圍內，沒有找到同名的 away-from-the-play 條文，也沒有找到以「最後兩分鐘」作為條件的分類。全文檢索 away from 只有兩處與本題無關的命中，一處是服裝廣告的間距，一處是重播審查項目中的 away from a shooting situation。
+本文另外對照了 FIBA 2026 官方規則（本機文字檔）。在這個範圍內，沒有找到同名的 away-from-the-play 條文，也沒有找到以「最後兩分鐘」作為條件的分類。
 
-FIBA 2024 Article 37.1.1 寫的是不運動精神犯規的定義：「An unsportsmanlike foul is a player contact which is:」。這是不同的犯規類別，本文不把它和離球犯規畫等號。
+FIBA 2026 Article 37.1.1 寫的是 disruptive foul 的定義：「A disruptive foul is a player’s illegal contact with an opponent which does not rise to the level of a flagrant foul, and which disrupts the flow of the game and places the opponent at a disadvantage.」這不是同名條文；Article 37 為 disruptive foul，本文不把它和離球犯規畫等號。
 
-必須留意寫法：本文的結論只是「在本文查證範圍內未找到同名或同一時間窗的條文」，不是「FIBA 沒有對應規則」。未找到條文，不能推出 FIBA 沒有功能相近的判罰。FIBA 另有一版 2026 規則預定 2026 年 10 月 1 日生效，本文沒有取得該版，也就沒有使用。
+必須留意寫法：本文的結論只是「在本文查證範圍內未找到同名或同一時間窗的條文」，不是「FIBA 沒有對應規則」。未找到條文，不能推出 FIBA 沒有功能相近的判罰。本文以 FIBA Official Basketball Rules 2026 v1-1 為準。
 
 ## 拿三個假設情境，自己判一次
 
@@ -146,9 +146,9 @@ FIBA 2024 Article 37.1.1 寫的是不運動精神犯規的定義：「An unsport
 
 ### FIBA 有和離球犯規一樣的規則嗎？
 
-在本文查證範圍內，FIBA 2024 官方規則（本機文字檔）沒有找到同名或同一時間窗的條文。FIBA 2024 Article 37 是不運動精神犯規的定義，本文不把它視為離球犯規的對應條文。未找到同名條文，不代表 FIBA 沒有功能相近的判罰，本文也沒有取得 2026 年 10 月 1 日生效的 FIBA 新版規則。
+在本文查證範圍內，FIBA 2026 官方規則（本機文字檔）沒有找到同名或同一時間窗的條文。FIBA 2026 Article 37 是 disruptive foul 的定義，本文不把它視為離球犯規的對應條文。未找到同名條文，不代表 FIBA 沒有功能相近的判罰，本文以 FIBA Official Basketball Rules 2026 v1-1 為準。
 
 ## 資料來源
 
 - NBA Official Playing Rules 2025-26 賽季規則書（本機文字檔，2026 年 9 月 29 日讀取，無可點擊網址）：Rule 4 Section IV(a)、IV(h)、IV(i)(4)、Section XII、Section XIII；Rule 9 Section II(a)；Rule 12B Section I、Section V(a)、Section X。
-- FIBA 官方規則 2024（本機文字檔，2026 年 9 月 29 日讀取，無可點擊網址）：Article 37.1.1，並對全文檢索 away from、two minutes 等詞。
+- FIBA Official Basketball Rules 2026（v1-1，2026 年 10 月 1 日生效；本機文字檔，2026 年 10 月 12 日讀取，無可點擊網址）：Article 37.1.1，並對全文檢索 away-from-the-play、away from、two minutes、2:00 等詞。

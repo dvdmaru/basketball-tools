@@ -106,15 +106,15 @@ Rule 13 還列了別的情境，例如：
 
 有一點值得停下來看：Flagrant Foul 在教練挑戰那邊，是不能挑的事件；在 Rule 13 這邊，裁判不確定它是否成立時，卻會重播。兩章的重播由不同的條件啟動，所以教練不能挑，不代表判決不會被重看。
 
-## FIBA 2024 也有教練挑戰，但每隊每場一次不論成敗，只用在有重播系統的比賽
+## FIBA 2026 v1-1 也有教練挑戰，但每隊每場一次不論成敗，只用在有重播系統的比賽
 
-前面全部是 NBA 2025-26 規則書。FIBA 2024 規則（Official Basketball Rules 2024，Appendix F.4）有自己的一套，叫 head coach's challenge（HCC），而且只用在使用 Instant Replay System（IRS）的比賽：
+前面全部是 NBA 2025-26 規則書。FIBA 2026 v1-1 規則（Official Basketball Rules 2024，Appendix F.4）有自己的一套，叫 head coach's challenge（HCC），而且只用在使用 Instant Replay System（IRS）的比賽：
 
-| 項目 | NBA 2025-26 規則書 | FIBA 2024 規則 |
+| 項目 | NBA 2025-26 規則書 | FIBA 2026 v1-1 規則 |
 |---|---|---|
 | 次數 | 每隊每場一次，第一次成功再給第二次 | 每隊（每位總教練）每場一次，不論成功與否 |
 | 可挑範圍 | 三種判決（見前文） | 只能挑 Appendix F.3 所列的比賽情境 |
-| 時間限制 | 事件緊接在暫停之前時有 30 秒窗口 | F.3.2 與 F.3.3 的時間限制不適用，全場任何時間皆可請求 |
+| 時間限制 | 事件緊接在暫停之前時有 30 秒窗口 | F.3.1 與 F.3.2 的時間限制不適用，全場任何時間皆可請求 |
 | 手勢 | 食指畫圈 | 雙手比畫長方形，並大聲用英語說 challenge |
 
 兩套規則名字相近，內容各自獨立。看 FIBA 比賽時，NBA 那套的次數、可挑範圍與暫停處理不能直接搬過去。
@@ -153,9 +153,9 @@ Rule 13 還列了別的情境，例如：
 
 ### FIBA 的教練挑戰和 NBA 一樣嗎？
 
-不一樣。依 FIBA 2024 規則（Appendix F.4），head coach's challenge 只用在使用 Instant Replay System 的比賽，每隊（每位總教練）每場一次，不論成敗，而且只能挑 Appendix F.3 所列的比賽情境。NBA 2025-26 規則書是每隊每場一次，第一次成功再給第二次，兩者不能互相套用。
+不一樣。依 FIBA 2026 v1-1 規則（Appendix F.4），head coach's challenge 只用在使用 Instant Replay System 的比賽，每隊（每位總教練）每場一次，不論成敗，而且只能挑 Appendix F.3 所列的比賽情境。NBA 2025-26 規則書是每隊每場一次，第一次成功再給第二次，兩者不能互相套用。
 
 ## 資料來源
 
 - NBA Official Playing Rules 2025-26 賽季規則書：Rule No. 14（Coach's Challenge）、Rule No. 13（Instant Replay）、Rule No. 2（計分員職責）。網頁版：[official.nba.com／rule-no-14-coachs-challenge…](https://official.nba.com/rule-no-14-coachs-challenge/)、[official.nba.com／rule-no-13-instant-replay…](https://official.nba.com/rule-no-13-instant-replay/)
-- FIBA Official Basketball Rules 2024（2024 年 10 月版）：Appendix F.4（Head Coach's Challenge）。
+- FIBA Official Basketball Rules 2026（v1-1，2026 年 10 月 1 日生效）：Appendix F.4（Head Coach's Challenge）。本機保存的全文文字檔，取得日 2026 年 10 月 12 日，無可點擊網址。
