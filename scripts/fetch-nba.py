@@ -18,6 +18,7 @@ ESPN 同樣是未文件化的私有 API，可能無預警改版 → 本腳本 fa
 """
 import argparse
 import datetime
+import gzip
 import json
 import pathlib
 import subprocess
@@ -35,12 +36,18 @@ def call(url: str, tries: int = 4):
     """curl 後端（本機 Framework Python 缺 CA cert；同 baseball-tools 慣例）＋指數退避。"""
     delay = 4
     for i in range(tries):
-        r = subprocess.run(["curl", "-sS", "--max-time", "25", "-H", f"User-Agent: {UA}", url],
-                           capture_output=True, text=True)
-        if r.returncode == 0 and r.stdout.strip():
+        r = subprocess.run(["curl", "-sS", "--compressed", "--max-time", "25",
+                            "-H", f"User-Agent: {UA}", url], capture_output=True)
+        raw = r.stdout
+        if raw.startswith(b"\x1f\x8b"):
             try:
-                return json.loads(r.stdout)
-            except json.JSONDecodeError:
+                raw = gzip.decompress(raw)
+            except OSError:
+                raw = b""
+        if r.returncode == 0 and raw.strip():
+            try:
+                return json.loads(raw)
+            except (UnicodeDecodeError, json.JSONDecodeError):
                 pass
         if i < tries - 1:
             print(f"  retry {i + 1}/{tries - 1} in {delay}s: {url}", file=sys.stderr)
@@ -59,9 +66,9 @@ def season_label(season_end_year: int) -> str:
     return f"{season_end_year - 1}-{str(season_end_year)[2:]}"
 
 
-def fetch_standings(season: int, zh: dict) -> list:
-    data = call(f"https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
-                f"?season={season}&level=2")
+def fetch_standings(season: int, zh: dict, data=None) -> list:
+    data = data if data is not None else call(
+        f"https://site.api.espn.com/apis/v2/sports/basketball/nba/standings?season={season}&level=2")
     rows = []
     for conf in data.get("children", []):
         cname = "Eastern" if "East" in conf.get("name", "") else "Western"
@@ -97,6 +104,24 @@ def fetch_standings(season: int, zh: dict) -> list:
         for i, r in enumerate(grp):
             r["rank"] = i + 1
     return rows
+
+
+def regular_season_has_completed_game(data: dict) -> bool:
+    """只讓 type=2 且已有實際勝敗的 ESPN standings 覆寫快照。
+
+    ESPN 的 standings 回應把例行賽型別放在各 conference 的 seasonType；熱身賽是 1。
+    已有任一隊勝或敗，等價於至少一場例行賽已完成，且避免把季前 0–0 表寫上線。
+    """
+    types = set()
+    games_finished = False
+    for conf in data.get("children", []):
+        standings = conf.get("standings", {}) or {}
+        types.add(standings.get("seasonType"))
+        for entry in standings.get("entries", []):
+            stats = {s.get("name"): s.get("displayValue", "") for s in entry.get("stats", [])}
+            if int(stats.get("wins") or 0) + int(stats.get("losses") or 0) > 0:
+                games_finished = True
+    return types == {2} and games_finished
 
 
 def fetch_finals(season: int, zh: dict):
@@ -151,7 +176,14 @@ def main():
     zh = load_zh()
     label = season_label(args.season)
 
-    standings = fetch_standings(args.season, zh)
+    standings_data = call(f"https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
+                         f"?season={args.season}&level=2")
+    if not regular_season_has_completed_game(standings_data):
+        print(f"⏭️ NBA {label}：例行賽尚未開打，沿用 {season_label(args.season - 1)} 終局快照")
+        print("📋 來源狀態｜NBA（ESPN）｜成功但未更新｜尚無已完成的 type=2 例行賽")
+        return
+
+    standings = fetch_standings(args.season, zh, standings_data)
     finals = fetch_finals(args.season, zh)
 
     out = {
@@ -172,6 +204,7 @@ def main():
         sys.exit(2)
     ch = out.get("champion_zh", "（賽季進行中）")
     print(f"✅ NBA {label}: 30 隊 standings + 冠軍 {ch} → {path}")
+    print("📋 來源狀態｜NBA（ESPN）｜成功｜已寫入例行賽快照")
 
 
 if __name__ == "__main__":

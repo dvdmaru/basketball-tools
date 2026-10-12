@@ -105,11 +105,37 @@ def fetch_tpbl():
     done = [g for g in games if g.get("status") == "COMPLETED"
             and g.get("home_team", {}).get("won_score") is not None]
 
-    # 例行賽 = 場次最多的 division（2025-26 = division 9、126 場、7 隊 × 36）
+    # 新賽季已建立、但尚無完成賽事是合法狀態；不能因 max(empty) 讓 PLG 也跟著失敗。
+    if not done:
+        return season_label, {
+            "name_zh": "TPBL 台灣職業籃球大聯盟",
+            "champion_zh": None,
+            "finals_note": "",
+            "regular_season_games": 0,
+            "standings": [],
+            "source": "整理自 TPBL 官網公開資料（api.tpbl.basketball，非官方文件化介面）",
+        }, False
+
+    # 例行賽 = 「排定場次」最多的 division（2025-26 = division 9、126 場、7 隊 × 36）。
+    # ⚠️ 要用全部排定場次判，不能用已完成場次：開季前熱身／盃賽 division（2026-27 開季前
+    # 有一個 7 場的 division 在 10/9–10/11 先打完）會是唯一有完賽的 division，用「已完成最多」
+    # 會把它當例行賽貼上線。
+    sched_by_div = {}
+    for g in games:
+        sched_by_div.setdefault(g["division_id"], []).append(g)
+    reg_div = max(sched_by_div, key=lambda d: len(sched_by_div[d]))
     by_div = {}
     for g in done:
         by_div.setdefault(g["division_id"], []).append(g)
-    reg_div = max(by_div, key=lambda d: len(by_div[d]))
+    if reg_div not in by_div:
+        return season_label, {
+            "name_zh": "TPBL 台灣職業籃球大聯盟",
+            "champion_zh": None,
+            "finals_note": "",
+            "regular_season_games": 0,
+            "standings": [],
+            "source": "整理自 TPBL 官網公開資料（api.tpbl.basketball，非官方文件化介面）；例行賽尚無已完成賽事",
+        }, False
     rec = {}
     for g in by_div[reg_div]:
         h, a = g["home_team"], g["away_team"]
@@ -146,7 +172,8 @@ def _guard_season_facts(facts: dict, season_label: str) -> dict:
 
 
 def fetch_plg(season_label: str):
-    html = curl("https://pleagueofficial.com/standings")
+    # `/standings` 會停在上一季；指定賽季才能避免把歷史表貼成新賽季戰績。
+    html = curl(f"https://pleagueofficial.com/standings/{season_label}")
     # 第一張表：排行/球隊/GP/W/L/PCT/勝差/…（server-rendered）
     rows_raw = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S)
     rec_rows = []
@@ -157,12 +184,29 @@ def fetch_plg(season_label: str):
         if (len(cells) >= 5 and cells[0].isdigit() and cells[2].isdigit()
                 and cells[3].isdigit() and cells[4].isdigit()):
             rec_rows.append(cells)
+    if len(rec_rows) == 0:
+        # PLG 尚未刊出本季戰績表是開季前的合法狀態；與 TPBL 獨立。
+        return {
+            "name_zh": "P. LEAGUE+",
+            "champion_zh": None,
+            "finals_note": "",
+            "standings": [],
+            "source": "整理自 P. LEAGUE+ 官網戰績頁；目前尚未刊出本季戰績",
+        }
     if not (3 <= len(rec_rows) <= 8):
         raise RuntimeError(f"PLG standings parse got {len(rec_rows)} rows — page changed?")
     rec = {}
     for c in rec_rows:
         team = PLG_FULL.get(c[1], c[1])
         rec[team] = [int(c[3]), int(c[4])]
+    if all(w == 0 and l == 0 for w, l in rec.values()):
+        return {
+            "name_zh": "P. LEAGUE+",
+            "champion_zh": None,
+            "finals_note": "",
+            "standings": [],
+            "source": "整理自 P. LEAGUE+ 官網戰績頁；本季尚無已完成賽事",
+        }
     facts_p = ROOT / "config" / "season-facts.json"
     facts = (json.loads(facts_p.read_text(encoding="utf-8")) if facts_p.exists() else {}).get("plg", {})
     facts = _guard_season_facts(facts, season_label)
@@ -177,8 +221,35 @@ def fetch_plg(season_label: str):
 
 def main():
     today = datetime.datetime.now(zoneinfo.ZoneInfo("Asia/Taipei")).date().isoformat()
-    season_label, tpbl, season_over = fetch_tpbl()
-    plg = fetch_plg(season_label)
+    errors = []
+    try:
+        season_label, tpbl, season_over = fetch_tpbl()
+    except Exception as e:
+        errors.append(f"TPBL：{e}")
+        season_label, tpbl, season_over = "", None, False
+    try:
+        # TPBL 不可用時仍嘗試 PLG；PLG 的冠軍 facts 會因未知賽季而安全停用。
+        plg = fetch_plg(season_label)
+    except Exception as e:
+        errors.append(f"PLG：{e}")
+        plg = None
+    if not season_label:
+        latest = snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))
+        if latest:
+            prior = json.loads(latest.read_text(encoding="utf-8"))
+            season_label = prior.get("season", "")
+        else:
+            season_label = "未知賽季"
+    # 各源失敗時保留上一份該聯盟資料；成功的另一源仍可更新。
+    latest = snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))
+    previous = json.loads(latest.read_text(encoding="utf-8")) if latest else {}
+    prior_leagues = previous.get("leagues", {})
+    if tpbl is None:
+        tpbl = prior_leagues.get("tpbl")
+    if plg is None:
+        plg = prior_leagues.get("plg")
+    if tpbl is None or plg is None:
+        raise RuntimeError("TPBL／PLG 皆無可用快照，無法安全產生台灣職籃資料")
     out = {
         "asof_taipei_date": today,
         "season": season_label,
@@ -189,6 +260,15 @@ def main():
     path = OUT_DIR / f"tw-hoops-{today}.json"
     # 日期序列快照：新檔沒有前一份可比 → baseline 指向目前生效那份（生成端取 sorted()[-1]），
     # 否則寫進一份空的就會因檔名排序在後而 shadow 掉昨天的好資料。
+    # 雙方都「例行賽尚未開打」＝開季前的合法狀態：不寫新快照（空表會被 snapshot_guard 的
+    # 驟減規則拒絕，且上季終局表比空表更有資訊），頁面沿用上季終局快照，與 NBA 的處理一致。
+    if not tpbl["standings"] and not plg["standings"]:
+        print(f"⏭️ TW hoops {season_label}：TPBL／PLG 例行賽尚未開打，沿用上季終局快照")
+        for name, league in (("TPBL", tpbl), ("PLG", plg)):
+            print(f"📋 來源狀態｜{name}｜成功但未更新｜{league.get('source', '')}")
+        for error in errors:
+            print(f"📋 來源狀態｜{error.split('：', 1)[0]}｜失敗｜{error.split('：', 1)[1]}")
+        return
     if not snapshot_guard.guarded_write(
             path, out,
             lambda d: sum(len(lg.get("standings", []))
@@ -197,8 +277,13 @@ def main():
             baseline=snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))):
         sys.exit(2)
     print(f"✅ TW hoops {season_label}: TPBL {len(tpbl['standings'])} 隊"
-          f"（冠軍 {tpbl['champion_zh']}）+ PLG {len(plg['standings'])} 隊"
-          f"（冠軍 {plg['champion_zh']}）→ {path}")
+          f"（冠軍 {tpbl.get('champion_zh')}）+ PLG {len(plg['standings'])} 隊"
+          f"（冠軍 {plg.get('champion_zh')}）→ {path}")
+    for name, league in (("TPBL", tpbl), ("PLG", plg)):
+        result = "成功（尚未開打）" if not league.get("standings") else "成功"
+        print(f"📋 來源狀態｜{name}｜{result}｜{league.get('source', '')}")
+    for error in errors:
+        print(f"📋 來源狀態｜{error.split('：', 1)[0]}｜失敗但已保留另一源／舊快照｜{error.split('：', 1)[1]}")
 
 
 if __name__ == "__main__":

@@ -18,6 +18,7 @@ import pathlib
 import shutil
 import tempfile
 import unittest
+import datetime
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -152,6 +153,38 @@ class DeployGateTests(unittest.TestCase):
     def test_success_records_nothing(self):
         self.assertEqual(self.ub.run(["python3", "-c", "pass"], "gen NBA standings"), 0)
         self.assertEqual(self.ub.FAILED, [])
+
+
+class FreshnessGateTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = pathlib.Path(tempfile.mkdtemp())
+        self.ub = _load("update_basketball_freshness", "update-basketball.py")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def _write(self, name, data):
+        (self.tmp / name).write_text(json.dumps(data), encoding="utf-8")
+
+    def test_in_season_stale_snapshots_make_job_red_after_deploy(self):
+        self._write("nba-standings-2025-26.json", {"season": "2025-26", "asof": "2026-10-01"})
+        self._write("tw-hoops-2026-10-01.json", {"season": "2025-26", "asof_taipei_date": "2026-10-01"})
+        self._write("hbl-114-2026-03-22.json", {"season_label": "114學年度", "asof_taipei_date": "2026-03-22"})
+        failures = self.ub.freshness_failures(datetime.date(2026, 11, 15), self.tmp)
+        self.assertTrue(any("NBA" in x for x in failures))
+        self.assertTrue(any("TPBL" in x for x in failures))
+        self.assertTrue(any("HBL" in x for x in failures))
+
+    def test_offseason_final_snapshots_stay_green(self):
+        self._write("nba-standings-2025-26.json", {"season": "2025-26", "asof": "2026-06-14", "final": True})
+        self._write("tw-hoops-2026-07-19.json", {"season": "2025-26", "asof_taipei_date": "2026-07-19", "final": True})
+        self._write("hbl-114-2026-03-22.json", {"season_label": "114學年度", "asof_taipei_date": "2026-03-22", "final": True})
+        self.assertEqual(self.ub.freshness_failures(datetime.date(2026, 8, 15), self.tmp), [])
+
+    def test_nba_preseason_does_not_raise_staleness_alarm(self):
+        self._write("nba-standings-2025-26.json", {"season": "2025-26", "asof": "2026-06-14", "final": True})
+        failures = self.ub.freshness_failures(datetime.date(2026, 10, 12), self.tmp)
+        self.assertFalse(any("NBA" in x for x in failures))
 
 
 if __name__ == "__main__":
