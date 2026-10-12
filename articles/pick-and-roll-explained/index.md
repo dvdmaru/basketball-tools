@@ -1,15 +1,16 @@
 ---
 slug: pick-and-roll-explained
 competition: nba
+topic_ref: "manual"
 topic: nba-tactics
 type: "feature"
 date: "2026-09-25"
-title: "擋拆是什麼？從一次擋人看懂籃球常見的雙人戰術"
+title: "擋拆是什麼？Pick and Roll 中文、怎麼打、怎麼守一次看懂"
 subtitle: "擋人者卡住防守者、持球者借位突破，接著擋人者順下或外彈——用兩張圖看懂擋拆怎麼運作、防守怎麼應對、什麼時候算犯規。"
 lede: "擋拆（Pick and Roll）是一名球員替持球隊友擋住防守者，隨後切向籃下的雙人配合；改往外圍拉開則常稱外彈（Pick and Pop）。防守方得在兩名進攻者之間選擇，是看懂戰術的一個起點。"
 ---
 
-# 擋拆是什麼？從一次擋人看懂籃球常見的雙人戰術
+# 擋拆是什麼？Pick and Roll 中文、怎麼打、怎麼守一次看懂
 
 **新手村｜戰術入門・擋拆（Pick and Roll）**
 

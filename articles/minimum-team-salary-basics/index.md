@@ -4,13 +4,13 @@ competition: nba
 topic: nba-cba
 type: "feature"
 date: "2026-09-30"
-title: "NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%"
+title: "NBA 球隊薪資也有下限：2023 CBA 定在 Salary Cap 的 90%"
 subtitle: "依 2023 NBA CBA Article VII，一般球隊每個 Salary Cap Year 都有 Minimum Team Salary；MTS Payment Team Salary 低於它時，§2(c)(2) 明列兩件事。文末用假設比例，自己判一次。"
 lede: "依 2023 NBA CBA Article VII §2(a)(4)(i)，一般球隊的 Minimum Team Salary 等於該 Salary Cap Year 的 Salary Cap 的 90%（擴張球隊前兩個 Salary Cap Year 另有基準）。某隊的 MTS Payment Team Salary 低於它時，§2(c)(2) 寫了付款給 NBA 與不得分得部分稅款兩件事。"
 topic_ref: "manual"
 ---
 
-# NBA 球隊薪資有下限：2023 CBA 把一般球隊的 Minimum Team Salary 定在 Salary Cap 的 90%
+# NBA 球隊薪資也有下限：2023 CBA 定在 Salary Cap 的 90%
 
 **新手村｜制度入門・球隊薪資下限**
 
