@@ -4,13 +4,13 @@ competition: nba
 topic: nba-stats
 type: "feature"
 date: "2026-09-30"
-title: "TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄"
+title: "失誤率四個指標用了三種分母：NBA 官方詞彙表只給 TO Ratio 公式"
 subtitle: "依 NBA 官方統計詞彙表 2026 年 9 月 25 日快照，四個條目的定義句寫了 plays、possessions used、their own possessions 三種分母字樣，附 Formula 欄的只有 TO Ratio。文中用明標「假設」的數字代入算一次。"
 lede: "NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目都與失誤有關。它們的定義句分母字樣有三種：plays、possessions used、their own possessions；四個條目裡，只有 TO Ratio 附 Formula 欄，公式是 (TO * 100) / (POSS)。"
 topic_ref: "manual"
 ---
 
-# TOV%、TO Ratio、TO Freq、OPP TOV% 的定義句用了三種分母字樣：NBA 官方詞彙表 2026 年 9 月 25 日快照裡，只有 TO Ratio 附 Formula 欄
+# 失誤率四個指標用了三種分母：NBA 官方詞彙表只給 TO Ratio 公式
 
 **新手村｜數據入門・失誤指標 TOV%、TO Ratio、TO Freq、OPP TOV%**
 

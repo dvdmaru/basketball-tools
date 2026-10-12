@@ -4,13 +4,13 @@ competition: nba
 topic: nba-cba
 type: "feature"
 date: "2026-10-10"
-title: "Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事"
+title: "Moratorium Period：7 月 1 日到 6 日中午，2023 CBA 仍列九款可做的事"
 subtitle: "Article II Section 15(a) 四款在期間內可做，(b) 五款自期間第一天東部時間 12:01 p.m. 起可做；九款以外，Section 15 主句禁止球員與球隊在期間內就聘僱條款訂立口頭或書面協議。"
 lede: "依 2023 NBA CBA Article I(mm)，Moratorium Period 自某個 Salary Cap Year 的 7 月 1 日東部時間 12:01 a.m. 起，到次一個 7 月 6 日東部時間 12:00 p.m. 止。Article II Section 15 的主句禁止球員與球隊在期間內就聘僱條款訂立口頭或書面協議，除非 Section 15 其餘部分允許；(a) 款列四件期間內可做的事，(b) 款另列五件自第一天東部時間 12:01 p.m. 起可做的事。"
 topic_ref: "manual"
 ---
 
-# Moratorium Period：東部時間 7 月 1 日到 7 月 6 日中午，2023 NBA CBA 仍列了九款可做的事
+# Moratorium Period：7 月 1 日到 6 日中午，2023 CBA 仍列九款可做的事
 
 **新手村｜CBA 入門・Moratorium Period**
 

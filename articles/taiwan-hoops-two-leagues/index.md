@@ -1,15 +1,16 @@
 ---
 slug: taiwan-hoops-two-leagues
 competition: tpbl
+topic_ref: "manual"
 topic: tw-pro
 type: "feature"
 date: "2026-07-19"
-title: "為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析"
+title: "台灣職籃為什麼有兩個聯盟？TPBL 7 隊與 P. LEAGUE+ 4 隊的差別與合併破局始末"
 subtitle: "從 2025 年 7 月合併破局到 EASL 參賽權之爭，一次讀懂 TPBL、PLG 兩聯盟並立的來龍去脈。"
 lede: "截至 2026 年 7 月，台灣職籃由 TPBL（7 隊）與 PLG（4 隊）兩聯盟並立；2025 年 7 月一度討論合併，7 月 31 日 TPBL 宣布終止談判，兩聯盟各自運作至今。"
 ---
 
-# 為什麼台灣有兩個職籃聯盟？TPBL 與 P. LEAGUE+ 並立局面完全解析
+# 台灣職籃為什麼有兩個聯盟？TPBL 7 隊與 P. LEAGUE+ 4 隊的差別與合併破局始末
 
 **TPBL vs. PLG · 兩聯盟並立｜合併破局時間軸 · 戰績總覽 · EASL 爭議**
 

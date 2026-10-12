@@ -4,13 +4,13 @@ competition: nba
 topic: nba-rules
 type: "feature"
 date: "2026-09-30"
-title: "5 秒的時限出現在不同情形：NBA 2025-26 規則書寫發球與背對籃框運球，FIBA 2026 v1-1 寫發球、closely guarded 與罰球"
+title: "5 秒規則：NBA 寫在發球與背對籃框運球，FIBA 另有 closely guarded 與罰球"
 subtitle: "依本文查閱的 NBA 2025-26 規則書與 FIBA 2026 v1-1 快照，NBA 在發球與背對、側對籃框運球寫了 5 秒，FIBA 在發球、closely guarded 與罰球寫了 5 秒；NBA 的罰球條文寫的是 10 秒。文末用假設情境練習判斷。"
 lede: "依本文查閱的 NBA 2025-26 官方規則書快照，5 秒出現在 Rule 8 的發球與 Rule 10 的背對、側對籃框運球兩處；FIBA 2026 v1-1 版則寫在 Article 17 的發球、Article 27 的 closely guarded 與 Article 43 的罰球。「五秒違例」是中文慣稱，本文查閱的兩份規則書快照裡，5 秒分別寫在各自的情形條文中。"
 topic_ref: "manual"
 ---
 
-# 5 秒的時限出現在不同情形：NBA 2025-26 規則書寫發球與背對籃框運球，FIBA 2026 v1-1 寫發球、closely guarded 與罰球
+# 5 秒規則：NBA 寫在發球與背對籃框運球，FIBA 另有 closely guarded 與罰球
 
 **新手村｜規則入門・5 秒**
 
