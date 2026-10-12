@@ -133,23 +133,29 @@ def build_page(snap):
            '整理自 ESPN 公開資料（site.api.espn.com），非官方發布管道。</div>')
 
     faq = _page_faq(season, asof, final)
+    # 開季前提示：快照仍是上季終局、config/season-openers.json 登記了下一季開打日才顯示（開季後自動消失）。
+    pre = ba.bb_preseason_notice("nba", season, final)
+    pre_html = f'<p class="tbl-cap preseason">{html_lib.escape(pre["text"])}</p>' if pre else ""
+    page_title = (f"NBA 戰績與東西區排名（{season} 終局・{pre['title_tag']}）" if pre
+                  else f"NBA 戰績與東西區排名（{season}）")
     body = (
         '<section class="page-hero">'
         '<h1><span class="en">NBA</span> 戰績 — 東西區排名</h1>'
         f'<p class="sub">NBA {season} 賽季 30 隊完整例行賽名次（截至 {asof}），'
         '標示季後賽（1–6 名）與附加賽（7–10 名）分帶。</p>'
         '</section>'
-        + champ_band + tabs + cap + ba.bb_faq_details_html(faq))
+        + pre_html + champ_band + tabs + cap + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
-            "name": f"NBA 戰績與東西區排名（{season}）", "inLanguage": "zh-Hant",
+            "name": page_title, "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}
     jsonld = ba.graph_ld([ba.org_node(SITE), ba.website_node(SITE), coll,
                           ba.breadcrumb_node([("首頁", f"{BASE}/"), ("NBA 戰績", canonical)]),
                           ba.faq_node(faq, canonical)])
     desc = (f"NBA {season} 賽季東西區完整例行賽名次（截至 {asof}）：30 隊勝敗、勝率、勝差與季後賽/附加賽分帶"
             + (f"；總冠軍 {snap.get('champion_zh')}（{snap.get('finals_note', '')}）" if snap.get("champion_zh") else "")
+            + (f"；{pre['text'].rstrip('。')}" if pre else "")
             + "。整理自 ESPN 公開資料的非官方數據頁。")
-    return _shell(f"NBA 戰績與東西區排名（{season}）", desc, canonical, jsonld, body)
+    return _shell(page_title, desc, canonical, jsonld, body)
 
 
 def main():
