@@ -15,7 +15,7 @@ topic_ref: "manual"
 
 **新手村｜戰術入門・區域聯防與人盯人**
 
-轉播主播說：「他們換成 2-3 區域了。」想翻規則書找這個詞的人會撲空：NBA 2025-26 規則書與 FIBA 2024 規則書的英文全文，都沒有出現 zone defense、man-to-man，也沒有 2-3、3-2、1-3-1 這些陣型名稱。
+轉播主播說：「他們換成 2-3 區域了。」想翻規則書找這個詞的人會撲空：NBA 2025-26 規則書與 FIBA 2026 規則書的英文全文，都沒有出現 zone defense、man-to-man，也沒有 2-3、3-2、1-3-1 這些陣型名稱。
 
 這篇文章回答三個問題：人盯人和區域差在哪裡，「NBA 不准打區域」這句話還對不對，現在規則書裡還有什麼在管防守站位。讀完之後，你可以拿一個假設的站位，自己判防守三秒會不會走。
 
@@ -74,14 +74,14 @@ NBA 2025-26 規則書 Rule No. 10 Section VII c. 有這樣一句：「Any defens
 
 四個判斷都不需要知道這支球隊在打人盯人還是區域：條文問的是防守者站在哪裡、站了幾秒、有沒有盯人。
 
-## FIBA 2024 的三秒規定針對進攻方，規則書也沒有防守型態的條文
+## FIBA 2026 的三秒規定針對進攻方，規則書也沒有防守型態的條文
 
-這篇文章的規則句以 NBA 2025-26 為準。FIBA 是另一份規則書，不能把它當成 NBA 的規定。FIBA 2024 版規則書第 26 條（3 秒）寫的是：球隊在前場控球、比賽計時鐘走動時，球員不得在對方的限制區（restricted area）連續停留超過 3 秒。這是對進攻方球員的規定；防守三秒是 NBA 這一節條文的內容。
+這篇文章的規則句以 NBA 2025-26 為準。FIBA 是另一份規則書，不能把它當成 NBA 的規定。FIBA 2026 版規則書第 26 條（3 秒）寫的是：球隊在前場控球、比賽計時鐘走動時，球員不得在對方的限制區（restricted area）連續停留超過 3 秒。這是對進攻方球員的規定；防守三秒是 NBA 這一節條文的內容。
 
-| 項目 | NBA 2025-26 規則書 | FIBA 2024 規則書 |
+| 項目 | NBA 2025-26 規則書 | FIBA 2026 規則書 |
 |---|---|---|
 | man-to-man 在全文的出現次數 | 0 筆 | 0 筆 |
-| zone 這個字 | 場地線與得分區 | 只有 1 筆，是罰球時的 neutral zone（第 43.2.4 條） |
+| zone 這個字 | 場地線與得分區 | 只有 1 筆，是罰球時的 neutral zone（第 44.2.4 條） |
 | 三秒規定管的人 | 進攻方前場控球後，站在 16 英尺禁區等區域、三秒內沒有主動盯防的防守者 | 前場控球時，在對方限制區連續停留超過 3 秒的球員 |
 
 兩份規則書都沒有限制防守型態的條文，也都沒有列出人盯人或區域的定義。差別是三秒規定管的對象不同。FIBA 規則書沒有寫「允許區域」這樣的正向句子，這裡能說的只有「找不到限制」。
@@ -103,7 +103,7 @@ NBA 2025-26 規則書 Rule No. 10 Section VII c. 有這樣一句：「Any defens
 
 ### FIBA 規則也禁止區域聯防嗎？
 
-FIBA 2024 版規則書全文找不到限制防守型態的條文：man-to-man 是 0 筆，zone 只有一筆，是罰球時的 neutral zone。FIBA 2024 第 26 條的 3 秒規定針對前場控球方、停留在對方限制區的球員，這是 FIBA 2024 的條文，不能當成 NBA 規定。
+FIBA 2026 版規則書全文找不到限制防守型態的條文：man-to-man 是 0 筆，zone 只有一筆，是罰球時的 neutral zone。FIBA 2026 第 26 條的 3 秒規定針對前場控球方、停留在對方限制區的球員，這是 FIBA 2026 的條文，不能當成 NBA 規定。
 
 ### 「NBA 不准打區域」這句話是從哪裡來的？
 
@@ -113,7 +113,7 @@ FIBA 2024 版規則書全文找不到限制防守型態的條文：man-to-man �
 
 - NBA Official Playing Rules（2025-26 賽季規則書）：Rule No. 10 Section VII（防守三秒）。[ak-static.cms.nba.com/Official-2025-26-NBA-P…](https://ak-static.cms.nba.com/wp-content/uploads/sites/4/2025/10/Official-2025-26-NBA-Playing-Rules.pdf)
 - NBA 官方網頁版 Rule No. 10（2026 年 9 月 27 日取得）：[official.nba.com/rule-no-10-…](https://official.nba.com/rule-no-10-violations-and-penalties/)
-- FIBA Official Basketball Rules 2024（2024 年 10 月版）：Article 26（3 秒）、Article 43.2.4（罰球）。[assets.fiba.basketball/documents-corporate-fi…](https://assets.fiba.basketball/image/upload/documents-corporate-fiba-official-rules-2024-v10a.pdf)
+- FIBA Official Basketball Rules 2026（v1-1，2026 年 10 月 1 日生效）：Article 26（3 秒）、Article 44.2.4（罰球）。本機保存的全文文字檔，取得日 2026 年 10 月 12 日，無可點擊網址。
 - ESPN.com news services，2001 年 4 月：[espn.com/nba/news/2001/0412/1172176…](https://www.espn.com/nba/news/2001/0412/1172176.html)
 - ESPN，2020 年季後賽報導（story id 29963960）：[espn.com/nba/story/_/id/29963960…](https://www.espn.com/nba/story/_/id/29963960/nba-playoffs-why-teams-combating-offensive-revolution-going-zone-defense)
 - Wikipedia「Zone defense」（2026 年 9 月 27 日取得，第三方，僅用於區域聯防的定義與命名法）：[en.wikipedia.org/wiki/Zone_defense](https://en.wikipedia.org/wiki/Zone_defense)
