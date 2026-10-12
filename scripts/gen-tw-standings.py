@@ -110,10 +110,12 @@ def _page_faq(season, asof, final, tpbl=None, plg=None):
     ]
 
 
-def league_panel(lg, season, asof, source_note, final=False):
+def league_panel(lg, season, asof, source_note, final=False, pre=None):
     band = ""
+    if pre:
+        band += f'<p class="tbl-cap preseason">{html_lib.escape(pre["text"])}</p>'
     if lg.get("champion_zh"):
-        band = ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
+        band += ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
                 f'<div class="lbl">{season} 總冠軍</div>'
                 f'<div class="nm">{html_lib.escape(lg["champion_zh"])}</div>'
                 f'<div class="sr">{html_lib.escape(lg.get("finals_note", ""))}</div>'
@@ -135,13 +137,19 @@ def build_page(snap):
     canonical = f"{BASE}/tw/"
     tpbl = snap["leagues"]["tpbl"]
     plg = snap["leagues"]["plg"]
+    # 開季前提示：快照仍是上季終局、config/season-openers.json 登記了下一季開打日才顯示（兩聯盟各自的日期）。
+    pre_tpbl = ba.bb_preseason_notice("tpbl", season, final)
+    pre_plg = ba.bb_preseason_notice("plg", season, final)
+    pre_first = min((p for p in (pre_tpbl, pre_plg) if p), key=lambda p: p["opens"], default=None)
+    page_title = (f"台灣職籃戰績：TPBL × P. LEAGUE+（{season} 終局・{pre_first['title_tag']}起）" if pre_first
+                  else f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）")
     tabs = (
         '<div class="tabwrap tabs">'
         '<input type="radio" name="lg" id="t-tpbl" checked>'
         '<input type="radio" name="lg" id="t-plg">'
         '<div class="tablist"><label for="t-tpbl">TPBL（7 隊）</label><label for="t-plg">P. LEAGUE+（4 隊）</label></div>'
-        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）", final)}</div>'
-        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁", final)}</div>'
+        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）", final, pre_tpbl)}</div>'
+        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁", final, pre_plg)}</div>'
         '</div>')
     note = ('<div class="tbl-cap">兩聯盟均未提供官方文件化 API，資料屬非官方整理；'
             '本站與 TPBL、P. LEAGUE+ 及各球團無任何關聯或授權，引用請以官方公告為準。</div>')
@@ -154,7 +162,7 @@ def build_page(snap):
         '</section>'
         + tabs + note + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
-            "name": f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）", "inLanguage": "zh-Hant",
+            "name": page_title, "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}
     jsonld = ba.graph_ld([ba.org_node(SITE), ba.website_node(SITE), coll,
                           ba.breadcrumb_node([("首頁", f"{BASE}/"), ("台灣職籃", canonical)]),
@@ -163,8 +171,9 @@ def build_page(snap):
                       if lg.get("champion_zh"))
     desc = (f"台灣職籃 {season} 賽季戰績（截至 {asof}）：TPBL 7 隊與 P. LEAGUE+ 4 隊例行賽排名"
             + (f"、總冠軍（{champs}）" if champs else "")
+            + (f"；{pre_first['text'].rstrip('。')}" if pre_first else "")
             + "。兩聯盟並立現況的非官方數據頁。")
-    return _shell(f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）", desc, canonical, jsonld, body)
+    return _shell(page_title, desc, canonical, jsonld, body)
 
 
 def main():

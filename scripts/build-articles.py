@@ -2204,6 +2204,48 @@ def bb_season_state(nba=None, tw=None, hbl=None) -> dict:
             "hbl_seg": f"（HBL 為 {hbl_label}）" if hbl_label else ""}
 
 
+def bb_season_openers() -> dict:
+    """config/season-openers.json：各聯盟下一季開打日（台北日期）。缺檔＝不顯示提示，不報錯。"""
+    p = ROOT / "config" / "season-openers.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def bb_preseason_notice(league: str, snap_season: str, final: bool, today: datetime.date = None):
+    """快照仍是上一季終局（final）、且 season-openers 登記了更新的一季時，回傳開季前提示；否則 None。
+
+    回傳 {"season", "opens", "text", "title_tag"}。
+    判準用字串比較（"YYYY-YY" 與「NNN學年度」兩種標籤都能直接比大小），登記的 season 不比快照新就不顯示，
+    所以開季、快照換季後提示自動消失；過期的 config 也不會把提示留在頁上。
+    """
+    if not final:
+        return None
+    op = (bb_season_openers() or {}).get(league) or {}
+    season, opens = str(op.get("season") or ""), str(op.get("opens") or "")
+    snap_season = str(snap_season or "")
+    if not season or not opens or season <= snap_season:
+        return None
+    try:
+        opens_d = datetime.date.fromisoformat(opens)
+    except ValueError:
+        return None
+    if today is None:
+        import zoneinfo
+        today = datetime.datetime.now(zoneinfo.ZoneInfo("Asia/Taipei")).date()
+    label = op.get("label") or f"{season} 賽季"
+    md = f"{opens_d.month}/{opens_d.day}"
+    if today < opens_d:
+        text = f"{label}預定 {opens} 開打；本頁目前仍是 {snap_season} 賽季終局名次，開季後改為新賽季戰績。"
+    else:
+        text = f"{label}已於 {opens} 開打；本頁目前仍是 {snap_season} 賽季終局名次，新賽季戰績待首批賽果入庫後更新。"
+    return {"season": season, "opens": opens, "text": text,
+            "title_tag": f"{season} 賽季 {md} 開打"}
+
+
 # 首頁可見 FAQ（＝站台事實，非杜撰；同時餵 FAQPage schema 與可見問句式標題，
 # 對應測評 AEO 的「FAQ 結構 / 問句式標題 / PAA 友善」三項）。問句一律以「？」收尾。
 # ⚠️ 第二則答案依快照的 final 旗標條件化，開季後不會再宣稱「休賽季模式」。
