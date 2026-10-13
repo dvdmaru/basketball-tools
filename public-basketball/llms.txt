@@ -15,16 +15,16 @@
 
 ## 最新文章
 
+- [NBA 的 Contested Shot：最近防守者在 3.5 英呎內，加 s 數出手前 close out 並舉手](https://basketball.twtools.cc/articles/contested-shots-basics/)（2026-10-13）
+- [NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算](https://basketball.twtools.cc/articles/drives-tracking-basics/)（2026-10-13）
+- [NBA.com 的罰球出手率是球隊 FTA 除以同隊 FGA，罰球多和投籃少都會把它推高](https://basketball.twtools.cc/articles/free-throw-attempt-rate-basics/)（2026-10-13）
 - [HBL 115 學年度行事曆預定：資格賽 10/27 起在中原、健行，八強跨農曆年，總決賽 3/13–14 小巨蛋](https://basketball.twtools.cc/articles/hbl-115-qualifier-schedule-guide/)（2026-10-13）
 - [HBL 高中籃球甲級聯賽完全指南（115 學年度）：資格賽、八強跨年與歷屆冠軍](https://basketball.twtools.cc/articles/hbl-league-guide/)（2026-10-13）
+- [NBA.com 的 Potential Assists：隊友接球後 1 dribble 內出手，定義沒寫投進](https://basketball.twtools.cc/articles/potential-assists-basics/)（2026-10-13）
+- [NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫](https://basketball.twtools.cc/articles/rim-defense-metrics-basics/)（2026-10-13）
+- [NBA.com 的 Screen Assists 記的是擋人直接導致同一名隊友投進的那一球](https://basketball.twtools.cc/articles/screen-assists-basics/)（2026-10-13）
 - [投籃動作的起點怎麼分組？NBA 2025-26 與 FIBA 2026 的歸法不同](https://basketball.twtools.cc/articles/act-of-shooting-basics/)（2026-10-10）
 - [2023 NBA CBA 五項榮譽的出賽條件：打了至少 20 分鐘的一場即視為出賽，場數條件兩款至少滿足一款](https://basketball.twtools.cc/articles/award-eligibility-65-games-basics/)（2026-10-10）
-- [球出界算誰的？NBA 2025-26 與 FIBA 2026 版首句都看最後碰球的人，句尾寫法不同](https://basketball.twtools.cc/articles/ball-out-of-bounds-last-touch-basics/)（2026-10-10）
-- [隊長何時能問裁判？NBA 2025-26 寫登記給自己隊的暫停期間，FIBA 2026 寫球死且比賽時鐘停止](https://basketball.twtools.cc/articles/captain-role-basics/)（2026-10-10）
-- [Option 是什麼？2023 CBA 的球隊選擇權與球員選擇權，前四款條件逐字相同](https://basketball.twtools.cc/articles/contract-option-clauses-basics/)（2026-10-10）
-- [禁止第二次運球的那一句：NBA 2025-26 寫「自願結束」，FIBA 2026 版寫「已經結束」](https://basketball.twtools.cc/articles/dribble-ends-double-dribble-basics/)（2026-10-10）
-- [投籃的球在空中、時間到之後被碰到：NBA 2025-26 按碰球者分兩種結果，FIBA 2026 寫任一隊球員](https://basketball.twtools.cc/articles/end-of-period-ball-in-flight-basics/)（2026-10-10）
-- [賽後抗議：NBA 一般給 48 小時並隨書面附 $25,000，FIBA 2026 要隊長 15 分鐘內告知](https://basketball.twtools.cc/articles/game-protest-basics/)（2026-10-10）
 
 ## 文章與更新
 
