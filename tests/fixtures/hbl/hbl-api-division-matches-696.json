@@ -1,0 +1,3750 @@
+[
+  {
+    "id": 16356,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T02:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11947,
+      "name": "臺北市私立滬江高級中學",
+      "altName": "滬江高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12336,
+      "name": "桃園市立新屋高級中等學校",
+      "altName": "新屋高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 82,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16357,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T01:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12336,
+      "name": "桃園市立新屋高級中等學校",
+      "altName": "新屋高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 109,
+    "awaySquadScore": 42,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 33
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 33
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 4
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16338,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T01:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 5,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 96,
+    "awaySquadScore": 98,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 5,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 5,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 31
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16339,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T01:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12199,
+      "name": "國立臺北科技大學附屬桃園農工高級中等學校",
+      "altName": "北科附工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 96,
+    "awaySquadScore": 58,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16340,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T01:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12199,
+      "name": "國立臺北科技大學附屬桃園農工高級中等學校",
+      "altName": "北科附工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 99,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 7
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16341,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T02:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12064,
+      "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+      "altName": "中信高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 69,
+    "awaySquadScore": 60,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16342,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T02:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12064,
+      "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+      "altName": "中信高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12077,
+      "name": "臺中市立后綜高級中學",
+      "altName": "后綜高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 65,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16343,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T02:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12077,
+      "name": "臺中市立后綜高級中學",
+      "altName": "后綜高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 59,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16344,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T03:40:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11966,
+      "name": "治平學校財團法人桃園市治平高級中等學校",
+      "altName": "治平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 77,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16345,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T03:40:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11966,
+      "name": "治平學校財團法人桃園市治平高級中等學校",
+      "altName": "治平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12142,
+      "name": "高雄市立三民高級家事商業職業學校",
+      "altName": "三民家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 62,
+    "awaySquadScore": 96,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 31
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16346,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T03:40:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12142,
+      "name": "高雄市立三民高級家事商業職業學校",
+      "altName": "三民家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 85,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16347,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T05:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12312,
+      "name": "花蓮縣私立海星高級中學",
+      "altName": "海星高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 105,
+    "awaySquadScore": 72,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 29
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 33
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16348,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T06:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12146,
+      "name": "嘉義市私立東吳高級工業家事職業學校",
+      "altName": "東吳工家",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12132,
+      "name": "臺北市立和平高級中學",
+      "altName": "和平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 70,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16349,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T05:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12132,
+      "name": "臺北市立和平高級中學",
+      "altName": "和平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 49,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 9
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16350,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T06:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12312,
+      "name": "花蓮縣私立海星高級中學",
+      "altName": "海星高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12146,
+      "name": "嘉義市私立東吳高級工業家事職業學校",
+      "altName": "東吳工家",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 87,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 33
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16351,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T05:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12146,
+      "name": "嘉義市私立東吳高級工業家事職業學校",
+      "altName": "東吳工家",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 109,
+    "awaySquadScore": 45,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 37
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 33
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 4,
+        "wonScore": 6
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16352,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T06:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12312,
+      "name": "花蓮縣私立海星高級中學",
+      "altName": "海星高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12132,
+      "name": "臺北市立和平高級中學",
+      "altName": "和平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 77,
+    "awaySquadScore": 68,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16353,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T01:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11947,
+      "name": "臺北市私立滬江高級中學",
+      "altName": "滬江高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 141,
+    "awaySquadScore": 41,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 44
+      },
+      {
+        "round": 2,
+        "wonScore": 33
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 36
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 6
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16354,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T02:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12336,
+      "name": "桃園市立新屋高級中等學校",
+      "altName": "新屋高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12251,
+      "name": "臺北市立木柵高級工業職業學校",
+      "altName": "木柵高工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 88,
+    "awaySquadScore": 91,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 29
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16355,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T01:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12251,
+      "name": "臺北市立木柵高級工業職業學校",
+      "altName": "木柵高工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 56,
+    "awaySquadScore": 76,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16358,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T02:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11947,
+      "name": "臺北市私立滬江高級中學",
+      "altName": "滬江高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12251,
+      "name": "臺北市立木柵高級工業職業學校",
+      "altName": "木柵高工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 56,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16359,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T03:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11963,
+      "name": "同德學校財團法人南投縣同德高級中等學校",
+      "altName": "同德高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 88,
+    "awaySquadScore": 67,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 29
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 9
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16360,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T05:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12157,
+      "name": "國立屏東高級中學",
+      "altName": "屏東高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12013,
+      "name": "國立臺東高級中學",
+      "altName": "臺東高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 68,
+    "awaySquadScore": 61,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16361,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T03:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12013,
+      "name": "國立臺東高級中學",
+      "altName": "臺東高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 43,
+    "awaySquadScore": 77,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 8
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16362,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T05:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11963,
+      "name": "同德學校財團法人南投縣同德高級中等學校",
+      "altName": "同德高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12157,
+      "name": "國立屏東高級中學",
+      "altName": "屏東高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 61,
+    "awaySquadScore": 64,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16363,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T03:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12157,
+      "name": "國立屏東高級中學",
+      "altName": "屏東高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 29,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 5
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16364,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T05:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11963,
+      "name": "同德學校財團法人南投縣同德高級中等學校",
+      "altName": "同德高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12013,
+      "name": "國立臺東高級中學",
+      "altName": "臺東高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 78,
+    "awaySquadScore": 60,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16365,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T06:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12432,
+      "name": "新北市立泰山高級中學",
+      "altName": "泰山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12359,
+      "name": "國立基隆高級商工職業學校",
+      "altName": "基隆商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 84,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16366,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T07:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12108,
+      "name": "臺北市私立新民高級中等學校",
+      "altName": "新民高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12347,
+      "name": "新北市私立莊敬高級工業家事職業學校",
+      "altName": "莊敬高職",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 75,
+    "awaySquadScore": 87,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16367,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T06:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12347,
+      "name": "新北市私立莊敬高級工業家事職業學校",
+      "altName": "莊敬高職",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12432,
+      "name": "新北市立泰山高級中學",
+      "altName": "泰山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 63,
+    "awaySquadScore": 98,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 5
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 33
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16368,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T07:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12359,
+      "name": "國立基隆高級商工職業學校",
+      "altName": "基隆商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12108,
+      "name": "臺北市私立新民高級中等學校",
+      "altName": "新民高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 74,
+    "awaySquadScore": 78,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16369,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T06:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12432,
+      "name": "新北市立泰山高級中學",
+      "altName": "泰山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12108,
+      "name": "臺北市私立新民高級中等學校",
+      "altName": "新民高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 96,
+    "awaySquadScore": 76,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 31
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16370,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T07:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12359,
+      "name": "國立基隆高級商工職業學校",
+      "altName": "基隆商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12347,
+      "name": "新北市私立莊敬高級工業家事職業學校",
+      "altName": "莊敬高職",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 93,
+    "awaySquadScore": 73,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16371,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T09:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12000,
+      "name": "國立馬祖高級中學",
+      "altName": "馬祖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 103,
+    "awaySquadScore": 34,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 32
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 4
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 2
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16372,
+    "leagueId": 1,
+    "matchedAt": "2025-10-13T10:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11989,
+      "name": "屏東縣私立民生高級家事商業職業學校",
+      "altName": "民生家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12102,
+      "name": "臺中市青年高級中學",
+      "altName": "青年高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 68,
+    "awaySquadScore": 53,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16373,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T09:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12102,
+      "name": "臺中市青年高級中學",
+      "altName": "青年高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 43,
+    "awaySquadScore": 66,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 11
+      },
+      {
+        "round": 3,
+        "wonScore": 6
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 8
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16374,
+    "leagueId": 1,
+    "matchedAt": "2025-10-14T10:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12000,
+      "name": "國立馬祖高級中學",
+      "altName": "馬祖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11989,
+      "name": "屏東縣私立民生高級家事商業職業學校",
+      "altName": "民生家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 70,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 29
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16375,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T09:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11989,
+      "name": "屏東縣私立民生高級家事商業職業學校",
+      "altName": "民生家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 92,
+    "awaySquadScore": 48,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 9
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 7
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16376,
+    "leagueId": 1,
+    "matchedAt": "2025-10-15T10:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12000,
+      "name": "國立馬祖高級中學",
+      "altName": "馬祖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12102,
+      "name": "臺中市青年高級中學",
+      "altName": "青年高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 54,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16395,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T05:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12102,
+      "name": "臺中市青年高級中學",
+      "altName": "青年高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 42,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 1,
+        "wonScore": 8
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16396,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T07:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12312,
+      "name": "花蓮縣私立海星高級中學",
+      "altName": "海星高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12199,
+      "name": "國立臺北科技大學附屬桃園農工高級中等學校",
+      "altName": "北科附工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 76,
+    "awaySquadScore": 82,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16389,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T03:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12077,
+      "name": "臺中市立后綜高級中學",
+      "altName": "后綜高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12336,
+      "name": "桃園市立新屋高級中等學校",
+      "altName": "新屋高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 86,
+    "awaySquadScore": 74,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 7
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 38
+      },
+      {
+        "round": 1,
+        "wonScore": 8
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16390,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T04:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12359,
+      "name": "國立基隆高級商工職業學校",
+      "altName": "基隆商工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12347,
+      "name": "新北市私立莊敬高級工業家事職業學校",
+      "altName": "莊敬高職",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 65,
+    "awaySquadScore": 67,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16391,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T05:40:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12157,
+      "name": "國立屏東高級中學",
+      "altName": "屏東高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12132,
+      "name": "臺北市立和平高級中學",
+      "altName": "和平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 70,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 7
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16392,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T07:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11989,
+      "name": "屏東縣私立民生高級家事商業職業學校",
+      "altName": "民生家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11963,
+      "name": "同德學校財團法人南投縣同德高級中等學校",
+      "altName": "同德高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 46,
+    "awaySquadScore": 101,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 6
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16393,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T03:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12142,
+      "name": "高雄市立三民高級家事商業職業學校",
+      "altName": "三民家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12064,
+      "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+      "altName": "中信高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 76,
+    "awaySquadScore": 87,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16394,
+    "leagueId": 1,
+    "matchedAt": "2025-10-16T04:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12251,
+      "name": "臺北市立木柵高級工業職業學校",
+      "altName": "木柵高工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11966,
+      "name": "治平學校財團法人桃園市治平高級中等學校",
+      "altName": "治平高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 49,
+    "awaySquadScore": 62,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 9
+      },
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16399,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T03:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12104,
+      "name": "高雄市私立高苑高級工商職業學校",
+      "altName": "高苑工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12077,
+      "name": "臺中市立后綜高級中學",
+      "altName": "后綜高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 101,
+    "awaySquadScore": 88,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 30
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16400,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T04:20:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12347,
+      "name": "新北市私立莊敬高級工業家事職業學校",
+      "altName": "莊敬高職",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12017,
+      "name": "國立宜蘭高級中學",
+      "altName": "宜蘭高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 59,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16401,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T05:40:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 1,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11992,
+      "name": "花蓮縣立體育高級中等學校",
+      "altName": "花蓮體中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12157,
+      "name": "國立屏東高級中學",
+      "altName": "屏東高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 72,
+    "awaySquadScore": 66,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16402,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T07:00:00.000Z",
+    "venue": "健行科大",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11963,
+      "name": "同德學校財團法人南投縣同德高級中等學校",
+      "altName": "同德高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 72,
+    "awaySquadScore": 87,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 27
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 32
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16403,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T03:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12084,
+      "name": "永平學校財團法人桃園市私立永平工商高級中等學校",
+      "altName": "永平工商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12064,
+      "name": "中信國際學校財團法人新北市私立中信高級中等學校",
+      "altName": "中信高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 90,
+    "awaySquadScore": 84,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 29
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16404,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T04:20:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 11966,
+      "name": "治平學校財團法人桃園市治平高級中等學校",
+      "altName": "治平高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12093,
+      "name": "新北市立三重高級商工職業學校",
+      "altName": "三重商工",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 60,
+    "awaySquadScore": 96,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16405,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T05:40:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12432,
+      "name": "新北市立泰山高級中學",
+      "altName": "泰山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12182,
+      "name": "臺北市立成功高級中學",
+      "altName": "北市成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 86,
+    "awaySquadScore": 90,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  },
+  {
+    "id": 16406,
+    "leagueId": 1,
+    "matchedAt": "2025-10-17T07:00:00.000Z",
+    "venue": "中原大學",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "資格賽"
+    },
+    "homeSquad": {
+      "id": 12199,
+      "name": "國立臺北科技大學附屬桃園農工高級中等學校",
+      "altName": "北科附工",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12053,
+      "name": "臺北市開南高級中等學校",
+      "altName": "開南高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 65,
+    "awaySquadScore": 84,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": []
+    }
+  }
+]

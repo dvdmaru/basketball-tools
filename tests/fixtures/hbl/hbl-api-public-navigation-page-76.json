@@ -1,0 +1,4128 @@
+{
+  "site": {
+    "id": 10,
+    "orgId": 1,
+    "title": "HBL 高中籃球聯賽",
+    "status": "PUBLISHED",
+    "description": "HBL 高中籃球聯賽賽程、比分與戰績查詢，提供男、女生組比賽結果、球隊介紹及球員數據，整合賽事新聞、活動公告與歷年紀錄，一站掌握台灣高中籃球賽事動態，追蹤支持球隊的精彩表現。",
+    "logoUrl": "",
+    "faviconUrl": "https://storage.googleapis.com/p-xc-m/org/374a7a6a49255de6ef06732a9344e5007a880760dcdb7fe749746149cd992590",
+    "defaultLanguage": "zh-TW",
+    "enabledLanguages": [
+      "zh-TW"
+    ],
+    "domains": [
+      "hbl.com.tw",
+      "hbl.xceedsports.app"
+    ],
+    "primaryDomain": "hbl.com.tw",
+    "socialLinks": {
+      "facebook": "https://www.facebook.com/hblfans/?locale=zh_TW",
+      "instagram": "https://www.instagram.com/highschool_basketball_tw/",
+      "youtube": "https://www.youtube.com/@CTSSF"
+    },
+    "theme": {
+      "primary": [
+        {
+          "key": "50",
+          "hex": "#FDF2EE"
+        },
+        {
+          "key": "100",
+          "hex": "#FCE6DD"
+        },
+        {
+          "key": "200",
+          "hex": "#F9CDBB"
+        },
+        {
+          "key": "300",
+          "hex": "#F6B195"
+        },
+        {
+          "key": "400",
+          "hex": "#F1895F"
+        },
+        {
+          "key": "500",
+          "hex": "#EC622A"
+        },
+        {
+          "key": "600",
+          "hex": "#CB5424"
+        },
+        {
+          "key": "700",
+          "hex": "#AA471E"
+        },
+        {
+          "key": "800",
+          "hex": "#843718"
+        },
+        {
+          "key": "900",
+          "hex": "#632912"
+        },
+        {
+          "key": "950",
+          "hex": "#421B0C"
+        }
+      ],
+      "surface": [
+        {
+          "key": "0",
+          "hex": "#FFFFFF"
+        },
+        {
+          "key": "50",
+          "hex": "#F8F6F6"
+        },
+        {
+          "key": "100",
+          "hex": "#F0EEEE"
+        },
+        {
+          "key": "200",
+          "hex": "#E1DDDD"
+        },
+        {
+          "key": "300",
+          "hex": "#D0C9C9"
+        },
+        {
+          "key": "400",
+          "hex": "#B2A7A7"
+        },
+        {
+          "key": "500",
+          "hex": "#837171"
+        },
+        {
+          "key": "600",
+          "hex": "#6B5D5D"
+        },
+        {
+          "key": "700",
+          "hex": "#564B4B"
+        },
+        {
+          "key": "800",
+          "hex": "#423939"
+        },
+        {
+          "key": "900",
+          "hex": "#2E2828"
+        },
+        {
+          "key": "950",
+          "hex": "#1D1919"
+        }
+      ],
+      "options": {
+        "darkModeEnabled": false,
+        "darkChrome": true,
+        "heroConstrained": true
+      }
+    },
+    "layout": {
+      "header": {
+        "name": ""
+      },
+      "footer": {
+        "name": ""
+      }
+    },
+    "headerComponentInstance": null,
+    "footerComponentInstance": null,
+    "openGraph": {
+      "image": "/api/managed-assets/ab228a1e-abdb-46b0-a986-26a1f73b10e0?websiteId=10&revision=65&generation=75&schemaVersion=1"
+    },
+    "additional": {
+      "searchIndexingEnabled": true,
+      "scopedLeagueIds": [
+        1
+      ],
+      "publicationHierarchy": {
+        "leagues": [
+          {
+            "id": 1,
+            "name": "高中籃球聯賽",
+            "seasons": [
+              {
+                "id": 270,
+                "name": "115學年度",
+                "events": [
+                  {
+                    "id": 628,
+                    "name": "高中籃球甲級聯賽男生組"
+                  },
+                  {
+                    "id": 629,
+                    "name": "高中籃球甲級聯賽女生組"
+                  },
+                  {
+                    "id": 630,
+                    "name": "高中籃球乙級聯賽男生組"
+                  },
+                  {
+                    "id": 631,
+                    "name": "高中籃球乙級聯賽女生組"
+                  }
+                ]
+              },
+              {
+                "id": 209,
+                "name": "114學年度",
+                "events": [
+                  {
+                    "id": 501,
+                    "name": "高中籃球聯賽甲級男生組"
+                  },
+                  {
+                    "id": 499,
+                    "name": "高中籃球聯賽甲級女生組"
+                  },
+                  {
+                    "id": 503,
+                    "name": "高中籃球聯賽乙級女生組"
+                  },
+                  {
+                    "id": 504,
+                    "name": "高中籃球聯賽乙級男生組"
+                  }
+                ]
+              },
+              {
+                "id": 108,
+                "name": "113學年度",
+                "events": [
+                  {
+                    "id": 337,
+                    "name": "高中籃球聯賽男生乙級"
+                  },
+                  {
+                    "id": 338,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 339,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 340,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 1,
+                "name": "112學年度",
+                "events": [
+                  {
+                    "id": 1,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 2,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 309,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 310,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 93,
+                "name": "111學年度",
+                "events": [
+                  {
+                    "id": 288,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 289,
+                    "name": "第三屆會長盃高中籃球錦標賽女生組"
+                  },
+                  {
+                    "id": 290,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 291,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 292,
+                    "name": "高中籃球聯賽男生乙級"
+                  },
+                  {
+                    "id": 293,
+                    "name": "第三屆會長盃高中籃球錦標賽男生組"
+                  }
+                ]
+              },
+              {
+                "id": 86,
+                "name": "110學年度",
+                "events": [
+                  {
+                    "id": 264,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 265,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 266,
+                    "name": "第二屆會長盃高中籃球錦標賽女生組"
+                  },
+                  {
+                    "id": 267,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 268,
+                    "name": "高中籃球聯賽男生乙級"
+                  },
+                  {
+                    "id": 269,
+                    "name": "第二屆會長盃高中籃球錦標賽男生組"
+                  }
+                ]
+              },
+              {
+                "id": 79,
+                "name": "109學年度",
+                "events": [
+                  {
+                    "id": 240,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 241,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 242,
+                    "name": "第一屆會長盃女生組"
+                  },
+                  {
+                    "id": 243,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 244,
+                    "name": "第一屆會長盃男生組"
+                  },
+                  {
+                    "id": 245,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 72,
+                "name": "108學年度",
+                "events": [
+                  {
+                    "id": 216,
+                    "name": "學年度高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 217,
+                    "name": "學年度高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 218,
+                    "name": "學年度高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 219,
+                    "name": "學年度高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 64,
+                "name": "107學年度",
+                "events": [
+                  {
+                    "id": 189,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 190,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 191,
+                    "name": "高中籃球聯賽男生乙級"
+                  },
+                  {
+                    "id": 192,
+                    "name": "高中籃球聯賽男生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 55,
+                "name": "106學年度",
+                "events": [
+                  {
+                    "id": 160,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 161,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 162,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 163,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 46,
+                "name": "105學年度",
+                "events": [
+                  {
+                    "id": 131,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 132,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 133,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 134,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 37,
+                "name": "104學年度",
+                "events": [
+                  {
+                    "id": 102,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 103,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 104,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 105,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 28,
+                "name": "103學年度",
+                "events": [
+                  {
+                    "id": 73,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 74,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 75,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 76,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 19,
+                "name": "102學年度",
+                "events": [
+                  {
+                    "id": 44,
+                    "name": "高中籃球聯賽女生甲級"
+                  },
+                  {
+                    "id": 45,
+                    "name": "高中籃球聯賽女生乙級"
+                  },
+                  {
+                    "id": 46,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 47,
+                    "name": "高中籃球聯賽男生乙級"
+                  }
+                ]
+              },
+              {
+                "id": 257,
+                "name": "101學年度",
+                "events": [
+                  {
+                    "id": 588,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 589,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 256,
+                "name": "100學年度",
+                "events": [
+                  {
+                    "id": 586,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 587,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 255,
+                "name": "99學年度",
+                "events": [
+                  {
+                    "id": 584,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 585,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 254,
+                "name": "98學年度",
+                "events": [
+                  {
+                    "id": 582,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 583,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 253,
+                "name": "97學年度",
+                "events": [
+                  {
+                    "id": 580,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 581,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 252,
+                "name": "96學年度",
+                "events": [
+                  {
+                    "id": 578,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 579,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 251,
+                "name": "95學年度",
+                "events": [
+                  {
+                    "id": 576,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 577,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 250,
+                "name": "94學年度",
+                "events": [
+                  {
+                    "id": 574,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 575,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 249,
+                "name": "93學年度",
+                "events": [
+                  {
+                    "id": 572,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 573,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 248,
+                "name": "92學年度",
+                "events": [
+                  {
+                    "id": 570,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 571,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 247,
+                "name": "91學年度",
+                "events": [
+                  {
+                    "id": 568,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 569,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 246,
+                "name": "90學年度",
+                "events": [
+                  {
+                    "id": 566,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 567,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              },
+              {
+                "id": 245,
+                "name": "89學年度",
+                "events": [
+                  {
+                    "id": 564,
+                    "name": "高中籃球聯賽男生甲級"
+                  },
+                  {
+                    "id": 565,
+                    "name": "高中籃球聯賽女生甲級"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "ads": null,
+      "leagues": [
+        {
+          "id": 1,
+          "name": "高中籃球聯賽",
+          "logoUrl": "",
+          "seasons": [
+            {
+              "id": 270,
+              "name": "115學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 628,
+                  "name": "高中籃球甲級聯賽男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 270,
+                  "divisions": []
+                },
+                {
+                  "id": 629,
+                  "name": "高中籃球甲級聯賽女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 270,
+                  "divisions": []
+                },
+                {
+                  "id": 630,
+                  "name": "高中籃球乙級聯賽男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 270,
+                  "divisions": []
+                },
+                {
+                  "id": 631,
+                  "name": "高中籃球乙級聯賽女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 270,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 209,
+              "name": "114學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 501,
+                  "name": "高中籃球聯賽甲級男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 209,
+                  "divisions": [
+                    {
+                      "id": 696,
+                      "eventId": 501,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 698,
+                      "eventId": 501,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 700,
+                      "eventId": 501,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 702,
+                      "eventId": 501,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 703,
+                      "eventId": 501,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "總決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 499,
+                  "name": "高中籃球聯賽甲級女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 209,
+                  "divisions": [
+                    {
+                      "id": 697,
+                      "eventId": 499,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 699,
+                      "eventId": 499,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 701,
+                      "eventId": 499,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 704,
+                      "eventId": 499,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "總決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 503,
+                  "name": "高中籃球聯賽乙級女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 209,
+                  "divisions": [
+                    {
+                      "id": 874,
+                      "eventId": 503,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "全國決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 504,
+                  "name": "高中籃球聯賽乙級男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 209,
+                  "divisions": [
+                    {
+                      "id": 873,
+                      "eventId": 504,
+                      "seasonId": 209,
+                      "leagueId": 1,
+                      "name": "全國決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 108,
+              "name": "113學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 337,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 108,
+                  "divisions": [
+                    {
+                      "id": 871,
+                      "eventId": 337,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 338,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 108,
+                  "divisions": [
+                    {
+                      "id": 687,
+                      "eventId": 338,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 689,
+                      "eventId": 338,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 691,
+                      "eventId": 338,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 692,
+                      "eventId": 338,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 694,
+                      "eventId": 338,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 339,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 108,
+                  "divisions": [
+                    {
+                      "id": 872,
+                      "eventId": 339,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 340,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 108,
+                  "divisions": [
+                    {
+                      "id": 688,
+                      "eventId": 340,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 690,
+                      "eventId": 340,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 693,
+                      "eventId": 340,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 695,
+                      "eventId": 340,
+                      "seasonId": 108,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "name": "112學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 1,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 1,
+                  "divisions": [
+                    {
+                      "id": 678,
+                      "eventId": 1,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 680,
+                      "eventId": 1,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 682,
+                      "eventId": 1,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 683,
+                      "eventId": 1,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 685,
+                      "eventId": 1,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 2,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 1,
+                  "divisions": [
+                    {
+                      "id": 679,
+                      "eventId": 2,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 681,
+                      "eventId": 2,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 684,
+                      "eventId": 2,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 686,
+                      "eventId": 2,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 309,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 1,
+                  "divisions": [
+                    {
+                      "id": 870,
+                      "eventId": 309,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 310,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 1,
+                  "divisions": [
+                    {
+                      "id": 869,
+                      "eventId": 310,
+                      "seasonId": 1,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 93,
+              "name": "111學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 288,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": [
+                    {
+                      "id": 670,
+                      "eventId": 288,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 672,
+                      "eventId": 288,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 674,
+                      "eventId": 288,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 677,
+                      "eventId": 288,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 289,
+                  "name": "第三屆會長盃高中籃球錦標賽女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": []
+                },
+                {
+                  "id": 290,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": [
+                    {
+                      "id": 868,
+                      "eventId": 290,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 291,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": [
+                    {
+                      "id": 669,
+                      "eventId": 291,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 671,
+                      "eventId": 291,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 673,
+                      "eventId": 291,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 675,
+                      "eventId": 291,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 676,
+                      "eventId": 291,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 292,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": [
+                    {
+                      "id": 867,
+                      "eventId": 292,
+                      "seasonId": 93,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 293,
+                  "name": "第三屆會長盃高中籃球錦標賽男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 93,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 86,
+              "name": "110學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 264,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": [
+                    {
+                      "id": 661,
+                      "eventId": 264,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 663,
+                      "eventId": 264,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 666,
+                      "eventId": 264,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 668,
+                      "eventId": 264,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 265,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": [
+                    {
+                      "id": 866,
+                      "eventId": 265,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 266,
+                  "name": "第二屆會長盃高中籃球錦標賽女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": []
+                },
+                {
+                  "id": 267,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": [
+                    {
+                      "id": 660,
+                      "eventId": 267,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 662,
+                      "eventId": 267,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 664,
+                      "eventId": 267,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 665,
+                      "eventId": 267,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 667,
+                      "eventId": 267,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 268,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": [
+                    {
+                      "id": 865,
+                      "eventId": 268,
+                      "seasonId": 86,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 269,
+                  "name": "第二屆會長盃高中籃球錦標賽男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 86,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 79,
+              "name": "109學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 240,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": [
+                    {
+                      "id": 652,
+                      "eventId": 240,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 654,
+                      "eventId": 240,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 657,
+                      "eventId": 240,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 659,
+                      "eventId": 240,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 241,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": [
+                    {
+                      "id": 864,
+                      "eventId": 241,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 242,
+                  "name": "第一屆會長盃女生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": []
+                },
+                {
+                  "id": 243,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": [
+                    {
+                      "id": 651,
+                      "eventId": 243,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 653,
+                      "eventId": 243,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 655,
+                      "eventId": 243,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 656,
+                      "eventId": 243,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 658,
+                      "eventId": 243,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 244,
+                  "name": "第一屆會長盃男生組",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": []
+                },
+                {
+                  "id": 245,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 79,
+                  "divisions": [
+                    {
+                      "id": 863,
+                      "eventId": 245,
+                      "seasonId": 79,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 72,
+              "name": "108學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 216,
+                  "name": "學年度高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 72,
+                  "divisions": [
+                    {
+                      "id": 643,
+                      "eventId": 216,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 645,
+                      "eventId": 216,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 648,
+                      "eventId": 216,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 650,
+                      "eventId": 216,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 217,
+                  "name": "學年度高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 72,
+                  "divisions": []
+                },
+                {
+                  "id": 218,
+                  "name": "學年度高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 72,
+                  "divisions": [
+                    {
+                      "id": 642,
+                      "eventId": 218,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 644,
+                      "eventId": 218,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 646,
+                      "eventId": 218,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 647,
+                      "eventId": 218,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 649,
+                      "eventId": 218,
+                      "seasonId": 72,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 219,
+                  "name": "學年度高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 72,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 64,
+              "name": "107學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 189,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 64,
+                  "divisions": []
+                },
+                {
+                  "id": 190,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 64,
+                  "divisions": [
+                    {
+                      "id": 634,
+                      "eventId": 190,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 636,
+                      "eventId": 190,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 639,
+                      "eventId": 190,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 641,
+                      "eventId": 190,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 191,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 64,
+                  "divisions": []
+                },
+                {
+                  "id": 192,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 64,
+                  "divisions": [
+                    {
+                      "id": 633,
+                      "eventId": 192,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 635,
+                      "eventId": 192,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 637,
+                      "eventId": 192,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 638,
+                      "eventId": 192,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 640,
+                      "eventId": 192,
+                      "seasonId": 64,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 55,
+              "name": "106學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 160,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 55,
+                  "divisions": [
+                    {
+                      "id": 629,
+                      "eventId": 160,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 630,
+                      "eventId": 160,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 631,
+                      "eventId": 160,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 632,
+                      "eventId": 160,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 161,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 55,
+                  "divisions": []
+                },
+                {
+                  "id": 162,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 55,
+                  "divisions": [
+                    {
+                      "id": 624,
+                      "eventId": 162,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 625,
+                      "eventId": 162,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 626,
+                      "eventId": 162,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 627,
+                      "eventId": 162,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 628,
+                      "eventId": 162,
+                      "seasonId": 55,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 163,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 55,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 46,
+              "name": "105學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 131,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 46,
+                  "divisions": [
+                    {
+                      "id": 621,
+                      "eventId": 131,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 622,
+                      "eventId": 131,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 623,
+                      "eventId": 131,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 132,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 46,
+                  "divisions": []
+                },
+                {
+                  "id": 133,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 46,
+                  "divisions": [
+                    {
+                      "id": 617,
+                      "eventId": 133,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 618,
+                      "eventId": 133,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 619,
+                      "eventId": 133,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 620,
+                      "eventId": 133,
+                      "seasonId": 46,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 134,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 46,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 37,
+              "name": "104學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 102,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 37,
+                  "divisions": [
+                    {
+                      "id": 614,
+                      "eventId": 102,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 615,
+                      "eventId": 102,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 616,
+                      "eventId": 102,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 103,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 37,
+                  "divisions": []
+                },
+                {
+                  "id": 104,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 37,
+                  "divisions": [
+                    {
+                      "id": 610,
+                      "eventId": 104,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 611,
+                      "eventId": 104,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 612,
+                      "eventId": 104,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 613,
+                      "eventId": 104,
+                      "seasonId": 37,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 105,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 37,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 28,
+              "name": "103學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 73,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 28,
+                  "divisions": [
+                    {
+                      "id": 607,
+                      "eventId": 73,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 608,
+                      "eventId": 73,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 609,
+                      "eventId": 73,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 74,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 28,
+                  "divisions": []
+                },
+                {
+                  "id": 75,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 28,
+                  "divisions": [
+                    {
+                      "id": 603,
+                      "eventId": 75,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 604,
+                      "eventId": 75,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 605,
+                      "eventId": 75,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 606,
+                      "eventId": 75,
+                      "seasonId": 28,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 76,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 28,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 19,
+              "name": "102學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 44,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 19,
+                  "divisions": [
+                    {
+                      "id": 600,
+                      "eventId": 44,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 601,
+                      "eventId": 44,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 602,
+                      "eventId": 44,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 45,
+                  "name": "高中籃球聯賽女生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 19,
+                  "divisions": []
+                },
+                {
+                  "id": 46,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 19,
+                  "divisions": [
+                    {
+                      "id": 596,
+                      "eventId": 46,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 597,
+                      "eventId": 46,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 598,
+                      "eventId": 46,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 599,
+                      "eventId": 46,
+                      "seasonId": 19,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 47,
+                  "name": "高中籃球聯賽男生乙級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 19,
+                  "divisions": []
+                }
+              ]
+            },
+            {
+              "id": 257,
+              "name": "101學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 588,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 257,
+                  "divisions": [
+                    {
+                      "id": 589,
+                      "eventId": 588,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 590,
+                      "eventId": 588,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 591,
+                      "eventId": 588,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 592,
+                      "eventId": 588,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 589,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 257,
+                  "divisions": [
+                    {
+                      "id": 593,
+                      "eventId": 589,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 594,
+                      "eventId": 589,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 595,
+                      "eventId": 589,
+                      "seasonId": 257,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 256,
+              "name": "100學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 586,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 256,
+                  "divisions": [
+                    {
+                      "id": 582,
+                      "eventId": 586,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 583,
+                      "eventId": 586,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 584,
+                      "eventId": 586,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 585,
+                      "eventId": 586,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 587,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 256,
+                  "divisions": [
+                    {
+                      "id": 586,
+                      "eventId": 587,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 587,
+                      "eventId": 587,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 588,
+                      "eventId": 587,
+                      "seasonId": 256,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 255,
+              "name": "99學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 584,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 255,
+                  "divisions": [
+                    {
+                      "id": 776,
+                      "eventId": 584,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 777,
+                      "eventId": 584,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 778,
+                      "eventId": 584,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 779,
+                      "eventId": 584,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 780,
+                      "eventId": 584,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 585,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 255,
+                  "divisions": [
+                    {
+                      "id": 781,
+                      "eventId": 585,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 782,
+                      "eventId": 585,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 783,
+                      "eventId": 585,
+                      "seasonId": 255,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 254,
+              "name": "98學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 582,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 254,
+                  "divisions": [
+                    {
+                      "id": 769,
+                      "eventId": 582,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 770,
+                      "eventId": 582,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 771,
+                      "eventId": 582,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 772,
+                      "eventId": 582,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 583,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 254,
+                  "divisions": [
+                    {
+                      "id": 773,
+                      "eventId": 583,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 774,
+                      "eventId": 583,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 775,
+                      "eventId": 583,
+                      "seasonId": 254,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 253,
+              "name": "97學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 580,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 253,
+                  "divisions": [
+                    {
+                      "id": 762,
+                      "eventId": 580,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 763,
+                      "eventId": 580,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 764,
+                      "eventId": 580,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 765,
+                      "eventId": 580,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 581,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 253,
+                  "divisions": [
+                    {
+                      "id": 766,
+                      "eventId": 581,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 767,
+                      "eventId": 581,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 768,
+                      "eventId": 581,
+                      "seasonId": 253,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 252,
+              "name": "96學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 578,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 252,
+                  "divisions": [
+                    {
+                      "id": 755,
+                      "eventId": 578,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 756,
+                      "eventId": 578,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 757,
+                      "eventId": 578,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 758,
+                      "eventId": 578,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 579,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 252,
+                  "divisions": [
+                    {
+                      "id": 759,
+                      "eventId": 579,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 760,
+                      "eventId": 579,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 761,
+                      "eventId": 579,
+                      "seasonId": 252,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 251,
+              "name": "95學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 576,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 251,
+                  "divisions": [
+                    {
+                      "id": 748,
+                      "eventId": 576,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 749,
+                      "eventId": 576,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 750,
+                      "eventId": 576,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 751,
+                      "eventId": 576,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 577,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 251,
+                  "divisions": [
+                    {
+                      "id": 752,
+                      "eventId": 577,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 753,
+                      "eventId": 577,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 754,
+                      "eventId": 577,
+                      "seasonId": 251,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 250,
+              "name": "94學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 574,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 250,
+                  "divisions": [
+                    {
+                      "id": 741,
+                      "eventId": 574,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 742,
+                      "eventId": 574,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 743,
+                      "eventId": 574,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 744,
+                      "eventId": 574,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 575,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 250,
+                  "divisions": [
+                    {
+                      "id": 745,
+                      "eventId": 575,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 746,
+                      "eventId": 575,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 747,
+                      "eventId": 575,
+                      "seasonId": 250,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 249,
+              "name": "93學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 572,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 249,
+                  "divisions": [
+                    {
+                      "id": 734,
+                      "eventId": 572,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 735,
+                      "eventId": 572,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 736,
+                      "eventId": 572,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 737,
+                      "eventId": 572,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 573,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 249,
+                  "divisions": [
+                    {
+                      "id": 738,
+                      "eventId": 573,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 739,
+                      "eventId": 573,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 740,
+                      "eventId": 573,
+                      "seasonId": 249,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 248,
+              "name": "92學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 570,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 248,
+                  "divisions": [
+                    {
+                      "id": 727,
+                      "eventId": 570,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 728,
+                      "eventId": 570,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 729,
+                      "eventId": 570,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 730,
+                      "eventId": 570,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 571,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 248,
+                  "divisions": [
+                    {
+                      "id": 731,
+                      "eventId": 571,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 732,
+                      "eventId": 571,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 733,
+                      "eventId": 571,
+                      "seasonId": 248,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 247,
+              "name": "91學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 568,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 247,
+                  "divisions": [
+                    {
+                      "id": 720,
+                      "eventId": 568,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 721,
+                      "eventId": 568,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 722,
+                      "eventId": 568,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 723,
+                      "eventId": 568,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 569,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 247,
+                  "divisions": [
+                    {
+                      "id": 724,
+                      "eventId": 569,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 725,
+                      "eventId": 569,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 726,
+                      "eventId": 569,
+                      "seasonId": 247,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 246,
+              "name": "90學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 566,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 246,
+                  "divisions": [
+                    {
+                      "id": 713,
+                      "eventId": 566,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 714,
+                      "eventId": 566,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 715,
+                      "eventId": 566,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 716,
+                      "eventId": 566,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 567,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 246,
+                  "divisions": [
+                    {
+                      "id": 717,
+                      "eventId": 567,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 718,
+                      "eventId": 567,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 719,
+                      "eventId": 567,
+                      "seasonId": 246,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 245,
+              "name": "89學年度",
+              "startTime": null,
+              "endTime": null,
+              "leagueId": 1,
+              "events": [
+                {
+                  "id": 564,
+                  "name": "高中籃球聯賽男生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 245,
+                  "divisions": [
+                    {
+                      "id": 705,
+                      "eventId": 564,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "資格賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 706,
+                      "eventId": 564,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 707,
+                      "eventId": 564,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "複賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 708,
+                      "eventId": 564,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 709,
+                      "eventId": 564,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                },
+                {
+                  "id": 565,
+                  "name": "高中籃球聯賽女生甲級",
+                  "registrationStartTime": null,
+                  "registrationEndTime": null,
+                  "leagueId": 1,
+                  "seasonId": 245,
+                  "divisions": [
+                    {
+                      "id": 710,
+                      "eventId": 565,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "預賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 711,
+                      "eventId": 565,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "準決賽",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "id": 712,
+                      "eventId": 565,
+                      "seasonId": 245,
+                      "leagueId": 1,
+                      "name": "決賽",
+                      "status": "COMPLETED"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "homePage": {
+      "id": 73,
+      "websiteId": 10,
+      "parentId": null,
+      "type": "HOME",
+      "status": "PUBLISHED",
+      "title": "HOME",
+      "titleTranslations": [
+        {
+          "locale": "zh-TW",
+          "title": "HOME"
+        }
+      ],
+      "pageOrder": 0,
+      "slug": "home",
+      "query": "",
+      "externalLink": "",
+      "components": [
+        {
+          "componentOrder": 0,
+          "component": {
+            "id": 369,
+            "props": {
+              "imageUrl": null,
+              "adSlotId": null,
+              "title": null,
+              "content": null,
+              "autoPlay": null,
+              "anchorLink": null,
+              "collectionId": 62,
+              "tagIds": null,
+              "items": [
+                1643
+              ],
+              "domainIds": null,
+              "excludedEventIds": null,
+              "eventLeaderConfigId": null,
+              "backgroundConfig": {
+                "color": null,
+                "image": [
+                  "linear-gradient(90deg, #FCD100 0%, #EC622A 100%)"
+                ],
+                "size": null,
+                "position": null,
+                "repeat": null,
+                "attachment": null,
+                "origin": null,
+                "clip": null,
+                "blendMode": null,
+                "background": null
+              },
+              "columns": null,
+              "columnRatios": null,
+              "tableData": null,
+              "calendarConfig": null,
+              "mediaHeroConfig": null
+            },
+            "template": {
+              "componentKey": "content.banner-wide-carousel.v1",
+              "name": "content.banner-wide-carousel.v1",
+              "kind": "leaf"
+            },
+            "children": []
+          }
+        },
+        {
+          "componentOrder": 0,
+          "component": {
+            "id": 352,
+            "props": {
+              "imageUrl": null,
+              "adSlotId": null,
+              "title": null,
+              "content": null,
+              "autoPlay": null,
+              "anchorLink": null,
+              "collectionId": null,
+              "tagIds": null,
+              "items": null,
+              "domainIds": [
+                628,
+                629,
+                499,
+                501
+              ],
+              "excludedEventIds": null,
+              "eventLeaderConfigId": null,
+              "backgroundConfig": null,
+              "columns": null,
+              "columnRatios": null,
+              "tableData": null,
+              "calendarConfig": null,
+              "mediaHeroConfig": null
+            },
+            "template": {
+              "componentKey": "sports.match-schedule-card-carousel.v1",
+              "name": "sports.match-schedule-card-carousel.v1",
+              "kind": "leaf"
+            },
+            "children": []
+          }
+        },
+        {
+          "componentOrder": 0,
+          "component": {
+            "id": 156,
+            "props": {
+              "imageUrl": null,
+              "adSlotId": null,
+              "title": null,
+              "content": null,
+              "autoPlay": null,
+              "anchorLink": null,
+              "collectionId": null,
+              "tagIds": null,
+              "items": null,
+              "domainIds": null,
+              "excludedEventIds": null,
+              "eventLeaderConfigId": null,
+              "backgroundConfig": null,
+              "columns": 2,
+              "columnRatios": [
+                7,
+                5
+              ],
+              "tableData": null,
+              "calendarConfig": null,
+              "mediaHeroConfig": null
+            },
+            "template": {
+              "componentKey": "layout.column-row.style-1.v1",
+              "name": "ColumnRow0001",
+              "kind": "container"
+            },
+            "children": [
+              {
+                "id": 297,
+                "slotIndex": 0,
+                "siblingOrder": 1,
+                "props": {
+                  "imageUrl": null,
+                  "adSlotId": null,
+                  "title": "賽事新聞",
+                  "content": null,
+                  "autoPlay": null,
+                  "anchorLink": null,
+                  "collectionId": 45,
+                  "tagIds": null,
+                  "items": null,
+                  "domainIds": null,
+                  "excludedEventIds": null,
+                  "eventLeaderConfigId": null,
+                  "backgroundConfig": null,
+                  "columns": null,
+                  "columnRatios": null,
+                  "tableData": null,
+                  "calendarConfig": null
+                },
+                "template": {
+                  "componentKey": "content.list.style-4.v1",
+                  "name": "content.list.style-4.v1",
+                  "kind": "leaf"
+                }
+              },
+              {
+                "id": 371,
+                "slotIndex": 1,
+                "siblingOrder": 1,
+                "props": {
+                  "imageUrl": null,
+                  "adSlotId": null,
+                  "title": "戰績排行",
+                  "content": null,
+                  "autoPlay": null,
+                  "anchorLink": null,
+                  "collectionId": null,
+                  "tagIds": null,
+                  "items": null,
+                  "domainIds": [
+                    703,
+                    704
+                  ],
+                  "excludedEventIds": null,
+                  "eventLeaderConfigId": null,
+                  "backgroundConfig": null,
+                  "columns": null,
+                  "columnRatios": null,
+                  "tableData": null,
+                  "calendarConfig": null
+                },
+                "template": {
+                  "componentKey": "sports.standings-classic-tabs.v2",
+                  "name": "sports.standings-classic-tabs.v2",
+                  "kind": "leaf"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "componentOrder": 0,
+          "component": {
+            "id": 354,
+            "props": {
+              "imageUrl": null,
+              "adSlotId": null,
+              "title": "活動公告",
+              "content": null,
+              "autoPlay": null,
+              "anchorLink": null,
+              "collectionId": 46,
+              "tagIds": null,
+              "items": null,
+              "domainIds": null,
+              "excludedEventIds": null,
+              "eventLeaderConfigId": null,
+              "backgroundConfig": null,
+              "columns": null,
+              "columnRatios": null,
+              "tableData": null,
+              "calendarConfig": null,
+              "mediaHeroConfig": null
+            },
+            "template": {
+              "componentKey": "content.article-list-grid.v1",
+              "name": "content.article-list-grid.v1",
+              "kind": "leaf"
+            },
+            "children": []
+          }
+        },
+        {
+          "componentOrder": 0,
+          "component": {
+            "id": 355,
+            "props": {
+              "imageUrl": null,
+              "adSlotId": null,
+              "title": "",
+              "content": null,
+              "autoPlay": true,
+              "anchorLink": null,
+              "collectionId": 65,
+              "tagIds": null,
+              "items": [
+                1646
+              ],
+              "domainIds": null,
+              "excludedEventIds": null,
+              "eventLeaderConfigId": null,
+              "backgroundConfig": null,
+              "columns": null,
+              "columnRatios": null,
+              "tableData": null,
+              "calendarConfig": null,
+              "mediaHeroConfig": null
+            },
+            "template": {
+              "componentKey": "content.sponsor-marquee.v1",
+              "name": "content.sponsor-marquee.v1",
+              "kind": "leaf"
+            },
+            "children": []
+          }
+        }
+      ]
+    },
+    "pages": [
+      {
+        "id": 73,
+        "parentId": null,
+        "title": "HOME",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "HOME"
+          }
+        ],
+        "type": "HOME",
+        "pageOrder": 0,
+        "slug": "home",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 74,
+        "parentId": 73,
+        "title": "賽事新聞",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "賽事新聞"
+          }
+        ],
+        "type": "COLLECTION",
+        "pageOrder": 0,
+        "slug": "news",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 78,
+        "parentId": 118,
+        "title": "球隊數據",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "球隊數據"
+          }
+        ],
+        "type": "LEAGUE_EVENTS",
+        "pageOrder": 0,
+        "slug": "qiu-dui-shu-ju",
+        "query": "leagueId=1&seasonId=209&eventId=501&divisionId=698",
+        "externalLink": ""
+      },
+      {
+        "id": 82,
+        "parentId": 117,
+        "title": "歷年獎項",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "歷年獎項"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 0,
+        "slug": "history-awards",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 75,
+        "parentId": 73,
+        "title": "活動公告",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "活動公告"
+          }
+        ],
+        "type": "COLLECTION",
+        "pageOrder": 1,
+        "slug": "notice",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 79,
+        "parentId": 118,
+        "title": "球員數據",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "球員數據"
+          }
+        ],
+        "type": "LEAGUE_EVENTS",
+        "pageOrder": 1,
+        "slug": "qiu-yuan-shu-ju",
+        "query": "leagueId=1&seasonId=209&eventId=501&divisionId=698",
+        "externalLink": ""
+      },
+      {
+        "id": 83,
+        "parentId": 117,
+        "title": "歷年戰績",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "歷年戰績"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 1,
+        "slug": "history-rankings",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 76,
+        "parentId": 73,
+        "title": "賽程戰績",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "賽程戰績"
+          }
+        ],
+        "type": "LEAGUE_EVENTS",
+        "pageOrder": 2,
+        "slug": "games-standings",
+        "query": "leagueId=1&seasonId=209&eventId=501&divisionId=698",
+        "externalLink": ""
+      },
+      {
+        "id": 77,
+        "parentId": 73,
+        "title": "球隊介紹",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "球隊介紹"
+          }
+        ],
+        "type": "SEASON_EVENTS_SQUADS",
+        "pageOrder": 3,
+        "slug": "squads",
+        "query": "leagueId=1&seasonId=209",
+        "externalLink": ""
+      },
+      {
+        "id": 81,
+        "parentId": 73,
+        "title": "競賽規程",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "競賽規程"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 4,
+        "slug": "jing-sai-gui-cheng",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 118,
+        "parentId": 73,
+        "title": "比賽數據",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "比賽數據"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 7,
+        "slug": "bi-sai-shu-ju",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 117,
+        "parentId": 73,
+        "title": "歷年紀錄",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "歷年紀錄"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 8,
+        "slug": "li-nian-ji-lu",
+        "query": "",
+        "externalLink": ""
+      },
+      {
+        "id": 80,
+        "parentId": 73,
+        "title": "關於HBL",
+        "titleTranslations": [
+          {
+            "locale": "zh-TW",
+            "title": "關於HBL"
+          }
+        ],
+        "type": "STATIC",
+        "pageOrder": 9,
+        "slug": "guan-yu-hbl",
+        "query": "",
+        "externalLink": ""
+      }
+    ]
+  },
+  "page": {
+    "id": 76,
+    "websiteId": 10,
+    "parentId": 73,
+    "type": "LEAGUE_EVENTS",
+    "status": "PUBLISHED",
+    "title": "賽程戰績",
+    "titleTranslations": [
+      {
+        "locale": "zh-TW",
+        "title": "賽程戰績"
+      }
+    ],
+    "pageOrder": 2,
+    "slug": "games-standings",
+    "query": "leagueId=1&seasonId=209&eventId=501&divisionId=698",
+    "externalLink": "",
+    "components": [
+      {
+        "componentOrder": 0,
+        "component": {
+          "id": 314,
+          "props": {
+            "imageUrl": "https://storage.googleapis.com/p-xc-m/league/11/news/9180e8948e6be9750845898fa2e910f03b2ebd97c5fdd8fb355c54ce543d3d35",
+            "adSlotId": null,
+            "title": null,
+            "content": null,
+            "autoPlay": null,
+            "anchorLink": null,
+            "collectionId": null,
+            "tagIds": null,
+            "items": null,
+            "domainIds": null,
+            "excludedEventIds": null,
+            "eventLeaderConfigId": null,
+            "backgroundConfig": {
+              "color": "#EC622B",
+              "image": null,
+              "size": null,
+              "position": null,
+              "repeat": null,
+              "attachment": null,
+              "origin": null,
+              "clip": null,
+              "blendMode": null,
+              "background": null
+            },
+            "columns": null,
+            "columnRatios": null,
+            "tableData": null,
+            "calendarConfig": null,
+            "mediaHeroConfig": null
+          },
+          "template": {
+            "componentKey": "content.page-header.style-1.v1",
+            "name": "content.page-header.style-1.v1",
+            "kind": "leaf"
+          },
+          "children": []
+        }
+      },
+      {
+        "componentOrder": 0,
+        "component": {
+          "id": 150,
+          "props": {
+            "imageUrl": null,
+            "adSlotId": null,
+            "title": null,
+            "content": null,
+            "autoPlay": null,
+            "anchorLink": null,
+            "collectionId": null,
+            "tagIds": null,
+            "items": null,
+            "domainIds": null,
+            "excludedEventIds": null,
+            "eventLeaderConfigId": null,
+            "backgroundConfig": null,
+            "columns": null,
+            "columnRatios": null,
+            "tableData": null,
+            "calendarConfig": null,
+            "mediaHeroConfig": null
+          },
+          "template": {
+            "componentKey": "sports.league-event-page-title.style-1.v1",
+            "name": "LeagueEventPageTitle0001",
+            "kind": "leaf"
+          },
+          "children": []
+        }
+      },
+      {
+        "componentOrder": 0,
+        "component": {
+          "id": 166,
+          "props": {
+            "imageUrl": null,
+            "adSlotId": null,
+            "title": null,
+            "content": null,
+            "autoPlay": null,
+            "anchorLink": null,
+            "collectionId": null,
+            "tagIds": null,
+            "items": null,
+            "domainIds": null,
+            "excludedEventIds": null,
+            "eventLeaderConfigId": null,
+            "backgroundConfig": null,
+            "columns": null,
+            "columnRatios": null,
+            "tableData": null,
+            "calendarConfig": null,
+            "mediaHeroConfig": null
+          },
+          "template": {
+            "componentKey": "sports.interactive-schedule.style-1.v1",
+            "name": "InteractiveSchedule0001",
+            "kind": "leaf"
+          },
+          "children": []
+        }
+      },
+      {
+        "componentOrder": 0,
+        "component": {
+          "id": 152,
+          "props": {
+            "imageUrl": null,
+            "adSlotId": null,
+            "title": null,
+            "content": null,
+            "autoPlay": null,
+            "anchorLink": null,
+            "collectionId": null,
+            "tagIds": null,
+            "items": null,
+            "domainIds": null,
+            "excludedEventIds": null,
+            "eventLeaderConfigId": null,
+            "backgroundConfig": null,
+            "columns": null,
+            "columnRatios": null,
+            "tableData": null,
+            "calendarConfig": null,
+            "mediaHeroConfig": null
+          },
+          "template": {
+            "componentKey": "sports.standing-group.style-1.v1",
+            "name": "StandingGroup0001",
+            "kind": "leaf"
+          },
+          "children": []
+        }
+      }
+    ]
+  }
+}

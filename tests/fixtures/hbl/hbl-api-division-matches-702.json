@@ -1,0 +1,1970 @@
+[
+  {
+    "id": 16621,
+    "leagueId": 1,
+    "matchedAt": "2026-02-05T05:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 73,
+    "awaySquadScore": 71,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 1,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/317556.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16622,
+    "leagueId": 1,
+    "matchedAt": "2026-02-05T07:20:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 67,
+    "awaySquadScore": 92,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 7
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 31
+      },
+      {
+        "round": 1,
+        "wonScore": 34
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/317555.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16623,
+    "leagueId": 1,
+    "matchedAt": "2026-02-05T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 86,
+    "awaySquadScore": 85,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 14
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/317558.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16624,
+    "leagueId": 1,
+    "matchedAt": "2026-02-05T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 99,
+    "awaySquadScore": 89,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 30
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317596.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16625,
+    "leagueId": 1,
+    "matchedAt": "2026-02-06T07:20:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 5,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 97,
+    "awaySquadScore": 84,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 5,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 12
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 5,
+        "wonScore": 2
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317627.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16626,
+    "leagueId": 1,
+    "matchedAt": "2026-02-06T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 92,
+    "awaySquadScore": 54,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 32
+      },
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 11
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317628.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16627,
+    "leagueId": 1,
+    "matchedAt": "2026-02-06T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 84,
+    "awaySquadScore": 78,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 27
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 27
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317620.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16628,
+    "leagueId": 1,
+    "matchedAt": "2026-02-06T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 68,
+    "awaySquadScore": 71,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317611.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16630,
+    "leagueId": 1,
+    "matchedAt": "2026-02-07T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 94,
+    "awaySquadScore": 56,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 30
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 8
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      },
+      {
+        "round": 1,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317638.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16631,
+    "leagueId": 1,
+    "matchedAt": "2026-02-07T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 47,
+    "awaySquadScore": 80,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 14
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 10
+      },
+      {
+        "round": 4,
+        "wonScore": 9
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317637.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16632,
+    "leagueId": 1,
+    "matchedAt": "2026-02-07T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 92,
+    "awaySquadScore": 86,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 27
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317636.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16629,
+    "leagueId": 1,
+    "matchedAt": "2026-02-07T07:20:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 74,
+    "awaySquadScore": 89,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 23
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317640.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16642,
+    "leagueId": 1,
+    "matchedAt": "2026-02-11T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 92,
+    "awaySquadScore": 65,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 11
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318147.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16633,
+    "leagueId": 1,
+    "matchedAt": "2026-02-08T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 77,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317653.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16634,
+    "leagueId": 1,
+    "matchedAt": "2026-02-08T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 82,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 26
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317645.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16635,
+    "leagueId": 1,
+    "matchedAt": "2026-02-08T09:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 76,
+    "awaySquadScore": 74,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 26
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 25
+      },
+      {
+        "round": 3,
+        "wonScore": 11
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317654.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16636,
+    "leagueId": 1,
+    "matchedAt": "2026-02-08T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 81,
+    "awaySquadScore": 56,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 15
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/hamivideo/product/317639.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16637,
+    "leagueId": 1,
+    "matchedAt": "2026-02-10T07:20:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 67,
+    "awaySquadScore": 83,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 11
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 15
+      },
+      {
+        "round": 4,
+        "wonScore": 16
+      },
+      {
+        "round": 1,
+        "wonScore": 29
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318059.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16638,
+    "leagueId": 1,
+    "matchedAt": "2026-02-10T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 88,
+    "awaySquadScore": 68,
+    "homeSquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 24
+      },
+      {
+        "round": 2,
+        "wonScore": 24
+      },
+      {
+        "round": 4,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 17
+      },
+      {
+        "round": 2,
+        "wonScore": 28
+      },
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 3,
+        "wonScore": 6
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318062.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16639,
+    "leagueId": 1,
+    "matchedAt": "2026-02-10T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 22
+      },
+      {
+        "round": 3,
+        "wonScore": 12
+      },
+      {
+        "round": 4,
+        "wonScore": 24
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 20
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318064.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16640,
+    "leagueId": 1,
+    "matchedAt": "2026-02-10T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 79,
+    "awaySquadScore": 77,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318063.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16641,
+    "leagueId": 1,
+    "matchedAt": "2026-02-11T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 75,
+    "awaySquadScore": 81,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 2,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 19
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 20
+      },
+      {
+        "round": 3,
+        "wonScore": 25
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 17
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318149.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16643,
+    "leagueId": 1,
+    "matchedAt": "2026-02-12T07:20:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 72,
+    "awaySquadScore": 68,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 2,
+        "wonScore": 26
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 13
+      },
+      {
+        "round": 4,
+        "wonScore": 12
+      },
+      {
+        "round": 3,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318256.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16644,
+    "leagueId": 1,
+    "matchedAt": "2026-02-12T09:00:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12406,
+      "name": "臺北市立松山高級中學",
+      "altName": "松山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 11950,
+      "name": "新竹縣私立東泰高級中學",
+      "altName": "東泰高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 55,
+    "awaySquadScore": 79,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 4
+      },
+      {
+        "round": 1,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 15
+      },
+      {
+        "round": 1,
+        "wonScore": 25
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318253.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16645,
+    "leagueId": 1,
+    "matchedAt": "2026-02-12T10:40:00.000Z",
+    "venue": "新北市新莊體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12325,
+      "name": "南山學校財團法人新北市南山高級中學",
+      "altName": "南山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12083,
+      "name": "臺北市立南湖高級中學",
+      "altName": "南湖高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 85,
+    "awaySquadScore": 108,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 4,
+        "wonScore": 28
+      },
+      {
+        "round": 1,
+        "wonScore": 21
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 28
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      },
+      {
+        "round": 4,
+        "wonScore": 30
+      },
+      {
+        "round": 1,
+        "wonScore": 34
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318265.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16646,
+    "leagueId": 1,
+    "matchedAt": "2026-02-12T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 69,
+    "homeSquadRoundScores": [
+      {
+        "round": 2,
+        "wonScore": 18
+      },
+      {
+        "round": 3,
+        "wonScore": 21
+      },
+      {
+        "round": 4,
+        "wonScore": 10
+      },
+      {
+        "round": 1,
+        "wonScore": 22
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 18
+      },
+      {
+        "round": 4,
+        "wonScore": 23
+      },
+      {
+        "round": 1,
+        "wonScore": 13
+      },
+      {
+        "round": 2,
+        "wonScore": 15
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318255.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16647,
+    "leagueId": 1,
+    "matchedAt": "2026-02-11T09:00:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12370,
+      "name": "臺中市立東山高級中學",
+      "altName": "東山高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12348,
+      "name": "能仁學校財團法人新北市能仁高級家事商業職業學校",
+      "altName": "能仁家商",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 64,
+    "awaySquadScore": 82,
+    "homeSquadRoundScores": [
+      {
+        "round": 4,
+        "wonScore": 17
+      },
+      {
+        "round": 1,
+        "wonScore": 16
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 3,
+        "wonScore": 20
+      },
+      {
+        "round": 4,
+        "wonScore": 19
+      },
+      {
+        "round": 1,
+        "wonScore": 27
+      },
+      {
+        "round": 2,
+        "wonScore": 16
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318152.do?cs=2"
+      ]
+    }
+  },
+  {
+    "id": 16648,
+    "leagueId": 1,
+    "matchedAt": "2026-02-11T10:40:00.000Z",
+    "venue": "新北市板橋體育館",
+    "court": "",
+    "status": "COMPLETED",
+    "code": "",
+    "round": 4,
+    "sportName": "Basketball",
+    "eventName": "高中籃球聯賽甲級男生組",
+    "division": {
+      "name": "準決賽"
+    },
+    "homeSquad": {
+      "id": 12097,
+      "name": "彰化縣立成功高級中學",
+      "altName": "彰縣成功高中",
+      "logoUrl": ""
+    },
+    "awaySquad": {
+      "id": 12070,
+      "name": "新竹市私立光復高級中學",
+      "altName": "光復高中",
+      "logoUrl": ""
+    },
+    "homeSquadScore": 71,
+    "awaySquadScore": 63,
+    "homeSquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 22
+      },
+      {
+        "round": 2,
+        "wonScore": 14
+      },
+      {
+        "round": 3,
+        "wonScore": 22
+      },
+      {
+        "round": 4,
+        "wonScore": 13
+      }
+    ],
+    "awaySquadRoundScores": [
+      {
+        "round": 1,
+        "wonScore": 9
+      },
+      {
+        "round": 2,
+        "wonScore": 19
+      },
+      {
+        "round": 3,
+        "wonScore": 17
+      },
+      {
+        "round": 4,
+        "wonScore": 18
+      }
+    ],
+    "additional": {
+      "liveUrls": [
+        "https://hamivideo.hinet.net/product/318145.do?cs=2"
+      ]
+    }
+  }
+]

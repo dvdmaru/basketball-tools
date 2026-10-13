@@ -28,7 +28,7 @@
 | └ `standings[]` 每一列 | `conference`／`seed`／`name`／`name_zh`／`abbr`／`wins`／`losses`／`pct`／`games_back`／`rank` | — | **`division`** |
 | `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`（僅 tpbl 有） | — |
 | └ `standings[]` 每一列 | `rank`／`team_name`／`win`／`lose`／`pct`／`games_behind` | — | — |
-| `hbl-<season>-<date>.json` | `asof_taipei_date`／`season_label`／`final`／`divisions.boys`／`divisions.girls` | 各組 `champion`／`final_note` | **任何球員層欄位**（見 §2-1） |
+| `hbl-<season>-<date>.json` | `asof_taipei_date`／`season_label`／`final`／`divisions.boys`／`divisions.girls` | 各組 `champion`／`final_note`；`stages`（官方各階段隊伍層摘要）／`results`（準決賽、總決賽隊伍層賽果與晉級名單）／`next_season`（新學年度尚無 division 時的官方報名隊數） | **任何球員層欄位**（見 §2-1） |
 | └ `final_four[]` 每一列 | `rank`／`school`／`note` | — | **球員姓名／個人數據** |
 
 ### ☠️ 「沒有 `division`」這件事已經出過事（2026-08-18）
