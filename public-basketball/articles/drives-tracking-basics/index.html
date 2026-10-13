@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="ember">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14100e">
+<script>
+(function(){
+  var KEY="bk-theme", VALID=["ember","court","violet","apricot","maple"], BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var root=document.documentElement, saved=null;
+  root.classList.add("has-js"); /* 手機 nav 只在有 JS 時收進選單鈕（CSS 靠這個 class 判斷） */
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved && VALID.indexOf(saved)===-1){
+    saved=null;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  if(saved){
+    root.setAttribute("data-theme",saved);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[saved]) m.setAttribute("content",BG[saved]);
+  }
+})();
+</script>
+<title>NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算 | 籃球數據誌</title>
+<meta name="description" content="NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被">
+<meta property="og:title" content="NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算">
+<meta property="og:description" content="NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被">
+<meta property="og:image" content="https://basketball.twtools.cc/articles/drives-tracking-basics/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://basketball.twtools.cc/articles/drives-tracking-basics/">
+<meta property="og:site_name" content="籃球數據誌">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-10-13">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算">
+<meta name="twitter:description" content="NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被">
+<meta name="twitter:image" content="https://basketball.twtools.cc/articles/drives-tracking-basics/cover.png">
+<link rel="canonical" href="https://basketball.twtools.cc/articles/drives-tracking-basics/">
+<link rel="prev" href="https://basketball.twtools.cc/articles/contested-shots-basics/">
+<link rel="next" href="https://basketball.twtools.cc/articles/free-throw-attempt-rate-basics/">
+<link rel="alternate" type="application/rss+xml" title="籃球數據誌 最新文章" href="https://basketball.twtools.cc/feed.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://basketball.twtools.cc/#org","name":"籃球數據誌","url":"https://basketball.twtools.cc/","sameAs":[]},{"@type":"WebSite","@id":"https://basketball.twtools.cc/#website","name":"籃球數據誌｜NBA・台灣職籃・HBL 戰績與數據","url":"https://basketball.twtools.cc/","inLanguage":"zh-Hant","publisher":{"@id":"https://basketball.twtools.cc/#org"}},{"@type":"SportsLeague","@id":"https://basketball.twtools.cc/#league-nba","name":"美國職籃 NBA","sport":"Basketball","url":"https://basketball.twtools.cc/standings/","organizer":{"@type":"Organization","name":"National Basketball Association"}},{"@type":"Article","headline":"NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算","description":"NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被","image":"https://basketball.twtools.cc/articles/drives-tracking-basics/cover.png","inLanguage":"zh-Hant","url":"https://basketball.twtools.cc/articles/drives-tracking-basics/","mainEntityOfPage":"https://basketball.twtools.cc/articles/drives-tracking-basics/","author":{"@id":"https://basketball.twtools.cc/#org"},"publisher":{"@id":"https://basketball.twtools.cc/#org"},"isPartOf":{"@id":"https://basketball.twtools.cc/#league-nba"},"datePublished":"2026-10-13","dateModified":"2026-10-13"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://basketball.twtools.cc/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://basketball.twtools.cc/articles/"},{"@type":"ListItem","position":3,"name":"NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算","item":"https://basketball.twtools.cc/articles/drives-tracking-basics/"}]},{"@type":"FAQPage","@id":"https://basketball.twtools.cc/articles/drives-tracking-basics/#faq","inLanguage":"zh-Hant","mainEntity":[{"@type":"Question","name":"NBA.com 詞彙表的 Drives，是不是所有運球攻框都算？","acceptedAnswer":{"@type":"Answer","text":"不是。依 NBA.com 詞彙表 2026 年 9 月 25 日快照，Drives 只算半場進攻中的運球攻擊籃框；從靠近籃框處開始、移動中接球、在外圍立刻被截停這三種情形不計入。見第一節。"}},{"@type":"Question","name":"規則書有沒有寫 Drives 的計數條件？","acceptedAnswer":{"@type":"Answer","text":"NBA 2025-26 規則書與 FIBA 2026 版規則書的全文，查不到「半場進攻」與三種排除情形的原句。兩份規則書管運球者的條文（NBA Rule 12-B Section II (b)、FIBA Art. 33.4）講的是另一件事，見第四節。"}},{"@type":"Question","name":"Drive Points 與 Drive Field Goal Percentage 是否使用同一批回合？","acceptedAnswer":{"@type":"Answer","text":"NBA.com 詞彙表 2026 年 9 月 25 日快照沒有寫。這兩個條目只寫「攻向籃框的切入」，沒有重複 Drives 條目的三種排除情形。見第三節。"}},{"@type":"Question","name":"在外圍被防守者擋住，就等於被吹進攻犯規嗎？","acceptedAnswer":{"@type":"Answer","text":"不等於。依 NBA.com 詞彙表 2026 年 9 月 25 日快照，在外圍立刻被截停只是 Drives 不計入的回合，沒有寫判罰。NBA 2025-26 規則書 Rule 12-B Section II (b) 另外規定運球者遇到直線路徑上合法防守位置時的作法；charge 與 block 怎麼判，見帶球撞人與阻擋犯規。"}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LQK5BVHP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8LQK5BVHP');
+</script>
+<style>
+
+:root {
+  --radius: 16px;
+  --radius-sm: 11px;
+  --font-display: 'Anton', 'Noto Sans TC', sans-serif;
+  --font-ui: 'Archivo', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  --surface: #ffffff; --surface-2: #f8faf6; --surface-3: #eef1ec;
+  --fg: #1b211e; --fg-soft: #49534d; --dim: #6f7a73; --faint: #9aa39d;
+  --line: rgba(20,28,24,0.10); --line-2: rgba(20,28,24,0.17);
+  --sheet-shadow: rgba(20,28,24,0.16); --scrim: rgba(20,28,24,0.34);
+}
+:root[data-theme="grass"]    { --bg:#f1f4ed; --bg-glow:#e2efdc; --accent:#1f9d63; --accent-bright:#23b372; --accent-ink:#ffffff; --accent-soft:rgba(31,157,99,0.10);  --accent-line:rgba(31,157,99,0.30);  --accent-glow:rgba(31,157,99,0.26); }
+:root[data-theme="cobalt"]   { --bg:#eef1f7; --bg-glow:#e1e8f7; --accent:#2b5ce0; --accent-bright:#3a6bf0; --accent-ink:#ffffff; --accent-soft:rgba(43,92,224,0.10);  --accent-line:rgba(43,92,224,0.30);  --accent-glow:rgba(43,92,224,0.26); }
+:root[data-theme="tangerine"]{ --bg:#f7f1e9; --bg-glow:#f3e6d4; --accent:#d4622a; --accent-bright:#e8743a; --accent-ink:#ffffff; --accent-soft:rgba(212,98,42,0.10);  --accent-line:rgba(212,98,42,0.30);  --accent-glow:rgba(212,98,42,0.26); }
+:root[data-theme="berry"]    { --bg:#f6eef2; --bg-glow:#f2e1ea; --accent:#c0356f; --accent-bright:#d44a82; --accent-ink:#ffffff; --accent-soft:rgba(192,53,111,0.10); --accent-line:rgba(192,53,111,0.30); --accent-glow:rgba(192,53,111,0.26); }
+:root[data-theme="teal"]     { --bg:#ebf2f1; --bg-glow:#dcecea; --accent:#0f8a8a; --accent-bright:#14a3a0; --accent-ink:#ffffff; --accent-soft:rgba(15,138,138,0.10); --accent-line:rgba(15,138,138,0.30); --accent-glow:rgba(15,138,138,0.26); }
+:root[data-theme="plum"]     { --bg:#f1eef6; --bg-glow:#e6e1f3; --accent:#6c4bd1; --accent-bright:#7d5ee0; --accent-ink:#ffffff; --accent-soft:rgba(108,75,209,0.10); --accent-line:rgba(108,75,209,0.30); --accent-glow:rgba(108,75,209,0.26); }
+:root[data-theme="dark"] {
+  --surface: #143524; --surface-2: #1a4530; --surface-3: #1f4a36;
+  --fg: #e8f0e6; --fg-soft: #b8c5bb; --dim: #8a9c8d; --faint: #6a7a6e;
+  --line: rgba(232,240,230,0.10); --line-2: rgba(232,240,230,0.18);
+  --sheet-shadow: rgba(0,0,0,0.55); --scrim: rgba(0,0,0,0.55);
+  --bg: #0d2818; --bg-glow: #143a26; --accent: #d4af37; --accent-bright: #f0c850;
+  --accent-ink: #0d2818; --accent-soft: rgba(212,175,55,0.12); --accent-line: rgba(212,175,55,0.35); --accent-glow: rgba(212,175,55,0.30);
+}
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: 0.22; }
+:root[data-theme="dark"] .theme-switch { box-shadow: 0 6px 22px rgba(0,0,0,0.45); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-ui);
+  line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body {
+  min-height: 100vh; padding: 0 16px 110px; position: relative;
+  background: radial-gradient(130% 72% at 50% -12%, var(--bg-glow) 0%, transparent 56%), var(--bg);
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+
+:root[data-theme="ember"]{
+  color-scheme: dark;
+  --bg:#14100e; --bg-deep:#0e0b09; --surface:#1c1714; --surface-2:#241d19; --surface-3:#2a221d;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#ef7d3a; --accent-bright:#ff9250; --gold:#d9a04c; --accent-ink:#1a0f07;
+  --zebra:#191411; --band-po:#241811; --band-pi:#211a11;
+  --accent-weak:rgba(239,125,58,.10); --gold-weak:rgba(217,160,76,.10);
+}
+:root[data-theme="court"]{
+  color-scheme: dark;
+  --bg:#17120c; --bg-deep:#0f0b06; --surface:#211a11; --surface-2:#2a2116; --surface-3:#31271a;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#d9a04c; --accent-bright:#eab863; --gold:#e9c987; --accent-ink:#1a0f07;
+  --zebra:#1d160e; --band-po:#271d0f; --band-pi:#241d10;
+  --accent-weak:rgba(217,160,76,.10); --gold-weak:rgba(233,201,135,.10);
+}
+:root[data-theme="violet"]{
+  color-scheme: dark;
+  --bg:#15111c; --bg-deep:#0e0b13; --surface:#1e1826; --surface-2:#271f31; --surface-3:#2f263c;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#9b7bd8; --accent-bright:#b79bef; --gold:#cba25f; --accent-ink:#1a0f07;
+  --zebra:#191424; --band-po:#241a33; --band-pi:#231d1c;
+  --accent-weak:rgba(155,123,216,.10); --gold-weak:rgba(203,162,95,.10);
+}
+:root[data-theme="apricot"]{
+  color-scheme: light;
+  --bg:#fbf3ec; --bg-deep:#f6e8da; --surface:#f7ebe0; --surface-2:#f1e0cf; --surface-3:#ead2bc;
+  --fg:#2b2016; --fg-soft:#4a3a2a; --fg-mute:#6b5847; --fg-dim:#786855;
+  --line:rgba(43,32,22,.10); --line-2:rgba(43,32,22,.18);
+  --accent:#b74e21; --accent-bright:#9c4119; --gold:#755507; --accent-ink:#fff8f2;
+  --zebra:#f4e6d8; --band-po:#f0ddc4; --band-pi:#ecdcc9;
+  --accent-weak:rgba(183,78,33,.10); --gold-weak:rgba(117,85,7,.10);
+}
+:root[data-theme="maple"]{
+  color-scheme: light;
+  --bg:#faf1e0; --bg-deep:#f5e5c8; --surface:#f7ecd6; --surface-2:#f0dfbc; --surface-3:#e8d0a0;
+  --fg:#2a1d0c; --fg-soft:#4a3820; --fg-mute:#6b5638; --fg-dim:#7c684a;
+  --line:rgba(42,29,12,.10); --line-2:rgba(42,29,12,.18);
+  --accent:#a45908; --accent-bright:#8c4a06; --gold:#735406; --accent-ink:#fffaf0;
+  --zebra:#f3e4c6; --band-po:#efdcb0; --band-pi:#ecd9ad;
+  --accent-weak:rgba(164,89,8,.10); --gold-weak:rgba(115,84,6,.10);
+}
+
+:root[data-theme="ember"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(239,125,58,0.36); --accent-glow:rgba(239,125,58,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="court"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(217,160,76,0.36); --accent-glow:rgba(217,160,76,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="violet"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(155,123,216,0.36); --accent-glow:rgba(155,123,216,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="apricot"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(183,78,33,0.36); --accent-glow:rgba(183,78,33,0.3);
+  --accent-neg:#a53422; --accent-neg-deep:#8d2c1d; --accent-pos:#2e683e;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="maple"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(164,89,8,0.36); --accent-glow:rgba(164,89,8,0.3);
+  --accent-neg:#a33321; --accent-neg-deep:#8c2b1c; --accent-pos:#2c643c;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="ember"] body,
+:root[data-theme="court"] body,
+:root[data-theme="violet"] body,
+:root[data-theme="apricot"] body,
+:root[data-theme="maple"] body { font-family:var(--f-text); background-attachment:fixed; }
+:root[data-theme="ember"] body,
+:root[data-theme="court"] body,
+:root[data-theme="violet"] body {
+  background-image:
+    radial-gradient(1200px 720px at 86% -6%,rgba(239,125,58,.16),transparent 58%),
+    radial-gradient(900px 620px at 6% 2%,rgba(217,160,76,.08),transparent 60%),
+    radial-gradient(1500px 1000px at 50% 118%,rgba(239,125,58,.06),transparent 62%);
+}
+:root[data-theme="ember"] body::before,
+:root[data-theme="court"] body::before,
+:root[data-theme="violet"] body::before,
+:root[data-theme="apricot"] body::before,
+:root[data-theme="maple"] body::before { display:none; }
+:root[data-theme="ember"] a,
+:root[data-theme="court"] a,
+:root[data-theme="violet"] a,
+:root[data-theme="apricot"] a,
+:root[data-theme="maple"] a { color:var(--accent); }
+:root[data-theme="ember"] a:hover,
+:root[data-theme="court"] a:hover,
+:root[data-theme="violet"] a:hover,
+:root[data-theme="apricot"] a:hover,
+:root[data-theme="maple"] a:hover { color:var(--accent-bright); }
+
+
+.theme-switch {
+  position: fixed; top: 14px; right: 16px; z-index: 150;
+  display: flex; align-items: center; gap: 11px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: 7px 13px 7px 14px; box-shadow: 0 6px 22px rgba(20,28,24,0.10);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.ts-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; color: var(--dim); text-transform: uppercase; }
+.ts-dots { display: flex; gap: 8px; }
+.ts-dot {
+  width: 19px; height: 19px; border-radius: 50%; padding: 0; cursor: pointer;
+  background: var(--sw); border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--line-2);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.ts-dot:hover { transform: scale(1.14); }
+.ts-dot.active { box-shadow: 0 0 0 2px var(--sw); transform: scale(1.05); }
+@media (max-width: 520px) {
+  .theme-switch { top: 10px; right: 10px; padding: 6px 11px; gap: 9px; }
+  .ts-label { display: none; }
+}
+
+
+.site-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding: 36px 0 20px; margin-bottom: 44px;
+  border-bottom: 1px solid var(--line);
+  gap: 24px; flex-wrap: wrap;
+}
+.brand-block { display: flex; flex-direction: column; gap: 6px; }
+.brand-mark {
+  font-family: var(--font-display); font-size: 30px; line-height: 1;
+  color: var(--accent); letter-spacing: 1.2px;
+  text-decoration: none; transition: color 0.15s ease;
+}
+.brand-mark:hover { color: var(--accent-bright); }
+.brand-tag {
+  font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 2.5px; color: var(--dim); text-transform: uppercase;
+}
+.site-nav {
+  display: flex; gap: 22px; align-items: center;
+  font-family: var(--font-mono); font-size: 11.5px;
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.site-nav a {
+  color: var(--dim); text-decoration: none;
+  padding: 6px 0; border-bottom: 1.5px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.site-nav a:hover, .site-nav a.active {
+  color: var(--accent); border-bottom-color: var(--accent);
+}
+@media (max-width: 580px) {
+  .site-header { padding-top: 22px; gap: 16px; }
+  .brand-mark { font-size: 24px; }
+  .site-nav { gap: 16px; font-size: 11px; }
+}
+.site-disclaimer { font-size: 11px; color: var(--faint); line-height: 1.7; text-align: center; max-width: 600px; margin: 18px auto 0; }
+.site-disclaimer span { opacity: 0.75; }
+
+/* ---------- v2 header（Claude Design mock；basketball 全站） ---------- */
+.container{max-width:1180px;margin:0 auto}
+.site-head{position:sticky;top:0;z-index:40;background:var(--bb-header-bg);
+  backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--line);margin:0 -16px}
+.head-in{display:flex;align-items:center;gap:20px;padding:14px 28px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:2px;margin-right:auto;text-decoration:none}
+.brand .mark{font-family:var(--f-display);font-size:26px;letter-spacing:.5px;color:var(--accent);line-height:1}
+.brand .mark b{color:var(--fg);font-weight:400}
+.brand .tag{font-family:var(--f-ui);font-size:10.5px;letter-spacing:2.5px;color:var(--fg-mute);text-transform:uppercase}
+.nav2{display:flex;align-items:center;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
+.nav2>a,.nav-group>summary{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;color:var(--fg-soft);white-space:nowrap;cursor:pointer;list-style:none;text-decoration:none}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.nav-group[open]>summary::after{transform:translateY(1px) rotate(-135deg)}
+.nav2>a:hover,.nav-group>summary:hover{background:var(--surface-2);color:var(--fg)}
+.nav2>a.on,.nav-group>summary.on{background:var(--accent);color:var(--accent-ink)}
+.nav-group{position:relative}
+.nav-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:250px;display:grid;gap:2px;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 14px 40px var(--sheet-shadow);z-index:50}
+.nav-menu a{display:block;padding:9px 12px;border-radius:var(--r-sm);color:var(--fg);font-weight:600;line-height:1.3;text-decoration:none}
+.nav-menu a small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--fg-mute);letter-spacing:0}
+.nav-menu a:hover{background:var(--surface-2)}
+.nav-menu a.on{background:var(--accent);color:var(--accent-ink)}
+.nav-menu a.on small{color:var(--accent-ink)} /* 不疊 opacity：淺色主題（apricot／maple）疊 .85 會跌破 WCAG AA */
+.nav-toggle{display:none;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg-soft);font:600 13px var(--f-ui);cursor:pointer}
+.nav-toggle .ico{position:relative;display:inline-block;width:15px;height:11px}
+.nav-toggle .ico::before,.nav-toggle .ico::after,.nav-toggle .ico i{content:"";position:absolute;left:0;right:0;height:1.5px;border-radius:1px;background:currentColor}
+.nav-toggle .ico::before{top:0}.nav-toggle .ico i{top:5px}.nav-toggle .ico::after{bottom:0}
+.nav-toggle[aria-expanded="true"]{background:var(--surface-2);color:var(--fg)}
+.theme{display:flex;align-items:center;gap:9px;padding-left:16px;border-left:1px solid var(--line)}
+.theme .lbl{font-family:var(--f-ui);font-size:10px;letter-spacing:1.5px;color:var(--fg-dim);text-transform:uppercase}
+.dots{display:flex;gap:7px}
+.dot{width:18px;height:18px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;transition:transform .12s}
+.dot:hover{transform:scale(1.15)}
+.dot[aria-pressed="true"]{border-color:var(--fg)}
+@media(max-width:640px){
+  .head-in{padding:12px 18px;gap:12px}
+  /* 第一行要同時塞品牌字＋選單鈕＋色點（360 寬也要進）：品牌字縮、鈕只留圖示、色點收緊 */
+  .brand .mark{font-size:22px}
+  .brand .tag{font-size:10px;letter-spacing:1.4px}
+  /* 選單鈕只在有 JS 時出現：無 JS 時 nav 本來就平鋪，鈕會變成按了沒反應的死按鈕 */
+  html.has-js .nav-toggle{display:inline-flex;order:2;padding:7px 9px}
+  .nav-toggle .txt{display:none}
+  .theme{order:3;padding-left:10px;gap:0}
+  .theme .lbl{display:none}
+  .dots{gap:5px}
+  .dot{width:14px;height:14px}
+  .nav2{order:4;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid var(--line)}
+  /* 只有 JS 在（html.has-js，preload 就加）才藏 nav；無 JS 退回平鋪，不會被藏死 */
+  html.has-js .site-head:not(.nav-open) .nav2{display:none}
+  .nav2>a,.nav-group>summary{display:flex;border-radius:var(--r-sm);padding:10px 12px;white-space:normal}
+  .nav-group>summary{justify-content:space-between}
+  .nav-group>summary::after{margin-left:auto}
+  .nav-group{position:static}
+  .nav-menu{position:static;min-width:0;padding:0 0 4px 10px;background:transparent;border:0;box-shadow:none}
+  /* 面板裡群組標題有作用中子項時只加粗不上底色，強調色留給子項（兩層都上色太重） */
+  .nav-group>summary.on{background:transparent;color:var(--fg);font-weight:800}
+}
+@media(max-width:379px){
+  /* 360 寬的第一行差幾 px 就掉行：間距與副標字距再收一點 */
+  .head-in{gap:10px}
+  .brand .tag{letter-spacing:1.1px}
+  .theme{padding-left:8px}
+  .dots{gap:4px}
+}
+/* ---------- v2 footer ---------- */
+.foot{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-deep);margin-left:-16px;margin-right:-16px}
+.foot-in{max-width:1180px;margin:0 auto;padding:36px 28px 60px}
+.foot .disc{font-size:12px;color:var(--fg-dim);line-height:1.7;text-align:center;max-width:760px;margin:0 auto 20px}
+.foot .flinks{display:flex;justify-content:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px;margin-bottom:18px}
+.sisters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-family:var(--f-ui);font-size:12.5px;color:var(--fg-mute)}
+.sisters a{color:var(--fg-soft)}
+.sisters b{color:var(--fg-dim);font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:11px}
+
+
+.container { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; padding-top: 0; }
+
+.article-header { margin-bottom: 32px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+.article-kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 18px; font-weight: 600;
+}
+.article-kicker::before { content: ''; width: 22px; height: 2px; background: var(--accent); }
+.article-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 5.5vw, 46px); line-height: 1.15; color: var(--fg); margin-bottom: 14px; letter-spacing: 0.3px; }
+.article-title .tc { font-family: var(--font-ui); font-weight: 900; letter-spacing: -0.3px; }
+.article-subtitle { font-size: 17px; color: var(--fg-soft); line-height: 1.55; font-weight: 500; }
+.article-meta { font-family: var(--font-mono); font-size: 12px; color: var(--dim); margin-top: 16px; letter-spacing: 1px; }
+.article-meta .dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--faint); vertical-align: middle; margin: 0 9px 2px; }
+
+.article-lede {
+  background: var(--surface-2); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 15px 20px; margin: 0 0 34px;
+}
+.article-lede .lede-label {
+  display: block; font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent);
+  font-weight: 700; margin-bottom: 7px;
+}
+.article-lede p { font-size: 16px; color: var(--fg); line-height: 1.7; margin: 0; }
+
+.article-cover { width: 100%; max-width: 100%; height: auto; border-radius: var(--radius-sm); margin: 0 0 36px; box-shadow: 0 10px 30px var(--sheet-shadow); }
+
+.prose { color: var(--fg-soft); font-size: 16.5px; line-height: 1.85; }
+.prose h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.2; color: var(--fg); margin: 48px 0 18px; letter-spacing: 0.3px; }
+.prose h3 { font-size: 21px; font-weight: 700; color: var(--fg); margin: 36px 0 14px; line-height: 1.35; }
+.prose h4 { font-size: 17.5px; font-weight: 700; color: var(--fg); margin: 28px 0 12px; }
+.prose p { margin: 0 0 18px; }
+.prose strong { color: var(--fg); font-weight: 700; }
+.prose em { font-style: italic; }
+.prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-line); transition: border-color 0.15s ease; }
+.prose a:hover { border-bottom-color: var(--accent); }
+.prose img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius-sm); margin: 30px 0; box-shadow: 0 6px 22px var(--sheet-shadow); }
+.prose figure.diagram { margin: 30px 0; }
+.prose figure.diagram svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; background: var(--surface-2); border-radius: var(--radius-sm); }
+.prose figure.diagram figcaption { max-width: 420px; margin: 10px auto 0; font-size: 14px; line-height: 1.6; color: var(--fg-mute); }
+.dg-t { fill: var(--fg); font-size: 14px; font-family: inherit; }
+.dg-ink { fill: var(--accent-ink); font-size: 13px; font-weight: 700; font-family: inherit; }
+.dg-mute { fill: var(--fg-mute); }
+.dg-o { fill: var(--accent); stroke: none; }
+.dg-x { fill: none; stroke: var(--fg-soft); stroke-width: 2; }
+.dg-path { fill: none; stroke: var(--accent); stroke-width: 3; }
+.dg-dash { fill: none; stroke: var(--fg-mute); stroke-width: 2; stroke-dasharray: 6 5; }
+.dg-bar { fill: none; stroke: var(--fg-mute); stroke-width: 3; }
+.dg-line { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.dg-rim { fill: none; stroke: var(--gold); stroke-width: 3; }
+.dg-head { fill: var(--accent); }
+.prose blockquote { border-left: 3px solid var(--accent); background: var(--surface-2); padding: 14px 20px; margin: 24px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--fg); font-style: normal; }
+.prose blockquote p { margin: 0 0 8px; }
+.prose blockquote p:last-child { margin: 0; }
+.prose ul, .prose ol { padding-left: 24px; margin: 0 0 22px; }
+.prose li { margin: 0 0 8px; }
+.prose hr { border: none; height: 1px; background: var(--line); margin: 40px 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 28px 0;
+  font-size: 14.5px; line-height: 1.55; overflow: hidden;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow);
+}
+.prose thead { background: var(--surface-2); }
+.prose th {
+  padding: 12px 14px; text-align: left; font-weight: 700; color: var(--fg);
+  border-bottom: 2px solid var(--accent-line); letter-spacing: 0.4px; font-size: 13.5px;
+}
+.prose td {
+  padding: 11px 14px; border-bottom: 1px solid var(--line);
+  vertical-align: top; color: var(--fg-soft);
+}
+.prose tbody tr:last-child td { border-bottom: none; }
+.prose tbody tr:hover td { background: var(--surface-2); }
+.prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
+/* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
+   只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
+   會把後面的欄位擠成一字一行。 */
+.prose--daily table th:nth-child(1), .prose--daily table td:nth-child(1) { width: 24%; }
+.prose--daily table th:nth-child(2), .prose--daily table td:nth-child(2) { width: 9%; text-align: center; white-space: nowrap; }
+.prose--daily table th:nth-child(3), .prose--daily table td:nth-child(3) { width: 22%; }
+.prose--daily table th:nth-child(4), .prose--daily table td:nth-child(4) { width: 45%; }
+@media (max-width: 640px) {
+  .prose table { font-size: 13px; }
+  .prose th, .prose td { padding: 9px 10px; }
+  .prose--daily table th:nth-child(3), .prose--daily table td:nth-child(3) { font-size: 12px; }
+}
+.prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
+.prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
+
+.article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 16px 28px; border-radius: 13px;
+  background-color: var(--accent); color: var(--accent-ink);
+  text-decoration: none; font-weight: 800; font-size: 15px; letter-spacing: 0.4px;
+  box-shadow: 0 10px 26px var(--accent-glow);
+  transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), background-color 0.18s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); background-color: var(--accent-bright); }
+.foot-links { display: flex; gap: 22px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 1px; }
+.foot-links a { color: var(--dim); text-decoration: none; }
+.foot-links a:hover { color: var(--accent); }
+
+/* ---- series nav: 前一日 / 後一日 + 更多每日戰報 ---- */
+.post-nav { margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--line); }
+.post-nav-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.post-nav-link {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 15px 18px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface); text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.post-nav-link:hover { border-color: var(--accent-line); transform: translateY(-2px); box-shadow: 0 10px 26px var(--sheet-shadow); }
+.post-nav-link.next { text-align: right; align-items: flex-end; }
+.post-nav-link.empty { border: none; background: transparent; pointer-events: none; }
+.post-nav-link.fallback { background: var(--surface-2); border-style: dashed; justify-content: center; }
+.post-nav-link.fallback .pn-dir { color: var(--dim); }
+.post-nav-link.fallback .pn-title { color: var(--fg-soft); font-weight: 600; }
+.pn-dir { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.8px; color: var(--accent); text-transform: uppercase; font-weight: 700; }
+.pn-title { font-size: 14.5px; font-weight: 700; color: var(--fg); line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pn-date { font-family: var(--font-mono); font-size: 11px; color: var(--dim); letter-spacing: 1px; }
+.more-dailies { margin-top: 30px; }
+.md-label { display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px; color: var(--dim); text-transform: uppercase; margin-bottom: 12px; }
+.md-label::before { content: ''; width: 20px; height: 2px; background: var(--accent); }
+.md-list { display: flex; flex-direction: column; }
+.md-list a { display: flex; gap: 14px; align-items: baseline; padding: 12px 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--fg-soft); transition: color 0.15s ease; }
+.md-list a:last-child { border-bottom: none; }
+.md-list a:hover { color: var(--accent); }
+.md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
+.md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
+@media (max-width: 560px) {
+  .post-nav-pair { grid-template-columns: 1fr; }
+  .post-nav-link.next { text-align: left; align-items: flex-start; }
+  .post-nav-link.empty { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="/">
+      <span class="mark">@<b>BASKETBALL</b></span>
+      <span class="tag">NBA · TPBL · PLG · HBL 數據</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開關選單"><span class="ico"><i></i></span><span class="txt">選單</span></button>
+    <nav class="nav2" id="site-nav" aria-label="站內導覽">
+      <details class="nav-group">
+        <summary>數據</summary>
+        <div class="nav-menu">
+          <a href="/data/">數據總覽<small>三個聯盟數據頁的入口</small></a>
+          <a href="/standings/">NBA 戰績<small>東西區完整排名與季後賽分帶</small></a>
+          <a href="/tw/">台灣職籃<small>TPBL 與 P. LEAGUE+ 戰績對照</small></a>
+          <a href="/hbl/">HBL<small>高中甲級四強與歷屆冠軍</small></a>
+        </div>
+      </details>
+      <a href="/articles/" class="on" aria-current="page">文章</a>
+    </nav>
+    <div class="theme">
+      <span class="lbl">配色</span>
+      <div class="dots">
+        <button class="dot" style="background:linear-gradient(135deg,#14100e 50%,#ef7d3a 50%)" data-set-theme="ember" aria-pressed="true" title="ember 炭黑橘"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#17120c 50%,#d9a04c 50%)" data-set-theme="court" aria-pressed="false" title="court 木地板金"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#15111c 50%,#9b7bd8 50%)" data-set-theme="violet" aria-pressed="false" title="violet 暗紫"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#fbf3ec 50%,#b74e21 50%)" data-set-theme="apricot" aria-pressed="false" title="apricot 杏桃"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#faf1e0 50%,#a45908 50%)" data-set-theme="maple" aria-pressed="false" title="maple 楓糖"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <article>
+    <header class="article-header">
+      <div class="article-kicker">FEATURE</div>
+      <h1 class="article-title">NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算</h1>
+      <div class="article-subtitle">這條界線寫在 NBA.com 官方統計詞彙表裡；NBA 2025-26 與 FIBA 2026 版規則書管運球者的條文，查不到同樣的界線。</div>
+      <div class="article-meta">2026/10/13 · 週二</div>
+    </header>
+    <div class="article-lede"><span class="lede-label">重點速答</span><p>NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被排除的回合不在這個次數裡。</p></div>
+    <img class="article-cover" src="cover.png" alt="NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算｜封面">
+    <div class="prose">
+<p><strong>新手村｜數據入門・Drives 與切入</strong></p>
+<p>球評說某球員這場「切入」很多次，NBA.com 數據頁上也有一欄 Drives。兩者看起來是同一件事，但數據頁的欄位有自己的計數條件。</p>
+<p>本文依據 NBA.com 官方統計詞彙表（NBA.com Stats Glossary）2026 年 9 月 25 日取得的頁面，下文稱「詞彙表」。規則書是 NBA 2025-26 規則書與 FIBA 2026 版規則書（2026 年 10 月 1 日生效），取得日 2026 年 10 月 4 日。文中不寫任何球員或球隊的實際數字，示範一律是標明「假設」的練習。</p>
+<p>「切入」是中文的慣稱，詞彙表與規則書都沒有這個中文詞。讀完這篇，你會知道數據頁上的 Drives 算進了哪些回合、沒算進哪些，也能自己對一個回合做判斷。</p>
+<h2>Drives 計入半場裡運球攻擊籃框的回合</h2>
+<p>詞彙表的 Drives 條目，類型（Type）標為 Tracking，也就是追蹤類數據。定義的第一句寫的是計入條件：</p>
+<blockquote>
+<p>When a player attacks the basket off the dribble in the halfcourt offense.</p>
+</blockquote>
+<p>中文意思是：球員在半場進攻（halfcourt offense）中，運球攻擊籃框。這句有兩個條件同時要成立：一是運球，二是半場進攻。</p>
+<p>第二句列了三種不計入的情形：</p>
+<blockquote>
+<p>Does not include situations where the player starts close to the basket, catches on the move, or immediately gets cut off on the perimeter</p>
+</blockquote>
+<p>下表的中文是本文的工作譯法，詞彙表本身沒有中文版。</p>
+<div class="prose-tbl-scroll"><table>
+<thead>
+<tr>
+<th>排除情形</th>
+<th>對應的回合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>從靠近籃框處開始</td>
+<td>起點本來就在籃下附近</td>
+</tr>
+<tr>
+<td>移動中接球</td>
+<td>接到球時人已經在跑動中</td>
+</tr>
+<tr>
+<td>在外圍立刻被截停</td>
+<td>在外圍剛要攻框就被擋住</td>
+</tr>
+</tbody>
+</table></div>
+<h2>靠近多近、立刻多快、外圍到哪裡，詞彙表都沒有給數字</h2>
+<p>三種排除情形的形容詞都沒有附量尺。「靠近」沒寫距離，「立刻」沒寫秒數，「外圍」沒寫範圍。「半場進攻」也一樣：這個詞在詞彙表裡只出現在 Drives 條目，沒有另一處說明從何時、從哪裡起算。</p>
+<p>所以光看詞彙表，能判斷的是字面對得上的回合，例如移動中接球。字面落在邊界上的回合，詞彙表給的字不夠決定。</p>
+<h2>同一頁另有兩個條目，記得分與命中率</h2>
+<p>詞彙表同一頁還有兩個相鄰的條目：</p>
+<div class="prose-tbl-scroll"><table>
+<thead>
+<tr>
+<th>條目</th>
+<th>詞彙表怎麼記（中文意譯）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drives（次數）</td>
+<td>半場進攻中運球攻擊籃框的回合，有三種排除情形</td>
+</tr>
+<tr>
+<td>Drive Points（得分）</td>
+<td>球員或球隊在攻向籃框的切入（drives to the basket）中得到的分數</td>
+</tr>
+<tr>
+<td>Drive Field Goal Percentage（命中率）</td>
+<td>球員或球隊在攻向籃框的切入中的投籃命中率</td>
+</tr>
+</tbody>
+</table></div>
+<p>這三個條目都沒有公式（Formula）欄。</p>
+<p>後兩個條目只寫「攻向籃框的切入」，沒有重複 Drives 的三種排除情形，詞彙表也沒有寫這兩欄是否使用同一批回合。把三欄連起來讀成「切入了幾次、得了幾分、命中率多少」，是本文的讀法；要確認三欄的計數範圍相同，詞彙表給的字還不夠。</p>
+<h2>規則書管運球者的條文裡，沒有 Drives 的界線</h2>
+<p>Drives 是 NBA.com 的統計分類，規則書管的是球員在場上怎麼做才合法。兩份文件各管各的，原文也沒有互相引用。</p>
+<p>規則書管運球者的條文，本文只引兩條：</p>
+<ul>
+<li>NBA 2025-26 規則書 Rule 12-B Section II（By Dribbler）(b)：防守者若能在運球者的直線路徑上建立合法位置，運球者要以改變方向或結束運球來避免接觸。</li>
+<li>FIBA 2026 版規則書 Art. 33.4：持球者要預期會被防守；只要對手在他前方取得初始合法防守位置，即使只花一瞬間，也要準備停下或改變方向。</li>
+</ul>
+<p>charge（帶球撞人）與 block（阻擋）怎麼判，見本站的<a href="/articles/charge-vs-block-basics/">帶球撞人與阻擋犯規</a>，本文不重寫。</p>
+<p>兩份規則書的全文，都查不到「半場進攻」，也查不到三種排除情形的原句。規則書裡出現的 drives to the basket，在投籃動作的條文裡，見本站的<a href="/articles/act-of-shooting-basics/">投籃動作的起點</a>。</p>
+<p>這條界線寫在詞彙表裡，規則書沒有同樣的界線。</p>
+<h2>把「立刻被截停」讀成犯規，或替「半場」補一條線，都超出詞彙表寫的字</h2>
+<p>讀 Drives 容易踩的坑有兩個。</p>
+<p>第一個坑，是把「在外圍立刻被截停」讀成裁判判了犯規。詞彙表只寫這種回合不計入 Drives，沒有寫任何判罰；詞彙表的 cut off 也不是規則書條文的名稱。</p>
+<p>第二個坑，是替「半場」自己補一條線，例如「過了半場線就算」或「第幾秒之後才算」。這些說法詞彙表都沒有寫。邊界上的回合，要承認詞彙表看不出來。</p>
+<h2>三個假設回合：詞彙表能判斷幾個？</h2>
+<p>下面是三個標明「假設」的回合。每個回合先用詞彙表的 Drives 條目判斷，再另外問一次：規則書管這個運球者什麼。</p>
+<p><strong>假設甲：</strong> 某球員在底角邊跑邊接到傳球，沒有運球，直接上籃。</p>
+<p>詞彙表層：條目寫的是運球攻框，這個回合沒有運球。條目另把移動中接球列為排除情形，這個回合接球時人在跑動中。兩處字面都對得上，這個回合不計入 Drives。規則層：這個回合沒有運球，本文引的運球者條文不在討論範圍。</p>
+<p><strong>假設乙：</strong> 某球員抓下防守籃板，一路運球推進到前場上籃。</p>
+<p>詞彙表層：他有運球攻擊籃框，這一點對得到條目。但條目寫的是半場進攻，詞彙表沒有說明這種從防守轉換出來的推進，從哪一刻起算半場進攻。答案是：詞彙表給的字不足以判斷。規則層：他是運球者，防守者若在他的直線路徑上建立合法位置，NBA 2025-26 Rule 12-B Section II (b) 要他改變方向或結束運球。</p>
+<p><strong>假設丙：</strong> 某球員在三分線外運球一步，防守者已經站在他的直線路徑上，他收球回傳。</p>
+<p>詞彙表層：「在外圍立刻被截停」是候選答案。但三分線外、運一步，算不算「立刻」與「外圍」，詞彙表沒有量尺，所以只能說「可能不計入」。規則層：防守者能在直線路徑上建立合法位置時，NBA 2025-26 Rule 12-B Section II (b) 要運球者改變方向或結束運球；對手在他前方取得初始合法防守位置時，FIBA 2026 版 Art. 33.4 要他準備停下或改變方向。這是運球者的義務，和詞彙表層的答案各自陳述。</p>
+<p>三題裡，只有甲能靠字面判斷到底。看到數據頁上的 Drives 時，可以把它讀成「NBA.com 認定的半場運球攻框回合」。</p>
+<h2>範圍與版本</h2>
+<p>本文對 Drives 的敘述只到上述詞彙表快照，頁面沒有賽季標記。文中「查不到」，指在詞彙表與兩份規則書的本機全文文字檔裡，以精確詞組搜尋的結果。詞彙表裡 Drives、Drive Points、Drive Field Goal Percentage 都沒有公式，「半場進攻」也沒有另一處說明起算點。詞彙表之後若補上量尺或公式，或規則書改版，本文的說法都要跟著更新，以官方最新版為準。</p>
+<h2>常見問題</h2>
+<h3>NBA.com 詞彙表的 Drives，是不是所有運球攻框都算？</h3>
+<p>不是。依 NBA.com 詞彙表 2026 年 9 月 25 日快照，Drives 只算半場進攻中的運球攻擊籃框；從靠近籃框處開始、移動中接球、在外圍立刻被截停這三種情形不計入。見第一節。</p>
+<h3>規則書有沒有寫 Drives 的計數條件？</h3>
+<p>NBA 2025-26 規則書與 FIBA 2026 版規則書的全文，查不到「半場進攻」與三種排除情形的原句。兩份規則書管運球者的條文（NBA Rule 12-B Section II (b)、FIBA Art. 33.4）講的是另一件事，見第四節。</p>
+<h3>Drive Points 與 Drive Field Goal Percentage 是否使用同一批回合？</h3>
+<p>NBA.com 詞彙表 2026 年 9 月 25 日快照沒有寫。這兩個條目只寫「攻向籃框的切入」，沒有重複 Drives 條目的三種排除情形。見第三節。</p>
+<h3>在外圍被防守者擋住，就等於被吹進攻犯規嗎？</h3>
+<p>不等於。依 NBA.com 詞彙表 2026 年 9 月 25 日快照，在外圍立刻被截停只是 Drives 不計入的回合，沒有寫判罰。NBA 2025-26 規則書 Rule 12-B Section II (b) 另外規定運球者遇到直線路徑上合法防守位置時的作法；charge 與 block 怎麼判，見<a href="/articles/charge-vs-block-basics/">帶球撞人與阻擋犯規</a>。</p>
+<h2>資料來源</h2>
+<ul>
+<li>NBA.com Stats Glossary（取得日 2026 年 9 月 25 日，頁面無賽季標記）：Drives、Drive Points、Drive Field Goal Percentage 三個條目。<a href="https://www.nba.com/stats/help/glossary">NBA.com 詞彙表</a></li>
+<li>NBA 2025-26 規則書：Rule 12-B Section II（By Dribbler）(b)。本機保存的全文文字檔，取得日 2026 年 10 月 4 日，無可點擊網址。</li>
+<li>FIBA 2026 版規則書（Official Basketball Rules 2026，2026 年 10 月 1 日生效）：Art. 33.4（防守控制球的球員）。本機保存的全文文字檔，取得日 2026 年 10 月 4 日，無可點擊網址。</li>
+</ul>
+    </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/screen-assists-basics/"><span class="related-reading-title">NBA.com 的 Screen Assists 記的是擋人直接導致同一名隊友投進的那一球</span><span class="related-reading-summary">NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面，把 Screen Assists 定義成進攻球員或球隊替隊友擋人，而該次擋人直接導致同一名隊友投籃命中（field goal）的次數，歸在 Hustle 類，沒有公式欄。看到這一欄的數字，可以先問三件事：擋的是誰、誰投進、條目有沒有寫到罰球。</span></a><a class="related-reading-item" href="/articles/contested-shots-basics/"><span class="related-reading-title">NBA 的 Contested Shot：最近防守者在 3.5 英呎內，加 s 數出手前 close out 並舉手</span><span class="related-reading-summary">NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）裡，標題叫 Contested Shot 的條目看距離：最近的防守者在 3.5 英呎內。叫 Contested Shots 的欄位則計算防守球員或球隊在出手前 close out 並舉手的次數。NBA 2025-26 與 FIBA 2026 版規則書另外管防守者舉手與垂直起跳的合法性。</span></a><a class="related-reading-item" href="/articles/fast-break-basics/"><span class="related-reading-title">快攻的關鍵不是跑得快：NBA 規則裡的「優勢」，不只算人頭</span><span class="related-reading-summary">快攻（fast break）常被想成「誰跑得快」，但依 FIBA 教練認證詞彙表與 NBA 2025-26 官方規則書，判斷快攻還有另一條線索：攻守轉換的瞬間，防守方有沒有來得及回位、站好。這篇文章從快攻怎麼發動、規模怎麼分，拆到 NBA 規則書裡「優勢」兩個字包含哪些情況，也整理「數字優勢」這個常聽到的說法，在官方文件裡目前是什麼地位。</span></a><a class="related-reading-item" href="/articles/zone-vs-man-defense/"><span class="related-reading-title">NBA 早就允許打區域：規則書管的是禁區裡的三秒，不是陣型</span><span class="related-reading-summary">區域聯防（zone defense）與人盯人（man-to-man）是球迷與教練的通稱，NBA 2025-26 規則書沒有這兩個詞。規則書明寫任何防守者可以防任何進攻者，也可以包夾；還在管防守站位的是防守三秒，管的是禁區裡沒有盯人的防守者，不是陣型。</span></a></div></section>
+  </article>
+  <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/contested-shots-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">NBA 的 Contested Shot：最近防守者在 3.5 英呎內，加 s 數出手前 close out 並舉手</span><span class="pn-date">2026/10/13 · 週二</span></a><a class="post-nav-link next" href="/articles/free-throw-attempt-rate-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">NBA.com 的罰球出手率是球隊 FTA 除以同隊 FGA，罰球多和投籃少都會把它推高</span><span class="pn-date">2026/10/13 · 週二</span></a></div></nav>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="flinks"><a href="/data/">數據總覽</a><a href="/standings/">NBA 戰績</a><a href="/tw/">台灣職籃</a><a href="/hbl/">HBL</a><a href="/articles/">文章</a></div>
+    <p class="disc">本站為非官方籃球資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（高中體總）等聯盟、球團與學校無任何關聯或授權；數據與比分整理自公開來源並標註。<br>
+    Unofficial fan-made site · Not affiliated with, endorsed by, or sponsored by the NBA, TPBL, P. LEAGUE+ or HBL.</p>
+    <div class="sisters">
+      <b>姊妹站</b>
+      <a href="https://twtools.cc/">TWTools — 打工牛馬的線上工具箱</a>
+      <a href="https://aire.twtools.cc/">aire — AI Tool Atlas·AI 工具圖鑑</a>
+      <a href="https://tree.twtools.cc/">樹洞21號 — 匿名 AI 心事平台</a>
+      <a href="https://foootball.twtools.cc/">@foootball — 2026 世界盃賽程</a>
+      <a href="https://baseball.twtools.cc/">@baseball — 中職 CPBL＋MLB 深度戰報</a>
+      <a href="https://racing.twtools.cc/">賽車數據誌 — F1 積分榜・台北時間賽曆・各站賽果</a>
+      <a href="https://health.twtools.cc/">健檢數據誌 — 健檢報告上的數字，各機構判準並列</a>
+      <a href="https://tender.twtools.cc/">標案雷達 — 網通設備標案查詢、押標金試算與規格預檢</a>
+      <a href="https://shhhh.cc/">Shhhh — 專業短網址管理平台</a>
+      <a href="https://dvdmaru.com/">dvdmaru — 把事實和敘事分開來看</a>
+    </div>
+  </div>
+</footer>
+<script>
+/* click handler only — persists to localStorage('bk-theme').
+   preload script（頁首）已在第一次 paint 前套好 data-theme，這裡只管點擊與 aria-pressed 同步。 */
+(function(){
+  var KEY="bk-theme", root=document.documentElement, BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var current=root.getAttribute("data-theme");
+  document.querySelectorAll("[data-set-theme]").forEach(function(x){
+    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===current ? "true":"false");
+  });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-set-theme]"); if(!b) return;
+    var t=b.getAttribute("data-set-theme");
+    root.setAttribute("data-theme",t);
+    try{ localStorage.setItem(KEY,t); }catch(e){}
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[t]) m.setAttribute("content",BG[t]);
+    document.querySelectorAll("[data-set-theme]").forEach(function(x){
+      x.setAttribute("aria-pressed", x===b ? "true":"false");
+    });
+  });
+})();
+
+(function(){
+  var head=document.querySelector(".site-head"); if(!head) return;
+  var btn=head.querySelector(".nav-toggle");
+  var groups=Array.prototype.slice.call(head.querySelectorAll("details.nav-group"));
+  var mq=window.matchMedia("(max-width:640px)");
+  function closeAll(except){ groups.forEach(function(g){ if(g!==except) g.removeAttribute("open"); }); }
+  function setMenu(open){
+    head.classList.toggle("nav-open",open);
+    if(btn) btn.setAttribute("aria-expanded",open?"true":"false");
+    if(open) groups.forEach(function(g){ g.setAttribute("open",""); });
+  }
+  groups.forEach(function(g){
+    g.addEventListener("toggle",function(){ if(g.open && !mq.matches) closeAll(g); });
+  });
+  if(btn) btn.addEventListener("click",function(){ setMenu(!head.classList.contains("nav-open")); });
+  document.addEventListener("click",function(e){
+    if(head.contains(e.target)) return;
+    if(mq.matches) setMenu(false); else closeAll();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key!=="Escape") return;
+    if(mq.matches){
+      if(head.classList.contains("nav-open")){ setMenu(false); if(btn) btn.focus(); }
+      return;
+    }
+    var opened=groups.filter(function(g){ return g.open; });
+    if(opened.length){ closeAll(); var s=opened[0].querySelector("summary"); if(s) s.focus(); }
+  });
+  head.addEventListener("focusout",function(e){
+    if(mq.matches) return;
+    if(e.relatedTarget && head.contains(e.relatedTarget)) return;
+    /* 延後一拍再查 activeElement：舊 WebKit 滑鼠點擊時 relatedTarget 會是 null，
+       立刻收合會在 click 之前把 <details> 關掉、吃掉下拉裡連結的點擊 */
+    setTimeout(function(){
+      if(document.activeElement && head.contains(document.activeElement)) return;
+      closeAll();
+    },0);
+  });
+  var onChange=function(){ setMenu(false); closeAll(); };
+  if(mq.addEventListener) mq.addEventListener("change",onChange); else if(mq.addListener) mq.addListener(onChange);
+})();
+</script>
+</body>
+</html>

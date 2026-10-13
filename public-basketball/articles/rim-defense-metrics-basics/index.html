@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="ember">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14100e">
+<script>
+(function(){
+  var KEY="bk-theme", VALID=["ember","court","violet","apricot","maple"], BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var root=document.documentElement, saved=null;
+  root.classList.add("has-js"); /* 手機 nav 只在有 JS 時收進選單鈕（CSS 靠這個 class 判斷） */
+  try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved && VALID.indexOf(saved)===-1){
+    saved=null;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  if(saved){
+    root.setAttribute("data-theme",saved);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[saved]) m.setAttribute("content",BG[saved]);
+  }
+})();
+</script>
+<title>NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫 | 籃球數據誌</title>
+<meta name="description" content="NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫">
+<meta property="og:title" content="NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫">
+<meta property="og:description" content="NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫">
+<meta property="og:image" content="https://basketball.twtools.cc/articles/rim-defense-metrics-basics/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://basketball.twtools.cc/articles/rim-defense-metrics-basics/">
+<meta property="og:site_name" content="籃球數據誌">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-10-13">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫">
+<meta name="twitter:description" content="NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫">
+<meta name="twitter:image" content="https://basketball.twtools.cc/articles/rim-defense-metrics-basics/cover.png">
+<link rel="canonical" href="https://basketball.twtools.cc/articles/rim-defense-metrics-basics/">
+<link rel="prev" href="https://basketball.twtools.cc/articles/potential-assists-basics/">
+<link rel="next" href="https://basketball.twtools.cc/articles/screen-assists-basics/">
+<link rel="alternate" type="application/rss+xml" title="籃球數據誌 最新文章" href="https://basketball.twtools.cc/feed.xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://basketball.twtools.cc/#org","name":"籃球數據誌","url":"https://basketball.twtools.cc/","sameAs":[]},{"@type":"WebSite","@id":"https://basketball.twtools.cc/#website","name":"籃球數據誌｜NBA・台灣職籃・HBL 戰績與數據","url":"https://basketball.twtools.cc/","inLanguage":"zh-Hant","publisher":{"@id":"https://basketball.twtools.cc/#org"}},{"@type":"SportsLeague","@id":"https://basketball.twtools.cc/#league-nba","name":"美國職籃 NBA","sport":"Basketball","url":"https://basketball.twtools.cc/standings/","organizer":{"@type":"Organization","name":"National Basketball Association"}},{"@type":"Article","headline":"NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫","description":"NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫","image":"https://basketball.twtools.cc/articles/rim-defense-metrics-basics/cover.png","inLanguage":"zh-Hant","url":"https://basketball.twtools.cc/articles/rim-defense-metrics-basics/","mainEntityOfPage":"https://basketball.twtools.cc/articles/rim-defense-metrics-basics/","author":{"@id":"https://basketball.twtools.cc/#org"},"publisher":{"@id":"https://basketball.twtools.cc/#org"},"isPartOf":{"@id":"https://basketball.twtools.cc/#league-nba"},"datePublished":"2026-10-13","dateModified":"2026-10-13"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://basketball.twtools.cc/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://basketball.twtools.cc/articles/"},{"@type":"ListItem","position":3,"name":"NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫","item":"https://basketball.twtools.cc/articles/rim-defense-metrics-basics/"}]},{"@type":"FAQPage","@id":"https://basketball.twtools.cc/articles/rim-defense-metrics-basics/#faq","inLanguage":"zh-Hant","mainEntity":[{"@type":"Question","name":"籃下防守的 DFG% 怎麼算？","acceptedAnswer":{"@type":"Answer","text":"依 NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容，籃下防守（defending the rim）那條 DFG% 的公式是 (DFGM)/(DFGA)，也就是對手的命中數除以出手數。詳見〈籃下防守的三欄，各回答對手的一件事〉。"}},{"@type":"Question","name":"籃下防守的 DFG% 和一般防守的 DFG% 是同一個數字嗎？","acceptedAnswer":{"@type":"Answer","text":"NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容裡，兩條都掛 DFG%，公式欄的字也相同，但情境不同：一條寫 defending the rim，一條寫 defending the shot。兩條的算法是否相同，條目沒有說明。詳見〈一般防守的三條也叫 DFGA、DFGM、DFG%〉。"}},{"@type":"Question","name":"詞彙表有說籃下是離籃框幾英尺嗎？","acceptedAnswer":{"@type":"Answer","text":"NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容裡，籃下防守三條的定義沒有寫距離。另一條 Shot At Rim 寫的是 5 英尺以內的出手，三條沒有引用它。詳見〈詞彙表沒有替籃下防守寫幾英尺〉。"}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LQK5BVHP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8LQK5BVHP');
+</script>
+<style>
+
+:root {
+  --radius: 16px;
+  --radius-sm: 11px;
+  --font-display: 'Anton', 'Noto Sans TC', sans-serif;
+  --font-ui: 'Archivo', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  --surface: #ffffff; --surface-2: #f8faf6; --surface-3: #eef1ec;
+  --fg: #1b211e; --fg-soft: #49534d; --dim: #6f7a73; --faint: #9aa39d;
+  --line: rgba(20,28,24,0.10); --line-2: rgba(20,28,24,0.17);
+  --sheet-shadow: rgba(20,28,24,0.16); --scrim: rgba(20,28,24,0.34);
+}
+:root[data-theme="grass"]    { --bg:#f1f4ed; --bg-glow:#e2efdc; --accent:#1f9d63; --accent-bright:#23b372; --accent-ink:#ffffff; --accent-soft:rgba(31,157,99,0.10);  --accent-line:rgba(31,157,99,0.30);  --accent-glow:rgba(31,157,99,0.26); }
+:root[data-theme="cobalt"]   { --bg:#eef1f7; --bg-glow:#e1e8f7; --accent:#2b5ce0; --accent-bright:#3a6bf0; --accent-ink:#ffffff; --accent-soft:rgba(43,92,224,0.10);  --accent-line:rgba(43,92,224,0.30);  --accent-glow:rgba(43,92,224,0.26); }
+:root[data-theme="tangerine"]{ --bg:#f7f1e9; --bg-glow:#f3e6d4; --accent:#d4622a; --accent-bright:#e8743a; --accent-ink:#ffffff; --accent-soft:rgba(212,98,42,0.10);  --accent-line:rgba(212,98,42,0.30);  --accent-glow:rgba(212,98,42,0.26); }
+:root[data-theme="berry"]    { --bg:#f6eef2; --bg-glow:#f2e1ea; --accent:#c0356f; --accent-bright:#d44a82; --accent-ink:#ffffff; --accent-soft:rgba(192,53,111,0.10); --accent-line:rgba(192,53,111,0.30); --accent-glow:rgba(192,53,111,0.26); }
+:root[data-theme="teal"]     { --bg:#ebf2f1; --bg-glow:#dcecea; --accent:#0f8a8a; --accent-bright:#14a3a0; --accent-ink:#ffffff; --accent-soft:rgba(15,138,138,0.10); --accent-line:rgba(15,138,138,0.30); --accent-glow:rgba(15,138,138,0.26); }
+:root[data-theme="plum"]     { --bg:#f1eef6; --bg-glow:#e6e1f3; --accent:#6c4bd1; --accent-bright:#7d5ee0; --accent-ink:#ffffff; --accent-soft:rgba(108,75,209,0.10); --accent-line:rgba(108,75,209,0.30); --accent-glow:rgba(108,75,209,0.26); }
+:root[data-theme="dark"] {
+  --surface: #143524; --surface-2: #1a4530; --surface-3: #1f4a36;
+  --fg: #e8f0e6; --fg-soft: #b8c5bb; --dim: #8a9c8d; --faint: #6a7a6e;
+  --line: rgba(232,240,230,0.10); --line-2: rgba(232,240,230,0.18);
+  --sheet-shadow: rgba(0,0,0,0.55); --scrim: rgba(0,0,0,0.55);
+  --bg: #0d2818; --bg-glow: #143a26; --accent: #d4af37; --accent-bright: #f0c850;
+  --accent-ink: #0d2818; --accent-soft: rgba(212,175,55,0.12); --accent-line: rgba(212,175,55,0.35); --accent-glow: rgba(212,175,55,0.30);
+}
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: 0.22; }
+:root[data-theme="dark"] .theme-switch { box-shadow: 0 6px 22px rgba(0,0,0,0.45); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-ui);
+  line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body {
+  min-height: 100vh; padding: 0 16px 110px; position: relative;
+  background: radial-gradient(130% 72% at 50% -12%, var(--bg-glow) 0%, transparent 56%), var(--bg);
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+
+:root[data-theme="ember"]{
+  color-scheme: dark;
+  --bg:#14100e; --bg-deep:#0e0b09; --surface:#1c1714; --surface-2:#241d19; --surface-3:#2a221d;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#ef7d3a; --accent-bright:#ff9250; --gold:#d9a04c; --accent-ink:#1a0f07;
+  --zebra:#191411; --band-po:#241811; --band-pi:#211a11;
+  --accent-weak:rgba(239,125,58,.10); --gold-weak:rgba(217,160,76,.10);
+}
+:root[data-theme="court"]{
+  color-scheme: dark;
+  --bg:#17120c; --bg-deep:#0f0b06; --surface:#211a11; --surface-2:#2a2116; --surface-3:#31271a;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#d9a04c; --accent-bright:#eab863; --gold:#e9c987; --accent-ink:#1a0f07;
+  --zebra:#1d160e; --band-po:#271d0f; --band-pi:#241d10;
+  --accent-weak:rgba(217,160,76,.10); --gold-weak:rgba(233,201,135,.10);
+}
+:root[data-theme="violet"]{
+  color-scheme: dark;
+  --bg:#15111c; --bg-deep:#0e0b13; --surface:#1e1826; --surface-2:#271f31; --surface-3:#2f263c;
+  --fg:#f3ece4; --fg-soft:#d3c8bb; --fg-mute:#94a0b4; --fg-dim:#6d655b;
+  --line:rgba(243,236,228,.09); --line-2:rgba(243,236,228,.16);
+  --accent:#9b7bd8; --accent-bright:#b79bef; --gold:#cba25f; --accent-ink:#1a0f07;
+  --zebra:#191424; --band-po:#241a33; --band-pi:#231d1c;
+  --accent-weak:rgba(155,123,216,.10); --gold-weak:rgba(203,162,95,.10);
+}
+:root[data-theme="apricot"]{
+  color-scheme: light;
+  --bg:#fbf3ec; --bg-deep:#f6e8da; --surface:#f7ebe0; --surface-2:#f1e0cf; --surface-3:#ead2bc;
+  --fg:#2b2016; --fg-soft:#4a3a2a; --fg-mute:#6b5847; --fg-dim:#786855;
+  --line:rgba(43,32,22,.10); --line-2:rgba(43,32,22,.18);
+  --accent:#b74e21; --accent-bright:#9c4119; --gold:#755507; --accent-ink:#fff8f2;
+  --zebra:#f4e6d8; --band-po:#f0ddc4; --band-pi:#ecdcc9;
+  --accent-weak:rgba(183,78,33,.10); --gold-weak:rgba(117,85,7,.10);
+}
+:root[data-theme="maple"]{
+  color-scheme: light;
+  --bg:#faf1e0; --bg-deep:#f5e5c8; --surface:#f7ecd6; --surface-2:#f0dfbc; --surface-3:#e8d0a0;
+  --fg:#2a1d0c; --fg-soft:#4a3820; --fg-mute:#6b5638; --fg-dim:#7c684a;
+  --line:rgba(42,29,12,.10); --line-2:rgba(42,29,12,.18);
+  --accent:#a45908; --accent-bright:#8c4a06; --gold:#735406; --accent-ink:#fffaf0;
+  --zebra:#f3e4c6; --band-po:#efdcb0; --band-pi:#ecd9ad;
+  --accent-weak:rgba(164,89,8,.10); --gold-weak:rgba(115,84,6,.10);
+}
+
+:root[data-theme="ember"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(239,125,58,0.36); --accent-glow:rgba(239,125,58,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="court"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(217,160,76,0.36); --accent-glow:rgba(217,160,76,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="violet"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(155,123,216,0.36); --accent-glow:rgba(155,123,216,0.3);
+  --accent-neg:#d85742; --accent-neg-deep:#c8472f; --accent-pos:#5fb878;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="apricot"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(183,78,33,0.36); --accent-glow:rgba(183,78,33,0.3);
+  --accent-neg:#a53422; --accent-neg-deep:#8d2c1d; --accent-pos:#2e683e;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="maple"] {
+  --dim:var(--fg-mute); --faint:var(--fg-dim);
+  --accent-soft:var(--accent-weak); --accent-line:rgba(164,89,8,0.36); --accent-glow:rgba(164,89,8,0.3);
+  --accent-neg:#a33321; --accent-neg-deep:#8c2b1c; --accent-pos:#2c643c;
+  --bg-glow:var(--surface-2); --sheet-shadow:rgba(0,0,0,.5); --scrim:rgba(0,0,0,.5);
+  --bb-header-bg:color-mix(in srgb,var(--bg) 82%,transparent);
+  --f-display:"Anton",Impact,sans-serif; --f-ui:"Archivo",system-ui,sans-serif;
+  --f-text:"Noto Sans TC","PingFang TC",sans-serif;
+  --font-display:var(--f-display); --font-ui:var(--f-ui);
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --rank-w:46px;
+  --radius:var(--r-lg); --radius-sm:var(--r-md);
+}
+:root[data-theme="ember"] body,
+:root[data-theme="court"] body,
+:root[data-theme="violet"] body,
+:root[data-theme="apricot"] body,
+:root[data-theme="maple"] body { font-family:var(--f-text); background-attachment:fixed; }
+:root[data-theme="ember"] body,
+:root[data-theme="court"] body,
+:root[data-theme="violet"] body {
+  background-image:
+    radial-gradient(1200px 720px at 86% -6%,rgba(239,125,58,.16),transparent 58%),
+    radial-gradient(900px 620px at 6% 2%,rgba(217,160,76,.08),transparent 60%),
+    radial-gradient(1500px 1000px at 50% 118%,rgba(239,125,58,.06),transparent 62%);
+}
+:root[data-theme="ember"] body::before,
+:root[data-theme="court"] body::before,
+:root[data-theme="violet"] body::before,
+:root[data-theme="apricot"] body::before,
+:root[data-theme="maple"] body::before { display:none; }
+:root[data-theme="ember"] a,
+:root[data-theme="court"] a,
+:root[data-theme="violet"] a,
+:root[data-theme="apricot"] a,
+:root[data-theme="maple"] a { color:var(--accent); }
+:root[data-theme="ember"] a:hover,
+:root[data-theme="court"] a:hover,
+:root[data-theme="violet"] a:hover,
+:root[data-theme="apricot"] a:hover,
+:root[data-theme="maple"] a:hover { color:var(--accent-bright); }
+
+
+.theme-switch {
+  position: fixed; top: 14px; right: 16px; z-index: 150;
+  display: flex; align-items: center; gap: 11px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: 7px 13px 7px 14px; box-shadow: 0 6px 22px rgba(20,28,24,0.10);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.ts-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; color: var(--dim); text-transform: uppercase; }
+.ts-dots { display: flex; gap: 8px; }
+.ts-dot {
+  width: 19px; height: 19px; border-radius: 50%; padding: 0; cursor: pointer;
+  background: var(--sw); border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--line-2);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.ts-dot:hover { transform: scale(1.14); }
+.ts-dot.active { box-shadow: 0 0 0 2px var(--sw); transform: scale(1.05); }
+@media (max-width: 520px) {
+  .theme-switch { top: 10px; right: 10px; padding: 6px 11px; gap: 9px; }
+  .ts-label { display: none; }
+}
+
+
+.site-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding: 36px 0 20px; margin-bottom: 44px;
+  border-bottom: 1px solid var(--line);
+  gap: 24px; flex-wrap: wrap;
+}
+.brand-block { display: flex; flex-direction: column; gap: 6px; }
+.brand-mark {
+  font-family: var(--font-display); font-size: 30px; line-height: 1;
+  color: var(--accent); letter-spacing: 1.2px;
+  text-decoration: none; transition: color 0.15s ease;
+}
+.brand-mark:hover { color: var(--accent-bright); }
+.brand-tag {
+  font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 2.5px; color: var(--dim); text-transform: uppercase;
+}
+.site-nav {
+  display: flex; gap: 22px; align-items: center;
+  font-family: var(--font-mono); font-size: 11.5px;
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.site-nav a {
+  color: var(--dim); text-decoration: none;
+  padding: 6px 0; border-bottom: 1.5px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.site-nav a:hover, .site-nav a.active {
+  color: var(--accent); border-bottom-color: var(--accent);
+}
+@media (max-width: 580px) {
+  .site-header { padding-top: 22px; gap: 16px; }
+  .brand-mark { font-size: 24px; }
+  .site-nav { gap: 16px; font-size: 11px; }
+}
+.site-disclaimer { font-size: 11px; color: var(--faint); line-height: 1.7; text-align: center; max-width: 600px; margin: 18px auto 0; }
+.site-disclaimer span { opacity: 0.75; }
+
+/* ---------- v2 header（Claude Design mock；basketball 全站） ---------- */
+.container{max-width:1180px;margin:0 auto}
+.site-head{position:sticky;top:0;z-index:40;background:var(--bb-header-bg);
+  backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--line);margin:0 -16px}
+.head-in{display:flex;align-items:center;gap:20px;padding:14px 28px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:2px;margin-right:auto;text-decoration:none}
+.brand .mark{font-family:var(--f-display);font-size:26px;letter-spacing:.5px;color:var(--accent);line-height:1}
+.brand .mark b{color:var(--fg);font-weight:400}
+.brand .tag{font-family:var(--f-ui);font-size:10.5px;letter-spacing:2.5px;color:var(--fg-mute);text-transform:uppercase}
+.nav2{display:flex;align-items:center;gap:4px;font-family:var(--f-ui);font-weight:600;font-size:14px}
+.nav2>a,.nav-group>summary{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;color:var(--fg-soft);white-space:nowrap;cursor:pointer;list-style:none;text-decoration:none}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.nav-group[open]>summary::after{transform:translateY(1px) rotate(-135deg)}
+.nav2>a:hover,.nav-group>summary:hover{background:var(--surface-2);color:var(--fg)}
+.nav2>a.on,.nav-group>summary.on{background:var(--accent);color:var(--accent-ink)}
+.nav-group{position:relative}
+.nav-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:250px;display:grid;gap:2px;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 14px 40px var(--sheet-shadow);z-index:50}
+.nav-menu a{display:block;padding:9px 12px;border-radius:var(--r-sm);color:var(--fg);font-weight:600;line-height:1.3;text-decoration:none}
+.nav-menu a small{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--fg-mute);letter-spacing:0}
+.nav-menu a:hover{background:var(--surface-2)}
+.nav-menu a.on{background:var(--accent);color:var(--accent-ink)}
+.nav-menu a.on small{color:var(--accent-ink)} /* 不疊 opacity：淺色主題（apricot／maple）疊 .85 會跌破 WCAG AA */
+.nav-toggle{display:none;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg-soft);font:600 13px var(--f-ui);cursor:pointer}
+.nav-toggle .ico{position:relative;display:inline-block;width:15px;height:11px}
+.nav-toggle .ico::before,.nav-toggle .ico::after,.nav-toggle .ico i{content:"";position:absolute;left:0;right:0;height:1.5px;border-radius:1px;background:currentColor}
+.nav-toggle .ico::before{top:0}.nav-toggle .ico i{top:5px}.nav-toggle .ico::after{bottom:0}
+.nav-toggle[aria-expanded="true"]{background:var(--surface-2);color:var(--fg)}
+.theme{display:flex;align-items:center;gap:9px;padding-left:16px;border-left:1px solid var(--line)}
+.theme .lbl{font-family:var(--f-ui);font-size:10px;letter-spacing:1.5px;color:var(--fg-dim);text-transform:uppercase}
+.dots{display:flex;gap:7px}
+.dot{width:18px;height:18px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;transition:transform .12s}
+.dot:hover{transform:scale(1.15)}
+.dot[aria-pressed="true"]{border-color:var(--fg)}
+@media(max-width:640px){
+  .head-in{padding:12px 18px;gap:12px}
+  /* 第一行要同時塞品牌字＋選單鈕＋色點（360 寬也要進）：品牌字縮、鈕只留圖示、色點收緊 */
+  .brand .mark{font-size:22px}
+  .brand .tag{font-size:10px;letter-spacing:1.4px}
+  /* 選單鈕只在有 JS 時出現：無 JS 時 nav 本來就平鋪，鈕會變成按了沒反應的死按鈕 */
+  html.has-js .nav-toggle{display:inline-flex;order:2;padding:7px 9px}
+  .nav-toggle .txt{display:none}
+  .theme{order:3;padding-left:10px;gap:0}
+  .theme .lbl{display:none}
+  .dots{gap:5px}
+  .dot{width:14px;height:14px}
+  .nav2{order:4;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid var(--line)}
+  /* 只有 JS 在（html.has-js，preload 就加）才藏 nav；無 JS 退回平鋪，不會被藏死 */
+  html.has-js .site-head:not(.nav-open) .nav2{display:none}
+  .nav2>a,.nav-group>summary{display:flex;border-radius:var(--r-sm);padding:10px 12px;white-space:normal}
+  .nav-group>summary{justify-content:space-between}
+  .nav-group>summary::after{margin-left:auto}
+  .nav-group{position:static}
+  .nav-menu{position:static;min-width:0;padding:0 0 4px 10px;background:transparent;border:0;box-shadow:none}
+  /* 面板裡群組標題有作用中子項時只加粗不上底色，強調色留給子項（兩層都上色太重） */
+  .nav-group>summary.on{background:transparent;color:var(--fg);font-weight:800}
+}
+@media(max-width:379px){
+  /* 360 寬的第一行差幾 px 就掉行：間距與副標字距再收一點 */
+  .head-in{gap:10px}
+  .brand .tag{letter-spacing:1.1px}
+  .theme{padding-left:8px}
+  .dots{gap:4px}
+}
+/* ---------- v2 footer ---------- */
+.foot{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-deep);margin-left:-16px;margin-right:-16px}
+.foot-in{max-width:1180px;margin:0 auto;padding:36px 28px 60px}
+.foot .disc{font-size:12px;color:var(--fg-dim);line-height:1.7;text-align:center;max-width:760px;margin:0 auto 20px}
+.foot .flinks{display:flex;justify-content:center;gap:8px 22px;flex-wrap:wrap;font-family:var(--f-ui);font-size:13px;margin-bottom:18px}
+.sisters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-family:var(--f-ui);font-size:12.5px;color:var(--fg-mute)}
+.sisters a{color:var(--fg-soft)}
+.sisters b{color:var(--fg-dim);font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:11px}
+
+
+.container { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; padding-top: 0; }
+
+.article-header { margin-bottom: 32px; padding-bottom: 26px; border-bottom: 1px solid var(--line); }
+.article-kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 18px; font-weight: 600;
+}
+.article-kicker::before { content: ''; width: 22px; height: 2px; background: var(--accent); }
+.article-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 5.5vw, 46px); line-height: 1.15; color: var(--fg); margin-bottom: 14px; letter-spacing: 0.3px; }
+.article-title .tc { font-family: var(--font-ui); font-weight: 900; letter-spacing: -0.3px; }
+.article-subtitle { font-size: 17px; color: var(--fg-soft); line-height: 1.55; font-weight: 500; }
+.article-meta { font-family: var(--font-mono); font-size: 12px; color: var(--dim); margin-top: 16px; letter-spacing: 1px; }
+.article-meta .dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--faint); vertical-align: middle; margin: 0 9px 2px; }
+
+.article-lede {
+  background: var(--surface-2); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 15px 20px; margin: 0 0 34px;
+}
+.article-lede .lede-label {
+  display: block; font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent);
+  font-weight: 700; margin-bottom: 7px;
+}
+.article-lede p { font-size: 16px; color: var(--fg); line-height: 1.7; margin: 0; }
+
+.article-cover { width: 100%; max-width: 100%; height: auto; border-radius: var(--radius-sm); margin: 0 0 36px; box-shadow: 0 10px 30px var(--sheet-shadow); }
+
+.prose { color: var(--fg-soft); font-size: 16.5px; line-height: 1.85; }
+.prose h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.2; color: var(--fg); margin: 48px 0 18px; letter-spacing: 0.3px; }
+.prose h3 { font-size: 21px; font-weight: 700; color: var(--fg); margin: 36px 0 14px; line-height: 1.35; }
+.prose h4 { font-size: 17.5px; font-weight: 700; color: var(--fg); margin: 28px 0 12px; }
+.prose p { margin: 0 0 18px; }
+.prose strong { color: var(--fg); font-weight: 700; }
+.prose em { font-style: italic; }
+.prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-line); transition: border-color 0.15s ease; }
+.prose a:hover { border-bottom-color: var(--accent); }
+.prose img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: var(--radius-sm); margin: 30px 0; box-shadow: 0 6px 22px var(--sheet-shadow); }
+.prose figure.diagram { margin: 30px 0; }
+.prose figure.diagram svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; background: var(--surface-2); border-radius: var(--radius-sm); }
+.prose figure.diagram figcaption { max-width: 420px; margin: 10px auto 0; font-size: 14px; line-height: 1.6; color: var(--fg-mute); }
+.dg-t { fill: var(--fg); font-size: 14px; font-family: inherit; }
+.dg-ink { fill: var(--accent-ink); font-size: 13px; font-weight: 700; font-family: inherit; }
+.dg-mute { fill: var(--fg-mute); }
+.dg-o { fill: var(--accent); stroke: none; }
+.dg-x { fill: none; stroke: var(--fg-soft); stroke-width: 2; }
+.dg-path { fill: none; stroke: var(--accent); stroke-width: 3; }
+.dg-dash { fill: none; stroke: var(--fg-mute); stroke-width: 2; stroke-dasharray: 6 5; }
+.dg-bar { fill: none; stroke: var(--fg-mute); stroke-width: 3; }
+.dg-line { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.dg-rim { fill: none; stroke: var(--gold); stroke-width: 3; }
+.dg-head { fill: var(--accent); }
+.prose blockquote { border-left: 3px solid var(--accent); background: var(--surface-2); padding: 14px 20px; margin: 24px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--fg); font-style: normal; }
+.prose blockquote p { margin: 0 0 8px; }
+.prose blockquote p:last-child { margin: 0; }
+.prose ul, .prose ol { padding-left: 24px; margin: 0 0 22px; }
+.prose li { margin: 0 0 8px; }
+.prose hr { border: none; height: 1px; background: var(--line); margin: 40px 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 28px 0;
+  font-size: 14.5px; line-height: 1.55; overflow: hidden;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow);
+}
+.prose thead { background: var(--surface-2); }
+.prose th {
+  padding: 12px 14px; text-align: left; font-weight: 700; color: var(--fg);
+  border-bottom: 2px solid var(--accent-line); letter-spacing: 0.4px; font-size: 13.5px;
+}
+.prose td {
+  padding: 11px 14px; border-bottom: 1px solid var(--line);
+  vertical-align: top; color: var(--fg-soft);
+}
+.prose tbody tr:last-child td { border-bottom: none; }
+.prose tbody tr:hover td { background: var(--surface-2); }
+.prose table strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+/* 表格過寬（欄多、或儲存格含長數字／網址）時，在表格自己的容器內橫向捲動，不撐寬整頁。
+   wrap_tables() 在 markdown 轉出的 HTML 外層加這個 div；圓角與陰影從 table 移到容器，
+   否則 table 的 overflow:hidden 會把捲動裁掉。 */
+.prose-tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0;
+  border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--sheet-shadow); }
+.prose-tbl-scroll table { margin: 0; box-shadow: none; border-radius: 0; overflow: visible; min-width: 100%; }
+/* daily 戰報 §1 4-column table: 賽事 / 比分 / 場館 / 焦點 — explicit widths.
+   只套 daily：feature/preview 的多欄表（5–6 欄）改走 auto 排版，否則第 4 欄吃滿 45%
+   會把後面的欄位擠成一字一行。 */
+.prose--daily table th:nth-child(1), .prose--daily table td:nth-child(1) { width: 24%; }
+.prose--daily table th:nth-child(2), .prose--daily table td:nth-child(2) { width: 9%; text-align: center; white-space: nowrap; }
+.prose--daily table th:nth-child(3), .prose--daily table td:nth-child(3) { width: 22%; }
+.prose--daily table th:nth-child(4), .prose--daily table td:nth-child(4) { width: 45%; }
+@media (max-width: 640px) {
+  .prose table { font-size: 13px; }
+  .prose th, .prose td { padding: 9px 10px; }
+  .prose--daily table th:nth-child(3), .prose--daily table td:nth-child(3) { font-size: 12px; }
+}
+.prose code { background: var(--surface-3); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.92em; color: var(--fg); }
+.prose pre { background: var(--surface-3); padding: 14px 16px; border-radius: var(--radius-sm); overflow-x: auto; margin: 20px 0; }
+.prose pre code { background: transparent; padding: 0; overflow-wrap: normal; word-break: normal; }
+/* 長網址（行內 code 或裸連結文字）在手機上會撐寬整頁：允許任意位置換行。pre 內的 code 維持橫向捲動。 */
+.prose code, .prose a { overflow-wrap: anywhere; }
+.prose code { word-break: break-all; }
+
+.article-footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 16px 28px; border-radius: 13px;
+  background-color: var(--accent); color: var(--accent-ink);
+  text-decoration: none; font-weight: 800; font-size: 15px; letter-spacing: 0.4px;
+  box-shadow: 0 10px 26px var(--accent-glow);
+  transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), background-color 0.18s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); background-color: var(--accent-bright); }
+.foot-links { display: flex; gap: 22px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 1px; }
+.foot-links a { color: var(--dim); text-decoration: none; }
+.foot-links a:hover { color: var(--accent); }
+
+/* ---- series nav: 前一日 / 後一日 + 更多每日戰報 ---- */
+.post-nav { margin-top: 56px; padding-top: 30px; border-top: 1px solid var(--line); }
+.post-nav-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.post-nav-link {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 15px 18px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface); text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.post-nav-link:hover { border-color: var(--accent-line); transform: translateY(-2px); box-shadow: 0 10px 26px var(--sheet-shadow); }
+.post-nav-link.next { text-align: right; align-items: flex-end; }
+.post-nav-link.empty { border: none; background: transparent; pointer-events: none; }
+.post-nav-link.fallback { background: var(--surface-2); border-style: dashed; justify-content: center; }
+.post-nav-link.fallback .pn-dir { color: var(--dim); }
+.post-nav-link.fallback .pn-title { color: var(--fg-soft); font-weight: 600; }
+.pn-dir { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.8px; color: var(--accent); text-transform: uppercase; font-weight: 700; }
+.pn-title { font-size: 14.5px; font-weight: 700; color: var(--fg); line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pn-date { font-family: var(--font-mono); font-size: 11px; color: var(--dim); letter-spacing: 1px; }
+.more-dailies { margin-top: 30px; }
+.md-label { display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px; color: var(--dim); text-transform: uppercase; margin-bottom: 12px; }
+.md-label::before { content: ''; width: 20px; height: 2px; background: var(--accent); }
+.md-list { display: flex; flex-direction: column; }
+.md-list a { display: flex; gap: 14px; align-items: baseline; padding: 12px 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--fg-soft); transition: color 0.15s ease; }
+.md-list a:last-child { border-bottom: none; }
+.md-list a:hover { color: var(--accent); }
+.md-list .md-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); white-space: nowrap; letter-spacing: 0.5px; }
+.md-list .md-ttl { font-size: 14px; font-weight: 600; line-height: 1.4; flex: 1;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+/* ---- 延伸閱讀：正文與站尾之間的同站文章導覽 ---- */
+.related-reading { margin-top: 52px; padding: 26px 0 0; border-top: 1px solid var(--line); }
+.related-reading h2 { margin: 0 0 14px; font-family: var(--font-ui); font-size: 18px; color: var(--fg); }
+.related-reading-list { display: flex; flex-direction: column; }
+.related-reading-item { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+.related-reading-item:first-child { border-top: 1px solid var(--line); }
+.related-reading-item:hover .related-reading-title { color: var(--accent); }
+.related-reading-title { display: block; color: var(--fg); font-size: 15px; font-weight: 700; line-height: 1.5; transition: color .15s ease; }
+.related-reading-summary { display: block; margin-top: 5px; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
+@media (max-width: 560px) {
+  .post-nav-pair { grid-template-columns: 1fr; }
+  .post-nav-link.next { text-align: left; align-items: flex-start; }
+  .post-nav-link.empty { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-in">
+    <a class="brand" href="/">
+      <span class="mark">@<b>BASKETBALL</b></span>
+      <span class="tag">NBA · TPBL · PLG · HBL 數據</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開關選單"><span class="ico"><i></i></span><span class="txt">選單</span></button>
+    <nav class="nav2" id="site-nav" aria-label="站內導覽">
+      <details class="nav-group">
+        <summary>數據</summary>
+        <div class="nav-menu">
+          <a href="/data/">數據總覽<small>三個聯盟數據頁的入口</small></a>
+          <a href="/standings/">NBA 戰績<small>東西區完整排名與季後賽分帶</small></a>
+          <a href="/tw/">台灣職籃<small>TPBL 與 P. LEAGUE+ 戰績對照</small></a>
+          <a href="/hbl/">HBL<small>高中甲級四強與歷屆冠軍</small></a>
+        </div>
+      </details>
+      <a href="/articles/" class="on" aria-current="page">文章</a>
+    </nav>
+    <div class="theme">
+      <span class="lbl">配色</span>
+      <div class="dots">
+        <button class="dot" style="background:linear-gradient(135deg,#14100e 50%,#ef7d3a 50%)" data-set-theme="ember" aria-pressed="true" title="ember 炭黑橘"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#17120c 50%,#d9a04c 50%)" data-set-theme="court" aria-pressed="false" title="court 木地板金"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#15111c 50%,#9b7bd8 50%)" data-set-theme="violet" aria-pressed="false" title="violet 暗紫"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#fbf3ec 50%,#b74e21 50%)" data-set-theme="apricot" aria-pressed="false" title="apricot 杏桃"></button>
+        <button class="dot" style="background:linear-gradient(135deg,#faf1e0 50%,#a45908 50%)" data-set-theme="maple" aria-pressed="false" title="maple 楓糖"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <article>
+    <header class="article-header">
+      <div class="article-kicker">FEATURE</div>
+      <h1 class="article-title">NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫</h1>
+      <div class="article-subtitle">依 2026 年 9 月 25 日的詞彙表頁面，籃下防守的對手出手數、命中數、命中率各有一條定義；只看 DFG% 這個百分比，也讀不出對手在籃下投了幾球。</div>
+      <div class="article-meta">2026/10/13 · 週二</div>
+    </header>
+    <div class="article-lede"><span class="lede-label">重點速答</span><p>NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫，讀不出一個 DFG% 屬於哪一組；只看百分比，也讀不出對手在籃下投了幾球。</p></div>
+    <img class="article-cover" src="cover.png" alt="NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫｜封面">
+    <div class="prose">
+<p><strong>新手村｜數據入門・籃下防守 DFGA、DFGM、DFG%</strong></p>
+<p>逛 NBA.com 的球員防守數據，會碰到一排縮寫：DFGA、DFGM、DFG%。其中一組標的是對手在籃下的出手，看起來很像「護框數據」。</p>
+<p>本文依據的是 NBA.com 統計詞彙表（NBA Stats Glossary）2026 年 9 月 25 日取得的頁面內容，以下說「詞彙表」都指這一版。「籃下防守」是本文對原文 defending the rim 的中文稱呼，詞彙表自己沒有用這個中文詞。本文不寫任何真實球員或球隊的數字，示範一律用標明「假設」的練習。</p>
+<p>讀完之後，看到一個 DFG% 數字，你可以自己問三件事：這是詞彙表的哪一條、對手出手了幾次、「籃下」兩個字有沒有距離。</p>
+<h2>籃下防守的三欄，各回答對手的一件事</h2>
+<p>詞彙表為籃下防守列了三條，名稱都以 Field Goals Defended at Rim 開頭。</p>
+<div class="prose-tbl-scroll"><table>
+<thead>
+<tr>
+<th>詞彙表條目</th>
+<th>縮寫</th>
+<th>中文意思</th>
+<th>公式欄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field Goals Defended at Rim Attempted</td>
+<td>DFGA</td>
+<td>球員或球隊在籃下防守時，對手的投籃出手數</td>
+<td>無</td>
+</tr>
+<tr>
+<td>Field Goals Defended at Rim Made</td>
+<td>DFGM</td>
+<td>同一情境下，對手的投籃命中數</td>
+<td>無</td>
+</tr>
+<tr>
+<td>Field Goals Defended at Rim Percent</td>
+<td>DFG%</td>
+<td>同一情境下，對手出手的命中百分比</td>
+<td>(DFGM)/(DFGA)</td>
+</tr>
+</tbody>
+</table></div>
+<p>三條的類型欄（Type）都標 Tracking，也就是追蹤數據。命中率那一條的定義是：球員或球隊在防守籃框（defending the rim）時，對手出手中命中的百分比。出手數與命中數兩條的句型相同。</p>
+<p>三欄的關係是一條除法。DFGM 除以 DFGA，得到 DFG%。DFGA 在公式裡是分母，它告訴你這個百分比建立在幾次出手上。</p>
+<h2>一般防守的三條也叫 DFGA、DFGM、DFG%</h2>
+<p>詞彙表裡還有另一組條目，縮寫和籃下那組一模一樣，定義的情境換成防守出手（defending the shot），類型欄標 Defense（防守）。</p>
+<div class="prose-tbl-scroll"><table>
+<thead>
+<tr>
+<th>縮寫</th>
+<th>籃下防守那條（defending the rim）</th>
+<th>一般防守那條（defending the shot）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DFGA</td>
+<td>Field Goals Defended at Rim Attempted</td>
+<td>Defended Field Goals Attempted</td>
+</tr>
+<tr>
+<td>DFGM</td>
+<td>Field Goals Defended at Rim Made</td>
+<td>Defended Field Goals Made</td>
+</tr>
+<tr>
+<td>DFG%</td>
+<td>Field Goals Defended at Rim Percent</td>
+<td>Defended Field Goal Percentage</td>
+</tr>
+</tbody>
+</table></div>
+<p>一般防守的命中率那一條，公式欄也寫 (DFGM)/(DFGA)，和籃下那條的字一樣。兩條的算法是否相同，條目沒有說明。</p>
+<p>本文的讀法是：一張表上如果只寫 DFG%、沒有寫 at Rim，單看這個縮寫，分不出它屬於哪一組。實際的 NBA.com 資料頁可能用表名或欄名標明了歸屬，詞彙表頁面本身看不出來，這一點本文無法判定。</p>
+<h2>詞彙表沒有替籃下防守寫幾英尺</h2>
+<p>讀者最容易做的事，是替「籃下」補一個距離，例如以為它指離籃框幾英尺內。籃下防守的三條定義都只寫「球員或球隊在防守籃框時」，沒有距離數字，也沒有英尺這類單位。怎樣算在防守籃框、由哪位防守者承接，三條也都沒有寫。</p>
+<p>詞彙表裡另有一條 Shot At Rim（籃下出手）寫了距離：離籃框 5 英尺以內的任何出手。它和籃下防守三條是各自並列的條目，三條的定義沒有引用它，詞彙表也沒有說兩者的範圍相同。</p>
+<h2>籃下防守旁邊另列的三條防守欄位</h2>
+<p>詞彙表裡還有三條常被放在一起讀的防守欄位，各有各的定義。</p>
+<p><strong>阻攻（Blocks）。</strong> 進攻球員出手，防守球員把球撥掉，擋下他得分的機會。BLK 欄的讀法見<a href="/articles/read-box-score/">技術統計表</a>。</p>
+<p><strong>命中率差（Percentage Points Difference）。</strong> 射手整季的一般命中率，與防守球員或球隊盯防（guarding）該射手時的命中率，兩者之差，公式是 FG% - DFG%。詞彙表寫，好的防守數字會是負數。公式裡的 DFG% 是籃下那條還是一般防守那條，條目沒有寫。</p>
+<p><strong>Deterrent Factor。</strong> 球員在某個特定對位中每回合的出手數，占他整季平均每回合出手數的百分比。它比的是出手頻率，不是命中率。</p>
+<p>同為防守欄位的另一篇新手村文章，可接著讀<a href="/articles/contested-shots-basics/">contested shot 入門</a>。</p>
+<h2>假設甲的 DFG% 是 25%、乙是 50%，兩人的出手數差了 10 倍</h2>
+<p>下面用兩名假設的防守者練習。數字都是假設，不屬於任何真實球員。</p>
+<ul>
+<li>甲：籃下防守的 DFGA 是 4，DFGM 是 1。</li>
+<li>乙：籃下防守的 DFGA 是 40，DFGM 是 20。</li>
+</ul>
+<p>照詞彙表籃下 DFG% 那一條的公式 (DFGM)/(DFGA) 算：</p>
+<ul>
+<li>甲：1 除以 4，得 0.25。</li>
+<li>乙：20 除以 40，得 0.50。</li>
+</ul>
+<p>換成百分比，甲是 25%，乙是 50%。這個換算是本文做的，詞彙表公式欄只寫了除法。</p>
+<p>接著回答三個問題。</p>
+<p><strong>問題一：只給 25% 與 50% 兩個數字，少了哪一欄的資訊？</strong> 少了 DFGA。甲的 25% 建立在 4 次出手上，乙的 50% 建立在 40 次出手上，後者的出手數是前者的 10 倍。</p>
+<p><strong>問題二：如果一張表只寫 DFG%，沒有寫 at Rim，這一欄可能是詞彙表的哪幾條？</strong> 可能是籃下防守那條，也可能是一般防守那條。兩條都掛著 DFG%，公式欄寫的字也一樣。要分辨，得看表名、欄名，或欄位旁的說明。</p>
+<p><strong>問題三：這兩人「在籃下」的範圍，詞彙表給了距離嗎？</strong> 沒有，理由見〈詞彙表沒有替籃下防守寫幾英尺〉那一節。</p>
+<p>比較兩個人的 DFG% 之前，可以先比兩人的 DFGA。甲乙的命中率不同，兩人的出手數也差很多；單看百分比，看不出分母有多大，也看不出這個比較有多穩定。</p>
+<h2>範圍與版本</h2>
+<p>本文只讀 NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容。詞彙表會更新，之後請以官方最新版為準。這幾個欄位的名稱，在 NBA 2025-26 規則書、FIBA 2026 版規則書（2026 年 10 月 1 日生效）與 NBA 2023 CBA 的本機全文文字檔裡都查無。</p>
+<h2>常見問題</h2>
+<h3>籃下防守的 DFG% 怎麼算？</h3>
+<p>依 NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容，籃下防守（defending the rim）那條 DFG% 的公式是 (DFGM)/(DFGA)，也就是對手的命中數除以出手數。詳見〈籃下防守的三欄，各回答對手的一件事〉。</p>
+<h3>籃下防守的 DFG% 和一般防守的 DFG% 是同一個數字嗎？</h3>
+<p>NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容裡，兩條都掛 DFG%，公式欄的字也相同，但情境不同：一條寫 defending the rim，一條寫 defending the shot。兩條的算法是否相同，條目沒有說明。詳見〈一般防守的三條也叫 DFGA、DFGM、DFG%〉。</p>
+<h3>詞彙表有說籃下是離籃框幾英尺嗎？</h3>
+<p>NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面內容裡，籃下防守三條的定義沒有寫距離。另一條 Shot At Rim 寫的是 5 英尺以內的出手，三條沒有引用它。詳見〈詞彙表沒有替籃下防守寫幾英尺〉。</p>
+<h2>資料來源</h2>
+<ul>
+<li>NBA.com Stats Glossary（取得日 2026 年 9 月 25 日）：<a href="https://www.nba.com/stats/help/glossary">NBA.com 詞彙表</a>。用到的條目：Field Goals Defended at Rim Attempted／Made／Percent、Defended Field Goals Attempted／Made、Defended Field Goal Percentage、Shot At Rim、Blocks、Percentage Points Difference、Deterrent Factor。</li>
+<li>NBA 2025-26 規則書、FIBA 2026 版規則書（2026 年 10 月 1 日生效）、NBA 2023 CBA：本機保存的全文文字檔，取得日 2026 年 10 月 4 日，無可點擊網址。</li>
+</ul>
+    </div>
+    <section class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">延伸閱讀</h2><div class="related-reading-list"><a class="related-reading-item" href="/articles/potential-assists-basics/"><span class="related-reading-title">NBA.com 的 Potential Assists：隊友接球後 1 dribble 內出手，定義沒寫投進</span><span class="related-reading-summary">NBA.com 官方統計詞彙表（2026 年 9 月 25 日的頁面內容）對 Potential Assists 的定義是：傳給隊友、而且隊友在接球後 1 dribble 之內出手的傳球。定義寫的是出手，沒有寫投進；助攻（AST）的定義則寫明傳球直接導致投進。下面用 5 次假設的傳球，讓你自己對一次兩條定義。</span></a><a class="related-reading-item" href="/articles/free-throw-attempt-rate-basics/"><span class="related-reading-title">NBA.com 的罰球出手率是球隊 FTA 除以同隊 FGA，罰球多和投籃少都會把它推高</span><span class="related-reading-summary">NBA.com 統計詞彙表（2026 年 9 月 25 日快照）把罰球出手率的主詞寫成球隊，公式是罰球出手數除以同隊的投籃出手數。分子和分母都是出手數，罰球進了幾球不在算式裡；兩隊的比值相同，也可能來自不同的分子與分母。</span></a><a class="related-reading-item" href="/articles/rebound-percentage-metrics-basics/"><span class="related-reading-title">NBA 詞彙表的 REB%、OREB%、DREB% 沒有公式：籃板百分比三層之中，只有這一層的分母找不到定義</span><span class="related-reading-summary">NBA 官方統計詞彙表（2026 年 9 月 25 日快照）的 REB%、OREB%、DREB% 三個條目，定義句寫 percentage of available rebounds，條目沒有 Formula 欄，全檔也沒有條目定義 available。REB／OREB／DREB Chance% 的 Formula 分母是有條目的 Chances，Adjusted 三條再從分母減去有條目的 Deferred Chances。</span></a><a class="related-reading-item" href="/articles/turnover-rate-metrics-basics/"><span class="related-reading-title">失誤率四個指標用了三種分母：NBA 官方詞彙表只給 TO Ratio 公式</span><span class="related-reading-summary">NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目都與失誤有關。它們的定義句分母字樣有三種：plays、possessions used、their own possessions；四個條目裡，只有 TO Ratio 附 Formula 欄，公式是 (TO * 100) / (POSS)。</span></a></div></section>
+  </article>
+  <nav class="post-nav" aria-label="文章導覽"><div class="post-nav-pair"><a class="post-nav-link prev" href="/articles/potential-assists-basics/"><span class="pn-dir">← 前一篇</span><span class="pn-title">NBA.com 的 Potential Assists：隊友接球後 1 dribble 內出手，定義沒寫投進</span><span class="pn-date">2026/10/13 · 週二</span></a><a class="post-nav-link next" href="/articles/screen-assists-basics/"><span class="pn-dir">後一篇 →</span><span class="pn-title">NBA.com 的 Screen Assists 記的是擋人直接導致同一名隊友投進的那一球</span><span class="pn-date">2026/10/13 · 週二</span></a></div></nav>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="flinks"><a href="/data/">數據總覽</a><a href="/standings/">NBA 戰績</a><a href="/tw/">台灣職籃</a><a href="/hbl/">HBL</a><a href="/articles/">文章</a></div>
+    <p class="disc">本站為非官方籃球資訊站，與 NBA、TPBL、P. LEAGUE+、HBL（高中體總）等聯盟、球團與學校無任何關聯或授權；數據與比分整理自公開來源並標註。<br>
+    Unofficial fan-made site · Not affiliated with, endorsed by, or sponsored by the NBA, TPBL, P. LEAGUE+ or HBL.</p>
+    <div class="sisters">
+      <b>姊妹站</b>
+      <a href="https://twtools.cc/">TWTools — 打工牛馬的線上工具箱</a>
+      <a href="https://aire.twtools.cc/">aire — AI Tool Atlas·AI 工具圖鑑</a>
+      <a href="https://tree.twtools.cc/">樹洞21號 — 匿名 AI 心事平台</a>
+      <a href="https://foootball.twtools.cc/">@foootball — 2026 世界盃賽程</a>
+      <a href="https://baseball.twtools.cc/">@baseball — 中職 CPBL＋MLB 深度戰報</a>
+      <a href="https://racing.twtools.cc/">賽車數據誌 — F1 積分榜・台北時間賽曆・各站賽果</a>
+      <a href="https://health.twtools.cc/">健檢數據誌 — 健檢報告上的數字，各機構判準並列</a>
+      <a href="https://tender.twtools.cc/">標案雷達 — 網通設備標案查詢、押標金試算與規格預檢</a>
+      <a href="https://shhhh.cc/">Shhhh — 專業短網址管理平台</a>
+      <a href="https://dvdmaru.com/">dvdmaru — 把事實和敘事分開來看</a>
+    </div>
+  </div>
+</footer>
+<script>
+/* click handler only — persists to localStorage('bk-theme').
+   preload script（頁首）已在第一次 paint 前套好 data-theme，這裡只管點擊與 aria-pressed 同步。 */
+(function(){
+  var KEY="bk-theme", root=document.documentElement, BG={"ember":"#14100e","court":"#17120c","violet":"#15111c","apricot":"#fbf3ec","maple":"#faf1e0"};
+  var current=root.getAttribute("data-theme");
+  document.querySelectorAll("[data-set-theme]").forEach(function(x){
+    x.setAttribute("aria-pressed", x.getAttribute("data-set-theme")===current ? "true":"false");
+  });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-set-theme]"); if(!b) return;
+    var t=b.getAttribute("data-set-theme");
+    root.setAttribute("data-theme",t);
+    try{ localStorage.setItem(KEY,t); }catch(e){}
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m && BG[t]) m.setAttribute("content",BG[t]);
+    document.querySelectorAll("[data-set-theme]").forEach(function(x){
+      x.setAttribute("aria-pressed", x===b ? "true":"false");
+    });
+  });
+})();
+
+(function(){
+  var head=document.querySelector(".site-head"); if(!head) return;
+  var btn=head.querySelector(".nav-toggle");
+  var groups=Array.prototype.slice.call(head.querySelectorAll("details.nav-group"));
+  var mq=window.matchMedia("(max-width:640px)");
+  function closeAll(except){ groups.forEach(function(g){ if(g!==except) g.removeAttribute("open"); }); }
+  function setMenu(open){
+    head.classList.toggle("nav-open",open);
+    if(btn) btn.setAttribute("aria-expanded",open?"true":"false");
+    if(open) groups.forEach(function(g){ g.setAttribute("open",""); });
+  }
+  groups.forEach(function(g){
+    g.addEventListener("toggle",function(){ if(g.open && !mq.matches) closeAll(g); });
+  });
+  if(btn) btn.addEventListener("click",function(){ setMenu(!head.classList.contains("nav-open")); });
+  document.addEventListener("click",function(e){
+    if(head.contains(e.target)) return;
+    if(mq.matches) setMenu(false); else closeAll();
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key!=="Escape") return;
+    if(mq.matches){
+      if(head.classList.contains("nav-open")){ setMenu(false); if(btn) btn.focus(); }
+      return;
+    }
+    var opened=groups.filter(function(g){ return g.open; });
+    if(opened.length){ closeAll(); var s=opened[0].querySelector("summary"); if(s) s.focus(); }
+  });
+  head.addEventListener("focusout",function(e){
+    if(mq.matches) return;
+    if(e.relatedTarget && head.contains(e.relatedTarget)) return;
+    /* 延後一拍再查 activeElement：舊 WebKit 滑鼠點擊時 relatedTarget 會是 null，
+       立刻收合會在 click 之前把 <details> 關掉、吃掉下拉裡連結的點擊 */
+    setTimeout(function(){
+      if(document.activeElement && head.contains(document.activeElement)) return;
+      closeAll();
+    },0);
+  });
+  var onChange=function(){ setMenu(false); closeAll(); };
+  if(mq.addEventListener) mq.addEventListener("change",onChange); else if(mq.addListener) mq.addListener(onChange);
+})();
+</script>
+</body>
+</html>

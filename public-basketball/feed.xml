@@ -8,6 +8,30 @@
     <language>zh-Hant</language>
     <lastBuildDate>Tue, 13 Oct 2026 08:00:00 +0800</lastBuildDate>
     <item>
+      <title>NBA 的 Contested Shot：最近防守者在 3.5 英呎內，加 s 數出手前 close out 並舉手</title>
+      <link>https://basketball.twtools.cc/articles/contested-shots-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/contested-shots-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）裡，標題叫 Contested Shot 的條目看距離：最近的防守者在 3.5 英呎內。叫 Contested Shots 的欄位則計算防守球員或球隊在出手前 close out 並舉手的次數。NBA 2025-26 與 FIBA 2026 版規則書另外管防守者舉手與垂直起跳的合法性。</description>
+    </item>
+    <item>
+      <title>NBA.com 的 Drives：半場運球攻框才算，靠近籃框處起步、移動中接球、在外圍立刻被截停不算</title>
+      <link>https://basketball.twtools.cc/articles/drives-tracking-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/drives-tracking-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 官方統計詞彙表（2026 年 9 月 25 日快照）把 Drives 歸為追蹤類（Tracking），計入球員在半場進攻中運球攻擊籃框的回合；從靠近籃框處開始、移動中接球、在外圍立刻被截停，這三種情形不計入。看轉播或數據頁時，Drives 是 NBA.com 切出來的一種切入，三種被排除的回合不在這個次數裡。</description>
+    </item>
+    <item>
+      <title>NBA.com 的罰球出手率是球隊 FTA 除以同隊 FGA，罰球多和投籃少都會把它推高</title>
+      <link>https://basketball.twtools.cc/articles/free-throw-attempt-rate-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/free-throw-attempt-rate-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 統計詞彙表（2026 年 9 月 25 日快照）把罰球出手率的主詞寫成球隊，公式是罰球出手數除以同隊的投籃出手數。分子和分母都是出手數，罰球進了幾球不在算式裡；兩隊的比值相同，也可能來自不同的分子與分母。</description>
+    </item>
+    <item>
       <title>HBL 115 學年度行事曆預定：資格賽 10/27 起在中原、健行，八強跨農曆年，總決賽 3/13–14 小巨蛋</title>
       <link>https://basketball.twtools.cc/articles/hbl-115-qualifier-schedule-guide/</link>
       <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-115-qualifier-schedule-guide/</guid>
@@ -22,6 +46,30 @@
       <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>HBL（高中籃球甲級聯賽）由運動部主辦、高中體總等單位承辦，是台灣高中籃球最高層級賽事，以學年度稱呼賽季；115 學年度兩組報名都超過上限、均設資格賽（由上學年度未達前 8 名者參加），八強依官網行事曆預定分兩段跨農曆年。本文依據官方公告、競賽規程與具名媒體報導，2026 年 10 月 13 日讀取，之後以官方最新公告為準。</description>
+    </item>
+    <item>
+      <title>NBA.com 的 Potential Assists：隊友接球後 1 dribble 內出手，定義沒寫投進</title>
+      <link>https://basketball.twtools.cc/articles/potential-assists-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/potential-assists-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 官方統計詞彙表（2026 年 9 月 25 日的頁面內容）對 Potential Assists 的定義是：傳給隊友、而且隊友在接球後 1 dribble 之內出手的傳球。定義寫的是出手，沒有寫投進；助攻（AST）的定義則寫明傳球直接導致投進。下面用 5 次假設的傳球，讓你自己對一次兩條定義。</description>
+    </item>
+    <item>
+      <title>NBA.com 詞彙表裡，籃下防守的 DFG% 和一般防守的對手命中率共用同一個縮寫</title>
+      <link>https://basketball.twtools.cc/articles/rim-defense-metrics-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/rim-defense-metrics-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 統計詞彙表（2026 年 9 月 25 日的頁面內容）把籃下防守（defending the rim）的對手出手數、命中數和命中率各列一條，縮寫是 DFGA、DFGM、DFG%。詞彙表另有一般防守（defending the shot）的三條，縮寫相同，公式欄寫的字也相同。只看縮寫，讀不出一個 DFG% 屬於哪一組；只看百分比，也讀不出對手在籃下投了幾球。</description>
+    </item>
+    <item>
+      <title>NBA.com 的 Screen Assists 記的是擋人直接導致同一名隊友投進的那一球</title>
+      <link>https://basketball.twtools.cc/articles/screen-assists-basics/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/screen-assists-basics/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>NBA.com 統計詞彙表 2026 年 9 月 25 日的頁面，把 Screen Assists 定義成進攻球員或球隊替隊友擋人，而該次擋人直接導致同一名隊友投籃命中（field goal）的次數，歸在 Hustle 類，沒有公式欄。看到這一欄的數字，可以先問三件事：擋的是誰、誰投進、條目有沒有寫到罰球。</description>
     </item>
     <item>
       <title>投籃動作的起點怎麼分組？NBA 2025-26 與 FIBA 2026 的歸法不同</title>
@@ -198,54 +246,6 @@
       <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>「回場違例」是中文慣稱。NBA 2025-26 規則書的章節標題是 Ball in Backcourt（Rule 10 §IX），FIBA 2026 是 Ball returned to the backcourt（Article 30）；兩邊的條文各寫各的構成要件與例外，本文逐項讀原句，再用假設情境讓你自己判斷一次。</description>
-    </item>
-    <item>
-      <title>傷病球員例外的簽約額度：2023 CBA 取傷者薪資 50% 與 Non-Taxpayer MLE 金額兩者中較小者</title>
-      <link>https://basketball.twtools.cc/articles/disabled-player-exception-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/disabled-player-exception-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>2023 NBA CBA Art. VII §6(c)(1)(ii) 寫明，球隊以簽約方式使用 Disabled Player Exception 時，Replacement Player 該季 Salary 與 Unlikely Bonuses 合計，上限是傷者該季 Salary 的 50% 與相當於 Non-Taxpayer Mid-Level Salary Exception 的金額這兩者中較小的那個。交易換進版另見 §6(c)(1)(iii)。</description>
-    </item>
-    <item>
-      <title>8 秒被中斷時，NBA 與 FIBA 的條文各用一種寫法：給新的 8 秒，或讓剩餘時間延續</title>
-      <link>https://basketball.twtools.cc/articles/eight-second-backcourt-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/eight-second-backcourt-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>進攻方要在 8 秒內把球帶過半場，NBA 2025-26 規則書與 FIBA 2026 v1-1 的秒數都是 8 秒。8 秒被中斷時，本文引到的 NBA 條文列出「給新的 8 秒」的情形，FIBA Article 28.1.3 列出「以剩餘時間延續」的情形，兩邊在條文上是分開寫的機制。</description>
-    </item>
-    <item>
-      <title>5 秒規則：NBA 寫在發球與背對籃框運球，FIBA 另有 closely guarded 與罰球</title>
-      <link>https://basketball.twtools.cc/articles/five-second-rules-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/five-second-rules-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依本文查閱的 NBA 2025-26 官方規則書快照，5 秒出現在 Rule 8 的發球與 Rule 10 的背對、側對籃框運球兩處；FIBA 2026 v1-1 版則寫在 Article 17 的發球、Article 27 的 closely guarded 與 Article 43 的罰球。「五秒違例」是中文慣稱，本文查閱的兩份規則書快照裡，5 秒分別寫在各自的情形條文中。</description>
-    </item>
-    <item>
-      <title>HBL 球員資格什麼時候被查？114 學年度規程的文件關卡，從報名排到各階段其餘場次</title>
-      <link>https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-eligibility-check-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>114 學年度高級中等學校籃球聯賽競賽規程（修正版）把球員資格的文件關卡排在多個時點：報名時、各階段第一場出賽前、各階段其餘場次。把這些時點串起來，本文稱為「持續查驗」，這是本文的整理用語，規程沒有使用這個說法。</description>
-    </item>
-    <item>
-      <title>HBL 名單有兩個數字：114 學年度報名甲級 15 人、乙級 18 人，每場名單則是第 12 條二所載的 12 人</title>
-      <link>https://basketball.twtools.cc/articles/hbl-roster-size-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-roster-size-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>114 學年度規程的第 9 條二規定報名人數（甲級球員含隊長 15 人、乙級 18 人），第 12 條二則載明每場由報名球員中提出 12 人名單；兩個數字由不同條文各自規定，本文引用的規程文字沒有寫兩者的換算關係，第 12 條二是否適用乙級，本文引用的規程文字也未明說。</description>
-    </item>
-    <item>
-      <title>HBL 領隊、教練、隨隊教師、防護員各要什麼資格？114 學年度規程逐款看</title>
-      <link>https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-staff-qualification-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>依 114 學年度高級中等學校籃球聯賽競賽規程（修正版），第 7 條三～六分別寫了領隊、教練、隨隊教師、防護員的資格：領隊寫身分，教練寫證照，隨隊教師寫是否為該校正式聘任教師，防護員寫證書。兼任限制則只寫在教練與隨隊教師兩款，範圍是同一級別兩校（這是本文把各款並列後的整理，規程沒有這樣總結）。</description>
     </item>
   </channel>
 </rss>
