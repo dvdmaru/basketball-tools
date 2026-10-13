@@ -6,7 +6,23 @@
     <atom:link href="https://basketball.twtools.cc/feed.xml" rel="self" type="application/rss+xml" />
     <description>NBA、台灣職籃（TPBL／PLG）與 HBL 高中籃球的數據分析、戰績排行與深度特刊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Sat, 10 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 08:00:00 +0800</lastBuildDate>
+    <item>
+      <title>HBL 115 學年度行事曆預定：資格賽 10/27 起在中原、健行，八強跨農曆年，總決賽 3/13–14 小巨蛋</title>
+      <link>https://basketball.twtools.cc/articles/hbl-115-qualifier-schedule-guide/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-115-qualifier-schedule-guide/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>依高中體總官網行事曆預定，HBL 115 學年度甲級資格賽 2026 年 10 月 27 日至 11 月 3 日在中原大學體育館與健行科技大學體育館舉行，實際比賽天數視報名後調整；男女兩組均設資格賽，由上學年度未達甲級前 8 名的隊伍參加，上學年度前 8 名直接進預賽。</description>
+    </item>
+    <item>
+      <title>HBL 高中籃球甲級聯賽完全指南（115 學年度）：資格賽、八強跨年與歷屆冠軍</title>
+      <link>https://basketball.twtools.cc/articles/hbl-league-guide/</link>
+      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-league-guide/</guid>
+      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
+      <category>專題</category>
+      <description>HBL（高中籃球甲級聯賽）由運動部主辦、高中體總等單位承辦，是台灣高中籃球最高層級賽事，以學年度稱呼賽季；115 學年度兩組報名都超過上限、均設資格賽，八強依官網行事曆預定分兩段跨農曆年。本文依據官方公告、競賽規程與具名媒體報導，2026 年 10 月 13 日讀取，之後以官方最新公告為準。</description>
+    </item>
     <item>
       <title>投籃動作的起點怎麼分組？NBA 2025-26 與 FIBA 2026 的歸法不同</title>
       <link>https://basketball.twtools.cc/articles/act-of-shooting-basics/</link>
@@ -230,22 +246,6 @@
       <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
       <category>專題</category>
       <description>依 114 學年度高級中等學校籃球聯賽競賽規程（修正版），第 7 條三～六分別寫了領隊、教練、隨隊教師、防護員的資格：領隊寫身分，教練寫證照，隨隊教師寫是否為該校正式聘任教師，防護員寫證書。兼任限制則只寫在教練與隨隊教師兩款，範圍是同一級別兩校（這是本文把各款並列後的整理，規程沒有這樣總結）。</description>
-    </item>
-    <item>
-      <title>HBL 分組循環賽積分相等，名次先看對戰勝負</title>
-      <link>https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-standings-tiebreak-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>114 學年度規程規定，HBL 循環賽的名次依名次積分計算，敗一場也拿 1 分。分組循環賽中 2 隊或以上積分相等時，先以對戰勝負關係判定；積分相等且互有勝負，才進入得失分差與總得分的四步順序，分組賽結束後仍無法判定名次才抽籤。單循環不分組的階段是否套用這套同分判定，規程沒有寫。</description>
-    </item>
-    <item>
-      <title>114 學年度乙級縣市預賽晉級之後，還要再打分區複賽與全國決賽兩關</title>
-      <link>https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/</link>
-      <guid isPermaLink="true">https://basketball.twtools.cc/articles/hbl-tier-b-road-to-finals-basics/</guid>
-      <pubDate>Wed, 30 Sep 2026 08:00:00 +0800</pubDate>
-      <category>專題</category>
-      <description>114 學年度規程（修正版）對乙級寫了三段賽制：縣市預賽（報名隊數超過 1 隊時）採循環，分區複賽第一輪分組單循環、第二輪單淘汰，全國決賽第一輪分組循環、第二輪單淘汰排名制。分區怎麼分、排名賽怎麼打，規程沒有寫，所以能確定的是每一段用什麼制度，不是每一場誰對誰。</description>
     </item>
   </channel>
 </rss>

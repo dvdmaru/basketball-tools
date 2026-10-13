@@ -36,7 +36,8 @@ class TestArticleTopics(unittest.TestCase):
         ba.build()
 
     def test_all_articles_have_registered_topics(self):
-        self.assertEqual(len(self.articles), 86)
+        # 下限而非等號：文章數會隨每批新文成長，寫死會變成 staleness 炸彈（10/13 第 87 篇即觸發）。
+        self.assertGreaterEqual(len(self.articles), 86)
         self.assertEqual(len(self.topic_keys), 9)
         self.assertEqual(self.topic_keys, [topic["key"] for topic in ba.ARTICLE_TOPICS])
         for article in self.articles:
