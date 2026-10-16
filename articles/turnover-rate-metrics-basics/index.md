@@ -2,123 +2,111 @@
 slug: turnover-rate-metrics-basics
 competition: nba
 topic: nba-stats
+topic_ref: "manual"
 type: "feature"
 date: "2026-09-30"
-title: "失誤率四個指標用了三種分母：NBA 官方詞彙表只給 TO Ratio 公式"
-subtitle: "依 NBA 官方統計詞彙表 2026 年 9 月 25 日快照，四個條目的定義句寫了 plays、possessions used、their own possessions 三種分母字樣，附 Formula 欄的只有 TO Ratio。文中用明標「假設」的數字代入算一次。"
-lede: "NBA 官方統計詞彙表（2026 年 9 月 25 日快照）裡，TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目都與失誤有關。它們的定義句分母字樣有三種：plays、possessions used、their own possessions；四個條目裡，只有 TO Ratio 附 Formula 欄，公式是 (TO * 100) / (POSS)。"
-topic_ref: "manual"
+title: "NBA 詞彙表四個失誤條目的分母有三種寫法，只有 TO Ratio 附公式"
+subtitle: "TOV%、TO Ratio、TO Freq、OPP TOV% 在 NBA.com 詞彙表是四個獨立條目；名字帶 Percentage 的 OPP TOV%，定義句用的是 per 100"
+lede: "NBA.com 統計詞彙表的四個失誤條目，定義句的分母有 plays、possessions used、their own possessions 三種寫法，只有 TO Ratio 附 Formula 欄。看到失誤數字，先查它屬於哪個條目、分母怎麼寫。"
 ---
 
-# 失誤率四個指標用了三種分母：NBA 官方詞彙表只給 TO Ratio 公式
+# NBA 詞彙表四個失誤條目的分母有三種寫法，只有 TO Ratio 附公式
 
 **新手村｜數據入門・失誤指標 TOV%、TO Ratio、TO Freq、OPP TOV%**
 
-本文依據的是 NBA 官方統計詞彙表（NBA Stats Glossary，nba.com/stats/help/glossary）2026 年 9 月 25 日取得的快照。這是單一網頁，頁面沒有標示賽季，內容之後可能被 NBA 改寫，以官方發布的當期版本為準。文中所有「詞彙表寫了什麼」的句子，指的都是這份快照。
+假設你在兩個地方看到同一個詞：失誤率。一個地方把它寫成百分比，另一個寫成每 100 個。你很自然會以為，這是同一件事換了單位。
 
-站內的[AST%、Assist Ratio、AST/TO 對照文](/articles/assist-metrics-basics/)，已經用同樣的做法讀過三個助攻條目，其中「Assist Ratio 的定義句寫 possessions used，公式分母卻寫 POSS」一節，還順帶提到了 TO Ratio。這篇把範圍換成失誤：TOV%、TO Ratio、TO Freq、OPP TOV% 四個條目，逐條讀它們的定義句、Formula 欄與 Type 欄。讀完之後，你可以自己打開詞彙表頁面，判斷一個失誤相關的條目寫的分母是什麼、有沒有附公式。
+打開 NBA.com 的統計詞彙表（Stat Glossary），TOV%、TO Ratio、TO Freq、OPP TOV% 是四個各自獨立的條目。本文用「失誤率」泛稱這四個條目，條目一律寫英文原名。
 
-先交代幾個用詞。「失誤率」是中文的慣稱，詞彙表沒有這個條目名；四個條目的名稱是 Turnover Percentage、Turnover Ratio、Turnover Frequency、Opponent Turnover Percentage，站上沒有既定的中文譯名，本文寫英文原名。plays 與 possessions used 在詞彙表都沒有獨立的條目，本文照原文寫英文。
+所以看到一個「失誤率」數字，先問它屬於哪個條目、分母怎麼寫，再看它多大。
 
-## 四個條目的定義句寫了三種分母字樣
+## 四個條目的分母有三種寫法：plays、possessions used、their own possessions
 
-四個條目並排如下。定義句引用詞彙表快照的英文，Formula 欄與 Type 欄照條目所寫。
+以下都以本文採用的 NBA.com 詞彙表快照為準。下表把四個條目的定義句、Formula 欄、Type（類別）和 Contexts（情境）排在一起；定義句附中文大意，其餘欄位照原文抄錄。
 
-| 條目 | 定義句（Definition 欄） | Formula 欄 | Type 欄 |
+| 條目（全名） | 定義句（原文與中文大意） | Formula 欄 | Type | Contexts |
+|---|---|---|---|---|
+| TO Ratio（Turnover Ratio） | The number of turnovers a player or team averages per 100 possessions used。球員或球隊平均每 100 個 possessions used 的失誤數 | `(TO * 100) / (POSS)` | Advanced | Player、Clutch |
+| TOV%（Turnover Percentage） | Percentage of plays that end in a player or team's turnover。以球員或球隊失誤作結的 plays 所佔的百分比 | 無此欄 | Advanced | Player、Four Factors、Clutch |
+| TO Freq（Turnover Frequency） | The percentage of plays where a player or team commits a turnover。球員或球隊發生失誤的 plays 所佔的百分比 | 無此欄 | Play Type | Play Type、Player |
+| OPP TOV%（Opponent Turnover Percentage） | The number of turnovers an opponent averages per 100 of their own possessions。對手平均每 100 個 their own possessions 的失誤數 | 無此欄 | Four Factors | Four Factors、Team |
+
+TOV% 和 TO Freq 寫 plays，TO Ratio 寫 possessions used，OPP TOV% 寫 their own possessions。這是用字的比對，不是定義的比對：三種寫法指的是不是同一件事，本文不下判斷。
+
+## OPP TOV% 名字帶 Percentage，定義句卻寫 per 100
+
+TOV% 和 TO Freq 的定義句寫 percentage of plays，單位是百分比；TO Ratio 和 OPP TOV% 寫 per 100。OPP TOV% 的全名是 Opponent Turnover Percentage，光看名字，猜不出定義句用哪一種單位。
+
+their own 指的是誰？定義句的主詞是 an opponent，本文的讀法是：their own 指對手自己的 possessions。
+
+OffRtg、DEFRTG、NetRtg 的定義句也寫 per 100 possessions，站內另有 [進攻效率與節奏入門](/articles/offensive-rating-pace-basics/)。
+
+## 只有 TO Ratio 附算式，算式的 POSS 和定義句的 possessions used 沒有連起來
+
+想直接代數字，四個條目裡只有 TO Ratio 辦得到。它的 Formula 欄是 `(TO * 100) / (POSS)`，夾在 Definition 和 Type 之間。TOV%、TO Freq、OPP TOV% 在這個位置沒有 Formula 欄，要替它們寫算式，得自己外加。
+
+代數字之前，先看分母的用字。算式寫 POSS，定義句寫 possessions used。詞彙表另有 Poss 條目，全名 Possessions，首句是 The number of possessions played by a player or team.。possessions used 沒有自己的條目，整份詞彙表只有 AST Ratio 和 TO Ratio 的定義句用到它。
+
+這三個相近的詞，詞彙表沒有一句話寫它們相等。TO Ratio 把定義句和 Formula 放在同一個條目裡，有人會把這種並列當成連結。本文的讀法是並列不等於寫明，所以不替它們畫等號，也不說它們有別。
+
+照這個讀法，代進算式的就是 POSS。假設，數字是編的：TO 是 3，POSS 是 60，代進去是 `(3 * 100) / 60`，得 5.0。這個 60 是 POSS 的數字，不能直接說成 possessions used 的個數。
+
+AST Ratio（Assist Ratio）的情形一樣：定義句寫每 100 個 possessions used 平均的助攻數，Formula 是 `(AST * 100) / (POSS)`。站內另有 [助攻指標入門](/articles/assist-metrics-basics/)。
+
+## TOV% 和 TO Freq 的分母都寫 plays，措辭和 Type 卻不一樣
+
+兩個定義句並排看。TOV% 是 plays that end in a player or team's turnover 所佔的百分比；TO Freq 是 plays where a player or team commits a turnover 所佔的百分比。措辭一個是 end in，一個是 commits；Type 一個是 Advanced，一個是 Play Type。
+
+詞彙表沒有寫這兩個條目相等，也沒有寫不同，本文只並排引用。
+
+plays 沒有獨立條目，這兩個定義句也沒有說明 plays 怎麼數，例如犯規、罰球算不算；TO Freq 條目同樣沒有寫算法。這份快照查不到，不等於 NBA 沒有規則。
+
+## %TOV、TOV、Opp TOV 名字很像，在詞彙表是另外三個條目
+
+縮寫相近，條目各自獨立：
+
+| 條目 | 全名 | 定義句大意 | Type |
 |---|---|---|---|
-| TO Ratio（Turnover Ratio） | The number of turnovers a player or team averages per 100 possessions used | (TO * 100) / (POSS) | Advanced |
-| TOV%（Turnover Percentage） | Percentage of plays that end in a player or team's turnover | 快照的條目沒有 Formula 欄 | Advanced |
-| TO Freq（Turnover Frequency） | The percentage of plays where a player or team commits a turnover | 快照的條目沒有 Formula 欄 | Play Type |
-| OPP TOV%（Opponent Turnover Percentage） | The number of turnovers an opponent averages per 100 of their own possessions | 快照的條目沒有 Formula 欄 | Four Factors |
+| %TOV | Percent of Team's Turnovers | 球員在場時，他的失誤占球隊失誤的百分比 | Usage |
+| TOV | Turnovers | 進攻方的球員或球隊把球丟給防守方，算一次失誤 | Traditional |
+| Opp TOV | Opponent Turnovers | 進攻中的對手把球丟給防守方的次數 | Opponent |
 
-Contexts 欄也不相同。TO Ratio 列 Player 與 Clutch；TOV% 列 Player、Four Factors、Clutch；TO Freq 列 Play Type 與 Player；OPP TOV% 列 Four Factors 與 Team，沒有列 Player。
+%TOV 的定義句寫 a team's turnovers，和 TOV% 的 plays 字樣不同。Opp TOV 數的是次數，OPP TOV% 的定義句則是每 100 個 their own possessions 平均的失誤數。延伸閱讀：[怎麼讀 box score](/articles/read-box-score/)、[使用率與 PIE 入門](/articles/usage-rate-pie-basics/)。
 
-這張表有兩處值得停下來看。第一處是分母字樣：TOV% 與 TO Freq 寫的是 plays，TO Ratio 寫的是 possessions used，OPP TOV% 寫的是 their own possessions（對手自己的 possessions）。三種字樣，各自出現在不同的條目。第二處是 Formula 欄：四個條目裡，附 Formula 欄的是 TO Ratio；另外三個條目，在 Definition 與 Type 之間沒有這一欄。
+## TO Ratio 和 TOV% 的 Type 都是 Advanced，分母寫法卻不同
 
-另外要留意，詞彙表的措辭有兩種單位。TO Ratio 與 OPP TOV% 的定義句寫 per 100（每 100 個），TOV% 與 TO Freq 的定義句寫 percentage（百分比）。四個條目並不是全都寫 per 100。
+所以單看 Type，判斷不出分母。看到一個失誤數字，在詞彙表對三欄：
 
-## TO Ratio 的定義句寫 possessions used，Formula 欄的分母寫 POSS
+- Definition：分母寫 plays、possessions used，還是 their own possessions。
+- Formula：四個失誤條目裡只有 TO Ratio 有。
+- Type：Advanced、Play Type、Four Factors。
 
-TO Ratio 的定義句是：the number of turnovers a player or team averages per 100 possessions used，也就是球員或球隊每 100 個 possessions used 平均的失誤數。Formula 欄寫的是 `(TO * 100) / (POSS)`。
+本文的建議：分母寫法不同的兩個數字，先不要放在同一張表上比，也不要互相換算。理由只有用字不同，所以這是保守的做法，不是說它們一定不同。TOV% 和 TO Freq 雖然都寫 plays，詞彙表沒把兩者連起來（見〈TOV% 和 TO Freq〉一節），也先分開放。
 
-公式的分子是 TO 乘以 100，字面上與定義句的「每 100 個」相呼應；分母是 POSS。定義句寫的是 possessions used，公式寫的是 POSS，兩個詞在快照裡沒有被連起來。這一節的細節與讀 Assist Ratio 時遇到的情形相同（見[助攻條目那篇](/articles/assist-metrics-basics/)）：Assist Ratio 的定義句也寫 possessions used，Formula 欄寫的是 `(AST * 100) / (POSS)`。
-
-possessions used 在這份快照裡沒有獨立詞條。在快照的全文文字檔搜尋這個詞，只找到兩處，分別是 AST Ratio 與 TO Ratio 的定義句。詞彙表另有 Poss（Possessions）條目，它的定義首句寫的是 possessions played：the number of possessions played by a player or team，也就是球員或球隊 played 的 possessions 數。快照沒有任何一句話把 possessions used 與 possessions played 或 POSS 畫上等號，本文也不替它們畫等號。
-
-## TOV% 與 TO Freq 的定義句都寫 plays，措辭與 Type 欄不同
-
-TOV% 的定義句寫：percentage of plays that end in a player or team's turnover，也就是以某個球員或球隊的失誤作結的 plays 佔的百分比。TO Freq 的定義句寫：the percentage of plays where a player or team commits a turnover，也就是球員或球隊發生失誤的 plays 佔的百分比。
-
-兩句都以 plays 為分母字樣，措辭卻不一樣：TOV% 寫的是 plays that end in（以……結束的 plays），TO Freq 寫的是 plays where ... commits（……發生失誤的 plays）。Type 欄也不同：TOV% 是 Advanced，TO Freq 是 Play Type。
-
-詞彙表沒有寫這兩個條目相等，也沒有寫它們不同。本文只並排引用，不畫等號，也不寫成不等。
-
-TOV% 條目在 Definition 與 Type 之間沒有 Formula 欄。這份快照的 TOV% 條目沒有寫算式，如果讀到「TOV% 等於某某除以某某」的說法，那是讀者自己加上去的假設，不是這個條目寫的。TOV% 與 TO Freq 的分母 plays 具體怎麼數，例如犯規或罰球的回合算不算在內，這兩個條目的定義句與 Formula 欄都沒有這類說明。
-
-## OPP TOV% 的定義句寫的是對手自己的 possessions
-
-OPP TOV% 的名稱是 Opponent Turnover Percentage。定義句寫：the number of turnovers an opponent averages per 100 of their own possessions，也就是對手每 100 個自己的 possessions 平均的失誤數。Type 欄寫 Four Factors，Contexts 欄列 Four Factors 與 Team。
-
-這個條目有兩點可以直接對照原文：一是定義句以 an opponent 起頭，後面接 their own possessions，本文的讀法是 their own 指對手自己的 possessions；二是名稱雖然帶 Percentage，定義句的單位卻是 per 100，與 TOV% 的 percentage 寫法不同。這個條目沒有 Formula 欄。
-
-Offensive Rating、Defensive Rating 與 Net Rating 也是以每 100 個回合為單位的詞彙表條目，可以對照站內的[Offensive Rating 與 Pace 一文](/articles/offensive-rating-pace-basics/)。
-
-## 相鄰的 %TOV、TOV、Opp TOV、USG% 不屬於 TOV%、TO Ratio、TO Freq、OPP TOV%
-
-名字相近的條目還有幾個，它們不在本文的四個條目內：
-
-- %TOV（Percent of Team's Turnovers）：定義句是 the percentage of a team's turnovers that a player has while on the court，也就是球員在場上時，他的失誤佔球隊失誤的百分比，Type 是 Usage。
-- TOV（Turnovers）：定義是 a turnover occurs when the player or team on offense loses the ball to the defense，Type 是 Traditional。AST、REB、STL、BLK、TOV 一節也寫到這一欄，見站內[技術統計表的文章](/articles/read-box-score/)。
-- Opp TOV（Opponent Turnovers）：定義是 the number of times an opponent on offense loses the ball to the defense，Type 是 Opponent。
-- USG%（Usage Percentage）：定義句寫 team plays，Formula 欄是 `(FGA + Possession Ending FTA + TO) / POSS`，TO 是公式的一項。USG% 與 PIE 的公式，站內有逐項的說明：[USG% 與 PIE 一文](/articles/usage-rate-pie-basics/)。快照沒有說明 plays 與 POSS 的關係。
-
-%TOV、TOV、Opp TOV 的名稱與本文四個條目有重疊字樣，在快照裡各自有獨立的定義。%TOV 的定義句寫的是球隊的失誤（a team's turnovers），與 TOV% 的 plays 是不同的字樣。
-
-## 假設 TO 是 3、POSS 是 60，TO Ratio 的 Formula 會算出多少？
-
-下面是一組**假設**的數字，不是任何球員或球隊的資料。假設某個球員的 TO 是 3，POSS 是 60，代入 TO Ratio 的 Formula 欄：
-
-```
-(TO * 100) / (POSS)
-= (3 * 100) / 60
-= 300 / 60
-= 5.0
-```
-
-依照 TO Ratio 的定義句，這個假設的數字讀作「每 100 個 possessions used 平均 5.0 次失誤」。有一點要注意：Formula 用的是 POSS，定義句寫的是 possessions used，詞彙表沒有把兩者連起來，這道算術只是把假設的數字代進公式，並不表示代入的 60 就是 possessions used 的個數。
-
-再看另一個練習。假設頁面上有一欄叫 TO Freq，Type 欄寫 Play Type。依照上面的表，可以說：這個條目的定義句分母字樣是 plays，快照的條目沒有 Formula 欄。至於 TO Freq 的數字要怎麼從場上的紀錄算出來，詞彙表沒有寫，所以從快照無法替它列出算式。
-
-同樣的做法可以套在 TOV%：定義句寫 plays，沒有 Formula 欄，能寫的只有定義句本身。
-
-## 到詞彙表頁面自己核對條目，要看哪三個地方？
-
-想確認本文寫的是不是對的，可以自己到官方詞彙表頁面（nba.com/stats/help/glossary）找條目，每個條目看三處：
-
-1. Definition 欄：分母字樣是 plays、possessions used，還是 their own possessions。
-2. Formula 欄：TO Ratio 條目在 Definition 與 Type 之間有 Formula 欄；TOV%、TO Freq、OPP TOV% 在這個位置沒有。
-3. Type 欄：TO Ratio 與 TOV% 寫 Advanced，TO Freq 寫 Play Type，OPP TOV% 寫 Four Factors。
-
-詞彙表是活的網頁，條目可能被修訂。如果你今天打開的頁面與本文的表格不一致，以頁面上的當期內容為準；本文的寫法只對 2026 年 9 月 25 日的快照成立。
+下次看到失誤數字，先到 [nba.com/stats/help/glossary](https://www.nba.com/stats/help/glossary) 找出條目名，把這三欄抄下來，再決定要不要和別的數字放在一起。
 
 ## 常見問題
 
 ### TOV% 與 TO Freq 是同一個指標嗎？
 
-詞彙表沒有寫。NBA 官方統計詞彙表 2026 年 9 月 25 日快照裡，兩個條目的定義句都用 plays 當分母字樣，但措辭不同（plays that end in ... turnover 對 plays where ... commits a turnover），Type 欄也不同（Advanced 對 Play Type）。快照沒有寫兩者相等，也沒有寫兩者不同，本文只並排引用。
+詞彙表沒有寫相等，也沒有寫不同。兩個定義句都用 plays，措辭與 Type 不同，對照見上文〈TOV% 和 TO Freq〉一節。
 
 ### TO Ratio 的公式是什麼？
 
-NBA 官方統計詞彙表 2026 年 9 月 25 日快照裡，TO Ratio（Turnover Ratio）的 Formula 欄寫 `(TO * 100) / (POSS)`，Type 是 Advanced。同一份快照裡，TOV%、TO Freq、OPP TOV% 三個條目沒有 Formula 欄。
+Formula 欄寫 `(TO * 100) / (POSS)`。四個失誤條目裡只有它有 Formula 欄；算式的 POSS 與定義句的 possessions used 怎麼看，見上文。
 
 ### possessions used 在詞彙表裡有解釋嗎？
 
-沒有獨立詞條。NBA 官方統計詞彙表 2026 年 9 月 25 日快照的全文只有兩處出現 possessions used，分別在 AST Ratio 與 TO Ratio 的定義句內。詞彙表另有 Poss（Possessions）條目，首句寫 possessions played；快照沒有把 possessions used 與 POSS 或 possessions played 連起來。
+沒有獨立條目。依本文採用的快照，它只出現在 AST Ratio 與 TO Ratio 的定義句；Poss 條目首句寫的是 possessions played。三者之間沒有一句話連起來。
 
 ### OPP TOV% 記的是球隊自己的失誤，還是對手的失誤？
 
-依 NBA 官方統計詞彙表 2026 年 9 月 25 日快照，OPP TOV% 的定義句寫的是對手（an opponent）每 100 個 their own possessions 平均的失誤數，Type 是 Four Factors，Contexts 列 Four Factors 與 Team。這個條目沒有 Formula 欄。
+定義句的主詞是對手（an opponent），記的是對手平均的失誤數，分母寫 per 100 of their own possessions。本文的讀法是：their own 指對手自己的 possessions。
+
+## 範圍與版本
+
+引用的條目都來自本文採用的 NBA.com 詞彙表快照；2026 年 10 月 16 日對照現行頁面，這些條目的文字與快照相同。文中說沒有 Formula 欄、沒有獨立條目、沒有說明的地方，都以這份快照為限；詞彙表是網頁，之後可能改寫，條目也沒有標示適用賽季，核對請看現行頁面。標了「本文的讀法」「本文的建議」的句子是本文的判斷，不是詞彙表的話。
 
 ## 資料來源
 
-- NBA Stats Glossary（2026 年 9 月 25 日取得的快照，頁面無賽季標記）：TO Ratio、TOV%、TO Freq、OPP TOV%、Poss、TOV、Opp TOV、%TOV、USG%、AST Ratio 條目。[nba.com/stats/help/glossary](https://www.nba.com/stats/help/glossary)
+- Stat Glossary | Stats | NBA.com（NBA.com 統計詞彙表），本文採用的快照（2026 年 10 月 16 日對照現行頁面，引用條目的文字相同）；條目沒有標示適用賽季。條目範圍：TO Ratio、TOV%、TO Freq、OPP TOV%、Poss、TOV、Opp TOV、%TOV、AST Ratio、OffRtg、DEFRTG、NetRtg。連結：[nba.com/stats/help/glossary](https://www.nba.com/stats/help/glossary)
