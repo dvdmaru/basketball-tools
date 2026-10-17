@@ -311,6 +311,9 @@ COVERS = [
     ("contested-shots-basics", "NBA · Contested Shot",
      "最近的防守者<br>在 3.5 英呎內",
      "加 s 的欄位：出手前 close out 並舉手的次數"),
+    ("nba-cup-2026-format-guide", "NBA · 季中錦標賽",
+     "四強改到高種子主場<br>冠軍戰搬到 Hinkle",
+     "小組賽與晉級規則　·　和 2025 年相同"),
 ]
 
 HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
