@@ -28,7 +28,7 @@
 | NBA 賽程（近三日，台北時間） | ESPN scoreboard `?dates=YYYYMMDD`（美東分日，抓 D-2～D 再換算台北） | `fetch-nba-games.py`；休兵日可為空桶、不用筆數守門 |
 | NBA Cup 小組賽 | ESPN scoreboard `?dates=YYYYMM&limit=400`（notes 標「NBA Cup」；日期區間對未來日期回空） | `fetch-nba-cup.py`；分組為 editorial fact（`config/nba-cup-<year>.json`，附 NBA 官方來源）；名次依官方同分規則前三層自算、以官方公告為準 |
 | TPBL | api.tpbl.basketball（官網未文件化 API） | 例行賽戰績與總冠軍由賽果自算 |
-| PLG | pleagueofficial.com/standings（server-rendered HTML） | 戰績表直接 parse；總冠軍為 editorial fact（`config/season-facts.json`，附來源） |
+| PLG | pleagueofficial.com/standings（server-rendered HTML） | 戰績表直接 parse；總冠軍為 editorial fact（`config/season-facts.json`，附來源）。⚠️ 官網前的 Cloudflare 擋 GitHub runner（2026-10-26 實證）：Charlie 的 Mac 每天 11:30 跑 `scripts/plg-mac-fetch.sh`（launchd plist 在 `ops/launchd/`）把同一支抓取器的結果寫進 repo Actions 變數 `PLG_STANDINGS_OVERRIDE`，CI 自抓失敗時採用（限同季、兩天內；`source` 欄會寫明） |
 | HBL | hbl.com.tw `/api/*`（官網未文件化 API） | 總決賽名次、各階段與報名隊數由公開 API 的隊伍層資料推導；歷屆冠軍 `fetch-hbl.py --history`（回溯至 106 學年度） |
 
 所有未文件化介面：UA＋指數退避＋fail-soft（斷源沿用 repo 內快照，頁面 as-of 誠實標示）。

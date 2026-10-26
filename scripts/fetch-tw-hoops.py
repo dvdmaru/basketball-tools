@@ -26,6 +26,7 @@ carried_from（可有）：同季某源回空表時沿用前一份該聯盟資�
 """
 import datetime
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -302,8 +303,53 @@ def fetch_plg(season_label: str):
     }
 
 
+def _tpbl_season_label() -> str:
+    """只打 /api/seasons 取目前賽季標籤（--plg-only 用；與 fetch_tpbl 同一套規則）。"""
+    seasons = json.loads(curl("https://api.tpbl.basketball/api/seasons"))
+    season = sorted(seasons, key=lambda s: s.get("started_at", ""))[-1]
+    m = re.search(r"(\d{4})-(\d{4})", season.get("name", ""))
+    return f"{m.group(1)}-{m.group(2)[2:]}" if m else season.get("name", "")
+
+
+OVERRIDE_ENV = "PLG_STANDINGS_OVERRIDE"
+OVERRIDE_MAX_AGE_DAYS = 2
+
+
+def _plg_override(season_label: str, today: str) -> dict | None:
+    """PLG 官網擋 GitHub runner（Cloudflare，2026-10-26 實證）→ Charlie 的 Mac 每天 11:30 跑
+    `scripts/plg-mac-fetch.sh`（同一支 fetch_plg），結果放在 repo Actions 變數 PLG_STANDINGS_OVERRIDE，
+    workflow 以環境變數餵進來。只在 CI 自抓失敗或空表時採用，且必須同賽季、兩天內；否則當作沒有。"""
+    raw = os.environ.get(OVERRIDE_ENV, "").strip()
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+        league = data["league"]
+        asof = datetime.date.fromisoformat(str(data.get("asof_taipei_date", ""))[:10])
+    except (ValueError, KeyError, TypeError) as e:
+        print(f"  ⚠️ {OVERRIDE_ENV} 解析失敗，忽略：{e}", file=sys.stderr)
+        return None
+    age = (datetime.date.fromisoformat(today) - asof).days
+    if season_label and data.get("season") != season_label:
+        print(f"  ⚠️ {OVERRIDE_ENV} 賽季 {data.get('season')!r} ≠ {season_label!r}，忽略", file=sys.stderr)
+        return None
+    if age > OVERRIDE_MAX_AGE_DAYS or age < 0:
+        print(f"  ⚠️ {OVERRIDE_ENV} 已 {age} 天（上限 {OVERRIDE_MAX_AGE_DAYS}），忽略", file=sys.stderr)
+        return None
+    league = dict(league)
+    league["source"] = (league.get("source", "整理自 P. LEAGUE+ 官網戰績頁")
+                        + f"；CI 直抓被擋，本次資料由 Mac 於 {asof.isoformat()} 抓取提供")
+    return league
+
+
 def main():
     today = datetime.datetime.now(zoneinfo.ZoneInfo("Asia/Taipei")).date().isoformat()
+    if "--plg-only" in sys.argv:
+        # Mac 端用：只抓 PLG，印成 override 的 JSON（不寫 leagues/）。
+        label = _tpbl_season_label()
+        league = fetch_plg(label)
+        print(json.dumps({"asof_taipei_date": today, "season": label, "league": league}, ensure_ascii=False))
+        return
     errors = []
     try:
         season_label, tpbl, season_over = fetch_tpbl(today)
@@ -316,6 +362,12 @@ def main():
     except Exception as e:
         errors.append(f"PLG：{e}")
         plg = None
+    if plg is None or not plg.get("standings"):
+        override = _plg_override(season_label, today)
+        if override is not None:
+            plg = override
+            errors = [e for e in errors if not e.startswith("PLG")]
+            print(f"📋 來源狀態｜PLG｜改用 Mac 抓取的 override｜{override['source']}")
     if not season_label:
         latest = snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))
         if latest:

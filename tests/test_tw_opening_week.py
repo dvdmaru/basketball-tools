@@ -297,5 +297,81 @@ class PlgHttpErrorTests(unittest.TestCase):
         self.assertNotIn("尚未刊出", out["leagues"]["plg"]["source"])
 
 
+class PlgMacOverrideTests(unittest.TestCase):
+    """PLG 官網擋 GitHub runner → Mac 每天抓一次放進 Actions 變數；CI 自抓失敗才用，限同季兩天內。"""
+    PLG = {"name_zh": "P. LEAGUE+", "champion_zh": None, "finals_note": "",
+           "standings": [ROW] * 4, "source": "整理自 P. LEAGUE+ 官網戰績頁；總冠軍出處見 config/season-facts.json"}
+
+    def _override(self, asof, season="2026-27"):
+        return json.dumps({"asof_taipei_date": asof, "season": season, "league": self.PLG}, ensure_ascii=False)
+
+    def _run_main(self, env_value):
+        with tempfile.TemporaryDirectory() as d:
+            out_dir = pathlib.Path(d)
+            prev = {"asof_taipei_date": "2026-07-19", "season": "2025-26", "final": True,
+                    "leagues": {"tpbl": {"name_zh": "TPBL", "standings": [ROW] * 7, "source": "old"},
+                                "plg": {"name_zh": "PLG", "standings": [ROW] * 4, "source": "old"}}}
+            (out_dir / "tw-hoops-2026-07-19.json").write_text(json.dumps(prev), encoding="utf-8")
+            good_tpbl = ("2026-27", {"name_zh": "TPBL", "standings": [ROW] * 7, "regular_season_games": 3,
+                                       "recent_results": [], "upcoming": [], "source": "fixture"}, False)
+            old_out = tw.OUT_DIR
+            tw.OUT_DIR = out_dir
+            env = {tw.OVERRIDE_ENV: env_value} if env_value is not None else {}
+            try:
+                with mock.patch.object(tw, "fetch_tpbl", return_value=good_tpbl), \
+                     mock.patch.object(tw, "fetch_plg", side_effect=RuntimeError("fetch failed: …403")), \
+                     mock.patch.dict(tw.os.environ, env, clear=False), \
+                     mock.patch.object(tw.datetime, "datetime", wraps=tw.datetime.datetime) as dt:
+                    dt.now.return_value = tw.datetime.datetime(2026, 10, 27, 12, tzinfo=tw.zoneinfo.ZoneInfo("Asia/Taipei"))
+                    if env_value is None:
+                        tw.os.environ.pop(tw.OVERRIDE_ENV, None)
+                    with mock.patch.object(sys, "argv", ["fetch-tw-hoops.py"]):
+                        tw.main()
+                return json.loads(sorted(out_dir.glob("tw-hoops-*.json"))[-1].read_text(encoding="utf-8"))
+            finally:
+                tw.OUT_DIR = old_out
+
+    def test_fresh_same_season_override_is_used_when_ci_fetch_fails(self):
+        out = self._run_main(self._override("2026-10-27"))
+        self.assertEqual(len(out["leagues"]["plg"]["standings"]), 4)
+        self.assertIn("由 Mac 於 2026-10-27 抓取提供", out["leagues"]["plg"]["source"])
+        self.assertNotIn("carried_from", out["leagues"]["plg"])
+
+    def test_yesterdays_override_still_counts(self):
+        out = self._run_main(self._override("2026-10-26"))
+        self.assertEqual(len(out["leagues"]["plg"]["standings"]), 4)
+
+    def test_stale_or_wrong_season_override_is_ignored(self):
+        for value in (self._override("2026-10-24"), self._override("2026-10-27", season="2025-26"), "not json", None):
+            with self.subTest(value=value):
+                out = self._run_main(value)
+                self.assertEqual(out["leagues"]["plg"]["standings"], [])
+                self.assertIn("抓取失敗", out["leagues"]["plg"]["source"])
+
+    def test_plg_only_prints_override_json_and_writes_nothing(self):
+        html = "<table>" + "".join(
+            f"<tr><td>{i}</td><td>{t}</td><td>2</td><td>{2 - i % 2}</td><td>{i % 2}</td></tr>"
+            for i, t in enumerate(("領航猿", "勇士", "獵鷹", "洋基工程"), 1)) + "</table>"
+
+        def fake_curl(url, *a, **k):
+            if url.endswith("/seasons"):
+                return json.dumps([{"id": 3, "name": "2026-2027 賽季", "started_at": "2026-10-17"}])
+            return html
+        import io
+        buf = io.StringIO()
+        with tempfile.TemporaryDirectory() as d, \
+             mock.patch.object(tw, "OUT_DIR", pathlib.Path(d)), \
+             mock.patch.object(tw, "curl", side_effect=fake_curl), \
+             mock.patch.object(sys, "argv", ["fetch-tw-hoops.py", "--plg-only"]), \
+             mock.patch("sys.stdout", buf):
+            tw.main()
+            self.assertEqual(list(pathlib.Path(d).glob("*.json")), [])
+        data = json.loads(buf.getvalue())
+        self.assertEqual(data["season"], "2026-27")
+        self.assertEqual(len(data["league"]["standings"]), 4)
+        self.assertIn("桃園璞園領航猿", {r["team_name"] for r in data["league"]["standings"]})  # 簡稱已對齊全名
+        self.assertRegex(data["asof_taipei_date"], r"^\d{4}-\d{2}-\d{2}$")
+
+
 if __name__ == "__main__":
     unittest.main()
