@@ -2054,6 +2054,8 @@ tr.pi .seed{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(
 .legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
 .legend i.po{background:var(--accent)}.legend i.pi{background:var(--gold)}
 .tbl-cap{font-size:12px;color:var(--fg-dim);margin-top:14px;letter-spacing:.3px}
+.tbl-cap.preseason{margin:0 0 10px}
+.tbl-cap.carried{color:var(--accent);margin:0 0 10px}
 .scroll-hint{display:none}
 /* mini four-teams (HBL) */
 .four-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -2586,6 +2588,20 @@ def _hbl_four_html(div):
     return (f'<div class="four"><h4>{html_lib.escape(div.get("label", ""))} · 四強</h4>{rows}</div>')
 
 
+def _dash_tab_band(league: str, snap_season: str, final: bool, lg: dict = None) -> str:
+    """首頁戰績分頁的誠實說明列，與 /tw/、/standings/ 的 band 同源（2026-10-26 補）：
+    ①快照仍是上季終局、season-openers 登記了新一季（開季前／已開打）→ bb_preseason_notice 的文字，
+      否則首頁會把上季終局表安靜地當成本季名次（CI 抓取失敗或守門拒寫時就是這個狀態）；
+    ②該聯盟本次沿用前一份快照（fetch 標 carried_from）→ 註明沿用日期。
+    兩者皆無回空字串。"""
+    pre = bb_preseason_notice(league, snap_season, final)
+    band = f'<p class="tbl-cap preseason">{html_lib.escape(pre["text"])}</p>' if pre else ""
+    if lg and lg.get("carried_from"):
+        band += (f'<p class="tbl-cap carried">本季戰績沿用 {html_lib.escape(str(lg["carried_from"]))} 的快照'
+                 '（本次未自官網取得新資料）。</p>')
+    return band
+
+
 def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
     """v2 首頁 dashboard（Claude Design mock 2026-07-19 落地，保留 controller 套皮）：
     hero＋status segs → 冠軍卡列（休賽季門面／開季後收合）→ 戰績速覽 CSS-only tabs
@@ -2656,7 +2672,8 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
         west = sorted([r for r in nba["standings"] if r["conference"] == "Western"], key=lambda r: r["rank"])
         km = ("rank", "name_zh", "wins", "losses", "pct", "games_back")
         nba_panel = (
-            '<div class="conf-grid">'
+            _dash_tab_band("nba", nba.get("season", ""), offseason)
+            + '<div class="conf-grid">'
             f'<div class="conf"><h3>東區 Eastern</h3>{_SCROLL_HINT}{_std_table_v2(east, km, po_max=6, pi_max=10)}</div>'
             f'<div class="conf"><h3>西區 Western</h3>{_SCROLL_HINT}{_std_table_v2(west, km, po_max=6, pi_max=10)}</div>'
             '</div>'
@@ -2671,13 +2688,16 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                          '<a href="/nba-cup/">NBA Cup 小組賽戰績 →</a></div>' + nba_panel)
         tabs.append(("nba", "NBA 東西區", nba_panel))
     km_tw = ("rank", "team_name", "win", "lose", "pct", "games_behind")
+    # 分頁頂端先放誠實說明列（上季終局＋已開打／沿用舊快照），再放表——與 /tw/ 的 league_panel 同序。
     if tpbl and tpbl.get("standings"):
         tabs.append(("tpbl", "TPBL",
+                     f'{_dash_tab_band("tpbl", tw.get("season", ""), st["tw_final"], tpbl)}'
                      f'{_SCROLL_HINT}{_std_table_v2(tpbl["standings"], km_tw)}'
                      f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 TPBL 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
     if plg and plg.get("standings"):
         tabs.append(("plg", "PLG",
+                     f'{_dash_tab_band("plg", tw.get("season", ""), st["tw_final"], plg)}'
                      f'{_SCROLL_HINT}{_std_table_v2(plg["standings"], km_tw)}'
                      f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 PLG 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
