@@ -45,11 +45,17 @@ TW_ROW_REQUIRED = {"rank", "team_name", "win", "lose", "pct", "games_behind"}
 TW_ROW_OPTIONAL = set()
 
 HBL_TOP_REQUIRED = {"asof_taipei_date", "season_label", "final", "divisions"}
-HBL_TOP_OPTIONAL = {"stages", "results", "next_season"}
+HBL_TOP_OPTIONAL = {"stages", "results", "next_season", "schedule", "previous_season"}
 HBL_DIV_REQUIRED = {"label", "final_four", "source"}
 HBL_DIV_OPTIONAL = {"champion", "final_note"}
 HBL_ROW_REQUIRED = {"rank", "school"}
 HBL_ROW_OPTIONAL = {"note"}
+# 進行中學年度的逐階段對戰表（schedule.boys[]／girls[]）：每階段 {name, status, games[]}，
+# 每場只到日期、時間、場館、兩校簡稱、比分——同樣是白名單，球員層欄位一律擋。
+HBL_STAGE_REQUIRED = {"name", "status", "games"}
+HBL_GAME_REQUIRED = {"date", "time", "venue", "home", "away", "home_score", "away_score", "status"}
+HBL_PREV_REQUIRED = {"season_label", "divisions"}
+HBL_PREV_DIV_REQUIRED = {"label", "champion", "final_note"}
 # HBL＝未成年學生，最細只到學校層。這裡不是列舉禁詞，而是「白名單以外一律擋」，
 # 所以任何球員層欄位（姓名、得分、身高…）都會被上面的未登記欄位檢查攔下。詳 MODEL.md §2-1。
 
@@ -120,6 +126,23 @@ def audit_hbl(name, d):
         for i, row in enumerate(node.get("final_four", [])):
             p += check_keys(row, HBL_ROW_REQUIRED, HBL_ROW_OPTIONAL,
                             f"{name} divisions.{div}.final_four[{i}]（⛔ 學校層以下不得出現欄位）")
+    for div, stages in (d.get("schedule") or {}).items():
+        for i, stage in enumerate(stages):
+            p += check_keys(stage, HBL_STAGE_REQUIRED, set(), f"{name} schedule.{div}[{i}]")
+            for j, game in enumerate(stage.get("games", [])):
+                p += check_keys(game, HBL_GAME_REQUIRED, set(),
+                                f"{name} schedule.{div}[{i}].games[{j}]（⛔ 學校層以下不得出現欄位）")
+    prev = d.get("previous_season")
+    if prev is not None:
+        p += check_keys(prev, HBL_PREV_REQUIRED, set(), f"{name} previous_season")
+        for div, node in (prev.get("divisions") or {}).items():
+            p += check_keys(node, HBL_PREV_DIV_REQUIRED, set(), f"{name} previous_season.divisions.{div}")
+    for div, node in (d.get("divisions") or {}).items():
+        if not d.get("final") and (node.get("champion") or node.get("final_four")):
+            p.append(f"{name} divisions.{div}：final=false 卻帶 champion／final_four——"
+                     f"賽季進行中不得推名次或冠軍（MODEL.md §2-3；兩組總決賽都 COMPLETED 才算終局）")
+        if d.get("final") and not node.get("champion"):
+            p.append(f"{name} divisions.{div}：final=true 卻沒有 champion——終局快照兩組都必須有冠軍")
     return p
 
 

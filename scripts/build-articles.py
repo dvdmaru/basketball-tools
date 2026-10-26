@@ -2620,13 +2620,36 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                      f'{_SCROLL_HINT}{_std_table_v2(plg["standings"], km_tw)}'
                      f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 PLG 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
-    if hbl and hbl.get("divisions"):
+    if hbl and hbl.get("divisions") and hbl.get("final"):
         dvs = hbl["divisions"]
         four = "".join(_hbl_four_html(dvs[k]) for k in ("boys", "girls") if dvs.get(k))
         tabs.append(("hbl", "HBL 甲級",
                      f'<div class="four-grid">{four}</div>'
                      f'<div class="tbl-cap">{hbl.get("season_label", "")}總決賽最終名次 · '
                      f'整理自 HBL 官網公開賽果。<a href="/hbl/">看歷屆冠軍 →</a></div>'))
+    elif hbl and hbl.get("divisions"):
+        # 學年度進行中（尚無總決賽）：不推名次、不推冠軍，只列目前階段與完成場數，連到逐場對戰表。
+        items = ""
+        for k in ("boys", "girls"):
+            group = (hbl.get("stages") or {}).get(k) or {}
+            divs = group.get("divisions") or []
+            if not divs:
+                continue
+            cur = next((s for s in divs if s.get("status") == "IN_PROGRESS"), divs[-1])
+            span = cur.get("first_date", "")
+            if cur.get("last_date") and cur.get("last_date") != span:
+                span += f"～{cur['last_date']}"
+            items += (f'<div class="row"><span class="pl">{html_lib.escape(group.get("label", ""))}</span>'
+                      f'<span class="nm">{html_lib.escape(cur.get("name", ""))}</span>'
+                      f'<span class="note">{html_lib.escape(span)} · 已完成 {cur.get("completed", 0)}／{cur.get("games", 0)} 場</span></div>')
+        prev = hbl.get("previous_season") or {}
+        prev_txt = "、".join(f'{d.get("label", "")} {d.get("champion", "")}'
+                            for d in (prev.get("divisions") or {}).values() if d.get("champion"))
+        tabs.append(("hbl", "HBL 甲級",
+                     f'<div class="four-grid"><div class="four"><h4>{html_lib.escape(hbl.get("season_label", ""))} · 進行中</h4>{items}</div></div>'
+                     f'<div class="tbl-cap">本季尚未產生四強與冠軍'
+                     + (f'；上季（{html_lib.escape(prev.get("season_label", ""))}）冠軍：{html_lib.escape(prev_txt)}' if prev_txt else "")
+                     + f' · 整理自 HBL 官網公開賽程與賽果。<a href="/hbl/">看逐場對戰表 →</a></div>'))
     stand_sec = ""
     if tabs:
         inputs = "".join(f'<input type="radio" name="lg" id="t-{tid}"{" checked" if i == 0 else ""}>'
