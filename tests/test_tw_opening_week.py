@@ -241,5 +241,61 @@ class TwPageGamesTests(unittest.TestCase):
         self.assertNotIn("4 隊", html.split("<main")[1].split("常見")[0])
 
 
+class PlgHttpErrorTests(unittest.TestCase):
+    """2026-10-26 首次上線實況：GitHub runner 抓 PLG 官網拿到 403 HTML，舊 curl 不帶 --fail → exit 0、
+    頁面沒有戰績列 → fetch_plg 誤判「尚未刊出本季戰績」；本機同一支程式拿到 4 列。
+    修法＝PLG 走 --fail，4xx／5xx 變成例外、進「本次抓取失敗」路徑，不再冒充「尚未開打」。"""
+
+    def test_plg_403_raises_instead_of_not_published(self):
+        calls = []
+
+        def fake_run(cmd, capture_output, text):
+            calls.append(cmd)
+            import subprocess as sp
+            return sp.CompletedProcess(cmd, 22, stdout="", stderr="curl: (22) The requested URL returned error: 403")
+        with mock.patch.object(tw.subprocess, "run", side_effect=fake_run), \
+             mock.patch.object(tw.time, "sleep"):
+            with self.assertRaises(RuntimeError) as cm:
+                tw.fetch_plg("2026-27")
+        self.assertIn("403", str(cm.exception))
+        self.assertTrue(all("--fail" in c for c in calls))
+        self.assertEqual(len(calls), 2)  # PLG 只重試一次，別在 403 上退避半分鐘
+
+    def test_tpbl_curl_keeps_old_behaviour_without_fail_flag(self):
+        calls = []
+
+        def fake_run(cmd, capture_output, text):
+            calls.append(cmd)
+            import subprocess as sp
+            return sp.CompletedProcess(cmd, 0, stdout="[]", stderr="")
+        with mock.patch.object(tw.subprocess, "run", side_effect=fake_run):
+            self.assertEqual(tw.curl("https://example.test/x"), "[]")
+        self.assertNotIn("--fail", calls[0])
+
+    def test_failed_plg_becomes_fetch_failure_stub_not_not_started(self):
+        """走 main()：PLG 例外、TPBL 正常、前一份是上季終局 → PLG 空表且 source 標「抓取失敗」。"""
+        with tempfile.TemporaryDirectory() as d:
+            out_dir = pathlib.Path(d)
+            prev = {"asof_taipei_date": "2026-07-19", "season": "2025-26", "final": True,
+                    "leagues": {"tpbl": {"name_zh": "TPBL", "standings": [ROW] * 7, "source": "old"},
+                                "plg": {"name_zh": "PLG", "champion_zh": "舊冠軍", "standings": [ROW] * 4, "source": "old"}}}
+            (out_dir / "tw-hoops-2026-07-19.json").write_text(json.dumps(prev), encoding="utf-8")
+            good_tpbl = ("2026-27", {"name_zh": "TPBL", "standings": [ROW] * 7, "regular_season_games": 3,
+                                       "recent_results": [], "upcoming": [], "source": "fixture"}, False)
+            old_out = tw.OUT_DIR
+            tw.OUT_DIR = out_dir
+            try:
+                with mock.patch.object(tw, "fetch_tpbl", return_value=good_tpbl), \
+                     mock.patch.object(tw, "fetch_plg", side_effect=RuntimeError("fetch failed: …（curl: (22) … 403）")), \
+                     mock.patch.object(sys, "argv", ["fetch-tw-hoops.py"]):
+                    tw.main()
+                out = json.loads(sorted(out_dir.glob("tw-hoops-*.json"))[-1].read_text(encoding="utf-8"))
+            finally:
+                tw.OUT_DIR = old_out
+        self.assertEqual(out["leagues"]["plg"]["standings"], [])
+        self.assertIn("抓取失敗", out["leagues"]["plg"]["source"])
+        self.assertNotIn("尚未刊出", out["leagues"]["plg"]["source"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -43,18 +43,25 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) basketball-tools/1.0"
 PLG_FULL = {"領航猿": "桃園璞園領航猿", "勇士": "臺北富邦勇士", "獵鷹": "台鋼獵鷹"}
 
 
-def curl(url: str, tries: int = 4) -> str:
+def curl(url: str, tries: int = 4, fail_on_http_error: bool = False) -> str:
+    """fail_on_http_error：加 curl --fail，HTTP 4xx／5xx 視為失敗而不是回傳錯誤頁的 HTML。
+    ⚠️ 2026-10-26 實例：PLG 官網對 GitHub runner（datacenter IP）回 403 HTML，不帶 --fail 時
+    exit 0、頁面沒有戰績列，被 fetch_plg 讀成「尚未刊出本季戰績」——是抓取失敗，不是聯盟沒開打。"""
     delay = 4
+    last_err = ""
     for i in range(tries):
-        r = subprocess.run(["curl", "-sS", "--max-time", "25", "-H", f"User-Agent: {UA}", url],
-                           capture_output=True, text=True)
+        cmd = ["curl", "-sS", "--max-time", "25", "-H", f"User-Agent: {UA}"]
+        if fail_on_http_error:
+            cmd.append("--fail")
+        r = subprocess.run(cmd + [url], capture_output=True, text=True)
         if r.returncode == 0 and r.stdout.strip():
             return r.stdout
+        last_err = (r.stderr or "").strip().splitlines()[-1] if (r.stderr or "").strip() else f"exit {r.returncode}"
         if i < tries - 1:
-            print(f"  retry {i + 1}/{tries - 1} in {delay}s: {url}", file=sys.stderr)
+            print(f"  retry {i + 1}/{tries - 1} in {delay}s: {url}（{last_err}）", file=sys.stderr)
             time.sleep(delay)
             delay = min(delay * 2, 30)
-    raise RuntimeError(f"fetch failed: {url}")
+    raise RuntimeError(f"fetch failed: {url}（{last_err}）")
 
 
 def _pct(w: int, l: int) -> str:
@@ -248,7 +255,8 @@ def _guard_season_facts(facts: dict, season_label: str) -> dict:
 
 def fetch_plg(season_label: str):
     # `/standings` 會停在上一季；指定賽季才能避免把歷史表貼成新賽季戰績。
-    html = curl(f"https://pleagueofficial.com/standings/{season_label}")
+    # --fail：403／5xx 要變成例外走「抓取失敗」路徑，不能把錯誤頁當成「尚未刊出」（見 curl 註解）
+    html = curl(f"https://pleagueofficial.com/standings/{season_label}", tries=2, fail_on_http_error=True)
     # 第一張表：排行/球隊/GP/W/L/PCT/勝差/…（server-rendered）
     rows_raw = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S)
     rec_rows = []
