@@ -2253,11 +2253,11 @@ def bb_home_faq(nba=None, tw=None, hbl=None):
     st = bb_season_state(nba, tw, hbl)
     if st["offseason"]:
         cadence = (f"目前為休賽季模式：頁面顯示 {st['season_seg']}{st['hbl_seg']}的終局數據，"
-                   "並標註資料截至日期。各聯盟新賽季開打後，NBA 戰績改為每日自動更新、"
-                   "台灣職籃與 HBL 為每週更新；每篇文章的數字也都標註來源與截止日期。")
+                   "並標註資料截至日期。各聯盟新賽季開打後，NBA、台灣職籃與 HBL 的戰績都改為每日自動更新"
+                   "（以各聯盟官網公開賽果入庫為準）；每篇文章的數字也都標註來源與截止日期。")
     else:
-        cadence = (f"目前 {st['season_seg']}正在進行中：NBA 戰績每日自動更新、台灣職籃與 HBL 為每週更新，"
-                   "頁面均標註資料截至日期；每篇文章的數字也都標註來源與截止日期。")
+        cadence = (f"目前 {st['season_seg']}正在進行中：NBA、台灣職籃與 HBL 的戰績每日自動更新"
+                   "（以各聯盟官網公開賽果入庫為準），頁面均標註資料截至日期；每篇文章的數字也都標註來源與截止日期。")
     return [
         ("籃球數據誌涵蓋哪些聯盟？",
          "美國職籃 NBA（30 隊）、台灣職籃兩聯盟——TPBL（台灣職業籃球大聯盟，7 隊）與 P. LEAGUE+（4 隊），以及 HBL 高中籃球甲級聯賽（男甲、女甲）。首頁提供各聯盟戰績速覽，數據頁可深入查詢。"),
@@ -2844,8 +2844,8 @@ def render_bb_llms_txt(articles: list, site: dict) -> str:
     if st["offseason"]:
         season_state_line = (f"；休賽季顯示 {st['season_seg']}{st['hbl_seg']}終局數據，開季後恢復自動更新。")
     else:
-        season_state_line = (f"；{st['season_seg']}進行中，NBA 戰績每日自動更新、"
-                             "台灣職籃與 HBL 每週更新。")
+        season_state_line = (f"；{st['season_seg']}進行中，NBA、台灣職籃與 HBL 戰績每日自動更新"
+                             "（以各聯盟官網公開賽果入庫為準）。")
     standings_season_seg = f"（{st['season_tag']} 賽季）" if st["season_tag"] else ""
     return f"""# 籃球數據誌（basketball.twtools.cc）— NBA・台灣職籃・HBL 戰績與數據
 
