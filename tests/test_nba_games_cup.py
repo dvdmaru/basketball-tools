@@ -247,9 +247,9 @@ class PagesTests(unittest.TestCase):
                     "hbl-[0-9]*.json": hbl, "nba-games-*.json": self.games}.get(pattern)
         with mock.patch.object(ba, "_dash_latest", fake):
             html = ba.render_sport_index([], ba.SITES["basketball"], "籃球")
-        self.assertIn("今日／昨日賽程", html)
-        self.assertNotIn("2026-10-27<span", html)   # 首頁 compact 只列前兩桶（fixture 第三桶是 10-27）
-        self.assertIn("2026-10-26<span", html)
+        self.assertIn("近兩日賽程與賽果", html)
+        self.assertNotIn("2026-10-27（", html)   # 首頁 compact 只列前兩桶（fixture 第三桶是 10-27）
+        self.assertIn("2026-10-26（一）<span", html)
         self.assertIn('href="/nba-cup/"', html)
 
     def test_nav_has_nba_cup_entry(self):

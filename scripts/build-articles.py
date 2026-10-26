@@ -2519,27 +2519,27 @@ def bb_faq_details_html(pairs) -> str:
 _SCROLL_HINT = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
 
 
+_WEEKDAY_SHORT = ["一", "二", "三", "四", "五", "六", "日"]
+
+
 def bb_nba_games_html(snap, days=("yesterday", "today", "tomorrow"), compact=False) -> str:
     """NBA 近三日賽程／賽果（台北時間）→ 三張小表。snap＝leagues/nba-games-<date>.json；None 或空回空字串。
-    compact（首頁）只列今天與昨天。比分只在 FINAL 顯示；Cup 小組賽場次標「Cup」。"""
+    compact（首頁）只列前兩桶（快照日的前一天與當天）。比分只在 FINAL 顯示；Cup 小組賽場次標「Cup」。
+    ⚠️ 桶標題只放絕對日期＋星期，不寫「今天／昨天」：頁面一天只 build 一次（台北 12:00），
+    相對標籤在 build 當下是對的，過了午夜到下一次 build 之間（正好是 NBA 台北早上開打的時段）就全錯。
+    2026-10-27 Charlie 00:10 看到首頁寫「今天 2026-10-26」提出；改絕對日期後沒有會過期的字。"""
     if not snap or not snap.get("days"):
         return ""
-    # 相對標籤（昨天／今天／明天）以「今天」對快照日期算，快照過期時（fetch 連續失敗）只剩日期、不再說「今天」
-    try:
-        import zoneinfo as _zi
-        today = datetime.datetime.now(_zi.ZoneInfo("Asia/Taipei")).date()
-    except Exception:  # pragma: no cover
-        today = datetime.date.today()
-    rel = {-1: "昨天", 0: "今天", 1: "明天"}
     out = ""
     for i, day in enumerate(snap["days"][:3]):
         if compact and i == 2:
             continue
         games = day.get("games") or []
         try:
-            label = rel.get((datetime.date.fromisoformat(day.get("date", "")) - today).days, "")
+            _d = datetime.date.fromisoformat(day.get("date", ""))
+            label = f"{_d.isoformat()}（{_WEEKDAY_SHORT[_d.weekday()]}）"
         except ValueError:
-            label = ""
+            label = html_lib.escape(day.get("date", ""))
         rows = ""
         for g in games:
             if g.get("status") == "FINAL" and g.get("home_score") is not None:
@@ -2557,11 +2557,11 @@ def bb_nba_games_html(snap, days=("yesterday", "today", "tomorrow"), compact=Fal
                      f'<td>{mid}</td></tr>')
         body = (f'<table class="std-table games"><tbody>{rows}</tbody></table>' if rows
                 else '<div class="tbl-cap">沒有比賽</div>')
-        out += (f'<div class="games-day"><h4>{label} {html_lib.escape(day.get("date", ""))}'
+        out += (f'<div class="games-day"><h4>{label}'
                 f'<span class="n">{len(games)} 場</span></h4>{body}</div>')
     asof = f'{snap.get("asof_taipei_date", "")} {snap.get("asof_taipei_time", "")}'.strip()
-    cap = (f'<div class="tbl-cap">台北時間 · 快照 {html_lib.escape(asof)} · 每日更新一次，不是即時比分；'
-           '整理自 ESPN 公開資料。</div>')
+    cap = (f'<div class="tbl-cap">台北時間 · 快照 {html_lib.escape(asof)} · 每日約 12:00 更新一次，不是即時比分，'
+           '快照後才打完的比賽要等下一次更新；整理自 ESPN 公開資料。</div>')
     return f'<div class="games-grid">{out}</div>{cap}'
 
 
@@ -2683,7 +2683,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
             f'整理自 ESPN 公開資料。<a href="/standings/">看完整東西區排名 →</a></div>')
         games_html = bb_nba_games_html(_dash_latest("nba-games-*.json"), compact=True)
         if games_html:
-            nba_panel = (f'<h3>今日／昨日賽程（台北時間）</h3>{games_html}'
+            nba_panel = (f'<h3>近兩日賽程與賽果（台北時間）</h3>{games_html}'
                          '<div class="tbl-cap"><a href="/standings/#games">看近三日賽程 →</a> · '
                          '<a href="/nba-cup/">NBA Cup 小組賽戰績 →</a></div>' + nba_panel)
         tabs.append(("nba", "NBA 東西區", nba_panel))
