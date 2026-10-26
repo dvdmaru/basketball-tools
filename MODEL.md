@@ -26,8 +26,9 @@
 |---|---|---|---|
 | `nba-standings-<season>.json` | `season`／`asof`／`final`／`source`／`standings[]` | `champion_en`／`champion_zh`／`finals_note`（賽季未結束時不存在） | — |
 | └ `standings[]` 每一列 | `conference`／`seed`／`name`／`name_zh`／`abbr`／`wins`／`losses`／`pct`／`games_back`／`rank` | — | **`division`** |
-| `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`（僅 tpbl 有） | — |
+| `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`／`recent_results[]`／`upcoming[]`（後三者僅 tpbl 有）／`carried_from`（同季某源回空表時沿用前一份該聯盟資料，記那份的日期；源正常時不存在） | — |
 | └ `standings[]` 每一列 | `rank`／`team_name`／`win`／`lose`／`pct`／`games_behind` | — | — |
+| └ `recent_results[]`／`upcoming[]` 每一列 | `date`／`time`／`home`／`away`／`home_score`／`away_score`／`venue`／`status`（未完賽比分為 null） | — | **球員層欄位** |
 | `hbl-<season>-<date>.json` | `asof_taipei_date`／`season_label`／`final`／`divisions.boys`／`divisions.girls` | 各組 `champion`／`final_note`；`stages`（官方各階段隊伍層摘要）／`results`（準決賽、總決賽隊伍層賽果與晉級名單）／`next_season`（新學年度尚無 division 時的官方報名隊數） | **任何球員層欄位**（見 §2-1） |
 | └ `final_four[]` 每一列 | `rank`／`school`／`note` | — | **球員姓名／個人數據** |
 

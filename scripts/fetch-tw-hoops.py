@@ -13,10 +13,16 @@
 
 輸出：leagues/tw-hoops-<台北日期>.json
   { asof_taipei_date, season, final,
-    leagues: { tpbl: {name_zh, champion_zh, finals_note, standings:[...]},
+    leagues: { tpbl: {name_zh, champion_zh, finals_note, standings:[...],
+                      recent_results:[...], upcoming:[...]},
                plg:  {...} } }
 standings row keys 對齊 build-articles._dash_simple_standings：
   {rank, team_name, win, lose, pct, games_behind}
+  ⭐ 例行賽開打後，standings 列＝例行賽「排定場次」的全部隊伍（未打者 0-0），不是只有打過球的隊
+  （2026-10-26：開季 10 天只有 5 隊有紀錄＋PLG 空表，合計 5 列對上季 11 列跌破 50% 被守門拒寫）。
+recent_results／upcoming（僅 tpbl；隊伍層）每一列：
+  {date, time, home, away, home_score, away_score, venue, status}
+carried_from（可有）：同季某源回空表時沿用前一份該聯盟資料，記那份的台北日期。
 """
 import datetime
 import json
@@ -95,7 +101,7 @@ def _tpbl_finals(by_div: dict, reg_div) -> tuple:
     return champ, f"總冠軍賽 {fw[champ]}:{fw.get(loser, 0)} 勝{loser}"
 
 
-def fetch_tpbl():
+def fetch_tpbl(today=None):
     seasons = json.loads(curl("https://api.tpbl.basketball/api/seasons"))
     season = sorted(seasons, key=lambda s: s.get("started_at", ""))[-1]
     name = season.get("name", "")  # e.g. "2025-2026 賽季"
@@ -136,7 +142,15 @@ def fetch_tpbl():
             "standings": [],
             "source": "整理自 TPBL 官網公開資料（api.tpbl.basketball，非官方文件化介面）；例行賽尚無已完成賽事",
         }, False
+    # 先用例行賽「排定場次」的隊伍集合鋪 0-0 列，再疊已完成賽果：開季第一天就是全聯盟的表，
+    # 不會只列「打過球的隊」。2026-10-26 實況：開季 10 天只有 4 場完賽、5 隊有紀錄，
+    # 加上 PLG 回 0 列，合計 5 列對上季終局 11 列跌破 50%，守門天天拒寫，頁面停在上季。
     rec = {}
+    for g in sched_by_div[reg_div]:
+        for side in ("home_team", "away_team"):
+            name = (g.get(side) or {}).get("name")  # 對手未定的排定場次沒有隊伍，跳過
+            if name:
+                rec.setdefault(name, [0, 0])
     for g in by_div[reg_div]:
         h, a = g["home_team"], g["away_team"]
         hs, as_ = h["won_score"], a["won_score"]  # won_score = 該隊得分
@@ -151,14 +165,75 @@ def fetch_tpbl():
 
     champ, finals_note = _tpbl_finals(by_div, reg_div)
     season_over = season.get("status") == "COMPLETED" or bool(champ)
+    games_out = _tpbl_games(sched_by_div[reg_div], today)
     return season_label, {
         "name_zh": "TPBL 台灣職業籃球大聯盟",
         "champion_zh": champ,
         "finals_note": finals_note,
         "regular_season_games": len(by_div[reg_div]),
         "standings": _standings_rows(rec),
+        "recent_results": games_out["recent_results"],
+        "upcoming": games_out["upcoming"],
         "source": "整理自 TPBL 官網公開資料（api.tpbl.basketball，非官方文件化介面）",
     }, season_over
+
+
+def _tpbl_game_row(g: dict) -> dict:
+    """單場賽事的隊伍層摘要（例行賽；只到隊名、比分、場館，不含球員）。"""
+    h, a = g.get("home_team", {}), g.get("away_team", {})
+    venue = g.get("venue")
+    venue_name = venue.get("name", "") if isinstance(venue, dict) else (venue or "")
+    done = g.get("status") == "COMPLETED" and h.get("won_score") is not None
+    return {"date": str(g.get("game_date", ""))[:10],
+            "time": str(g.get("game_time") or "")[:5],
+            "home": h.get("name", ""), "away": a.get("name", ""),
+            "home_score": h.get("won_score") if done else None,
+            "away_score": a.get("won_score") if done else None,
+            "venue": venue_name or "",
+            "status": "COMPLETED" if done else "SCHEDULED"}
+
+
+def _tpbl_games(reg_games: list, today, days: int = 7, cap: int = 10) -> dict:
+    """例行賽近期賽果（含今天往前 days 天）與近期賽程（今天起 days 天）。
+    today 為台北日期；None 時兩個清單皆空（純函式測試用）。
+    ⚠️ 已過日期但 API 仍標未完成的場次（2026-10-24 兩場實測延遲）不列入兩邊——
+    不能把沒有比分的舊場次當「即將開打」，也不能替它猜結果。"""
+    if today is None:
+        return {"recent_results": [], "upcoming": []}
+    if isinstance(today, str):
+        today = datetime.date.fromisoformat(today)
+    # game_date 為純台北日期字串（2026-10-26 實抓："2026-10-17"），不是 UTC ISO，可直接字串比大小。
+    lo, hi = today - datetime.timedelta(days=days), today + datetime.timedelta(days=days)
+    rows = [_tpbl_game_row(g) for g in reg_games]
+    recent = sorted((r for r in rows if r["status"] == "COMPLETED"
+                     and lo.isoformat() <= r["date"] <= today.isoformat()),
+                    key=lambda r: (r["date"], r["time"]), reverse=True)[:cap]
+    upcoming = sorted((r for r in rows if r["status"] != "COMPLETED"
+                       and today.isoformat() <= r["date"] <= hi.isoformat()),
+                      key=lambda r: (r["date"], r["time"]))[:cap]
+    return {"recent_results": recent, "upcoming": upcoming}
+
+
+def _carry_over(league: dict, prior: dict, previous: dict, season_label: str, key: str) -> dict:
+    """同一賽季內某源回空表（官網改版、被擋、暫時下線）時沿用前一份該聯盟資料，
+    而不是讓整份快照被驟減守門拒寫、連另一個健康的聯盟也一起停更。
+    跨季（前一份是上季終局）不沿用——新賽季開季前空表是合法狀態。"""
+    if league is None or league.get("standings"):
+        return league
+    if not prior or not prior.get("standings") or previous.get("final"):
+        return league
+    if previous.get("season") != season_label:
+        return league
+    carried = dict(prior)
+    # 連續多天沿用時，標的是「資料真正來自哪一天」，不是前一份快照的日期——否則越沿用越舊、
+    # 標示卻越新，等於把 staleness 藏起來。
+    carried["carried_from"] = prior.get("carried_from") or previous.get("asof_taipei_date", "")
+    # 近期賽果／賽程是依「當天」切窗的，沿用舊資料會把已過期的場次當成即將開打，一律不帶。
+    carried.pop("recent_results", None)
+    carried.pop("upcoming", None)
+    print(f"  ⚠️  {key.upper()} 本次未取得本季戰績（{league.get('source', '')}）→ "
+          f"沿用 {carried['carried_from']} 快照的該聯盟資料", file=sys.stderr)
+    return carried
 
 
 def _guard_season_facts(facts: dict, season_label: str) -> dict:
@@ -223,7 +298,7 @@ def main():
     today = datetime.datetime.now(zoneinfo.ZoneInfo("Asia/Taipei")).date().isoformat()
     errors = []
     try:
-        season_label, tpbl, season_over = fetch_tpbl()
+        season_label, tpbl, season_over = fetch_tpbl(today)
     except Exception as e:
         errors.append(f"TPBL：{e}")
         season_label, tpbl, season_over = "", None, False
@@ -241,15 +316,27 @@ def main():
         else:
             season_label = "未知賽季"
     # 各源失敗時保留上一份該聯盟資料；成功的另一源仍可更新。
+    # ⚠️ 只在「同一賽季、且前一份不是終局」才沿用——否則新賽季第一次抓、某源失敗時，
+    # 上季終局的戰績與冠軍會原封不動掛進新賽季快照（2026-10-26 審視時發現的既有缺口）。
     latest = snapshot_guard.newest(str(OUT_DIR / "tw-hoops-*.json"))
     previous = json.loads(latest.read_text(encoding="utf-8")) if latest else {}
     prior_leagues = previous.get("leagues", {})
-    if tpbl is None:
-        tpbl = prior_leagues.get("tpbl")
-    if plg is None:
-        plg = prior_leagues.get("plg")
-    if tpbl is None or plg is None:
-        raise RuntimeError("TPBL／PLG 皆無可用快照，無法安全產生台灣職籃資料")
+    same_season = previous.get("season") == season_label and not previous.get("final")
+    if tpbl is None and plg is None and not same_season:
+        raise RuntimeError("TPBL／PLG 皆抓取失敗，且沒有同季快照可沿用：" + "；".join(errors))
+    names = {"tpbl": "TPBL 台灣職業籃球大聯盟", "plg": "P. LEAGUE+"}
+    leagues = {"tpbl": tpbl, "plg": plg}
+    for key, league in leagues.items():
+        if league is not None:
+            continue
+        # 失敗的源先化成「本季空表」的 stub，再與「回空表」走同一條 _carry_over 路徑——
+        # 兩種情況都要有 carried_from 揭露，不能只有回空表那條有標。
+        err = next((e.split("：", 1)[1] for e in errors if e.startswith(key.upper())), "")
+        leagues[key] = {"name_zh": names[key], "champion_zh": None, "finals_note": "",
+                        "standings": [], "source": f"本次抓取失敗（{err}），本季尚無可發布戰績"}
+    # 同季某源回空表或失敗 → 沿用前一份該聯盟資料（見 _carry_over）；源成功時 carried_from 不會出現。
+    tpbl = _carry_over(leagues["tpbl"], prior_leagues.get("tpbl"), previous, season_label, "tpbl")
+    plg = _carry_over(leagues["plg"], prior_leagues.get("plg"), previous, season_label, "plg")
     out = {
         "asof_taipei_date": today,
         "season": season_label,

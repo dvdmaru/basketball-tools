@@ -106,8 +106,10 @@ def freshness_failures(today=None, snapshot_root=None):
             failures.append(f"NBA 最新快照距今 {age if age is not None else '未知'} 天（門檻 3 天）")
 
     tw_expected = nba_expected
-    # TPBL 2026-27 例行賽 10/17 開打、PLG 開季日未公告；10 月整月不報，避免開季前誤報。
-    if today.month <= 6 or today.month >= 11:
+    # TPBL 2026-27 例行賽 10/17 開打、PLG 10/24 開打（config/season-openers.json）；
+    # 10/25 起兩聯盟都已開打，之前不報，避免開季前誤報。
+    tw_active = today.month <= 6 or today.month >= 11 or (today.month == 10 and today.day >= 25)
+    if tw_active:
         age = _asof_age_days(tw, "asof_taipei_date", today) if tw else None
         if not tw or tw.get("season") != tw_expected or age is None or age > 10:
             failures.append(f"TPBL／PLG 最新快照距今 {age if age is not None else '未知'} 天（門檻 10 天）")
