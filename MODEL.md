@@ -29,8 +29,14 @@
 | `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`／`recent_results[]`／`upcoming[]`（後三者僅 tpbl 有）／`carried_from`（同季某源回空表時沿用前一份該聯盟資料，記那份的日期；源正常時不存在） | — |
 | └ `standings[]` 每一列 | `rank`／`team_name`／`win`／`lose`／`pct`／`games_behind` | — | — |
 | └ `recent_results[]`／`upcoming[]` 每一列 | `date`／`time`／`home`／`away`／`home_score`／`away_score`／`venue`／`status`（未完賽比分為 null） | — | **球員層欄位** |
-| `hbl-<season>-<date>.json` | `asof_taipei_date`／`season_label`／`final`／`divisions.boys`／`divisions.girls` | 各組 `champion`／`final_note`；`stages`（官方各階段隊伍層摘要）／`results`（準決賽、總決賽隊伍層賽果與晉級名單）／`next_season`（新學年度尚無 division 時的官方報名隊數） | **任何球員層欄位**（見 §2-1） |
+| `hbl-<season>-<date>.json` | `asof_taipei_date`／`season_label`／`final`／`divisions.boys`／`divisions.girls` | 各組 `champion`／`final_note`；`stages`（官方各階段隊伍層摘要）／`results`（準決賽、總決賽隊伍層賽果與晉級名單）／`next_season`（新學年度尚無 division 時的官方報名隊數）／`schedule`（**進行中學年度**才有：甲級男女各階段逐場對戰表 `{name, status, games[]}`）／`previous_season`（進行中學年度才有：上一學年度終局的 `season_label` 與各組 `label`／`champion`／`final_note`） | **任何球員層欄位**（見 §2-1） |
 | └ `final_four[]` 每一列 | `rank`／`school`／`note` | — | **球員姓名／個人數據** |
+| └ `schedule.*[].games[]` 每一場 | `date`／`time`／`venue`／`home`／`away`／`home_score`／`away_score`／`status`（未完賽比分為 null） | — | **球員層欄位** |
+
+⚠️ `final=true` 的條件＝男、女甲總決賽 division **都**由官方標 `COMPLETED` 且名次推得出來；任一組未完就整份 `final=false`、兩組都不推冠軍（男甲先打完、女甲隔天打的那一天也算進行中，避免同一頁一邊掛冠軍橫幅一邊寫尚未產生）。
+`final=false`（學年度進行中）時各組 **沒有** `champion`、`final_four` 為空——程式不推名次、不推冠軍（§2-3）；
+頁面的冠軍敘述只能說「本季尚未產生」並引用 `previous_season`。2026-10-26 前的抓取器遇到「只有資格賽、沒有總決賽」
+會直接報錯沿用上季（115 學年度資格賽 10/27 開打即觸發），現已改為進行中模式。
 
 ### ☠️ 「沒有 `division`」這件事已經出過事（2026-08-18）
 

@@ -17,6 +17,14 @@
   { asof_taipei_date, season_label, final,
     divisions: { boys: {label, champion, final_note, final_four:[{rank, school, note}]},
                  girls: {...} } }
+
+⭐ 進行中模式（2026-10-26 補）：最新已建立 division 的學年度還沒有「總決賽」時（例如 115 學年度
+資格賽 10/27 開打、只有資格賽 division），不再報錯沿用上季，改寫 final=false 的快照：
+divisions 的 final_four 為空、champion 不存在；另附
+  schedule: { boys: [{name, status, games:[{date, time, venue, home, away, home_score, away_score, status}]}],
+              girls: [...] }               ← 甲級各階段逐場對戰表（隊伍層）
+  previous_season: { season_label, divisions: {boys: {label, champion, final_note}, girls: {...}} }
+                                           ← 上一學年度終局（取自 leagues/ 既有快照），頁面顯示「上季冠軍」
 """
 import datetime
 import json
@@ -105,6 +113,20 @@ def finals_stage_sns(season: dict) -> dict:
     return out
 
 
+def _finals_completed(season: dict, key: str) -> bool:
+    """該組甲級總決賽 division 存在且官方標 COMPLETED（舊資料名為「決賽」）。"""
+    sex = "男" if key == "boys" else "女"
+    for event in season.get("events", []):
+        name = event.get("name", "")
+        if "甲級" not in name or sex not in name:
+            continue
+        for wanted in ("總決賽", "決賽"):
+            d = _division_by_name(event, wanted)
+            if d is not None:
+                return d.get("status") == "COMPLETED"
+    return False
+
+
 def _score(game: dict, side: str):
     """新版 API 用 homeSquadScore，保留舊欄位以維持歷史 fixture 相容。"""
     return game.get(f"{side}SquadScore", game.get(f"{side}Score"))
@@ -123,9 +145,79 @@ def _squad_name(squad: dict) -> str:
     return squad.get("altName") or squad.get("name") or ""
 
 
+_GAMES_CACHE: dict = {}
+
+
 def _division_games(division_id: int) -> list:
-    games = call(f"{BASE}/api/division-matches/{division_id}")
-    return sorted(games, key=lambda g: g.get("matchedAt", ""))
+    """同一次執行內同一 division 只打一次 API（stage_overview／stage_results／stage_schedule 都會用到）。"""
+    if division_id not in _GAMES_CACHE:
+        games = call(f"{BASE}/api/division-matches/{division_id}")
+        _GAMES_CACHE[division_id] = sorted(games, key=lambda g: g.get("matchedAt") or "")  # 時間未定＝null
+    return _GAMES_CACHE[division_id]
+
+
+def _taipei_time(value: str) -> str:
+    """官網 UTC ISO 時間 → 台北 HH:MM；空值回空字串。"""
+    if not value:
+        return ""
+    return datetime.datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(
+        zoneinfo.ZoneInfo("Asia/Taipei")).strftime("%H:%M")
+
+
+def _schedule_game(game: dict) -> dict:
+    """單場的隊伍層摘要：日期、時間、場館、兩校簡稱、比分（未完賽為 null）。不碰球員。"""
+    raw = str(game.get("status") or "").upper()
+    # 與 stage_overview 的「已完成」同口徑：官方標 COMPLETED 就算完成；比分缺漏時留 null、頁面顯示「—」。
+    status = raw if raw in ("COMPLETED", "IN_PROGRESS", "POSTPONED", "CANCELLED") else "SCHEDULED"
+    has_score = _score(game, "home") is not None and _score(game, "away") is not None
+    done = status == "COMPLETED" and has_score
+    return {
+        "date": _taipei_date(game.get("matchedAt") or ""),
+        "time": _taipei_time(game.get("matchedAt") or ""),
+        "venue": game.get("venue") or "",
+        "home": _squad_name(game.get("homeSquad") or {}),
+        "away": _squad_name(game.get("awaySquad") or {}),
+        "home_score": _score(game, "home") if done else None,
+        "away_score": _score(game, "away") if done else None,
+        "status": status,
+    }
+
+
+def stage_schedule(season: dict) -> dict:
+    """甲級男、女各階段逐場對戰表（進行中學年度用；完賽學年度不輸出，避免快照膨脹）。"""
+    out = {}
+    for key, sex in (("boys", "男"), ("girls", "女")):
+        event = next((e for e in season.get("events", [])
+                      if "甲級" in e.get("name", "") and sex in e.get("name", "")), None)
+        stages = []
+        for division in (event or {}).get("divisions", []):
+            stages.append({"name": division.get("name", ""), "status": division.get("status", ""),
+                           "games": [_schedule_game(g) for g in _division_games(division["id"])]})
+        out[key] = stages
+    return out
+
+
+def previous_final(season_name: int) -> dict | None:
+    """上一學年度終局（leagues/hbl-<season-1>-*.json 最新一份）的冠軍摘要；沒有就回 None。"""
+    import glob
+    prev = None
+    for p in sorted(glob.glob(str(OUT_DIR / f"hbl-{season_name - 1}-*.json")), reverse=True):
+        try:
+            cand = json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if cand.get("final"):  # 往前找第一份終局（該學年度可能也留有進行中快照）
+            prev = cand
+            break
+    if prev is None:
+        return None
+    divisions = {}
+    for key in ("boys", "girls"):
+        d = (prev.get("divisions") or {}).get(key) or {}
+        if d.get("champion"):
+            divisions[key] = {"label": d.get("label", ""), "champion": d["champion"],
+                              "final_note": d.get("final_note", "")}
+    return {"season_label": prev.get("season_label", ""), "divisions": divisions} if divisions else None
 
 
 def _stage_summary(division: dict) -> dict:
@@ -328,20 +420,36 @@ def main():
     latest_name, latest = latest_season(navigation)
     season_name, season = latest_established_season(navigation)
     stage_sns = finals_stage_sns(season)
-    if not stage_sns:
-        raise RuntimeError(f"HBL {season_name}學年度已有 division，但找不到甲級總決賽 division")
+    source = "整理自 hbl.com.tw 官網公開賽果（非官方文件化介面）"
     divisions = {}
-    for key, label in (("boys", "男子甲級"), ("girls", "女子甲級")):
-        if key in stage_sns:
-            divisions[key] = rank_division(stage_sns[key], label)
+    # 終局＝男、女甲總決賽 division **都**標 COMPLETED 且名次推得出來；任一組還沒打完就整份算進行中，
+    # 兩組都不推冠軍（保守：男甲先打完、女甲隔天才打的那一天，頁面不會一邊掛冠軍橫幅一邊寫尚未產生）。
+    # 也擋掉 rank_division 在「只打完準決賽／季軍戰」時用保底規則湊出假冠軍的情境。
+    final = all(_finals_completed(season, key) for key in ("boys", "girls"))
+    if final:
+        try:
+            for key, label in (("boys", "男子甲級"), ("girls", "女子甲級")):
+                divisions[key] = rank_division(stage_sns[key], label)
+        except (RuntimeError, KeyError) as e:
+            print(f"  ⚠️ 總決賽已標完賽但名次推不出來，整份改為進行中：{e}", file=sys.stderr)
+            final = False
+            divisions = {}
+    if not final:
+        for key, label in (("boys", "男子甲級"), ("girls", "女子甲級")):
+            divisions[key] = {"label": label, "final_four": [], "source": source}
     out = {
         "asof_taipei_date": today,
         "season_label": f"{season_name}學年度",
-        "final": True,
+        "final": final,
         "divisions": divisions,
         "stages": stage_overview(season),
         "results": stage_results(season),
     }
+    if not final:
+        out["schedule"] = stage_schedule(season)
+        prev = previous_final(season_name)
+        if prev:
+            out["previous_season"] = prev
     if not any(event.get("divisions") for event in latest.get("events", [])):
         out["next_season"] = next_season_squads(latest_name, latest, today)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -352,9 +460,16 @@ def main():
             label=f"hbl-{season_name}-{today}", indent=1,
             baseline=snapshot_guard.newest(str(OUT_DIR / f"hbl-{season_name}-*.json"))):
         sys.exit(2)
-    champs = "、".join(f"{d['label']} {d['champion']}" for d in divisions.values())
-    print(f"✅ HBL {season_name}學年度: {champs} → {path}")
-    print("📋 來源狀態｜HBL｜成功｜已寫入新版 API 的總決賽快照")
+    if final:
+        champs = "、".join(f"{d['label']} {d['champion']}" for d in divisions.values())
+        print(f"✅ HBL {season_name}學年度: {champs} → {path}")
+        print("📋 來源狀態｜HBL｜成功｜已寫入新版 API 的總決賽快照")
+    else:
+        stage_txt = "、".join(
+            f"{out['stages'][k]['label']} {'／'.join(s['name'] for s in out['stages'][k]['divisions']) or '（尚無階段）'}"
+            for k in ("boys", "girls") if k in out["stages"])
+        print(f"✅ HBL {season_name}學年度（進行中）: {stage_txt} → {path}")
+        print("📋 來源狀態｜HBL｜成功｜已寫入進行中學年度的逐階段快照（尚無總決賽）")
 
 
 if __name__ == "__main__":
