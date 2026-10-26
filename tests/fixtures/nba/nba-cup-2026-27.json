@@ -1,0 +1,1080 @@
+{
+ "season": "2026-27",
+ "label": "NBA Cup 2026",
+ "asof_taipei_date": "2026-10-26",
+ "source": "整理自 ESPN 公開資料（site.api.espn.com scoreboard，notes 標 NBA Cup）；分組依 NBA 官方公告（config/nba-cup）",
+ "config_sources": [
+  "https://www.nba.com/news/emirates-nba-cup-2026-groups-announced",
+  "https://www.nba.com/news/2026-nba-cup-group-play-schedule-announced",
+  "https://www.nba.com/news/nba-cup-101"
+ ],
+ "group_play": {
+  "start": "2026-10-30",
+  "end": "2026-11-27",
+  "note": "美東日期；60 場、7 個 Cup Night（10/30、11/6、11/13、11/20、11/24、11/25、11/27）"
+ },
+ "knockout": {
+  "quarterfinals": "2026-12-04（五）、12-05（六）美東；各區小組賽前兩名主辦",
+  "semifinals": "2026-12-08～12-09 美東；各區高種子隊主場",
+  "final": "2026-12-11（五）美東；Hinkle Fieldhouse, Indianapolis（唯一中立場地）",
+  "_source": "同 nba-cup-2026-format-guide 文章「八強、四強在高種子隊主場」節的表"
+ },
+ "tiebreak": [
+  "小組賽對戰成績",
+  "小組賽淨勝分（進入延長賽的場次記 0）",
+  "小組賽總得分（不含延長賽）",
+  "2025-26 例行賽戰績",
+  "抽籤"
+ ],
+ "groups": [
+  {
+   "conference": "Western",
+   "name": "West A",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "DAL",
+     "name_zh": "達拉斯獨行俠",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "DEN",
+     "name_zh": "丹佛金塊",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "HOU",
+     "name_zh": "休士頓火箭",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "PHX",
+     "name_zh": "鳳凰城太陽",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "UTAH",
+     "name_zh": "猶他爵士",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "08:00",
+     "home_abbr": "DAL",
+     "home_zh": "達拉斯獨行俠",
+     "away_abbr": "HOU",
+     "away_zh": "休士頓火箭",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-10-31",
+     "time": "10:00",
+     "home_abbr": "PHX",
+     "home_zh": "鳳凰城太陽",
+     "away_abbr": "DEN",
+     "away_zh": "丹佛金塊",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "09:00",
+     "home_abbr": "DAL",
+     "home_zh": "達拉斯獨行俠",
+     "away_abbr": "UTAH",
+     "away_zh": "猶他爵士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "09:30",
+     "home_abbr": "HOU",
+     "home_zh": "休士頓火箭",
+     "away_abbr": "UTAH",
+     "away_zh": "猶他爵士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "10:30",
+     "home_abbr": "UTAH",
+     "home_zh": "猶他爵士",
+     "away_abbr": "PHX",
+     "away_zh": "鳳凰城太陽",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "11:00",
+     "home_abbr": "DEN",
+     "home_zh": "丹佛金塊",
+     "away_abbr": "HOU",
+     "away_zh": "休士頓火箭",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-25",
+     "time": "11:00",
+     "home_abbr": "DEN",
+     "home_zh": "丹佛金塊",
+     "away_abbr": "DAL",
+     "away_zh": "達拉斯獨行俠",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "09:30",
+     "home_abbr": "HOU",
+     "home_zh": "休士頓火箭",
+     "away_abbr": "PHX",
+     "away_zh": "鳳凰城太陽",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "10:00",
+     "home_abbr": "PHX",
+     "home_zh": "鳳凰城太陽",
+     "away_abbr": "DAL",
+     "away_zh": "達拉斯獨行俠",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "10:30",
+     "home_abbr": "UTAH",
+     "home_zh": "猶他爵士",
+     "away_abbr": "DEN",
+     "away_zh": "丹佛金塊",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  },
+  {
+   "conference": "Western",
+   "name": "West B",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "LAC",
+     "name_zh": "洛杉磯快艇",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "MEM",
+     "name_zh": "曼菲斯灰熊",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "MIN",
+     "name_zh": "明尼蘇達灰狼",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "NO",
+     "name_zh": "紐奧良鵜鶘",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "OKC",
+     "name_zh": "奧克拉荷馬雷霆",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "08:00",
+     "home_abbr": "MIN",
+     "home_zh": "明尼蘇達灰狼",
+     "away_abbr": "LAC",
+     "away_zh": "洛杉磯快艇",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "09:00",
+     "home_abbr": "MEM",
+     "home_zh": "曼菲斯灰熊",
+     "away_abbr": "OKC",
+     "away_zh": "奧克拉荷馬雷霆",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "09:00",
+     "home_abbr": "NO",
+     "home_zh": "紐奧良鵜鶘",
+     "away_abbr": "MIN",
+     "away_zh": "明尼蘇達灰狼",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "09:00",
+     "home_abbr": "NO",
+     "home_zh": "紐奧良鵜鶘",
+     "away_abbr": "MEM",
+     "away_zh": "曼菲斯灰熊",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "11:30",
+     "home_abbr": "LAC",
+     "home_zh": "洛杉磯快艇",
+     "away_abbr": "OKC",
+     "away_zh": "奧克拉荷馬雷霆",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "09:00",
+     "home_abbr": "OKC",
+     "home_zh": "奧克拉荷馬雷霆",
+     "away_abbr": "NO",
+     "away_zh": "紐奧良鵜鶘",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "08:30",
+     "home_abbr": "OKC",
+     "home_zh": "奧克拉荷馬雷霆",
+     "away_abbr": "MIN",
+     "away_zh": "明尼蘇達灰狼",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "09:00",
+     "home_abbr": "MEM",
+     "home_zh": "曼菲斯灰熊",
+     "away_abbr": "LAC",
+     "away_zh": "洛杉磯快艇",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "09:30",
+     "home_abbr": "MIN",
+     "home_zh": "明尼蘇達灰狼",
+     "away_abbr": "MEM",
+     "away_zh": "曼菲斯灰熊",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "10:30",
+     "home_abbr": "LAC",
+     "home_zh": "洛杉磯快艇",
+     "away_abbr": "NO",
+     "away_zh": "紐奧良鵜鶘",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  },
+  {
+   "conference": "Western",
+   "name": "West C",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "GS",
+     "name_zh": "金州勇士",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "LAL",
+     "name_zh": "洛杉磯湖人",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "POR",
+     "name_zh": "波特蘭拓荒者",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "SA",
+     "name_zh": "聖安東尼奧馬刺",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "SAC",
+     "name_zh": "沙加緬度國王",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "10:00",
+     "home_abbr": "GS",
+     "home_zh": "金州勇士",
+     "away_abbr": "LAL",
+     "away_zh": "洛杉磯湖人",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "11:00",
+     "home_abbr": "LAL",
+     "home_zh": "洛杉磯湖人",
+     "away_abbr": "POR",
+     "away_zh": "波特蘭拓荒者",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "11:00",
+     "home_abbr": "SAC",
+     "home_zh": "沙加緬度國王",
+     "away_abbr": "SA",
+     "away_zh": "聖安東尼奧馬刺",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "10:30",
+     "home_abbr": "SA",
+     "home_zh": "聖安東尼奧馬刺",
+     "away_abbr": "GS",
+     "away_zh": "金州勇士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "11:00",
+     "home_abbr": "SAC",
+     "home_zh": "沙加緬度國王",
+     "away_abbr": "POR",
+     "away_zh": "波特蘭拓荒者",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "11:00",
+     "home_abbr": "LAL",
+     "home_zh": "洛杉磯湖人",
+     "away_abbr": "SAC",
+     "away_zh": "沙加緬度國王",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "11:00",
+     "home_abbr": "GS",
+     "home_zh": "金州勇士",
+     "away_abbr": "SAC",
+     "away_zh": "沙加緬度國王",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "11:00",
+     "home_abbr": "POR",
+     "home_zh": "波特蘭拓荒者",
+     "away_abbr": "SA",
+     "away_zh": "聖安東尼奧馬刺",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "10:30",
+     "home_abbr": "SA",
+     "home_zh": "聖安東尼奧馬刺",
+     "away_abbr": "LAL",
+     "away_zh": "洛杉磯湖人",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "10:30",
+     "home_abbr": "POR",
+     "home_zh": "波特蘭拓荒者",
+     "away_abbr": "GS",
+     "away_zh": "金州勇士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  },
+  {
+   "conference": "Eastern",
+   "name": "East A",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "BKN",
+     "name_zh": "布魯克林籃網",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "DET",
+     "name_zh": "底特律活塞",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "MIL",
+     "name_zh": "密爾瓦基公鹿",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "ORL",
+     "name_zh": "奧蘭多魔術",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "TOR",
+     "name_zh": "多倫多暴龍",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "07:30",
+     "home_abbr": "BKN",
+     "home_zh": "布魯克林籃網",
+     "away_abbr": "DET",
+     "away_zh": "底特律活塞",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-10-31",
+     "time": "07:30",
+     "home_abbr": "TOR",
+     "home_zh": "多倫多暴龍",
+     "away_abbr": "ORL",
+     "away_zh": "奧蘭多魔術",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "09:00",
+     "home_abbr": "MIL",
+     "home_zh": "密爾瓦基公鹿",
+     "away_abbr": "TOR",
+     "away_zh": "多倫多暴龍",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "08:00",
+     "home_abbr": "ORL",
+     "home_zh": "奧蘭多魔術",
+     "away_abbr": "MIL",
+     "away_zh": "密爾瓦基公鹿",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "08:30",
+     "home_abbr": "BKN",
+     "home_zh": "布魯克林籃網",
+     "away_abbr": "ORL",
+     "away_zh": "奧蘭多魔術",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "08:30",
+     "home_abbr": "DET",
+     "home_zh": "底特律活塞",
+     "away_abbr": "TOR",
+     "away_zh": "多倫多暴龍",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-25",
+     "time": "08:00",
+     "home_abbr": "ORL",
+     "home_zh": "奧蘭多魔術",
+     "away_abbr": "DET",
+     "away_zh": "底特律活塞",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "09:00",
+     "home_abbr": "MIL",
+     "home_zh": "密爾瓦基公鹿",
+     "away_abbr": "BKN",
+     "away_zh": "布魯克林籃網",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "08:30",
+     "home_abbr": "DET",
+     "home_zh": "底特律活塞",
+     "away_abbr": "MIL",
+     "away_zh": "密爾瓦基公鹿",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "08:30",
+     "home_abbr": "TOR",
+     "home_zh": "多倫多暴龍",
+     "away_abbr": "BKN",
+     "away_zh": "布魯克林籃網",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  },
+  {
+   "conference": "Eastern",
+   "name": "East B",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "CLE",
+     "name_zh": "克里夫蘭騎士",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "IND",
+     "name_zh": "印第安納溜馬",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "MIA",
+     "name_zh": "邁阿密熱火",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "NY",
+     "name_zh": "紐約尼克",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "PHI",
+     "name_zh": "費城 76 人",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "07:30",
+     "home_abbr": "PHI",
+     "home_zh": "費城 76 人",
+     "away_abbr": "NY",
+     "away_zh": "紐約尼克",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-10-31",
+     "time": "08:00",
+     "home_abbr": "MIA",
+     "home_zh": "邁阿密熱火",
+     "away_abbr": "IND",
+     "away_zh": "印第安納溜馬",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "08:30",
+     "home_abbr": "CLE",
+     "home_zh": "克里夫蘭騎士",
+     "away_abbr": "PHI",
+     "away_zh": "費城 76 人",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "08:00",
+     "home_abbr": "IND",
+     "home_zh": "印第安納溜馬",
+     "away_abbr": "NY",
+     "away_zh": "紐約尼克",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "09:00",
+     "home_abbr": "MIA",
+     "home_zh": "邁阿密熱火",
+     "away_abbr": "CLE",
+     "away_zh": "克里夫蘭騎士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "08:30",
+     "home_abbr": "CLE",
+     "home_zh": "克里夫蘭騎士",
+     "away_abbr": "IND",
+     "away_zh": "印第安納溜馬",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "06:00",
+     "home_abbr": "PHI",
+     "home_zh": "費城 76 人",
+     "away_abbr": "MIA",
+     "away_zh": "邁阿密熱火",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "08:30",
+     "home_abbr": "NY",
+     "home_zh": "紐約尼克",
+     "away_abbr": "CLE",
+     "away_zh": "克里夫蘭騎士",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "08:00",
+     "home_abbr": "NY",
+     "home_zh": "紐約尼克",
+     "away_abbr": "MIA",
+     "away_zh": "邁阿密熱火",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "08:30",
+     "home_abbr": "IND",
+     "home_zh": "印第安納溜馬",
+     "away_abbr": "PHI",
+     "away_zh": "費城 76 人",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  },
+  {
+   "conference": "Eastern",
+   "name": "East C",
+   "tie_note": "",
+   "standings": [
+    {
+     "abbr": "ATL",
+     "name_zh": "亞特蘭大老鷹",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "BOS",
+     "name_zh": "波士頓塞爾提克",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "CHA",
+     "name_zh": "夏洛特黃蜂",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "CHI",
+     "name_zh": "芝加哥公牛",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    },
+    {
+     "abbr": "WSH",
+     "name_zh": "華盛頓巫師",
+     "wins": 0,
+     "losses": 0,
+     "played": 0,
+     "diff": 0,
+     "points": 0
+    }
+   ],
+   "games": [
+    {
+     "date": "2026-10-31",
+     "time": "07:00",
+     "home_abbr": "WSH",
+     "home_zh": "華盛頓巫師",
+     "away_abbr": "CHA",
+     "away_zh": "夏洛特黃蜂",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-10-31",
+     "time": "07:30",
+     "home_abbr": "BOS",
+     "home_zh": "波士頓塞爾提克",
+     "away_abbr": "CHI",
+     "away_zh": "芝加哥公牛",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "08:00",
+     "home_abbr": "ATL",
+     "home_zh": "亞特蘭大老鷹",
+     "away_abbr": "WSH",
+     "away_zh": "華盛頓巫師",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-07",
+     "time": "08:00",
+     "home_abbr": "CHA",
+     "home_zh": "夏洛特黃蜂",
+     "away_abbr": "BOS",
+     "away_zh": "波士頓塞爾提克",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-14",
+     "time": "09:00",
+     "home_abbr": "CHI",
+     "home_zh": "芝加哥公牛",
+     "away_abbr": "ATL",
+     "away_zh": "亞特蘭大老鷹",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "08:00",
+     "home_abbr": "ATL",
+     "home_zh": "亞特蘭大老鷹",
+     "away_abbr": "CHA",
+     "away_zh": "夏洛特黃蜂",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-21",
+     "time": "09:00",
+     "home_abbr": "CHI",
+     "home_zh": "芝加哥公牛",
+     "away_abbr": "WSH",
+     "away_zh": "華盛頓巫師",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-25",
+     "time": "09:00",
+     "home_abbr": "WSH",
+     "home_zh": "華盛頓巫師",
+     "away_abbr": "BOS",
+     "away_zh": "波士頓塞爾提克",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-26",
+     "time": "08:00",
+     "home_abbr": "CHA",
+     "home_zh": "夏洛特黃蜂",
+     "away_abbr": "CHI",
+     "away_zh": "芝加哥公牛",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    },
+    {
+     "date": "2026-11-28",
+     "time": "09:00",
+     "home_abbr": "BOS",
+     "home_zh": "波士頓塞爾提克",
+     "away_abbr": "ATL",
+     "away_zh": "亞特蘭大老鷹",
+     "home_score": null,
+     "away_score": null,
+     "status": "SCHEDULED",
+     "ot": false
+    }
+   ]
+  }
+ ],
+ "wildcards": {
+  "Eastern": null,
+  "Western": null
+ },
+ "unassigned": []
+}

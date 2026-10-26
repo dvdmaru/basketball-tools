@@ -1,0 +1,33 @@
+{
+  "_comment": "NBA Cup 2026 小組（editorial fact：ESPN scoreboard 只標 'NBA Cup - Group Play'，不帶組別）。key 為 ESPN 球隊縮寫；分組依 NBA 官方 2026-06-30 公告，與站上 nba-cup-2026-format-guide 文章同源。fetch-nba-cup.py 讀取；每一場 Cup 小組賽兩隊必須同組，否則該場標 unassigned 並在來源狀態警告。",
+  "season": "2026-27",
+  "label": "NBA Cup 2026",
+  "group_play": {"start": "2026-10-30", "end": "2026-11-27", "note": "美東日期；60 場、7 個 Cup Night（10/30、11/6、11/13、11/20、11/24、11/25、11/27）"},
+  "sources": [
+    "https://www.nba.com/news/emirates-nba-cup-2026-groups-announced",
+    "https://www.nba.com/news/2026-nba-cup-group-play-schedule-announced",
+    "https://www.nba.com/news/nba-cup-101"
+  ],
+  "verified": "2026-10-26 以 ESPN 2026-10-30 Cup Night 10 場對戰逐場核對：每場兩隊皆同組",
+  "groups": [
+    {"conference": "Western", "name": "West A", "teams": ["DEN", "HOU", "PHX", "DAL", "UTAH"]},
+    {"conference": "Western", "name": "West B", "teams": ["OKC", "MIN", "LAC", "NO", "MEM"]},
+    {"conference": "Western", "name": "West C", "teams": ["SA", "LAL", "POR", "GS", "SAC"]},
+    {"conference": "Eastern", "name": "East A", "teams": ["DET", "TOR", "ORL", "MIL", "BKN"]},
+    {"conference": "Eastern", "name": "East B", "teams": ["NY", "CLE", "PHI", "MIA", "IND"]},
+    {"conference": "Eastern", "name": "East C", "teams": ["BOS", "ATL", "CHA", "CHI", "WSH"]}
+  ],
+  "tiebreak": [
+    "小組賽對戰成績",
+    "小組賽淨勝分（進入延長賽的場次記 0）",
+    "小組賽總得分（不含延長賽）",
+    "2025-26 例行賽戰績",
+    "抽籤"
+  ],
+  "knockout": {
+    "quarterfinals": "2026-12-04（五）、12-05（六）美東；各區小組賽前兩名主辦",
+    "semifinals": "2026-12-08～12-09 美東；各區高種子隊主場",
+    "final": "2026-12-11（五）美東；Hinkle Fieldhouse, Indianapolis（唯一中立場地）",
+    "_source": "同 nba-cup-2026-format-guide 文章「八強、四強在高種子隊主場」節的表"
+  }
+}

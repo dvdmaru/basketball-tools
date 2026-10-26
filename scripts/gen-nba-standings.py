@@ -98,7 +98,7 @@ def _page_faq(season, asof, final):
     ]
 
 
-def build_page(snap):
+def build_page(snap, games_snap=None):
     season = snap.get("season", "")
     asof = snap.get("asof", "")
     final = bool(snap.get("final"))
@@ -131,6 +131,15 @@ def build_page(snap):
     cap = (f'<div class="tbl-cap">{season} {status_txt}名次 · 截至 {asof} · '
            '排序為例行賽名次（同勝率之先後依聯盟正式比序）；附加賽後的季後賽種子可能與例行賽名次不同。'
            '整理自 ESPN 公開資料（site.api.espn.com），非官方發布管道。</div>')
+    # 近三日賽程／賽果（台北時間）：吃 leagues/nba-games-<date>.json；休賽季或沒快照就不出這節。
+    games_html = ba.bb_nba_games_html(games_snap) if games_snap else ""
+    games_sec = ""
+    if games_html:
+        games_sec = ('<section class="blk" id="games"><div class="sp"></div>'
+                     + ba.bb_slabel('近三日 <em>賽程與賽果</em>', "台北時間")
+                     + games_html
+                     + f'<div class="tbl-cap">季中錦標賽分組戰績見 <a href="/nba-cup/">NBA Cup 小組賽</a>。</div>'
+                     '</section>')
 
     faq = _page_faq(season, asof, final)
     # 開季前提示：快照仍是上季終局、config/season-openers.json 登記了下一季開打日才顯示（開季後自動消失）。
@@ -144,7 +153,7 @@ def build_page(snap):
         f'<p class="sub">NBA {season} 賽季 30 隊完整例行賽名次（截至 {asof}），'
         '標示季後賽（1–6 名）與附加賽（7–10 名）分帶。</p>'
         '</section>'
-        + pre_html + champ_band + tabs + cap + ba.bb_faq_details_html(faq))
+        + pre_html + champ_band + tabs + cap + games_sec + ba.bb_faq_details_html(faq))
     coll = {"@type": "CollectionPage", "@id": canonical, "url": canonical,
             "name": page_title, "inLanguage": "zh-Hant",
             "isPartOf": {"@id": f"{BASE}/#website"}}
@@ -163,9 +172,10 @@ def main():
     if not cands:
         raise SystemExit("❌ leagues/ 下沒有 nba-standings-*.json；先跑 fetch-nba.py。")
     snap = json.loads(pathlib.Path(cands[-1]).read_text(encoding="utf-8"))
+    games_snap = ba._dash_latest("nba-games-*.json")
     out_dir = ROOT / "public-basketball" / "standings"
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "index.html").write_text(build_page(snap), encoding="utf-8")
+    (out_dir / "index.html").write_text(build_page(snap, games_snap), encoding="utf-8")
     print("✅ public-basketball/standings/index.html")
 
     sm = ROOT / "public-basketball" / "sitemap.xml"

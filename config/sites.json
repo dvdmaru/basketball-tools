@@ -35,11 +35,18 @@
         "desc": "TPBL 與 P. LEAGUE+ 戰績對照"
       },
       {
+        "label": "NBA Cup",
+        "href": "/nba-cup/",
+        "key": "nba-cup",
+        "group": "data",
+        "desc": "季中錦標賽小組賽戰績與分組"
+      },
+      {
         "label": "HBL",
         "href": "/hbl/",
         "key": "hbl",
         "group": "data",
-        "desc": "高中甲級四強與歷屆冠軍"
+        "desc": "高中甲級賽程、四強與歷屆冠軍"
       },
       {
         "label": "文章",
