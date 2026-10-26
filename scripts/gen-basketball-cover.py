@@ -30,6 +30,7 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ('jokic-triple-double-record-chase', 'NBA · 約基奇大三元', '例行賽仍排第二<br>加計季後賽已領先', '例行賽 199 對 209 次\u3000·\u3000檢查日 2026-10-26'),
     ("clippers-kawhi-leonard-circumvention-penalties", "NBA · 規避薪資上限",
      "6 天內<br>3 封介紹信",
      "每一封都寫著是對方先開口　·　球隊罰款 3,000 萬美元"),
