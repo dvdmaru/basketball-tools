@@ -40,9 +40,13 @@ NBA_ROW_FORBIDDEN = {"division"}  # 見 docstring 第 3 點
 TW_TOP_REQUIRED = {"asof_taipei_date", "season", "final", "leagues"}
 TW_TOP_OPTIONAL = set()
 TW_LEAGUE_REQUIRED = {"name_zh", "standings", "source"}
-TW_LEAGUE_OPTIONAL = {"champion_zh", "finals_note", "regular_season_games"}
+TW_LEAGUE_OPTIONAL = {"champion_zh", "finals_note", "regular_season_games",
+                      "recent_results", "upcoming", "carried_from"}
 TW_ROW_REQUIRED = {"rank", "team_name", "win", "lose", "pct", "games_behind"}
 TW_ROW_OPTIONAL = set()
+TW_GAME_REQUIRED = {"date", "time", "home", "away", "home_score", "away_score", "venue", "status"}
+TW_GAME_OPTIONAL = set()
+# 台職賽事列只到隊名、比分、場館（隊伍層）；球員層欄位同樣走「白名單以外一律擋」。
 
 HBL_TOP_REQUIRED = {"asof_taipei_date", "season_label", "final", "divisions"}
 HBL_TOP_OPTIONAL = {"stages", "results", "next_season"}
@@ -106,6 +110,10 @@ def audit_tw(name, d):
         for i, row in enumerate(leagues[lg].get("standings", [])):
             p += check_keys(row, TW_ROW_REQUIRED, TW_ROW_OPTIONAL,
                             f"{name} leagues.{lg}.standings[{i}]")
+        for lst in ("recent_results", "upcoming"):
+            for i, row in enumerate(leagues[lg].get(lst) or []):
+                p += check_keys(row, TW_GAME_REQUIRED, TW_GAME_OPTIONAL,
+                                f"{name} leagues.{lg}.{lst}[{i}]（隊伍層以下不得出現欄位）")
     return p
 
 

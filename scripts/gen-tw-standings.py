@@ -9,12 +9,14 @@ seed 晶片＋手機釘欄；晉級門檻未經查核，不畫分帶）＋每聯
 用法：python3 scripts/gen-tw-standings.py
 ⚠️ 跑序：build-articles.py 之後跑（sitemap re-merge 自己的 path）。
 """
+import datetime
 import glob
 import html as html_lib
 import importlib.util
 import json
 import pathlib
 import re
+import zoneinfo
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -61,6 +63,9 @@ def _shell(title, desc, canonical, jsonld, body):
 #t-tpbl:checked~.tablist label[for=t-tpbl],
 #t-plg:checked~.tablist label[for=t-plg]{{color:var(--fg);border-bottom-color:var(--accent)}}
 #t-tpbl:checked~#p-tpbl,#t-plg:checked~#p-plg{{display:block}}
+.games-h{{font-size:1rem;margin:1.25rem 0 .4rem;color:var(--fg)}}
+.std-table.games td{{white-space:nowrap}}
+.tbl-cap.carried{{color:var(--accent)}}
 </style>
 </head>
 <body>
@@ -89,10 +94,10 @@ def _page_faq(season, asof, final, tpbl=None, plg=None):
     """⚠️ 簽名比照 gen-nba-standings.py::_page_faq(season, asof, final)：
     更新頻率與冠軍敘述一律依快照的 final 旗標／champion 欄位條件化，不寫死賽季狀態。"""
     if final:
-        cadence = ("目前為休賽季、數字為該季終局。新賽季開打後（開季日以各聯盟官方公告為準）改為每週更新。")
+        cadence = ("目前為休賽季、數字為該季終局。新賽季開打後（開季日以各聯盟官方公告為準）改為每日自動更新。")
         champ_a = "；".join([_champ_clause("TPBL", tpbl), _champ_clause("P. LEAGUE+", plg)]) + "。"
     else:
-        cadence = "賽季進行中，本頁每週更新一次。"
+        cadence = "賽季進行中，本頁每日自動更新（以兩聯盟官網公開賽果入庫為準）。"
         champ_a = (f"賽季仍在進行中，{season} 賽季的兩聯盟總冠軍尚未產生；"
                    "兩聯盟總冠軍賽結束後，本頁會更新冠軍與系列賽結果。")
     return [
@@ -110,10 +115,53 @@ def _page_faq(season, asof, final, tpbl=None, plg=None):
     ]
 
 
-def league_panel(lg, season, asof, source_note, final=False, pre=None):
+def _games_table(rows, title, done):
+    """近期賽果／近期賽程（隊伍層：日期、對戰、比分或開賽時間、場館）。空清單不出表。"""
+    if not rows:
+        return ""
+    trs = ""
+    for r in rows:
+        if done:
+            mid = f'{r.get("home_score")}：{r.get("away_score")}'
+        else:
+            mid = html_lib.escape(r.get("time") or "時間未定")
+        trs += (f'<tr><td>{html_lib.escape(r.get("date", ""))}</td>'
+                f'<td class="l">{html_lib.escape(r.get("home", ""))}</td>'
+                f'<td>{mid}</td>'
+                f'<td class="l">{html_lib.escape(r.get("away", ""))}</td>'
+                f'<td class="l">{html_lib.escape(r.get("venue", ""))}</td></tr>')
+    mid_h = "比分" if done else "開賽"
+    return (f'<h3 class="games-h">{html_lib.escape(title)}</h3>'
+            '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
+            f'<table class="std-table games"><thead><tr><th>日期</th><th class="l">主隊</th>'
+            f'<th>{mid_h}</th><th class="l">客隊</th><th class="l">場館</th></tr></thead>'
+            f'<tbody>{trs}</tbody></table>')
+
+
+def started_notice(league_key, season, today=None):
+    """賽季已開打、但本聯盟仍無可發布戰績時的誠實說明；開季日取 config/season-openers.json。
+    與 bb_preseason_notice 不同：那個只在快照仍是上季終局時出現，這個是新賽季快照裡單一聯盟空表時用。"""
+    op = (ba.bb_season_openers() or {}).get(league_key) or {}
+    if str(op.get("season") or "") != str(season or ""):
+        return None
+    try:
+        opens = datetime.date.fromisoformat(str(op.get("opens") or ""))
+    except ValueError:
+        return None
+    if today is None:
+        today = datetime.datetime.now(zoneinfo.ZoneInfo("Asia/Taipei")).date()
+    if today < opens:
+        return None
+    return f"{op.get('label') or season}已於 {opens.isoformat()} 開打；本季戰績尚未自官網公開資料入庫，入庫後本頁自動更新。"
+
+
+def league_panel(lg, season, asof, source_note, final=False, pre=None, started=None):
     band = ""
     if pre:
         band += f'<p class="tbl-cap preseason">{html_lib.escape(pre["text"])}</p>'
+    if lg.get("carried_from"):
+        band += (f'<p class="tbl-cap carried">本季戰績沿用 {html_lib.escape(str(lg["carried_from"]))} 的快照'
+                 '（本次未自官網取得新資料）。</p>')
     if lg.get("champion_zh"):
         band += ('<div class="champ-band"><div class="bseal">冠</div><div class="bt">'
                 f'<div class="lbl">{season} 總冠軍</div>'
@@ -125,9 +173,14 @@ def league_panel(lg, season, asof, source_note, final=False, pre=None):
     cap = (f'<div class="tbl-cap">{season} {ba.season_status_txt(final)} · 快照 {asof} · '
            f'{html_lib.escape(source_note)}</div>')
     if not lg.get("standings"):
+        if started:
+            return (band + f'<p class="tbl-cap">{html_lib.escape(started)}'
+                    f'快照 {asof} · {html_lib.escape(source_note)}。</p>')
         return (band + f'<p class="tbl-cap">{season} 本季例行賽尚未開打，暫無可發布的戰績；'
                 f'快照 {asof} · {html_lib.escape(source_note)}。開季日以聯盟官方公告為準。</p>')
-    return band + hint + ba._std_table_v2(lg.get("standings", []), km) + cap
+    games = (_games_table(lg.get("recent_results") or [], "近期賽果（近 7 天）", True)
+             + _games_table(lg.get("upcoming") or [], "近期賽程（7 天內）", False))
+    return band + hint + ba._std_table_v2(lg.get("standings", []), km) + cap + games
 
 
 def build_page(snap):
@@ -143,13 +196,19 @@ def build_page(snap):
     pre_first = min((p for p in (pre_tpbl, pre_plg) if p), key=lambda p: p["opens"], default=None)
     page_title = (f"台灣職籃戰績：TPBL × P. LEAGUE+（{season} 終局・{pre_first['title_tag']}起）" if pre_first
                   else f"台灣職籃戰績：TPBL × P. LEAGUE+（{season}）")
+    # 分頁標籤的隊數由快照列數衍生（有表才標），不寫死 7／4——擴軍或縮編時文案不會安靜說錯。
+    def _lbl(name, lg):
+        n = len(lg.get("standings") or [])
+        return f"{name}（{n} 隊）" if n else name
+    started_tpbl = None if final else started_notice("tpbl", season)
+    started_plg = None if final else started_notice("plg", season)
     tabs = (
         '<div class="tabwrap tabs">'
         '<input type="radio" name="lg" id="t-tpbl" checked>'
         '<input type="radio" name="lg" id="t-plg">'
-        '<div class="tablist"><label for="t-tpbl">TPBL（7 隊）</label><label for="t-plg">P. LEAGUE+（4 隊）</label></div>'
-        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）", final, pre_tpbl)}</div>'
-        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁", final, pre_plg)}</div>'
+        f'<div class="tablist"><label for="t-tpbl">{_lbl("TPBL", tpbl)}</label><label for="t-plg">{_lbl("P. LEAGUE+", plg)}</label></div>'
+        f'<div class="panel" id="p-tpbl">{league_panel(tpbl, season, asof, "整理自 TPBL 官網公開資料（非官方文件化介面）", final, pre_tpbl, started_tpbl)}</div>'
+        f'<div class="panel" id="p-plg">{league_panel(plg, season, asof, "整理自 PLG 官網戰績頁", final, pre_plg, started_plg)}</div>'
         '</div>')
     note = ('<div class="tbl-cap">兩聯盟均未提供官方文件化 API，資料屬非官方整理；'
             '本站與 TPBL、P. LEAGUE+ 及各球團無任何關聯或授權，引用請以官方公告為準。</div>')
@@ -169,7 +228,10 @@ def build_page(snap):
                           ba.faq_node(faq, canonical)])
     champs = "、".join(f"{lbl} {lg['champion_zh']}" for lbl, lg in (("TPBL", tpbl), ("PLG", plg))
                       if lg.get("champion_zh"))
-    desc = (f"台灣職籃 {season} 賽季戰績（截至 {asof}）：TPBL 7 隊與 P. LEAGUE+ 4 隊例行賽排名"
+    n_t, n_p = len(tpbl.get("standings") or []), len(plg.get("standings") or [])
+    seg = (f"TPBL {n_t} 隊與 P. LEAGUE+ {n_p} 隊例行賽排名" if n_t and n_p
+           else "TPBL 與 P. LEAGUE+ 例行賽排名")
+    desc = (f"台灣職籃 {season} 賽季戰績（截至 {asof}）：{seg}"
             + (f"、總冠軍（{champs}）" if champs else "")
             + (f"；{pre_first['text'].rstrip('。')}" if pre_first else "")
             + "。兩聯盟並立現況的非官方數據頁。")
