@@ -33,7 +33,8 @@ if [ "$ROWS" -lt 3 ]; then
   log "FAIL PLG 只解析到 ${ROWS} 列（<3）→ 不覆寫變數（可能是官網改版或本機也被擋）"
   rm -f "$TMP"; exit 1
 fi
-if "$GH" variable set "$VAR_NAME" --repo "$GH_REPO" --body-file "$TMP" >>"$LOG" 2>&1; then
+# gh variable set 沒有 --body-file；內容從 stdin 餵（實測 2026-10-26：帶 --body-file 會印用法說明並 exit 1）
+if "$GH" variable set "$VAR_NAME" --repo "$GH_REPO" < "$TMP" >>"$LOG" 2>&1; then
   log "OK ${VAR_NAME} 已更新：${ROWS} 列（$("$PY" -c 'import json,sys;d=json.load(open(sys.argv[1]));print(d["season"],d["asof_taipei_date"])' "$TMP")）"
   rm -f "$TMP"; exit 0
 fi
