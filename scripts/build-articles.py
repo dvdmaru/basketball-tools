@@ -2517,6 +2517,62 @@ def bb_faq_details_html(pairs) -> str:
 _SCROLL_HINT = '<div class="scroll-hint">← 左右滑動看完整欄位 →</div>'
 
 
+def bb_nba_games_html(snap, days=("yesterday", "today", "tomorrow"), compact=False) -> str:
+    """NBA 近三日賽程／賽果（台北時間）→ 三張小表。snap＝leagues/nba-games-<date>.json；None 或空回空字串。
+    compact（首頁）只列今天與昨天。比分只在 FINAL 顯示；Cup 小組賽場次標「Cup」。"""
+    if not snap or not snap.get("days"):
+        return ""
+    # 相對標籤（昨天／今天／明天）以「今天」對快照日期算，快照過期時（fetch 連續失敗）只剩日期、不再說「今天」
+    try:
+        import zoneinfo as _zi
+        today = datetime.datetime.now(_zi.ZoneInfo("Asia/Taipei")).date()
+    except Exception:  # pragma: no cover
+        today = datetime.date.today()
+    rel = {-1: "昨天", 0: "今天", 1: "明天"}
+    out = ""
+    for i, day in enumerate(snap["days"][:3]):
+        if compact and i == 2:
+            continue
+        games = day.get("games") or []
+        try:
+            label = rel.get((datetime.date.fromisoformat(day.get("date", "")) - today).days, "")
+        except ValueError:
+            label = ""
+        rows = ""
+        for g in games:
+            if g.get("status") == "FINAL" and g.get("home_score") is not None:
+                mid = f'<b>{g.get("away_score")}：{g.get("home_score")}</b>'
+            elif g.get("status") == "LIVE":
+                mid = "進行中"
+            elif g.get("status") == "POSTPONED":
+                mid = "延期"
+            elif g.get("status") == "CANCELLED":
+                mid = "取消"
+            else:
+                mid = html_lib.escape(g.get("time", "")) + " 開賽"
+            cup = ' <span class="abbr">Cup</span>' if g.get("cup") else ""
+            rows += (f'<tr><td class="l">{html_lib.escape(g.get("away_zh", ""))} @ {html_lib.escape(g.get("home_zh", ""))}{cup}</td>'
+                     f'<td>{mid}</td></tr>')
+        body = (f'<table class="std-table games"><tbody>{rows}</tbody></table>' if rows
+                else '<div class="tbl-cap">沒有比賽</div>')
+        out += (f'<div class="games-day"><h4>{label} {html_lib.escape(day.get("date", ""))}'
+                f'<span class="n">{len(games)} 場</span></h4>{body}</div>')
+    asof = f'{snap.get("asof_taipei_date", "")} {snap.get("asof_taipei_time", "")}'.strip()
+    cap = (f'<div class="tbl-cap">台北時間 · 快照 {html_lib.escape(asof)} · 每日更新一次，不是即時比分；'
+           '整理自 ESPN 公開資料。</div>')
+    return f'<div class="games-grid">{out}</div>{cap}'
+
+
+BB_GAMES_CSS = """
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:12px 0 4px}
+.games-day h4{margin:0 0 6px;font-size:.95rem;display:flex;justify-content:space-between;align-items:baseline}
+.games-day h4 .n{font-family:var(--f-ui);font-size:11px;color:var(--fg-mute);letter-spacing:1px}
+.std-table.games td{white-space:nowrap;text-align:right}
+.std-table.games td.l{text-align:left}
+"""
+BB_HOME_CSS += BB_GAMES_CSS  # 首頁與所有吃 BB_HOME_CSS 的內頁（/standings/ 等）都要有賽程表樣式
+
+
 def _hbl_four_html(div):
     """HBL 四強卡（mock .four）。div = fetch-hbl divisions[boys|girls]。"""
     rank_zh = {1: "冠軍", 2: "亞軍", 3: "季軍", 4: "殿軍"}
@@ -2608,6 +2664,11 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
             '<span><i class="pi"></i>附加賽區（第 7–10 名）</span></div>'
             f'<div class="tbl-cap">{season_tag} {nba_status}名次 · 截至 {nba.get("asof", "")} · '
             f'整理自 ESPN 公開資料。<a href="/standings/">看完整東西區排名 →</a></div>')
+        games_html = bb_nba_games_html(_dash_latest("nba-games-*.json"), compact=True)
+        if games_html:
+            nba_panel = (f'<h3>今日／昨日賽程（台北時間）</h3>{games_html}'
+                         '<div class="tbl-cap"><a href="/standings/#games">看近三日賽程 →</a> · '
+                         '<a href="/nba-cup/">NBA Cup 小組賽戰績 →</a></div>' + nba_panel)
         tabs.append(("nba", "NBA 東西區", nba_panel))
     km_tw = ("rank", "team_name", "win", "lose", "pct", "games_behind")
     if tpbl and tpbl.get("standings"):

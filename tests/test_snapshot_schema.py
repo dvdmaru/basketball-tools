@@ -37,6 +37,17 @@ NBA_ROW_REQUIRED = {"conference", "seed", "name", "name_zh", "abbr",
 NBA_ROW_OPTIONAL = set()
 NBA_ROW_FORBIDDEN = {"division"}  # 見 docstring 第 3 點
 
+NBA_GAMES_TOP_REQUIRED = {"asof_taipei_date", "asof_taipei_time", "season", "source", "days"}
+NBA_GAMES_DAY_REQUIRED = {"date", "games"}
+NBA_GAME_REQUIRED = {"date", "time", "home_abbr", "home_zh", "away_abbr", "away_zh",
+                     "home_score", "away_score", "status", "venue", "cup"}
+NBA_CUP_TOP_REQUIRED = {"season", "label", "asof_taipei_date", "source", "config_sources", "group_play",
+                        "knockout", "tiebreak", "groups", "wildcards", "unassigned"}
+NBA_CUP_GROUP_REQUIRED = {"conference", "name", "tie_note", "standings", "games"}
+NBA_CUP_ROW_REQUIRED = {"abbr", "name_zh", "wins", "losses", "played", "diff", "points"}
+NBA_CUP_GAME_REQUIRED = {"date", "time", "home_abbr", "home_zh", "away_abbr", "away_zh",
+                         "home_score", "away_score", "status", "ot"}
+
 TW_TOP_REQUIRED = {"asof_taipei_date", "season", "final", "leagues"}
 TW_TOP_OPTIONAL = set()
 TW_LEAGUE_REQUIRED = {"name_zh", "standings", "source"}
@@ -101,6 +112,33 @@ def audit_nba(name, d):
                 f"而正文曾出現過依賴它的敘述（「太平洋組第 1」）＝當時是模型知識。"
                 f"若現在真的抓得到，請更新 {MODEL_DOC} 並解除本斷言；"
                 f"在那之前，任何分組層敘述都沒有資料支撐")
+    return p
+
+
+def audit_nba_games(name, d):
+    p = check_keys(d, NBA_GAMES_TOP_REQUIRED, set(), f"{name} 頂層")
+    for i, day in enumerate(d.get("days", [])):
+        p += check_keys(day, NBA_GAMES_DAY_REQUIRED, set(), f"{name} days[{i}]")
+        for j, g in enumerate(day.get("games", [])):
+            p += check_keys(g, NBA_GAME_REQUIRED, set(), f"{name} days[{i}].games[{j}]")
+            if g.get("status") == "SCHEDULED" and (g.get("home_score") is not None or g.get("away_score") is not None):
+                p.append(f"{name} days[{i}].games[{j}]：未開打卻有比分（ESPN 的 0 預設值不得當真比分）")
+    return p
+
+
+def audit_nba_cup(name, d):
+    p = check_keys(d, NBA_CUP_TOP_REQUIRED, set(), f"{name} 頂層")
+    groups = d.get("groups", [])
+    if len(groups) != 6:
+        p.append(f"{name}：groups 應為 6 組，實得 {len(groups)}")
+    for i, g in enumerate(groups):
+        p += check_keys(g, NBA_CUP_GROUP_REQUIRED, set(), f"{name} groups[{i}]")
+        if len(g.get("standings", [])) != 5:
+            p.append(f"{name} groups[{i}]：每組應 5 隊，實得 {len(g.get('standings', []))}")
+        for j, r in enumerate(g.get("standings", [])):
+            p += check_keys(r, NBA_CUP_ROW_REQUIRED, set(), f"{name} groups[{i}].standings[{j}]")
+        for j, x in enumerate(g.get("games", [])):
+            p += check_keys(x, NBA_CUP_GAME_REQUIRED, set(), f"{name} groups[{i}].games[{j}]")
     return p
 
 
@@ -177,6 +215,19 @@ class TestSnapshotSchema(unittest.TestCase):
 
     def test_tw_hoops(self):
         self._run("leagues/tw-hoops-*.json", audit_tw)
+
+    def test_nba_games_and_cup(self):
+        """這兩種快照每天由 CI 重抓、不回寫 repo，所以用 tests/fixtures/nba/ 的實抓樣本當母體；
+        repo 內若有（例如手動提交的 nba-cup），一併驗。"""
+        for pattern, auditor in (("tests/fixtures/nba/nba-games-*.json", audit_nba_games),
+                                 ("tests/fixtures/nba/nba-cup-*.json", audit_nba_cup)):
+            self._run(pattern, auditor)
+        for pattern, auditor in (("leagues/nba-games-*.json", audit_nba_games),
+                                 ("leagues/nba-cup-*.json", audit_nba_cup)):
+            problems = []
+            for name, d in _load(pattern):
+                problems += auditor(name, d)
+            self.assertEqual(problems, [], "\n  ▸ " + "\n  ▸ ".join(problems) if problems else "")
 
     def test_hbl_season(self):
         self._run("leagues/hbl-1*.json", audit_hbl)

@@ -26,6 +26,10 @@
 |---|---|---|---|
 | `nba-standings-<season>.json` | `season`／`asof`／`final`／`source`／`standings[]` | `champion_en`／`champion_zh`／`finals_note`（賽季未結束時不存在） | — |
 | └ `standings[]` 每一列 | `conference`／`seed`／`name`／`name_zh`／`abbr`／`wins`／`losses`／`pct`／`games_back`／`rank` | — | **`division`** |
+| `nba-games-<date>.json`（2026-10-26 起） | `asof_taipei_date`／`asof_taipei_time`／`season`／`source`／`days[]`（台北昨天、今天、明天三桶，每桶 `date`／`games[]`） | — | 轉播、賠率、球員層欄位（刻意不抓） |
+| └ `games[]` 每一場 | `date`／`time`（台北）／`home_abbr`／`home_zh`／`away_abbr`／`away_zh`／`home_score`／`away_score`（未完賽為 null）／`status`（SCHEDULED／LIVE／FINAL／POSTPONED／CANCELLED）／`venue`／`cup` | — | — |
+| `nba-cup-<season>.json`（2026-10-26 起） | `season`／`label`／`asof_taipei_date`／`source`／`config_sources`／`group_play`／`knockout`／`tiebreak`／`groups[]`／`wildcards`／`unassigned` | — | — |
+| └ `groups[]` 每一組 | `conference`／`name`／`tie_note`／`standings[]`（`abbr`／`name_zh`／`wins`／`losses`／`played`／`diff`／`points`）／`games[]`（同 nba-games 的場次欄位＋`ot`，無 `venue`／`cup`） | — | — |
 | `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`／`recent_results[]`／`upcoming[]`（後三者僅 tpbl 有）／`carried_from`（同季某源回空表時沿用前一份該聯盟資料，記那份的日期；源正常時不存在） | — |
 | └ `standings[]` 每一列 | `rank`／`team_name`／`win`／`lose`／`pct`／`games_behind` | — | — |
 | └ `recent_results[]`／`upcoming[]` 每一列 | `date`／`time`／`home`／`away`／`home_score`／`away_score`／`venue`／`status`（未完賽比分為 null） | — | **球員層欄位** |
@@ -37,6 +41,10 @@
 `final=false`（學年度進行中）時各組 **沒有** `champion`、`final_four` 為空——程式不推名次、不推冠軍（§2-3）；
 頁面的冠軍敘述只能說「本季尚未產生」並引用 `previous_season`。2026-10-26 前的抓取器遇到「只有資格賽、沒有總決賽」
 會直接報錯沿用上季（115 學年度資格賽 10/27 開打即觸發），現已改為進行中模式。
+
+`nba-cup` 的分組是 **editorial fact**（`config/nba-cup-<year>.json`，附 NBA 官方公告來源）：ESPN 只標「NBA Cup - Group Play」不帶組別。
+名次由本站依官方同分規則**前三層**自算（對戰只在恰兩隊同分時算；淨勝分、總得分不含延長賽），`tie_note` 標三隊以上同分；
+晉級、外卡與淘汰賽種子一律以 NBA 官方公告為準，頁面每處都要標。`nba-games` 休兵日可以是空桶，**不用筆數守門**。
 
 ### ☠️ 「沒有 `division`」這件事已經出過事（2026-08-18）
 

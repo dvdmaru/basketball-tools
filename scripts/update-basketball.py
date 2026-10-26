@@ -104,6 +104,11 @@ def freshness_failures(today=None, snapshot_root=None):
         age = _asof_age_days(nba, "asof", today) if nba else None
         if not nba or nba.get("season") != nba_expected or age is None or age > 3:
             failures.append(f"NBA 最新快照距今 {age if age is not None else '未知'} 天（門檻 3 天）")
+        # 近三日賽程快照每天重抓；超過 2 天＝fetch-nba-games 連續失敗（頁面會掛著舊的「今天」）。
+        games = _latest_snapshot("nba-games-*.json", leagues_dir)
+        gage = _asof_age_days(games, "asof_taipei_date", today) if games else None
+        if not games or gage is None or gage > 2:
+            failures.append(f"NBA 賽程快照距今 {gage if gage is not None else '未知'} 天（門檻 2 天）")
 
     tw_expected = nba_expected
     # TPBL 2026-27 例行賽 10/17 開打、PLG 10/24 開打（config/season-openers.json）；
@@ -209,6 +214,8 @@ def main():
     # 1. 抓資料（全部 fail-soft：斷源時沿用 repo 內既有快照；快照凍結＝頁面 as-of 誠實標示）
     if not args.skip_fetch:
         run(script("fetch-nba.py"), "fetch NBA (ESPN)", soft=True)
+        run(script("fetch-nba-games.py"), "fetch NBA games (ESPN scoreboard)", soft=True)
+        run(script("fetch-nba-cup.py"), "fetch NBA Cup (ESPN scoreboard)", soft=True)
         run(script("fetch-tw-hoops.py"), "fetch TW hoops (TPBL/PLG)", soft=True)
         run(script("fetch-hbl.py"), "fetch HBL", soft=True)
 
@@ -217,6 +224,7 @@ def main():
 
     # 3. 各 generator re-merge 自己的 sitemap path
     run(script("gen-nba-standings.py"), "gen NBA standings page")
+    run(script("gen-nba-cup.py"), "gen NBA Cup page")
     run(script("gen-tw-standings.py"), "gen TW hoops page")
     run(script("gen-hbl-page.py"), "gen HBL page")
     run(script("gen-basketball-data-hub.py"), "gen data hub")
