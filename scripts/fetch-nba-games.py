@@ -49,10 +49,14 @@ def taipei_dt(iso_utc: str) -> datetime.datetime:
 def game_row(event: dict, zh: dict) -> dict:
     comp = event["competitions"][0]
     status = comp.get("status", {}).get("type", {}) or {}
-    state = status.get("state", "")
+    name = str(status.get("name") or "").upper()
     if status.get("completed"):
         st = "FINAL"
-    elif state == "in":
+    elif "POSTPONED" in name:
+        st = "POSTPONED"   # ESPN 延期：state=post、completed=False，不能當「尚未開打」
+    elif "CANCEL" in name:
+        st = "CANCELLED"
+    elif status.get("state") == "in":
         st = "LIVE"
     else:
         st = "SCHEDULED"
@@ -68,7 +72,7 @@ def game_row(event: dict, zh: dict) -> dict:
         name = team.get("displayName", "")
         score = t.get("score")
         try:
-            score = int(score) if score not in (None, "") and st != "SCHEDULED" else None
+            score = int(score) if score not in (None, "") and st in ("FINAL", "LIVE") else None
         except (TypeError, ValueError):
             score = None
         return team.get("abbreviation", ""), zh.get(name, name), score

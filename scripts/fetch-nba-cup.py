@@ -61,9 +61,38 @@ def months_between(start: str, end: str) -> list:
     return out
 
 
-def is_cup(event: dict) -> bool:
+ET = zoneinfo.ZoneInfo("America/New_York")
+
+
+def is_cup(event: dict, cfg: dict = None) -> bool:
+    """小組賽＝notes 標「NBA Cup - Group Play」且美東日期落在 config 的小組賽窗內（淘汰賽 notes 也含 NBA Cup，不收）。"""
     comp = event["competitions"][0]
-    return any("NBA Cup" in (n.get("headline") or "") for n in comp.get("notes", []) or [])
+    if not any("Group Play" in (n.get("headline") or "") and "NBA Cup" in (n.get("headline") or "")
+               for n in comp.get("notes", []) or []):
+        return False
+    if cfg:
+        try:
+            et_date = datetime.datetime.fromisoformat(event["date"].replace("Z", "+00:00")).astimezone(ET).date().isoformat()
+        except (KeyError, ValueError):
+            return False
+        gp = cfg.get("group_play", {})
+        if not (gp.get("start", "") <= et_date <= gp.get("end", "9999")):
+            return False
+    return True
+
+
+def _status(comp: dict) -> str:
+    stype = comp.get("status", {}).get("type", {}) or {}
+    name = str(stype.get("name") or "").upper()
+    if stype.get("completed"):
+        return "FINAL"
+    if "POSTPONED" in name:
+        return "POSTPONED"
+    if "CANCEL" in name:
+        return "CANCELLED"
+    if stype.get("state") == "in":
+        return "LIVE"
+    return "SCHEDULED"
 
 
 def fetch_cup_events(cfg: dict) -> list:
@@ -72,7 +101,7 @@ def fetch_cup_events(cfg: dict) -> list:
         data = call("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
                     f"?dates={ym}&limit=400")
         for ev in data.get("events", []) or []:
-            if is_cup(ev):
+            if is_cup(ev, cfg):
                 events[ev.get("id") or ev.get("date")] = ev
     return list(events.values())
 
@@ -113,7 +142,7 @@ def game_row(event: dict, zh: dict) -> dict:
     return {"date": when.date().isoformat(), "time": when.strftime("%H:%M"),
             "home_abbr": ha, "home_zh": hz, "away_abbr": aa, "away_zh": az,
             "home_score": hs, "away_score": as_,
-            "status": "FINAL" if done else ("LIVE" if stype.get("state") == "in" else "SCHEDULED"),
+            "status": _status(comp),
             "ot": done and periods > 4,
             "_home_reg": hr, "_away_reg": ar, "_short": event.get("shortName", "")}
 
@@ -138,6 +167,7 @@ def build_groups(cfg: dict, games: list, zh_by_abbr: dict) -> tuple:
         rec = {abbr: {"abbr": abbr, "name_zh": zh_by_abbr.get(abbr, abbr), "wins": 0, "losses": 0,
                       "played": 0, "diff": 0, "points": 0} for abbr in g["teams"]}
         h2h = {abbr: {} for abbr in g["teams"]}  # h2h[a][b] = a 對 b 的勝場
+        notes = []
         for row in by_group[g["name"]]:
             if row["status"] != "FINAL" or row["home_score"] is None or row["away_score"] is None:
                 continue
@@ -150,11 +180,13 @@ def build_groups(cfg: dict, games: list, zh_by_abbr: dict) -> tuple:
             rec[a]["played"] += 1
             h2h[winner][loser] = h2h[winner].get(loser, 0) + 1
             # 淨勝分／總得分只算正規時間；進延長賽的場次淨勝分記 0、得分只算前四節
-            hr = row["_home_reg"] if row["_home_reg"] is not None else hs
-            ar = row["_away_reg"] if row["_away_reg"] is not None else as_
             if row["ot"]:
-                rec[h]["points"] += hr
-                rec[a]["points"] += ar
+                if row["_home_reg"] is None or row["_away_reg"] is None:
+                    # 沒有分節資料就算不出前四節得分：不灌含延長賽的總分進第 3 層，標註待官方
+                    notes.append(f'{row["date"]} {row["_short"] or (a + "@" + h)} 進延長賽但缺分節資料，總得分未計入')
+                else:
+                    rec[h]["points"] += row["_home_reg"]
+                    rec[a]["points"] += row["_away_reg"]
             else:
                 rec[h]["diff"] += hs - as_
                 rec[a]["diff"] += as_ - hs
@@ -162,22 +194,26 @@ def build_groups(cfg: dict, games: list, zh_by_abbr: dict) -> tuple:
                 rec[a]["points"] += as_
 
         rows = list(rec.values())
-        rows.sort(key=lambda r: (-r["wins"], -r["diff"], -r["points"], r["abbr"]))
-        # 第 1 層：恰兩隊同勝場時看對戰成績（兩隊以上同分的對戰成績要看組內互戰總和，口徑未驗，不自算）
+        # 小組賽進行中各隊出賽數不同：先比勝率（0 場記 0），再淨勝分、總得分（官方表同樣以 W-L 勝率排）
+        pct = lambda r: (r["wins"] / r["played"]) if r["played"] else 0.0  # noqa: E731
+        rows.sort(key=lambda r: (-pct(r), -r["wins"], -r["diff"], -r["points"], r["abbr"]))
+        # 第 1 層：恰兩隊「同勝率且同出賽數」時看對戰成績（三隊以上的對戰成績要看互戰總和，口徑未驗，不自算）
         tie_note = ""
         i = 0
         while i < len(rows):
             j = i
-            while j + 1 < len(rows) and rows[j + 1]["wins"] == rows[i]["wins"]:
+            while (j + 1 < len(rows) and pct(rows[j + 1]) == pct(rows[i])
+                   and rows[j + 1]["played"] == rows[i]["played"]):
                 j += 1
-            if j == i + 1:
+            if j == i + 1 and rows[i]["played"]:
                 a, b = rows[i]["abbr"], rows[i + 1]["abbr"]
                 if h2h[b].get(a, 0) > h2h[a].get(b, 0):
                     rows[i], rows[i + 1] = rows[i + 1], rows[i]
-            elif j > i + 1 and rows[i]["played"] and len({r["played"] for r in rows[i:j + 1]}) == 1:
-                # 出賽數相同、勝場相同的三隊以上才是真同分（開季初 0-0 與 0-1 混在一起不算）
-                tie_note = "有三隊以上同勝場：本站只依淨勝分、總得分排列，對戰成績與後續層級以官方名次為準。"
+            elif j > i + 1 and rows[i]["played"]:
+                tie_note = "有三隊以上同勝率：本站只依淨勝分、總得分排列，對戰成績與後續層級以官方名次為準。"
             i = j + 1
+        if notes:
+            tie_note = (tie_note + " " if tie_note else "") + "；".join(notes) + "。"
         games_out = [{k: v for k, v in r.items() if not k.startswith("_")}
                      for r in sorted(by_group[g["name"]], key=lambda r: (r["date"], r["time"]))]
         groups.append({"conference": g["conference"], "name": g["name"], "tie_note": tie_note,
@@ -193,7 +229,7 @@ def wildcards(groups: list) -> dict:
         if not seconds:
             out[conf] = None
             continue
-        best = sorted(seconds, key=lambda r: (-r["wins"], -r["diff"], -r["points"], r["abbr"]))[0]
+        best = sorted(seconds, key=lambda r: (-(r["wins"] / r["played"]), -r["wins"], -r["diff"], -r["points"], r["abbr"]))[0]
         out[conf] = {"abbr": best["abbr"], "name_zh": best["name_zh"]}
     return out
 

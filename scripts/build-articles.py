@@ -2522,18 +2522,32 @@ def bb_nba_games_html(snap, days=("yesterday", "today", "tomorrow"), compact=Fal
     compact（首頁）只列今天與昨天。比分只在 FINAL 顯示；Cup 小組賽場次標「Cup」。"""
     if not snap or not snap.get("days"):
         return ""
-    labels = {0: "昨天", 1: "今天", 2: "明天"}
+    # 相對標籤（昨天／今天／明天）以「今天」對快照日期算，快照過期時（fetch 連續失敗）只剩日期、不再說「今天」
+    try:
+        import zoneinfo as _zi
+        today = datetime.datetime.now(_zi.ZoneInfo("Asia/Taipei")).date()
+    except Exception:  # pragma: no cover
+        today = datetime.date.today()
+    rel = {-1: "昨天", 0: "今天", 1: "明天"}
     out = ""
     for i, day in enumerate(snap["days"][:3]):
         if compact and i == 2:
             continue
         games = day.get("games") or []
+        try:
+            label = rel.get((datetime.date.fromisoformat(day.get("date", "")) - today).days, "")
+        except ValueError:
+            label = ""
         rows = ""
         for g in games:
             if g.get("status") == "FINAL" and g.get("home_score") is not None:
                 mid = f'<b>{g.get("away_score")}：{g.get("home_score")}</b>'
             elif g.get("status") == "LIVE":
                 mid = "進行中"
+            elif g.get("status") == "POSTPONED":
+                mid = "延期"
+            elif g.get("status") == "CANCELLED":
+                mid = "取消"
             else:
                 mid = html_lib.escape(g.get("time", "")) + " 開賽"
             cup = ' <span class="abbr">Cup</span>' if g.get("cup") else ""
@@ -2541,7 +2555,7 @@ def bb_nba_games_html(snap, days=("yesterday", "today", "tomorrow"), compact=Fal
                      f'<td>{mid}</td></tr>')
         body = (f'<table class="std-table games"><tbody>{rows}</tbody></table>' if rows
                 else '<div class="tbl-cap">沒有比賽</div>')
-        out += (f'<div class="games-day"><h4>{labels.get(i, "")} {html_lib.escape(day.get("date", ""))}'
+        out += (f'<div class="games-day"><h4>{label} {html_lib.escape(day.get("date", ""))}'
                 f'<span class="n">{len(games)} 場</span></h4>{body}</div>')
     asof = f'{snap.get("asof_taipei_date", "")} {snap.get("asof_taipei_time", "")}'.strip()
     cap = (f'<div class="tbl-cap">台北時間 · 快照 {html_lib.escape(asof)} · 每日更新一次，不是即時比分；'

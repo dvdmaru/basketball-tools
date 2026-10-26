@@ -106,6 +106,8 @@ def group_block(group):
     for g in group.get("games", []):
         if g.get("status") == "FINAL" and g.get("home_score") is not None:
             mid = f'{g.get("away_score")}：{g.get("home_score")}' + ("（OT）" if g.get("ot") else "")
+        elif g.get("status") in ("LIVE", "POSTPONED", "CANCELLED"):
+            mid = {"LIVE": "進行中", "POSTPONED": "延期", "CANCELLED": "取消"}[g["status"]]
         else:
             mid = html_lib.escape(g.get("time", "")) + " 開賽"
         games += (f'<tr><td>{html_lib.escape(g.get("date", ""))}</td>'
@@ -125,7 +127,7 @@ def _page_faq(snap):
     label = snap.get("label", "NBA Cup")
     season = snap.get("season", "")
     done = sum(1 for g in snap.get("groups", []) for x in g.get("games", []) if x.get("status") == "FINAL")
-    total = sum(len(g.get("games", [])) for g in snap.get("groups", []))
+    total = 10 * len(snap.get("groups", []))  # 賽制常數：每組 5 隊各打 4 場＝10 場；不用抓到的場數（ESPN 可能只出一部分）
     tb = snap.get("tiebreak") or []
     ko = snap.get("knockout") or {}
     wc = snap.get("wildcards") or {}
@@ -160,7 +162,7 @@ def build_page(snap):
     canonical = f"{BASE}/nba-cup/"
     groups = snap.get("groups", [])
     done = sum(1 for g in groups for x in g.get("games", []) if x.get("status") == "FINAL")
-    total = sum(len(g.get("games", [])) for g in groups)
+    total = 10 * len(groups)
     west = [g for g in groups if g.get("conference") == "Western"]
     east = [g for g in groups if g.get("conference") == "Eastern"]
     wc = snap.get("wildcards") or {}

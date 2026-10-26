@@ -106,13 +106,47 @@ class CupStandingsTests(unittest.TestCase):
         self.assertEqual([r["abbr"] for r in wa["standings"][:2]], ["DEN", "HOU"])
         self.assertEqual(wa["tie_note"], "")
 
+    def test_in_progress_ranking_uses_win_pct_not_raw_wins(self):
+        # UTAH 1-0（+20）、PHX 1-1（+10）、DEN 1-0（+1）：1-0 的兩隊都要排在 1-1 前面；DEN 與 UTAH 同 1-0 看淨勝分
+        events = [espn_event(1, "2026-10-30T23:00Z", "UTAH", "HOU", 120, 100, home_ls=[30] * 4, away_ls=[25] * 4),
+                  espn_event(2, "2026-11-06T23:00Z", "PHX", "DAL", 110, 100, home_ls=[28, 28, 27, 27], away_ls=[25] * 4),
+                  espn_event(3, "2026-11-13T23:00Z", "DEN", "PHX", 101, 100, home_ls=[25, 25, 25, 26], away_ls=[25] * 4)]
+        groups, _ = self._groups(events)
+        wa = next(g for g in groups if g["name"] == "West A")
+        self.assertEqual([r["abbr"] for r in wa["standings"][:3]], ["UTAH", "DEN", "PHX"])
+        self.assertEqual(wa["tie_note"], "")  # UTAH/DEN 同 1-0 恰兩隊、無對戰 → 不標
+
+    def test_ot_without_linescores_is_not_counted_into_points(self):
+        events = [espn_event(1, "2026-10-30T23:00Z", "DEN", "HOU", 110, 108, periods=5)]  # 沒有 linescores
+        groups, _ = self._groups(events)
+        wa = next(g for g in groups if g["name"] == "West A")
+        rec = {r["abbr"]: r for r in wa["standings"]}
+        self.assertEqual((rec["DEN"]["wins"], rec["DEN"]["diff"], rec["DEN"]["points"]), (1, 0, 0))
+        self.assertIn("缺分節資料", wa["tie_note"])
+
+    def test_knockout_games_and_out_of_window_games_are_not_group_play(self):
+        ev = espn_event(1, "2026-12-05T00:00Z", "DEN", "HOU")
+        ev["competitions"][0]["notes"] = [{"headline": "NBA Cup - Quarterfinals"}]
+        self.assertFalse(cup_mod.is_cup(ev, CUP_CFG))
+        ev2 = espn_event(2, "2026-10-31T00:00Z", "DEN", "HOU")      # 美東 10/30 晚 → 窗內
+        self.assertTrue(cup_mod.is_cup(ev2, CUP_CFG))
+        ev3 = espn_event(3, "2026-12-01T00:00Z", "DEN", "HOU")      # 美東 11/30 → 窗外
+        self.assertFalse(cup_mod.is_cup(ev3, CUP_CFG))
+
+    def test_postponed_game_is_not_scheduled(self):
+        ev = espn_event(1, "2026-10-31T00:00Z", "DEN", "HOU")
+        ev["competitions"][0]["status"]["type"].update({"name": "STATUS_POSTPONED", "state": "post"})
+        self.assertEqual(cup_mod.game_row(ev, ZH)["status"], "POSTPONED")
+        self.assertEqual(games_mod.game_row(ev, ZH)["status"], "POSTPONED")
+        self.assertIsNone(games_mod.game_row(ev, ZH)["home_score"])
+
     def test_three_way_tie_is_flagged_not_resolved(self):
         events = [espn_event(1, "2026-10-30T23:00Z", "DEN", "HOU", 100, 90, home_ls=[25] * 4, away_ls=[22, 22, 23, 23]),
                   espn_event(2, "2026-11-06T23:00Z", "HOU", "PHX", 100, 90, home_ls=[25] * 4, away_ls=[22, 22, 23, 23]),
                   espn_event(3, "2026-11-13T23:00Z", "PHX", "DEN", 100, 90, home_ls=[25] * 4, away_ls=[22, 22, 23, 23])]
         groups, _ = self._groups(events)
         wa = next(g for g in groups if g["name"] == "West A")
-        self.assertIn("三隊以上同勝場", wa["tie_note"])
+        self.assertIn("三隊以上同勝率", wa["tie_note"])
 
     def test_cross_group_cup_game_goes_to_unassigned(self):
         events = [espn_event(1, "2026-10-30T23:00Z", "DEN", "OKC", 100, 90, home_ls=[25] * 4, away_ls=[22, 22, 23, 23])]
@@ -214,8 +248,8 @@ class PagesTests(unittest.TestCase):
         with mock.patch.object(ba, "_dash_latest", fake):
             html = ba.render_sport_index([], ba.SITES["basketball"], "籃球")
         self.assertIn("今日／昨日賽程", html)
-        self.assertIn("明天", html.split("今日／昨日賽程")[1][:5000]) if False else None
-        self.assertNotIn("明天 2026-10-27", html)   # 首頁 compact 只列昨天、今天
+        self.assertNotIn("2026-10-27<span", html)   # 首頁 compact 只列前兩桶（fixture 第三桶是 10-27）
+        self.assertIn("2026-10-26<span", html)
         self.assertIn('href="/nba-cup/"', html)
 
     def test_nav_has_nba_cup_entry(self):

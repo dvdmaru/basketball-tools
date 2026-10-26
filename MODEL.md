@@ -27,7 +27,7 @@
 | `nba-standings-<season>.json` | `season`／`asof`／`final`／`source`／`standings[]` | `champion_en`／`champion_zh`／`finals_note`（賽季未結束時不存在） | — |
 | └ `standings[]` 每一列 | `conference`／`seed`／`name`／`name_zh`／`abbr`／`wins`／`losses`／`pct`／`games_back`／`rank` | — | **`division`** |
 | `nba-games-<date>.json`（2026-10-26 起） | `asof_taipei_date`／`asof_taipei_time`／`season`／`source`／`days[]`（台北昨天、今天、明天三桶，每桶 `date`／`games[]`） | — | 轉播、賠率、球員層欄位（刻意不抓） |
-| └ `games[]` 每一場 | `date`／`time`（台北）／`home_abbr`／`home_zh`／`away_abbr`／`away_zh`／`home_score`／`away_score`（未完賽為 null）／`status`（SCHEDULED／LIVE／FINAL）／`venue`／`cup` | — | — |
+| └ `games[]` 每一場 | `date`／`time`（台北）／`home_abbr`／`home_zh`／`away_abbr`／`away_zh`／`home_score`／`away_score`（未完賽為 null）／`status`（SCHEDULED／LIVE／FINAL／POSTPONED／CANCELLED）／`venue`／`cup` | — | — |
 | `nba-cup-<season>.json`（2026-10-26 起） | `season`／`label`／`asof_taipei_date`／`source`／`config_sources`／`group_play`／`knockout`／`tiebreak`／`groups[]`／`wildcards`／`unassigned` | — | — |
 | └ `groups[]` 每一組 | `conference`／`name`／`tie_note`／`standings[]`（`abbr`／`name_zh`／`wins`／`losses`／`played`／`diff`／`points`）／`games[]`（同 nba-games 的場次欄位＋`ot`，無 `venue`／`cup`） | — | — |
 | `tw-hoops-<date>.json` | `asof_taipei_date`／`season`／`final`／`leagues.tpbl`／`leagues.plg` | 各聯盟 `champion_zh`／`finals_note`／`regular_season_games`／`recent_results[]`／`upcoming[]`（後三者僅 tpbl 有）／`carried_from`（同季某源回空表時沿用前一份該聯盟資料，記那份的日期；源正常時不存在） | — |
