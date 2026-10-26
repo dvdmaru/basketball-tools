@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  basketball-tools：每天 11:30（本機時區＝台北）在 Mac 上抓 PLG 戰績，寫進 GitHub Actions 變數。
+  安裝（一次）：
+    cp ops/launchd/cc.twtools.basketball.plg-fetch.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/cc.twtools.basketball.plg-fetch.plist
+  立刻跑一次：launchctl kickstart -k gui/$(id -u)/cc.twtools.basketball.plg-fetch
+  移除：launchctl bootout gui/$(id -u)/cc.twtools.basketball.plg-fetch && rm ~/Library/LaunchAgents/cc.twtools.basketball.plg-fetch.plist
+  日誌：~/Library/Logs/basketball-plg-fetch.log
+  ⚠️ ProgramArguments 的 repo 路徑寫死為 Charlie 的正式 checkout；換機要改。launchd 沒有 PATH，腳本內用絕對路徑找 python3／gh。
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>cc.twtools.basketball.plg-fetch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/charlie.chien/Github-Repo/basketball-tools/scripts/plg-mac-fetch.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>30</integer></dict>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>/Users/charlie.chien/Library/Logs/basketball-plg-fetch.launchd.out</string>
+  <key>StandardErrorPath</key><string>/Users/charlie.chien/Library/Logs/basketball-plg-fetch.launchd.err</string>
+</dict>
+</plist>

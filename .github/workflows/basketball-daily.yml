@@ -51,4 +51,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # PLG 官網擋 runner 的 IP：Charlie 的 Mac 每天 11:30 用 scripts/plg-mac-fetch.sh 把 PLG 戰績
+          # 寫進這個 repo 變數（settings → variables）；fetch-tw-hoops.py 自抓失敗時才用，且限同季兩天內。
+          PLG_STANDINGS_OVERRIDE: ${{ vars.PLG_STANDINGS_OVERRIDE }}
         run: python scripts/update-basketball.py --deploy
