@@ -2253,11 +2253,11 @@ def bb_home_faq(nba=None, tw=None, hbl=None):
     st = bb_season_state(nba, tw, hbl)
     if st["offseason"]:
         cadence = (f"目前為休賽季模式：頁面顯示 {st['season_seg']}{st['hbl_seg']}的終局數據，"
-                   "並標註資料截至日期。各聯盟新賽季開打後，NBA 戰績改為每日自動更新、"
-                   "台灣職籃與 HBL 為每週更新；每篇文章的數字也都標註來源與截止日期。")
+                   "並標註資料截至日期。各聯盟新賽季開打後，NBA、台灣職籃與 HBL 的戰績都改為每日自動更新"
+                   "（以各聯盟官網公開賽果入庫為準）；每篇文章的數字也都標註來源與截止日期。")
     else:
-        cadence = (f"目前 {st['season_seg']}正在進行中：NBA 戰績每日自動更新、台灣職籃與 HBL 為每週更新，"
-                   "頁面均標註資料截至日期；每篇文章的數字也都標註來源與截止日期。")
+        cadence = (f"目前 {st['season_seg']}正在進行中：NBA、台灣職籃與 HBL 的戰績每日自動更新"
+                   "（以各聯盟官網公開賽果入庫為準），頁面均標註資料截至日期；每篇文章的數字也都標註來源與截止日期。")
     return [
         ("籃球數據誌涵蓋哪些聯盟？",
          "美國職籃 NBA（30 隊）、台灣職籃兩聯盟——TPBL（台灣職業籃球大聯盟，7 隊）與 P. LEAGUE+（4 隊），以及 HBL 高中籃球甲級聯賽（男甲、女甲）。首頁提供各聯盟戰績速覽，數據頁可深入查詢。"),
@@ -2667,13 +2667,36 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                      f'{_SCROLL_HINT}{_std_table_v2(plg["standings"], km_tw)}'
                      f'<div class="tbl-cap">{tw.get("season", "")} {tw_status} · 快照 {tw.get("asof_taipei_date", "")} · '
                      f'整理自 PLG 官網公開資料。<a href="/tw/">看兩聯盟對照 →</a></div>'))
-    if hbl and hbl.get("divisions"):
+    if hbl and hbl.get("divisions") and hbl.get("final"):
         dvs = hbl["divisions"]
         four = "".join(_hbl_four_html(dvs[k]) for k in ("boys", "girls") if dvs.get(k))
         tabs.append(("hbl", "HBL 甲級",
                      f'<div class="four-grid">{four}</div>'
                      f'<div class="tbl-cap">{hbl.get("season_label", "")}總決賽最終名次 · '
                      f'整理自 HBL 官網公開賽果。<a href="/hbl/">看歷屆冠軍 →</a></div>'))
+    elif hbl and hbl.get("divisions"):
+        # 學年度進行中（尚無總決賽）：不推名次、不推冠軍，只列目前階段與完成場數，連到逐場對戰表。
+        items = ""
+        for k in ("boys", "girls"):
+            group = (hbl.get("stages") or {}).get(k) or {}
+            divs = group.get("divisions") or []
+            if not divs:
+                continue
+            cur = next((s for s in divs if s.get("status") == "IN_PROGRESS"), divs[-1])
+            span = cur.get("first_date", "")
+            if cur.get("last_date") and cur.get("last_date") != span:
+                span += f"～{cur['last_date']}"
+            items += (f'<div class="row"><span class="pl">{html_lib.escape(group.get("label", ""))}</span>'
+                      f'<span class="nm">{html_lib.escape(cur.get("name", ""))}</span>'
+                      f'<span class="note">{html_lib.escape(span)} · 已完成 {cur.get("completed", 0)}／{cur.get("games", 0)} 場</span></div>')
+        prev = hbl.get("previous_season") or {}
+        prev_txt = "、".join(f'{d.get("label", "")} {d.get("champion", "")}'
+                            for d in (prev.get("divisions") or {}).values() if d.get("champion"))
+        tabs.append(("hbl", "HBL 甲級",
+                     f'<div class="four-grid"><div class="four"><h4>{html_lib.escape(hbl.get("season_label", ""))} · 進行中</h4>{items}</div></div>'
+                     f'<div class="tbl-cap">本季尚未產生四強與冠軍'
+                     + (f'；上季（{html_lib.escape(prev.get("season_label", ""))}）冠軍：{html_lib.escape(prev_txt)}' if prev_txt else "")
+                     + f' · 整理自 HBL 官網公開賽程與賽果。<a href="/hbl/">看逐場對戰表 →</a></div>'))
     stand_sec = ""
     if tabs:
         inputs = "".join(f'<input type="radio" name="lg" id="t-{tid}"{" checked" if i == 0 else ""}>'
@@ -2868,8 +2891,8 @@ def render_bb_llms_txt(articles: list, site: dict) -> str:
     if st["offseason"]:
         season_state_line = (f"；休賽季顯示 {st['season_seg']}{st['hbl_seg']}終局數據，開季後恢復自動更新。")
     else:
-        season_state_line = (f"；{st['season_seg']}進行中，NBA 戰績每日自動更新、"
-                             "台灣職籃與 HBL 每週更新。")
+        season_state_line = (f"；{st['season_seg']}進行中，NBA、台灣職籃與 HBL 戰績每日自動更新"
+                             "（以各聯盟官網公開賽果入庫為準）。")
     standings_season_seg = f"（{st['season_tag']} 賽季）" if st["season_tag"] else ""
     return f"""# 籃球數據誌（basketball.twtools.cc）— NBA・台灣職籃・HBL 戰績與數據
 
