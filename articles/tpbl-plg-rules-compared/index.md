@@ -5,7 +5,7 @@ topic: tw-pro
 type: "feature"
 date: "2026-08-06"
 title: "TPBL、PLG 規則怎麼比？先分清兩份規章的球員身分、名額與選秀"
-subtitle: "TPBL 2026 年 10 月 7 日修訂《聯盟規章》與 PLG 官網列示的 2025 年 10 月 21 日《賽務章程》不是同一份文件。兩聯盟都有註冊、選秀與交易規範，但分類與條文結構不同。"
+subtitle: "TPBL 2026 年 10 月 16 日修訂《聯盟規章》與 PLG 官網列示的 2025 年 10 月 21 日《賽務章程》不是同一份文件。兩聯盟都有註冊、選秀與交易規範，但分類與條文結構不同。"
 lede: "比較 TPBL 與 PLG，不應先問哪一邊『比較寬鬆』，而要先確認規則寫在哪一份、適用哪一種球員身分、以及該條文是否仍為官方現行版本。"
 ---
 
@@ -71,7 +71,7 @@ PLG 的制度則依其《賽務章程》處理不同球員類別與球團名單�
 
 ## 資料來源
 
-- 台灣職業籃球大聯盟《聯盟規章》（封面標示 2026/10/07 修訂版）：`https://assets.tpbl.basketball/frontend/TPBL賽務規章.pdf`
+- 台灣職業籃球大聯盟《聯盟規章》（封面標示 2026/10/16 修訂版）：`https://assets.tpbl.basketball/frontend/TPBL賽務規章.pdf`
 - [TPBL 2026-27 賽季啟動與註冊制度公告](https://tpbl.basketball/news/500)，2026/10/7
 - P. LEAGUE+《賽務章程》（官網列示 2025/10/21 公告版）：`https://pleagueofficial.com/download/PLG_Rulebook_2025_1021.pdf`
 
