@@ -30,6 +30,9 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("nba-flopping-penalty-basics", "NBA · 假摔罰則",
+     "2012 罰款階梯<br>現行技術犯規＋1 罰球",
+     "場上技術犯規＋1 罰球　·　漏吹後可賽後處理"),
     ('jokic-triple-double-record-chase', 'NBA · 約基奇大三元', '例行賽仍排第二<br>加計季後賽已領先', '例行賽 199 對 209 次\u3000·\u3000檢查日 2026-10-26'),
     ("clippers-kawhi-leonard-circumvention-penalties", "NBA · 規避薪資上限",
      "6 天內<br>3 封介紹信",
