@@ -1,7 +1,13 @@
 # basketball-tools — 籃球數據誌（basketball.twtools.cc）
 
 非官方繁體中文籃球數據與內容站：**NBA × 台灣職籃（TPBL／PLG）× HBL 高中籃球**。
-100% 靜態、server-rendered、零 client fetch（為被 AI 引用設計，GEO/AEO）。
+100% 靜態、server-rendered、內容零 client fetch（為被 AI 引用設計，GEO/AEO）。
+**唯一例外是版位**（2026-11-07 Charlie 裁定「版位例外，瀏覽器端讀」）：首頁主推位、列表原生、
+文末原生由 `scripts/adslots.py` 產生預設卡，瀏覽器端再讀 `https://twtools.cc/ad-slots.json`
+換上當期檔期（CSP 的 `connect-src`／`img-src` 因此放行 `https://twtools.cc`，見 `public-basketball/_headers`）。
+版位只放首頁、`/articles/` 與文章頁；數據頁（`/standings/`、`/tw/`、`/hbl/`、`/nba-cup/`、`/data/`）
+一律不放、不載版位程式（`tests/test_ad_slots.py` 釘住）。版位平常隱藏（沒有當期檔期時網站跟原本一樣），
+有檔期才出現；網址加 `?ad-preview=1` 可預覽樣子（不看檔期時間、不送 GA）。
 架構 clone 自姊妹站 [dvdmaru/baseball-tools](https://github.com/dvdmaru/baseball-tools)（棒球數據誌）。
 
 - Live：https://basketball.twtools.cc/
