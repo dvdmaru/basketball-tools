@@ -47,9 +47,17 @@ import glob
 import unicodedata
 import html as html_lib
 
+import importlib.util
+
 import markdown as md_lib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+# 站群自有版位（2026-11-07 Charlie 裁定「版位例外，瀏覽器端讀」）：只放首頁、/articles/、文章頁，
+# 數據頁（gen-* 產生的 /standings/、/tw/、/hbl/、/nba-cup/、/data/）一律不放。說明見 scripts/adslots.py。
+_adspec = importlib.util.spec_from_file_location("bb_adslots", ROOT / "scripts" / "adslots.py")
+ads = importlib.util.module_from_spec(_adspec)
+_adspec.loader.exec_module(ads)
 SRC = ROOT / "articles"
 OUT = ROOT / "public" / "articles"
 SITE = "https://foootball.twtools.cc"
@@ -1525,6 +1533,11 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
         lede_html = ('\n    <div class="article-lede"><span class="lede-label">重點速答</span>'
                      f'<p>{html_lib.escape(lede_raw)}</p></div>')
     related_block = render_related_reading(meta, slug, related_candidates or [])
+    # 文末原生版位：只給籃球站文章（本引擎的足球 fallback 不放）；位置＝延伸閱讀之後、上下篇導覽之前
+    with_ads = _sport_of(meta) == "basketball"
+    ad_css = ads.AD_CSS if with_ads else ""
+    ad_end = ads.slot_html("native_end") if with_ads else ""
+    ad_script = ads.script_tag() if with_ads else ""
 
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant" data-theme="{site['default_theme']}">
@@ -1560,7 +1573,7 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
 {SHARED_TOKENS_CSS}{extra_theme_css(site)}
 {THEME_SWITCH_CSS}
 {SITE_HEADER_CSS}
-{ARTICLE_CSS}
+{ARTICLE_CSS}{ad_css}
 </style>
 </head>
 <body>
@@ -1579,10 +1592,12 @@ def render_article(meta: dict, body_html: str, slug: str, excerpt: str = "",
     </div>
     {related_block}
   </article>
+  {ad_end}
   {series_nav}
 </div>
 {site_footer_html(site)}
 <script>{theme_switch_js(site)}</script>
+{ad_script}
 </body>
 </html>
 """
@@ -2793,7 +2808,9 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                     f'<div class="cover"><img src="/articles/{a["slug"]}/cover.png" alt="{title}｜封面" loading="lazy"></div>'
                     f'<div class="txt"><span class="kick">{_kicker_label(a["meta"])}</span>'
                     f'<h4>{title}</h4>{desc}<div class="meta">{meta}</div></div></a>')
-        cards_html = art_card(articles[0], lead=True) + "".join(art_card(a) for a in articles[1:5])
+        # 第 3 格是列表原生版位（平常隱藏）。平常照舊 5 篇；原生真的出現時第 5 篇讓位，總數維持 5 格。
+        cards_html = ads.with_native([art_card(articles[0], lead=True)] + [art_card(a) for a in articles[1:5]],
+                                     yield_last=len(articles) >= 5)
         art_sec = ('<section class="blk"><div class="sp"></div>'
                    '<div class="slabel"><span class="k">最新 <em>文章</em></span><span class="rule"></span>'
                    '<a class="r" href="/articles/" style="text-decoration:none">全部文章 →</a></div>'
@@ -2826,7 +2843,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
                        breadcrumb_node([("首頁", f"{base}/")]),
                        faq_node(faq, f"{base}/")])
     desc = "NBA × 台灣職籃（TPBL／PLG）× HBL 高中籃球的戰績與數據儀表板：東西區排名、台灣職籃戰績、HBL 四強與冠軍，以及數據導向的深度特刊。繁體中文 / 台北時間。"
-    return f"""{_bb_head(site, site['website_name'], desc, f"{base}/", jsonld, extra_css=BB_HOME_CSS)}
+    return f"""{_bb_head(site, site['website_name'], desc, f"{base}/", jsonld, extra_css=BB_HOME_CSS + ads.AD_CSS)}
 <body>
 {site_header_html("home", site)}
 <main class="wrap">
@@ -2839,6 +2856,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
       <span class="seg">整理自公開來源</span>
     </div>
   </section>
+  {ads.slot_html("home_hero")}
   <div class="dash">
   {dash_blocks}
   </div>
@@ -2849,6 +2867,7 @@ def render_sport_index(articles: list, site: dict, sport_label: str) -> str:
 </main>
 {bb_footer_v2(site)}
 <script>{theme_switch_js(site)}</script>
+{ads.script_tag()}
 </body>
 </html>
 """
@@ -2867,9 +2886,15 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
         for topic in ARTICLE_TOPICS if topic_counts[topic["key"]]
     )
     sections = []
+    native_placed = False
     for topic in ARTICLE_TOPICS:
-        cards = "".join(_bb_idx_card(a) for a in remaining
-                        if a["meta"].get("topic") == topic["key"])
+        topic_cards = [_bb_idx_card(a) for a in remaining if a["meta"].get("topic") == topic["key"]]
+        # 列表原生版位：放在第一個有 2 張以上卡片的主題區、該區第 3 格（平常隱藏；整頁只放 1 個）
+        if not native_placed and len(topic_cards) >= 2:
+            cards = ads.with_native(topic_cards)
+            native_placed = True
+        else:
+            cards = "".join(topic_cards)
         if cards:
             sections.append(f'<section class="topic-section"><h2 id="{topic["key"]}">'
                             f'{html_lib.escape(topic["label"])}</h2><div class="idx-grid">{cards}</div></section>')
@@ -2882,7 +2907,7 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
             "isPartOf": {"@id": f"{base}/#website"}, "mainEntity": item_list}
     jsonld = graph_ld([org_node(site), website_node(site), coll,
                        breadcrumb_node([("首頁", f"{base}/"), ("文章", f"{base}/articles/")])])
-    return f"""{_bb_head(site, f"深度文章 ｜ {site['org_name']}", f"NBA 與台灣籃球（TPBL／PLG／HBL）的數據深度分析、聯盟指南與專題特刊，共 {len(articles)} 篇。", f"{base}/articles/", jsonld, extra_css=INDEX_CSS)}
+    return f"""{_bb_head(site, f"深度文章 ｜ {site['org_name']}", f"NBA 與台灣籃球（TPBL／PLG／HBL）的數據深度分析、聯盟指南與專題特刊，共 {len(articles)} 篇。", f"{base}/articles/", jsonld, extra_css=INDEX_CSS + ads.AD_CSS)}
 <body>
 {site_header_html("articles", site)}
 <div class="bb-shell">
@@ -2894,6 +2919,7 @@ def render_sport_articles_index(articles: list, site: dict, sport_label: str) ->
 </div>
 {_bb_footer(site)}
 <script>{theme_switch_js(site)}</script>
+{ads.script_tag()}
 </body>
 </html>
 """
@@ -2966,6 +2992,8 @@ def _build_sport_site(articles: list, sport: str):
     label = {"basketball": "籃球"}.get(sport, sport)
     pub = ROOT / f"public-{sport}"
     pub.mkdir(parents=True, exist_ok=True)
+    if sport == "basketball":
+        ads.write_script(pub)   # 首頁／列表／文章頁引用的版位程式 /assets/ad-<hash>.js
     (pub / "index.html").write_text(render_sport_index(articles, site, label), encoding="utf-8")
     if sport == "basketball":
         (pub / "llms.txt").write_text(render_bb_llms_txt(articles, site), encoding="utf-8")
