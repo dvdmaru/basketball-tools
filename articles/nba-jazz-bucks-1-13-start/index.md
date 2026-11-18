@@ -2,7 +2,7 @@
 slug: nba-jazz-bucks-1-13-start
 author: 籃球數據誌
 competition: nba
-topic: nba
+topic: nba-stats
 type: feature
 date: "2026-11-18"
 title: "爵士、公鹿都以 1 勝 13 敗開季：NBA 四個歷史案例，最後打成怎樣？"
