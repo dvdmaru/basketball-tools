@@ -30,6 +30,7 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("nba-jazz-bucks-1-13-start", "NBA · 2026–27 開季", "爵士、公鹿<br>同為 1 勝 13 敗", "前 14 場 × 四個歷史案例"),
     ("nba-flopping-penalty-basics", "NBA · 假摔罰則",
      "2012 罰款階梯<br>現行技術犯規＋1 罰球",
      "場上技術犯規＋1 罰球　·　漏吹後可賽後處理"),
