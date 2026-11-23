@@ -30,6 +30,7 @@ def chrome():
 
 # (article_slug, kicker, title_html, subtitle) — 新文章加封面：在這裡加一列再跑本腳本
 COVERS = [
+    ("nba-wembanyama-50-points-5-blocks-5-threes", "NBA · 單場數據", "溫班亞馬 50 分<br>5 阻攻 5 三分", "三場至少 50 分 · 得分與阻攻歷史對照"),
     ("nba-35-point-scoring-seasons-doncic", "NBA · 2026–27 開季", "唐西奇前 15 場<br>場均 37.2 分", "截至 2026 年 11 月 22 日 · 歷史 35 分球季對照"),
     ("nba-jazz-bucks-1-13-start", "NBA · 2026–27 開季", "爵士、公鹿<br>同為 1 勝 13 敗", "前 14 場 × 四個歷史案例"),
     ("nba-flopping-penalty-basics", "NBA · 假摔罰則",
